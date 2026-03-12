@@ -1,10 +1,73 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" id="html-root">
 <head>
   <meta charset="UTF-8" />
   <meta name="color-scheme" content="light only" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LUMA — Illuminate Your Confidence</title>
+
+  <!-- ── Primary SEO ── -->
+  <title>LUMA — 自信を照らす、東京のプライベートスタジオ</title>
+  <meta name="description" content="LUMA（ルマ）は、英語教育・ポートレート撮影・カウンセリング・カラオケ指導・ツアー・コミュニティイベントを通じて、あなたの自信を引き出す東京のプライベートスタジオです。" />
+  <meta name="keywords" content="LUMA,英語レッスン東京,ポートレート撮影東京,カウンセリング東京,カラオケ指導,自信,コーチング,Sho Asano,浅野彰" />
+  <meta name="author" content="Sho Asano / LUMA" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://luma-studio.com/" />
+
+  <!-- ── hreflang（日英対応） ── -->
+  <link rel="alternate" hreflang="ja" href="https://luma-studio.com/" />
+  <link rel="alternate" hreflang="en" href="https://luma-studio.com/" />
+  <link rel="alternate" hreflang="x-default" href="https://luma-studio.com/" />
+
+  <!-- ── Open Graph（SNSシェア用） ── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://luma-studio.com/" />
+  <meta property="og:title" content="LUMA — Illuminate Your Confidence" />
+  <meta property="og:description" content="英語教育・ポートレート・カウンセリング・カラオケ・ツアー・イベント。LUMAはあなたの自信を照らす東京のプライベートスタジオです。" />
+  <meta property="og:image" content="https://luma-studio.com/og-image.jpg" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:site_name" content="LUMA" />
+
+  <!-- ── Twitter Card ── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="LUMA — Illuminate Your Confidence" />
+  <meta name="twitter:description" content="英語教育・ポートレート・カウンセリング・カラオケ・ツアー・イベント。東京のプライベートスタジオ LUMA。" />
+  <meta name="twitter:image" content="https://luma-studio.com/og-image.jpg" />
+
+  <!-- ── Structured Data（JSON-LD） ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "LUMA",
+    "description": "英語教育・ポートレート撮影・カウンセリング・カラオケ指導・ツアー・コミュニティイベントを提供する東京のプライベートスタジオ",
+    "url": "https://luma-studio.com",
+    "email": "studio.luma.jp@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "東京",
+      "addressCountry": "JP"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Sho Asano",
+      "alternateName": "浅野彰"
+    },
+    "sameAs": [
+      "https://www.instagram.com/luma_studio_jp",
+      "https://www.linkedin.com/in/shoasano2252/"
+    ],
+    "offers": [
+      {"@type": "Offer", "name": "英語教育・チュータリング"},
+      {"@type": "Offer", "name": "ポートレート撮影"},
+      {"@type": "Offer", "name": "カウンセリング・コーチング"},
+      {"@type": "Offer", "name": "カラオケ指導"},
+      {"@type": "Offer", "name": "ツアー企画・ガイド"},
+      {"@type": "Offer", "name": "コミュニティイベント"}
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@600;700&display=swap" rel="stylesheet" />
@@ -456,7 +519,7 @@
 
   </style>
 </head>
-<body class="lang-ja">
+<body class="lang-ja" id="body-root">
 
   <!-- Navigation -->
   <nav id="navbar">
@@ -907,6 +970,7 @@
     // Language switch
     function setLang(lang) {
       document.body.className = 'lang-' + lang;
+      document.getElementById('html-root').lang = lang === 'ja' ? 'ja' : 'en';
       document.querySelectorAll('.lang-btn').forEach((btn, i) => {
         btn.classList.toggle('active', (i === 0 && lang === 'ja') || (i === 1 && lang === 'en'));
       });
@@ -914,7 +978,25 @@
       if (ta) ta.placeholder = lang === 'ja'
         ? 'お気軽にご相談内容をお書きください'
         : "Feel free to share what's on your mind";
+      // SEO: title も言語に応じて切替
+      document.title = lang === 'ja'
+        ? 'LUMA — 自信を照らす、東京のプライベートスタジオ'
+        : 'LUMA — Illuminate Your Confidence | Tokyo';
+      try { localStorage.setItem('luma-lang', lang); } catch(_) {}
     }
+
+    // ── ブラウザ言語自動判定（初回アクセス時のみ）
+    (function autoLang() {
+      // 1. ユーザーが前回選択した言語を優先
+      let saved = null;
+      try { saved = localStorage.getItem('luma-lang'); } catch(_) {}
+      if (saved === 'ja' || saved === 'en') { setLang(saved); return; }
+
+      // 2. ブラウザ言語で判定
+      const langs = navigator.languages || [navigator.language || 'ja'];
+      const isJa = langs.some(l => l.toLowerCase().startsWith('ja'));
+      setLang(isJa ? 'ja' : 'en');
+    })();
 
     // Navbar scroll
     window.addEventListener('scroll', () => {
@@ -931,28 +1013,63 @@
     document.getElementById('contact-form').addEventListener('submit', async function(e) {
       e.preventDefault();
       const btn = this.querySelector('button[type="submit"]');
+      const formData = new FormData(this);
       btn.disabled = true;
       btn.style.opacity = '0.6';
+      btn.innerHTML = '<span>送信中...</span>';
+
       try {
         const res = await fetch('https://formspree.io/f/mdawgrql', {
           method: 'POST',
-          body: new FormData(this),
+          body: formData,
           headers: { 'Accept': 'application/json' }
         });
+
+        // デバッグ: 実際のステータスをコンソールに表示
+        console.log('[LUMA Form] Status:', res.status, res.statusText);
+
+        let data = {};
+        try { data = await res.json(); } catch(_) {}
+        console.log('[LUMA Form] Response:', JSON.stringify(data));
+
         if (res.ok) {
           this.reset();
           document.getElementById('success-overlay').classList.add('open');
           document.body.style.overflow = 'hidden';
+        } else if (res.status === 422) {
+          // バリデーションエラー
+          const msgs = (data.errors || []).map(x => x.message).filter(Boolean);
+          showFormError(msgs.length ? msgs.join(' / ') : '入力内容をご確認ください。');
+        } else if (res.status === 403) {
+          // 未認証（Formspreeの確認メール未クリック）
+          showFormError('フォームがまだ有効化されていません。studio.luma.jp@gmail.com に届いたFormspreeの確認メールをクリックしてください。');
+        } else if (res.status === 429) {
+          showFormError('送信が多すぎます。しばらくしてからお試しください。');
         } else {
-          const data = await res.json();
-          alert((data.errors || [{}]).map(x => x.message || '送信に失敗しました').join(', '));
+          const errMsg = (data.errors || []).map(x => x.message).join(', ') || `エラー (${res.status})`;
+          showFormError(errMsg);
         }
       } catch(err) {
-        alert('送信中にエラーが発生しました。しばらくしてからお試しください。');
+        console.error('[LUMA Form] Network error:', err);
+        showFormError('ネットワークエラーが発生しました。接続を確認して再度お試しください。');
       }
+
       btn.disabled = false;
       btn.style.opacity = '1';
+      btn.innerHTML = '<span data-inline="ja">送信する</span><span data-inline="en">Send Message</span>';
     });
+
+    function showFormError(msg) {
+      let el = document.getElementById('form-error-msg');
+      if (!el) {
+        el = document.createElement('p');
+        el.id = 'form-error-msg';
+        el.style.cssText = 'color:#c0392b;font-size:13px;margin-top:12px;text-align:center;padding:12px 16px;background:rgba(192,57,43,0.08);border-radius:4px;border:1px solid rgba(192,57,43,0.2);';
+        document.getElementById('contact-form').appendChild(el);
+      }
+      el.textContent = '⚠️ ' + msg;
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
 
     function closeSuccessBtn() {
       document.getElementById('success-overlay').classList.remove('open');
