@@ -759,8 +759,7 @@
         <label data-lang="ja">ご希望のサービス *</label>
         <label data-lang="en">Service of interest *</label>
         <select name="service" required>
-          <option value="" disabled selected data-lang="ja">サービスを選択してください</option>
-          <option value="" disabled selected data-lang="en">Please select a service</option>
+          <option value="" disabled selected>サービスを選択 / Please select a service</option>
           <option value="英語教育・チュータリング">英語教育・チュータリング / English Tutoring</option>
           <option value="ポートレート撮影">ポートレート撮影 / Portrait Photography</option>
           <option value="カウンセリング・コーチング">カウンセリング・コーチング / Counselling &amp; Coaching</option>
@@ -773,8 +772,7 @@
       <div class="form-group">
         <label data-lang="ja">メッセージ *</label>
         <label data-lang="en">Message *</label>
-        <textarea name="message" required data-lang="ja" placeholder="お気軽にご相談内容をお書きください"></textarea>
-        <textarea name="message" required data-lang="en" placeholder="Feel free to share what's on your mind"></textarea>
+        <textarea id="msg-textarea" name="message" required placeholder="お気軽にご相談内容をお書きください"></textarea>
       </div>
       <input type="hidden" name="_replyto" value="studio.luma.jp@gmail.com" />
       <div class="form-submit">
@@ -912,6 +910,10 @@
       document.querySelectorAll('.lang-btn').forEach((btn, i) => {
         btn.classList.toggle('active', (i === 0 && lang === 'ja') || (i === 1 && lang === 'en'));
       });
+      const ta = document.getElementById('msg-textarea');
+      if (ta) ta.placeholder = lang === 'ja'
+        ? 'お気軽にご相談内容をお書きください'
+        : "Feel free to share what's on your mind";
     }
 
     // Navbar scroll
