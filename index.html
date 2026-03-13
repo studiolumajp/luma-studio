@@ -381,6 +381,58 @@
     }
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent); }
     .form-group textarea { resize: vertical; min-height: 120px; }
+    /* ── Phone prefix custom dropdown ── */
+    .phone-row { display: flex; gap: 8px; align-items: stretch; position: relative; }
+    .phone-trigger {
+      display: flex; align-items: center; gap: 5px;
+      width: 86px; flex-shrink: 0; flex-grow: 0;
+      padding: 0 8px 0 10px; cursor: pointer; user-select: none;
+      background: var(--cream); border: 1px solid var(--beige);
+      color: var(--text); font-size: 12px; white-space: nowrap;
+      transition: border-color 0.3s; box-sizing: border-box; position: relative;
+    }
+    .phone-trigger:focus { outline: none; border-color: var(--accent); }
+    .phone-trigger .pt-flag { font-size: 16px; line-height: 1; }
+    .phone-trigger .pt-code { font-family: 'Noto Sans JP', sans-serif; font-size: 12px; flex:1; }
+    .phone-trigger .pt-arrow { font-size: 8px; color: var(--text-light); transition: transform 0.2s; }
+    .phone-trigger.open .pt-arrow { transform: rotate(180deg); }
+    .phone-trigger.focused, .phone-trigger:hover { border-color: var(--accent); }
+    /* dropdown panel */
+    .phone-dropdown {
+      display: none; position: absolute; top: calc(100% + 4px); left: 0;
+      width: 280px; background: var(--cream);
+      border: 1px solid var(--beige); box-shadow: 0 8px 24px rgba(45,36,32,0.14);
+      z-index: 9999; max-height: 300px; overflow: hidden;
+      flex-direction: column;
+    }
+    .phone-dropdown.open { display: flex; }
+    .phone-search-wrap { padding: 8px; border-bottom: 1px solid var(--beige); flex-shrink: 0; }
+    .phone-search {
+      width: 100%; padding: 7px 10px; border: 1px solid var(--beige);
+      background: white; font-size: 12px; font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text); outline: none; box-sizing: border-box;
+    }
+    .phone-search:focus { border-color: var(--accent); }
+    .phone-list { overflow-y: auto; flex: 1; }
+    .phone-option {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 12px; cursor: pointer; font-size: 12px;
+      font-family: 'Noto Sans JP', sans-serif; color: var(--text);
+      transition: background 0.15s;
+    }
+    .phone-option:hover, .phone-option.active { background: var(--warm-white); }
+    .phone-option .po-flag { font-size: 18px; width: 24px; text-align: center; flex-shrink: 0; }
+    .phone-option .po-name { flex: 1; color: var(--text); }
+    .phone-option .po-code { color: var(--text-light); font-size: 11px; flex-shrink: 0; }
+    .phone-option.hidden { display: none; }
+    /* number input */
+    .phone-row .phone-number-input {
+      flex: 1; min-width: 0; width: auto !important;
+    }
+    .phone-hint {
+      font-size: 10px; color: var(--text-light); margin-top: 4px;
+      font-family: 'Noto Sans JP', sans-serif; min-height: 14px;
+    }
     .form-submit { text-align: center; margin-top: 8px; }
     .form-submit .btn-primary { font-size: 12px; padding: 16px 56px; }
     .contact-note { text-align: center; font-size: 12px; color: var(--text-light); margin-top: 20px; }
@@ -833,7 +885,28 @@
         <div class="form-group">
           <label data-lang="ja">電話番号 *</label>
           <label data-lang="en">Phone Number *</label>
-          <input type="tel" name="phone" required placeholder="090-1234-5678" />
+          <div class="phone-row" id="phone-row-wrap">
+            <!-- カスタム国際電話コードピッカー -->
+            <div class="phone-trigger" id="phone-trigger" tabindex="0" role="combobox"
+              aria-haspopup="listbox" aria-expanded="false" aria-label="Country dial code">
+              <span class="pt-flag" id="pt-flag">🇯🇵</span>
+              <span class="pt-code" id="pt-code">+81</span>
+              <span class="pt-arrow">▼</span>
+            </div>
+            <div class="phone-dropdown" id="phone-dropdown" role="listbox">
+              <div class="phone-search-wrap">
+                <input class="phone-search" id="phone-search" type="text"
+                  placeholder="Search country..." autocomplete="off" />
+              </div>
+              <div class="phone-list" id="phone-list"></div>
+            </div>
+            <!-- hidden field: dial code for form submission -->
+            <input type="hidden" id="phone-prefix" name="phone_prefix_hidden" value="+81" />
+            <input type="tel" id="phone-number" name="phone" required
+              placeholder="090-1234-5678" class="phone-number-input"
+              autocomplete="tel-national" />
+          </div>
+          <div class="phone-hint" id="phone-hint"></div>
         </div>
       </div>
       <!-- サービス -->
@@ -1001,6 +1074,11 @@
       document.title = lang === 'ja'
         ? 'LUMA — Clarity by Design | 自信を照らす東京のスタジオ'
         : 'LUMA — Clarity by Design | Illuminate Your Confidence';
+      // ── 電話番号プレフィックス：言語に応じてデフォルト値を切替
+      if (window._phonePickerReady && !window._phoneUserChanged) {
+        const code = lang === 'ja' ? '+81' : '+61';
+        window._setPhonePrefix(code);
+      }
       try { localStorage.setItem('luma-lang', lang); } catch(_) {}
     }
 
@@ -1015,6 +1093,181 @@
       const langs = navigator.languages || [navigator.language || 'ja'];
       const isJa = langs.some(l => l.toLowerCase().startsWith('ja'));
       setLang(isJa ? 'ja' : 'en');
+    })();
+
+    // ══════════════════════════════════════════
+    // INTL_PHONE_PICKER — searchable country dial code picker
+    // ══════════════════════════════════════════
+    (function() {
+      // [flag, country name, dial code, placeholder, minLen, maxLen]
+      const COUNTRIES = [
+        ['🇯🇵','Japan','+81','090-1234-5678',10,11],
+        ['🇦🇺','Australia','+61','0412-345-678',9,10],
+        ['🇺🇸','United States','+1','(555) 123-4567',10,10],
+        ['🇬🇧','United Kingdom','+44','07700 900123',10,11],
+        ['🇸🇬','Singapore','+65','8123 4567',8,8],
+        ['🇨🇳','China','+86','138 0013 8000',11,11],
+        ['🇰🇷','South Korea','+82','010-1234-5678',9,11],
+        ['🇹🇭','Thailand','+66','081-234-5678',9,9],
+        ['🇮🇳','India','+91','98765 43210',10,10],
+        ['🇵🇭','Philippines','+63','0917 123 4567',10,10],
+        ['🇮🇩','Indonesia','+62','0812-345-6789',9,12],
+        ['🇲🇾','Malaysia','+60','012-345 6789',9,10],
+        ['🇻🇳','Vietnam','+84','090 123 4567',9,10],
+        ['🇭🇰','Hong Kong','+852','5123 4567',8,8],
+        ['🇹🇼','Taiwan','+886','0912-345-678',9,10],
+        ['🇳🇿','New Zealand','+64','021 123 4567',8,10],
+        ['🇨🇦','Canada','+1','(555) 123-4567',10,10],
+        ['🇩🇪','Germany','+49','0151 12345678',10,12],
+        ['🇫🇷','France','+33','06 12 34 56 78',9,9],
+        ['🇮🇹','Italy','+39','333 123 4567',9,11],
+        ['🇪🇸','Spain','+34','612 345 678',9,9],
+        ['🇵🇹','Portugal','+351','912 345 678',9,9],
+        ['🇳🇱','Netherlands','+31','06 12345678',9,9],
+        ['🇧🇪','Belgium','+32','0470 12 34 56',9,9],
+        ['🇨🇭','Switzerland','+41','079 123 45 67',9,9],
+        ['🇦🇹','Austria','+43','0664 123456',10,11],
+        ['🇸🇪','Sweden','+46','070-123 45 67',9,9],
+        ['🇳🇴','Norway','+47','412 34 567',8,8],
+        ['🇩🇰','Denmark','+45','20 12 34 56',8,8],
+        ['🇫🇮','Finland','+358','040 123 4567',9,10],
+        ['🇵🇱','Poland','+48','512 345 678',9,9],
+        ['🇷🇺','Russia','+7','9161234567',10,10],
+        ['🇺🇦','Ukraine','+380','067 123 4567',9,9],
+        ['🇹🇷','Turkey','+90','0532 123 4567',10,10],
+        ['🇸🇦','Saudi Arabia','+966','054 123 4567',9,9],
+        ['🇦🇪','UAE','+971','050 123 4567',9,9],
+        ['🇮🇱','Israel','+972','050-123-4567',9,9],
+        ['🇧🇷','Brazil','+55','11 9 1234-5678',10,11],
+        ['🇲🇽','Mexico','+52','55 1234 5678',10,10],
+        ['🇦🇷','Argentina','+54','11 1234-5678',10,10],
+        ['🇨🇱','Chile','+56','9 1234 5678',9,9],
+        ['🇨🇴','Colombia','+57','315 123 4567',10,10],
+        ['🇿🇦','South Africa','+27','071 123 4567',9,9],
+        ['🇳🇬','Nigeria','+234','080 1234 5678',10,11],
+        ['🇰🇪','Kenya','+254','0712 345678',9,9],
+        ['🇪🇬','Egypt','+20','0100 123 4567',10,11],
+        ['🇵🇰','Pakistan','+92','0301 2345678',10,10],
+        ['🇧🇩','Bangladesh','+880','01712 345678',10,11],
+        ['🇱🇰','Sri Lanka','+94','077 123 4567',9,9],
+        ['🇳🇵','Nepal','+977','9841 123456',10,10],
+        ['🇲🇲','Myanmar','+95','09 123 456789',9,11],
+        ['🇰🇭','Cambodia','+855','010 123 456',8,9],
+        ['🇱🇦','Laos','+856','020 5555 1234',9,10],
+        ['🇧🇳','Brunei','+673','712 3456',7,7],
+        ['🇲🇴','Macau','+853','6123 4567',8,8],
+        ['🇫🇯','Fiji','+679','770 1234',7,7],
+        ['🇵🇬','Papua New Guinea','+675','7123 4567',8,8],
+        ['🌐','Other / その他','+','',0,15],
+      ];
+
+      const trigger  = document.getElementById('phone-trigger');
+      const dropdown = document.getElementById('phone-dropdown');
+      const list     = document.getElementById('phone-list');
+      const search   = document.getElementById('phone-search');
+      const flagEl   = document.getElementById('pt-flag');
+      const codeEl   = document.getElementById('pt-code');
+      const hidden   = document.getElementById('phone-prefix');
+      const numInput = document.getElementById('phone-number');
+      const hint     = document.getElementById('phone-hint');
+
+      if (!trigger) return;
+
+      let currentIdx = 0; // default Japan
+
+      // レンダー
+      COUNTRIES.forEach((c, i) => {
+        const div = document.createElement('div');
+        div.className = 'phone-option';
+        div.dataset.idx = i;
+        div.dataset.code = c[2];
+        div.dataset.name = c[1].toLowerCase();
+        div.innerHTML = `<span class="po-flag">${c[0]}</span>
+          <span class="po-name">${c[1]}</span>
+          <span class="po-code">${c[2]}</span>`;
+        div.addEventListener('mousedown', (e) => {
+          e.preventDefault();
+          selectIdx(i);
+          close();
+        });
+        list.appendChild(div);
+      });
+
+      function selectIdx(i) {
+        currentIdx = i;
+        const c = COUNTRIES[i];
+        flagEl.textContent = c[0];
+        codeEl.textContent = c[2];
+        hidden.value       = c[2];
+        numInput.placeholder = c[3] || '';
+        // ヒント表示
+        if (c[5] > 0) {
+          const isJa = document.body.classList.contains('lang-ja');
+          hint.textContent = isJa
+            ? `桁数の目安: ${c[4]}〜${c[5]}桁`
+            : `Digits: ${c[4]}–${c[5]}`;
+        } else {
+          hint.textContent = '';
+        }
+        // active highlight
+        list.querySelectorAll('.phone-option').forEach((el, j) => {
+          el.classList.toggle('active', j === i);
+        });
+        window._phoneUserChanged = true;
+      }
+
+      function open() {
+        dropdown.classList.add('open');
+        trigger.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
+        search.value = '';
+        filterList('');
+        setTimeout(() => search.focus(), 50);
+      }
+
+      function close() {
+        dropdown.classList.remove('open');
+        trigger.classList.remove('open');
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+
+      trigger.addEventListener('click', () => {
+        dropdown.classList.contains('open') ? close() : open();
+      });
+      trigger.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+      });
+
+      search.addEventListener('input', () => filterList(search.value));
+      search.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') close();
+      });
+
+      function filterList(q) {
+        const lq = q.toLowerCase().replace(/\+/g,'');
+        list.querySelectorAll('.phone-option').forEach(el => {
+          const name = el.dataset.name;
+          const code = el.dataset.code.replace('+','');
+          el.classList.toggle('hidden', q !== '' && !name.includes(lq) && !code.includes(lq));
+        });
+      }
+
+      // click outside → close
+      document.addEventListener('click', (e) => {
+        if (!trigger.contains(e.target) && !dropdown.contains(e.target)) close();
+      });
+
+      // 公開API：setLang から呼び出す
+      window._phonePickerReady = true;
+      window._phoneUserChanged = false;
+      window._setPhonePrefix = function(code) {
+        const idx = COUNTRIES.findIndex(c => c[2] === code);
+        if (idx >= 0) selectIdx(idx);
+        window._phoneUserChanged = false; // setLang 側からの変更はリセット
+      };
+
+      // 初期値セット（日本）
+      selectIdx(0);
     })();
 
     // Navbar scroll
@@ -1033,6 +1286,16 @@
       e.preventDefault();
       const btn = this.querySelector('button[type="submit"]');
       const formData = new FormData(this);
+
+      // ── 電話番号：プレフィックス＋番号を1フィールドに統合してFormspreeへ送信
+      const prefix = (document.getElementById('phone-prefix')?.value || '').trim();
+      const rawNum = (document.getElementById('phone-number')?.value || '').trim();
+      if (prefix && rawNum) {
+        formData.set('phone', prefix + ' ' + rawNum);   // 例: "+81 090-1234-5678"
+      }
+      // hidden prefix field は不要なので除外
+      formData.delete('phone_prefix_hidden');
+
       btn.disabled = true;
       btn.style.opacity = '0.6';
       btn.innerHTML = '<span>送信中...</span>';
