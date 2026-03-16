@@ -583,21 +583,6 @@
     .modal { -webkit-overflow-scrolling: touch; }
     * { -webkit-tap-highlight-color: transparent; }
     .service-card { -webkit-tap-highlight-color: rgba(196,149,106,0.1); }
-
-
-    /* ── FORCE LIGHT MODE — overrides iOS/Android dark mode ── */
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --cream: #faf8f4 !important;
-        --warm-white: #f5f1eb !important;
-        --beige: #e8d5c0 !important;
-        --sand: #c4956a !important;
-        --accent: #c4956a !important;
-        --text: #3d2e22 !important;
-        --text-light: #7a6555 !important;
-        --bg: #faf8f4 !important;
-        color-scheme: light only;
-      }
       body {
         background-color: #faf8f4 !important;
         color: #3d2e22 !important;
@@ -621,6 +606,8 @@
         border-color: #c4956a !important;
       }
     }
+
+  
 
   </style>
 </head>
@@ -657,6 +644,7 @@
     <a href="#services"    onclick="toggleMobMenu()"><span data-inline="ja">サービス</span><span data-inline="en">Services</span></a>
     <a href="#profile"     onclick="toggleMobMenu()"><span data-inline="ja">プロフィール</span><span data-inline="en">Profile</span></a>
     <a href="#contact"     onclick="toggleMobMenu()"><span data-inline="ja">お問い合わせ</span><span data-inline="en">Contact</span></a>
+    <a href="./legal.html" onclick="toggleMobMenu()"><span data-inline="ja">特商法・プライバシー</span><span data-inline="en">Legal</span></a>
     <div class="mob-lang">
       <button class="lang-btn active" id="mobLangJa" onclick="setLang('ja');toggleMobMenu()">JP</button>
       <button class="lang-btn" id="mobLangEn" onclick="setLang('en');toggleMobMenu()">EN</button>

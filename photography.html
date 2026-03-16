@@ -2,6 +2,7 @@
 <html lang="ja" id="html-root">
 <head>
   <meta charset="UTF-8" />
+  <meta name="color-scheme" content="light only" />
 
   <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
@@ -53,6 +54,7 @@
   <style>
     /* ── CSS Variables（index.html と完全一致） */
     :root {
+      color-scheme: light;
       --cream: #faf8f4; --warm-white: #f5f1eb; --beige: #e8e0d4;
       --sand: #d4c8b4; --taupe: #b8a898; --brown: #8c7460;
       --dark: #2d2420; --accent: #c4956a; --accent-light: #e8c9a8;
@@ -354,7 +356,33 @@
       .cta-section { padding: 60px 24px; }
       footer { padding: 48px 24px; }
       .nav-links { display: none; }
+      .lang-switcher { display: none; }
+      .ham { display: flex; }
     }
+  
+    /* ── HAMBURGER & MOBILE MENU (photography) ── */
+    .ham {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px; background: none; border: none; flex-shrink: 0;
+    }
+    .ham span { display: block; width: 22px; height: 1.5px; background: var(--text-light); }
+    .mob-menu {
+      display: none; position: fixed; inset: 0;
+      background: var(--cream); z-index: 1100;
+      flex-direction: column; align-items: center; justify-content: center; gap: 28px;
+    }
+    .mob-menu.open { display: flex; }
+    .mob-menu a {
+      font-size: 18px; letter-spacing: .16em;
+      color: var(--text); text-decoration: none; transition: color .3s;
+    }
+    .mob-menu a:hover { color: var(--accent); }
+    .mob-close {
+      position: absolute; top: 20px; right: 24px;
+      background: none; border: none; font-size: 28px; color: var(--text-light); cursor: pointer;
+    }
+
+
   </style>
 </head>
 
@@ -373,6 +401,9 @@
         <li><a href="./photography.html" class="active">
           <span data-lang="ja">写真</span><span data-lang="en" style="display:none">Photography</span>
         </a></li>
+        <li><a href="./s-league.html">
+          <span data-lang="ja">S.League</span><span data-lang="en" style="display:none">S.League</span>
+        </a></li>
         <li><a href="./index.html#contact">
           <span data-lang="ja">お問い合わせ</span><span data-lang="en" style="display:none">Contact</span>
         </a></li>
@@ -381,8 +412,22 @@
         <button class="lang-btn active" id="btn-ja" onclick="setLang('ja')">JA</button>
         <button class="lang-btn"        id="btn-en" onclick="setLang('en')">EN</button>
       </div>
+      <button class="ham" onclick="toggleMobMenu()" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mob-menu" id="mobMenu">
+    <button class="mob-close" onclick="toggleMobMenu()">✕</button>
+    <a href="./index.html#about" onclick="toggleMobMenu()">LUMAとは</a>
+    <a href="./photography.html" onclick="toggleMobMenu()">写真</a>
+    <a href="./s-league.html" onclick="toggleMobMenu()">S.League</a>
+    <a href="./index.html#services" onclick="toggleMobMenu()">サービス</a>
+    <a href="./index.html#contact" onclick="toggleMobMenu()">お問い合わせ</a>
+    <a href="./legal.html" onclick="toggleMobMenu()">特商法・プライバシー</a>
+  </div>
 
   <!-- ══ HERO ══ -->
   <section class="photo-hero">
@@ -1470,6 +1515,19 @@
   // 背景クリックで閉じる
   document.getElementById('lightbox').addEventListener('click', function(e) {
     if (e.target === this) closeLightbox();
+  });
+
+  // ══ Mobile menu
+  function toggleMobMenu() {
+    const m = document.getElementById('mobMenu');
+    const open = m.classList.toggle('open');
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      document.getElementById('mobMenu').classList.remove('open');
+      document.body.style.overflow = '';
+    }
   });
 
   // ══ Navbar scroll

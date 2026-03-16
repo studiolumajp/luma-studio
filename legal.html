@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="color-scheme" content="light only" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>特定商取引法・プライバシーポリシー・写真肖像権 | LUMA</title>
+  <meta name="description" content="LUMA（ルマ）の特定商取引法に基づく表記、プライバシーポリシー、キャンセルポリシー、免責事項、写真・肖像権に関するポリシー。" />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@600;700&display=swap"
+    onload="this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@600;700&display=swap" rel="stylesheet" /></noscript>
+
+  <style>
+    :root {
+      color-scheme: light;
+      --cream: #faf8f4; --warm: #f5f1eb; --beige: #e8e0d4; --sand: #d4c8b4;
+      --taupe: #b8a898; --dark: #2d2420; --accent: #c4956a; --accent-l: #e8c9a8;
+      --text: #3d3028; --tl: #7a6858;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream); color: var(--text);
+      font-family: 'Noto Sans JP', sans-serif; font-weight: 300;
+      overflow-x: hidden; line-height: 1.8;
+    }
+
+    /* ── NAV ── */
+    nav#navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      padding: 18px 48px; display: flex; align-items: center;
+      justify-content: space-between; transition: all .4s;
+    }
+    nav#navbar.scrolled {
+      background: rgba(250,248,244,.96); backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(180,160,140,.2);
+    }
+    .logo-text {
+      font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 700;
+      letter-spacing: .18em; color: var(--dark); text-decoration: none;
+    }
+    nav#navbar.scrolled .logo-text { color: var(--dark); }
+    .nav-right { display: flex; align-items: center; gap: 32px; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      font-size: 12px; letter-spacing: .14em; text-decoration: none;
+      color: var(--tl); transition: color .3s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .ham {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px; background: none; border: none;
+    }
+    .ham span { display: block; width: 22px; height: 1.5px; background: var(--tl); }
+    .mob-menu {
+      display: none; position: fixed; inset: 0;
+      background: var(--cream); z-index: 1100;
+      flex-direction: column; align-items: center; justify-content: center; gap: 28px;
+    }
+    .mob-menu.open { display: flex; }
+    .mob-menu a {
+      font-size: 18px; letter-spacing: .16em;
+      color: var(--text); text-decoration: none; transition: color .3s;
+    }
+    .mob-menu a:hover { color: var(--accent); }
+    .mob-close {
+      position: absolute; top: 20px; right: 24px;
+      background: none; border: none; font-size: 28px;
+      color: var(--tl); cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      nav#navbar { padding: 12px 20px; }
+      .nav-links { display: none; }
+      .ham { display: flex; }
+      .anchor-nav { top: 46px; }
+      .anchor-nav-inner { padding: 0 20px; }
+    }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      background: var(--dark); padding: 120px 48px 56px;
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 10% 0%, rgba(196,149,106,.1) 0%, transparent 60%);
+    }
+    .page-hero-inner { max-width: 860px; margin: 0 auto; position: relative; z-index: 1; }
+    .page-eyebrow {
+      font-size: 11px; letter-spacing: .36em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 14px; display: block;
+    }
+    .page-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(28px, 4vw, 48px); color: var(--cream); line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .page-title em { font-style: italic; color: var(--accent); }
+    .page-date { font-size: 11px; color: var(--taupe); letter-spacing: .1em; }
+
+    /* ── ANCHOR NAV ── */
+    .anchor-nav {
+      background: var(--warm); border-bottom: 1px solid var(--beige);
+      position: sticky; top: 58px; z-index: 200;
+    }
+    .anchor-nav-inner {
+      max-width: 860px; margin: 0 auto; padding: 0 48px;
+      display: flex; gap: 0; overflow-x: auto; scrollbar-width: none;
+    }
+    .anchor-nav-inner::-webkit-scrollbar { display: none; }
+    .anchor-link {
+      flex-shrink: 0; padding: 14px 20px;
+      font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--tl); text-decoration: none; white-space: nowrap;
+      border-bottom: 2px solid transparent; transition: color .2s, border-color .2s;
+    }
+    .anchor-link:hover { color: var(--accent); border-bottom-color: var(--accent); }
+    @media (max-width: 768px) { .anchor-nav-inner { padding: 0 20px; } }
+
+    /* ── MAIN CONTENT ── */
+    .legal-main { max-width: 860px; margin: 0 auto; padding: 64px 48px 100px; }
+    @media (max-width: 768px) { .legal-main { padding: 48px 20px 80px; } }
+
+    /* ── SECTION ── */
+    .legal-section {
+      margin-bottom: 72px; padding-top: 16px;
+    }
+    .legal-section:last-child { margin-bottom: 0; }
+    .section-tag {
+      font-size: 10px; letter-spacing: .34em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 10px; display: block;
+    }
+    .section-heading {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(20px, 2.5vw, 28px); color: var(--dark);
+      margin-bottom: 8px; line-height: 1.2;
+    }
+    .section-updated {
+      font-size: 11px; color: var(--taupe); letter-spacing: .08em; margin-bottom: 28px;
+    }
+    .div { width: 36px; height: 1px; background: var(--accent); margin-bottom: 28px; }
+
+    /* ── TABLE ── */
+    .legal-table {
+      width: 100%; border-collapse: collapse; margin-bottom: 32px; font-size: 13px;
+    }
+    .legal-table th, .legal-table td {
+      padding: 12px 16px; border-bottom: 1px solid var(--beige);
+      vertical-align: top; text-align: left;
+    }
+    .legal-table th {
+      width: 35%; font-weight: 500; color: var(--tl);
+      font-size: 11px; letter-spacing: .1em; white-space: nowrap;
+      background: var(--warm);
+    }
+    .legal-table td { color: var(--text); line-height: 1.8; }
+    .legal-table td a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(196,149,106,.3); }
+    .legal-table td a:hover { border-bottom-color: var(--accent); }
+    .legal-table tr:last-child th,
+    .legal-table tr:last-child td { border-bottom: none; }
+    @media (max-width: 580px) {
+      .legal-table th, .legal-table td { display: block; width: 100%; }
+      .legal-table th { border-bottom: none; padding-bottom: 4px; }
+    }
+
+    /* ── CANCEL TABLE ── */
+    .cancel-table {
+      width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 13px;
+    }
+    .cancel-table thead th {
+      background: var(--dark); color: var(--cream);
+      padding: 10px 16px; font-size: 11px; letter-spacing: .1em; font-weight: 500;
+    }
+    .cancel-table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--beige); line-height: 1.7;
+    }
+    .cancel-table tbody tr:last-child td { border-bottom: none; }
+    .cancel-table tbody tr:nth-child(even) td { background: var(--warm); }
+    .fee-zero { color: #2a7d4f; font-weight: 500; }
+    .fee-half { color: var(--accent); font-weight: 500; }
+    .fee-full { color: #c0392b; font-weight: 500; }
+
+    /* ── PROSE ── */
+    .legal-body { font-size: 13px; color: var(--tl); line-height: 2; }
+    .legal-body p { margin-bottom: 16px; }
+    .legal-body p:last-child { margin-bottom: 0; }
+    .legal-body h3 {
+      font-family: 'DM Serif Display', serif; font-size: 16px;
+      color: var(--dark); margin: 28px 0 10px;
+    }
+    .legal-body ul { padding-left: 20px; margin-bottom: 16px; }
+    .legal-body ul li { margin-bottom: 6px; }
+    .legal-body a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(196,149,106,.3); }
+    .legal-body a:hover { border-bottom-color: var(--accent); }
+
+    /* ── NOTE BOX ── */
+    .note-box {
+      background: var(--warm); border-left: 3px solid var(--accent);
+      padding: 16px 20px; border-radius: 0 2px 2px 0;
+      font-size: 12px; color: var(--tl); line-height: 1.9;
+      margin: 20px 0;
+    }
+
+    /* ── CONTACT CTA ── */
+    .legal-contact {
+      background: var(--dark); border-radius: 2px; padding: 36px 40px;
+      text-align: center; margin-top: 64px;
+    }
+    .legal-contact p {
+      font-size: 13px; color: var(--taupe); margin-bottom: 20px; line-height: 1.9;
+    }
+    .btn-primary {
+      display: inline-block; font-family: 'Noto Sans JP', sans-serif;
+      font-size: 12px; letter-spacing: .18em; padding: 14px 32px;
+      background: var(--accent); color: white; text-decoration: none;
+      border-radius: 2px; border: 1px solid var(--accent); transition: all .3s;
+    }
+    .btn-primary:hover { background: transparent; color: var(--accent); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark); padding: 48px 72px 32px;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .footer-inner {
+      max-width: 860px; margin: 0 auto;
+      display: flex; flex-direction: column; align-items: center; gap: 20px;
+    }
+    .footer-logo {
+      font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 700;
+      letter-spacing: .22em; color: #EDCAA2; text-decoration: none;
+    }
+    .footer-links {
+      display: flex; gap: 20px; flex-wrap: wrap;
+      justify-content: center; list-style: none;
+    }
+    .footer-links a {
+      font-size: 11px; letter-spacing: .1em; color: var(--taupe);
+      text-decoration: none; transition: color .3s;
+    }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-copy { font-size: 10px; color: var(--taupe); opacity: .5; }
+    @media (max-width: 768px) { footer { padding: 36px 20px 24px; } }
+  
+
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="./index.html" class="logo-text">LUMA</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="./index.html#about">LUMAとは</a></li>
+      <li><a href="./photography.html">写真</a></li>
+      <li><a href="./s-league.html">S.League</a></li>
+      <li><a href="./index.html#services">サービス</a></li>
+      <li><a href="./index.html#profile">プロフィール</a></li>
+      <li><a href="./index.html#contact">お問い合わせ</a></li>
+    </ul>
+    <button class="ham" onclick="toggleMobMenu()" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" onclick="toggleMobMenu()">✕</button>
+  <a href="./index.html#about"  onclick="toggleMobMenu()">LUMAとは</a>
+  <a href="./photography.html"  onclick="toggleMobMenu()">写真</a>
+  <a href="./s-league.html"     onclick="toggleMobMenu()">S.League</a>
+  <a href="./index.html#services" onclick="toggleMobMenu()">サービス</a>
+  <a href="./index.html#profile"  onclick="toggleMobMenu()">プロフィール</a>
+  <a href="./index.html#contact"  onclick="toggleMobMenu()">お問い合わせ</a>
+  <a href="./legal.html"             onclick="toggleMobMenu()">特商法・プライバシー</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-eyebrow">Legal &amp; Policies</span>
+    <h1 class="page-title">利用規約・<em>各種ポリシー</em></h1>
+    <p class="page-date">最終更新日：2026年3月16日</p>
+  </div>
+</div>
+
+<!-- ANCHOR NAV -->
+<nav class="anchor-nav" aria-label="ページ内ナビゲーション">
+  <div class="anchor-nav-inner">
+    <a href="#tokusho"    class="anchor-link">特定商取引法</a>
+    <a href="#privacy"    class="anchor-link">プライバシーポリシー</a>
+    <a href="#cancel"     class="anchor-link">キャンセルポリシー</a>
+    <a href="#disclaimer" class="anchor-link">免責事項</a>
+    <a href="#portrait"   class="anchor-link">写真・肖像権</a>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main class="legal-main">
+
+  <!-- ①特定商取引法 -->
+  <section class="legal-section" id="tokusho">
+    <span class="section-tag">Section 01</span>
+    <h2 class="section-heading">特定商取引法に基づく表記</h2>
+    <p class="section-updated">最終更新：2026年3月16日</p>
+    <div class="div"></div>
+
+    <table class="legal-table">
+      <tbody>
+        <tr>
+          <th>販売事業者名</th>
+          <td>浅野 彰（屋号：LUMA）</td>
+        </tr>
+        <tr>
+          <th>所在地</th>
+          <td>
+            東京都<br>
+            <span style="font-size:11px;color:var(--taupe);">※請求があった場合は遅滞なく開示いたします。</span>
+          </td>
+        </tr>
+        <tr>
+          <th>電話番号</th>
+          <td>
+            お問い合わせフォームよりご連絡ください。<br>
+            <a href="./index.html#contact">→ お問い合わせフォームへ</a><br>
+            <span style="font-size:11px;color:var(--taupe);">※請求があった場合は遅滞なく開示いたします。</span>
+          </td>
+        </tr>
+        <tr>
+          <th>メールアドレス</th>
+          <td><a href="mailto:studio.luma.jp@gmail.com">studio.luma.jp@gmail.com</a></td>
+        </tr>
+        <tr>
+          <th>サービス名</th>
+          <td>S.League（麻雀トーナメント大会）</td>
+        </tr>
+        <tr>
+          <th>販売価格</th>
+          <td>各大会ページに記載の参加費（消費税込）</td>
+        </tr>
+        <tr>
+          <th>代金のお支払い方法</th>
+          <td>
+            クレジットカード決済（Square Invoice）<br>
+            PayPay<br>
+            銀行振込
+          </td>
+        </tr>
+        <tr>
+          <th>支払い期限</th>
+          <td>お申込みから5日以内</td>
+        </tr>
+        <tr>
+          <th>サービスの提供時期</th>
+          <td>各大会ページに記載の開催日当日</td>
+        </tr>
+        <tr>
+          <th>申込の有効期限</th>
+          <td>入金確認をもって参加確定。期限内にお支払いがない場合はキャンセルとみなします。</td>
+        </tr>
+        <tr>
+          <th>返品・キャンセル</th>
+          <td>
+            下記「キャンセルポリシー」をご参照ください。<br>
+            サービスの性質上、デジタルコンテンツ・クーリングオフ制度の適用はありません。
+          </td>
+        </tr>
+        <tr>
+          <th>動作環境</th>
+          <td>申込フォームのご利用にはインターネット接続環境が必要です。</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="note-box">
+      本サービスはインターネットを通じた役務提供（通信販売）に該当します。特定商取引法第11条に基づき上記を表示しています。
+    </div>
+  </section>
+
+  <!-- ②プライバシーポリシー -->
+  <section class="legal-section" id="privacy">
+    <span class="section-tag">Section 02</span>
+    <h2 class="section-heading">プライバシーポリシー</h2>
+    <p class="section-updated">最終更新：2026年3月16日</p>
+    <div class="div"></div>
+
+    <div class="legal-body">
+      <p>LUMA（以下「当事業者」）は、S.Leagueおよびその他サービスのご提供にあたり、お客様の個人情報を適切に取り扱うことを重要な責務と認識し、以下のポリシーを定めます。</p>
+
+      <h3>1. 収集する個人情報</h3>
+      <p>当事業者は以下の情報を収集することがあります。</p>
+      <ul>
+        <li>氏名（ニックネーム可）</li>
+        <li>メールアドレス</li>
+        <li>電話番号</li>
+        <li>麻雀経験・参加回数等、大会運営に必要な情報</li>
+        <li>お支払いに関する情報（Square社が管理。当事業者はカード番号等を保持しません）</li>
+      </ul>
+
+      <h3>2. 利用目的</h3>
+      <p>収集した個人情報は以下の目的のためのみ使用します。</p>
+      <ul>
+        <li>S.League参加申込の受付・確認・連絡</li>
+        <li>参加費の請求および入金管理</li>
+        <li>大会当日の運営・受付</li>
+        <li>次回以降の大会案内（メールマガジン等。配信停止はいつでも可能）</li>
+        <li>法令に基づく場合</li>
+      </ul>
+
+      <h3>3. 第三者への提供</h3>
+      <p>当事業者は、以下の場合を除き、お客様の個人情報を第三者に提供しません。</p>
+      <ul>
+        <li>お客様の同意がある場合</li>
+        <li>法令に基づく場合（警察・裁判所等からの開示要求等）</li>
+        <li>業務委託先への提供（下記のサービス利用に伴うもの）</li>
+      </ul>
+
+      <h3>4. 利用するサービスとデータの取り扱い</h3>
+      <p>本サービスの運営にあたり、以下の外部サービスを利用しています。各サービスのプライバシーポリシーも併せてご確認ください。</p>
+
+      <table class="legal-table">
+        <tbody>
+          <tr>
+            <th>Google フォーム / スプレッドシート</th>
+            <td>申込情報の収集・管理。<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Googleプライバシーポリシー</a></td>
+          </tr>
+          <tr>
+            <th>Square</th>
+            <td>クレジットカード決済・Invoice発行。<a href="https://squareup.com/jp/ja/legal/privacy" target="_blank" rel="noopener">Squareプライバシーポリシー</a></td>
+          </tr>
+          <tr>
+            <th>Google Analytics 4</th>
+            <td>当サイトの利用状況分析（匿名データ）。<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Googleプライバシーポリシー</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>5. 写真・映像の取り扱い</h3>
+      <p>S.League大会当日は運営スタッフによる撮影を行う場合があります。撮影した写真・映像は当事業者のウェブサイト（studio-lumadesign.com）、SNS（Instagram等）に掲載することがあります。掲載を希望されない場合は、申込フォームの備考欄またはお問い合わせフォームよりお知らせください。</p>
+
+      <h3>6. 個人情報の保管・管理</h3>
+      <p>収集した個人情報は、不正アクセス・紛失・漏洩等を防止するため、適切なセキュリティ管理措置を講じます。大会終了後、運営上の必要性がなくなった個人情報は適切な方法で廃棄します。</p>
+
+      <h3>7. 開示・訂正・削除のご請求</h3>
+      <p>お客様ご自身の個人情報について、開示・訂正・削除をご希望の場合は、お問い合わせフォームよりご連絡ください。ご本人であることを確認の上、合理的な期間内に対応いたします。</p>
+
+      <h3>8. プライバシーポリシーの変更</h3>
+      <p>本ポリシーは法令の改正や事業変更に応じて予告なく変更することがあります。変更後のポリシーは本ページへの掲載をもって効力を生じます。</p>
+
+      <h3>9. お問い合わせ</h3>
+      <p>個人情報の取り扱いに関するお問い合わせは、<a href="./index.html#contact">お問い合わせフォーム</a>またはメール（<a href="mailto:studio.luma.jp@gmail.com">studio.luma.jp@gmail.com</a>）までご連絡ください。</p>
+    </div>
+  </section>
+
+  <!-- ③キャンセルポリシー -->
+  <section class="legal-section" id="cancel">
+    <span class="section-tag">Section 03</span>
+    <h2 class="section-heading">キャンセルポリシー</h2>
+    <p class="section-updated">最終更新：2026年3月16日</p>
+    <div class="div"></div>
+
+    <div class="legal-body">
+      <p>S.Leagueへのご参加申込後、キャンセルされる場合は以下のポリシーが適用されます。キャンセルは必ずお問い合わせフォームまたはメール（<a href="mailto:studio.luma.jp@gmail.com">studio.luma.jp@gmail.com</a>）にてご連絡ください。</p>
+    </div>
+
+    <table class="cancel-table">
+      <thead>
+        <tr>
+          <th style="width:50%">キャンセル申請のタイミング</th>
+          <th>キャンセル料</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>開催日の4週間前（29日前）より前</td>
+          <td class="fee-zero">無料（全額返金）</td>
+        </tr>
+        <tr>
+          <td>開催日の4週間前〜2週間前<br><span style="font-size:11px;color:var(--tl);">（28日前〜15日前）</span></td>
+          <td class="fee-half">参加費の50%<br><span style="font-size:11px;color:var(--tl);">（例：¥8,300 → ¥4,150 ご返金）</span></td>
+        </tr>
+        <tr>
+          <td>開催日の2週間前以降<br><span style="font-size:11px;color:var(--tl);">（14日前〜当日）</span></td>
+          <td class="fee-full">返金不可（100%）</td>
+        </tr>
+        <tr>
+          <td>当日の無断欠席</td>
+          <td class="fee-full">返金不可（100%）</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="legal-body">
+      <h3>代替参加者について</h3>
+      <p>キャンセル料が発生するタイミングでも、代替参加者（ご自身で手配された方）をご紹介いただける場合は、キャンセル料を免除いたします。代替参加者の氏名・連絡先を事前にお知らせください。</p>
+
+      <h3>主催者都合による中止・変更</h3>
+      <p>天災・感染症・会場都合・その他不可抗力により大会を中止または開催日時を変更する場合は、全額返金いたします。ただし、参加者のご都合による欠席に変更した場合は本ポリシーが適用されます。</p>
+
+      <h3>返金方法</h3>
+      <p>クレジットカードでお支払いの場合は、Square経由でカードへご返金します（返金まで3〜10営業日程度かかる場合があります）。PayPay・銀行振込の場合は、ご指定の口座へ振込返金いたします。なお、Square決済の手数料（3.25%）は返金対象外となります。予めご了承ください。</p>
+    </div>
+
+    <div class="note-box">
+      本キャンセルポリシーはS.League全大会に適用されます。申込完了をもって本ポリシーに同意いただいたものとみなします。
+    </div>
+  </section>
+
+  <!-- ④免責事項 -->
+  <section class="legal-section" id="disclaimer">
+    <span class="section-tag">Section 04</span>
+    <h2 class="section-heading">免責事項</h2>
+    <p class="section-updated">最終更新：2026年3月16日</p>
+    <div class="div"></div>
+
+    <div class="legal-body">
+      <h3>1. 健康・安全に関する事項</h3>
+      <p>S.Leagueは健康麻雀を基本方針としており、飲酒を伴わない運営を行っています。参加者は自身の体調・健康状態を確認の上ご参加ください。体調不良・持病・怪我等により大会中に退場された場合、参加費の返金はいたしかねます。また、大会参加中に生じた体調不良・怪我等について、主催者は責任を負いません。</p>
+
+      <h3>2. 参加者同士のトラブル</h3>
+      <p>参加者間で生じたトラブル・紛争について、主催者は仲裁・調停・損害賠償の責を負いません。参加者は相互に敬意を持って行動することに同意の上、申込をお願いします。</p>
+
+      <h3>3. 所持品・紛失</h3>
+      <p>大会会場における参加者の所持品の紛失・盗難・破損について、主催者は責任を負いません。貴重品の管理は各自でお願いします。</p>
+
+      <h3>4. 大会結果・成績記録</h3>
+      <p>S.Leagueの成績はウェブサイトに公開されます。スコアの算出は運営スタッフが行いますが、集計ミス等が判明した場合は速やかに修正します。成績に関する異議申し立ては、大会当日の閉会式終了までに運営スタッフへお申し出ください。</p>
+
+      <h3>5. ウェブサイトの情報</h3>
+      <p>当サイト（studio-lumadesign.com）上の情報は予告なく変更・削除することがあります。掲載内容の正確性・完全性について保証するものではなく、当サイトのご利用により生じた損害について主催者は一切の責任を負いません。</p>
+
+      <h3>6. 外部リンク</h3>
+      <p>当サイトには外部サイトへのリンクが含まれる場合があります。リンク先の内容・運営について主催者は責任を負いません。</p>
+
+      <h3>7. 準拠法・管轄裁判所</h3>
+      <p>本規約の解釈および適用は日本法に準拠します。本規約に関する紛争については、東京地方裁判所を第一審の専属的合意管轄裁判所とします。</p>
+    </div>
+  </section>
+
+  <!-- ⑤写真・肖像権ポリシー -->
+  <section class="legal-section" id="portrait">
+    <span class="section-tag">Section 05</span>
+    <h2 class="section-heading">写真・肖像権に関するポリシー</h2>
+    <p class="section-updated">最終更新：2026年3月16日</p>
+    <div class="div"></div>
+
+    <div class="legal-body">
+      <p>LUMA（以下「当事業者」）が提供するポートレート撮影サービスおよびS.League等のイベント撮影において、撮影・掲載に関する取り扱いを以下の通り定めます。</p>
+
+      <h3>1. ポートレート撮影サービスにおける肖像権</h3>
+      <p>ポートレート撮影サービスをご依頼いただく際、撮影前に以下の掲載範囲について確認・同意をお取りします。</p>
+
+      <table class="legal-table">
+        <tbody>
+          <tr>
+            <th>掲載する場所</th>
+            <td>
+              当事業者のウェブサイト（studio-lumadesign.com）<br>
+              Instagram（@luma_studio_jp）<br>
+              その他当事業者のポートフォリオ・宣伝素材
+            </td>
+          </tr>
+          <tr>
+            <th>掲載の目的</th>
+            <td>作品紹介・サービス紹介・実績掲載</td>
+          </tr>
+          <tr>
+            <th>掲載を希望しない場合</th>
+            <td>撮影前または撮影後にお申し出ください。掲載しない形での対応が可能です。特定の写真のみ除外するご要望にも対応します。</td>
+          </tr>
+          <tr>
+            <th>掲載済み写真の削除依頼</th>
+            <td>掲載後であっても、削除ご希望の場合は <a href="./index.html#contact">お問い合わせフォーム</a> よりご連絡ください。速やかに対応いたします。</td>
+          </tr>
+          <tr>
+            <th>納品写真の著作権</th>
+            <td>撮影した写真の著作権は当事業者（浅野 彰）に帰属します。納品データはお客様の個人利用・SNS掲載に限り自由にご使用いただけます。商業利用・転売・二次利用については事前にご相談ください。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>2. S.League・イベント撮影における肖像権</h3>
+      <p>S.Leagueその他当事業者が主催・運営するイベントでは、当日会場内での撮影を行う場合があります。</p>
+      <ul>
+        <li>撮影した写真・映像は当事業者のウェブサイト・SNSに掲載することがあります。</li>
+        <li>掲載を希望されない場合は、申込フォームの備考欄または当日スタッフへお申し出ください。</li>
+        <li>後日掲載済み写真の削除をご希望の場合は、<a href="./index.html#contact">お問い合わせフォーム</a>よりご連絡ください。</li>
+        <li>他の参加者が映り込んでいる写真をご自身のSNS等に投稿する場合は、映り込んでいる方の承諾を得た上でご利用ください。</li>
+      </ul>
+
+      <h3>3. 未成年の方の撮影について</h3>
+      <p>18歳未満の方を撮影する場合は、保護者の方の同意を事前に書面または口頭にてご確認します。</p>
+
+      <h3>4. お問い合わせ</h3>
+      <p>写真・肖像権に関するご質問・削除依頼は <a href="./index.html#contact">お問い合わせフォーム</a> またはメール（<a href="mailto:studio.luma.jp@gmail.com">studio.luma.jp@gmail.com</a>）までご連絡ください。</p>
+    </div>
+
+    <div class="note-box">
+      撮影サービスのご利用およびイベントへの参加をもって、本ポリシーの内容をご確認いただいたものとみなします。掲載に関するご要望はいつでもお申し出ください。
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <div class="legal-contact">
+    <p>各ポリシーに関するご質問・ご不明点はお気軽にご連絡ください。</p>
+    <a href="./index.html#contact" class="btn-primary">お問い合わせフォームへ</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a href="./index.html" class="footer-logo">LUMA</a>
+    <ul class="footer-links">
+      <li><a href="./index.html#about">LUMAとは</a></li>
+      <li><a href="./photography.html">写真</a></li>
+      <li><a href="./s-league.html">S.League</a></li>
+      <li><a href="./index.html#services">サービス</a></li>
+      <li><a href="./index.html#profile">プロフィール</a></li>
+      <li><a href="./index.html#contact">お問い合わせ</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 LUMA — Sho Asano. All rights reserved.</p>
+  </div>
+</footer>
+
+<script data

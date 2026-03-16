@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
+  <meta name="color-scheme" content="light only" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-62F20N179N');</script>
   <meta name="theme-color" content="#c4956a" />
@@ -14,7 +15,8 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@600;700&display=swap" onload="this.rel='stylesheet'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@600;700&display=swap" rel="stylesheet" /></noscript>
   <style>
-    :root{--cream:#faf8f4;--warm-white:#f5f1eb;--beige:#e8e0d4;--sand:#d4c8b4;--taupe:#b8a898;--dark:#2d2420;--accent:#c4956a;--accent-light:#e8c9a8;--text:#3d3028;--text-light:#7a6858;}
+    :root{
+      color-scheme: light;--cream:#faf8f4;--warm-white:#f5f1eb;--beige:#e8e0d4;--sand:#d4c8b4;--taupe:#b8a898;--dark:#2d2420;--accent:#c4956a;--accent-light:#e8c9a8;--text:#3d3028;--text-light:#7a6858;}
     *{margin:0;padding:0;box-sizing:border-box;}
     html{scroll-behavior:smooth;}
     body{background:var(--cream);color:var(--text);font-family:'Noto Sans JP',sans-serif;font-weight:300;overflow-x:hidden;}
@@ -206,6 +208,8 @@
       .hero-cta-wrap{flex-direction:column;align-items:center;}
       .btn-primary,.btn-outline-light{width:100%;max-width:280px;text-align:center;}
     }
+  
+
   </style>
 </head>
 <body>
@@ -237,6 +241,7 @@
   <a href="./index.html#services" onclick="toggleMenu()">サービス</a>
   <a href="./index.html#profile" onclick="toggleMenu()">プロフィール</a>
   <a href="./index.html#contact" onclick="toggleMenu()">お問い合わせ</a>
+  <a href="./legal.html" onclick="toggleMenu()">特商法・プライバシー</a>
 </div>
 
 <!-- HERO -->
