@@ -163,6 +163,38 @@
     }
     .nav-links a:hover { color: var(--accent); }
 
+    /* ── HAMBURGER BUTTON ── */
+    .ham {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px; background: none; border: none; flex-shrink: 0;
+    }
+    .ham span {
+      display: block; width: 22px; height: 1.5px;
+      background: var(--text-light); transition: all 0.3s;
+    }
+
+    /* ── MOBILE OVERLAY MENU ── */
+    .mob-menu {
+      display: none; position: fixed; inset: 0;
+      background: var(--cream); z-index: 1100;
+      flex-direction: column; align-items: center; justify-content: center; gap: 28px;
+    }
+    .mob-menu.open { display: flex; }
+    .mob-menu a {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 18px; letter-spacing: 0.16em;
+      color: var(--text); text-decoration: none; transition: color 0.3s;
+    }
+    .mob-menu a:hover { color: var(--accent); }
+    .mob-close {
+      position: absolute; top: 20px; right: 24px;
+      background: none; border: none; font-size: 28px;
+      color: var(--text-light); cursor: pointer; line-height: 1;
+    }
+    .mob-lang {
+      display: flex; gap: 8px; margin-top: 8px;
+    }
+
     /* ── HERO ── */
     .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; background: var(--cream); }
     .hero-left {
@@ -523,6 +555,8 @@
     @media (max-width: 580px) {
       .services-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
+      .lang-switcher { display: none; }
+      .ham { display: flex; }
     }
 
     /* ── MOBILE FIXES ── */
@@ -608,8 +642,26 @@
         <button class="lang-btn active" onclick="setLang('ja')">JP</button>
         <button class="lang-btn" onclick="setLang('en')">EN</button>
       </div>
+      <button class="ham" id="hamBtn" onclick="toggleMobMenu()" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mob-menu" id="mobMenu">
+    <button class="mob-close" onclick="toggleMobMenu()">✕</button>
+    <a href="#about"        onclick="toggleMobMenu()"><span data-inline="ja">LUMAとは</span><span data-inline="en">About</span></a>
+    <a href="photography.html" onclick="toggleMobMenu()"><span data-inline="ja">写真</span><span data-inline="en">Photography</span></a>
+    <a href="s-league.html"    onclick="toggleMobMenu()"><span data-inline="ja">S.League</span><span data-inline="en">S.League</span></a>
+    <a href="#services"    onclick="toggleMobMenu()"><span data-inline="ja">サービス</span><span data-inline="en">Services</span></a>
+    <a href="#profile"     onclick="toggleMobMenu()"><span data-inline="ja">プロフィール</span><span data-inline="en">Profile</span></a>
+    <a href="#contact"     onclick="toggleMobMenu()"><span data-inline="ja">お問い合わせ</span><span data-inline="en">Contact</span></a>
+    <div class="mob-lang">
+      <button class="lang-btn active" id="mobLangJa" onclick="setLang('ja');toggleMobMenu()">JP</button>
+      <button class="lang-btn" id="mobLangEn" onclick="setLang('en');toggleMobMenu()">EN</button>
+    </div>
+  </div>
 
   <!-- Hero -->
   <section class="hero" id="home">
@@ -1067,8 +1119,10 @@
     function setLang(lang) {
       document.body.className = 'lang-' + lang;
       document.getElementById('html-root').lang = lang === 'ja' ? 'ja' : 'en';
-      document.querySelectorAll('.lang-btn').forEach((btn, i) => {
-        btn.classList.toggle('active', (i === 0 && lang === 'ja') || (i === 1 && lang === 'en'));
+      // nav・mob-menu両方のlang-btnを正しく更新
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        const isJaBtn = btn.textContent.trim() === 'JP';
+        btn.classList.toggle('active', (isJaBtn && lang === 'ja') || (!isJaBtn && lang === 'en'));
       });
       const ta = document.getElementById('msg-textarea');
       if (ta) ta.placeholder = lang === 'ja'
@@ -1277,6 +1331,20 @@
     // Navbar scroll
     window.addEventListener('scroll', () => {
       document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // ── Mobile Menu toggle
+    function toggleMobMenu() {
+      const menu = document.getElementById('mobMenu');
+      const isOpen = menu.classList.toggle('open');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+    // ESCキーで閉じる
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        document.getElementById('mobMenu').classList.remove('open');
+        document.body.style.overflow = '';
+      }
     });
 
     // Reveal on scroll
