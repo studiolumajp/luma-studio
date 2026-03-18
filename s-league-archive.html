@@ -255,38 +255,107 @@
     }
   
 
+
+    /* ── SERVICES DROPDOWN ── */
+    .has-dropdown { position: relative; }
+    .dropdown-menu {
+      display: none; position: absolute; top: 100%; left: 50%;
+      transform: translateX(-50%); padding-top: 12px;
+      list-style: none; z-index: 1000; min-width: 190px;
+    }
+    .dropdown-menu-inner {
+      background: rgba(250,248,244,.98); backdrop-filter: blur(16px);
+      border: 1px solid var(--beige); border-radius: 2px;
+      padding: 8px 0; box-shadow: 0 8px 32px rgba(45,36,32,.12);
+    }
+    .has-dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu li { list-style: none; }
+    .dropdown-menu li a {
+      display: block; padding: 9px 20px; font-size: 11px;
+      letter-spacing: .12em; color: var(--tl);
+      text-decoration: none; transition: color .2s, background .2s; white-space: nowrap;
+    }
+    .dropdown-menu li a:hover { color: var(--accent); background: #f5f1eb; }
+    .dropdown-toggle::after {
+      content:''; display: inline-block; width: 5px; height: 5px;
+      border-right: 1px solid currentColor; border-bottom: 1px solid currentColor;
+      transform: rotate(45deg) translateY(-2px); margin-left: 5px; vertical-align: middle;
+    }
+    .dropdown-menu li a.sub-item {
+      font-size: 10px; color: var(--taupe); margin-left: 20px;
+      padding-left: 12px; border-left: 2px solid var(--beige);
+    }
+    /* ── HAMBURGER ── */
+    .ham {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px; background: none; border: none; flex-shrink: 0;
+    }
+    .ham span { display: block; width: 22px; height: 1.5px; background: var(--tl); transition: all .3s; }
+    /* ── MOBILE MENU ── */
+    .mob-menu {
+      display: none; position: fixed; inset: 0;
+      background: var(--cream); z-index: 1100;
+      flex-direction: column; align-items: center; justify-content: center; gap: 28px;
+    }
+    .mob-menu.open { display: flex; }
+    .mob-menu a { font-size: 18px; letter-spacing: .16em; color: var(--text); text-decoration: none; transition: color .3s; }
+    .mob-menu a:hover { color: var(--accent); }
+    .mob-close { position: absolute; top: 20px; right: 24px; background: none; border: none; font-size: 28px; color: var(--tl); cursor: pointer; }
+    @media(max-width:900px){ .ham{display:flex;} #navbar .nav-links{display:none;} }
+    /* ── FOOTER ── */
+    footer { background: var(--dark); padding: 40px 40px 24px; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .footer-brand { text-align: center; }
+    .footer-logo { font-family:'Montserrat',sans-serif; font-size:18px; font-weight:700; letter-spacing:.22em; color:#EDCAA2; text-decoration:none; display:block; margin-bottom:4px; }
+    .footer-tagline { font-size:11px; letter-spacing:.1em; color:var(--taupe); }
+    .footer-links { display:flex; gap:18px; flex-wrap:wrap; justify-content:center; list-style:none; padding:0; }
+    .footer-links a { font-size:11px; letter-spacing:.1em; color:var(--taupe); text-decoration:none; transition:color .3s; }
+    .footer-links a:hover { color:var(--accent); }
+    .footer-copy { font-size:10px; color:var(--taupe); opacity:.45; }
   </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav id="navbar">
-  <a href="./index.html" class="logo-text">LUMA</a>
-  <div class="nav-right">
-    <ul class="nav-links">
-      <li><a href="./index.html#about">LUMAとは</a></li>
-      <li><a href="./photography.html">写真</a></li>
-      <li><a href="./s-league.html">S.League</a></li>
-      <li><a href="./index.html#services">サービス</a></li>
-      <li><a href="./index.html#profile">プロフィール</a></li>
-      <li><a href="./index.html#contact">お問い合わせ</a></li>
-      <li><a href="./legal.html">特商法・プライバシー</a></li>
-    </ul>
-    <div class="ham" onclick="toggleMenu()"><span></span><span></span><span></span></div>
-  </div>
-</nav>
+    <a href="./index.html" class="logo-text">LUMA</a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="./index.html#about">LUMAとは</a></li>
+        <li><a href="./photography.html">写真</a></li>
+        <li><a href="./s-league.html">S.League</a></li>
+        <li class="has-dropdown">
+          <a href="./index.html#services" class="dropdown-toggle">サービス</a>
+          <ul class="dropdown-menu">
+            <div class="dropdown-menu-inner">
+            <li><a href="./service-english.html">英語教育</a></li>
+            <li><a href="./photography.html">写真撮影</a></li>
+            <li><a href="./service-tour.html">ツアー</a></li>
+            <li><a href="./service-community.html">コミュニティ</a></li>
+            <li><a href="./s-league.html" class="sub-item">└ S.League</a></li>
+            <li><a href="./service-counselling.html">カウンセリング</a></li>
+            <li><a href="./service-karaoke.html">カラオケ</a></li>
+            </div>
+          </ul>
+        </li>
+        <li><a href="./index.html#contact">お問い合わせ</a></li>
+        <li><a href="./legal.html">特商法・プライバシー</a></li>
+      </ul>
+      <button class="ham" id="hamBtn" onclick="toggleMobMenu()" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-<!-- MOBILE MENU -->
-<div class="mob-menu" id="mob-menu">
-  <button class="mob-close" onclick="toggleMenu()">✕</button>
-  <a href="./index.html#about" onclick="toggleMenu()">LUMAとは</a>
-  <a href="./photography.html" onclick="toggleMenu()">写真</a>
-  <a href="./s-league.html" onclick="toggleMenu()">S.League</a>
-  <a href="./index.html#services" onclick="toggleMenu()">サービス</a>
-  <a href="./index.html#profile" onclick="toggleMenu()">プロフィール</a>
-  <a href="./index.html#contact" onclick="toggleMenu()">お問い合わせ</a>
-  <a href="./legal.html" onclick="toggleMenu()">特商法・プライバシー</a>
-</div>
+  <!-- Mobile Menu -->
+  <div class="mob-menu" id="mobMenu">
+    <button class="mob-close" onclick="toggleMobMenu()">✕</button>
+    <a href="./index.html#about" onclick="toggleMobMenu()">LUMAとは</a>
+    <a href="./photography.html" onclick="toggleMobMenu()">写真</a>
+    <a href="./s-league.html" onclick="toggleMobMenu()">S.League</a>
+    <a href="./index.html#services" onclick="toggleMobMenu()">サービス</a>
+    <a href="./index.html#contact" onclick="toggleMobMenu()">お問い合わせ</a>
+    <a href="./legal.html" onclick="toggleMobMenu()">特商法・プライバシー</a>
+  </div>
 
 <!-- BREADCRUMB -->
 <div class="bc-bar">
@@ -369,20 +438,21 @@
 </div>
 
 <!-- FOOTER -->
-<footer>
-  <div class="fi">
-    <a href="./index.html" class="fl-logo">LUMA</a>
-    <ul class="fl-links">
+  <footer>
+    <div class="footer-brand">
+      <a href="./index.html" class="footer-logo">LUMA</a>
+      <div class="footer-tagline">Clarity by Design &nbsp;|&nbsp; Illuminate Your Confidence</div>
+    </div>
+    <ul class="footer-links">
       <li><a href="./index.html#about">LUMAとは</a></li>
       <li><a href="./photography.html">写真</a></li>
       <li><a href="./s-league.html">S.League</a></li>
-      <li><a href="./s-league-archive.html">成績アーカイブ</a></li>
+      <li><a href="./index.html#services">サービス</a></li>
       <li><a href="./index.html#contact">お問い合わせ</a></li>
       <li><a href="./legal.html">特商法・プライバシー</a></li>
     </ul>
-    <p class="copy">© 2026 LUMA — Sho Asano. All rights reserved.</p>
-  </div>
-</footer>
+    <div class="footer-copy">© 2026 LUMA — Sho Asano. All rights reserved.</div>
+  </footer>
 
 <script>
 const EVENTS = {"1": [{"name": "ちば", "total": 213.1, "rank": 1}, {"name": "らむ", "total": 175.4, "rank": 2}, {"name": "りすがめ", "total": 166.1, "rank": 3}, {"name": "はやと", "total": 133.5, "rank": 4}, {"name": "チェリ", "total": 92.6, "rank": 5}, {"name": "おにぎり", "total": 55.9, "rank": 6}, {"name": "shooooo", "total": 48.0, "rank": 7}, {"name": "ムーア", "total": 38.2, "rank": 8}, {"name": "ゆうせい", "total": 5.4, "rank": 9}, {"name": "Ryo.F", "total": -83.9, "rank": 10}, {"name": "U-MA", "total": -91.7, "rank": 11}, {"name": "サトシ", "total": -112.7, "rank": 12}, {"name": "えり", "total": -112.8, "rank": 13}, {"name": "うめちゃん", "total": -139.2, "rank": 14}, {"name": "はやみ", "total": -153.6, "rank": 15}, {"name": "かわしま", "total": -234.3, "rank": 16}], "2": [{"name": "madlife", "total": 296.5, "rank": 1}, {"name": "ムーア", "total": 66.1, "rank": 2}, {"name": "shooooo", "total": 28.3, "rank": 3}, {"name": "冷えたご飯", "total": 3.6, "rank": 4}, {"name": "かわしま", "total": -18.0, "rank": 5}, {"name": "えび", "total": -74.4, "rank": 6}, {"name": "はやと", "total": -135.7, "rank": 7}, {"name": "九歩", "total": -166.4, "rank": 8}], "3": [{"name": "U-MA", "total": 210.8, "rank": 1}, {"name": "らむ", "total": 102.3, "rank": 2}, {"name": "Ryo.F", "total": 95.8, "rank": 3}, {"name": "MRB", "total": 56.5, "rank": 4}, {"name": "うぶめ", "total": 23.9, "rank": 5}, {"name": "ぱるぴー", "total": 1.3, "rank": 6}, {"name": "shooooo", "total": -18.5, "rank": 7}, {"name": "りすがめ", "total": -23.9, "rank": 8}, {"name": "にじま", "total": -82.8, "rank": 9}, {"name": "ムーア", "total": -96.6, "rank": 10}, {"name": "はやと", "total": -110.8, "rank": 11}, {"name": "九歩", "total": -158.0, "rank": 12}], "4": [{"name": "敢太", "total": 179.3, "rank": 1}, {"name": "ほしの", "total": 165.2, "rank": 2}, {"name": "りすがめ", "total": 143.2, "rank": 3}, {"name": "ぴの", "total": 136.8, "rank": 4}, {"name": "つばきりょう", "total": 121.2, "rank": 5}, {"name": "ぱるぴー", "total": 106.2, "rank": 6}, {"name": "ゆうせい", "total": 78.9, "rank": 7}, {"name": "コジマる", "total": -9.7, "rank": 8}, {"name": "なの", "total": -11.4, "rank": 9}, {"name": "石倉", "total": -75.6, "rank": 10}, {"name": "九歩", "total": -82.0, "rank": 11}, {"name": "ちゃぴ", "total": -108.5, "rank": 12}, {"name": "ゲンツ", "total": -115.5, "rank": 13}, {"name": "おおけん", "total": -158.3, "rank": 14}, {"name": "kazutaka", "total": -172.4, "rank": 15}, {"name": "こま", "total": -197.4, "rank": 16}], "5": [{"name": "ちゃぴ", "total": 194.0, "rank": 1}, {"name": "U-MA", "total": 105.4, "rank": 2}, {"name": "にじま", "total": 105.0, "rank": 3}, {"name": "ほしの", "total": 72.7, "rank": 4}, {"name": "だてまき", "total": 30.2, "rank": 5}, {"name": "旅の荒鷲", "total": 28.3, "rank": 6}, {"name": "ぱるぴー", "total": 27.3, "rank": 7}, {"name": "うぶめ", "total": 26.7, "rank": 8}, {"name": "ゆうせい", "total": 15.3, "rank": 9}, {"name": "らむ", "total": -20.7, "rank": 10}, {"name": "ちば", "total": -54.7, "rank": 11}, {"name": "九歩", "total": -64.9, "rank": 12}, {"name": "こま", "total": -86.3, "rank": 13}, {"name": "なの", "total": -110.8, "rank": 14}, {"name": "かんた", "total": -121.0, "rank": 15}, {"name": "ちょろ", "total": -146.5, "rank": 16}], "6": [{"name": "らむ", "total": 260.4, "rank": 1}, {"name": "MFC", "total": 206.8, "rank": 2}, {"name": "U-MA", "total": 130.2, "rank": 3}, {"name": "ふわきち", "total": 123.3, "rank": 4}, {"name": "shooooo", "total": 114.9, "rank": 5}, {"name": "まつ", "total": 99.9, "rank": 6}, {"name": "SoLucky", "total": 85.1, "rank": 7}, {"name": "D.K", "total": 50.7, "rank": 9}, {"name": "ちゃぴ", "total": 27.2, "rank": 10}, {"name": "たえ", "total": 15.9, "rank": 11}, {"name": "瀬野", "total": 4.6, "rank": 12}, {"name": "コジマる", "total": -7.7, "rank": 13}, {"name": "ゆうせい", "total": -30.3, "rank": 14}, {"name": "まみ", "total": -34.4, "rank": 15}, {"name": "Ryo.F", "total": -35.0, "rank": 16}, {"name": "むかい", "total": -76.1, "rank": 17}, {"name": "りすがめ", "total": -113.0, "rank": 18}, {"name": "九歩", "total": -124.3, "rank": 19}, {"name": "たかだ", "total": -131.1, "rank": 20}, {"name": "おき", "total": -136.7, "rank": 21}, {"name": "あしゅ", "total": -139.7, "rank": 22}, {"name": "冷えたご飯", "total": -158.5, "rank": 23}, {"name": "すわ", "total": -206.8, "rank": 24}], "7": [{"name": "太一", "total": 124.4, "rank": 1}, {"name": "まつ", "total": 82.9, "rank": 2}, {"name": "うぶめ", "total": 67.8, "rank": 3}, {"name": "こま", "total": 3.3, "rank": 4}, {"name": "MRB", "total": -26.2, "rank": 5}, {"name": "shooooo", "total": -52.5, "rank": 6}, {"name": "篠宮 悠", "total": -93.3, "rank": 7}, {"name": "九歩", "total": -106.4, "rank": 8}], "8": [{"name": "U-MA", "total": 222.8, "rank": 1}, {"name": "浦野P", "total": 206.9, "rank": 2}, {"name": "けいすけ", "total": 148.3, "rank": 3}, {"name": "ゆう", "total": 140.7, "rank": 4}, {"name": "ののり", "total": 91.9, "rank": 5}, {"name": "かんた", "total": 55.1, "rank": 6}, {"name": "向井", "total": 34.3, "rank": 7}, {"name": "るつお", "total": 22.7, "rank": 8}, {"name": "りすがめ", "total": 17.9, "rank": 9}, {"name": "タニグチ", "total": 8.6, "rank": 10}, {"name": "ながねぎ", "total": -13.6, "rank": 11}, {"name": "ぴの", "total": -20.2, "rank": 12}, {"name": "うさ", "total": -38.9, "rank": 13}, {"name": "九歩", "total": -81.4, "rank": 14}, {"name": "コジマる", "total": -88.0, "rank": 15}, {"name": "みず", "total": -94.5, "rank": 16}, {"name": "ちゃぴ", "total": -110.5, "rank": 17}, {"name": "あすぱん", "total": -142.9, "rank": 18}, {"name": "たまき", "total": -150.5, "rank": 19}, {"name": "らむ", "total": -208.7, "rank": 20}], "9": [{"name": "ひでおぶ", "total": 222.2, "rank": 1}, {"name": "別府プロ", "total": 64.5, "rank": 2}, {"name": "コジマる", "total": 24.8, "rank": 3}, {"name": "ちゃぴ", "total": 24.4, "rank": 4}, {"name": "ゆうせい", "total": 12.9, "rank": 5}, {"name": "U-MA", "total": -28.1, "rank": 6}, {"name": "高橋大地", "total": -72.7, "rank": 7}, {"name": "大和田澪央", "total": -114.8, "rank": 8}, {"name": "九歩", "total": -133.2, "rank": 9}], "10": [{"name": "大和田澪央", "total": 192.8, "rank": 1}, {"name": "別府プロ", "total": 167.6, "rank": 2}, {"name": "ちゃぴ", "total": 142.2, "rank": 3}, {"name": "コジマる", "total": -18.1, "rank": 4}, {"name": "ひでおぶ", "total": -34.4, "rank": 5}, {"name": "高橋大地", "total": -118.6, "rank": 6}, {"name": "九歩", "total": -155.3, "rank": 7}, {"name": "ゆうせい", "total": -176.2, "rank": 8}], "11": [{"name": "U-MA", "total": 172.9, "rank": 1}, {"name": "フルーツ", "total": 144.1, "rank": 2}, {"name": "のの", "total": 93.1, "rank": 3}, {"name": "りすがめ", "total": 41.5, "rank": 4}, {"name": "コジマる", "total": 10.3, "rank": 5}, {"name": "九歩", "total": 8.7, "rank": 6}, {"name": "shooooo", "total": -2.4, "rank": 7}, {"name": "篠宮 悠", "total": -43.6, "rank": 8}, {"name": "ちゃぴ", "total": -57.7, "rank": 9}, {"name": "ゆうせい", "total": -90.5, "rank": 10}, {"name": "にちゃで", "total": -129.5, "rank": 11}, {"name": "秀幸", "total": -146.9, "rank": 12}], "12": [{"name": "ひろゆき", "total": 369.9, "rank": 1}, {"name": "みやけっち", "total": 215.1, "rank": 2}, {"name": "ムーア", "total": 147.5, "rank": 3}, {"name": "ゆうせい", "total": 136.6, "rank": 4}, {"name": "アライグマ", "total": 128.6, "rank": 5}, {"name": "ほしの", "total": 101.3, "rank": 6}, {"name": "A383", "total": 83.3, "rank": 7}, {"name": "るつお", "total": 75.8, "rank": 8}, {"name": "にちゃで", "total": 69.9, "rank": 9}, {"name": "フルーツ", "total": 39.1, "rank": 10}, {"name": "おおもり", "total": 32.4, "rank": 11}, {"name": "MRB", "total": 30.2, "rank": 12}, {"name": "ルイコ", "total": -0.5, "rank": 13}, {"name": "旅の荒鷲", "total": -6.0, "rank": 14}, {"name": "渡辺", "total": -9.9, "rank": 15}, {"name": "コジマる", "total": -13.1, "rank": 16}, {"name": "D.K", "total": -15.2, "rank": 17}, {"name": "りすがめ", "total": -19.7, "rank": 18}, {"name": "やまとー", "total": -53.0, "rank": 19}, {"name": "大久保", "total": -63.7, "rank": 20}, {"name": "shooooo", "total": -66.4, "rank": 21}, {"name": "ぴの", "total": -79.2, "rank": 22}, {"name": "U-MA", "total": -92.6, "rank": 23}, {"name": "ゆう", "total": -153.5, "rank": 24}, {"name": "すわ", "total": -175.8, "rank": 25}, {"name": "九歩", "total": -179.7, "rank": 26}, {"name": "くわん", "total": -234.2, "rank": 27}, {"name": "ちゃぴ", "total": -267.2, "rank": 28}], "13": [{"name": "まつ", "total": 297.1, "rank": 1}, {"name": "りすがめ", "total": 179.7, "rank": 2}, {"name": "トモ", "total": 171.9, "rank": 3}, {"name": "ルイコ", "total": 119.8, "rank": 4}, {"name": "ちゃぴ", "total": 83.6, "rank": 5}, {"name": "ゆうせい", "total": 53.5, "rank": 6}, {"name": "やまそう", "total": 32.3, "rank": 7}, {"name": "Ryo.F", "total": 21.3, "rank": 8}, {"name": "らむ", "total": 14.0, "rank": 9}, {"name": "ふくちゃん", "total": 1.0, "rank": 10}, {"name": "九歩", "total": -3.5, "rank": 11}, {"name": "にちゃで", "total": -14.4, "rank": 12}, {"name": "稲熊", "total": -18.5, "rank": 13}, {"name": "ひろゆき", "total": -26.9, "rank": 14}, {"name": "あやみ", "total": -27.9, "rank": 15}, {"name": "ともや", "total": -53.7, "rank": 16}, {"name": "ツバサ", "total": -173.1, "rank": 17}, {"name": "U-MA", "total": -175.8, "rank": 18}, {"name": "フルーツ", "total": -180.7, "rank": 19}, {"name": "あねひめ", "total": -299.7, "rank": 20}], "14": [{"name": "ふくちゃん", "total": 157.8, "rank": 1}, {"name": "フルーツ", "total": 117.3, "rank": 2}, {"name": "ルイコ", "total": 102.2, "rank": 3}, {"name": "ゆうせい", "total": 93.2, "rank": 4}, {"name": "あやみ", "total": 81.2, "rank": 5}, {"name": "九歩", "total": 79.0, "rank": 6}, {"name": "りすがめ", "total": 75.3, "rank": 7}, {"name": "らむ", "total": 68.2, "rank": 8}, {"name": "やまそう", "total": 43.8, "rank": 9}, {"name": "U-MA", "total": -20.0, "rank": 10}, {"name": "やまとー", "total": -67.0, "rank": 11}, {"name": "ぼっち", "total": -96.1, "rank": 12}, {"name": "ちゃぴ", "total": -98.6, "rank": 13}, {"name": "チカちゃん", "total": -111.2, "rank": 14}, {"name": "にちゃで", "total": -133.7, "rank": 15}, {"name": "コジマる", "total": -291.4, "rank": 16}], "15": [{"name": "にちゃで", "total": 322.0, "rank": 1}, {"name": "秀幸", "total": 146.8, "rank": 2}, {"name": "ゆうま", "total": 139.0, "rank": 3}, {"name": "フルーツ", "total": 103.3, "rank": 4}, {"name": "あやみ", "total": 87.7, "rank": 5}, {"name": "げんがあ", "total": 73.8, "rank": 6}, {"name": "やまそう", "total": 72.6, "rank": 7}, {"name": "ちゃぴ", "total": 29.2, "rank": 8}, {"name": "ゆうせい", "total": 19.9, "rank": 9}, {"name": "かわにしっしも", "total": -8.8, "rank": 10}, {"name": "ルイコ", "total": -33.3, "rank": 12}, {"name": "らむ", "total": -50.8, "rank": 13}, {"name": "ツバサ", "total": -74.1, "rank": 14}, {"name": "ヒラケン", "total": -74.7, "rank": 15}, {"name": "あかねまる", "total": -81.8, "rank": 16}, {"name": "ゆう", "total": -99.3, "rank": 17}, {"name": "りすがめ", "total": -173.0, "rank": 18}, {"name": "九歩", "total": -182.2, "rank": 19}, {"name": "ぼっち", "total": -191.9, "rank": 20}], "16": [{"name": "ぼっち", "total": 186.4, "rank": 1}, {"name": "やまそう", "total": 140.4, "rank": 2}, {"name": "ルイコ", "total": 133.7, "rank": 3}, {"name": "げんがあ", "total": 132.2, "rank": 4}, {"name": "ツバサ", "total": 93.9, "rank": 5}, {"name": "ゆうせい", "total": 93.3, "rank": 6}, {"name": "コジマる", "total": 66.6, "rank": 7}, {"name": "あやみ", "total": 6.6, "rank": 8}, {"name": "にちゃで", "total": -17.8, "rank": 9}, {"name": "うぶめ", "total": -38.8, "rank": 10}, {"name": "ちゃぴ", "total": -52.2, "rank": 11}, {"name": "りすがめ", "total": -56.7, "rank": 12}, {"name": "ヒラケン", "total": -81.9, "rank": 13}, {"name": "九歩", "total": -166.1, "rank": 14}, {"name": "ちば", "total": -194.7, "rank": 15}, {"name": "あやね", "total": -244.9, "rank": 16}], "17": [{"name": "はやと", "total": 186.7, "rank": 1}, {"name": "ゆうせい", "total": 171.1, "rank": 2}, {"name": "らむ", "total": 155.9, "rank": 3}, {"name": "にちゃで", "total": 115.1, "rank": 4}, {"name": "やまそう", "total": 44.1, "rank": 5}, {"name": "まっさー", "total": 29.4, "rank": 6}, {"name": "げんがあ", "total": -3.2, "rank": 7}, {"name": "あやみ", "total": -6.6, "rank": 8}, {"name": "フルーツ", "total": -25.4, "rank": 9}, {"name": "shooooo", "total": -36.9, "rank": 10}, {"name": "ふくちゃん", "total": -48.9, "rank": 11}, {"name": "秀幸", "total": -80.4, "rank": 12}, {"name": "ぼっち", "total": -102.0, "rank": 13}, {"name": "ちゃぴ", "total": -107.0, "rank": 14}, {"name": "イナリ", "total": -132.1, "rank": 15}, {"name": "ルイコ", "total": -159.8, "rank": 16}], "18": [{"name": "稲熊", "total": 166.5, "rank": 1}, {"name": "Ryo.F", "total": 133.9, "rank": 2}, {"name": "やまそう", "total": 101.4, "rank": 3}, {"name": "ムーア", "total": 80.7, "rank": 4}, {"name": "あやみ", "total": 53.5, "rank": 5}, {"name": "にちゃで", "total": 52.0, "rank": 6}, {"name": "U-MA", "total": 30.9, "rank": 7}, {"name": "フルーツ", "total": -3.4, "rank": 8}, {"name": "ちゃぴ", "total": -38.2, "rank": 9}, {"name": "まっさー", "total": -39.0, "rank": 10}, {"name": "ヒラケン", "total": -45.9, "rank": 11}, {"name": "セイナ", "total": -48.8, "rank": 12}, {"name": "ルイコ", "total": -79.3, "rank": 13}, {"name": "ツバサ", "total": -107.8, "rank": 14}, {"name": "りすがめ", "total": -121.5, "rank": 15}, {"name": "たけちゃん", "total": -135.0, "rank": 16}], "19": [{"name": "ヒラケン", "total": 190.9, "rank": 1}, {"name": "やまそう", "total": 115.3, "rank": 2}, {"name": "えむこ", "total": 110.7, "rank": 3}, {"name": "ふくちゃん", "total": 98.7, "rank": 4}, {"name": "ぼっち", "total": 66.1, "rank": 5}, {"name": "ルイコ", "total": 60.7, "rank": 6}, {"name": "うぶめ", "total": 48.0, "rank": 7}, {"name": "ゆうじろう", "total": 42.6, "rank": 8}, {"name": "フルーツ", "total": 36.3, "rank": 9}, {"name": "まっさー", "total": -40.3, "rank": 10}, {"name": "にちゃで", "total": -54.8, "rank": 11}, {"name": "コジマる", "total": -86.6, "rank": 12}, {"name": "セイナ", "total": -94.8, "rank": 13}, {"name": "あやみ", "total": -145.0, "rank": 14}, {"name": "げんがあ", "total": -155.3, "rank": 15}, {"name": "九歩", "total": -192.5, "rank": 16}], "20": [{"name": "コジマる", "total": 334.2, "rank": 1}, {"name": "だにー", "total": 241.0, "rank": 2}, {"name": "あやみ", "total": 97.7, "rank": 3}, {"name": "非公表", "total": 51.6, "rank": 4}, {"name": "はやと", "total": 42.3, "rank": 5}, {"name": "らむ", "total": 40.0, "rank": 6}, {"name": "やまそう", "total": 9.6, "rank": 7}, {"name": "ツバサ", "total": -1.8, "rank": 8}, {"name": "やまとー", "total": -10.9, "rank": 9}, {"name": "ヒラケン", "total": -20.8, "rank": 10}, {"name": "フルーツ", "total": -25.6, "rank": 11}, {"name": "ロベ", "total": -85.8, "rank": 12}, {"name": "ちゃぴ", "total": -88.5, "rank": 13}, {"name": "げんがあ", "total": -161.0, "rank": 14}, {"name": "かわにしっしも", "total": -174.5, "rank": 15}, {"name": "ぼっち", "total": -247.5, "rank": 16}], "21": [{"name": "やまそう", "total": 191.2, "rank": 1}, {"name": "shooooo", "total": 114.6, "rank": 2}, {"name": "フルーツ", "total": 101.6, "rank": 3}, {"name": "トモナガ", "total": 30.5, "rank": 4}, {"name": "あやみ", "total": 27.8, "rank": 5}, {"name": "ぽーとぴあ", "total": 13.7, "rank": 6}, {"name": "ふくちゃん", "total": -2.8, "rank": 7}, {"name": "ルイコ", "total": -9.3, "rank": 8}, {"name": "ツバサ", "total": -54.6, "rank": 9}, {"name": "たけちゃん", "total": -89.5, "rank": 10}, {"name": "はるりこ", "total": -120.8, "rank": 11}, {"name": "セイナ", "total": -202.4, "rank": 12}],
@@ -408,8 +478,6 @@ const SL22_IND = [
 </script>
 <script>
 window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',scrollY>40));
-function toggleMenu(){document.getElementById('mob-menu').classList.toggle('open');}
-
 // TABS
 document.querySelectorAll('.tab').forEach(t=>{
   t.addEventListener('click',()=>{
@@ -770,5 +838,23 @@ function togTeam(id){
   document.getElementById('ttog-'+id).classList.toggle('open');
 }
 </script>
+  <script>
+    window.addEventListener('scroll', () => {
+      const nb = document.getElementById('navbar');
+      if (nb) nb.classList.toggle('scrolled', window.scrollY > 40);
+    });
+    function toggleMobMenu() {
+      const m = document.getElementById('mobMenu');
+      if (!m) return;
+      const open = m.classList.toggle('open');
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        const m = document.getElementById('mobMenu');
+        if (m) { m.classList.remove('open'); document.body.style.overflow = ''; }
+      }
+    });
+  </script>
 </body>
 </html>

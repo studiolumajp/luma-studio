@@ -146,39 +146,104 @@
     }
   
 
+  
+    /* ── SERVICES DROPDOWN ── */
+    .has-dropdown { position: relative; }
+    .dropdown-menu {
+      display: none; position: absolute; top: 100%; left: 50%;
+      transform: translateX(-50%); padding-top: 12px;
+      list-style: none; z-index: 1000; min-width: 190px;
+    }
+    .dropdown-menu-inner {
+      background: rgba(250,248,244,.98); backdrop-filter: blur(16px);
+      border: 1px solid var(--beige,#e8e0d4); border-radius: 2px;
+      padding: 8px 0; box-shadow: 0 8px 32px rgba(45,36,32,.12);
+    }
+    .has-dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu li { list-style: none; }
+    .dropdown-menu li a {
+      display: block; padding: 9px 20px;
+      font-size: 11px; letter-spacing: .12em;
+      color: var(--text-light,#7a6858);
+      text-decoration: none; transition: color .2s, background .2s; white-space: nowrap;
+    }
+    .dropdown-menu li a:hover { color: var(--accent,#c4956a); background: #f5f1eb; }
+    .dropdown-toggle::after {
+      content:''; display: inline-block;
+      width: 5px; height: 5px;
+      border-right: 1px solid currentColor; border-bottom: 1px solid currentColor;
+      transform: rotate(45deg) translateY(-2px); margin-left: 5px; vertical-align: middle;
+    }
+    .dropdown-menu li a.sub-item {
+      font-size: 10px; color: var(--taupe,#b8a898);
+      margin-left: 20px; padding-left: 12px;
+      border-left: 2px solid var(--beige,#e8e0d4);
+    }
+    .dropdown-menu li a.sub-item:hover { color: var(--accent,#c4956a); background: #f5f1eb; }
+
+  
+    /* ── FOOTER SHARED ── */
+    footer {
+      background: var(--dark,#2d2420); padding: 48px 72px 32px;
+      display: flex; flex-direction: column; align-items: center; gap: 20px;
+    }
+    .footer-brand { text-align: center; }
+    .footer-logo {
+      font-family: 'Montserrat',sans-serif; font-size: 20px; font-weight: 700;
+      letter-spacing: .22em; color: #EDCAA2; text-decoration: none; display: block; margin-bottom: 6px;
+    }
+    .footer-tagline { font-size: 11px; letter-spacing: .12em; color: var(--taupe,#b8a898); }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; list-style: none; padding: 0; }
+    .footer-links a { font-size: 11px; letter-spacing: .1em; color: var(--taupe,#b8a898); text-decoration: none; transition: color .3s; }
+    .footer-links a:hover { color: var(--accent,#c4956a); }
+    .footer-copy { font-size: 10px; color: var(--taupe,#b8a898); opacity: .5; }
+    @media (max-width: 768px) { footer { padding: 36px 20px 24px; } }
+
   </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav id="navbar">
-  <a href="./index.html" class="logo-text">LUMA</a>
-  <div class="nav-right">
-    <ul class="nav-links">
-      <li><a href="./index.html#about">LUMAとは</a></li>
-      <li><a href="./photography.html">写真</a></li>
-      <li><a href="./s-league.html" class="active">S.League</a></li>
-      <li><a href="./index.html#services">サービス</a></li>
-      <li><a href="./index.html#profile">プロフィール</a></li>
-      <li><a href="./index.html#contact">お問い合わせ</a></li>
-      <li><a href="./legal.html">特商法・プライバシー</a></li>
-    </ul>
-    <div class="ham" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
+  <nav id="navbar">
+    <a href="./index.html" class="logo-text">LUMA</a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="./index.html#about">LUMAとは</a></li>
+        <li><a href="./photography.html">写真</a></li>
+        <li><a href="./s-league.html" style="color:var(--accent)">S.League</a></li>
+        <li class="has-dropdown">
+          <a href="./index.html#services" class="dropdown-toggle">サービス</a>
+          <ul class="dropdown-menu">
+            <div class="dropdown-menu-inner">
+            <li><a href="./service-english.html">英語教育</a></li>
+            <li><a href="./photography.html">写真撮影</a></li>
+            <li><a href="./service-tour.html">ツアー</a></li>
+            <li><a href="./service-community.html">コミュニティ</a></li>
+            <li><a href="./s-league.html" class="sub-item">└ S.League</a></li>
+            <li><a href="./service-counselling.html">カウンセリング</a></li>
+            <li><a href="./service-karaoke.html">カラオケ</a></li>
+            </div>
+          </ul>
+        </li>
+        <li><a href="./index.html#contact">お問い合わせ</a></li>
+        <li><a href="./legal.html">特商法・プライバシー</a></li>
+      </ul>
+      <button class="ham" id="hamBtn" onclick="toggleMobMenu()" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<div class="mob-menu" id="mob-menu">
-  <button class="mob-close" onclick="toggleMenu()">✕</button>
-  <a href="./index.html#about" onclick="toggleMenu()">LUMAとは</a>
-  <a href="./photography.html" onclick="toggleMenu()">写真</a>
-  <a href="./s-league.html" onclick="toggleMenu()">S.League</a>
-  <a href="./index.html#services" onclick="toggleMenu()">サービス</a>
-  <a href="./index.html#profile" onclick="toggleMenu()">プロフィール</a>
-  <a href="./index.html#contact" onclick="toggleMenu()">お問い合わせ</a>
-  <a href="./legal.html" onclick="toggleMenu()">特商法・プライバシー</a>
-</div>
+  <!-- Mobile Menu -->
+  <div class="mob-menu" id="mobMenu">
+    <button class="mob-close" onclick="toggleMobMenu()">✕</button>
+    <a href="./index.html#about" onclick="toggleMobMenu()">LUMAとは</a>
+    <a href="./photography.html" onclick="toggleMobMenu()">写真</a>
+    <a href="./s-league.html" onclick="toggleMobMenu()">S.League</a>
+    <a href="./index.html#services" onclick="toggleMobMenu()">サービス</a>
+    <a href="./index.html#contact" onclick="toggleMobMenu()">お問い合わせ</a>
+    <a href="./legal.html" onclick="toggleMobMenu()">特商法・プライバシー</a>
+  </div>
 
 <!-- HERO -->
 <section class="hero">
@@ -379,25 +444,25 @@
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <a href="./index.html" class="footer-logo">LUMA</a>
+  <footer>
+    <div class="footer-brand">
+      <a href="./index.html" class="footer-logo">LUMA</a>
+      <div class="footer-tagline">Clarity by Design &nbsp;|&nbsp; Illuminate Your Confidence</div>
+    </div>
     <ul class="footer-links">
-      <li><a href="./s-league.html">← S.League 一覧</a></li>
       <li><a href="./index.html#about">LUMAとは</a></li>
       <li><a href="./photography.html">写真</a></li>
+      <li><a href="./s-league.html">S.League</a></li>
+      <li><a href="./index.html#services">サービス</a></li>
       <li><a href="./index.html#contact">お問い合わせ</a></li>
       <li><a href="./legal.html">特商法・プライバシー</a></li>
     </ul>
-    <p class="footer-copy">© 2026 LUMA — Sho Asano. All rights reserved.</p>
-  </div>
-</footer>
+    <div class="footer-copy">© 2026 LUMA — Sho Asano. All rights reserved.</div>
+  </footer>
 
 <script>
 // NAV
 window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',scrollY>40));
-function toggleMenu(){document.getElementById('mob-menu').classList.toggle('open');}
-
 // PAYMENT
 function showPayment(type){
   document.querySelectorAll('.payment-card').forEach(c=>c.classList.remove('selected'));
@@ -417,5 +482,26 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 document.addEventListener('DOMContentLoaded',()=>{
 });
 </script>
+
+  <script>
+    // Navbar scroll
+    window.addEventListener('scroll', () => {
+      const nb = document.getElementById('navbar');
+      if (nb) nb.classList.toggle('scrolled', window.scrollY > 40);
+    });
+    // Mobile menu
+    function toggleMobMenu() {
+      const m = document.getElementById('mobMenu');
+      if (!m) return;
+      const open = m.classList.toggle('open');
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        const m = document.getElementById('mobMenu');
+        if (m) { m.classList.remove('open'); document.body.style.overflow = ''; }
+      }
+    });
+  </script>
 </body>
 </html>
