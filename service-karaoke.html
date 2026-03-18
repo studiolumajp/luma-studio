@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ja" id="html-root">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light only" />
+  <title>カラオケ指導 | LUMA — Clarity by Design</title>
+  <meta name="description" content="LUMA カラオケ指導のサービスページ。DAM WAO 98.6点、95点以上54曲の実績をもつ講師が、発声・音程・表現力を丁寧に指導します。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: light only;
+      --cream:#faf8f4; --warm:#f5f1eb; --beige:#e8e0d4; --sand:#d4c8b4;
+      --taupe:#b8a898; --dark:#2d2420; --accent:#c4956a; --accent-l:#e8c9a8;
+      --text:#3d3028; --tl:#7a6858; --sub:#8e5f45;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--cream);color:var(--text);font-family:'Noto Sans JP',sans-serif;font-weight:300;overflow-x:hidden;}
+
+    /* ── NAV ── */
+    #navbar{
+      position:fixed;top:0;left:0;right:0;z-index:900;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:18px 48px;transition:background .4s,box-shadow .4s;
+    }
+    #navbar.scrolled{background:rgba(250,248,244,.96);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(196,149,106,.12);}
+    .logo-text{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:700;letter-spacing:.18em;color:#EDCAA2;text-decoration:none;}
+    .nav-right{display:flex;align-items:center;gap:32px;}
+    .nav-links{display:flex;list-style:none;gap:28px;align-items:center;}
+    .nav-links a{font-size:11px;font-weight:400;letter-spacing:.14em;text-decoration:none;color:var(--tl);transition:color .3s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--accent);}
+    /* DROPDOWN */
+    .has-dropdown{position:relative;}
+    .dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:12px;list-style:none;z-index:1000;min-width:190px;}
+    .dropdown-menu-inner{background:rgba(250,248,244,.98);backdrop-filter:blur(16px);border:1px solid var(--beige);border-radius:2px;padding:8px 0;box-shadow:0 8px 32px rgba(45,36,32,.12);}
+    .has-dropdown:hover .dropdown-menu{display:block;}
+    .dropdown-menu li{list-style:none;}
+    .dropdown-menu li a{display:block;padding:9px 20px;font-size:11px;letter-spacing:.12em;color:var(--tl);text-decoration:none;transition:color .2s,background .2s;white-space:nowrap;}
+    .dropdown-menu li a:hover{color:var(--accent);background:var(--warm);}
+    .dropdown-toggle::after{content:'';display:inline-block;width:5px;height:5px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg) translateY(-2px);margin-left:5px;vertical-align:middle;}
+    .dropdown-menu li a.sub-item{font-size:10px;color:var(--taupe);margin-left:20px;padding-left:12px;border-left:2px solid var(--beige);}
+    /* HAMBURGER */
+    .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;flex-shrink:0;}
+    .ham span{display:block;width:22px;height:1.5px;background:var(--tl);transition:all .3s;}
+    /* MOBILE MENU */
+    .mob-menu{display:none;position:fixed;inset:0;background:var(--cream);z-index:1100;flex-direction:column;align-items:center;justify-content:center;gap:28px;}
+    .mob-menu.open{display:flex;}
+    .mob-menu a{font-size:18px;letter-spacing:.16em;color:var(--text);text-decoration:none;transition:color .3s;}
+    .mob-menu a:hover{color:var(--accent);}
+    .mob-close{position:absolute;top:20px;right:24px;background:none;border:none;font-size:28px;color:var(--tl);cursor:pointer;}
+    @media(max-width:768px){.ham{display:flex;}.nav-links{display:none;}#navbar{padding:14px 24px;}}
+
+    /* ── HERO ── */
+    .svc-hero{
+      min-height:52vh;display:flex;align-items:center;
+      background:var(--dark);position:relative;overflow:hidden;
+      padding:120px 72px 80px;
+    }
+    .svc-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(196,149,106,.12),transparent 65%);}
+    .svc-hero-num{font-family:'DM Serif Display',serif;font-size:clamp(80px,12vw,160px);color:rgba(255,255,255,.04);position:absolute;right:5%;top:50%;transform:translateY(-50%);line-height:1;pointer-events:none;user-select:none;}
+    .svc-hero-eyebrow{font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;}
+    .svc-hero-icon{font-size:48px;margin-bottom:20px;display:block;}
+    .svc-hero-title{font-family:'DM Serif Display',serif;font-size:clamp(32px,5vw,64px);color:#fff;line-height:1.15;margin-bottom:20px;}
+    .svc-hero-title em{font-style:italic;color:var(--accent);}
+    .svc-hero-sub{font-size:clamp(13px,1.5vw,16px);color:rgba(255,255,255,.65);max-width:560px;line-height:1.8;}
+    @media(max-width:768px){.svc-hero{padding:100px 28px 64px;}.svc-hero-num{font-size:80px;}}
+
+    /* ── OVERVIEW ── */
+    .svc-overview{padding:88px 72px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+    .svc-overview-lead{font-family:'DM Serif Display',serif;font-size:clamp(22px,2.5vw,32px);line-height:1.5;color:var(--dark);margin-bottom:24px;}
+    .svc-overview-lead em{font-style:italic;color:var(--sub);}
+    .svc-overview-body{font-size:15px;line-height:1.95;color:var(--tl);}
+    .svc-overview-right{}
+    @media(max-width:768px){.svc-overview{grid-template-columns:1fr;gap:36px;padding:56px 28px;}}
+
+    /* ── OFFERS ── */
+    .svc-offers{background:var(--warm);padding:80px 72px;}
+    .svc-offers-inner{max-width:1100px;margin:0 auto;}
+    .svc-section-eyebrow{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;display:block;}
+    .svc-section-title{font-family:'DM Serif Display',serif;font-size:clamp(24px,3vw,40px);color:var(--dark);margin-bottom:48px;line-height:1.2;}
+    .svc-section-title em{font-style:italic;color:var(--sub);}
+    .offers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;}
+    .offer-card{background:#fff;border:1px solid var(--beige);border-radius:2px;padding:32px 28px;transition:box-shadow .3s,transform .3s;}
+    .offer-card:hover{box-shadow:0 8px 32px rgba(100,80,60,.08);transform:translateY(-4px);}
+    .offer-card-num{font-family:'DM Serif Display',serif;font-size:13px;color:var(--sand);letter-spacing:.2em;margin-bottom:12px;}
+    .offer-card-title{font-size:15px;font-weight:500;color:var(--dark);margin-bottom:8px;line-height:1.4;}
+    .offer-card-desc{font-size:13px;color:var(--tl);line-height:1.7;}
+    @media(max-width:768px){.svc-offers{padding:56px 28px;}.offers-grid{grid-template-columns:1fr;}}
+
+    /* ── PRICE ── */
+    .svc-price{padding:80px 72px;max-width:900px;margin:0 auto;}
+    .price-box{border:1px solid var(--beige);border-radius:2px;padding:48px 52px;position:relative;overflow:hidden;}
+    .price-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--sub));}
+    .price-row{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--beige);}
+    .price-row:last-of-type{border-bottom:none;}
+    .price-label{font-size:14px;color:var(--tl);}
+    .price-value{font-family:'DM Serif Display',serif;font-size:20px;color:var(--dark);}
+    .price-note{font-size:12px;color:var(--taupe);margin-top:20px;line-height:1.7;}
+    @media(max-width:768px){.svc-price{padding:56px 28px;}.price-box{padding:32px 24px;}}
+
+    /* ── FLOW ── */
+    .svc-flow{background:var(--dark);padding:80px 72px;}
+    .svc-flow-inner{max-width:900px;margin:0 auto;}
+    .flow-steps{display:flex;flex-direction:column;gap:0;}
+    .flow-step{display:grid;grid-template-columns:80px 1fr;gap:0 32px;padding:32px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+    .flow-step:last-child{border-bottom:none;}
+    .flow-num{font-family:'DM Serif Display',serif;font-size:40px;color:rgba(196,149,106,.2);text-align:right;padding-top:4px;}
+    .flow-tag{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;display:block;}
+    .flow-title{font-size:16px;font-weight:500;color:#fff;margin-bottom:8px;}
+    .flow-desc{font-size:13px;color:rgba(255,255,255,.6);line-height:1.8;}
+    @media(max-width:768px){.svc-flow{padding:56px 28px;}.flow-step{grid-template-columns:48px 1fr;gap:0 16px;}.flow-num{font-size:28px;}}
+
+    /* ── CTA ── */
+    .svc-cta{padding:100px 72px;text-align:center;background:var(--cream);}
+    .svc-cta-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,48px);color:var(--dark);margin-bottom:16px;line-height:1.2;}
+    .svc-cta-title em{font-style:italic;color:var(--sub);}
+    .svc-cta-sub{font-size:15px;color:var(--tl);margin-bottom:40px;line-height:1.7;}
+    .btn-primary{display:inline-block;padding:14px 40px;background:var(--accent);color:#fff;font-size:12px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:background .3s,transform .2s;}
+    .btn-primary:hover{background:var(--sub);transform:translateY(-2px);}
+    .btn-outline{display:inline-block;padding:13px 36px;border:1px solid var(--accent);color:var(--accent);font-size:12px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-radius:1px;margin-left:16px;transition:all .3s;}
+    .btn-outline:hover{background:var(--accent);color:#fff;}
+    @media(max-width:600px){.btn-outline{margin-left:0;margin-top:12px;display:block;}}
+
+    /* ── FOOTER ── */
+    footer{background:var(--dark);padding:48px 72px 32px;display:flex;flex-direction:column;align-items:center;gap:20px;}
+    .footer-brand{text-align:center;}
+    .footer-logo{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:700;letter-spacing:.22em;color:#EDCAA2;text-decoration:none;display:block;margin-bottom:6px;}
+    .footer-tagline{font-size:11px;letter-spacing:.12em;color:var(--taupe);}
+    .footer-links{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;list-style:none;padding:0;}
+    .footer-links a{font-size:11px;letter-spacing:.1em;color:var(--taupe);text-decoration:none;transition:color .3s;}
+    .footer-links a:hover{color:var(--accent);}
+    .footer-copy{font-size:10px;color:var(--taupe);opacity:.45;}
+    @media(max-width:768px){footer{padding:36px 20px 24px;}}
+
+    /* ── REVEAL ── */
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+    .reveal.visible{opacity:1;transform:none;}
+
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="./index.html" class="logo-text">LUMA</a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="./index.html#about">LUMAとは</a></li>
+        <li><a href="./photography.html">写真</a></li>
+        <li><a href="./s-league.html">S.League</a></li>
+        <li class="has-dropdown">
+          <a href="./index.html#services" class="dropdown-toggle active">サービス</a>
+          <ul class="dropdown-menu">
+            <div class="dropdown-menu-inner">
+            <li><a href="./service-english.html">英語教育</a></li>
+            <li><a href="./photography.html">写真撮影</a></li>
+            <li><a href="./service-tour.html">ツアー</a></li>
+            <li><a href="./service-community.html">コミュニティ</a></li>
+            <li><a href="./s-league.html" class="sub-item">└ S.League</a></li>
+            <li><a href="./service-counselling.html">カウンセリング</a></li>
+            <li><a href="./service-karaoke.html"class='active'>カラオケ</a></li>
+            </div>
+          </ul>
+        </li>
+        <li><a href="./index.html#contact">お問い合わせ</a></li>
+        <li><a href="./legal.html">特商法・プライバシー</a></li>
+      </ul>
+      <button class="ham" id="hamBtn" onclick="toggleMobMenu()" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mob-menu" id="mobMenu">
+    <button class="mob-close" onclick="toggleMobMenu()">✕</button>
+    <a href="./index.html#about" onclick="toggleMobMenu()">LUMAとは</a>
+    <a href="./photography.html" onclick="toggleMobMenu()">写真</a>
+    <a href="./s-league.html" onclick="toggleMobMenu()">S.League</a>
+    <a href="./index.html#services" onclick="toggleMobMenu()">サービス</a>
+    <a href="./index.html#contact" onclick="toggleMobMenu()">お問い合わせ</a>
+    <a href="./legal.html" onclick="toggleMobMenu()">特商法・プライバシー</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="svc-hero">
+    <div class="svc-hero-num">06</div>
+    <div>
+      <span class="svc-hero-eyebrow">Services — 06</span>
+      <span class="svc-hero-icon">🎤</span>
+      <h1 class="svc-hero-title">カラオケ指導</h1>
+      <p class="svc-hero-sub">DAM WAO 98.6点、95点以上54曲の実績をもつ講師が、発声・音程・表現力を丁寧に指導します。</p>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section style="background:var(--cream)">
+    <div class="svc-overview">
+      <div class="svc-overview-left">
+        <p class="svc-overview-lead reveal">スコアの先に、<em>歌う喜び</em>がある。</p>
+        <p class="svc-overview-body reveal">カラオケは単なる娯楽ではなく、自己表現のひとつだと考えています。声を出すこと、感情を乗せること、人前で堂々と歌うこと——これらはすべて、自信につながります。DAM WAO採点で98.6点を達成し、95点以上を出せる楽曲が54曲。数字だけでなく、歌うことの楽しさと自信を一緒に育てます。</p>
+      </div>
+      <div class="svc-overview-right reveal" style="padding-top:8px;">
+        <div style="border-left:2px solid var(--beige);padding-left:32px;">
+          <p style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;">Overview</p>
+          <p style="font-family:'DM Serif Display',serif;font-size:17px;color:var(--dark);line-height:1.7;font-style:italic;">Beyond the score — the joy of singing with confidence.</p>
+          <p style="font-size:13px;color:var(--tl);line-height:1.8;margin-top:16px;">Karaoke is a form of self-expression. Projecting your voice, conveying emotion, performing in front of others — all of it builds confidence. My record speaks for itself: 98.6 on DAM WAO, 54 songs at 95+. But beyond scores, the goal is the joy of singing freely.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFERS -->
+  <section class="svc-offers">
+    <div class="svc-offers-inner">
+      <span class="svc-section-eyebrow reveal">What's Included</span>
+      <h2 class="svc-section-title reveal">提供<em>サービス</em>内容</h2>
+      <div class="offers-grid">
+        <div class="offer-card reveal">
+          <div class="offer-card-num">01</div>
+          <div class="offer-card-title">採点攻略（DAM WAO）<br><span style="font-size:12px;color:var(--taupe)">Scoring strategy</span></div>
+          <div class="offer-card-desc">採点システムの仕組みを理解して、効率よく点数を伸ばします。</div>
+        </div>
+        <div class="offer-card reveal">
+          <div class="offer-card-num">02</div>
+          <div class="offer-card-title">発声・腹式呼吸の基礎<br><span style="font-size:12px;color:var(--taupe)">Voice & breathing</span></div>
+          <div class="offer-card-desc">正しい発声と腹式呼吸の習得で、声量・安定性が大きく変わります。</div>
+        </div>
+        <div class="offer-card reveal">
+          <div class="offer-card-num">03</div>
+          <div class="offer-card-title">音程・リズム強化<br><span style="font-size:12px;color:var(--taupe)">Pitch & rhythm</span></div>
+          <div class="offer-card-desc">音程が取りにくい箇所を重点的に練習。リズムのブレを改善します。</div>
+        </div>
+        <div class="offer-card reveal">
+          <div class="offer-card-num">04</div>
+          <div class="offer-card-title">表現力・感情表現<br><span style="font-size:12px;color:var(--taupe)">Expression & delivery</span></div>
+          <div class="offer-card-desc">歌詞の世界観を体で表現する方法をお伝えします。聴かせる歌い方を磨きます。</div>
+        </div>
+        <div class="offer-card reveal">
+          <div class="offer-card-num">05</div>
+          <div class="offer-card-title">十八番（おはこ）の磨き込み<br><span style="font-size:12px;color:var(--taupe)">Polishing your signature song</span></div>
+          <div class="offer-card-desc">あなたの得意曲をとことん磨きます。宴会・カラオケ大会・結婚式余興にも対応。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICE -->
+  <section class="svc-price">
+    <span class="svc-section-eyebrow reveal">Pricing</span>
+    <h2 class="svc-section-title reveal">料金<em>案内</em></h2>
+    <div class="price-box">
+        <div class="price-row reveal">
+          <span class="price-label">無料体験レッスン（30分）</span>
+          <span class="price-value">¥0</span>
+        </div>
+        <div class="price-row reveal">
+          <span class="price-label">単発レッスン（60〜90分）</span>
+          <span class="price-value">要相談</span>
+        </div>
+        <div class="price-row reveal">
+          <span class="price-label">月4回パック</span>
+          <span class="price-value">要相談</span>
+        </div>
+        <div class="price-row reveal">
+          <span class="price-label">場所</span>
+          <span class="price-value">カラオケ店（費用別途）</span>
+        </div>
+      <p class="price-note reveal">まずは無料体験レッスン（30分）で現在の歌い方と目標を確認します。レッスンはカラオケ店にて実施。ルーム代は別途ご負担いただきます。</p>
+    </div>
+  </section>
+
+  <!-- FLOW -->
+  <section class="svc-flow">
+    <div class="svc-flow-inner">
+      <span class="svc-section-eyebrow reveal" style="color:rgba(255,255,255,.5)">How it works</span>
+      <h2 class="svc-section-title reveal" style="color:#fff;margin-bottom:40px;">ご利用の<em>流れ</em></h2>
+      <div class="flow-steps">
+        <div class="flow-step reveal">
+          <div class="flow-num">01</div>
+          <div>
+            <span class="flow-tag">Step 01</span>
+            <div class="flow-title">無料体験レッスン（30分）</div>
+            <div class="flow-desc">現在の歌い方を聞かせてもらいながら、課題と目標を整理します。</div>
+          </div>
+        </div>
+        <div class="flow-step reveal">
+          <div class="flow-num">02</div>
+          <div>
+            <span class="flow-tag">Step 02</span>
+            <div class="flow-title">課題の特定</div>
+            <div class="flow-desc">発声・音程・リズム・表現のどこを重点的に鍛えるかを決めます。</div>
+          </div>
+        </div>
+        <div class="flow-step reveal">
+          <div class="flow-num">03</div>
+          <div>
+            <span class="flow-tag">Step 03</span>
+            <div class="flow-title">レッスン開始</div>
+            <div class="flow-desc">カラオケ店にてレッスン。毎回具体的なフィードバックをお伝えします。</div>
+          </div>
+        </div>
+        <div class="flow-step reveal">
+          <div class="flow-num">04</div>
+          <div>
+            <span class="flow-tag">Step 04</span>
+            <div class="flow-title">本番に向けての仕上げ</div>
+            <div class="flow-desc">目標（大会・宴会・日常のカラオケ）に向けて、十八番を磨き込みます。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="svc-cta">
+    <h2 class="svc-cta-title reveal"><em>自信を持って</em>歌える日まで。</h2>
+    <p class="svc-cta-sub reveal">上手く歌えなくて当然です。まずは無料体験レッスンで、一緒に今の声を聞いてみましょう。</p>
+    <div class="reveal">
+      <a href="./index.html#contact" class="btn-primary">無料相談・お問い合わせ</a>
+      <a href="./index.html#services" class="btn-outline">他のサービスを見る</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-brand">
+      <a href="./index.html" class="footer-logo">LUMA</a>
+      <div class="footer-tagline">Clarity by Design &nbsp;|&nbsp; Illuminate Your Confidence</div>
+    </div>
+    <ul class="footer-links">
+      <li><a href="./index.html#about">LUMAとは</a></li>
+      <li><a href="./photography.html">写真</a></li>
+      <li><a href="./s-league.html">S.League</a></li>
+      <li><a href="./index.html#services">サービス</a></li>
+      <li><a href="./index.html#contact">お問い合わせ</a></li>
+      <li><a href="./legal.html">特商法・プライバシー</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 LUMA — Sho Asano. All rights reserved.</div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+    });
+    function toggleMobMenu() {
+      const m = document.getElementById('mobMenu');
+      const open = m.classList.toggle('open');
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') { document.getElementById('mobMenu').classList.remove('open'); document.body.style.overflow = ''; }
+    });
+    // reveal
+    const ro = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }});
+    }, {threshold: 0.1});
+    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+  </script>
+</body>
+</html>
