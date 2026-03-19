@@ -11,6 +11,12 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-62F20N179N');
+  function toggleMobSvc(btn) {
+      const list = btn.nextElementSibling;
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      list.classList.toggle('open', !expanded);
+    }
   </script>
 
   <meta name="theme-color" content="#c4956a" />
@@ -436,6 +442,34 @@
     .footer-copy { font-size: 10px; color: var(--taupe,#b8a898); opacity: .5; }
     @media (max-width: 768px) { footer { padding: 36px 20px 24px; } }
 
+
+    /* ── MOBILE SERVICE ACCORDION ── */
+    .mob-svc-wrap { width: 100%; text-align: center; }
+    .mob-svc-toggle {
+      background: none; border: none; cursor: pointer;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 18px; letter-spacing: .16em;
+      color: var(--text, #3d3028); transition: color .3s;
+      display: flex; align-items: center; justify-content: center;
+      gap: 8px; width: 100%; padding: 0;
+    }
+    .mob-svc-toggle:hover { color: var(--accent, #c4956a); }
+    .mob-svc-arrow { font-size: 14px; transition: transform .3s; display: inline-block; }
+    .mob-svc-toggle[aria-expanded="true"] .mob-svc-arrow { transform: rotate(180deg); }
+    .mob-svc-list {
+      display: flex; flex-direction: column; gap: 16px;
+      max-height: 0; overflow: hidden;
+      transition: max-height .35s ease, opacity .3s ease;
+      opacity: 0; margin-top: 0;
+    }
+    .mob-svc-list.open {
+      max-height: 400px; opacity: 1; margin-top: 16px;
+    }
+    .mob-svc-list a {
+      font-size: 14px !important; letter-spacing: .12em;
+      color: var(--tl, #7a6858) !important;
+    }
+    .mob-svc-list a:hover { color: var(--accent, #c4956a) !important; }
   </style>
 </head>
 
@@ -480,7 +514,20 @@
     <a href="./index.html#about" onclick="toggleMobMenu()">LUMAとは</a>
     <a href="./photography.html" onclick="toggleMobMenu()">写真</a>
     <a href="./s-league.html" onclick="toggleMobMenu()">S.League</a>
-    <a href="./index.html#services" onclick="toggleMobMenu()">サービス</a>
+    <!-- サービス アコーディオン -->
+    <div class="mob-svc-wrap">
+      <button class="mob-svc-toggle" onclick="toggleMobSvc(this)" aria-expanded="false">
+        サービス <span class="mob-svc-arrow">▾</span>
+      </button>
+      <div class="mob-svc-list" aria-hidden="true">
+        <a href="./service-english.html"    onclick="toggleMobMenu()">英語教育</a>
+        <a href="./service-photo.html"      onclick="toggleMobMenu()">写真撮影</a>
+        <a href="./service-tour.html"       onclick="toggleMobMenu()">ツアー</a>
+        <a href="./service-community.html"  onclick="toggleMobMenu()">コミュニティ</a>
+        <a href="./service-counselling.html" onclick="toggleMobMenu()">カウンセリング</a>
+        <a href="./service-karaoke.html"    onclick="toggleMobMenu()">カラオケ</a>
+      </div>
+    </div>
     <a href="./index.html#contact" onclick="toggleMobMenu()">お問い合わせ</a>
     <a href="./legal.html" onclick="toggleMobMenu()">特商法・プライバシー</a>
   </div>

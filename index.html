@@ -716,6 +716,34 @@
       letter-spacing: .22em; color: #EDCAA2; text-decoration: none;
       display: block; margin-bottom: 6px;
     }
+
+    /* ── MOBILE SERVICE ACCORDION ── */
+    .mob-svc-wrap { width: 100%; text-align: center; }
+    .mob-svc-toggle {
+      background: none; border: none; cursor: pointer;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 18px; letter-spacing: .16em;
+      color: var(--text, #3d3028); transition: color .3s;
+      display: flex; align-items: center; justify-content: center;
+      gap: 8px; width: 100%; padding: 0;
+    }
+    .mob-svc-toggle:hover { color: var(--accent, #c4956a); }
+    .mob-svc-arrow { font-size: 14px; transition: transform .3s; display: inline-block; }
+    .mob-svc-toggle[aria-expanded="true"] .mob-svc-arrow { transform: rotate(180deg); }
+    .mob-svc-list {
+      display: flex; flex-direction: column; gap: 16px;
+      max-height: 0; overflow: hidden;
+      transition: max-height .35s ease, opacity .3s ease;
+      opacity: 0; margin-top: 0;
+    }
+    .mob-svc-list.open {
+      max-height: 400px; opacity: 1; margin-top: 16px;
+    }
+    .mob-svc-list a {
+      font-size: 14px !important; letter-spacing: .12em;
+      color: var(--tl, #7a6858) !important;
+    }
+    .mob-svc-list a:hover { color: var(--accent, #c4956a) !important; }
   </style>
 </head>
 <body class="lang-ja" id="body-root">
@@ -760,7 +788,20 @@
     <a href="#about"        onclick="toggleMobMenu()"><span data-inline="ja">LUMAとは</span><span data-inline="en">About</span></a>
     <a href="photography.html" onclick="toggleMobMenu()"><span data-inline="ja">写真</span><span data-inline="en">Photography</span></a>
     <a href="s-league.html"    onclick="toggleMobMenu()"><span data-inline="ja">S.League</span><span data-inline="en">S.League</span></a>
-    <a href="#services"    onclick="toggleMobMenu()"><span data-inline="ja">サービス</span><span data-inline="en">Services</span></a>
+    <!-- サービス アコーディオン -->
+    <div class="mob-svc-wrap">
+      <button class="mob-svc-toggle" onclick="toggleMobSvc(this)" aria-expanded="false">
+        <span data-inline="ja">サービス</span><span data-inline="en">Services</span> <span class="mob-svc-arrow">▾</span>
+      </button>
+      <div class="mob-svc-list" aria-hidden="true">
+        <a href="./service-english.html"    onclick="toggleMobMenu()"><span data-inline="ja">英語教育</span><span data-inline="en">English</span></a>
+        <a href="./service-photo.html"      onclick="toggleMobMenu()"><span data-inline="ja">写真撮影</span><span data-inline="en">Photography</span></a>
+        <a href="./service-tour.html"       onclick="toggleMobMenu()"><span data-inline="ja">ツアー</span><span data-inline="en">Tours</span></a>
+        <a href="./service-community.html"  onclick="toggleMobMenu()"><span data-inline="ja">コミュニティ</span><span data-inline="en">Community</span></a>
+        <a href="./service-counselling.html" onclick="toggleMobMenu()"><span data-inline="ja">カウンセリング</span><span data-inline="en">Counselling</span></a>
+        <a href="./service-karaoke.html"    onclick="toggleMobMenu()"><span data-inline="ja">カラオケ</span><span data-inline="en">Karaoke</span></a>
+      </div>
+    </div>
     <a href="#contact"     onclick="toggleMobMenu()"><span data-inline="ja">お問い合わせ</span><span data-inline="en">Contact</span></a>
     <a href="./legal.html" onclick="toggleMobMenu()"><span data-inline="ja">特商法・プライバシー</span><span data-inline="en">Legal</span></a>
     <div class="mob-lang">
@@ -1415,7 +1456,13 @@
     });
 
     // ── Mobile Menu toggle
-    function toggleMobMenu() {
+    function toggleMobSvc(btn) {
+      const list = btn.nextElementSibling;
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      list.classList.toggle('open', !expanded);
+    }
+        function toggleMobMenu() {
       const menu = document.getElementById('mobMenu');
       const isOpen = menu.classList.toggle('open');
       document.body.style.overflow = isOpen ? 'hidden' : '';
