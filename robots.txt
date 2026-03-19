@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Disallow contact enquiry page from indexing
+Disallow: /contact-en.html
+
+Sitemap: https://studio-lumadesign.com/sitemap.xml

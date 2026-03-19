@@ -93,13 +93,13 @@
     .svc-section-eyebrow{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;display:block;}
     .svc-section-title{font-family:'DM Serif Display',serif;font-size:clamp(24px,3vw,40px);color:var(--dark);margin-bottom:48px;line-height:1.2;}
     .svc-section-title em{font-style:italic;color:var(--sub);}
-    .offers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+    .offers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;}
     .offer-card{background:#fff;border:1px solid var(--beige);border-radius:2px;padding:32px 28px;transition:box-shadow .3s,transform .3s;}
     .offer-card:hover{box-shadow:0 8px 32px rgba(100,80,60,.08);transform:translateY(-4px);}
     .offer-card-num{font-family:'DM Serif Display',serif;font-size:13px;color:var(--sand);letter-spacing:.2em;margin-bottom:12px;}
     .offer-card-title{font-size:15px;font-weight:500;color:var(--dark);margin-bottom:8px;line-height:1.4;}
     .offer-card-desc{font-size:13px;color:var(--tl);line-height:1.7;}
-    @media(max-width:900px){.offers-grid{grid-template-columns:1fr 1fr;}}@media(max-width:560px){.offers-grid{grid-template-columns:1fr;}}@media(max-width:768px){.svc-offers{padding:56px 28px;}}
+    @media(max-width:768px){.svc-offers{padding:56px 28px;}.offers-grid{grid-template-columns:1fr;}}
 
     /* ── PRICE ── */
     .svc-price{padding:80px 72px;max-width:900px;margin:0 auto;}
@@ -178,6 +178,29 @@
       color: var(--tl, #7a6858) !important;
     }
     .mob-svc-list a:hover { color: var(--accent, #c4956a) !important; }
+
+    /* ── ENGLISH BANNER ── */
+    .en-banner{
+      position:fixed;bottom:24px;right:24px;z-index:800;
+      background:var(--dark);border:1px solid rgba(196,149,106,.4);
+      border-radius:2px;padding:14px 20px;
+      display:flex;align-items:center;gap:12px;
+      box-shadow:0 8px 32px rgba(45,36,32,.25);
+      animation:slideUp .5s ease .8s both;
+    }
+    @keyframes slideUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+    .en-banner-text{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;
+      letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.6);}
+    .en-banner-link{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;
+      letter-spacing:.18em;text-transform:uppercase;color:var(--accent);
+      text-decoration:none;white-space:nowrap;
+      border-bottom:1px solid rgba(196,149,106,.4);padding-bottom:1px;
+      transition:color .2s,border-color .2s;}
+    .en-banner-link:hover{color:#fff;border-color:rgba(255,255,255,.4);}
+    .en-banner-close{background:none;border:none;color:rgba(255,255,255,.3);
+      font-size:16px;cursor:pointer;padding:0 0 0 4px;line-height:1;transition:color .2s;}
+    .en-banner-close:hover{color:rgba(255,255,255,.7);}
+    @media(max-width:600px){.en-banner{bottom:16px;right:16px;left:16px;}}
   </style>
 </head>
 <body>
@@ -243,6 +266,9 @@
       <span class="svc-hero-name">LUMA Path</span>
       <h1 class="svc-hero-title">ツアー企画 · ガイド</h1>
       <p class="svc-hero-sub">東京・関東から関西・北海道・福岡まで、全国対応。グルテンフリー・アレルギー対応も、自分ごととして丁寧にサポートします。</p>
+      <a href="./tour-en.html" style="display:inline-flex;align-items:center;gap:7px;margin-top:24px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;border:1px solid rgba(255,255,255,.12);padding:8px 16px;border-radius:40px;transition:all .3s;" onmouseover="this.style.color='var(--accent)';this.style.borderColor='rgba(196,149,106,.4)'" onmouseout="this.style.color='rgba(255,255,255,.45)';this.style.borderColor='rgba(255,255,255,.12)'">
+        <span style="font-size:13px;">🌐</span> English page available →
+      </a>
     </div>
   </section>
 
@@ -377,9 +403,17 @@
     <div class="reveal">
       <a href="./index.html#contact" class="btn-primary">無料相談・お問い合わせ</a>
       <a href="./index.html#services" class="btn-outline">他のサービスを見る</a>
+      <a href="./tour-en.html" style="display:inline-block;margin-left:16px;padding:13px 28px;border:1px solid rgba(196,149,106,.5);color:var(--accent);font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:all .3s;" onmouseover="this.style.background='var(--accent)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='var(--accent)'">🌐 View in English</a>
     </div>
   </section>
 
+
+  <!-- Floating English banner -->
+  <div class="en-banner" id="enBanner">
+    <span class="en-banner-text">English available</span>
+    <a href="./tour-en.html" class="en-banner-link">View English page →</a>
+    <button class="en-banner-close" onclick="document.getElementById('enBanner').style.display='none'" aria-label="Close">✕</button>
+  </div>
   <footer>
     <div class="footer-brand">
       <a href="./index.html" class="footer-logo">LUMA</a>

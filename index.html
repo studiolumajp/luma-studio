@@ -744,6 +744,32 @@
       color: var(--tl, #7a6858) !important;
     }
     .mob-svc-list a:hover { color: var(--accent, #c4956a) !important; }
+
+    /* ── ENGLISH VISITOR BANNER (EN mode only) ── */
+    .en-visitor-bar{
+      display:none; /* JSで制御 */
+      background:rgba(196,149,106,.1);
+      border:1px solid rgba(196,149,106,.25);
+      border-radius:2px;
+      padding:12px 24px;
+      margin-top:24px;
+      align-items:center;gap:12px;
+      max-width:fit-content;
+    }
+    .en-visitor-bar.visible{display:flex;}
+    .en-visitor-bar-text{
+      font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;
+      letter-spacing:.18em;text-transform:uppercase;color:var(--tl);
+    }
+    .en-visitor-bar-link{
+      font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;
+      letter-spacing:.18em;text-transform:uppercase;
+      color:var(--accent);text-decoration:none;
+      display:flex;align-items:center;gap:6px;
+      transition:color .2s;
+    }
+    .en-visitor-bar-link:hover{color:var(--sub);}
+    @media(max-width:768px){.en-visitor-bar{padding:10px 16px;}}
   </style>
 </head>
 <body class="lang-ja" id="body-root">
@@ -824,6 +850,12 @@
         <a href="#services" class="btn-primary"><span data-inline="ja">サービスを見る</span><span data-inline="en">Explore Services</span></a>
         <a href="#contact" class="btn-outline"><span data-inline="ja">無料相談</span><span data-inline="en">Free Consultation</span></a>
       </div>
+        <div class="en-visitor-bar" id="enVisitorBar">
+          <span class="en-visitor-bar-text">Looking for tours in English?</span>
+          <a href="./tour-en.html" class="en-visitor-bar-link">
+            <span>🌐</span> LUMA Path — English Tour Guide →
+          </a>
+        </div>
     </div>
     <div class="hero-right">
       <div class="hero-visual">
@@ -1250,6 +1282,10 @@
       if (ta) ta.placeholder = lang === 'ja'
         ? 'お気軽にご相談内容をお書きください'
         : "Feel free to share what's on your mind";
+      // English visitor bar
+      const evBar = document.getElementById('enVisitorBar');
+      if (evBar) evBar.classList.toggle('visible', lang === 'en');
+
       // SEO: title も言語に応じて切替
       document.title = lang === 'ja'
         ? 'LUMA — Clarity by Design | 自信を照らす東京のスタジオ'
