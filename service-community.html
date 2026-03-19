@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light only" />
-  <title>英語教育・チュータリング | LUMA — Clarity by Design</title>
-  <meta name="description" content="LUMA 英語教育・チュータリングのサービスページ。オーストラリア9年の実体験から生まれた、使える英語。日常会話からビジネス英語・試験対策まで、あなたのペースで。" />
+  <title>LUMA Circle — コミュニティイベント | LUMA — Clarity by Design</title>
+  <meta name="description" content="LUMA Circle — S.League（麻雀大会）をはじめ、交流イベント・ミートアップを企画・運営。22回・累計335名の実績をもつLUMAが、人とのつながりを生み出す場を提供します。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@600;700&display=swap" rel="stylesheet" />
@@ -21,18 +21,13 @@
     body{background:var(--cream);color:var(--text);font-family:'Noto Sans JP',sans-serif;font-weight:300;overflow-x:hidden;}
 
     /* ── NAV ── */
-    #navbar{
-      position:fixed;top:0;left:0;right:0;z-index:900;
-      display:flex;align-items:center;justify-content:space-between;
-      padding:18px 48px;transition:background .4s,box-shadow .4s;
-    }
+    #navbar{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;transition:background .4s,box-shadow .4s;}
     #navbar.scrolled{background:rgba(250,248,244,.96);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(196,149,106,.12);}
     .logo-text{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:700;letter-spacing:.18em;color:#EDCAA2;text-decoration:none;}
     .nav-right{display:flex;align-items:center;gap:32px;}
     .nav-links{display:flex;list-style:none;gap:28px;align-items:center;}
     .nav-links a{font-size:11px;font-weight:400;letter-spacing:.14em;text-decoration:none;color:var(--tl);transition:color .3s;}
     .nav-links a:hover,.nav-links a.active{color:var(--accent);}
-    /* DROPDOWN */
     .has-dropdown{position:relative;}
     .dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:12px;list-style:none;z-index:1000;min-width:190px;}
     .dropdown-menu-inner{background:rgba(250,248,244,.98);backdrop-filter:blur(16px);border:1px solid var(--beige);border-radius:2px;padding:8px 0;box-shadow:0 8px 32px rgba(45,36,32,.12);}
@@ -41,11 +36,8 @@
     .dropdown-menu li a{display:block;padding:9px 20px;font-size:11px;letter-spacing:.12em;color:var(--tl);text-decoration:none;transition:color .2s,background .2s;white-space:nowrap;}
     .dropdown-menu li a:hover{color:var(--accent);background:var(--warm);}
     .dropdown-toggle::after{content:'';display:inline-block;width:5px;height:5px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg) translateY(-2px);margin-left:5px;vertical-align:middle;}
-    .dropdown-menu li a.sub-item{font-size:10px;color:var(--taupe);margin-left:20px;padding-left:12px;border-left:2px solid var(--beige);}
-    /* HAMBURGER */
     .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;flex-shrink:0;}
     .ham span{display:block;width:22px;height:1.5px;background:var(--tl);transition:all .3s;}
-    /* MOBILE MENU */
     .mob-menu{display:none;position:fixed;inset:0;background:var(--cream);z-index:1100;flex-direction:column;align-items:center;justify-content:center;gap:28px;}
     .mob-menu.open{display:flex;}
     .mob-menu a{font-size:18px;letter-spacing:.16em;color:var(--text);text-decoration:none;transition:color .3s;}
@@ -54,37 +46,31 @@
     @media(max-width:768px){.ham{display:flex;}.nav-links{display:none;}#navbar{padding:14px 24px;}}
 
     /* ── HERO ── */
-    .svc-hero{
-      min-height:52vh;display:flex;align-items:center;
-      background:var(--dark);position:relative;overflow:hidden;
-      padding:120px 72px 80px;
-    }
+    .svc-hero{min-height:52vh;display:flex;align-items:center;background:var(--dark);position:relative;overflow:hidden;padding:120px 72px 80px;}
     .svc-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(196,149,106,.12),transparent 65%);}
     .svc-hero-num{font-family:'DM Serif Display',serif;font-size:clamp(80px,12vw,160px);color:rgba(255,255,255,.04);position:absolute;right:5%;top:50%;transform:translateY(-50%);line-height:1;pointer-events:none;user-select:none;}
     .svc-hero-eyebrow{font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;}
     .svc-hero-icon{font-size:48px;margin-bottom:20px;display:block;}
-    .svc-hero-title{font-family:'DM Serif Display',serif;font-size:clamp(20px,2.8vw,34px);color:rgba(255,255,255,.75);line-height:1.3;margin-bottom:16px;font-weight:300;letter-spacing:.02em;}
-    .svc-hero-name{
-      font-family:'Montserrat',sans-serif;
-      font-size:clamp(36px,6vw,72px);
-      font-weight:700;
-      letter-spacing:.06em;
-      color:#fff;
-      line-height:1.05;
-      margin-bottom:10px;
-      display:block;
-    }
+    .svc-hero-name{font-family:'Montserrat',sans-serif;font-size:clamp(36px,6vw,72px);font-weight:700;letter-spacing:.06em;color:#fff;line-height:1.05;margin-bottom:10px;display:block;}
     .svc-hero-name em{font-style:normal;color:var(--accent);}
+    .svc-hero-title{font-family:'DM Serif Display',serif;font-size:clamp(20px,2.8vw,34px);color:rgba(255,255,255,.75);line-height:1.3;margin-bottom:16px;font-weight:300;letter-spacing:.02em;}
     .svc-hero-title em{font-style:italic;color:var(--accent);}
     .svc-hero-sub{font-size:clamp(12px,1.3vw,14px);color:rgba(255,255,255,.5);max-width:520px;line-height:1.85;}
     @media(max-width:768px){.svc-hero{padding:100px 28px 64px;}.svc-hero-num{font-size:80px;}}
+
+    /* ── STATS BAND ── */
+    .stats-band{background:var(--sub);padding:40px 72px;}
+    .stats-inner{max-width:900px;margin:0 auto;display:flex;justify-content:space-around;gap:32px;flex-wrap:wrap;}
+    .stat-item{text-align:center;}
+    .stat-num{font-family:'DM Serif Display',serif;font-size:clamp(36px,5vw,56px);color:#fff;line-height:1;display:block;}
+    .stat-label{font-size:11px;letter-spacing:.2em;color:rgba(255,255,255,.65);margin-top:6px;display:block;text-transform:uppercase;}
+    @media(max-width:600px){.stats-band{padding:32px 24px;}}
 
     /* ── OVERVIEW ── */
     .svc-overview{padding:88px 72px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
     .svc-overview-lead{font-family:'DM Serif Display',serif;font-size:clamp(22px,2.5vw,32px);line-height:1.5;color:var(--dark);margin-bottom:24px;}
     .svc-overview-lead em{font-style:italic;color:var(--sub);}
     .svc-overview-body{font-size:15px;line-height:1.95;color:var(--tl);}
-    .svc-overview-right{}
     @media(max-width:768px){.svc-overview{grid-template-columns:1fr;gap:36px;padding:56px 28px;}}
 
     /* ── OFFERS ── */
@@ -101,6 +87,22 @@
     .offer-card-desc{font-size:13px;color:var(--tl);line-height:1.7;}
     @media(max-width:768px){.svc-offers{padding:56px 28px;}.offers-grid{grid-template-columns:1fr;}}
 
+    /* ── S.LEAGUE SPOTLIGHT ── */
+    .spotlight{background:var(--dark);padding:80px 72px;}
+    .spotlight-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+    .spotlight-tag{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;display:block;}
+    .spotlight-title{font-family:'DM Serif Display',serif;font-size:clamp(26px,3.5vw,44px);color:#fff;line-height:1.2;margin-bottom:20px;}
+    .spotlight-title em{font-style:italic;color:var(--accent);}
+    .spotlight-body{font-size:14px;color:rgba(255,255,255,.65);line-height:1.9;margin-bottom:28px;}
+    .spotlight-facts{display:flex;flex-direction:column;gap:14px;}
+    .spotlight-fact{display:flex;align-items:baseline;gap:12px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.06);}
+    .spotlight-fact:last-child{border-bottom:none;}
+    .fact-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);min-width:80px;}
+    .fact-val{font-size:13px;color:rgba(255,255,255,.75);line-height:1.6;}
+    .btn-outline-light{display:inline-block;padding:13px 36px;border:1px solid rgba(196,149,106,.5);color:var(--accent);font-size:11px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:all .3s;}
+    .btn-outline-light:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
+    @media(max-width:768px){.spotlight{padding:56px 28px;}.spotlight-inner{grid-template-columns:1fr;gap:40px;}}
+
     /* ── PRICE ── */
     .svc-price{padding:80px 72px;max-width:900px;margin:0 auto;}
     .price-box{border:1px solid var(--beige);border-radius:2px;padding:48px 52px;position:relative;overflow:hidden;}
@@ -113,15 +115,15 @@
     @media(max-width:768px){.svc-price{padding:56px 28px;}.price-box{padding:32px 24px;}}
 
     /* ── FLOW ── */
-    .svc-flow{background:var(--dark);padding:80px 72px;}
+    .svc-flow{background:var(--sub);padding:80px 72px;}
     .svc-flow-inner{max-width:900px;margin:0 auto;}
     .flow-steps{display:flex;flex-direction:column;gap:0;}
-    .flow-step{display:grid;grid-template-columns:80px 1fr;gap:0 32px;padding:32px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+    .flow-step{display:grid;grid-template-columns:80px 1fr;gap:0 32px;padding:32px 0;border-bottom:1px solid rgba(255,255,255,.12);}
     .flow-step:last-child{border-bottom:none;}
-    .flow-num{font-family:'DM Serif Display',serif;font-size:40px;color:rgba(196,149,106,.2);text-align:right;padding-top:4px;}
-    .flow-tag{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;display:block;}
+    .flow-num{font-family:'DM Serif Display',serif;font-size:40px;color:rgba(255,255,255,.2);text-align:right;padding-top:4px;}
+    .flow-tag{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:6px;display:block;}
     .flow-title{font-size:16px;font-weight:500;color:#fff;margin-bottom:8px;}
-    .flow-desc{font-size:13px;color:rgba(255,255,255,.6);line-height:1.8;}
+    .flow-desc{font-size:13px;color:rgba(255,255,255,.7);line-height:1.8;}
     @media(max-width:768px){.svc-flow{padding:56px 28px;}.flow-step{grid-template-columns:48px 1fr;gap:0 16px;}.flow-num{font-size:28px;}}
 
     /* ── CTA ── */
@@ -149,7 +151,6 @@
     /* ── REVEAL ── */
     .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
     .reveal.visible{opacity:1;transform:none;}
-
   </style>
 </head>
 <body>
@@ -165,10 +166,10 @@
           <a href="./index.html#services" class="dropdown-toggle active">サービス</a>
           <ul class="dropdown-menu">
             <div class="dropdown-menu-inner">
-            <li><a href="./service-english.html"class='active'>英語教育</a></li>
+            <li><a href="./service-english.html">英語教育</a></li>
             <li><a href="./service-photo.html">写真撮影</a></li>
             <li><a href="./service-tour.html">ツアー</a></li>
-            <li><a href="./service-community.html">コミュニティ</a></li>
+            <li><a href="./service-community.html" class="active">コミュニティ</a></li>
             <li><a href="./service-counselling.html">カウンセリング</a></li>
             <li><a href="./service-karaoke.html">カラオケ</a></li>
             </div>
@@ -195,28 +196,50 @@
 
   <!-- HERO -->
   <section class="svc-hero">
-    <div class="svc-hero-num">01</div>
+    <div class="svc-hero-num">06</div>
     <div>
-      <span class="svc-hero-eyebrow">Services — 01</span>
-      <span class="svc-hero-icon">📖</span>
-      <span class="svc-hero-name">LUMA Voice</span>
-      <h1 class="svc-hero-title">英語教育 · チュータリング</h1>
-      <p class="svc-hero-sub">オーストラリア9年の実体験から生まれた、使える英語。日常会話からビジネス英語・試験対策まで、あなたのペースで。</p>
+      <span class="svc-hero-eyebrow">Services — 06</span>
+      <span class="svc-hero-icon">🎉</span>
+      <span class="svc-hero-name">LUMA Circle</span>
+      <h1 class="svc-hero-title">コミュニティイベント<em>主催</em></h1>
+      <p class="svc-hero-sub">22回・累計335名。つながりと居場所を、一緒につくる。S.Leagueをはじめ、多様なコミュニティイベントを企画・運営します。</p>
     </div>
   </section>
+
+  <!-- STATS BAND -->
+  <div class="stats-band">
+    <div class="stats-inner">
+      <div class="stat-item reveal">
+        <span class="stat-num">22</span>
+        <span class="stat-label">イベント開催回数</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-num">335</span>
+        <span class="stat-label">累計参加者数</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-num">4年</span>
+        <span class="stat-label">主催継続年数</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-num">2</span>
+        <span class="stat-label">プロ麻雀選手参加</span>
+      </div>
+    </div>
+  </div>
 
   <!-- OVERVIEW -->
   <section style="background:var(--cream)">
     <div class="svc-overview">
       <div class="svc-overview-left">
-        <p class="svc-overview-lead reveal">「話せる英語」を、<em>一緒に</em>身につける。</p>
-        <p class="svc-overview-body reveal">15歳でオーストラリアに渡り、24歳まで9年間を現地で過ごしました。大学では日本人会の副会長として500名以上の留学生をサポートし、英語を教えてきた経験があります。単に「正しい英語」を教えるのではなく、あなたが自信を持って発信できるよう、実践的なコミュニケーション力を一緒に育てます。</p>
+        <p class="svc-overview-lead reveal">「居場所」が、<em>人を変える</em>。</p>
+        <p class="svc-overview-body reveal">私自身が幼少期のトラウマから内向的な性格を経て、15歳でオーストラリアに渡り、人生を変えた経験があります。その転機になったのは「人とつながれる場所」の存在でした。<br><br>帰国後、2022年から麻雀大会「S.League」を主催。22回・累計335名の参加者を迎え、プロ麻雀選手HIRO柴田プロも参加するコミュニティへと成長しました。<br><br>LUMA Circleでは、麻雀大会にとどまらず、交流イベント・ミートアップ・カスタムイベントなど、あらゆる「つながりの場」を企画・運営します。あなたのコミュニティを一緒に育てましょう。</p>
       </div>
       <div class="svc-overview-right reveal" style="padding-top:8px;">
         <div style="border-left:2px solid var(--beige);padding-left:32px;">
           <p style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;">Overview</p>
-          <p style="font-family:'DM Serif Display',serif;font-size:17px;color:var(--dark);line-height:1.7;font-style:italic;">"Usable English" — built together, at your pace.</p>
-          <p style="font-size:13px;color:var(--tl);line-height:1.8;margin-top:16px;">I lived in Australia from age 15 to 24, served as vice president of a Japanese students association supporting 500+ students, and tutored English throughout. Rather than teaching "correct" English in the abstract, the focus is on building your confidence to actually speak and communicate.</p>
+          <p style="font-family:'DM Serif Display',serif;font-size:17px;color:var(--dark);line-height:1.7;font-style:italic;">"A place to belong" — that's what changes a life.</p>
+          <p style="font-size:13px;color:var(--tl);line-height:1.8;margin-top:16px;">From a childhood shaped by isolation to building a thriving community of 335 people across 22 events, I know what it means to find your place. LUMA Circle creates spaces where people genuinely connect — from mahjong tournaments to social meetups and beyond.</p>
         </div>
       </div>
     </div>
@@ -230,28 +253,71 @@
       <div class="offers-grid">
         <div class="offer-card reveal">
           <div class="offer-card-num">01</div>
-          <div class="offer-card-title">日常英会話レッスン<br><span style="font-size:12px;color:var(--taupe)">Conversational English</span></div>
-          <div class="offer-card-desc">旅行・日常生活・趣味の話から始めて、自然に話せる英語を築きます。初心者歓迎。</div>
+          <div class="offer-card-title">麻雀大会の企画・運営<br><span style="font-size:12px;color:var(--taupe)">Mahjong tournament</span></div>
+          <div class="offer-card-desc">S.Leagueの運営ノウハウをもとに、プロ参加型から初心者向けまで、規模・スタイルに合わせた麻雀大会を企画・当日運営まで一括対応します。</div>
         </div>
         <div class="offer-card reveal">
           <div class="offer-card-num">02</div>
-          <div class="offer-card-title">IELTS / TOEIC 対策<br><span style="font-size:12px;color:var(--taupe)">IELTS / TOEIC Prep</span></div>
-          <div class="offer-card-desc">出題傾向の分析から模擬練習まで。目標スコアに向けた最短ルートを設計します。</div>
+          <div class="offer-card-title">交流イベント・ミートアップ<br><span style="font-size:12px;color:var(--taupe)">Social meetup</span></div>
+          <div class="offer-card-desc">趣味・業種・地域など共通点を軸にした交流イベントを企画します。自然と会話が生まれる場づくりを大切にしています。</div>
         </div>
         <div class="offer-card reveal">
           <div class="offer-card-num">03</div>
-          <div class="offer-card-title">ビジネス英語<br><span style="font-size:12px;color:var(--taupe)">Business English</span></div>
-          <div class="offer-card-desc">メール・会議・プレゼンに使える実践英語。外資系・海外転職を目指す方に最適です。</div>
+          <div class="offer-card-title">S.League（定期コミュニティ）<br><span style="font-size:12px;color:var(--taupe)">S.League regular series</span></div>
+          <div class="offer-card-desc">2022年から続くLUMAの旗艦コミュニティ。次回S.League 23は2026年5月16日開催予定。参加者募集中です。</div>
         </div>
         <div class="offer-card reveal">
           <div class="offer-card-num">04</div>
-          <div class="offer-card-title">発音矯正・リスニング<br><span style="font-size:12px;color:var(--taupe)">Pronunciation & Listening</span></div>
-          <div class="offer-card-desc">通じる発音の作り方と、ネイティブスピードの聞き取り力を同時に鍛えます。</div>
+          <div class="offer-card-title">イベント企画コンサルティング<br><span style="font-size:12px;color:var(--taupe)">Event planning consultation</span></div>
+          <div class="offer-card-desc">「こんなイベントをやってみたい」というアイデアを、実現可能なプランに落とし込みます。集客・会場・当日運営まで相談可。</div>
         </div>
         <div class="offer-card reveal">
           <div class="offer-card-num">05</div>
-          <div class="offer-card-title">留学・移住サポート<br><span style="font-size:12px;color:var(--taupe)">Study Abroad Advice</span></div>
-          <div class="offer-card-desc">オーストラリア留学の実体験をもとに、学校選び・生活準備・心構えまでアドバイスします。</div>
+          <div class="offer-card-title">カスタムイベント<br><span style="font-size:12px;color:var(--taupe)">Custom event</span></div>
+          <div class="offer-card-desc">会社の懇親会・サークルの大会・友人グループの企画など、ご要望に合わせてゼロから設計します。まずはご相談ください。</div>
+        </div>
+        <div class="offer-card reveal">
+          <div class="offer-card-num">06</div>
+          <div class="offer-card-title">バイリンガルイベント対応<br><span style="font-size:12px;color:var(--taupe)">Bilingual events (EN/JA)</span></div>
+          <div class="offer-card-desc">英語・日本語どちらにも対応したイベント運営が可能。外国籍の参加者や国際交流イベントにも対応します。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S.LEAGUE SPOTLIGHT -->
+  <section class="spotlight">
+    <div class="spotlight-inner">
+      <div class="reveal">
+        <span class="spotlight-tag">Flagship Event</span>
+        <h2 class="spotlight-title">S.League — <em>4年間</em>の軌跡</h2>
+        <p class="spotlight-body">2022年1月にスタートしたS.Leagueは、「楽しく・真剣に」をモットーにした麻雀大会コミュニティです。プロ麻雀選手HIRO柴田プロも参加するプロ公認イベントに成長し、毎回16〜20名の参加者が本気の対局を楽しんでいます。</p>
+        <a href="./s-league.html" class="btn-outline-light">S.League の詳細を見る →</a>
+      </div>
+      <div class="spotlight-facts reveal">
+        <div class="spotlight-fact">
+          <span class="fact-label">開始</span>
+          <span class="fact-val">2022年1月（2022年〜継続中）</span>
+        </div>
+        <div class="spotlight-fact">
+          <span class="fact-label">開催回数</span>
+          <span class="fact-val">22回（SL23は2026年5月16日開催予定）</span>
+        </div>
+        <div class="spotlight-fact">
+          <span class="fact-label">累計参加者</span>
+          <span class="fact-val">335名</span>
+        </div>
+        <div class="spotlight-fact">
+          <span class="fact-label">形式</span>
+          <span class="fact-val">団体戦・東南戦 6〜8戦／16〜20名</span>
+        </div>
+        <div class="spotlight-fact">
+          <span class="fact-label">プロ参加</span>
+          <span class="fact-val">HIRO柴田プロ（プロ公認イベント）</span>
+        </div>
+        <div class="spotlight-fact">
+          <span class="fact-label">会場</span>
+          <span class="fact-val">東京都内（ベルバードgrow店 他）</span>
         </div>
       </div>
     </div>
@@ -262,23 +328,23 @@
     <span class="svc-section-eyebrow reveal">Pricing</span>
     <h2 class="svc-section-title reveal">料金<em>案内</em></h2>
     <div class="price-box">
-        <div class="price-row reveal">
-          <span class="price-label">無料相談（30分）</span>
-          <span class="price-value">¥0</span>
-        </div>
-        <div class="price-row reveal">
-          <span class="price-label">単発レッスン（60分）</span>
-          <span class="price-value">要相談</span>
-        </div>
-        <div class="price-row reveal">
-          <span class="price-label">月4回パック</span>
-          <span class="price-value">要相談</span>
-        </div>
-        <div class="price-row reveal">
-          <span class="price-label">オンライン / 対面</span>
-          <span class="price-value">どちらも対応</span>
-        </div>
-      <p class="price-note reveal">料金は目標・レベル・頻度によって柔軟にご相談します。まず無料相談（30分）でロードマップを一緒に考えましょう。</p>
+      <div class="price-row reveal">
+        <span class="price-label">S.League 参加費（SL23）</span>
+        <span class="price-value">¥8,300</span>
+      </div>
+      <div class="price-row reveal">
+        <span class="price-label">カスタムイベント企画・運営</span>
+        <span class="price-value">要相談</span>
+      </div>
+      <div class="price-row reveal">
+        <span class="price-label">イベント企画コンサルティング</span>
+        <span class="price-value">要相談</span>
+      </div>
+      <div class="price-row reveal">
+        <span class="price-label">初回相談</span>
+        <span class="price-value">無料</span>
+      </div>
+      <p class="price-note reveal">カスタムイベントの料金はイベントの規模・内容・運営工数により異なります。まずはご相談ください。S.League参加費の支払い方法はSquare（クレジットカード）・PayPay・銀行振込に対応しています。</p>
     </div>
   </section>
 
@@ -292,32 +358,32 @@
           <div class="flow-num">01</div>
           <div>
             <span class="flow-tag">Step 01</span>
-            <div class="flow-title">無料相談（30分）</div>
-            <div class="flow-desc">現在のレベル・目標・スケジュールを聞かせてください。ロードマップを一緒に作ります。</div>
+            <div class="flow-title">ご相談・ご要望のヒアリング</div>
+            <div class="flow-desc">どんなイベントを実現したいか、規模・テーマ・予算・日時をお聞かせください。S.Leagueへの参加の場合は申込フォームへ。</div>
           </div>
         </div>
         <div class="flow-step reveal">
           <div class="flow-num">02</div>
           <div>
             <span class="flow-tag">Step 02</span>
-            <div class="flow-title">カリキュラム設計</div>
-            <div class="flow-desc">目標に合わせたレッスンプランと教材を準備します。</div>
+            <div class="flow-title">企画・プラン提案</div>
+            <div class="flow-desc">ご要望をもとに、会場・スケジュール・集客方法・当日の流れを含むプランをご提案します。</div>
           </div>
         </div>
         <div class="flow-step reveal">
           <div class="flow-num">03</div>
           <div>
             <span class="flow-tag">Step 03</span>
-            <div class="flow-title">レッスン開始</div>
-            <div class="flow-desc">オンライン（Zoom等）または対面でレッスンをスタート。毎回フィードバックをお伝えします。</div>
+            <div class="flow-title">確定・準備</div>
+            <div class="flow-desc">プラン確定後、会場手配・告知・申込受付・支払い管理など、準備を進めます。</div>
           </div>
         </div>
         <div class="flow-step reveal">
           <div class="flow-num">04</div>
           <div>
             <span class="flow-tag">Step 04</span>
-            <div class="flow-title">定期レビュー</div>
-            <div class="flow-desc">月1回のレビューで進捗を確認し、プランを調整します。</div>
+            <div class="flow-title">当日運営・アフターフォロー</div>
+            <div class="flow-desc">当日の進行・運営を担当します。終了後も参加者のフォローや次回への改善提案をお届けします。</div>
           </div>
         </div>
       </div>
@@ -326,11 +392,11 @@
 
   <!-- CTA -->
   <section class="svc-cta">
-    <h2 class="svc-cta-title reveal">まずは<em>無料相談</em>から。</h2>
-    <p class="svc-cta-sub reveal">30分の無料相談で、あなたの英語目標と現状を聞かせてください。一緒にロードマップを作ります。</p>
+    <h2 class="svc-cta-title reveal">あなたの<em>輪</em>を、広げよう。</h2>
+    <p class="svc-cta-sub reveal">「こんなイベントがしたい」という思いがあれば、それが出発点です。S.Leagueへの参加でも、カスタムイベントのご相談でも、まずはお気軽にどうぞ。</p>
     <div class="reveal">
       <a href="./index.html#contact" class="btn-primary">無料相談・お問い合わせ</a>
-      <a href="./index.html#services" class="btn-outline">他のサービスを見る</a>
+      <a href="./s-league.html" class="btn-outline">S.Leagueを見る</a>
     </div>
   </section>
 
@@ -360,7 +426,10 @@
       document.body.style.overflow = open ? 'hidden' : '';
     }
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') { document.getElementById('mobMenu').classList.remove('open'); document.body.style.overflow = ''; }
+      if (e.key === 'Escape') {
+        document.getElementById('mobMenu').classList.remove('open');
+        document.body.style.overflow = '';
+      }
     });
     // reveal
     const ro = new IntersectionObserver(entries => {
