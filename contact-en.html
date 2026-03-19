@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light only" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://studio-lumadesign.com/contact-en.html" />
+  <title>Tour Enquiry — LUMA Path | Private Guide in Japan</title>
+  <meta name="description" content="Enquire about a private tour in Japan with LUMA Path. English-speaking guide, gluten-free and allergy-friendly, custom itineraries across Tokyo, Kyoto, Osaka, Hokkaido and Fukuoka." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --cream: #faf8f4; --warm: #f5f1eb; --beige: #e8e0d4; --sand: #d4c8b4;
+      --taupe: #b8a898; --dark: #2d2420; --accent: #c4956a; --accent-l: #e8c9a8;
+      --text: #3d3028; --tl: #7a6858; --sub: #8e5f45;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream); color: var(--text);
+      font-family: 'Cormorant Garamond', serif;
+      min-height: 100vh; display: flex; flex-direction: column;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 56px; background: var(--dark);
+    }
+    .logo {
+      font-family: 'Montserrat', sans-serif; font-size: 19px; font-weight: 700;
+      letter-spacing: .2em; color: #EDCAA2; text-decoration: none;
+    }
+    .nav-back {
+      font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600;
+      letter-spacing: .18em; text-transform: uppercase; text-decoration: none;
+      color: rgba(255,255,255,.5); transition: color .3s; display: flex; align-items: center; gap: 8px;
+    }
+    .nav-back:hover { color: var(--accent); }
+    .nav-back::before { content: '←'; font-size: 14px; }
+    @media (max-width: 600px) { nav { padding: 14px 20px; } }
+    @media (max-width: 400px) { .nav-back span { display: none; } }
+
+    /* ── LAYOUT ── */
+    .page-wrap {
+      flex: 1; display: grid; grid-template-columns: 1fr 1fr;
+      min-height: calc(100vh - 72px);
+    }
+    @media (max-width: 900px) { .page-wrap { grid-template-columns: 1fr; } }
+
+    /* ── LEFT PANEL ── */
+    .left-panel {
+      background: var(--dark); padding: 72px 64px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      position: sticky; top: 0; height: calc(100vh - 72px);
+    }
+    .left-top {}
+    .left-eyebrow {
+      font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 600;
+      letter-spacing: .4em; text-transform: uppercase; color: var(--accent);
+      margin-bottom: 24px; display: flex; align-items: center; gap: 12px;
+    }
+    .left-eyebrow::after { content: ''; flex: 0 0 36px; height: 1px; background: var(--accent); opacity: .4; }
+    .left-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(28px, 3.5vw, 46px); color: #fff; line-height: 1.15; margin-bottom: 28px;
+    }
+    .left-title em { font-style: italic; color: var(--accent); }
+    .left-body {
+      font-size: 16px; color: rgba(255,255,255,.55); line-height: 1.9; margin-bottom: 40px;
+    }
+    .left-body p + p { margin-top: 14px; }
+    .left-details { display: flex; flex-direction: column; gap: 14px; }
+    .detail-row {
+      display: flex; align-items: flex-start; gap: 14px;
+      font-size: 14px; color: rgba(255,255,255,.5); line-height: 1.6;
+    }
+    .detail-icon { font-size: 16px; flex-shrink: 0; margin-top: 2px; }
+    .detail-label {
+      font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 600;
+      letter-spacing: .16em; text-transform: uppercase; color: var(--accent);
+      margin-bottom: 2px; display: block;
+    }
+    .left-bottom {
+      margin-top: 48px; padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,.07);
+    }
+    .left-note {
+      font-size: 13px; color: rgba(255,255,255,.3); line-height: 1.7;
+      font-style: italic;
+    }
+    @media (max-width: 900px) {
+      .left-panel {
+        position: static; height: auto;
+        padding: 56px 28px 48px; overflow: visible;
+      }
+      .left-details { gap: 12px; }
+      .left-bottom { margin-top: 32px; }
+    }
+
+    /* ── RIGHT PANEL (FORM) ── */
+    .right-panel {
+      padding: 72px 64px; background: var(--cream);
+      display: flex; flex-direction: column; justify-content: flex-start;
+    }
+    .form-heading {
+      font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600;
+      letter-spacing: .32em; text-transform: uppercase; color: var(--accent);
+      margin-bottom: 40px; display: block;
+    }
+
+    /* form fields */
+    .form-group { margin-bottom: 28px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 28px; }
+    label {
+      font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700;
+      letter-spacing: .22em; text-transform: uppercase; color: var(--tl);
+      display: block; margin-bottom: 8px;
+    }
+    label .req { color: var(--accent); margin-left: 2px; }
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%; font-family: 'Cormorant Garamond', serif; font-size: 16px;
+      color: var(--text); background: #fff; border: 1px solid var(--beige);
+      border-radius: 1px; padding: 13px 16px; outline: none;
+      transition: border-color .25s, box-shadow .25s; appearance: none;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(196,149,106,.1);
+    }
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23b8a898' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 16px center;
+      padding-right: 40px; cursor: pointer;
+    }
+    textarea { resize: vertical; min-height: 140px; line-height: 1.7; }
+    ::placeholder { color: var(--taupe); opacity: .8; }
+
+    /* allergy checkboxes */
+    .checkbox-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 4px; }
+    @media (max-width: 500px) { .checkbox-grid { grid-template-columns: 1fr; } }
+    .checkbox-item { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+    .checkbox-item input[type="checkbox"] {
+      width: 16px; height: 16px; accent-color: var(--accent);
+      cursor: pointer; flex-shrink: 0; margin: 0; padding: 0;
+    }
+    .checkbox-item span {
+      font-family: 'Cormorant Garamond', serif; font-size: 15px; color: var(--tl);
+    }
+
+    /* submit */
+    .form-submit { margin-top: 12px; }
+    .btn-submit {
+      font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700;
+      letter-spacing: .22em; text-transform: uppercase;
+      padding: 17px 52px; background: var(--accent); color: #fff;
+      border: none; border-radius: 1px; cursor: pointer;
+      transition: background .3s, transform .2s; display: inline-block;
+      width: 100%;
+    }
+    .btn-submit:hover { background: var(--sub); transform: translateY(-1px); }
+    .form-note {
+      font-size: 13px; color: var(--taupe); margin-top: 16px; line-height: 1.65;
+      font-style: italic; text-align: center;
+    }
+
+    /* success state */
+    .form-success {
+      display: none; text-align: center; padding: 60px 20px;
+    }
+    .form-success.visible { display: block; }
+    .success-icon { font-size: 48px; margin-bottom: 20px; display: block; }
+    .success-title {
+      font-family: 'DM Serif Display', serif; font-size: 32px; color: var(--dark);
+      margin-bottom: 14px; line-height: 1.2;
+    }
+    .success-title em { font-style: italic; color: var(--sub); }
+    .success-body { font-size: 16px; color: var(--tl); line-height: 1.8; max-width: 420px; margin: 0 auto 32px; }
+    .btn-back {
+      font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600;
+      letter-spacing: .18em; text-transform: uppercase;
+      padding: 13px 36px; border: 1px solid var(--accent); color: var(--accent);
+      text-decoration: none; border-radius: 1px; transition: all .3s; display: inline-block;
+    }
+    .btn-back:hover { background: var(--accent); color: #fff; }
+
+    @media (max-width: 900px) { .right-panel { padding: 48px 28px 64px; } }
+    @media (max-width: 500px) { .right-panel { padding: 36px 20px 56px; } }
+    @media (max-width: 500px) { .form-group { margin-bottom: 22px; } }
+    @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark); padding: 28px 56px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-logo {
+      font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700;
+      letter-spacing: .2em; color: #EDCAA2; text-decoration: none;
+    }
+    .footer-copy { font-size: 11px; color: var(--taupe); opacity: .4; font-family: 'Montserrat', sans-serif; letter-spacing: .08em; }
+    @media (max-width: 600px) { footer { padding: 24px; flex-direction: column; align-items: flex-start; } }
+
+    input[type="checkbox"]:required:invalid ~ span { color: var(--text); }
+    #disclaimerCheck { accent-color: var(--accent); width: 18px; height: 18px; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="./index.html" class="logo">LUMA</a>
+    <a href="./tour-en.html" class="nav-back">Back to Tour Guide</a>
+  </nav>
+
+  <div class="page-wrap">
+
+    <!-- LEFT: context -->
+    <div class="left-panel">
+      <div class="left-top">
+        <p class="left-eyebrow">LUMA Path</p>
+        <h1 class="left-title">Let's work out<br>what you're <em>after.</em></h1>
+        <div class="left-body">
+          <p>There's no booking system here — just a message. Tell me where you want to go, when you're in Japan, and what you're interested in. I'll get back to you within a day or two and we'll go from there.</p>
+          <p>If you've got dietary restrictions, note them down. I'll factor them in from the start.</p>
+        </div>
+        <div class="left-details">
+          <div class="detail-row">
+            <span class="detail-icon">🗾</span>
+            <div>
+              <span class="detail-label">Coverage</span>
+              Tokyo, Kanto, Kansai, Hokkaido, Fukuoka — and anywhere else you're headed
+            </div>
+          </div>
+          <div class="detail-row">
+            <span class="detail-icon">🗣️</span>
+            <div>
+              <span class="detail-label">Language</span>
+              English and Japanese — no need to manage the Japanese side yourself
+            </div>
+          </div>
+          <div class="detail-row">
+            <span class="detail-icon">🌿</span>
+            <div>
+              <span class="detail-label">Allergy support</span>
+              Gluten-free, nut allergy, dairy-free, shellfish — allergen pre-check included
+            </div>
+          </div>
+          <div class="detail-row">
+            <span class="detail-icon">💬</span>
+            <div>
+              <span class="detail-label">Response time</span>
+              Usually within 1–2 business days
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="left-bottom">
+        <p class="left-note">"I'd rather have a proper conversation about what you're actually after and build something from there."</p>
+      </div>
+    </div>
+
+    <!-- RIGHT: form -->
+    <div class="right-panel">
+      <span class="form-heading">Send an Enquiry</span>
+
+      <form id="enquiryForm" action="https://formspree.io/f/mdawgrql" method="POST">
+
+        <!-- hidden fields -->
+        <input type="hidden" name="_subject" value="LUMA Path — Tour Enquiry (EN)" />
+        <input type="hidden" name="source_page" value="tour-en / contact-en" />
+
+        <div class="form-row">
+          <div class="form-group" style="margin-bottom:0">
+            <label for="fname">First name <span class="req">*</span></label>
+            <input type="text" id="fname" name="first_name" placeholder="Your first name" required />
+          </div>
+          <div class="form-group" style="margin-bottom:0">
+            <label for="lname">Last name <span class="req">*</span></label>
+            <input type="text" id="lname" name="last_name" placeholder="Your last name" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email address <span class="req">*</span></label>
+          <input type="email" id="email" name="email" placeholder="Where should I reply?" required />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group" style="margin-bottom:0">
+            <label for="destination">Where in Japan? <span class="req">*</span></label>
+            <select id="destination" name="destination" required>
+              <option value="" disabled selected>Select a region</option>
+              <option value="Tokyo">Tokyo</option>
+              <option value="Kanto (Kamakura, Nikko, Hakone)">Kanto (Kamakura, Nikko, Hakone)</option>
+              <option value="Kansai (Kyoto, Osaka, Nara)">Kansai (Kyoto, Osaka, Nara)</option>
+              <option value="Hokkaido">Hokkaido</option>
+              <option value="Fukuoka / Kyushu">Fukuoka / Kyushu</option>
+              <option value="Multiple regions">Multiple regions</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-bottom:0">
+            <label for="tour_type">Type of tour</label>
+            <select id="tour_type" name="tour_type">
+              <option value="" disabled selected>What are you after?</option>
+              <option value="Half-day (3–4 hrs)">Half-day (3–4 hrs)</option>
+              <option value="Full-day (6–8 hrs)">Full-day (6–8 hrs)</option>
+              <option value="Aviation tour">Aviation tour</option>
+              <option value="Custom itinerary">Custom itinerary</option>
+              <option value="Allergy-focused tour">Allergy-focused tour</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group" style="margin-bottom:0">
+            <label for="travel_dates">Travel dates</label>
+            <input type="text" id="travel_dates" name="travel_dates" placeholder="e.g. 10–17 June 2026" />
+          </div>
+          <div class="form-group" style="margin-bottom:0">
+            <label for="group_size">Group size</label>
+            <select id="group_size" name="group_size">
+              <option value="" disabled selected>How many people?</option>
+              <option value="1">Just me</option>
+              <option value="2">2 people</option>
+              <option value="3">3 people</option>
+              <option value="4">4 people</option>
+              <option value="5–6">5–6 people</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Dietary requirements <span style="font-weight:400;text-transform:none;letter-spacing:0;font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--taupe);">(tick all that apply)</span></label>
+          <div class="checkbox-grid">
+            <label class="checkbox-item">
+              <input type="checkbox" name="dietary[]" value="Gluten-free" />
+              <span>Gluten-free</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="dietary[]" value="Nut allergy" />
+              <span>Nut allergy</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="dietary[]" value="Dairy-free" />
+              <span>Dairy-free</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="dietary[]" value="Shellfish allergy" />
+              <span>Shellfish allergy</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="dietary[]" value="Other" />
+              <span>Other (describe below)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Anything else? <span style="font-weight:400;text-transform:none;letter-spacing:0;font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--taupe);">(optional)</span></label>
+          <textarea id="message" name="message" placeholder="What are you most interested in seeing or doing? Any specific spots, interests, or things you'd like to avoid? The more I know, the better the tour."></textarea>
+        </div>
+
+        <!-- HOW DID YOU HEAR -->
+        <div class="form-group">
+          <label for="referral_source">How did you hear about us?</label>
+          <select id="referral_source" name="referral_source">
+            <option value="" disabled selected>Select an option</option>
+            <option value="Google search">Google search</option>
+            <option value="Instagram">Instagram</option>
+            <option value="Facebook">Facebook</option>
+            <option value="LinkedIn">LinkedIn</option>
+            <option value="Referred by a friend or colleague">Referred by a friend or colleague</option>
+            <option value="Referred by a company">Referred by a company</option>
+            <option value="Travel blog or website">Travel blog or website</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <!-- Referral name — shown/hidden by JS -->
+        <div class="form-group" id="referralNameWrap" style="display:none;">
+          <label for="referral_name">Please tell us more <span class="req">*</span></label>
+          <input type="text" id="referral_name" name="referral_name"
+                 placeholder="e.g. Jane Smith, Acme Travel Co., blog name, or other details" />
+        </div>
+
+        <!-- ALLERGY DISCLAIMER -->
+        <div class="form-group" style="background:rgba(196,149,106,.07);border:1px solid rgba(196,149,106,.25);border-radius:2px;padding:24px 28px;">
+          <label style="color:var(--sub);margin-bottom:12px;font-size:11px;letter-spacing:.22em;">Allergy &amp; Dietary Disclaimer</label>
+          <p style="font-size:14px;color:var(--tl);line-height:1.8;margin-bottom:20px;">I do my best to pre-check restaurants and communicate your requirements in Japanese before we arrive. However, I want to be upfront about a few things:</p>
+          <ul style="font-size:14px;color:var(--tl);line-height:1.9;padding-left:20px;margin-bottom:20px;">
+            <li>Cross-contamination can occur in any kitchen, even where allergen-free dishes are offered. I cannot guarantee a completely allergen-free environment.</li>
+            <li>I am not a medical professional. I can research and communicate your needs, but the final responsibility for safety remains with the restaurant and with you.</li>
+            <li>Please carry any medication (e.g. an EpiPen) with you at all times during the tour.</li>
+          </ul>
+          <label class="checkbox-item" style="align-items:flex-start;gap:12px;cursor:pointer;">
+            <input type="checkbox" name="disclaimer_allergy" id="disclaimerCheck" required style="margin-top:3px;flex-shrink:0;" />
+            <span style="font-size:14px;color:var(--text);line-height:1.7;">I understand that while allergen pre-checking will be carried out on my behalf, cross-contamination cannot be fully ruled out, and that food safety responsibility rests with the restaurant. I will carry any required medication throughout the tour.</span>
+          </label>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn-submit">Send Enquiry</button>
+          <p class="form-note">No booking or payment required at this stage — just a message.<br>I'll be in touch within 1–2 business days.</p>
+        </div>
+
+      </form>
+
+      <!-- Success message -->
+      <div class="form-success" id="formSuccess">
+        <span class="success-icon">✉️</span>
+        <h2 class="success-title">Message <em>received.</em></h2>
+        <p class="success-body">Thanks for getting in touch. I'll read through your enquiry and get back to you within a day or two. Looking forward to it.</p>
+        <a href="./tour-en.html" class="btn-back">Back to LUMA Path</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="./index.html" class="footer-logo">LUMA</a>
+    <p class="footer-copy">© 2026 LUMA — Sho Asano. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Show/hide referral name field
+    const referralSelect = document.getElementById('referral_source');
+    const referralWrap   = document.getElementById('referralNameWrap');
+    const referralInput  = document.getElementById('referral_name');
+
+    const SHOW_REFERRAL = ['Referred by a friend or colleague', 'Referred by a company', 'Travel blog or website', 'Other'];
+
+    referralSelect.addEventListener('change', function() {
+      const show = SHOW_REFERRAL.includes(this.value);
+      referralWrap.style.display = show ? 'block' : 'none';
+      referralInput.required = show;
+      if (!show) referralInput.value = '';
+    });
+
+    const form = document.getElementById('enquiryForm');
+    const success = document.getElementById('formSuccess');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = form.querySelector('.btn-submit');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.style.display = 'none';
+          success.classList.add('visible');
+          const heading = document.querySelector('.form-heading');
+          if (heading) heading.style.display = 'none';
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          btn.textContent = 'Send Enquiry';
+          btn.disabled = false;
+          alert('Something went wrong — please try again or email us directly.');
+        }
+      } catch {
+        btn.textContent = 'Send Enquiry';
+        btn.disabled = false;
+        alert('Something went wrong — please check your connection and try again.');
+      }
+    });
+  </script>
+</body>
+</html>
