@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ja" id="html-root">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="color-scheme" content="light only" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-62F20N179N');</script>
+  <meta name="theme-color" content="#c4956a"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>サービス一覧 | LUMA — Clarity by Design</title>
+  <meta name="description" content="LUMAのサービス一覧。英語教育(LUMA Voice)・S.League麻雀大会・ツアー(LUMA Path)・ポートレート撮影(LUMA Frame)・カウンセリング(LUMA Space)・カラオケ(LUMA Stage)。"/>
+  <link rel="canonical" href="https://studio-lumadesign.com/services"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Noto+Sans+JP:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@600;700&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"/>
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Noto+Sans+JP:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@600;700&display=swap" rel="stylesheet"/></noscript>
+  <style>
+    :root{
+      color-scheme:light only;
+      --cream:#faf8f4;--warm:#f5f1eb;--beige:#e8e0d4;--sand:#d4c8b4;
+      --taupe:#b8a898;--dark:#2d2420;--accent:#c4956a;--accent-l:#e8c9a8;
+      --text:#3d3028;--tl:#7a6858;--sub:#8e5f45;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--cream);color:var(--text);font-family:'Noto Sans JP',sans-serif;font-weight:300;overflow-x:hidden;}
+
+    /* NAV */
+    #navbar{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;transition:background .4s,box-shadow .4s;}
+    #navbar.scrolled{background:rgba(250,248,244,.96);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(196,149,106,.12);}
+    .logo-text{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:700;letter-spacing:.18em;color:#EDCAA2;text-decoration:none;}
+    .nav-right{display:flex;align-items:center;gap:32px;}
+    .nav-links{display:flex;list-style:none;gap:28px;align-items:center;}
+    .nav-links a{font-size:11px;font-weight:400;letter-spacing:.14em;text-decoration:none;color:var(--tl);transition:color .3s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--accent);}
+    .has-dropdown{position:relative;}
+    .dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:12px;list-style:none;z-index:1000;min-width:220px;}
+    .dropdown-menu-inner{background:rgba(250,248,244,.98);backdrop-filter:blur(16px);border:1px solid var(--beige);border-radius:2px;padding:8px 0;box-shadow:0 8px 32px rgba(45,36,32,.12);}
+    .has-dropdown:hover .dropdown-menu{display:block;}
+    .dropdown-menu li{list-style:none;}
+    .dropdown-menu li a{display:block;padding:9px 20px;font-size:11px;letter-spacing:.12em;color:var(--tl);text-decoration:none;transition:color .2s,background .2s;white-space:nowrap;}
+    .dropdown-menu li a:hover,.dropdown-menu li a.active{color:var(--accent);background:var(--warm);}
+    .dropdown-toggle::after{content:'';display:inline-block;width:5px;height:5px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg) translateY(-2px);margin-left:5px;vertical-align:middle;}
+    .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;flex-shrink:0;}
+    .ham span{display:block;width:22px;height:1.5px;background:var(--tl);transition:all .3s;}
+    .mob-menu{display:none;position:fixed;inset:0;background:var(--cream);z-index:1100;flex-direction:column;align-items:center;justify-content:center;gap:28px;}
+    .mob-menu.open{display:flex;}
+    .mob-menu a{font-size:18px;letter-spacing:.16em;color:var(--text);text-decoration:none;transition:color .3s;}
+    .mob-menu a:hover{color:var(--accent);}
+    .mob-close{position:absolute;top:20px;right:24px;background:none;border:none;font-size:28px;color:var(--tl);cursor:pointer;}
+    .mob-svc-wrap{width:100%;text-align:center;}
+    .mob-svc-toggle{background:none;border:none;cursor:pointer;font-family:'Noto Sans JP',sans-serif;font-size:18px;letter-spacing:.16em;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:0;transition:color .3s;}
+    .mob-svc-toggle:hover{color:var(--accent);}
+    .mob-svc-arrow{font-size:14px;transition:transform .3s;display:inline-block;}
+    .mob-svc-toggle[aria-expanded="true"] .mob-svc-arrow{transform:rotate(180deg);}
+    .mob-svc-list{display:flex;flex-direction:column;gap:16px;max-height:0;overflow:hidden;transition:max-height .35s ease,opacity .3s ease;opacity:0;margin-top:0;}
+    .mob-svc-list.open{max-height:500px;opacity:1;margin-top:16px;}
+    .mob-svc-list a{font-size:14px!important;letter-spacing:.1em;color:var(--tl)!important;}
+    .mob-svc-list a:hover{color:var(--accent)!important;}
+    @media(max-width:768px){.ham{display:flex;}.nav-links{display:none;}#navbar{padding:14px 24px;}}
+
+    /* HERO */
+    .svc-hero{background:var(--dark);padding:140px 72px 80px;position:relative;overflow:hidden;}
+    .svc-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 20% 50%,rgba(196,149,106,.14) 0%,transparent 60%),radial-gradient(ellipse 40% 50% at 80% 80%,rgba(142,95,69,.1) 0%,transparent 60%);}
+    .hero-wm{position:absolute;font-family:'DM Serif Display',serif;font-size:clamp(80px,16vw,200px);font-style:italic;color:rgba(196,149,106,.04);right:-20px;top:50%;transform:translateY(-50%);pointer-events:none;white-space:nowrap;line-height:1;z-index:0;}
+    .hero-inner{max-width:760px;position:relative;z-index:1;}
+    .hero-eyebrow{font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;display:block;}
+    .hero-title{font-family:'DM Serif Display',serif;font-size:clamp(36px,5.5vw,68px);color:#fff;line-height:1.1;margin-bottom:16px;}
+    .hero-title em{font-style:italic;color:var(--accent);}
+    .hero-sub{font-size:15px;color:var(--taupe);line-height:1.8;max-width:560px;margin-bottom:40px;}
+    .hero-tags{display:flex;flex-wrap:wrap;gap:10px;}
+    .hero-tag{font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 18px;border:1px solid rgba(196,149,106,.3);color:var(--accent-l);border-radius:20px;transition:all .3s;cursor:pointer;text-decoration:none;}
+    .hero-tag:hover{background:rgba(196,149,106,.15);border-color:var(--accent);}
+    @media(max-width:768px){.svc-hero{padding:110px 24px 60px;}}
+
+    /* SERVICES GRID */
+    .svc-main{max-width:1200px;margin:0 auto;padding:80px 72px 100px;}
+    .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+    .service-card{
+      background:var(--warm);border:1px solid var(--beige);border-radius:4px;
+      padding:44px 32px;text-align:left;transition:all .4s;position:relative;
+      overflow:hidden;cursor:pointer;display:flex;flex-direction:column;
+    }
+    .service-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transition:transform .4s;transform-origin:left;}
+    .service-card:hover{box-shadow:0 8px 40px rgba(100,80,60,.1);transform:translateY(-4px);}
+    .service-card:hover::before{transform:scaleX(1);}
+    .service-card-hint{font-size:10px;letter-spacing:.14em;color:var(--accent);margin-top:16px;opacity:.7;transition:opacity .3s;}
+    .service-card:hover .service-card-hint{opacity:1;}
+    .service-number{font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--sand);letter-spacing:.2em;margin-bottom:20px;}
+    .service-icon{font-size:28px;margin-bottom:16px;}
+    .service-name-ja{font-size:17px;font-weight:500;color:var(--dark);margin-bottom:4px;}
+    .service-name-en{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;}
+    .service-desc{font-size:13px;line-height:1.85;color:var(--tl);flex:1;}
+
+    /* MODAL */
+    .modal-overlay{position:fixed;inset:0;z-index:2000;background:rgba(45,36,32,.55);backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .35s;display:flex;align-items:center;justify-content:center;padding:24px;}
+    .modal-overlay.open{opacity:1;pointer-events:all;}
+    .modal{background:var(--cream);border-radius:6px;max-width:600px;width:100%;max-height:88vh;overflow-y:auto;padding:56px 52px;box-shadow:0 24px 80px rgba(45,36,32,.18);transform:translateY(20px);transition:transform .35s;position:relative;}
+    .modal-overlay.open .modal{transform:translateY(0);}
+    .modal-close{position:absolute;top:20px;right:24px;background:none;border:none;font-size:22px;color:var(--taupe);cursor:pointer;padding:4px 8px;transition:color .2s;}
+    .modal-close:hover{color:var(--dark);}
+    .modal-number{font-family:'Cormorant Garamond',serif;font-size:12px;color:var(--sand);letter-spacing:.2em;margin-bottom:16px;}
+    .modal-icon{font-size:36px;margin-bottom:12px;}
+    .modal-title-ja{font-family:'DM Serif Display',serif;font-size:26px;color:var(--dark);margin-bottom:4px;}
+    .modal-title-en{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;}
+    .modal-divider{width:40px;height:1px;background:var(--beige);margin-bottom:24px;}
+    .modal-body{font-size:14px;line-height:1.95;color:var(--tl);margin-bottom:28px;}
+    .modal-offers{margin-bottom:32px;}
+    .modal-offers-title{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
+    .modal-offer-item{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid var(--beige);font-size:13px;line-height:1.7;color:var(--tl);}
+    .modal-offer-item:last-child{border-bottom:none;}
+    .modal-offer-dot{width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:7px;}
+    .modal-price-note{background:var(--warm);border:1px solid var(--beige);border-radius:4px;padding:20px 24px;font-size:12px;line-height:1.8;color:var(--tl);}
+    .modal-price-note strong{color:var(--accent);font-weight:500;}
+    .modal-cta{margin-top:28px;text-align:center;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    .btn-primary{display:inline-block;padding:14px 36px;background:var(--accent);color:white;font-family:'Noto Sans JP',sans-serif;font-size:12px;font-weight:400;letter-spacing:.16em;text-decoration:none;border-radius:2px;transition:all .3s;border:1px solid var(--accent);cursor:pointer;}
+    .btn-primary:hover{background:var(--dark);border-color:var(--dark);}
+
+    /* BOTTOM CTA */
+    .bottom-cta{margin-top:72px;background:var(--sub);border-radius:4px;padding:56px 64px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;position:relative;overflow:hidden;}
+    .bottom-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 90% 50%,rgba(255,255,255,.06) 0%,transparent 60%);}
+    .cta-text{position:relative;z-index:1;}
+    .cta-eyebrow{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:10px;display:block;}
+    .cta-title{font-family:'DM Serif Display',serif;font-size:clamp(22px,2.8vw,34px);color:#fff;line-height:1.2;margin-bottom:8px;}
+    .cta-title em{font-style:italic;color:var(--accent-l);}
+    .cta-sub{font-size:13px;color:rgba(255,255,255,.65);line-height:1.8;}
+    .cta-btns{display:flex;gap:12px;flex-shrink:0;position:relative;z-index:1;flex-wrap:wrap;}
+    .btn-white{display:inline-block;padding:14px 36px;background:#fff;color:var(--sub);font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:400;letter-spacing:.16em;text-decoration:none;border-radius:2px;transition:all .3s;}
+    .btn-white:hover{background:var(--cream);}
+    .btn-ghost{display:inline-block;padding:14px 36px;background:transparent;color:#fff;font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:400;letter-spacing:.16em;text-decoration:none;border-radius:2px;border:1px solid rgba(255,255,255,.35);transition:all .3s;}
+    .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff;}
+
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+
+    /* FOOTER */
+    footer{background:var(--dark);padding:48px 72px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;}
+    .footer-logo{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:700;letter-spacing:.22em;color:#EDCAA2;text-decoration:none;}
+    .footer-tagline{font-size:11px;letter-spacing:.14em;color:var(--taupe);margin-top:4px;}
+    .fl-links{display:flex;gap:24px;list-style:none;flex-wrap:wrap;}
+    .fl-links a{font-size:11px;letter-spacing:.1em;color:var(--taupe);text-decoration:none;transition:color .3s;}
+    .fl-links a:hover{color:var(--accent);}
+    .copy{font-size:10px;color:var(--taupe);opacity:.5;}
+
+    @media(max-width:960px){.svc-grid{grid-template-columns:repeat(2,1fr);}.svc-main{padding:60px 40px 80px;}.bottom-cta{padding:44px 40px;}}
+    @media(max-width:640px){.svc-grid{grid-template-columns:1fr;}.svc-main{padding:48px 20px 60px;}.bottom-cta{padding:36px 24px;flex-direction:column;align-items:flex-start;}footer{padding:40px 20px;}.modal{padding:40px 24px;}.modal-overlay{align-items:flex-end;padding:0;}.modal{border-radius:12px 12px 0 0;max-height:90vh;}}
+    @media(max-width:480px){.svc-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body id="body-root">
+
+  <nav id="navbar">
+    <a href="./index.html" class="logo-text">LUMA</a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="./index.html#about">LUMAとは</a></li>
+        <li class="has-dropdown">
+          <a href="./services.html" class="dropdown-toggle active">サービス</a>
+          <ul class="dropdown-menu">
+            <div class="dropdown-menu-inner">
+            <li><a href="./services.html" class="active">サービス一覧</a></li>
+            <li><a href="./service-english.html">英語教育 — LUMA Voice</a></li>
+            <li><a href="./s-league.html">S.League 麻雀大会</a></li>
+            <li><a href="./service-tour.html">ツアー — LUMA Path</a></li>
+            <li><a href="./service-photo.html">写真撮影 — LUMA Frame</a></li>
+            <li><a href="./service-counselling.html">カウンセリング — LUMA Space</a></li>
+            <li><a href="./service-karaoke.html">カラオケ — LUMA Stage</a></li>
+            </div>
+          </ul>
+        </li>
+        <li><a href="./contact.html">お問い合わせ</a></li>
+        <li><a href="./legal.html">特商法・プライバシー</a></li>
+      </ul>
+      <button class="ham" id="hamBtn" onclick="toggleMobMenu()" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mob-menu" id="mobMenu">
+    <button class="mob-close" onclick="toggleMobMenu()">✕</button>
+    <a href="./index.html#about" onclick="toggleMobMenu()">LUMAとは</a>
+    <div class="mob-svc-wrap">
+      <button class="mob-svc-toggle" onclick="toggleMobSvc(this)" aria-expanded="false">
+        サービス <span class="mob-svc-arrow">▾</span>
+      </button>
+      <div class="mob-svc-list" aria-hidden="true">
+        <a href="./services.html"          onclick="toggleMobMenu()">サービス一覧</a>
+        <a href="./service-english.html"     onclick="toggleMobMenu()">英語教育 — LUMA Voice</a>
+        <a href="./s-league.html"            onclick="toggleMobMenu()">S.League 麻雀大会</a>
+        <a href="./service-tour.html"        onclick="toggleMobMenu()">ツアー — LUMA Path</a>
+        <a href="./service-photo.html"       onclick="toggleMobMenu()">写真撮影 — LUMA Frame</a>
+        <a href="./service-counselling.html" onclick="toggleMobMenu()">カウンセリング — LUMA Space</a>
+        <a href="./service-karaoke.html"     onclick="toggleMobMenu()">カラオケ — LUMA Stage</a>
+      </div>
+    </div>
+    <a href="./contact.html" onclick="toggleMobMenu()">お問い合わせ</a>
+    <a href="./legal.html" onclick="toggleMobMenu()">特商法・プライバシー</a>
+  </div>
+
+  <div class="svc-hero">
+    <div class="hero-wm">Services</div>
+    <div class="hero-inner">
+      <span class="hero-eyebrow">Services — LUMA</span>
+      <h1 class="hero-title">あなたに合った<br><em>サービスを</em>見つける</h1>
+      <p class="hero-sub">LUMAは6つのサービスを通じて、あなたの自信を引き出すお手伝いをします。どのサービスも、一人ひとりに寄り添ったオーダーメイドのサポートです。</p>
+      <div class="hero-tags">
+        <a class="hero-tag" onclick="openModal('english')">LUMA Voice</a>
+        <a class="hero-tag" onclick="openModal('sleague')">S.League</a>
+        <a class="hero-tag" onclick="openModal('tour')">LUMA Path</a>
+        <a class="hero-tag" onclick="openModal('photo')">LUMA Frame</a>
+        <a class="hero-tag" onclick="openModal('counselling')">LUMA Space</a>
+        <a class="hero-tag" onclick="openModal('karaoke')">LUMA Stage</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="svc-main">
+    <div class="svc-grid reveal">
+
+      <div class="service-card" onclick="openModal('english')">
+        <div class="service-number">01</div>
+        <div class="service-icon">📖</div>
+        <div class="service-name-ja">英語教育・チュータリング</div>
+        <div class="service-name-en">LUMA Voice</div>
+        <p class="service-desc">オーストラリア9年の経験をベースに、日常会話からビジネス英語まで対応。実践的なレッスンで自信を持って話せる英語を身につけます。</p>
+        <p class="service-card-hint">▸ 詳細・料金を見る</p>
+      </div>
+
+      <div class="service-card" onclick="openModal('sleague')">
+        <div class="service-number">02</div>
+        <div class="service-icon">🀄</div>
+        <div class="service-name-ja">S.League 麻雀大会</div>
+        <div class="service-name-en">S.League</div>
+        <p class="service-desc">2022年から運営する本気の健康麻雀コミュニティ。22回・累計335名が参加。次回大会の申込はこちら。</p>
+        <p class="service-card-hint">▸ 詳細・申込を見る</p>
+      </div>
+
+      <div class="service-card" onclick="openModal('tour')">
+        <div class="service-number">03</div>
+        <div class="service-icon">🗺️</div>
+        <div class="service-name-ja">ツアー企画・ガイド</div>
+        <div class="service-name-en">LUMA Path</div>
+        <p class="service-desc">東京近郊の半日・日帰りツアーを企画・ガイド。英語・日本語対応で、個人・グループを問わず対応します。</p>
+        <p class="service-card-hint">▸ 詳細・料金を見る</p>
+      </div>
+
+      <div class="service-card" onclick="openModal('photo')">
+        <div class="service-number">04</div>
+        <div class="service-icon">📸</div>
+        <div class="service-name-ja">ポートレート・写真撮影</div>
+        <div class="service-name-en">LUMA Frame</div>
+        <p class="service-desc">Nikon Z6III使用。前撮り・お食い初め・家族写真・カップル写真から、航空機・風景撮影まで大切な瞬間を美しく残します。</p>
+        <p class="service-card-hint">▸ 詳細・料金を見る</p>
+      </div>
+
+      <div class="service-card" onclick="openModal('counselling')">
+        <div class="service-number">05</div>
+        <div class="service-icon">💬</div>
+        <div class="service-name-ja">カウンセリング・コーチング</div>
+        <div class="service-name-en">LUMA Space</div>
+        <p class="service-desc">自己肯定感や対人関係、キャリアの悩みに寄り添います。コンサルタントとしての経験を活かした実践的な視点でのサポートです。</p>
+        <p class="service-card-hint">▸ 詳細・料金を見る</p>
+      </div>
+
+      <div class="service-card" onclick="openModal('karaoke')">
+        <div class="service-number">06</div>
+        <div class="service-icon">🎤</div>
+        <div class="service-name-ja">カラオケ指導</div>
+        <div class="service-name-en">LUMA Stage</div>
+        <p class="service-desc">DAM WAO採点最高98.6点・95点以上の楽曲54曲の実績をもつ講師が、発声・音程・表現力を丁寧に指導します。</p>
+        <p class="service-card-hint">▸ 詳細・料金を見る</p>
+      </div>
+
+    </div>
+
+    <div class="bottom-cta reveal">
+      <div class="cta-text">
+        <span class="cta-eyebrow">Free Consultation</span>
+        <h3 class="cta-title">まずは<em>無料相談</em>から</h3>
+        <p class="cta-sub">どのサービスが自分に合うかわからない場合もお気軽に。<br>2営業日以内にご返信いたします。</p>
+      </div>
+      <div class="cta-btns">
+        <a href="./contact.html" class="btn-white">お問い合わせ</a>
+        <a href="./s-league.html" class="btn-ghost">S.League 大会一覧</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
+    <div class="modal" id="modal-content">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div id="modal-body-content"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div>
+      <a href="./index.html" class="footer-logo">LUMA</a>
+      <div class="footer-tagline">Clarity by Design &nbsp;|&nbsp; Illuminate Your Confidence</div>
+    </div>
+    <ul class="fl-links">
+      <li><a href="./index.html#about">LUMAとは</a></li>
+      <li><a href="./contact.html">お問い合わせ</a></li>
+      <li><a href="./legal.html">特商法・プライバシー</a></li>
+    </ul>
+    <div class="copy">© 2026 LUMA — Sho Asano. All rights reserved.</div>
+  </footer>
+
+  <script>
+    const modalData = {
+      english: {
+        number: '01', icon: '📖',
+        titleJa: '英語教育・チュータリング', titleEn: 'LUMA Voice',
+        bodyJa: '9年間のオーストラリア留学で培ったビジネスレベルの英語力と、現地での指導経験をベースに、実践的な英語を一緒に身につけます。日常会話、IELTS/TOEIC対策、ビジネス英語など目標に合わせた柔軟なレッスンを提供します。まずはどのような姿を目指すのか、ロードマップの作成から開始します。',
+        bodyEn: 'Built on 9 years of living in Australia and hands-on tutoring experience, lessons focus on practical, real-world English. Whether your goal is daily conversation, IELTS/TOEIC prep, or business English, we tailor every session to you.',
+        offersJa: ['日常英会話レッスン（初級〜上級）','IELTS / TOEIC 対策','ビジネス英語・プレゼン指導','発音矯正・リスニング強化','オンライン・対面どちらも対応'],
+        offersEn: ['Conversational English (Beginner–Advanced)','IELTS / TOEIC Preparation','Business English & Presentation Coaching','Pronunciation & Listening','Online or in-person sessions'],
+        priceJa: '<strong>料金：</strong>無料相談後、ご要望に合わせてご提案します。まずはお気軽にお問い合わせください。',
+        priceEn: '<strong>Pricing:</strong> Discussed after a free consultation. Get in touch to get started.',
+        ctaLink: './service-english.html',
+      },
+      sleague: {
+        number: '02', icon: '🀄',
+        titleJa: 'S.League 麻雀大会', titleEn: 'S.League Mahjong',
+        bodyJa: '2022年7月から東京・新橋エリアで運営する本気の健康麻雀コミュニティ。ノーレートでも真剣勝負、アマチュアからプロまで参加できる定期開催の麻雀大会です。22回開催・累計335名が参加し、2024年末には300名達成という節目を迎えました。',
+        bodyEn: 'A competitive health mahjong community running since July 2022 in Shinbashi, Tokyo. No betting, all skill. 22 events held, 335 cumulative participants.',
+        offersJa: ['定期大会（毎回8,300円・定員28名）','アマチュア〜プロまで参加可能','ノーレート・健康麻雀','S.Leagueポイント累計ランキング','大会後の懇親会・交流'],
+        offersEn: ['Regular tournaments (¥8,300 / 28 capacity)','Open to all levels — amateur to pro','No betting — health mahjong','Cumulative points ranking system','Post-match social & networking'],
+        priceJa: '<strong>参加費：</strong>¥8,300（1大会）。申込締切は大会日1週間前。Peatixにて受付中。',
+        priceEn: '<strong>Entry fee:</strong> ¥8,300 per tournament. Registration via Peatix.',
+        ctaLink: './s-league.html',
+      },
+      tour: {
+        number: '03', icon: '🗺️',
+        titleJa: 'ツアー企画・ガイド', titleEn: 'LUMA Path',
+        bodyJa: '東京近郊を中心に、半日・日帰りのツアーを企画・ガイドします。英語・日本語どちらにも対応しており、個人・少人数グループを歓迎します。その土地の文化や魅力を深く感じてもらえるような体験を大切にしています。',
+        bodyEn: 'Half-day and full-day tours around Tokyo and nearby areas, guided in English or Japanese for individuals and small groups.',
+        offersJa: ['半日ツアー（3〜4時間）','日帰りツアー（東京近郊）','英語 / 日本語バイリンガル対応','個人・少人数グループ（2〜6名）','カスタムコース・テーマ相談可'],
+        offersEn: ['Half-day tours (3–4 hours)','Full-day tours (Greater Tokyo area)','English / Japanese bilingual','Individuals & small groups (2–6 pax)','Custom routes & themes available'],
+        priceJa: '<strong>料金：</strong>コース・人数・時間により異なります。無料相談にてお見積もりします。',
+        priceEn: '<strong>Pricing:</strong> Varies by route, group size, and duration. Free quote available.',
+        ctaLink: './service-tour.html',
+      },
+      photo: {
+        number: '04', icon: '📸',
+        titleJa: 'ポートレート撮影・写真撮影', titleEn: 'LUMA Frame',
+        bodyJa: 'Nikon Z6 III を使用したポートレート、風景、航空機の写真撮影を得意としています。自然光を活かしたやわらかく印象的な写真をお届けします。',
+        bodyEn: 'Using the Nikon Z6 III — ideal for portraits and landscape/aviation photography — your special moments are captured with natural light and a warm, artistic touch.',
+        offersJa: ['前撮り（和装・洋装）','お食い初め・お宮参り','家族写真・記念撮影・カップルフォト','マッチングアプリなどのプロフィール写真','即時データ納品'],
+        offersEn: ['Pre-wedding shoots','First-meal (okuizome) & Shrine visits','Family & commemorative portraits','Professional profile photos','Full digital delivery on the spot'],
+        priceJa: '<strong>料金：</strong>撮影内容・時間・枚数によって異なります。無料相談にてお見積もりします。',
+        priceEn: '<strong>Pricing:</strong> Varies by shoot type, duration, and number of photos. Free quote available.',
+        ctaLink: './service-photo.html',
+      },
+      counselling: {
+        number: '05', icon: '💬',
+        titleJa: 'カウンセリング・コーチング', titleEn: 'LUMA Space',
+        bodyJa: '自己肯定感・対人関係・キャリアの悩みに寄り添います。コンサルタントとしての実務経験と、多様な人々と関わってきた経験から、あなた自身の答えを引き出すことを大切にしています。',
+        bodyEn: 'A supportive space to explore self-confidence, relationships, and career direction. Sessions focus on drawing out your own answers.',
+        offersJa: ['自己肯定感・マインドセットの強化','対人関係・コミュニケーション改善','キャリア相談・転職サポート','留学に向けたアドバイス','単発・継続どちらも対応'],
+        offersEn: ['Self-confidence & mindset development','Interpersonal relationships & communication','Career consultation & job transition support','Study abroad advice','One-off or ongoing sessions available'],
+        priceJa: '<strong>料金：</strong>初回は無料相談（30分）。その後はセッション内容に応じてご提案します。',
+        priceEn: '<strong>Pricing:</strong> First session (30 min) is free. Ongoing rates discussed based on your needs.',
+        ctaLink: './service-counselling.html',
+      },
+      karaoke: {
+        number: '06', icon: '🎤',
+        titleJa: 'カラオケ指導', titleEn: 'LUMA Stage',
+        bodyJa: 'DAM WAOで98.6点を達成し、95点以上を出せる楽曲が54曲という実績をもつ講師が、発声・音程・表現力を丁寧に指導します。単に「点数を上げる」だけでなく、自信をもって人前で歌える喜びをお伝えします。',
+        bodyEn: 'Coached by someone who scored 98.6 on DAM WAO and has 54 songs at 95+. The goal isn\'t just a higher score — it\'s the joy of singing confidently in front of others.',
+        offersJa: ['採点攻略（DAM WAO）','発声・腹式呼吸の基礎','音程・リズム強化','表現力・感情表現の指導','十八番（おはこ）の磨き込み'],
+        offersEn: ['Scoring strategy (DAM WAO)','Voice & diaphragmatic breathing fundamentals','Pitch & rhythm improvement','Expression & emotional delivery','Polishing your signature song(s)'],
+        priceJa: '<strong>料金：</strong>1回のレッスン（60〜90分）をベースにご提案。無料体験レッスンも対応可能です。',
+        priceEn: '<strong>Pricing:</strong> Session-based (60–90 min). Free trial lesson available.',
+        ctaLink: './service-karaoke.html',
+      },
+    };
+
+    function openModal(key) {
+      const d = modalData[key];
+      const titleJa = d.titleJa; const titleEn = d.titleEn;
+      document.getElementById('modal-body-content').innerHTML = `
+        <div class="modal-number">${String(d.number).padStart(2,'0')}</div>
+        <div class="modal-icon">${d.icon}</div>
+        <div class="modal-title-ja">${titleJa}</div>
+        <div class="modal-title-en">${titleEn}</div>
+        <div class="modal-divider"></div>
+        <p class="modal-body">${d.bodyJa}</p>
+        <div class="modal-offers">
+          <div class="modal-offers-title">提供内容</div>
+          ${d.offersJa.map(o => `<div class="modal-offer-item"><div class="modal-offer-dot"></div><div>${o}</div></div>`).join('')}
+        </div>
+        <div class="modal-price-note">${d.priceJa}</div>
+        <div class="modal-cta">
+          ${d.ctaLink ? `<a href="${d.ctaLink}" class="btn-primary">${key==='sleague' ? '大会詳細・申込へ' : '詳細ページへ'}</a>` : ''}
+          <a href="./contact.html" class="btn-primary" onclick="closeModal()" style="background:var(--dark);border-color:var(--dark)">無料相談</a>
+        </div>
+      `;
+      document.getElementById('modal-overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      document.getElementById('modal-overlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function closeModalOutside(e) {
+      if (e.target === document.getElementById('modal-overlay')) closeModal();
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    window.addEventListener('scroll',()=>{ document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40); });
+    function toggleMobMenu(){ const m=document.getElementById('mobMenu'); const o=m.classList.toggle('open'); document.body.style.overflow=o?'hidden':''; }
+    function toggleMobSvc(btn){ const list=btn.nextElementSibling; const expanded=btn.getAttribute('aria-expanded')=='true'; btn.setAttribute('aria-expanded',String(!expanded)); list.classList.toggle('open',!expanded); }
+    document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ document.getElementById('mobMenu').classList.remove('open'); document.body.style.overflow=''; }});
+    const observer=new IntersectionObserver(entries=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } }); },{threshold:.1});
+    document.querySelectorAll('.reveal').forEach(r=>observer.observe(r));
+  </script>
+</body>
+</html>

@@ -30,55 +30,60 @@
     }
 
     /* ── NAV ── */
-    nav#navbar {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
-      padding: 18px 48px; display: flex; align-items: center;
-      justify-content: space-between; transition: all .4s;
+    #navbar{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;transition:background .4s,box-shadow .4s;}
+    #navbar.scrolled{background:rgba(250,248,244,.96);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(196,149,106,.12);}
+    .logo-text{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:700;letter-spacing:.18em;color:#EDCAA2;text-decoration:none;}
+    .nav-right{display:flex;align-items:center;gap:32px;}
+    .nav-links{display:flex;list-style:none;gap:28px;align-items:center;}
+    .nav-links a{font-size:11px;font-weight:400;letter-spacing:.14em;text-decoration:none;color:var(--tl);transition:color .3s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--accent);}
+    .has-dropdown{position:relative;}
+    .dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:12px;list-style:none;z-index:1000;min-width:220px;}
+    .dropdown-menu-inner{background:rgba(250,248,244,.98);backdrop-filter:blur(16px);border:1px solid var(--beige);border-radius:2px;padding:8px 0;box-shadow:0 8px 32px rgba(45,36,32,.12);}
+    .has-dropdown:hover .dropdown-menu{display:block;}
+    .dropdown-menu li{list-style:none;}
+    .dropdown-menu li a{display:block;padding:9px 20px;font-size:11px;letter-spacing:.12em;color:var(--tl);text-decoration:none;transition:color .2s,background .2s;white-space:nowrap;}
+    .dropdown-menu li a:hover,.dropdown-menu li a.active{color:var(--accent);background:var(--warm);}
+    .dropdown-toggle::after{content:'';display:inline-block;width:5px;height:5px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg) translateY(-2px);margin-left:5px;vertical-align:middle;}
+    .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;flex-shrink:0;}
+    .ham span{display:block;width:22px;height:1.5px;background:var(--tl);transition:all .3s;}
+    .mob-menu{display:none;position:fixed;inset:0;background:var(--cream);z-index:1100;flex-direction:column;align-items:center;justify-content:center;gap:28px;}
+    .mob-menu.open{display:flex;}
+    .mob-menu a{font-size:18px;letter-spacing:.16em;color:var(--text);text-decoration:none;transition:color .3s;}
+    .mob-menu a:hover{color:var(--accent);}
+    .mob-close{position:absolute;top:20px;right:24px;background:none;border:none;font-size:28px;color:var(--tl);cursor:pointer;}
+    .mob-svc-wrap{width:100%;text-align:center;}
+    .mob-svc-toggle{background:none;border:none;cursor:pointer;font-family:'Noto Sans JP',sans-serif;font-size:18px;letter-spacing:.16em;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:0;transition:color .3s;}
+    .mob-svc-toggle:hover{color:var(--accent);}
+    .mob-svc-arrow{font-size:14px;transition:transform .3s;display:inline-block;}
+    .mob-svc-toggle[aria-expanded="true"] .mob-svc-arrow{transform:rotate(180deg);}
+    .mob-svc-list{display:flex;flex-direction:column;gap:16px;max-height:0;overflow:hidden;transition:max-height .35s ease,opacity .3s ease;opacity:0;margin-top:0;}
+    .mob-svc-list.open{max-height:500px;opacity:1;margin-top:16px;}
+    .mob-svc-list a{font-size:14px!important;letter-spacing:.1em;color:var(--tl)!important;}
+    .mob-svc-list a:hover{color:var(--accent)!important;}
+    @media(max-width:768px){.ham{display:flex;}.nav-links{display:none;}#navbar{padding:14px 24px;}.anchor-nav{top:46px;}.anchor-nav-inner{padding:0 20px;}}
+
+    /* ── MOB SVC ACCORDION ── */
+    .mob-svc-wrap { width: 100%; text-align: center; }
+    .mob-svc-toggle {
+      background: none; border: none; cursor: pointer;
+      font-family: 'Noto Sans JP', sans-serif; font-size: 18px;
+      letter-spacing: .16em; color: var(--text);
+      display: flex; align-items: center; justify-content: center;
+      gap: 8px; width: 100%; padding: 0; transition: color .3s;
     }
-    nav#navbar.scrolled {
-      background: rgba(250,248,244,.96); backdrop-filter: blur(12px);
-      box-shadow: 0 1px 0 rgba(180,160,140,.2);
+    .mob-svc-toggle:hover { color: var(--accent); }
+    .mob-svc-arrow { font-size: 14px; transition: transform .3s; display: inline-block; }
+    .mob-svc-toggle[aria-expanded="true"] .mob-svc-arrow { transform: rotate(180deg); }
+    .mob-svc-list {
+      display: flex; flex-direction: column; gap: 16px;
+      max-height: 0; overflow: hidden;
+      transition: max-height .35s ease, opacity .3s ease;
+      opacity: 0; margin-top: 0;
     }
-    .logo-text {
-      font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 700;
-      letter-spacing: .18em; color: var(--dark); text-decoration: none;
-    }
-    nav#navbar.scrolled .logo-text { color: var(--dark); }
-    .nav-right { display: flex; align-items: center; gap: 32px; }
-    .nav-links { display: flex; gap: 28px; list-style: none; }
-    .nav-links a {
-      font-size: 12px; letter-spacing: .14em; text-decoration: none;
-      color: var(--tl); transition: color .3s;
-    }
-    .nav-links a:hover { color: var(--accent); }
-    .ham {
-      display: none; flex-direction: column; gap: 5px;
-      cursor: pointer; padding: 4px; background: none; border: none;
-    }
-    .ham span { display: block; width: 22px; height: 1.5px; background: var(--tl); }
-    .mob-menu {
-      display: none; position: fixed; inset: 0;
-      background: var(--cream); z-index: 1100;
-      flex-direction: column; align-items: center; justify-content: center; gap: 28px;
-    }
-    .mob-menu.open { display: flex; }
-    .mob-menu a {
-      font-size: 18px; letter-spacing: .16em;
-      color: var(--text); text-decoration: none; transition: color .3s;
-    }
-    .mob-menu a:hover { color: var(--accent); }
-    .mob-close {
-      position: absolute; top: 20px; right: 24px;
-      background: none; border: none; font-size: 28px;
-      color: var(--tl); cursor: pointer;
-    }
-    @media (max-width: 768px) {
-      nav#navbar { padding: 12px 20px; }
-      .nav-links { display: none; }
-      .ham { display: flex; }
-      .anchor-nav { top: 46px; }
-      .anchor-nav-inner { padding: 0 20px; }
-    }
+    .mob-svc-list.open { max-height: 500px; opacity: 1; margin-top: 16px; }
+    .mob-svc-list a { font-size: 14px !important; letter-spacing: .1em; color: var(--tl) !important; }
+    .mob-svc-list a:hover { color: var(--accent) !important; }
 
     /* ── PAGE HERO ── */
     .page-hero {
@@ -299,36 +304,7 @@
     .footer-links a:hover { color: var(--accent,#c4956a); }
     .footer-copy { font-size: 10px; color: var(--taupe,#b8a898); opacity: .5; }
     @media (max-width: 768px) { footer { padding: 36px 20px 24px; } }
-
-
-    /* ── MOBILE SERVICE ACCORDION ── */
-    .mob-svc-wrap { width: 100%; text-align: center; }
-    .mob-svc-toggle {
-      background: none; border: none; cursor: pointer;
-      font-family: 'Noto Sans JP', sans-serif;
-      font-size: 18px; letter-spacing: .16em;
-      color: var(--text, #3d3028); transition: color .3s;
-      display: flex; align-items: center; justify-content: center;
-      gap: 8px; width: 100%; padding: 0;
-    }
-    .mob-svc-toggle:hover { color: var(--accent, #c4956a); }
-    .mob-svc-arrow { font-size: 14px; transition: transform .3s; display: inline-block; }
-    .mob-svc-toggle[aria-expanded="true"] .mob-svc-arrow { transform: rotate(180deg); }
-    .mob-svc-list {
-      display: flex; flex-direction: column; gap: 16px;
-      max-height: 0; overflow: hidden;
-      transition: max-height .35s ease, opacity .3s ease;
-      opacity: 0; margin-top: 0;
-    }
-    .mob-svc-list.open {
-      max-height: 400px; opacity: 1; margin-top: 16px;
-    }
-    .mob-svc-list a {
-      font-size: 14px !important; letter-spacing: .12em;
-      color: var(--tl, #7a6858) !important;
-    }
-    .mob-svc-list a:hover { color: var(--accent, #c4956a) !important; }
-  </style>
+</style>
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
   <script>
@@ -346,22 +322,21 @@
     <div class="nav-right">
       <ul class="nav-links">
         <li><a href="./index.html#about">LUMAとは</a></li>
-        <li><a href="./photography.html">写真</a></li>
-        <li><a href="./s-league.html">S.League</a></li>
         <li class="has-dropdown">
-          <a href="./index.html#services" class="dropdown-toggle">サービス</a>
+          <a href="./services.html" class="dropdown-toggle">サービス</a>
           <ul class="dropdown-menu">
-            <div class="dropdown-menu-inner">
-            <li><a href="./service-english.html">英語教育</a></li>
-            <li><a href="./service-photo.html">写真撮影</a></li>
-            <li><a href="./service-tour.html">ツアー</a></li>
-            <li><a href="./service-community.html">コミュニティ</a></li>
-            <li><a href="./service-counselling.html">カウンセリング</a></li>
-            <li><a href="./service-karaoke.html">カラオケ</a></li>
+                                    <div class="dropdown-menu-inner">
+            <li><a href="./services.html">サービス一覧</a></li>
+            <li><a href="./service-english.html">英語教育 — LUMA Voice</a></li>
+            <li><a href="./s-league.html">S.League 麻雀大会</a></li>
+            <li><a href="./service-tour.html">ツアー — LUMA Path</a></li>
+            <li><a href="./service-photo.html">写真撮影 — LUMA Frame</a></li>
+            <li><a href="./service-counselling.html">カウンセリング — LUMA Space</a></li>
+            <li><a href="./service-karaoke.html">カラオケ — LUMA Stage</a></li>
             </div>
           </ul>
         </li>
-        <li><a href="./index.html#contact">お問い合わせ</a></li>
+        <li><a href="./contact.html">お問い合わせ</a></li>
         <li><a href="./legal.html">特商法・プライバシー</a></li>
       </ul>
       <button class="ham" id="hamBtn" onclick="toggleMobMenu()" aria-label="メニュー">
@@ -374,23 +349,22 @@
   <div class="mob-menu" id="mobMenu">
     <button class="mob-close" onclick="toggleMobMenu()">✕</button>
     <a href="./index.html#about" onclick="toggleMobMenu()">LUMAとは</a>
-    <a href="./photography.html" onclick="toggleMobMenu()">写真</a>
-    <a href="./s-league.html" onclick="toggleMobMenu()">S.League</a>
     <!-- サービス アコーディオン -->
     <div class="mob-svc-wrap">
       <button class="mob-svc-toggle" onclick="toggleMobSvc(this)" aria-expanded="false">
         サービス <span class="mob-svc-arrow">▾</span>
       </button>
       <div class="mob-svc-list" aria-hidden="true">
-        <a href="./service-english.html"    onclick="toggleMobMenu()">英語教育</a>
-        <a href="./service-photo.html"      onclick="toggleMobMenu()">写真撮影</a>
-        <a href="./service-tour.html"       onclick="toggleMobMenu()">ツアー</a>
-        <a href="./service-community.html"  onclick="toggleMobMenu()">コミュニティ</a>
-        <a href="./service-counselling.html" onclick="toggleMobMenu()">カウンセリング</a>
-        <a href="./service-karaoke.html"    onclick="toggleMobMenu()">カラオケ</a>
+        <a href="./services.html"          onclick="toggleMobMenu()">サービス一覧</a>
+        <a href="./service-english.html"     onclick="toggleMobMenu()">英語教育 — LUMA Voice</a>
+        <a href="./s-league.html"            onclick="toggleMobMenu()">S.League 麻雀大会</a>
+        <a href="./service-tour.html"        onclick="toggleMobMenu()">ツアー — LUMA Path</a>
+        <a href="./service-photo.html"       onclick="toggleMobMenu()">写真撮影 — LUMA Frame</a>
+        <a href="./service-counselling.html" onclick="toggleMobMenu()">カウンセリング — LUMA Space</a>
+        <a href="./service-karaoke.html"     onclick="toggleMobMenu()">カラオケ — LUMA Stage</a>
       </div>
     </div>
-    <a href="./index.html#contact" onclick="toggleMobMenu()">お問い合わせ</a>
+    <a href="./contact.html" onclick="toggleMobMenu()">お問い合わせ</a>
     <a href="./legal.html" onclick="toggleMobMenu()">特商法・プライバシー</a>
   </div>
 
@@ -441,7 +415,7 @@
           <th>電話番号</th>
           <td>
             お問い合わせフォームよりご連絡ください。<br>
-            <a href="./index.html#contact">→ お問い合わせフォームへ</a><br>
+            <a href="./contact.html">→ お問い合わせフォームへ</a><br>
             <span style="font-size:11px;color:var(--taupe);">※請求があった場合は遅滞なく開示いたします。</span>
           </td>
         </tr>
@@ -567,7 +541,7 @@
       <p>本ポリシーは法令の改正や事業変更に応じて予告なく変更することがあります。変更後のポリシーは本ページへの掲載をもって効力を生じます。</p>
 
       <h3>9. お問い合わせ</h3>
-      <p>個人情報の取り扱いに関するお問い合わせは、<a href="./index.html#contact">お問い合わせフォーム</a>またはメール（<a href="/cdn-cgi/l/email-protection#b9cacdccddd0d697d5ccd4d897d3c9f9ded4d8d0d597dad6d4"><span class="__cf_email__" data-cfemail="7d0e0908191412531108101c53170d3d1a101c1411531e1210">[email&#160;protected]</span></a>）までご連絡ください。</p>
+      <p>個人情報の取り扱いに関するお問い合わせは、<a href="./contact.html">お問い合わせフォーム</a>またはメール（<a href="/cdn-cgi/l/email-protection#b9cacdccddd0d697d5ccd4d897d3c9f9ded4d8d0d597dad6d4"><span class="__cf_email__" data-cfemail="7d0e0908191412531108101c53170d3d1a101c1411531e1210">[email&#160;protected]</span></a>）までご連絡ください。</p>
     </div>
   </section>
 
@@ -689,7 +663,7 @@
           </tr>
           <tr>
             <th>掲載済み写真の削除依頼</th>
-            <td>掲載後であっても、削除ご希望の場合は <a href="./index.html#contact">お問い合わせフォーム</a> よりご連絡ください。速やかに対応いたします。</td>
+            <td>掲載後であっても、削除ご希望の場合は <a href="./contact.html">お問い合わせフォーム</a> よりご連絡ください。速やかに対応いたします。</td>
           </tr>
           <tr>
             <th>納品写真の著作権</th>
@@ -703,7 +677,7 @@
       <ul>
         <li>撮影した写真・映像は当事業者のウェブサイト・SNSに掲載することがあります。</li>
         <li>掲載を希望されない場合は、申込フォームの備考欄または当日スタッフへお申し出ください。</li>
-        <li>後日掲載済み写真の削除をご希望の場合は、<a href="./index.html#contact">お問い合わせフォーム</a>よりご連絡ください。</li>
+        <li>後日掲載済み写真の削除をご希望の場合は、<a href="./contact.html">お問い合わせフォーム</a>よりご連絡ください。</li>
         <li>他の参加者が映り込んでいる写真をご自身のSNS等に投稿する場合は、映り込んでいる方の承諾を得た上でご利用ください。</li>
       </ul>
 
@@ -711,7 +685,7 @@
       <p>18歳未満の方を撮影する場合は、保護者の方の同意を事前に書面または口頭にてご確認します。</p>
 
       <h3>4. お問い合わせ</h3>
-      <p>写真・肖像権に関するご質問・削除依頼は <a href="./index.html#contact">お問い合わせフォーム</a> またはメール（<a href="/cdn-cgi/l/email-protection#3b484f4e5f525415574e565a15514b7b5c565a525715585456"><span class="__cf_email__" data-cfemail="7c0f0809181513521009111d52160c3c1b111d1510521f1311">[email&#160;protected]</span></a>）までご連絡ください。</p>
+      <p>写真・肖像権に関するご質問・削除依頼は <a href="./contact.html">お問い合わせフォーム</a> またはメール（<a href="/cdn-cgi/l/email-protection#3b484f4e5f525415574e565a15514b7b5c565a525715585456"><span class="__cf_email__" data-cfemail="7c0f0809181513521009111d52160c3c1b111d1510521f1311">[email&#160;protected]</span></a>）までご連絡ください。</p>
     </div>
 
     <div class="note-box">
@@ -722,7 +696,7 @@
   <!-- CONTACT CTA -->
   <div class="legal-contact">
     <p>各ポリシーに関するご質問・ご不明点はお気軽にご連絡ください。</p>
-    <a href="./index.html#contact" class="btn-primary">お問い合わせフォームへ</a>
+    <a href="./contact.html" class="btn-primary">お問い合わせフォームへ</a>
   </div>
 
 </main>
@@ -738,10 +712,8 @@
     </div>
     <ul class="footer-links">
       <li><a href="./index.html#about">LUMAとは</a></li>
-      <li><a href="./photography.html">写真</a></li>
-      <li><a href="./s-league.html">S.League</a></li>
-      <li><a href="./index.html#services">サービス</a></li>
-      <li><a href="./index.html#contact">お問い合わせ</a></li>
+      <li><a href="./services.html">サービス</a></li>
+      <li><a href="./contact.html">お問い合わせ</a></li>
       <li><a href="./legal.html">特商法・プライバシー</a></li>
     </ul>
     <div class="footer-copy">© 2026 LUMA — Sho Asano. All rights reserved.</div>

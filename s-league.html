@@ -301,22 +301,22 @@
     <div class="nav-right">
       <ul class="nav-links">
         <li><a href="./index.html#about">LUMAとは</a></li>
-        <li><a href="./photography.html">写真</a></li>
-        <li><a href="./s-league.html" style="color:var(--accent)">S.League</a></li>
+        
         <li class="has-dropdown">
-          <a href="./index.html#services" class="dropdown-toggle">サービス</a>
+          <a href="./services.html" class="dropdown-toggle">サービス</a>
           <ul class="dropdown-menu">
-            <div class="dropdown-menu-inner">
-            <li><a href="./service-english.html">英語教育</a></li>
-            <li><a href="./service-photo.html">写真撮影</a></li>
-            <li><a href="./service-tour.html">ツアー</a></li>
-            <li><a href="./service-community.html">コミュニティ</a></li>
-            <li><a href="./service-counselling.html">カウンセリング</a></li>
-            <li><a href="./service-karaoke.html">カラオケ</a></li>
+                                    <div class="dropdown-menu-inner">
+            <li><a href="./services.html">サービス一覧</a></li>
+            <li><a href="./service-english.html">英語教育 — LUMA Voice</a></li>
+            <li><a href="./s-league.html">S.League 麻雀大会</a></li>
+            <li><a href="./service-tour.html">ツアー — LUMA Path</a></li>
+            <li><a href="./service-photo.html">写真撮影 — LUMA Frame</a></li>
+            <li><a href="./service-counselling.html">カウンセリング — LUMA Space</a></li>
+            <li><a href="./service-karaoke.html">カラオケ — LUMA Stage</a></li>
             </div>
           </ul>
         </li>
-        <li><a href="./index.html#contact">お問い合わせ</a></li>
+        <li><a href="./contact.html">お問い合わせ</a></li>
         <li><a href="./legal.html">特商法・プライバシー</a></li>
       </ul>
       <button class="ham" id="hamBtn" onclick="toggleMobMenu()" aria-label="メニュー">
@@ -329,23 +329,22 @@
   <div class="mob-menu" id="mobMenu">
     <button class="mob-close" onclick="toggleMobMenu()">✕</button>
     <a href="./index.html#about" onclick="toggleMobMenu()">LUMAとは</a>
-    <a href="./photography.html" onclick="toggleMobMenu()">写真</a>
-    <a href="./s-league.html" onclick="toggleMobMenu()">S.League</a>
     <!-- サービス アコーディオン -->
     <div class="mob-svc-wrap">
       <button class="mob-svc-toggle" onclick="toggleMobSvc(this)" aria-expanded="false">
         サービス <span class="mob-svc-arrow">▾</span>
       </button>
       <div class="mob-svc-list" aria-hidden="true">
-        <a href="./service-english.html"    onclick="toggleMobMenu()">英語教育</a>
-        <a href="./service-photo.html"      onclick="toggleMobMenu()">写真撮影</a>
-        <a href="./service-tour.html"       onclick="toggleMobMenu()">ツアー</a>
-        <a href="./service-community.html"  onclick="toggleMobMenu()">コミュニティ</a>
-        <a href="./service-counselling.html" onclick="toggleMobMenu()">カウンセリング</a>
-        <a href="./service-karaoke.html"    onclick="toggleMobMenu()">カラオケ</a>
+        <a href="./services.html"          onclick="toggleMobMenu()">サービス一覧</a>
+        <a href="./service-english.html"     onclick="toggleMobMenu()">英語教育 — LUMA Voice</a>
+        <a href="./s-league.html"            onclick="toggleMobMenu()">S.League 麻雀大会</a>
+        <a href="./service-tour.html"        onclick="toggleMobMenu()">ツアー — LUMA Path</a>
+        <a href="./service-photo.html"       onclick="toggleMobMenu()">写真撮影 — LUMA Frame</a>
+        <a href="./service-counselling.html" onclick="toggleMobMenu()">カウンセリング — LUMA Space</a>
+        <a href="./service-karaoke.html"     onclick="toggleMobMenu()">カラオケ — LUMA Stage</a>
       </div>
     </div>
-    <a href="./index.html#contact" onclick="toggleMobMenu()">お問い合わせ</a>
+    <a href="./contact.html" onclick="toggleMobMenu()">お問い合わせ</a>
     <a href="./legal.html" onclick="toggleMobMenu()">特商法・プライバシー</a>
   </div>
 
@@ -360,6 +359,11 @@
     <a href="#events" class="btn-primary">大会一覧を見る</a>
     <a href="#about" class="btn-outline-light">S.Leagueとは</a>
     <a href="./s-league-archive.html" class="btn-outline-light">成績アーカイブ</a>
+  </div>
+  <div style="margin-top:16px;position:relative;z-index:1;opacity:0;animation:fadeUp 0.8s ease 0.8s forwards;">
+    <a href="./service-community.html" style="display:inline-flex;align-items:center;gap:8px;font-family:'Noto Sans JP',sans-serif;font-size:11px;letter-spacing:0.18em;color:rgba(255,255,255,0.45);text-decoration:none;border:1px solid rgba(255,255,255,0.15);padding:8px 18px;border-radius:40px;transition:all 0.3s;" onmouseover="this.style.color='var(--accent)';this.style.borderColor='rgba(196,149,106,0.5)'" onmouseout="this.style.color='rgba(255,255,255,0.45)';this.style.borderColor='rgba(255,255,255,0.15)'">
+      🎉&nbsp; コミュニティイベント全体は LUMA Circle へ →
+    </a>
   </div>
 </section>
 
@@ -608,7 +612,7 @@
   <p class="cta-sub">S.League は LUMA のコミュニティ事業として2022年に創設されました。麻雀という共通言語を通じて、新しい仲間との出会いの場を提供しています。</p>
   <div class="cta-btns">
     <a href="#events" class="btn-primary">大会に参加する</a>
-    <a href="./index.html#contact" class="btn-outline-light">LUMAに問い合わせる</a>
+    <a href="./contact.html" class="btn-outline-light">LUMAに問い合わせる</a>
   </div>
 </section>
 
@@ -620,10 +624,8 @@
     </div>
     <ul class="footer-links">
       <li><a href="./index.html#about">LUMAとは</a></li>
-      <li><a href="./photography.html">写真</a></li>
-      <li><a href="./s-league.html">S.League</a></li>
-      <li><a href="./index.html#services">サービス</a></li>
-      <li><a href="./index.html#contact">お問い合わせ</a></li>
+      <li><a href="./services.html">サービス</a></li>
+      <li><a href="./contact.html">お問い合わせ</a></li>
       <li><a href="./legal.html">特商法・プライバシー</a></li>
     </ul>
     <div class="footer-copy">© 2026 LUMA — Sho Asano. All rights reserved.</div>
