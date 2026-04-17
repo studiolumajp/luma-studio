@@ -80,19 +80,11 @@
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://formspree.io" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!-- フォント：非同期読み込みでレンダーブロッキング解消 -->
-  <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@600;700&display=swap"
-    onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@600;700&display=swap" rel="stylesheet" />
-  </noscript>
   <style>
     :root {
       color-scheme: light only;
+      /* Brand Colors */
       --cream: #faf8f4;
       --warm-white: #f5f1eb;
       --beige: #e8dfd0;
@@ -104,28 +96,45 @@
       --accent-light: #e8c9a8;
       --text: #3d3028;
       --text-light: #7a6858;
+      --success: #5a8a6a;
+      --danger: #b54a3a;
+      --warning: #c49840;
+      /* Semantic Aliases */
+      --brand: #c4956a;
+      --brand-dark: #8c7460;
+      --text-primary: #3d3028;
+      --text-secondary: #7a6858;
+      --text-disabled: #b8a898;
+      --border: #e8dfd0;
+      --border-light: #e8dfd0;
+      --background: #faf8f4;
+      --surface: #f5f1eb;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; letter-spacing: 0.04em; }
     html { scroll-behavior: smooth; }
     body {
       background-color: #faf8f4 !important;
-      color: #3d2e22 !important; font-family: 'Noto Sans JP', sans-serif; background: var(--cream); color: var(--text); font-weight: 300; overflow-x: hidden; }
+      color: #3d3028 !important;
+      font-family: "SF Pro", -apple-system, "system-ui", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      background: var(--cream); color: var(--text);
+      font-size: 16px; font-weight: 400; line-height: 1.5; letter-spacing: 0.04em;
+      overflow-x: hidden;
+      word-break: break-all; overflow-wrap: break-word; line-break: strict;
+    }
 
     /* ── LOGO TEXT ── */
     .logo-text {
-      font-family: 'Montserrat', sans-serif;
       font-size: 22px;
       font-weight: 700;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.08em;
       color: #EDCAA2;
       text-decoration: none;
-      line-height: 1;
+      line-height: 1.0;
     }
     .logo-text-footer {
-      font-family: 'Montserrat', sans-serif;
       font-size: 20px;
       font-weight: 700;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.08em;
       color: #EDCAA2;
     }
 
@@ -134,34 +143,36 @@
       display: flex; gap: 6px; align-items: center; flex-shrink: 0;
     }
     .lang-btn {
-      font-family: 'Noto Sans JP', sans-serif; font-size: 11px; font-weight: 400;
-      letter-spacing: 0.12em; padding: 5px 12px;
+      font-size: 12px; font-weight: 400;
+      letter-spacing: 0.04em; padding: 5px 12px;
       border: 1px solid var(--sand); background: transparent;
-      color: var(--text-light); cursor: pointer; transition: all 0.3s; border-radius: 20px;
+      color: var(--text-light); cursor: pointer; transition: all 0.3s; border-radius: 4px;
     }
-    .lang-btn.active, .lang-btn:hover { background: var(--accent); border-color: var(--accent); color: white; }
+    .lang-btn.active, .lang-btn:hover { background: var(--text-primary); border-color: var(--text-primary); color: white; }
 
     /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 999;
-      padding: 16px 48px; display: flex; align-items: center;
+      height: 44px; padding: 0 48px; display: flex; align-items: center;
       justify-content: space-between; gap: 24px; transition: all 0.4s;
+      background: rgba(250,248,244,0.96);
+      backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
     }
     .nav-right {
       display: flex; align-items: center; gap: 36px;
     }
     nav.scrolled {
-      background: rgba(250,248,244,0.94); backdrop-filter: blur(12px);
-      box-shadow: 0 1px 0 rgba(180,160,140,0.2);
+      background: rgba(250,248,244,0.98);
+      box-shadow: 0 1px 0 rgba(140,116,96,0.15);
     }
     .logo-img { height: 44px; width: auto; display: block; }
     .logo-img-footer { height: 52px; width: auto; display: block; }
     .nav-links { display: flex; gap: 36px; list-style: none; }
     .nav-links a {
-      font-size: 12px; font-weight: 400; letter-spacing: 0.14em;
-      text-decoration: none; color: var(--text-light); transition: color 0.3s;
+      font-size: 12px; font-weight: 400; letter-spacing: 0.04em;
+      text-decoration: none; color: var(--text-secondary); transition: color 0.3s;
     }
-    .nav-links a:hover { color: var(--accent); }
+    .nav-links a:hover { color: var(--brand); }
     /* ── SERVICES DROPDOWN ── */
     .has-dropdown { position: relative; }
     /* padding-top でリンクとメニューの間を橋渡し→ホバー切れを防止 */
@@ -173,19 +184,19 @@
       min-width: 180px;
     }
     .dropdown-menu-inner {
-      background: rgba(250,248,244,.98); backdrop-filter: blur(16px);
-      border: 1px solid var(--beige); border-radius: 2px;
+      background: rgba(255,255,255,0.98); backdrop-filter: blur(16px);
+      border: 1px solid var(--beige); border-radius: 4px;
       padding: 8px 0;
-      box-shadow: 0 8px 32px rgba(45,36,32,.12);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
     }
     .has-dropdown:hover .dropdown-menu { display: block; }
     .dropdown-menu li a {
       display: block; padding: 9px 20px;
-      font-size: 11px; letter-spacing: .12em; color: var(--tl);
+      font-size: 12px; letter-spacing: 0.04em; color: var(--text-secondary);
       text-decoration: none; transition: color .2s, background .2s;
       white-space: nowrap;
     }
-    .dropdown-menu li a:hover { color: var(--accent); background: var(--warm-white); }
+    .dropdown-menu li a:hover { color: var(--brand); background: var(--warm-white); }
     .dropdown-toggle::after {
       content: ''; display: inline-block;
       width: 5px; height: 5px; border-right: 1px solid currentColor;
@@ -220,11 +231,10 @@
     }
     .mob-menu.open { display: flex; }
     .mob-menu a {
-      font-family: 'Noto Sans JP', sans-serif;
-      font-size: 18px; letter-spacing: 0.16em;
+      font-size: 18px; letter-spacing: 0.04em;
       color: var(--text); text-decoration: none; transition: color 0.3s;
     }
-    .mob-menu a:hover { color: var(--accent); }
+    .mob-menu a:hover { color: var(--brand); }
     .mob-close {
       position: absolute; top: 20px; right: 24px;
       background: none; border: none; font-size: 28px;
@@ -247,15 +257,15 @@
     }
     .story-inner { max-width: 900px; margin: 0 auto; }
     .story-eyebrow {
-      font-size: 20px; letter-spacing: .28em; text-transform: uppercase;
-      color: rgba(255,255,255,.7); margin-bottom: 20px; display: block;
+      font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase;
+      color: rgba(255,255,255,.70); margin-bottom: 20px; display: block;
     }
     .story-heading {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(30px, 3.5vw, 48px);
-      color: #fff; line-height: 1.2; margin-bottom: 48px;
+      font-size: clamp(24px, 3.5vw, 40px); font-weight: 700;
+      color: rgba(255,255,255,0.88); line-height: 1.5; margin-bottom: 48px;
     }
-    .story-heading em { font-style: italic; color: rgba(255,255,255,.85); }
+    .story-heading em { color: rgba(255,255,255,.85); }
+    em, i, cite, address, var, dfn, blockquote, q { font-style: normal !important; }
     .story-chapters { display: flex; flex-direction: column; gap: 0; }
     .story-chapter {
       display: grid; grid-template-columns: 80px 1fr;
@@ -264,27 +274,27 @@
     }
     .story-chapter:last-child { border-bottom: none; }
     .story-chapter-num {
-      font-family: 'DM Serif Display', serif; font-size: 48px;
-      color: rgba(255,255,255,.18); line-height: 1; padding-top: 4px;
+      font-size: 48px; font-weight: 700;
+      color: rgba(255,255,255,.18); line-height: 1.5; padding-top: 4px;
       text-align: right;
     }
     .story-chapter-body {}
     .story-chapter-tag {
-      font-size: clamp(13px, 1.4vw, 15px); letter-spacing: .14em; text-transform: uppercase;
-      color: rgba(255,255,255,.65); margin-bottom: 10px; display: block; font-weight: 400;
+      font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase;
+      color: rgba(255,255,255,.70); margin-bottom: 10px; display: block; font-weight: 400;
     }
     .story-chapter-title {
-      font-size: clamp(18px, 2vw, 24px); font-weight: 500; color: #fff;
-      margin-bottom: 14px; line-height: 1.4;
+      font-size: clamp(18px, 2vw, 24px); font-weight: 700; color: rgba(255,255,255,0.88);
+      margin-bottom: 14px; line-height: 1.5;
     }
     .story-chapter-text {
-      font-size: clamp(14px, 1.5vw, 16px); color: rgba(255,255,255,.88);
-      line-height: 1.9;
+      font-size: 16px; color: rgba(255,255,255,.88);
+      line-height: 1.5;
     }
     .story-cta { margin-top: 48px; }
     .story-cta a {
-      font-size: 12px; letter-spacing: .18em; text-transform: uppercase;
-      color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.45);
+      font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase;
+      color: rgba(255,255,255,0.88); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.45);
       padding-bottom: 2px; transition: border-color .3s;
     }
     .story-cta a:hover { border-bottom-color: #fff; }
@@ -301,23 +311,23 @@
       padding: 120px 64px 80px 72px; position: relative; z-index: 2;
     }
     .hero-eyebrow {
-      font-size: 20px; font-weight: 400; letter-spacing: 0.28em; text-transform: uppercase;
+      font-size: 16px; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase;
       color: var(--accent); margin-bottom: 28px;
       opacity: 0; animation: fadeUp 0.8s ease 0.2s forwards;
     }
     .hero-title {
-      font-family: 'DM Serif Display', serif; font-size: clamp(44px, 5.5vw, 72px);
-      line-height: 1.12; color: var(--dark); margin-bottom: 12px;
+      font-size: clamp(28px, 5.5vw, 40px); font-weight: 700;
+      line-height: 1.5; color: var(--dark); margin-bottom: 12px;
       opacity: 0; animation: fadeUp 0.8s ease 0.4s forwards;
     }
-    .hero-title em { font-style: italic; color: var(--accent); }
+    .hero-title em { color: var(--accent); }
     .hero-subtitle-ja {
-      font-size: clamp(16px, 2vw, 22px); font-weight: 300; color: var(--text-light);
-      margin-bottom: 32px; line-height: 1.6;
+      font-size: clamp(16px, 2vw, 22px); font-weight: 400; color: var(--text-secondary);
+      margin-bottom: 32px; line-height: 1.5;
       opacity: 0; animation: fadeUp 0.8s ease 0.55s forwards;
     }
     .hero-desc {
-      font-size: 14px; line-height: 1.9; color: var(--text-light);
+      font-size: 16px; line-height: 1.5; color: var(--text-secondary);
       max-width: 420px; margin-bottom: 48px;
       opacity: 0; animation: fadeUp 0.8s ease 0.7s forwards;
     }
@@ -326,19 +336,19 @@
       opacity: 0; animation: fadeUp 0.8s ease 0.85s forwards;
     }
     .btn-primary {
-      display: inline-block; padding: 14px 36px; background: var(--accent); color: white;
-      font-family: 'Noto Sans JP', sans-serif; font-size: 12px; font-weight: 400;
-      letter-spacing: 0.16em; text-decoration: none; border-radius: 2px;
-      transition: all 0.3s; border: 1px solid var(--accent); cursor: pointer;
+      display: inline-block; padding: 8px 22px; background: var(--text-primary); color: #ffffff;
+      font-size: 16px; font-weight: 700;
+      letter-spacing: 0.04em; text-decoration: none; border-radius: 980px;
+      transition: all 0.3s; border: none; cursor: pointer;
     }
-    .btn-primary:hover { background: var(--dark); border-color: var(--dark); }
+    .btn-primary:hover { background: var(--brand); }
     .btn-outline {
-      display: inline-block; padding: 14px 36px; background: transparent; color: var(--text);
-      font-family: 'Noto Sans JP', sans-serif; font-size: 12px; font-weight: 400;
-      letter-spacing: 0.16em; text-decoration: none; border-radius: 2px;
-      border: 1px solid var(--sand); transition: all 0.3s; cursor: pointer;
+      display: inline-block; padding: 8px 22px; background: transparent; color: var(--text-primary);
+      font-size: 16px; font-weight: 700;
+      letter-spacing: 0.04em; text-decoration: none; border-radius: 980px;
+      border: 1px solid var(--text-primary); transition: all 0.3s; cursor: pointer;
     }
-    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-outline:hover { border-color: var(--brand); color: var(--brand); }
     .hero-right { position: relative; overflow: hidden; opacity: 0; animation: fadeIn 1.2s ease 0.3s forwards; }
     .hero-visual {
       width: 100%; height: 100%;
@@ -352,8 +362,8 @@
     }
     .hero-visual-text { position: absolute; bottom: 60px; left: 48px; right: 48px; }
     .hero-visual-quote {
-      font-family: 'Cormorant Garamond', serif; font-size: clamp(20px, 2.6vw, 32px);
-      font-style: italic; color: var(--brown); line-height: 1.5;
+      font-size: clamp(20px, 2.6vw, 32px);
+      color: var(--brown); line-height: 1.5;
     }
     .hero-visual-circle {
       position: absolute; top: 80px; right: 80px; width: 200px; height: 200px;
@@ -365,11 +375,10 @@
     }
     .hero-luma-text {
       position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-      font-family: 'Montserrat', sans-serif;
       font-size: clamp(64px, 10vw, 120px);
       font-weight: 700;
       color: #EDCAA2;
-      letter-spacing: 0.35em;
+      letter-spacing: 0.08em;
       pointer-events: none;
       white-space: nowrap;
       z-index: 2;
@@ -379,57 +388,58 @@
 
 
     /* ── SECTION BASE ── */
-    section { padding: 100px 72px; }
-    .section-eyebrow { font-size: 20px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
-    .section-title { font-family: 'DM Serif Display', serif; font-size: clamp(30px, 3.5vw, 48px); line-height: 1.2; color: var(--dark); margin-bottom: 16px; }
-    .section-title em { font-style: italic; color: var(--accent); }
-    .section-title-ja { font-size: clamp(15px, 1.6vw, 20px); font-weight: 300; color: var(--text-light); margin-bottom: 40px; }
+    section { padding: 80px 48px; }
+    .section-eyebrow { font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+    .section-title { font-size: clamp(20px, 3.5vw, 40px); font-weight: 700; line-height: 1.5; color: var(--dark); margin-bottom: 16px; }
+    .section-title em { color: var(--accent); }
+    .section-title-ja { font-size: clamp(15px, 1.6vw, 20px); font-weight: 400; color: var(--text-secondary); margin-bottom: 40px; }
 
     /* ── ABOUT ── */
     #about { background: var(--warm-white); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .about-body { font-size: 14px; line-height: 2; color: var(--text-light); margin-bottom: 24px; }
+    .about-body { font-size: 16px; line-height: 1.5; color: var(--text-secondary); margin-bottom: 24px; }
     .about-stats { display: flex; gap: 40px; margin-top: 40px; flex-wrap: wrap; }
     .stat { text-align: center; }
-    .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 600; color: var(--accent); line-height: 1.1; }
-    .stat-label { font-size: 11px; letter-spacing: 0.1em; color: var(--text-light); margin-top: 6px; }
+    .stat-num { font-size: 32px; font-weight: 700; color: var(--accent); line-height: 1.5; }
+    .stat-label { font-size: 12px; letter-spacing: 0.04em; color: var(--text-secondary); margin-top: 6px; }
     .about-visual { position: relative; height: 480px; }
     .about-card {
-      position: absolute; background: var(--cream); border: 1px solid var(--beige); border-radius: 4px;
-      padding: 28px 32px; box-shadow: 0 4px 24px rgba(100,80,60,0.06);
+      position: absolute; background: var(--cream); border: 1px solid var(--beige); border-radius: 12px;
+      padding: 28px; box-shadow: 0 2px 8px rgba(124,75,51,0.08);
     }
     .about-card:nth-child(1) { top: 0; left: 0; right: 60px; }
     .about-card:nth-child(2) { top: 160px; left: 60px; right: 0; }
     .about-card:nth-child(3) { top: 320px; left: 0; right: 80px; }
     .about-card-icon { font-size: 22px; margin-bottom: 10px; }
-    .about-card-title { font-family: 'DM Serif Display', serif; font-size: 16px; color: var(--dark); margin-bottom: 6px; }
-    .about-card-en { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
-    .about-card-text { font-size: 12px; line-height: 1.8; color: var(--text-light); }
+    .about-card-title { font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+    .about-card-en { font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+    .about-card-text { font-size: 12px; line-height: 1.5; color: var(--text-secondary); }
 
     /* ── SERVICES ── */
     #services { background: var(--cream); text-align: center; }
     #services .section-header { max-width: 600px; margin: 0 auto 64px; }
-    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1100px; margin: 0 auto; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1260px; margin: 0 auto; }
     .service-card {
-      background: var(--warm-white); border: 1px solid var(--beige); border-radius: 4px;
-      padding: 44px 32px; text-align: left; transition: all 0.4s; position: relative;
+      background: var(--background); border: 1px solid var(--border-light); border-radius: 12px;
+      padding: 28px; text-align: left; transition: all 0.4s; position: relative;
       overflow: hidden; cursor: pointer;
+      box-shadow: 0 2px 8px rgba(124,75,51,0.08);
     }
     .service-card::before {
       content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
-      background: var(--accent); transform: scaleX(0); transition: transform 0.4s; transform-origin: left;
+      background: var(--brand); transform: scaleX(0); transition: transform 0.4s; transform-origin: left;
     }
-    .service-card:hover { box-shadow: 0 8px 40px rgba(100,80,60,0.1); transform: translateY(-4px); }
+    .service-card:hover { box-shadow: 0 4px 16px rgba(124,75,51,0.12); transform: translateY(-4px); }
     .service-card:hover::before { transform: scaleX(1); }
     .service-card-hint {
-      font-size: 10px; letter-spacing: 0.14em; color: var(--accent); margin-top: 16px;
+      font-size: 12px; letter-spacing: 0.04em; color: var(--accent); margin-top: 16px;
       opacity: 0.7; transition: opacity 0.3s;
     }
     .service-card:hover .service-card-hint { opacity: 1; }
-    .service-number { font-family: 'Cormorant Garamond', serif; font-size: 13px; color: var(--sand); letter-spacing: 0.2em; margin-bottom: 20px; }
+    .service-number { font-size: 12px; color: var(--sand); letter-spacing: 0.04em; margin-bottom: 20px; }
     .service-icon { font-size: 28px; margin-bottom: 16px; }
-    .service-name-ja { font-size: 17px; font-weight: 500; color: var(--dark); margin-bottom: 4px; }
-    .service-name-en { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
-    .service-desc { font-size: 13px; line-height: 1.85; color: var(--text-light); }
+    .service-name-ja { font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+    .service-name-en { font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
+    .service-desc { font-size: 16px; line-height: 1.5; color: var(--text-secondary); }
 
     /* ── MODAL ── */
     .modal-overlay {
@@ -439,9 +449,9 @@
     }
     .modal-overlay.open { opacity: 1; pointer-events: all; }
     .modal {
-      background: var(--cream); border-radius: 6px; max-width: 600px; width: 100%;
-      max-height: 88vh; overflow-y: auto; padding: 56px 52px;
-      box-shadow: 0 24px 80px rgba(45,36,32,0.18);
+      background: var(--cream); border-radius: 12px; max-width: 600px; width: 100%;
+      max-height: 88vh; overflow-y: auto; padding: 48px 40px;
+      box-shadow: 0 8px 32px rgba(124,75,51,0.16);
       transform: translateY(20px); transition: transform 0.35s;
       position: relative;
     }
@@ -452,23 +462,23 @@
       transition: color 0.2s;
     }
     .modal-close:hover { color: var(--dark); }
-    .modal-number { font-family: 'Cormorant Garamond', serif; font-size: 12px; color: var(--sand); letter-spacing: 0.2em; margin-bottom: 16px; }
+    .modal-number { font-size: 12px; color: var(--sand); letter-spacing: 0.04em; margin-bottom: 16px; }
     .modal-icon { font-size: 36px; margin-bottom: 12px; }
-    .modal-title-ja { font-family: 'DM Serif Display', serif; font-size: 26px; color: var(--dark); margin-bottom: 4px; }
-    .modal-title-en { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 28px; }
+    .modal-title-ja { font-size: 26px; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+    .modal-title-en { font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); margin-bottom: 28px; }
     .modal-divider { width: 40px; height: 1px; background: var(--beige); margin-bottom: 24px; }
-    .modal-body { font-size: 14px; line-height: 1.95; color: var(--text-light); margin-bottom: 28px; }
+    .modal-body { font-size: 16px; line-height: 1.5; color: var(--text-secondary); margin-bottom: 28px; }
     .modal-offers { margin-bottom: 32px; }
-    .modal-offers-title { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+    .modal-offers-title { font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
     .modal-offer-item {
       display: flex; align-items: flex-start; gap: 12px; padding: 12px 0;
-      border-bottom: 1px solid var(--beige); font-size: 13px; line-height: 1.7; color: var(--text-light);
+      border-bottom: 1px solid var(--beige); font-size: 16px; line-height: 1.5; color: var(--text-secondary);
     }
     .modal-offer-item:last-child { border-bottom: none; }
     .modal-offer-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 7px; }
     .modal-price-note {
-      background: var(--warm-white); border: 1px solid var(--beige); border-radius: 4px;
-      padding: 20px 24px; font-size: 12px; line-height: 1.8; color: var(--text-light);
+      background: var(--warm-white); border: 1px solid var(--beige); border-radius: 12px;
+      padding: 20px 24px; font-size: 16px; line-height: 1.5; color: var(--text-secondary);
     }
     .modal-price-note strong { color: var(--accent); font-weight: 500; }
     .modal-cta { margin-top: 28px; text-align: center; }
@@ -481,22 +491,22 @@
     .profile-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: start; margin-top: 48px; }
     .profile-visual {
       background: linear-gradient(160deg, var(--brown) 0%, rgba(44,36,32,0.8) 100%);
-      border-radius: 4px; padding: 48px 40px; text-align: center; border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px; padding: 48px 40px; text-align: center; border: 1px solid rgba(255,255,255,0.06);
     }
     .profile-logo-img { height: 80px; width: auto; margin: 0 auto 20px; display: block; }
-    .profile-name { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--accent-light); margin-bottom: 4px; }
-    .profile-name-en { font-family: 'Noto Sans JP', sans-serif; font-size: 12px; letter-spacing: 0.18em; color: var(--taupe); margin-bottom: 24px; }
-    .profile-tagline { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); margin-bottom: 32px; }
+    .profile-name { font-size: 22px; font-weight: 700; color: var(--accent-light); margin-bottom: 4px; }
+    .profile-name-en { font-size: 12px; letter-spacing: 0.04em; color: var(--taupe); margin-bottom: 24px; }
+    .profile-tagline { font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--taupe); margin-bottom: 32px; }
     .profile-divider { width: 40px; height: 1px; background: var(--accent); margin: 0 auto 32px; }
     .profile-tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
-    .profile-tag { font-size: 11px; letter-spacing: 0.08em; padding: 6px 14px; border: 1px solid rgba(196,149,106,0.35); color: var(--accent-light); border-radius: 20px; }
+    .profile-tag { font-size: 12px; letter-spacing: 0.04em; padding: 6px 14px; border: 1px solid rgba(196,149,106,0.35); color: var(--accent-light); border-radius: 4px; }
     .profile-items { display: flex; flex-direction: column; gap: 28px; }
     .profile-item { display: flex; gap: 20px; align-items: flex-start; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.06); }
     .profile-item:last-child { border-bottom: none; }
     .profile-item-icon { font-size: 18px; flex-shrink: 0; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: rgba(196,149,106,0.12); border-radius: 50%; }
-    .profile-item-title { font-size: 17px; font-weight: 500; color: var(--cream); margin-bottom: 4px; }
-    .profile-item-en { font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
-    .profile-item-desc { font-size: 14px; line-height: 1.8; color: var(--taupe); }
+    .profile-item-title { font-size: 16px; font-weight: 700; color: var(--cream); margin-bottom: 4px; }
+    .profile-item-en { font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+    .profile-item-desc { font-size: 16px; line-height: 1.5; color: var(--taupe); }
 
     /* ── CONTACT ── */
     #contact { background: var(--warm-white); text-align: center; }
@@ -504,13 +514,14 @@
     .contact-form { max-width: 560px; margin: 0 auto; text-align: left; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .form-group { margin-bottom: 20px; }
-    .form-group label { display: block; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-light); margin-bottom: 8px; }
+    .form-group label { display: block; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 8px; }
     .form-group input, .form-group select, .form-group textarea {
-      width: 100%; padding: 13px 16px; background: var(--cream); border: 1px solid var(--beige);
-      color: var(--text); font-family: 'Noto Sans JP', sans-serif; font-size: 13px;
-      font-weight: 300; outline: none; border-radius: 2px; transition: border-color 0.3s; appearance: none;
+      width: 100%; padding: 10px 12px; background: var(--background); border: 1px solid var(--border);
+      color: var(--text); font-size: 16px;
+      font-weight: 400; outline: none; border-radius: 8px; transition: border-color 0.3s; appearance: none;
+      height: 44px;
     }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent); }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--text-primary); box-shadow: 0 0 0 3px rgba(0,113,227,0.2); }
     .form-group textarea { resize: vertical; min-height: 120px; }
     /* ── Phone prefix custom dropdown ── */
     .phone-row { display: flex; gap: 8px; align-items: stretch; position: relative; }
@@ -524,7 +535,7 @@
     }
     .phone-trigger:focus { outline: none; border-color: var(--accent); }
     .phone-trigger .pt-flag { font-size: 16px; line-height: 1; }
-    .phone-trigger .pt-code { font-family: 'Noto Sans JP', sans-serif; font-size: 12px; flex:1; }
+    .phone-trigger .pt-code { font-size: 12px; flex:1; }
     .phone-trigger .pt-arrow { font-size: 8px; color: var(--text-light); transition: transform 0.2s; }
     .phone-trigger.open .pt-arrow { transform: rotate(180deg); }
     .phone-trigger.focused, .phone-trigger:hover { border-color: var(--accent); }
@@ -540,15 +551,15 @@
     .phone-search-wrap { padding: 8px; border-bottom: 1px solid var(--beige); flex-shrink: 0; }
     .phone-search {
       width: 100%; padding: 7px 10px; border: 1px solid var(--beige);
-      background: white; font-size: 12px; font-family: 'Noto Sans JP', sans-serif;
-      color: var(--text); outline: none; box-sizing: border-box;
+      background: white; font-size: 16px;
+      color: var(--text); outline: none; box-sizing: border-box; border-radius: 8px;
     }
     .phone-search:focus { border-color: var(--accent); }
     .phone-list { overflow-y: auto; flex: 1; }
     .phone-option {
       display: flex; align-items: center; gap: 10px;
-      padding: 9px 12px; cursor: pointer; font-size: 12px;
-      font-family: 'Noto Sans JP', sans-serif; color: var(--text);
+      padding: 9px 12px; cursor: pointer; font-size: 16px;
+      color: var(--text);
       transition: background 0.15s;
     }
     .phone-option:hover, .phone-option.active { background: var(--warm-white); }
@@ -561,12 +572,12 @@
       flex: 1; min-width: 0; width: auto !important;
     }
     .phone-hint {
-      font-size: 10px; color: var(--text-light); margin-top: 4px;
-      font-family: 'Noto Sans JP', sans-serif; min-height: 14px;
+      font-size: 12px; color: var(--text-secondary); margin-top: 4px;
+      min-height: 14px;
     }
     .form-submit { text-align: center; margin-top: 8px; }
-    .form-submit .btn-primary { font-size: 12px; padding: 16px 56px; }
-    .contact-note { text-align: center; font-size: 12px; color: var(--text-light); margin-top: 20px; }
+    .form-submit .btn-primary { font-size: 16px; padding: 8px 22px; }
+    .contact-note { text-align: center; font-size: 12px; color: var(--text-secondary); margin-top: 20px; }
 
     /* ── SUBMISSION SUCCESS POPUP ── */
     .success-overlay {
@@ -593,19 +604,19 @@
       margin: 0 auto 28px; font-size: 32px;
     }
     .success-title {
-      font-family: 'DM Serif Display', serif; font-size: 26px;
-      color: var(--dark); margin-bottom: 14px; line-height: 1.3;
+      font-size: 26px; font-weight: 700;
+      color: var(--dark); margin-bottom: 14px; line-height: 1.5;
     }
-    .success-title em { font-style: italic; color: var(--accent); }
-    .success-body { font-size: 14px; line-height: 1.9; color: var(--text-light); margin-bottom: 36px; }
+    .success-title em { color: var(--accent); }
+    .success-body { font-size: 16px; line-height: 1.5; color: var(--text-secondary); margin-bottom: 36px; }
     .success-close {
-      display: inline-block; padding: 13px 44px;
-      background: var(--accent); color: white;
-      font-family: 'Noto Sans JP', sans-serif; font-size: 12px;
-      letter-spacing: 0.16em; border: none; border-radius: 2px;
+      display: inline-block; padding: 8px 22px;
+      background: var(--text-primary); color: #ffffff;
+      font-size: 16px; font-weight: 700;
+      letter-spacing: 0.04em; border: none; border-radius: 980px;
       cursor: pointer; transition: background 0.3s;
     }
-    .success-close:hover { background: var(--dark); }
+    .success-close:hover { background: var(--brand); }
     .success-divider { width: 40px; height: 1px; background: var(--accent); margin: 0 auto 28px; }
     @media (max-width: 480px) {
       .success-popup { padding: 44px 24px 36px; }
@@ -614,14 +625,14 @@
 
     /* ── FOOTER ── */
     footer {
-      background: var(--dark); padding: 56px 72px;
+      background: var(--dark); padding: 56px 48px;
       display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;
     }
-    .footer-tagline { font-size: 11px; letter-spacing: 0.18em; color: var(--taupe); margin-top: 6px; }
+    .footer-tagline { font-size: 12px; letter-spacing: 0.04em; color: var(--taupe); margin-top: 6px; }
     .footer-links { display: flex; gap: 28px; list-style: none; }
-    .footer-links a { font-size: 11px; letter-spacing: 0.12em; color: var(--taupe); text-decoration: none; transition: color 0.3s; }
-    .footer-links a:hover { color: var(--accent); }
-    .footer-copy { font-size: 11px; color: var(--taupe); letter-spacing: 0.08em; }
+    .footer-links a { font-size: 12px; letter-spacing: 0.04em; color: var(--taupe); text-decoration: none; transition: color 0.3s; }
+    .footer-links a:hover { color: var(--brand); }
+    .footer-copy { font-size: 12px; color: var(--taupe); letter-spacing: 0.04em; }
 
     /* ── ANIMATIONS ── */
     @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
@@ -639,37 +650,33 @@
     body.lang-ja [data-opt="en"], body.lang-en [data-opt="ja"] { display: none; }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
+    @media (max-width: 1023px) {
       .hero { grid-template-columns: 1fr; }
       .hero-right { display: none; }
       #about, .profile-grid { grid-template-columns: 1fr; }
       .about-visual { display: none; }
       .services-grid { grid-template-columns: 1fr 1fr; }
-      nav, section, footer { padding-left: 28px; padding-right: 28px; }
-      .hero-left { padding: 120px 28px 60px; }
+      nav, section, footer { padding-left: 24px; padding-right: 24px; }
+      nav { height: 44px; padding: 0 24px; }
+      .hero-left { padding: 120px 24px 60px; }
       .form-row { grid-template-columns: 1fr; }
-      .modal { padding: 40px 28px; }
+      .modal { padding: 40px 24px; }
       .nav-links { gap: 20px; }
+      section { padding: 80px 24px; }
     }
-    @media (max-width: 580px) {
+    @media (max-width: 833px) {
       .services-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
       .lang-switcher { display: none; }
       .ham { display: flex; }
-    }
-
-    /* ── MOBILE FIXES ── */
-    @media (max-width: 480px) {
-      .lang-btn { font-size: 10px; padding: 4px 10px; }
-      nav { padding: 12px 16px; }
-      .nav-right { gap: 16px; }
+      nav { height: 44px; padding: 0 16px; }
+      section { padding: 60px 16px; }
+      .hero-left { padding: 100px 16px 60px; }
       .logo-text { font-size: 18px; }
-      .hero-left { padding: 100px 20px 60px; }
-      .hero-title { font-size: 36px; }
-      section { padding: 64px 20px; }
-      footer { padding: 40px 20px; flex-direction: column; align-items: flex-start; gap: 20px; }
+      .nav-right { gap: 16px; }
+      footer { padding: 40px 16px; flex-direction: column; align-items: flex-start; gap: 20px; }
       .footer-links { flex-wrap: wrap; gap: 16px; }
-      .modal { padding: 40px 20px 32px; margin: 0 12px; max-height: 90vh; }
+      .modal { padding: 40px 16px 32px; margin: 0 12px; max-height: 90vh; }
       .modal-overlay { padding: 16px; align-items: flex-end; }
       .modal { border-radius: 12px 12px 0 0; max-height: 85vh; }
       .about-stats { gap: 24px; }
@@ -686,13 +693,17 @@
         background-color: #faf8f4 !important;
         color: #3d2e22 !important;
       }
-      nav { background: rgba(250,248,244,0.95) !important; }
-      nav.scrolled { background: rgba(250,248,244,0.96) !important; }
+      nav { background: rgba(250,248,244,0.96) !important; }
+      nav.scrolled { background: rgba(250,248,244,0.98) !important; }
       .hero { background: var(--cream) !important; }
       .hero-title { color: var(--dark) !important; }
       .hero-subtitle-ja, .hero-desc { color: var(--text-light) !important; }
       .hero-luma-text { color: #EDCAA2 !important; }
       section { background-color: #faf8f4 !important; }
+      #who { background: var(--dark) !important; }
+      #who .who-name { color: rgba(255,255,255,0.95) !important; }
+      #who .who-body { color: rgba(255,255,255,0.80) !important; }
+      #who .who-tagline, #who .who-cta, #who .section-eyebrow, #who .who-name em { color: var(--accent-light) !important; }
       #story { background: #8e5f45 !important; }
       .services-section { background: #f5f1eb !important; }
       .profile-section { background: #faf8f4 !important; }
@@ -712,8 +723,8 @@
   
     .footer-brand { text-align: center; }
     .footer-logo {
-      font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 700;
-      letter-spacing: .22em; color: #EDCAA2; text-decoration: none;
+      font-size: 20px; font-weight: 700;
+      letter-spacing: 0.08em; color: #EDCAA2; text-decoration: none;
       display: block; margin-bottom: 6px;
     }
 
@@ -721,8 +732,7 @@
     .mob-svc-wrap { width: 100%; text-align: center; }
     .mob-svc-toggle {
       background: none; border: none; cursor: pointer;
-      font-family: 'Noto Sans JP', sans-serif;
-      font-size: 18px; letter-spacing: .16em;
+      font-size: 18px; letter-spacing: 0.04em;
       color: var(--text, #3d3028); transition: color .3s;
       display: flex; align-items: center; justify-content: center;
       gap: 8px; width: 100%; padding: 0;
@@ -740,17 +750,17 @@
       max-height: 400px; opacity: 1; margin-top: 16px;
     }
     .mob-svc-list a {
-      font-size: 14px !important; letter-spacing: .12em;
-      color: var(--tl, #7a6858) !important;
+      font-size: 14px !important; letter-spacing: 0.04em;
+      color: var(--text-secondary, #7a6858) !important;
     }
-    .mob-svc-list a:hover { color: var(--accent, #c4956a) !important; }
+    .mob-svc-list a:hover { color: var(--brand, #c4956a) !important; }
 
     /* ── ENGLISH VISITOR BANNER (EN mode only) ── */
     .en-visitor-bar{
       display:none; /* JSで制御 */
       background:rgba(196,149,106,.1);
       border:1px solid rgba(196,149,106,.25);
-      border-radius:2px;
+      border-radius:12px;
       padding:12px 24px;
       margin-top:24px;
       align-items:center;gap:12px;
@@ -758,18 +768,86 @@
     }
     .en-visitor-bar.visible{display:flex;}
     .en-visitor-bar-text{
-      font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;
-      letter-spacing:.18em;text-transform:uppercase;color:var(--tl);
+      font-size:12px;font-weight:700;
+      letter-spacing:0.04em;text-transform:uppercase;color:var(--text-secondary);
     }
     .en-visitor-bar-link{
-      font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;
-      letter-spacing:.18em;text-transform:uppercase;
+      font-size:12px;font-weight:700;
+      letter-spacing:0.04em;text-transform:uppercase;
       color:var(--accent);text-decoration:none;
       display:flex;align-items:center;gap:6px;
       transition:color .2s;
     }
-    .en-visitor-bar-link:hover{color:var(--sub);}
+    .en-visitor-bar-link:hover{color:var(--brand-dark);}
     @media(max-width:768px){.en-visitor-bar{padding:10px 16px;}}
+
+    /* ── HERO QUICK NAV (サービスクイックリンク) ── */
+    .hero-quick-nav {
+      margin-top: 32px; opacity: 0;
+      animation: fadeUp 0.8s ease 1.0s forwards;
+    }
+    .hero-quick-label {
+      display: block; font-size: 12px; color: var(--text-secondary);
+      letter-spacing: 0.04em; margin-bottom: 12px;
+    }
+    .hero-quick-links {
+      display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .hero-quick-links a {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 14px; border: 1px solid var(--border);
+      border-radius: 980px; background: #fff;
+      font-size: 13px; color: var(--text); text-decoration: none;
+      transition: all 0.3s;
+    }
+    .hero-quick-links a:hover {
+      border-color: var(--brand); color: var(--brand);
+    }
+
+    /* ── WHO I AM (自己紹介セクション) ── */
+    #who { background: var(--dark); padding: 80px 48px; color: rgba(255,255,255,0.88); }
+    #who .section-eyebrow { color: var(--accent-light); }
+    .who-inner { max-width: 1100px; margin: 0 auto; }
+    .who-grid {
+      display: grid; grid-template-columns: 280px 1fr;
+      gap: 56px; align-items: center; margin-top: 24px;
+    }
+    .who-photo img {
+      width: 100%; aspect-ratio: 1/1; object-fit: cover;
+      border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      background: var(--brown);
+    }
+    .who-name {
+      font-size: clamp(22px, 3vw, 32px); font-weight: 700;
+      color: rgba(255,255,255,0.95); margin-bottom: 8px; line-height: 1.5;
+    }
+    .who-name em { color: var(--accent-light); }
+    .who-tagline {
+      font-size: 14px; color: var(--accent-light);
+      letter-spacing: 0.04em; margin-bottom: 20px;
+    }
+    .who-body {
+      font-size: 16px; line-height: 1.5; color: rgba(255,255,255,0.80);
+      margin-bottom: 24px;
+    }
+    .who-cta {
+      color: var(--accent-light); font-weight: 700; font-size: 14px;
+      text-decoration: none; border-bottom: 1px solid var(--accent-light);
+      padding-bottom: 2px; transition: opacity 0.3s;
+    }
+    .who-cta:hover { opacity: 0.7; }
+    @media (max-width: 833px) {
+      #who { padding: 60px 16px; }
+      .who-grid { grid-template-columns: 1fr; gap: 24px; text-align: left; }
+      .who-photo { max-width: 200px; margin: 0 auto; }
+    }
+
+    /* ── STORY INTRO (ストーリー導入文) ── */
+    .story-intro {
+      font-size: 16px; line-height: 1.5;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 48px; max-width: 720px;
+    }
   </style>
 </head>
 <body class="lang-ja" id="body-root">
@@ -848,6 +926,23 @@
         <a href="#services" class="btn-primary"><span data-inline="ja">サービスを見る</span><span data-inline="en">Explore Services</span></a>
         <a href="./contact.html" class="btn-outline"><span data-inline="ja">無料相談</span><span data-inline="en">Free Consultation</span></a>
       </div>
+
+      <!-- サービスクイックリンク: 趣味・興味から直接サービスへ -->
+      <div class="hero-quick-nav">
+        <span class="hero-quick-label">
+          <span data-inline="ja">興味のあるサービスへ</span>
+          <span data-inline="en">Jump to service</span>
+        </span>
+        <div class="hero-quick-links">
+          <a href="./service-english.html">📖 <span data-inline="ja">英語</span><span data-inline="en">English</span></a>
+          <a href="./service-photo.html">📸 <span data-inline="ja">写真</span><span data-inline="en">Photo</span></a>
+          <a href="./s-league.html">🀄 <span data-inline="ja">麻雀</span><span data-inline="en">Mahjong</span></a>
+          <a href="./service-tour.html">🗺️ <span data-inline="ja">ツアー</span><span data-inline="en">Tours</span></a>
+          <a href="./service-counselling.html">💬 <span data-inline="ja">相談</span><span data-inline="en">Coaching</span></a>
+          <a href="./service-karaoke.html">🎤 <span data-inline="ja">カラオケ</span><span data-inline="en">Karaoke</span></a>
+        </div>
+      </div>
+
         <div class="en-visitor-bar" id="enVisitorBar">
           <span class="en-visitor-bar-text">Looking for tours in English?</span>
           <a href="./tour-en.html" class="en-visitor-bar-link">
@@ -868,58 +963,30 @@
   </section>
 
 
-  <!-- My Story -->
-  <section id="story">
-    <div class="story-inner">
-      <span class="story-eyebrow reveal">My Story</span>
-      <h2 class="story-heading reveal">
-        <span data-lang="ja">なぜ、<em>LUMAを</em>始めたのか</span>
-        <span data-lang="en">Why I <em>started</em> LUMA</span>
-      </h2>
-      <div class="story-chapters">
-
-        <div class="story-chapter reveal">
-          <div class="story-chapter-num">I</div>
-          <div class="story-chapter-body">
-            <span class="story-chapter-tag">幼少期</span>
-            <div class="story-chapter-title" data-lang="ja">信じていた人に、裏切られた日</div>
-            <div class="story-chapter-title" data-lang="en">The day trust was broken</div>
-            <p class="story-chapter-text" data-lang="ja">私は愛知県の小さな町で生まれ育ちました。幼少期の記憶は、いじめられていたこと、周りに助けてくれる人がいなかったこと。それだけです。<br><br>きっかけは7〜8歳の頃、給食でキウイフルーツを残した日のことです。担任の先生が私の口を開けさせて、無理やり押し込みました。その瞬間、私はアナフィラキシーを発症し、意識を失いました。目が覚めると、病院のベッドの上でした。<br><br>小学生にとって最も信頼できるはずの存在である担任の先生が「裏切り」、私は誰も信用することができなくなり、内向的になりました。サッカー、野球などのクラブ活動も辞め、人とコミュニケーションを取ることが怖くなりました。そこから、いじめが始まりました。引っ越しをし、中学生になっても、その影はずっとそこにありました。</p>
-            <p class="story-chapter-text" data-lang="en">I grew up in a small town in Aichi Prefecture. My childhood memories are simple — being bullied, having no one to help. That's all.<br><br>It started when I was 7 or 8. During school lunch, I left some kiwi fruit untouched. My homeroom teacher forced it into my mouth. In that moment, I suffered anaphylactic shock and lost consciousness. I woke up in a hospital bed.<br><br>The person I should have trusted most had betrayed me. I stopped trusting people, became deeply introverted, quit sports clubs, and grew afraid of human connection. The bullying followed. Even after moving and starting middle school, that shadow stayed with me.</p>
-          </div>
+  <!-- Who I Am (簡潔な自己紹介) -->
+  <section id="who">
+    <div class="who-inner reveal">
+      <p class="section-eyebrow">Who I Am</p>
+      <div class="who-grid">
+        <div class="who-photo">
+          <img src="./profile.jpg" alt="Sho Asano / 浅野 彰" />
         </div>
-
-        <div class="story-chapter reveal">
-          <div class="story-chapter-num">II</div>
-          <div class="story-chapter-body">
-            <span class="story-chapter-tag">転機</span>
-            <div class="story-chapter-title" data-lang="ja">オーストラリアが、私を変えた</div>
-            <div class="story-chapter-title" data-lang="en">Australia changed everything</div>
-            <p class="story-chapter-text" data-lang="ja">母は20代の頃にオーストラリアへ留学をしており、いつか子供を海外で生活させたいという思いがあったようです。2011年1月、私は15歳になり、母に押される形でブリスベンへ移住しました。<br><br>ただ、そこは「自由」ではありませんでした。言葉もわからない、文化もわからない、毎日が試行錯誤の連続でした。それでも、その環境が私に「学ぶ機会」を与えてくれました。<br><br>現地で身につけたことは、三つあります。<br><strong style="color:#fff;"><br>自分自身を発信することの大切さ。<br>間違えることへの恐れを手放す自由さ。<br>そして、人と関わり続けることの力。</strong><br><br>15歳で異国の地に来た私が、そこから変われたのです。<em>いつから始めても、遅くはない</em>——それが、私の実体験から導かれた答えです。</p>
-            <p class="story-chapter-text" data-lang="en">My mother had studied in Australia in her twenties and always hoped her children could experience life abroad. In January 2011, at 15, she gave me a push — and I moved to Brisbane.<br><br>But it wasn't freedom — not at first. The language, the culture, the unwritten rules — every day was a process of trial and error. And yet, that very environment gave me something I hadn't expected: the chance to learn.<br><br>Three things became clear to me over those years. <strong style="color:#fff;"><br><br>The importance of putting yourself out there. <br>The freedom that comes from being allowed to make mistakes. <br>And the quiet power of staying connected to people.</strong><br><br>I arrived at 15, not knowing anyone or anything — and I changed. <em>It's never too late to start.</em> That's the truth my own life has taught me.</p>
-          </div>
+        <div class="who-text">
+          <h2 class="who-name">
+            <span data-lang="ja">浅野 彰 <em>(Sho Asano)</em></span>
+            <span data-lang="en">Sho Asano <em>(浅野 彰)</em></span>
+          </h2>
+          <p class="who-tagline" data-lang="ja">LUMA 代表 / 横浜在住 / 日英バイリンガル</p>
+          <p class="who-tagline" data-lang="en">Founder of LUMA · Based in Yokohama · Bilingual (JP/EN)</p>
+          <p class="who-body" data-lang="ja">愛知県出身、2011〜2020年にオーストラリア・ブリスベンで9年間生活。英語教育・ポートレート撮影・カウンセリング・ツアー・カラオケ指導・コミュニティ運営の6領域で、一人ひとりの「自己肯定感」を支える活動をしています。2022年からは健康麻雀コミュニティ「S.League」を主宰(これまで22回開催・延べ335名が参加)。</p>
+          <p class="who-body" data-lang="en">Born in Aichi, lived in Brisbane, Australia for 9 years (2011–2020). Running LUMA — a personal service brand across English tutoring, portrait photography, counselling, tours, karaoke coaching, and community. Also founded S.League, a healthy-mahjong community (22 events, 335 participants since 2022).</p>
+          <a href="#story" class="who-cta" data-lang="ja">詳しいストーリーを読む →</a>
+          <a href="#story" class="who-cta" data-lang="en">Read my full story →</a>
         </div>
-
-        <div class="story-chapter reveal">
-          <div class="story-chapter-num">III</div>
-          <div class="story-chapter-body">
-            <span class="story-chapter-tag">LUMAの原点</span>
-            <div class="story-chapter-title" data-lang="ja">環境が変われば、人生は変わる</div>
-            <div class="story-chapter-title" data-lang="en">Change the environment, change the life</div>
-            <p class="story-chapter-text" data-lang="ja">環境を変え、勇気を持ち、自分を信じることさえできれば、人生は変わります。信頼できる友達を作り、話を聞いてくれる誰かがそばにいることで、人生はうまくいく。<br><br>それが私の実体験から生まれた確信です。LUMAはその確信を、英語教育・写真・ツアー・コミュニティ・カウンセリング・カラオケという形にしたものです。あなたが持っている強みをそのままに、変えられる部分を一緒に変えていく。<em>Clarity by Design — Illuminate Your Confidence.</em> それが、LUMAの始まりです。</p>
-            <p class="story-chapter-text" data-lang="en">Change the environment. Have courage. Believe in yourself. That's all it takes for life to shift. Having trusted friends, someone who listens — that's what makes life work.<br><br>That conviction comes from my own lived experience. LUMA is its expression — through English, photography, tours, community, counselling, and karaoke. Keeping your core strengths intact while changing what can be changed. <em>Clarity by Design — Illuminate Your Confidence.</em> That's where LUMA began.</p>
-          </div>
-        </div>
-
-      </div>
-      <div class="story-cta reveal">
-        <a href="./contact.html">
-          <span data-lang="ja">お話を聞いてみる →</span>
-          <span data-lang="en">Get in touch →</span>
-        </a>
       </div>
     </div>
   </section>
+
 
   <!-- About -->
   <section id="about">
@@ -933,8 +1000,8 @@
       <p class="about-body" data-lang="en">LUMA is a personal service brand focused on building self-confidence through English education, portrait photography, counselling, local tours, and community events. Drawing on 9 years of experience in Australia and a diverse professional background, LUMA offers genuine, personalized support to help each individual grow.</p>
       <div class="about-stats">
         <div class="stat"><div class="stat-num">9年間</div><div class="stat-label" data-lang="ja">豪州留学</div><div class="stat-label" data-lang="en">Years in Australia</div></div>
-        <div class="stat"><div class="stat-num">335名</div><div class="stat-label" data-lang="ja">累計イベント参加者数</div><div class="stat-label" data-lang="en">Event participants total</div></div>
-        <div class="stat"><div class="stat-num">22回</div><div class="stat-label" data-lang="ja">イベント主催回数</div><div class="stat-label" data-lang="en">Events hosted</div></div>
+        <div class="stat"><div class="stat-num">6分野</div><div class="stat-label" data-lang="ja">提供サービス</div><div class="stat-label" data-lang="en">Services offered</div></div>
+        <div class="stat"><div class="stat-num">2言語</div><div class="stat-label" data-lang="ja">日英バイリンガル対応</div><div class="stat-label" data-lang="en">JP/EN bilingual</div></div>
       </div>
     </div>
     <div class="about-visual reveal">
@@ -1056,6 +1123,61 @@
       <div id="modal-body-content"></div>
     </div>
   </div>
+
+  <!-- My Story -->
+  <section id="story">
+    <div class="story-inner">
+      <span class="story-eyebrow reveal">My Story</span>
+      <h2 class="story-heading reveal">
+        <span data-lang="ja">なぜ、<em>LUMAを</em>始めたのか</span>
+        <span data-lang="en">Why I <em>started</em> LUMA</span>
+      </h2>
+      <p class="story-intro reveal" data-lang="ja">LUMA代表の浅野 彰(Sho Asano)です。この物語は、LUMAというサービスがなぜ生まれたのか、私自身の体験から綴ったものです。少し重い話も含まれますが、もし興味があれば読んでみてください。</p>
+      <p class="story-intro reveal" data-lang="en">I'm Sho Asano, the founder of LUMA. This is the personal story behind why LUMA exists — written from my own experience. Some parts are heavy, so feel free to skip if you'd like.</p>
+      <div class="story-chapters">
+
+        <div class="story-chapter reveal">
+          <div class="story-chapter-num">I</div>
+          <div class="story-chapter-body">
+            <span class="story-chapter-tag">幼少期</span>
+            <div class="story-chapter-title" data-lang="ja">信じていた人に、裏切られた日</div>
+            <div class="story-chapter-title" data-lang="en">The day trust was broken</div>
+            <p class="story-chapter-text" data-lang="ja">私は愛知県の小さな町で生まれ育ちました。幼少期の記憶は、いじめられていたこと、周りに助けてくれる人がいなかったこと。それだけです。<br><br>きっかけは7〜8歳の頃、給食でキウイフルーツを残した日のことです。担任の先生が私の口を開けさせて、無理やり押し込みました。その瞬間、私はアナフィラキシーを発症し、意識を失いました。目が覚めると、病院のベッドの上でした。<br><br>小学生にとって最も信頼できるはずの存在である担任の先生が「裏切り」、私は誰も信用することができなくなり、内向的になりました。サッカー、野球などのクラブ活動も辞め、人とコミュニケーションを取ることが怖くなりました。そこから、いじめが始まりました。引っ越しをし、中学生になっても、その影はずっとそこにありました。</p>
+            <p class="story-chapter-text" data-lang="en">I grew up in a small town in Aichi Prefecture. My childhood memories are simple — being bullied, having no one to help. That's all.<br><br>It started when I was 7 or 8. During school lunch, I left some kiwi fruit untouched. My homeroom teacher forced it into my mouth. In that moment, I suffered anaphylactic shock and lost consciousness. I woke up in a hospital bed.<br><br>The person I should have trusted most had betrayed me. I stopped trusting people, became deeply introverted, quit sports clubs, and grew afraid of human connection. The bullying followed. Even after moving and starting middle school, that shadow stayed with me.</p>
+          </div>
+        </div>
+
+        <div class="story-chapter reveal">
+          <div class="story-chapter-num">II</div>
+          <div class="story-chapter-body">
+            <span class="story-chapter-tag">転機</span>
+            <div class="story-chapter-title" data-lang="ja">オーストラリアが、私を変えた</div>
+            <div class="story-chapter-title" data-lang="en">Australia changed everything</div>
+            <p class="story-chapter-text" data-lang="ja">母は20代の頃にオーストラリアへ留学をしており、いつか子供を海外で生活させたいという思いがあったようです。2011年1月、私は15歳になり、母に押される形でブリスベンへ移住しました。<br><br>ただ、そこは「自由」ではありませんでした。言葉もわからない、文化もわからない、毎日が試行錯誤の連続でした。それでも、その環境が私に「学ぶ機会」を与えてくれました。<br><br>現地で身につけたことは、三つあります。<br><strong style="color:#fff;"><br>自分自身を発信することの大切さ。<br>間違えることへの恐れを手放す自由さ。<br>そして、人と関わり続けることの力。</strong><br><br>15歳で異国の地に来た私が、そこから変われたのです。<em>いつから始めても、遅くはない</em>——それが、私の実体験から導かれた答えです。</p>
+            <p class="story-chapter-text" data-lang="en">My mother had studied in Australia in her twenties and always hoped her children could experience life abroad. In January 2011, at 15, she gave me a push — and I moved to Brisbane.<br><br>But it wasn't freedom — not at first. The language, the culture, the unwritten rules — every day was a process of trial and error. And yet, that very environment gave me something I hadn't expected: the chance to learn.<br><br>Three things became clear to me over those years. <strong style="color:#fff;"><br><br>The importance of putting yourself out there. <br>The freedom that comes from being allowed to make mistakes. <br>And the quiet power of staying connected to people.</strong><br><br>I arrived at 15, not knowing anyone or anything — and I changed. <em>It's never too late to start.</em> That's the truth my own life has taught me.</p>
+          </div>
+        </div>
+
+        <div class="story-chapter reveal">
+          <div class="story-chapter-num">III</div>
+          <div class="story-chapter-body">
+            <span class="story-chapter-tag">LUMAの原点</span>
+            <div class="story-chapter-title" data-lang="ja">環境が変われば、人生は変わる</div>
+            <div class="story-chapter-title" data-lang="en">Change the environment, change the life</div>
+            <p class="story-chapter-text" data-lang="ja">環境を変え、勇気を持ち、自分を信じることさえできれば、人生は変わります。信頼できる友達を作り、話を聞いてくれる誰かがそばにいることで、人生はうまくいく。<br><br>それが私の実体験から生まれた確信です。LUMAはその確信を、英語教育・写真・ツアー・コミュニティ・カウンセリング・カラオケという形にしたものです。あなたが持っている強みをそのままに、変えられる部分を一緒に変えていく。<em>Clarity by Design — Illuminate Your Confidence.</em> それが、LUMAの始まりです。</p>
+            <p class="story-chapter-text" data-lang="en">Change the environment. Have courage. Believe in yourself. That's all it takes for life to shift. Having trusted friends, someone who listens — that's what makes life work.<br><br>That conviction comes from my own lived experience. LUMA is its expression — through English, photography, tours, community, counselling, and karaoke. Keeping your core strengths intact while changing what can be changed. <em>Clarity by Design — Illuminate Your Confidence.</em> That's where LUMA began.</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="story-cta reveal">
+        <a href="#contact">
+          <span data-lang="ja">お話を聞いてみる →</span>
+          <span data-lang="en">Get in touch →</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- Contact CTA -->
   <section id="contact" style="padding:80px 40px;text-align:center;background:var(--cream);">

@@ -6,147 +6,146 @@
   <meta name="color-scheme" content="light only" />
   <title>LUMA Circle — コミュニティイベント | LUMA — Clarity by Design</title>
   <meta name="description" content="LUMA Circle — S.League（麻雀大会）をはじめ、交流イベント・ミートアップを企画・運営。22回・累計335名の実績をもつLUMAが、人とのつながりを生み出す場を提供します。" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500&family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       color-scheme: light only;
-      --cream:#faf8f4; --warm:#f5f1eb; --beige:#e8e0d4; --sand:#d4c8b4;
-      --taupe:#b8a898; --dark:#2d2420; --accent:#c4956a; --accent-l:#e8c9a8;
-      --text:#3d3028; --tl:#7a6858; --sub:#8e5f45;
+      --cream:#faf8f4;--warm-white:#f5f1eb;--beige:#e8dfd0;--sand:#d4c4ad;
+      --taupe:#b8a898;--brown:#8c7460;--dark:#2d2420;--accent:#c4956a;--accent-light:#e8c9a8;
+      --text:#3d3028;--text-light:#7a6858;--success:#5a8a6a;--danger:#b54a3a;--warning:#c49840;
+      --brand:#c4956a;--brand-dark:#8c7460;--text-primary:#3d3028;--text-secondary:#7a6858;
+      --text-disabled:#b8a898;--border:#e8dfd0;--border-light:#e8dfd0;--background:#faf8f4;--surface:#f5f1eb;
     }
-    *{margin:0;padding:0;box-sizing:border-box;}
+    *{margin:0;padding:0;box-sizing:border-box;letter-spacing:0.04em;}
     html{scroll-behavior:smooth;}
-    body{background:var(--cream);color:var(--text);font-family:'Noto Sans JP',sans-serif;font-weight:300;overflow-x:hidden;}
+    body{background:var(--cream);color:var(--text);font-family:"SF Pro",-apple-system,"system-ui","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;font-weight:400;font-size:16px;line-height:1.5;letter-spacing:0.04em;overflow-x:hidden;word-break:break-all;overflow-wrap:break-word;line-break:strict;}
 
     /* ── NAV ── */
-    #navbar{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;transition:background .4s,box-shadow .4s;}
-    #navbar.scrolled{background:rgba(250,248,244,.96);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(196,149,106,.12);}
-    .logo-text{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:700;letter-spacing:.18em;color:#EDCAA2;text-decoration:none;}
+    #navbar{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;height:44px;padding:0 48px;transition:background .4s,box-shadow .4s;background:rgba(250,248,244,0.96);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);}
+    #navbar.scrolled{background:rgba(250,248,244,0.98);box-shadow:0 1px 0 rgba(140,116,96,0.15);}
+    .logo-text{font-size:20px;font-weight:700;letter-spacing:0.08em;color:#EDCAA2;text-decoration:none;}
     .nav-right{display:flex;align-items:center;gap:32px;}
     .nav-links{display:flex;list-style:none;gap:28px;align-items:center;}
-    .nav-links a{font-size:11px;font-weight:400;letter-spacing:.14em;text-decoration:none;color:var(--tl);transition:color .3s;}
-    .nav-links a:hover,.nav-links a.active{color:var(--accent);}
+    .nav-links a{font-size:12px;font-weight:400;letter-spacing:0.04em;text-decoration:none;color:var(--text-secondary);transition:color .3s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--brand);}
     .has-dropdown{position:relative;}
     .dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:12px;list-style:none;z-index:1000;min-width:190px;}
-    .dropdown-menu-inner{background:rgba(250,248,244,.98);backdrop-filter:blur(16px);border:1px solid var(--beige);border-radius:2px;padding:8px 0;box-shadow:0 8px 32px rgba(45,36,32,.12);}
+    .dropdown-menu-inner{background:rgba(255,255,255,0.98);backdrop-filter:blur(16px);border:1px solid var(--beige);border-radius:4px;padding:8px 0;box-shadow:0 4px 16px rgba(0,0,0,0.12);}
     .has-dropdown:hover .dropdown-menu{display:block;}
     .dropdown-menu li{list-style:none;}
-    .dropdown-menu li a{display:block;padding:9px 20px;font-size:11px;letter-spacing:.12em;color:var(--tl);text-decoration:none;transition:color .2s,background .2s;white-space:nowrap;}
-    .dropdown-menu li a:hover{color:var(--accent);background:var(--warm);}
+    .dropdown-menu li a{display:block;padding:9px 20px;font-size:12px;letter-spacing:0.04em;color:var(--text-secondary);text-decoration:none;transition:color .2s,background .2s;white-space:nowrap;}
+    .dropdown-menu li a:hover{color:var(--accent);background:var(--warm-white);}
     .dropdown-toggle::after{content:'';display:inline-block;width:5px;height:5px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg) translateY(-2px);margin-left:5px;vertical-align:middle;}
     .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;flex-shrink:0;}
-    .ham span{display:block;width:22px;height:1.5px;background:var(--tl);transition:all .3s;}
+    .ham span{display:block;width:22px;height:1.5px;background:var(--text-light);transition:all .3s;}
     .mob-menu{display:none;position:fixed;inset:0;background:var(--cream);z-index:1100;flex-direction:column;align-items:center;justify-content:center;gap:28px;}
     .mob-menu.open{display:flex;}
-    .mob-menu a{font-size:18px;letter-spacing:.16em;color:var(--text);text-decoration:none;transition:color .3s;}
-    .mob-menu a:hover{color:var(--accent);}
-    .mob-close{position:absolute;top:20px;right:24px;background:none;border:none;font-size:28px;color:var(--tl);cursor:pointer;}
-    @media(max-width:768px){.ham{display:flex;}.nav-links{display:none;}#navbar{padding:14px 24px;}}
+    .mob-menu a{font-size:18px;letter-spacing:0.04em;color:var(--text);text-decoration:none;transition:color .3s;}
+    .mob-menu a:hover{color:var(--brand);}
+    .mob-close{position:absolute;top:20px;right:24px;background:none;border:none;font-size:28px;color:var(--text-light);cursor:pointer;}
+    @media(max-width:833px){.ham{display:flex;}.nav-links{display:none;}#navbar{height:44px;padding:0 16px;}}
 
     /* ── HERO ── */
-    .svc-hero{min-height:52vh;display:flex;align-items:center;background:var(--dark);position:relative;overflow:hidden;padding:120px 72px 80px;}
+    .svc-hero{min-height:52vh;display:flex;align-items:center;background:var(--dark);position:relative;overflow:hidden;padding:120px 48px 80px;}
     .svc-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(196,149,106,.12),transparent 65%);}
-    .svc-hero-num{font-family:'DM Serif Display',serif;font-size:clamp(80px,12vw,160px);color:rgba(255,255,255,.04);position:absolute;right:5%;top:50%;transform:translateY(-50%);line-height:1;pointer-events:none;user-select:none;}
-    .svc-hero-eyebrow{font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;}
+    .svc-hero-num{font-size:clamp(80px,12vw,160px);color:rgba(255,255,255,.04);position:absolute;right:5%;top:50%;transform:translateY(-50%);line-height:1;pointer-events:none;user-select:none;}
+    .svc-hero-eyebrow{font-size:16px;letter-spacing:0.04em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;}
     .svc-hero-icon{font-size:48px;margin-bottom:20px;display:block;}
-    .svc-hero-name{font-family:'Montserrat',sans-serif;font-size:clamp(36px,6vw,72px);font-weight:700;letter-spacing:.06em;color:#fff;line-height:1.05;margin-bottom:10px;display:block;}
+    .svc-hero-name{font-size:clamp(36px,6vw,72px);font-weight:700;letter-spacing:0.04em;color:#fff;line-height:1.5;margin-bottom:10px;display:block;}
     .svc-hero-name em{font-style:normal;color:var(--accent);}
-    .svc-hero-title{font-family:'DM Serif Display',serif;font-size:clamp(20px,2.8vw,34px);color:rgba(255,255,255,.75);line-height:1.3;margin-bottom:16px;font-weight:300;letter-spacing:.02em;}
-    .svc-hero-title em{font-style:italic;color:var(--accent);}
-    .svc-hero-sub{font-size:clamp(12px,1.3vw,14px);color:rgba(255,255,255,.5);max-width:520px;line-height:1.85;}
-    @media(max-width:768px){.svc-hero{padding:100px 28px 64px;}.svc-hero-num{font-size:80px;}}
+    .svc-hero-title{font-size:clamp(20px,2.8vw,34px);color:rgba(255,255,255,.75);line-height:1.5;margin-bottom:16px;font-weight:700;letter-spacing:0.04em;}
+    .svc-hero-title em{color:var(--accent);}
+    .svc-hero-sub{font-size:clamp(12px,1.3vw,14px);color:rgba(255,255,255,.5);max-width:520px;line-height:1.5;}
+    @media(max-width:833px){.svc-hero{padding:100px 16px 64px;}.svc-hero-num{font-size:80px;}}
 
     /* ── STATS BAND ── */
-    .stats-band{background:var(--sub);padding:40px 72px;}
+    .stats-band{background:var(--brand-dark);padding:40px 48px;}
     .stats-inner{max-width:900px;margin:0 auto;display:flex;justify-content:space-around;gap:32px;flex-wrap:wrap;}
     .stat-item{text-align:center;}
-    .stat-num{font-family:'DM Serif Display',serif;font-size:clamp(36px,5vw,56px);color:#fff;line-height:1;display:block;}
-    .stat-label{font-size:11px;letter-spacing:.2em;color:rgba(255,255,255,.65);margin-top:6px;display:block;text-transform:uppercase;}
-    @media(max-width:600px){.stats-band{padding:32px 24px;}}
+    .stat-num{font-size:clamp(36px,5vw,56px);color:#fff;line-height:1;display:block;}
+    .stat-label{font-size:11px;letter-spacing:0.04em;color:rgba(255,255,255,.65);margin-top:6px;display:block;text-transform:uppercase;}
+    @media(max-width:833px){.stats-band{padding:32px 16px;}}
 
     /* ── OVERVIEW ── */
-    .svc-overview{padding:88px 72px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
-    .svc-overview-lead{font-family:'DM Serif Display',serif;font-size:clamp(22px,2.5vw,32px);line-height:1.5;color:var(--dark);margin-bottom:24px;}
-    .svc-overview-lead em{font-style:italic;color:var(--sub);}
-    .svc-overview-body{font-size:15px;line-height:1.95;color:var(--tl);}
-    @media(max-width:768px){.svc-overview{grid-template-columns:1fr;gap:36px;padding:56px 28px;}}
+    .svc-overview{padding:80px 48px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+    .svc-overview-lead{font-size:clamp(22px,2.5vw,32px);line-height:1.5;color:var(--dark);margin-bottom:24px;}
+    .svc-overview-lead em{color:var(--brand-dark);}
+    .svc-overview-body{font-size:16px;line-height:1.5;color:var(--text-light);}
+    @media(max-width:833px){.svc-overview{grid-template-columns:1fr;gap:36px;padding:60px 16px;}}
 
     /* ── OFFERS ── */
-    .svc-offers{background:var(--warm);padding:80px 72px;}
+    .svc-offers{background:var(--warm-white);padding:80px 48px;}
     .svc-offers-inner{max-width:1100px;margin:0 auto;}
-    .svc-section-eyebrow{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;display:block;}
-    .svc-section-title{font-family:'DM Serif Display',serif;font-size:clamp(24px,3vw,40px);color:var(--dark);margin-bottom:48px;line-height:1.2;}
-    .svc-section-title em{font-style:italic;color:var(--sub);}
+    .svc-section-eyebrow{font-size:16px;letter-spacing:0.04em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;display:block;}
+    .svc-section-title{font-size:clamp(24px,3vw,40px);color:var(--dark);margin-bottom:48px;line-height:1.5;font-weight:700;}
+    .svc-section-title em{color:var(--brand-dark);}
     .offers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-    .offer-card{background:#fff;border:1px solid var(--beige);border-radius:2px;padding:32px 28px;transition:box-shadow .3s,transform .3s;}
-    .offer-card:hover{box-shadow:0 8px 32px rgba(100,80,60,.08);transform:translateY(-4px);}
-    .offer-card-num{font-family:'DM Serif Display',serif;font-size:13px;color:var(--sand);letter-spacing:.2em;margin-bottom:12px;}
-    .offer-card-title{font-size:15px;font-weight:500;color:var(--dark);margin-bottom:8px;line-height:1.4;}
-    .offer-card-desc{font-size:13px;color:var(--tl);line-height:1.7;}
-    @media(max-width:900px){.offers-grid{grid-template-columns:1fr 1fr;}}@media(max-width:560px){.offers-grid{grid-template-columns:1fr;}}@media(max-width:768px){.svc-offers{padding:56px 28px;}}
+    .offer-card{background:#fff;border:1px solid var(--beige);border-radius:12px;padding:32px 28px;transition:box-shadow .3s,transform .3s;}
+    .offer-card:hover{box-shadow:0 4px 16px rgba(124,75,51,0.12);transform:translateY(-4px);}
+    .offer-card-num{font-size:13px;color:var(--sand);letter-spacing:0.04em;margin-bottom:12px;}
+    .offer-card-title{font-size:15px;font-weight:500;color:var(--dark);margin-bottom:8px;line-height:1.5;}
+    .offer-card-desc{font-size:16px;color:var(--text-light);line-height:1.5;}
+    @media(max-width:1023px){.offers-grid{grid-template-columns:1fr 1fr;}}@media(max-width:833px){.offers-grid{grid-template-columns:1fr;}.svc-offers{padding:60px 16px;}}
 
     /* ── S.LEAGUE SPOTLIGHT ── */
-    .spotlight{background:var(--dark);padding:80px 72px;}
+    .spotlight{background:var(--dark);padding:80px 48px;}
     .spotlight-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
-    .spotlight-tag{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;display:block;}
-    .spotlight-title{font-family:'DM Serif Display',serif;font-size:clamp(26px,3.5vw,44px);color:#fff;line-height:1.2;margin-bottom:20px;}
-    .spotlight-title em{font-style:italic;color:var(--accent);}
-    .spotlight-body{font-size:14px;color:rgba(255,255,255,.65);line-height:1.9;margin-bottom:28px;}
+    .spotlight-tag{font-size:10px;letter-spacing:0.04em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;display:block;}
+    .spotlight-title{font-size:clamp(26px,3.5vw,44px);color:#fff;line-height:1.5;margin-bottom:20px;}
+    .spotlight-title em{color:var(--accent);}
+    .spotlight-body{font-size:14px;color:rgba(255,255,255,.65);line-height:1.5;margin-bottom:28px;}
     .spotlight-facts{display:flex;flex-direction:column;gap:14px;}
     .spotlight-fact{display:flex;align-items:baseline;gap:12px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.06);}
     .spotlight-fact:last-child{border-bottom:none;}
-    .fact-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);min-width:80px;}
+    .fact-label{font-size:10px;letter-spacing:0.04em;text-transform:uppercase;color:var(--accent);min-width:80px;}
     .fact-val{font-size:13px;color:rgba(255,255,255,.75);line-height:1.6;}
-    .btn-outline-light{display:inline-block;padding:13px 36px;border:1px solid rgba(196,149,106,.5);color:var(--accent);font-size:11px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:all .3s;}
+    .btn-outline-light{display:inline-block;padding:8px 22px;border:1px solid rgba(196,149,106,.5);color:var(--accent);font-size:16px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;text-decoration:none;border-radius:980px;transition:all .3s;}
     .btn-outline-light:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
-    @media(max-width:768px){.spotlight{padding:56px 28px;}.spotlight-inner{grid-template-columns:1fr;gap:40px;}}
+    @media(max-width:833px){.spotlight{padding:60px 16px;}.spotlight-inner{grid-template-columns:1fr;gap:40px;}}
 
     /* ── PRICE ── */
-    .svc-price{padding:80px 72px;max-width:900px;margin:0 auto;}
-    .price-box{border:1px solid var(--beige);border-radius:2px;padding:48px 52px;position:relative;overflow:hidden;}
-    .price-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--sub));}
+    .svc-price{padding:80px 48px;max-width:900px;margin:0 auto;}
+    .price-box{border:1px solid var(--beige);border-radius:12px;padding:48px 52px;position:relative;overflow:hidden;}
+    .price-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--brand-dark));}
     .price-row{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--beige);}
     .price-row:last-of-type{border-bottom:none;}
-    .price-label{font-size:14px;color:var(--tl);}
-    .price-value{font-family:'DM Serif Display',serif;font-size:20px;color:var(--dark);}
-    .price-note{font-size:12px;color:var(--taupe);margin-top:20px;line-height:1.7;}
-    @media(max-width:768px){.svc-price{padding:56px 28px;}.price-box{padding:32px 24px;}}
+    .price-label{font-size:14px;color:var(--text-light);}
+    .price-value{font-size:20px;color:var(--dark);}
+    .price-note{font-size:12px;color:var(--taupe);margin-top:20px;line-height:1.5;}
+    @media(max-width:833px){.svc-price{padding:60px 16px;}.price-box{padding:32px 24px;}}
 
     /* ── FLOW ── */
-    .svc-flow{background:var(--sub);padding:80px 72px;}
+    .svc-flow{background:var(--brand-dark);padding:80px 48px;}
     .svc-flow-inner{max-width:900px;margin:0 auto;}
     .flow-steps{display:flex;flex-direction:column;gap:0;}
     .flow-step{display:grid;grid-template-columns:80px 1fr;gap:0 32px;padding:32px 0;border-bottom:1px solid rgba(255,255,255,.12);}
     .flow-step:last-child{border-bottom:none;}
-    .flow-num{font-family:'DM Serif Display',serif;font-size:40px;color:rgba(255,255,255,.2);text-align:right;padding-top:4px;}
-    .flow-tag{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:6px;display:block;}
+    .flow-num{font-size:40px;color:rgba(255,255,255,.2);text-align:right;padding-top:4px;}
+    .flow-tag{font-size:10px;letter-spacing:0.04em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:6px;display:block;}
     .flow-title{font-size:16px;font-weight:500;color:#fff;margin-bottom:8px;}
-    .flow-desc{font-size:13px;color:rgba(255,255,255,.7);line-height:1.8;}
-    @media(max-width:768px){.svc-flow{padding:56px 28px;}.flow-step{grid-template-columns:48px 1fr;gap:0 16px;}.flow-num{font-size:28px;}}
+    .flow-desc{font-size:13px;color:rgba(255,255,255,.7);line-height:1.5;}
+    @media(max-width:833px){.svc-flow{padding:60px 16px;}.flow-step{grid-template-columns:48px 1fr;gap:0 16px;}.flow-num{font-size:28px;}}
 
     /* ── CTA ── */
-    .svc-cta{padding:100px 72px;text-align:center;background:var(--cream);}
-    .svc-cta-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,48px);color:var(--dark);margin-bottom:16px;line-height:1.2;}
-    .svc-cta-title em{font-style:italic;color:var(--sub);}
-    .svc-cta-sub{font-size:15px;color:var(--tl);margin-bottom:40px;line-height:1.7;}
-    .btn-primary{display:inline-block;padding:14px 40px;background:var(--accent);color:#fff;font-size:12px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:background .3s,transform .2s;}
-    .btn-primary:hover{background:var(--sub);transform:translateY(-2px);}
-    .btn-outline{display:inline-block;padding:13px 36px;border:1px solid var(--accent);color:var(--accent);font-size:12px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-radius:1px;margin-left:16px;transition:all .3s;}
-    .btn-outline:hover{background:var(--accent);color:#fff;}
-    @media(max-width:600px){.btn-outline{margin-left:0;margin-top:12px;display:block;}}
+    .svc-cta{padding:80px 48px;text-align:center;background:var(--cream);}
+    .svc-cta-title{font-size:clamp(28px,4vw,48px);color:var(--dark);margin-bottom:16px;line-height:1.5;}
+    .svc-cta-title em{color:var(--brand-dark);}
+    .svc-cta-sub{font-size:15px;color:var(--text-light);margin-bottom:40px;line-height:1.5;}
+    .btn-primary{display:inline-block;padding:8px 22px;background:var(--text-primary);color:#fff;font-size:16px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;text-decoration:none;border-radius:980px;border:none;transition:background .3s,transform .2s;}
+    .btn-primary:hover{background:var(--brand);transform:translateY(-2px);}
+    .btn-outline{display:inline-block;padding:8px 22px;border:1px solid var(--text-primary);color:var(--text-primary);font-size:16px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;text-decoration:none;border-radius:980px;margin-left:16px;transition:all .3s;}
+    .btn-outline:hover{border-color:var(--brand);color:var(--brand);}
+    @media(max-width:833px){.btn-outline{margin-left:0;margin-top:12px;display:block;}}
 
     /* ── FOOTER ── */
-    footer{background:var(--dark);padding:48px 72px 32px;display:flex;flex-direction:column;align-items:center;gap:20px;}
+    footer{background:var(--dark);padding:56px 48px;display:flex;flex-direction:column;align-items:center;gap:20px;}
     .footer-brand{text-align:center;}
-    .footer-logo{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:700;letter-spacing:.22em;color:#EDCAA2;text-decoration:none;display:block;margin-bottom:6px;}
-    .footer-tagline{font-size:11px;letter-spacing:.12em;color:var(--taupe);}
+    .footer-logo{font-size:20px;font-weight:700;letter-spacing:0.08em;color:#EDCAA2;text-decoration:none;display:block;margin-bottom:6px;}
+    .footer-tagline{font-size:11px;letter-spacing:0.04em;color:var(--taupe);}
     .footer-links{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;list-style:none;padding:0;}
-    .footer-links a{font-size:11px;letter-spacing:.1em;color:var(--taupe);text-decoration:none;transition:color .3s;}
-    .footer-links a:hover{color:var(--accent);}
+    .footer-links a{font-size:11px;letter-spacing:0.04em;color:var(--taupe);text-decoration:none;transition:color .3s;}
+    .footer-links a:hover{color:var(--brand);}
     .footer-copy{font-size:10px;color:var(--taupe);opacity:.45;}
-    @media(max-width:768px){footer{padding:36px 20px 24px;}}
+    @media(max-width:833px){footer{padding:36px 20px 24px;}}
 
     /* ── REVEAL ── */
     .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
@@ -156,13 +155,12 @@
     .mob-svc-wrap { width: 100%; text-align: center; }
     .mob-svc-toggle {
       background: none; border: none; cursor: pointer;
-      font-family: 'Noto Sans JP', sans-serif;
-      font-size: 18px; letter-spacing: .16em;
+      font-size: 18px; letter-spacing: 0.04em;
       color: var(--text, #3d3028); transition: color .3s;
       display: flex; align-items: center; justify-content: center;
       gap: 8px; width: 100%; padding: 0;
     }
-    .mob-svc-toggle:hover { color: var(--accent, #c4956a); }
+    .mob-svc-toggle:hover { color: var(--brand, #c4956a); }
     .mob-svc-arrow { font-size: 14px; transition: transform .3s; display: inline-block; }
     .mob-svc-toggle[aria-expanded="true"] .mob-svc-arrow { transform: rotate(180deg); }
     .mob-svc-list {
@@ -175,10 +173,11 @@
       max-height: 400px; opacity: 1; margin-top: 16px;
     }
     .mob-svc-list a {
-      font-size: 14px !important; letter-spacing: .12em;
-      color: var(--tl, #7a6858) !important;
+      font-size: 14px !important; letter-spacing: 0.04em;
+      color: var(--text-secondary, #7a6858) !important;
     }
-    .mob-svc-list a:hover { color: var(--accent, #c4956a) !important; }
+    .mob-svc-list a:hover { color: var(--brand, #c4956a) !important; }
+    em, i, cite, address, var, dfn, blockquote, q { font-style: normal !important; }
   </style>
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
@@ -293,8 +292,8 @@
       <div class="svc-overview-right reveal" style="padding-top:8px;">
         <div style="border-left:2px solid var(--beige);padding-left:32px;">
           <p style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;">Overview</p>
-          <p style="font-family:'DM Serif Display',serif;font-size:17px;color:var(--dark);line-height:1.7;font-style:italic;">"A place to belong" — that's what changes a life.</p>
-          <p style="font-size:13px;color:var(--tl);line-height:1.8;margin-top:16px;">From a childhood shaped by isolation to building a thriving community of 335 people across 22 events, I know what it means to find your place. LUMA Circle creates spaces where people genuinely connect — from mahjong tournaments to social meetups and beyond.</p>
+          <p style="font-family:'DM Serif Display',serif;font-size:17px;color:var(--dark);line-height:1.7;">"A place to belong" — that's what changes a life.</p>
+          <p style="font-size:13px;color:var(--text-light);line-height:1.8;margin-top:16px;">From a childhood shaped by isolation to building a thriving community of 335 people across 22 events, I know what it means to find your place. LUMA Circle creates spaces where people genuinely connect — from mahjong tournaments to social meetups and beyond.</p>
         </div>
       </div>
     </div>

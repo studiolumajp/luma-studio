@@ -9,41 +9,41 @@
   <title>Tour Enquiry — LUMA Path | Private Guide in Japan</title>
   <meta name="description" content="Enquire about a private tour in Japan with LUMA Path. English-speaking guide, gluten-free and allergy-friendly, custom itineraries across Tokyo, Kyoto, Osaka, Hokkaido and Fukuoka." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
-
   <style>
     :root {
-      --cream: #faf8f4; --warm: #f5f1eb; --beige: #e8e0d4; --sand: #d4c8b4;
-      --taupe: #b8a898; --dark: #2d2420; --accent: #c4956a; --accent-l: #e8c9a8;
-      --text: #3d3028; --tl: #7a6858; --sub: #8e5f45;
+      --cream: #faf8f4; --warm-white: #f5f1eb; --beige: #e8dfd0; --sand: #d4c4ad;
+      --taupe: #b8a898; --dark: #2d2420; --accent: #c4956a; --accent-light: #e8c9a8;
+      --text: #3d3028; --text-light: #7a6858; --brand-dark: #8e5f45;
+      --text-primary: #3d3028; --text-secondary: #7a6858; --border: #e8dfd0;
+      --background: #faf8f4; --surface: #f5f1eb; --brand: #c4956a;
     }
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; letter-spacing: 0.04em; }
     html { scroll-behavior: smooth; }
     body {
       background: var(--cream); color: var(--text);
-      font-family: 'Cormorant Garamond', serif;
+      font-family: "SF Pro",-apple-system,"system-ui","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+      font-weight: 400; font-size: 16px; line-height: 1.5; letter-spacing: 0.04em;
+      word-break: break-all; overflow-wrap: break-word; line-break: strict;
       min-height: 100vh; display: flex; flex-direction: column;
     }
 
     /* ── NAV ── */
     nav {
       display: flex; align-items: center; justify-content: space-between;
-      padding: 22px 56px; background: var(--dark);
+      height: 44px; padding: 0 48px; background: var(--dark);
     }
     .logo {
-      font-family: 'Montserrat', sans-serif; font-size: 19px; font-weight: 700;
-      letter-spacing: .2em; color: #EDCAA2; text-decoration: none;
+      font-size: 19px; font-weight: 700;
+      letter-spacing: 0.08em; color: #EDCAA2; text-decoration: none;
     }
     .nav-back {
-      font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600;
-      letter-spacing: .18em; text-transform: uppercase; text-decoration: none;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none;
       color: rgba(255,255,255,.5); transition: color .3s; display: flex; align-items: center; gap: 8px;
     }
     .nav-back:hover { color: var(--accent); }
     .nav-back::before { content: '←'; font-size: 14px; }
-    @media (max-width: 600px) { nav { padding: 14px 20px; } }
+    @media (max-width: 833px) { nav { padding: 0 24px; } }
     @media (max-width: 400px) { .nav-back span { display: none; } }
 
     /* ── LAYOUT ── */
@@ -51,7 +51,7 @@
       flex: 1; display: grid; grid-template-columns: 1fr 1fr;
       min-height: calc(100vh - 72px);
     }
-    @media (max-width: 900px) { .page-wrap { grid-template-columns: 1fr; } }
+    @media (max-width: 1023px) { .page-wrap { grid-template-columns: 1fr; } }
 
     /* ── LEFT PANEL ── */
     .left-panel {
@@ -61,29 +61,28 @@
     }
     .left-top {}
     .left-eyebrow {
-      font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 600;
-      letter-spacing: .4em; text-transform: uppercase; color: var(--accent);
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent);
       margin-bottom: 24px; display: flex; align-items: center; gap: 12px;
     }
     .left-eyebrow::after { content: ''; flex: 0 0 36px; height: 1px; background: var(--accent); opacity: .4; }
     .left-title {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(28px, 3.5vw, 46px); color: #fff; line-height: 1.15; margin-bottom: 28px;
+      font-size: clamp(28px, 3.5vw, 46px); color: #fff; line-height: 1.5; margin-bottom: 28px;
     }
-    .left-title em { font-style: italic; color: var(--accent); }
+    .left-title em { color: var(--accent); }
     .left-body {
-      font-size: 16px; color: rgba(255,255,255,.55); line-height: 1.9; margin-bottom: 40px;
+      font-size: 16px; color: rgba(255,255,255,.55); line-height: 1.5; margin-bottom: 40px;
     }
     .left-body p + p { margin-top: 14px; }
     .left-details { display: flex; flex-direction: column; gap: 14px; }
     .detail-row {
       display: flex; align-items: flex-start; gap: 14px;
-      font-size: 14px; color: rgba(255,255,255,.5); line-height: 1.6;
+      font-size: 14px; color: rgba(255,255,255,.5); line-height: 1.5;
     }
     .detail-icon { font-size: 16px; flex-shrink: 0; margin-top: 2px; }
     .detail-label {
-      font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 600;
-      letter-spacing: .16em; text-transform: uppercase; color: var(--accent);
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent);
       margin-bottom: 2px; display: block;
     }
     .left-bottom {
@@ -91,10 +90,10 @@
       border-top: 1px solid rgba(255,255,255,.07);
     }
     .left-note {
-      font-size: 13px; color: rgba(255,255,255,.3); line-height: 1.7;
-      font-style: italic;
+      font-size: 13px; color: rgba(255,255,255,.3); line-height: 1.5;
+      
     }
-    @media (max-width: 900px) {
+    @media (max-width: 1023px) {
       .left-panel {
         position: static; height: auto;
         padding: 56px 28px 48px; overflow: visible;
@@ -109,8 +108,8 @@
       display: flex; flex-direction: column; justify-content: flex-start;
     }
     .form-heading {
-      font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600;
-      letter-spacing: .32em; text-transform: uppercase; color: var(--accent);
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent);
       margin-bottom: 40px; display: block;
     }
 
@@ -118,8 +117,8 @@
     .form-group { margin-bottom: 28px; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 28px; }
     label {
-      font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700;
-      letter-spacing: .22em; text-transform: uppercase; color: var(--tl);
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-light);
       display: block; margin-bottom: 8px;
     }
     label .req { color: var(--accent); margin-left: 2px; }
@@ -128,9 +127,9 @@
     input[type="number"],
     select,
     textarea {
-      width: 100%; font-family: 'Cormorant Garamond', serif; font-size: 16px;
+      width: 100%; font-size: 16px;
       color: var(--text); background: #fff; border: 1px solid var(--beige);
-      border-radius: 1px; padding: 13px 16px; outline: none;
+      border-radius: 8px; padding: 13px 16px; height: 44px; outline: none;
       transition: border-color .25s, box-shadow .25s; appearance: none;
     }
     input:focus, select:focus, textarea:focus {
@@ -142,7 +141,7 @@
       background-repeat: no-repeat; background-position: right 16px center;
       padding-right: 40px; cursor: pointer;
     }
-    textarea { resize: vertical; min-height: 140px; line-height: 1.7; }
+    textarea { resize: vertical; min-height: 140px; line-height: 1.5; height: auto; }
     ::placeholder { color: var(--taupe); opacity: .8; }
 
     /* allergy checkboxes */
@@ -154,23 +153,23 @@
       cursor: pointer; flex-shrink: 0; margin: 0; padding: 0;
     }
     .checkbox-item span {
-      font-family: 'Cormorant Garamond', serif; font-size: 15px; color: var(--tl);
+      font-size: 15px; color: var(--text-light);
     }
 
     /* submit */
     .form-submit { margin-top: 12px; }
     .btn-submit {
-      font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700;
-      letter-spacing: .22em; text-transform: uppercase;
-      padding: 17px 52px; background: var(--accent); color: #fff;
-      border: none; border-radius: 1px; cursor: pointer;
+      font-size: 16px; font-weight: 700;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      padding: 8px 22px; background: var(--text-primary); color: #fff;
+      border: none; border-radius: 980px; cursor: pointer;
       transition: background .3s, transform .2s; display: inline-block;
       width: 100%;
     }
-    .btn-submit:hover { background: var(--sub); transform: translateY(-1px); }
+    .btn-submit:hover { background: var(--brand); transform: translateY(-1px); }
     .form-note {
-      font-size: 13px; color: var(--taupe); margin-top: 16px; line-height: 1.65;
-      font-style: italic; text-align: center;
+      font-size: 13px; color: var(--taupe); margin-top: 16px; line-height: 1.5;
+      text-align: center;
     }
 
     /* success state */
@@ -180,39 +179,40 @@
     .form-success.visible { display: block; }
     .success-icon { font-size: 48px; margin-bottom: 20px; display: block; }
     .success-title {
-      font-family: 'DM Serif Display', serif; font-size: 32px; color: var(--dark);
-      margin-bottom: 14px; line-height: 1.2;
+      font-size: 32px; color: var(--dark);
+      margin-bottom: 14px; line-height: 1.5;
     }
-    .success-title em { font-style: italic; color: var(--sub); }
-    .success-body { font-size: 16px; color: var(--tl); line-height: 1.8; max-width: 420px; margin: 0 auto 32px; }
+    .success-title em { color: var(--brand-dark); }
+    .success-body { font-size: 16px; color: var(--text-light); line-height: 1.5; max-width: 420px; margin: 0 auto 32px; }
     .btn-back {
-      font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600;
-      letter-spacing: .18em; text-transform: uppercase;
-      padding: 13px 36px; border: 1px solid var(--accent); color: var(--accent);
-      text-decoration: none; border-radius: 1px; transition: all .3s; display: inline-block;
+      font-size: 16px; font-weight: 700;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      padding: 8px 22px; border: 1px solid var(--text-primary); color: var(--text-primary);
+      text-decoration: none; border-radius: 980px; transition: all .3s; display: inline-block;
     }
-    .btn-back:hover { background: var(--accent); color: #fff; }
+    .btn-back:hover { background: var(--brand); border-color: var(--brand); color: #fff; }
 
-    @media (max-width: 900px) { .right-panel { padding: 48px 28px 64px; } }
+    @media (max-width: 1023px) { .right-panel { padding: 48px 28px 64px; } }
     @media (max-width: 500px) { .right-panel { padding: 36px 20px 56px; } }
     @media (max-width: 500px) { .form-group { margin-bottom: 22px; } }
     @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
 
     /* ── FOOTER ── */
     footer {
-      background: var(--dark); padding: 28px 56px;
+      background: var(--dark); padding: 56px 48px;
       display: flex; align-items: center; justify-content: space-between;
       flex-wrap: wrap; gap: 12px;
     }
     .footer-logo {
-      font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700;
-      letter-spacing: .2em; color: #EDCAA2; text-decoration: none;
+      font-size: 16px; font-weight: 700;
+      letter-spacing: 0.08em; color: #EDCAA2; text-decoration: none;
     }
-    .footer-copy { font-size: 11px; color: var(--taupe); opacity: .4; font-family: 'Montserrat', sans-serif; letter-spacing: .08em; }
+    .footer-copy { font-size: 11px; color: var(--taupe); opacity: .4; letter-spacing: 0.04em; }
     @media (max-width: 600px) { footer { padding: 24px; flex-direction: column; align-items: flex-start; } }
 
     input[type="checkbox"]:required:invalid ~ span { color: var(--text); }
     #disclaimerCheck { accent-color: var(--accent); width: 18px; height: 18px; }
+    em, i, cite, address, var, dfn, blockquote, q { font-style: normal !important; }
   </style>
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
@@ -351,7 +351,7 @@
         </div>
 
         <div class="form-group">
-          <label>Dietary requirements <span style="font-weight:400;text-transform:none;letter-spacing:0;font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--taupe);">(tick all that apply)</span></label>
+          <label>Dietary requirements <span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:13px;color:var(--taupe);">(tick all that apply)</span></label>
           <div class="checkbox-grid">
             <label class="checkbox-item">
               <input type="checkbox" name="dietary[]" value="Gluten-free" />
@@ -377,7 +377,7 @@
         </div>
 
         <div class="form-group">
-          <label for="message">Anything else? <span style="font-weight:400;text-transform:none;letter-spacing:0;font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--taupe);">(optional)</span></label>
+          <label for="message">Anything else? <span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:13px;color:var(--taupe);">(optional)</span></label>
           <textarea id="message" name="message" placeholder="What are you most interested in seeing or doing? Any specific spots, interests, or things you'd like to avoid? The more I know, the better the tour."></textarea>
         </div>
 
@@ -406,9 +406,9 @@
 
         <!-- ALLERGY DISCLAIMER -->
         <div class="form-group" style="background:rgba(196,149,106,.07);border:1px solid rgba(196,149,106,.25);border-radius:2px;padding:24px 28px;">
-          <label style="color:var(--sub);margin-bottom:12px;font-size:11px;letter-spacing:.22em;">Allergy &amp; Dietary Disclaimer</label>
-          <p style="font-size:14px;color:var(--tl);line-height:1.8;margin-bottom:20px;">I do my best to pre-check restaurants and communicate your requirements in Japanese before we arrive. However, I want to be upfront about a few things:</p>
-          <ul style="font-size:14px;color:var(--tl);line-height:1.9;padding-left:20px;margin-bottom:20px;">
+          <label style="color:var(--brand-dark);margin-bottom:12px;font-size:11px;letter-spacing:.22em;">Allergy &amp; Dietary Disclaimer</label>
+          <p style="font-size:14px;color:var(--text-light);line-height:1.8;margin-bottom:20px;">I do my best to pre-check restaurants and communicate your requirements in Japanese before we arrive. However, I want to be upfront about a few things:</p>
+          <ul style="font-size:14px;color:var(--text-light);line-height:1.9;padding-left:20px;margin-bottom:20px;">
             <li>Cross-contamination can occur in any kitchen, even where allergen-free dishes are offered. I cannot guarantee a completely allergen-free environment.</li>
             <li>I am not a medical professional. I can research and communicate your needs, but the final responsibility for safety remains with the restaurant and with you.</li>
             <li>Please carry any medication (e.g. an EpiPen) with you at all times during the tour.</li>
