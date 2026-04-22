@@ -5,7 +5,7 @@
   <meta name="color-scheme" content="light only" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-62F20N179N');</script>
-  <meta name="theme-color" content="#c4956a"/>
+  <meta name="theme-color" content="#1E88E5"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>S.League 成績アーカイブ — LUMA</title>
   <meta name="description" content="S.League 全22大会の成績アーカイブ。累計ランキング・大会別結果・団体戦結果を掲載。"/>
@@ -13,58 +13,56 @@
   <style>
     :root{
       color-scheme: light;
-      --cream:#faf8f4;--warm-white:#f5f1eb;--beige:#e8dfd0;--sand:#d4c4ad;
-      --taupe:#b8a898;--dark:#2d2420;--accent:#c4956a;--accent-light:#e8c9a8;
-      --text:#3d3028;--text-light:#7a6858;
-      --gold:#c4956a;--silver:#8fa3b8;--bronze:#b5714a;
+      --cream:#FFFFFF;--warm-white:#FFFFFF;--beige:#D7E5ED;--sand:#B8CED9;
+      --taupe:#7A8998;--dark:#134E6F;--accent:#F59E0B;--accent-light:#D6EBF7;
+      --text:#2C3E50;--text-light:#7A8998;
+      --gold:#1E88E5;--silver:#8fa3b8;--bronze:#b5714a;
       --green:#2a7d4f;--red:#c0392b;
-      --brand:#c4956a;--text-primary:#3d3028;--text-secondary:#7a6858;--border:#d4c4ad;--background:#faf8f4;--surface:#f5f1eb;--success:#2a7d4f;--danger:#c0392b;--warning:#e6a817;--brand-dark:#8c7460;--text-disabled:#b8a898;--border-light:#e8dfd0;
+      --brand:#1E88E5;--text-primary:#2C3E50;--text-secondary:#7A8998;--border:#B8CED9;--background:#FFFFFF;--surface:#FFFFFF;--success:#2a7d4f;--danger:#c0392b;--warning:#F59E0B;--brand-dark:#134E6F;--text-disabled:#B8CED9;--border-light:#D7E5ED;
+      --h1:#134E6F;--h2:#1E88E5;--h3:#5BA9D7;--base:#EBF5FA;--ice-white:#F8FBFC;--primary-light:#D6EBF7;--cta-hover:#D97706;--white:#FFFFFF;
     }
     *{margin:0;padding:0;box-sizing:border-box;letter-spacing:0.04em;}
     html{scroll-behavior:smooth;}
     body{background:var(--cream);color:var(--text);font-family:"SF Pro",-apple-system,"system-ui","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;font-weight:400;font-size:16px;line-height:1.5;letter-spacing:0.04em;word-break:break-all;overflow-wrap:break-word;line-break:strict;overflow-x:hidden;}
 
-        /* NAV ── 統一スタイル（#navbar限定で他の<nav>要素と競合しない） */
-    nav#navbar{position:fixed;top:0;left:0;right:0;z-index:999;height:44px;padding:0 48px;display:flex;align-items:center;justify-content:space-between;transition:all .4s;background:rgba(250,248,244,0.96);backdrop-filter:saturate(180%) blur(20px);}
-    nav#navbar.scrolled{background:rgba(250,248,244,0.98);box-shadow:0 1px 0 rgba(140,116,96,0.15);}
-    .logo-text{font-size:22px;font-weight:700;letter-spacing:0.08em;color:#EDCAA2;text-decoration:none;}
-    .nav-right{display:flex;align-items:center;gap:32px;}
-    .nav-links{display:flex;gap:28px;list-style:none;}
-    .nav-links a{font-size:12px;letter-spacing:0.04em;text-decoration:none;color:var(--text-light);transition:color .3s;}
-    .nav-links a:hover,.nav-links a.active{color:var(--accent);}
-    .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:2px;}
-    .ham span{width:22px;height:1.5px;background:var(--taupe);display:block;}
-    .mob-menu{display:none;position:fixed;inset:0;background:var(--dark);z-index:998;flex-direction:column;align-items:center;justify-content:center;gap:32px;}
-    .mob-menu.open{display:flex;}
-    .mob-menu a{font-size:18px;letter-spacing:0.04em;color:var(--cream);text-decoration:none;transition:color .3s;}
-    .mob-menu a:hover{color:var(--accent);}
-    .mob-close{position:absolute;top:24px;right:24px;font-size:24px;color:var(--taupe);cursor:pointer;background:none;border:none;}
+    /* NAV (canonical) */
+    .logo-text { font-size: 22px; font-weight: 700; letter-spacing: 0.08em; color: #FFFFFF; text-decoration: none; line-height: 1.0; }
+    .logo-text-footer { font-size: 20px; font-weight: 700; letter-spacing: 0.08em; color: #FFFFFF; }
+    .lang-link { font-size: 12px; font-weight: 400; letter-spacing: 0.04em; padding: 5px 12px; border: 1px solid rgba(255,255,255,0.35); color: #D6EBF7; text-decoration: none; border-radius: 4px; transition: all 0.3s; flex-shrink: 0; }
+    .lang-link:hover { background: #FFFFFF; border-color: #FFFFFF; color: #134E6F; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 999; height: 44px; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; gap: 24px; transition: all 0.4s; background: rgba(19,78,111,0.96); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); }
+    .nav-right { display: flex; align-items: center; gap: 36px; }
+    nav.scrolled { background: rgba(19,78,111,0.98); box-shadow: 0 1px 0 rgba(214,235,247,0.2); }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a { font-size: 12px; font-weight: 400; letter-spacing: 0.04em; text-decoration: none; color: #D6EBF7; transition: color 0.3s; }
+    .nav-links a:hover { color: #FFFFFF; }
+    /* .ham / .mob-menu canonical styles defined further down in this file */
 
     /* BREADCRUMB */
     .bc-bar{background:var(--warm-white);padding:76px 48px 14px;border-bottom:1px solid var(--beige);}
     .bc{display:flex;align-items:center;gap:6px;font-size:11px;letter-spacing:0.04em;color:var(--text-light);}
     .bc a{color:var(--text-light);text-decoration:none;transition:color .3s;}
-    .bc a:hover{color:var(--accent);}
+    .bc a:hover{color:var(--brand);}
     .bc span{color:var(--sand);}
-    .bc strong{color:var(--accent);}
+    .bc strong{color:var(--brand);}
 
-    /* HEADER */
-    .arch-hero{background:var(--dark);padding:56px 48px 48px;position:relative;overflow:hidden;}
+    /* HEADER (Soft Aqua) */
+    .arch-hero{background:linear-gradient(135deg,#EBF5FA 0%,#D6EBF7 100%);padding:56px 48px 48px;position:relative;overflow:hidden;}
     .arch-hero::before{content:'';position:absolute;inset:0;
-      background:radial-gradient(ellipse 60% 80% at 10% 0%,rgba(196,149,106,.12) 0%,transparent 60%);}
+      background:radial-gradient(ellipse at 70% 50%,rgba(30,136,229,0.15),transparent 65%);}
     .arch-wm{position:absolute;font-size:clamp(80px,14vw,180px);
-      color:rgba(196,149,106,.04);right:0;top:50%;transform:translateY(-50%);
+      color:rgba(30,136,229,.06);right:0;top:50%;transform:translateY(-50%);
       pointer-events:none;white-space:nowrap;line-height:1;}
-    .arch-tag{font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:block;position:relative;z-index:1;}
-    .arch-title{font-size:clamp(32px,5vw,60px);color:var(--cream);
+    .arch-tag{font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:#1E88E5;margin-bottom:14px;display:block;position:relative;z-index:1;}
+    .arch-title{font-size:clamp(32px,5vw,60px);color:#134E6F;
       line-height:1.5;margin-bottom:8px;position:relative;z-index:1;}
-    .arch-title em{color:var(--accent);}
-    .arch-sub{font-size:12px;color:var(--taupe);letter-spacing:0.04em;position:relative;z-index:1;}
+    .arch-title em{color:#1E88E5;}
+    .arch-sub{font-size:12px;color:#7A8998;letter-spacing:0.04em;position:relative;z-index:1;}
     .arch-stats{display:flex;gap:0;margin-top:36px;position:relative;z-index:1;}
-    .astat{padding:0 48px 0 0;margin-right:48px;border-right:1px solid rgba(255,255,255,.08);}
+    .astat{padding:0 48px 0 0;margin-right:48px;border-right:1px solid rgba(19,78,111,.1);}
     .astat:last-child{border-right:none;}
-    .astat-v{font-size:clamp(28px,3.5vw,44px);color:var(--accent);line-height:1;margin-bottom:4px;}
-    .astat-l{font-size:10px;letter-spacing:0.04em;color:var(--taupe);text-transform:uppercase;}
+    .astat-v{font-size:clamp(28px,3.5vw,44px);color:#1E88E5;line-height:1;margin-bottom:4px;}
+    .astat-l{font-size:10px;letter-spacing:0.04em;color:#7A8998;text-transform:uppercase;}
 
     /* TABS */
     .tabbar{background:var(--warm-white);border-bottom:1px solid var(--beige);position:sticky;top:0;z-index:200;}
@@ -74,29 +72,29 @@
       white-space:nowrap;color:var(--text-light);cursor:pointer;background:none;border:none;
       border-bottom:2px solid transparent;transition:color .2s,border-color .2s;}
     .tab:hover{color:var(--text);}
-    .tab.on{color:var(--accent);border-bottom-color:var(--accent);}
+    .tab.on{color:var(--brand);border-bottom-color:var(--brand);}
 
     /* MAIN */
     main{max-width:1100px;margin:0 auto;padding:40px 48px 80px;}
     .panel{display:none;}.panel.on{display:block;}
-    .sec-label{font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;display:block;}
+    .sec-label{font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:var(--brand);margin-bottom:10px;display:block;}
     .sec-title{font-size:clamp(20px,2.5vw,30px);color:var(--dark);margin-bottom:6px;}
     .sec-sub{font-size:12px;color:var(--text-light);letter-spacing:0.04em;margin-bottom:28px;line-height:1.5;}
-    .div{width:36px;height:1px;background:var(--accent);margin-bottom:28px;}
+    .div{width:36px;height:1px;background:var(--brand);margin-bottom:28px;}
 
     /* PODIUM */
     .podium{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:36px;max-width:680px;}
     .pcard{background:#fff;border:1px solid var(--beige);border-radius:12px;padding:24px 16px 20px;
       text-align:center;position:relative;overflow:hidden;transition:all .3s;}
-    .pcard:hover{box-shadow:0 8px 28px rgba(45,36,32,.1);transform:translateY(-2px);}
+    .pcard:hover{box-shadow:0 8px 28px rgba(19,78,111,.1);transform:translateY(-2px);}
     .p1{border-top:3px solid var(--gold);}
     .p2{border-top:3px solid var(--silver);}
     .p3{border-top:3px solid var(--bronze);}
     .pmed{font-size:28px;margin-bottom:8px;}
     .pnm{font-size:14px;color:var(--dark);
       cursor:pointer;margin-bottom:6px;transition:color .2s;}
-    .pnm:hover{color:var(--accent);}
-    .psc{font-size:20px;color:var(--accent);}
+    .pnm:hover{color:var(--brand);}
+    .psc{font-size:20px;color:var(--brand);}
     .pmt{font-size:10px;color:var(--text-light);margin-top:4px;letter-spacing:0.04em;}
 
     /* RANKING TABLE */
@@ -115,8 +113,8 @@
     .c3{color:var(--bronze)!important;}
     .cx{color:var(--text-light);}
     .pnm2{cursor:pointer;font-weight:500;color:var(--dark);transition:color .2s;}
-    .pnm2:hover{color:var(--accent);}
-    .wn{font-size:11px;color:var(--accent);margin-left:6px;}
+    .pnm2:hover{color:var(--brand);}
+    .wn{font-size:11px;color:var(--brand);margin-left:6px;}
     .sv{font-size:15px;}
     .sp{color:var(--green);}
     .sn{color:var(--red);}
@@ -126,7 +124,7 @@
 
     /* ARCHIVE LIST */
     .ecard{background:#fff;border:1px solid var(--beige);border-radius:12px;margin-bottom:8px;overflow:hidden;transition:box-shadow .2s;}
-    .ecard:hover{box-shadow:0 4px 16px rgba(45,36,32,.08);}
+    .ecard:hover{box-shadow:0 4px 16px rgba(19,78,111,.08);}
     .ehead{padding:16px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none;}
     .ehead:hover{background:var(--warm-white);}
     .enum{font-size:15px;color:var(--dark);}
@@ -144,35 +142,35 @@
     .ertbl thead th{font-size:9px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;
       color:var(--text-light);padding:6px 10px 8px;text-align:left;border-bottom:1px solid var(--beige);}
     .ertbl thead th.r{text-align:right;}
-    .ertbl tbody tr{border-bottom:1px solid rgba(232,224,212,.5);}
+    .ertbl tbody tr{border-bottom:1px solid rgba(215,229,237,.5);}
     .ertbl tbody tr:last-child{border-bottom:none;}
     .ertbl tbody td{padding:9px 10px;font-size:12px;}
     .errank{font-size:14px;width:28px;color:var(--text-light);}
 
     /* PLAYER DETAIL MODAL */
-    .modal-overlay{display:none;position:fixed;inset:0;background:rgba(45,36,32,.6);z-index:1100;align-items:center;justify-content:center;padding:20px;}
+    .modal-overlay{display:none;position:fixed;inset:0;background:rgba(19,78,111,.6);z-index:1100;align-items:center;justify-content:center;padding:20px;}
     .modal-overlay.open{display:flex;}
-    .modal{background:var(--cream);border-radius:12px;max-width:640px;width:100%;max-height:80vh;overflow-y:auto;box-shadow:0 20px 60px rgba(45,36,32,.3);}
+    .modal{background:var(--cream);border-radius:12px;max-width:640px;width:100%;max-height:80vh;overflow-y:auto;box-shadow:0 20px 60px rgba(19,78,111,.3);}
     .modal-head{background:var(--dark);padding:48px 40px;display:flex;justify-content:space-between;align-items:center;}
     .modal-name{font-size:28px;color:var(--cream);}
     .modal-close{font-size:20px;color:var(--taupe);background:none;border:none;cursor:pointer;}
     .modal-close:hover{color:var(--cream);}
     .modal-stats{display:flex;gap:32px;padding:24px 32px;background:var(--warm-white);border-bottom:1px solid var(--beige);}
-    .mstat-v{font-size:28px;color:var(--accent);}
+    .mstat-v{font-size:28px;color:var(--brand);}
     .mstat-l{font-size:10px;letter-spacing:0.04em;color:var(--text-light);margin-top:2px;text-transform:uppercase;}
     .modal-body{padding:48px 40px;}
     .modal-sub{font-size:10px;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-light);margin-bottom:14px;}
     .modal-tbl{width:100%;border-collapse:collapse;}
     .modal-tbl thead th{font-size:10px;letter-spacing:0.04em;color:var(--text-light);padding:6px 10px;text-align:left;border-bottom:1px solid var(--beige);}
     .modal-tbl thead th.r{text-align:right;}
-    .modal-tbl tbody tr{border-bottom:1px solid rgba(232,224,212,.5);}
+    .modal-tbl tbody tr{border-bottom:1px solid rgba(215,229,237,.5);}
     .modal-tbl tbody td{padding:9px 10px;font-size:12px;}
 
     /* HANCHAN TABLE（SL22チーム詳細） */
     .hc-tbl{width:100%;border-collapse:collapse;font-size:12px;}
     .hc-tbl thead th{background:var(--beige);color:var(--text);font-size:10px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;padding:8px 14px;text-align:center;white-space:nowrap;}
     .hc-tbl thead th:first-child{text-align:left;}
-    .hc-tbl tbody tr{border-bottom:1px solid rgba(232,224,212,.5);}
+    .hc-tbl tbody tr{border-bottom:1px solid rgba(215,229,237,.5);}
     .hc-tbl tbody tr:hover{background:var(--warm-white);}
     .hc-tbl tbody td{padding:9px 14px;text-align:center;white-space:nowrap;}
     .hc-tbl tbody td:first-child{text-align:left;color:var(--text-light);font-size:11px;letter-spacing:0.04em;}
@@ -186,18 +184,18 @@
     .tcard{background:#fff;border:1px solid var(--beige);border-radius:12px;padding:20px 14px 16px;text-align:center;}
     .tmed{font-size:24px;margin-bottom:6px;}
     .tnm{font-size:16px;color:var(--dark);margin-bottom:4px;}
-    .tnm:hover{color:var(--accent);}
-    .tsc{font-size:18px;color:var(--accent);}
+    .tnm:hover{color:var(--brand);}
+    .tsc{font-size:18px;color:var(--brand);}
     .tmt{font-size:11px;color:var(--text-light);margin-top:4px;}
     /* team detail */
     .tdet{background:#fff;border:1px solid var(--beige);border-radius:12px;margin-bottom:10px;overflow:hidden;}
     .tdet-head{padding:16px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
     .tdet-head:hover{background:var(--warm-white);}
     .tdet-info{display:flex;align-items:center;gap:14px;}
-    .tdet-rank{font-size:20px;color:var(--accent);min-width:28px;}
+    .tdet-rank{font-size:20px;color:var(--brand);min-width:28px;}
     .tdet-name{font-size:18px;color:var(--dark);font-weight:400;}
     .tdet-members{font-size:11px;color:var(--text-light);margin-top:3px;}
-    .tdet-total{text-align:right;flex-shrink:0;font-size:20px;color:var(--accent);}
+    .tdet-total{text-align:right;flex-shrink:0;font-size:20px;color:var(--brand);}
     .tdet-body{display:none;overflow-x:auto;}
     .tdet-body.open{display:block;}
     .td-tbl{width:100%;border-collapse:collapse;min-width:400px;}
@@ -205,7 +203,7 @@
     .td-tbl thead th{font-size:9px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;
       color:var(--text-light);padding:8px 12px;text-align:left;white-space:nowrap;}
     .td-tbl thead th.r{text-align:right;}
-    .td-row{border-bottom:1px solid rgba(232,224,212,.5);}
+    .td-row{border-bottom:1px solid rgba(215,229,237,.5);}
     .td-row:last-child{border-bottom:none;}
     .td-round{font-size:11px;color:var(--text-light);padding:9px 12px;white-space:nowrap;width:44px;}
     .td-player{padding:9px 8px;white-space:nowrap;}
@@ -214,22 +212,25 @@
     .td-medal{font-size:10px;margin-left:1px;}
     .td-pts{padding:9px 10px;white-space:nowrap;text-align:right;font-size:12px;}
     .td-team{padding:9px 10px;white-space:nowrap;text-align:right;border-left:1px solid var(--beige);font-weight:500;}
-    .td-run{padding:9px 10px;white-space:nowrap;text-align:right;border-left:1px dashed rgba(232,224,212,.7);color:var(--text-light);}
+    .td-run{padding:9px 10px;white-space:nowrap;text-align:right;border-left:1px dashed rgba(215,229,237,.7);color:var(--text-light);}
 
-    /* FOOTER */
-    footer{background:var(--dark);padding:56px 48px;border-top:1px solid rgba(255,255,255,.06);}
-    .fi{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px;}
-    .fl-logo{font-size:18px;font-weight:700;letter-spacing:0.08em;color:#EDCAA2;text-decoration:none;}
-    .fl-links{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;list-style:none;}
-    .fl-links a{font-size:11px;letter-spacing:0.04em;color:var(--taupe);text-decoration:none;transition:color .3s;}
-    .fl-links a:hover{color:var(--brand);}
-    .copy{font-size:10px;color:var(--taupe);opacity:.5;}
+    /* FOOTER (canonical) */
+    footer { background: #134E6F; padding: 56px 48px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: flex-start; align-items: flex-start; flex-wrap: wrap; gap: 40px; }
+    .footer-brand { text-align: left; }
+    .footer-logo { font-size: 20px; font-weight: 700; letter-spacing: 0.08em; color: #FFFFFF; text-decoration: none; display: block; margin-bottom: 6px; }
+    .footer-tagline { font-size: 12px; letter-spacing: 0.04em; color: #D6EBF7; margin-top: 6px; }
+    .footer-links { display: flex; gap: 28px; list-style: none; }
+    .footer-links a { font-size: 12px; letter-spacing: 0.04em; color: #D6EBF7; text-decoration: none; transition: color 0.3s; }
+    .footer-links a:hover { color: #FFFFFF; }
+    .footer-copy { font-size: 12px; color: #D6EBF7; letter-spacing: 0.04em; }
 
 
     @media(max-width:833px){
-      nav#navbar{padding:12px 20px;}
-      .nav-links{display:none;}
-      .ham{display:flex;}
+      nav { height: 44px; padding: 0 16px; }
+      .nav-links { display: none; }
+      .lang-link { display: none; }
+      .ham { display: flex; }
       .arch-hero{padding:40px 20px 36px;}
       .bc-bar{padding:72px 20px 14px;}
       .tabbar-inner{padding:0 20px;}
@@ -240,7 +241,8 @@
       .pcard{padding:16px 8px 12px;}
       .pmed{font-size:22px;}
       .psc{font-size:16px;}
-      footer{padding:36px 20px 24px;}
+      footer { padding: 40px 16px; } .footer-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .footer-links { flex-wrap: wrap; gap: 16px; }
     }
     @media(max-width:480px){
       .podium,.tpodium{grid-template-columns:1fr 1fr;gap:8px;max-width:100%;}
@@ -256,104 +258,49 @@
   
 
 
-    /* ── SERVICES DROPDOWN ── */
+    /* ── SERVICES DROPDOWN (canonical) ── */
     .has-dropdown { position: relative; }
-    .dropdown-menu {
-      display: none; position: absolute; top: 100%; left: 50%;
-      transform: translateX(-50%); padding-top: 12px;
-      list-style: none; z-index: 1000; min-width: 190px;
-    }
-    .dropdown-menu-inner {
-      background: rgba(250,248,244,.98); backdrop-filter: blur(16px);
-      border: 1px solid var(--beige); border-radius: 2px;
-      padding: 8px 0; box-shadow: 0 8px 32px rgba(45,36,32,.12);
-    }
+    .dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); padding-top: 12px; list-style: none; z-index: 1000; min-width: 180px; }
+    .dropdown-menu-inner { background: rgba(255,255,255,0.98); backdrop-filter: blur(16px); border: 1px solid #D7E5ED; border-radius: 4px; padding: 8px 0; box-shadow: 0 4px 16px rgba(19,78,111,0.12); }
     .has-dropdown:hover .dropdown-menu { display: block; }
-    .dropdown-menu li { list-style: none; }
-    .dropdown-menu li a {
-      display: block; padding: 9px 20px; font-size: 11px;
-      letter-spacing: 0.04em; color: var(--text-light);
-      text-decoration: none; transition: color .2s, background .2s; white-space: nowrap;
-    }
-    .dropdown-menu li a:hover { color: var(--accent); background: #f5f1eb; }
-    .dropdown-toggle::after {
-      content:''; display: inline-block; width: 5px; height: 5px;
-      border-right: 1px solid currentColor; border-bottom: 1px solid currentColor;
-      transform: rotate(45deg) translateY(-2px); margin-left: 5px; vertical-align: middle;
-    }
-    .dropdown-menu li a.sub-item {
-      font-size: 10px; color: var(--taupe); margin-left: 20px;
-      padding-left: 12px; border-left: 2px solid var(--beige);
-    }
-    /* ── HAMBURGER ── */
-    .ham {
-      display: none; flex-direction: column; gap: 5px;
-      cursor: pointer; padding: 4px; background: none; border: none; flex-shrink: 0;
-    }
-    .ham span { display: block; width: 22px; height: 1.5px; background: var(--text-light); transition: all .3s; }
-    /* ── MOBILE MENU ── */
-    .mob-menu {
-      display: none; position: fixed; inset: 0;
-      background: var(--cream); z-index: 1100;
-      flex-direction: column; align-items: center; justify-content: center; gap: 28px;
-    }
+    .dropdown-menu li a { display: block; padding: 9px 20px; font-size: 12px; letter-spacing: 0.04em; color: #7A8998; text-decoration: none; transition: color .2s, background .2s; white-space: nowrap; }
+    .dropdown-menu li a:hover { color: #1E88E5; background: #D6EBF7; }
+    .dropdown-toggle::after { content: ''; display: inline-block; width: 5px; height: 5px; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: rotate(45deg) translateY(-2px); margin-left: 5px; vertical-align: middle; }
+    /* ── HAMBURGER (canonical) ── */
+    .ham { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; flex-shrink: 0; }
+    .ham span { display: block; width: 22px; height: 1.5px; background: #D6EBF7; transition: all 0.3s; }
+    /* ── MOBILE MENU (canonical) ── */
+    .mob-menu { display: none; position: fixed; inset: 0; background: #FFFFFF; z-index: 1100; flex-direction: column; align-items: center; justify-content: center; gap: 28px; }
     .mob-menu.open { display: flex; }
-    .mob-menu a { font-size: 18px; letter-spacing: 0.04em; color: var(--text); text-decoration: none; transition: color .3s; }
-    .mob-menu a:hover { color: var(--accent); }
-    .mob-close { position: absolute; top: 20px; right: 24px; background: none; border: none; font-size: 28px; color: var(--text-light); cursor: pointer; }
-    @media(max-width:1023px){ .ham{display:flex;} #navbar .nav-links{display:none;} }
-    /* ── FOOTER ── */
-    footer { background: var(--dark); padding: 56px 48px; display: flex; flex-direction: column; align-items: center; gap: 18px; }
-    .footer-brand { text-align: center; }
-    .footer-logo { font-size:18px; font-weight:700; letter-spacing:0.08em; color:#EDCAA2; text-decoration:none; display:block; margin-bottom:4px; }
-    .footer-tagline { font-size:11px; letter-spacing:0.04em; color:var(--taupe); }
-    .footer-links { display:flex; gap:18px; flex-wrap:wrap; justify-content:center; list-style:none; padding:0; }
-    .footer-links a { font-size:11px; letter-spacing:0.04em; color:var(--taupe); text-decoration:none; transition:color .3s; }
-    .footer-links a:hover { color:var(--accent); }
-    .footer-copy { font-size:10px; color:var(--taupe); opacity:.45; }
+    .mob-menu a { font-size: 18px; letter-spacing: 0.04em; color: #2C3E50; text-decoration: none; transition: color 0.3s; }
+    .mob-menu a:hover { color: #1E88E5; }
+    .mob-close { position: absolute; top: 20px; right: 24px; background: none; border: none; font-size: 28px; color: #7A8998; cursor: pointer; line-height: 1; }
 
-    /* ── MOBILE SERVICE ACCORDION ── */
+    /* ── MOBILE SERVICE ACCORDION (canonical) ── */
     .mob-svc-wrap { width: 100%; text-align: center; }
-    .mob-svc-toggle {
-      background: none; border: none; cursor: pointer;
-      
-      font-size: 18px; letter-spacing: 0.04em;
-      color: var(--text, #3d3028); transition: color .3s;
-      display: flex; align-items: center; justify-content: center;
-      gap: 8px; width: 100%; padding: 0;
-    }
-    .mob-svc-toggle:hover { color: var(--accent, #c4956a); }
+    .mob-svc-toggle { background: none; border: none; cursor: pointer; font-size: 18px; letter-spacing: 0.04em; color: #2C3E50; transition: color .3s; display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 0; }
+    .mob-svc-toggle:hover { color: #1E88E5; }
     .mob-svc-arrow { font-size: 14px; transition: transform .3s; display: inline-block; }
     .mob-svc-toggle[aria-expanded="true"] .mob-svc-arrow { transform: rotate(180deg); }
-    .mob-svc-list {
-      display: flex; flex-direction: column; gap: 16px;
-      max-height: 0; overflow: hidden;
-      transition: max-height .35s ease, opacity .3s ease;
-      opacity: 0; margin-top: 0;
-    }
-    .mob-svc-list.open {
-      max-height: 400px; opacity: 1; margin-top: 16px;
-    }
-    .mob-svc-list a {
-      font-size: 14px !important; letter-spacing: 0.04em;
-      color: var(--tl, #7a6858) !important;
-    }
-    .mob-svc-list a:hover { color: var(--accent, #c4956a) !important; }
+    .mob-svc-list { display: flex; flex-direction: column; gap: 16px; max-height: 0; overflow: hidden; transition: max-height .35s ease, opacity .3s ease; opacity: 0; margin-top: 0; }
+    .mob-svc-list.open { max-height: 400px; opacity: 1; margin-top: 16px; }
+    .mob-svc-list a { font-size: 14px !important; letter-spacing: 0.04em; color: #7A8998 !important; }
+    .mob-svc-list a:hover { color: #1E88E5 !important; }
     em, i, cite, address, var, dfn, blockquote, q { font-style: normal !important; }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- Navigation -->
 <nav id="navbar">
-    <a href="./index.html" class="logo-text">LUMA</a>
-    <div class="nav-right">
-      <ul class="nav-links">
-        <li><a href="./index.html#about">LUMAとは</a></li>
-        <li class="has-dropdown">
-          <a href="./index.html#services" class="dropdown-toggle">サービス</a>
-          <ul class="dropdown-menu">
-                                    <div class="dropdown-menu-inner">
+  <a href="./index.html" class="logo-text">LUMA</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="./index.html#about">LUMAとは</a></li>
+      <li class="has-dropdown">
+        <a href="./services.html" class="dropdown-toggle">サービス</a>
+        <ul class="dropdown-menu">
+          <div class="dropdown-menu-inner">
             <li><a href="./services.html">サービス一覧</a></li>
             <li><a href="./service-english.html">英語教育 — LUMA Voice</a></li>
             <li><a href="./s-league.html">S.League 麻雀大会</a></li>
@@ -361,40 +308,39 @@
             <li><a href="./service-photo.html">写真撮影 — LUMA Frame</a></li>
             <li><a href="./service-counselling.html">カウンセリング — LUMA Space</a></li>
             <li><a href="./service-karaoke.html">カラオケ — LUMA Stage</a></li>
-            </div>
-          </ul>
-        </li>
-        <li><a href="./contact.html">お問い合わせ</a></li>
-        <li><a href="./legal.html">特商法・プライバシー</a></li>
-      </ul>
-      <button class="ham" id="hamBtn" onclick="toggleMobMenu()" aria-label="メニュー">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- Mobile Menu -->
-  <div class="mob-menu" id="mobMenu">
-    <button class="mob-close" onclick="toggleMobMenu()">✕</button>
-    <a href="./index.html#about" onclick="toggleMobMenu()">LUMAとは</a>
-    <!-- サービス アコーディオン -->
-    <div class="mob-svc-wrap">
-      <button class="mob-svc-toggle" onclick="toggleMobSvc(this)" aria-expanded="false">
-        サービス <span class="mob-svc-arrow">▾</span>
-      </button>
-      <div class="mob-svc-list" aria-hidden="true">
-        <a href="./services.html"          onclick="toggleMobMenu()">サービス一覧</a>
-        <a href="./service-english.html"     onclick="toggleMobMenu()">英語教育 — LUMA Voice</a>
-        <a href="./s-league.html"            onclick="toggleMobMenu()">S.League 麻雀大会</a>
-        <a href="./service-tour.html"        onclick="toggleMobMenu()">ツアー — LUMA Path</a>
-        <a href="./service-photo.html"       onclick="toggleMobMenu()">写真撮影 — LUMA Frame</a>
-        <a href="./service-counselling.html" onclick="toggleMobMenu()">カウンセリング — LUMA Space</a>
-        <a href="./service-karaoke.html"     onclick="toggleMobMenu()">カラオケ — LUMA Stage</a>
-      </div>
-    </div>
-    <a href="./contact.html" onclick="toggleMobMenu()">お問い合わせ</a>
-    <a href="./legal.html" onclick="toggleMobMenu()">特商法・プライバシー</a>
+          </div>
+        </ul>
+      </li>
+      <li><a href="./contact.html">お問い合わせ</a></li>
+      <li><a href="./legal.html">特商法・プライバシー</a></li>
+    </ul>
+    <button class="ham" id="hamBtn" onclick="toggleMobMenu()" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" onclick="toggleMobMenu()">✕</button>
+  <a href="./index.html#about" onclick="toggleMobMenu()">LUMAとは</a>
+  <div class="mob-svc-wrap">
+    <button class="mob-svc-toggle" onclick="toggleMobSvc(this)" aria-expanded="false">
+      サービス <span class="mob-svc-arrow">▾</span>
+    </button>
+    <div class="mob-svc-list" aria-hidden="true">
+      <a href="./services.html" onclick="toggleMobMenu()">サービス一覧</a>
+      <a href="./service-english.html" onclick="toggleMobMenu()">英語教育 — LUMA Voice</a>
+      <a href="./s-league.html" onclick="toggleMobMenu()">S.League 麻雀大会</a>
+      <a href="./service-tour.html" onclick="toggleMobMenu()">ツアー — LUMA Path</a>
+      <a href="./service-photo.html" onclick="toggleMobMenu()">写真撮影 — LUMA Frame</a>
+      <a href="./service-counselling.html" onclick="toggleMobMenu()">カウンセリング — LUMA Space</a>
+      <a href="./service-karaoke.html" onclick="toggleMobMenu()">カラオケ — LUMA Stage</a>
+    </div>
+  </div>
+  <a href="./contact.html" onclick="toggleMobMenu()">お問い合わせ</a>
+  <a href="./legal.html" onclick="toggleMobMenu()">特商法・プライバシー</a>
+</div>
 
 <!-- BREADCRUMB -->
 <div class="bc-bar">
@@ -477,8 +423,9 @@
   </div>
 </div>
 
-<!-- FOOTER -->
-  <footer>
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
     <div class="footer-brand">
       <a href="./index.html" class="footer-logo">LUMA</a>
       <div class="footer-tagline">Clarity by Design &nbsp;|&nbsp; Illuminate Your Confidence</div>
@@ -490,7 +437,8 @@
       <li><a href="./legal.html">特商法・プライバシー</a></li>
     </ul>
     <div class="footer-copy">© 2026 LUMA — Sho Asano. All rights reserved.</div>
-  </footer>
+  </div>
+</footer>
 
 <script>
 const EVENTS = {"1": [{"name": "ちば", "total": 213.1, "rank": 1}, {"name": "らむ", "total": 175.4, "rank": 2}, {"name": "りすがめ", "total": 166.1, "rank": 3}, {"name": "はやと", "total": 133.5, "rank": 4}, {"name": "チェリ", "total": 92.6, "rank": 5}, {"name": "おにぎり", "total": 55.9, "rank": 6}, {"name": "shooooo", "total": 48.0, "rank": 7}, {"name": "ムーア", "total": 38.2, "rank": 8}, {"name": "ゆうせい", "total": 5.4, "rank": 9}, {"name": "Ryo.F", "total": -83.9, "rank": 10}, {"name": "U-MA", "total": -91.7, "rank": 11}, {"name": "サトシ", "total": -112.7, "rank": 12}, {"name": "えり", "total": -112.8, "rank": 13}, {"name": "うめちゃん", "total": -139.2, "rank": 14}, {"name": "はやみ", "total": -153.6, "rank": 15}, {"name": "かわしま", "total": -234.3, "rank": 16}], "2": [{"name": "madlife", "total": 296.5, "rank": 1}, {"name": "ムーア", "total": 66.1, "rank": 2}, {"name": "shooooo", "total": 28.3, "rank": 3}, {"name": "冷えたご飯", "total": 3.6, "rank": 4}, {"name": "かわしま", "total": -18.0, "rank": 5}, {"name": "えび", "total": -74.4, "rank": 6}, {"name": "はやと", "total": -135.7, "rank": 7}, {"name": "九歩", "total": -166.4, "rank": 8}], "3": [{"name": "U-MA", "total": 210.8, "rank": 1}, {"name": "らむ", "total": 102.3, "rank": 2}, {"name": "Ryo.F", "total": 95.8, "rank": 3}, {"name": "MRB", "total": 56.5, "rank": 4}, {"name": "うぶめ", "total": 23.9, "rank": 5}, {"name": "ぱるぴー", "total": 1.3, "rank": 6}, {"name": "shooooo", "total": -18.5, "rank": 7}, {"name": "りすがめ", "total": -23.9, "rank": 8}, {"name": "にじま", "total": -82.8, "rank": 9}, {"name": "ムーア", "total": -96.6, "rank": 10}, {"name": "はやと", "total": -110.8, "rank": 11}, {"name": "九歩", "total": -158.0, "rank": 12}], "4": [{"name": "敢太", "total": 179.3, "rank": 1}, {"name": "ほしの", "total": 165.2, "rank": 2}, {"name": "りすがめ", "total": 143.2, "rank": 3}, {"name": "ぴの", "total": 136.8, "rank": 4}, {"name": "つばきりょう", "total": 121.2, "rank": 5}, {"name": "ぱるぴー", "total": 106.2, "rank": 6}, {"name": "ゆうせい", "total": 78.9, "rank": 7}, {"name": "コジマる", "total": -9.7, "rank": 8}, {"name": "なの", "total": -11.4, "rank": 9}, {"name": "石倉", "total": -75.6, "rank": 10}, {"name": "九歩", "total": -82.0, "rank": 11}, {"name": "ちゃぴ", "total": -108.5, "rank": 12}, {"name": "ゲンツ", "total": -115.5, "rank": 13}, {"name": "おおけん", "total": -158.3, "rank": 14}, {"name": "kazutaka", "total": -172.4, "rank": 15}, {"name": "こま", "total": -197.4, "rank": 16}], "5": [{"name": "ちゃぴ", "total": 194.0, "rank": 1}, {"name": "U-MA", "total": 105.4, "rank": 2}, {"name": "にじま", "total": 105.0, "rank": 3}, {"name": "ほしの", "total": 72.7, "rank": 4}, {"name": "だてまき", "total": 30.2, "rank": 5}, {"name": "旅の荒鷲", "total": 28.3, "rank": 6}, {"name": "ぱるぴー", "total": 27.3, "rank": 7}, {"name": "うぶめ", "total": 26.7, "rank": 8}, {"name": "ゆうせい", "total": 15.3, "rank": 9}, {"name": "らむ", "total": -20.7, "rank": 10}, {"name": "ちば", "total": -54.7, "rank": 11}, {"name": "九歩", "total": -64.9, "rank": 12}, {"name": "こま", "total": -86.3, "rank": 13}, {"name": "なの", "total": -110.8, "rank": 14}, {"name": "かんた", "total": -121.0, "rank": 15}, {"name": "ちょろ", "total": -146.5, "rank": 16}], "6": [{"name": "らむ", "total": 260.4, "rank": 1}, {"name": "MFC", "total": 206.8, "rank": 2}, {"name": "U-MA", "total": 130.2, "rank": 3}, {"name": "ふわきち", "total": 123.3, "rank": 4}, {"name": "shooooo", "total": 114.9, "rank": 5}, {"name": "まつ", "total": 99.9, "rank": 6}, {"name": "SoLucky", "total": 85.1, "rank": 7}, {"name": "D.K", "total": 50.7, "rank": 9}, {"name": "ちゃぴ", "total": 27.2, "rank": 10}, {"name": "たえ", "total": 15.9, "rank": 11}, {"name": "瀬野", "total": 4.6, "rank": 12}, {"name": "コジマる", "total": -7.7, "rank": 13}, {"name": "ゆうせい", "total": -30.3, "rank": 14}, {"name": "まみ", "total": -34.4, "rank": 15}, {"name": "Ryo.F", "total": -35.0, "rank": 16}, {"name": "むかい", "total": -76.1, "rank": 17}, {"name": "りすがめ", "total": -113.0, "rank": 18}, {"name": "九歩", "total": -124.3, "rank": 19}, {"name": "たかだ", "total": -131.1, "rank": 20}, {"name": "おき", "total": -136.7, "rank": 21}, {"name": "あしゅ", "total": -139.7, "rank": 22}, {"name": "冷えたご飯", "total": -158.5, "rank": 23}, {"name": "すわ", "total": -206.8, "rank": 24}], "7": [{"name": "太一", "total": 124.4, "rank": 1}, {"name": "まつ", "total": 82.9, "rank": 2}, {"name": "うぶめ", "total": 67.8, "rank": 3}, {"name": "こま", "total": 3.3, "rank": 4}, {"name": "MRB", "total": -26.2, "rank": 5}, {"name": "shooooo", "total": -52.5, "rank": 6}, {"name": "篠宮 悠", "total": -93.3, "rank": 7}, {"name": "九歩", "total": -106.4, "rank": 8}], "8": [{"name": "U-MA", "total": 222.8, "rank": 1}, {"name": "浦野P", "total": 206.9, "rank": 2}, {"name": "けいすけ", "total": 148.3, "rank": 3}, {"name": "ゆう", "total": 140.7, "rank": 4}, {"name": "ののり", "total": 91.9, "rank": 5}, {"name": "かんた", "total": 55.1, "rank": 6}, {"name": "向井", "total": 34.3, "rank": 7}, {"name": "るつお", "total": 22.7, "rank": 8}, {"name": "りすがめ", "total": 17.9, "rank": 9}, {"name": "タニグチ", "total": 8.6, "rank": 10}, {"name": "ながねぎ", "total": -13.6, "rank": 11}, {"name": "ぴの", "total": -20.2, "rank": 12}, {"name": "うさ", "total": -38.9, "rank": 13}, {"name": "九歩", "total": -81.4, "rank": 14}, {"name": "コジマる", "total": -88.0, "rank": 15}, {"name": "みず", "total": -94.5, "rank": 16}, {"name": "ちゃぴ", "total": -110.5, "rank": 17}, {"name": "あすぱん", "total": -142.9, "rank": 18}, {"name": "たまき", "total": -150.5, "rank": 19}, {"name": "らむ", "total": -208.7, "rank": 20}], "9": [{"name": "ひでおぶ", "total": 222.2, "rank": 1}, {"name": "別府プロ", "total": 64.5, "rank": 2}, {"name": "コジマる", "total": 24.8, "rank": 3}, {"name": "ちゃぴ", "total": 24.4, "rank": 4}, {"name": "ゆうせい", "total": 12.9, "rank": 5}, {"name": "U-MA", "total": -28.1, "rank": 6}, {"name": "高橋大地", "total": -72.7, "rank": 7}, {"name": "大和田澪央", "total": -114.8, "rank": 8}, {"name": "九歩", "total": -133.2, "rank": 9}], "10": [{"name": "大和田澪央", "total": 192.8, "rank": 1}, {"name": "別府プロ", "total": 167.6, "rank": 2}, {"name": "ちゃぴ", "total": 142.2, "rank": 3}, {"name": "コジマる", "total": -18.1, "rank": 4}, {"name": "ひでおぶ", "total": -34.4, "rank": 5}, {"name": "高橋大地", "total": -118.6, "rank": 6}, {"name": "九歩", "total": -155.3, "rank": 7}, {"name": "ゆうせい", "total": -176.2, "rank": 8}], "11": [{"name": "U-MA", "total": 172.9, "rank": 1}, {"name": "フルーツ", "total": 144.1, "rank": 2}, {"name": "のの", "total": 93.1, "rank": 3}, {"name": "りすがめ", "total": 41.5, "rank": 4}, {"name": "コジマる", "total": 10.3, "rank": 5}, {"name": "九歩", "total": 8.7, "rank": 6}, {"name": "shooooo", "total": -2.4, "rank": 7}, {"name": "篠宮 悠", "total": -43.6, "rank": 8}, {"name": "ちゃぴ", "total": -57.7, "rank": 9}, {"name": "ゆうせい", "total": -90.5, "rank": 10}, {"name": "にちゃで", "total": -129.5, "rank": 11}, {"name": "秀幸", "total": -146.9, "rank": 12}], "12": [{"name": "ひろゆき", "total": 369.9, "rank": 1}, {"name": "みやけっち", "total": 215.1, "rank": 2}, {"name": "ムーア", "total": 147.5, "rank": 3}, {"name": "ゆうせい", "total": 136.6, "rank": 4}, {"name": "アライグマ", "total": 128.6, "rank": 5}, {"name": "ほしの", "total": 101.3, "rank": 6}, {"name": "A383", "total": 83.3, "rank": 7}, {"name": "るつお", "total": 75.8, "rank": 8}, {"name": "にちゃで", "total": 69.9, "rank": 9}, {"name": "フルーツ", "total": 39.1, "rank": 10}, {"name": "おおもり", "total": 32.4, "rank": 11}, {"name": "MRB", "total": 30.2, "rank": 12}, {"name": "ルイコ", "total": -0.5, "rank": 13}, {"name": "旅の荒鷲", "total": -6.0, "rank": 14}, {"name": "渡辺", "total": -9.9, "rank": 15}, {"name": "コジマる", "total": -13.1, "rank": 16}, {"name": "D.K", "total": -15.2, "rank": 17}, {"name": "りすがめ", "total": -19.7, "rank": 18}, {"name": "やまとー", "total": -53.0, "rank": 19}, {"name": "大久保", "total": -63.7, "rank": 20}, {"name": "shooooo", "total": -66.4, "rank": 21}, {"name": "ぴの", "total": -79.2, "rank": 22}, {"name": "U-MA", "total": -92.6, "rank": 23}, {"name": "ゆう", "total": -153.5, "rank": 24}, {"name": "すわ", "total": -175.8, "rank": 25}, {"name": "九歩", "total": -179.7, "rank": 26}, {"name": "くわん", "total": -234.2, "rank": 27}, {"name": "ちゃぴ", "total": -267.2, "rank": 28}], "13": [{"name": "まつ", "total": 297.1, "rank": 1}, {"name": "りすがめ", "total": 179.7, "rank": 2}, {"name": "トモ", "total": 171.9, "rank": 3}, {"name": "ルイコ", "total": 119.8, "rank": 4}, {"name": "ちゃぴ", "total": 83.6, "rank": 5}, {"name": "ゆうせい", "total": 53.5, "rank": 6}, {"name": "やまそう", "total": 32.3, "rank": 7}, {"name": "Ryo.F", "total": 21.3, "rank": 8}, {"name": "らむ", "total": 14.0, "rank": 9}, {"name": "ふくちゃん", "total": 1.0, "rank": 10}, {"name": "九歩", "total": -3.5, "rank": 11}, {"name": "にちゃで", "total": -14.4, "rank": 12}, {"name": "稲熊", "total": -18.5, "rank": 13}, {"name": "ひろゆき", "total": -26.9, "rank": 14}, {"name": "あやみ", "total": -27.9, "rank": 15}, {"name": "ともや", "total": -53.7, "rank": 16}, {"name": "ツバサ", "total": -173.1, "rank": 17}, {"name": "U-MA", "total": -175.8, "rank": 18}, {"name": "フルーツ", "total": -180.7, "rank": 19}, {"name": "あねひめ", "total": -299.7, "rank": 20}], "14": [{"name": "ふくちゃん", "total": 157.8, "rank": 1}, {"name": "フルーツ", "total": 117.3, "rank": 2}, {"name": "ルイコ", "total": 102.2, "rank": 3}, {"name": "ゆうせい", "total": 93.2, "rank": 4}, {"name": "あやみ", "total": 81.2, "rank": 5}, {"name": "九歩", "total": 79.0, "rank": 6}, {"name": "りすがめ", "total": 75.3, "rank": 7}, {"name": "らむ", "total": 68.2, "rank": 8}, {"name": "やまそう", "total": 43.8, "rank": 9}, {"name": "U-MA", "total": -20.0, "rank": 10}, {"name": "やまとー", "total": -67.0, "rank": 11}, {"name": "ぼっち", "total": -96.1, "rank": 12}, {"name": "ちゃぴ", "total": -98.6, "rank": 13}, {"name": "チカちゃん", "total": -111.2, "rank": 14}, {"name": "にちゃで", "total": -133.7, "rank": 15}, {"name": "コジマる", "total": -291.4, "rank": 16}], "15": [{"name": "にちゃで", "total": 322.0, "rank": 1}, {"name": "秀幸", "total": 146.8, "rank": 2}, {"name": "ゆうま", "total": 139.0, "rank": 3}, {"name": "フルーツ", "total": 103.3, "rank": 4}, {"name": "あやみ", "total": 87.7, "rank": 5}, {"name": "げんがあ", "total": 73.8, "rank": 6}, {"name": "やまそう", "total": 72.6, "rank": 7}, {"name": "ちゃぴ", "total": 29.2, "rank": 8}, {"name": "ゆうせい", "total": 19.9, "rank": 9}, {"name": "かわにしっしも", "total": -8.8, "rank": 10}, {"name": "ルイコ", "total": -33.3, "rank": 12}, {"name": "らむ", "total": -50.8, "rank": 13}, {"name": "ツバサ", "total": -74.1, "rank": 14}, {"name": "ヒラケン", "total": -74.7, "rank": 15}, {"name": "あかねまる", "total": -81.8, "rank": 16}, {"name": "ゆう", "total": -99.3, "rank": 17}, {"name": "りすがめ", "total": -173.0, "rank": 18}, {"name": "九歩", "total": -182.2, "rank": 19}, {"name": "ぼっち", "total": -191.9, "rank": 20}], "16": [{"name": "ぼっち", "total": 186.4, "rank": 1}, {"name": "やまそう", "total": 140.4, "rank": 2}, {"name": "ルイコ", "total": 133.7, "rank": 3}, {"name": "げんがあ", "total": 132.2, "rank": 4}, {"name": "ツバサ", "total": 93.9, "rank": 5}, {"name": "ゆうせい", "total": 93.3, "rank": 6}, {"name": "コジマる", "total": 66.6, "rank": 7}, {"name": "あやみ", "total": 6.6, "rank": 8}, {"name": "にちゃで", "total": -17.8, "rank": 9}, {"name": "うぶめ", "total": -38.8, "rank": 10}, {"name": "ちゃぴ", "total": -52.2, "rank": 11}, {"name": "りすがめ", "total": -56.7, "rank": 12}, {"name": "ヒラケン", "total": -81.9, "rank": 13}, {"name": "九歩", "total": -166.1, "rank": 14}, {"name": "ちば", "total": -194.7, "rank": 15}, {"name": "あやね", "total": -244.9, "rank": 16}], "17": [{"name": "はやと", "total": 186.7, "rank": 1}, {"name": "ゆうせい", "total": 171.1, "rank": 2}, {"name": "らむ", "total": 155.9, "rank": 3}, {"name": "にちゃで", "total": 115.1, "rank": 4}, {"name": "やまそう", "total": 44.1, "rank": 5}, {"name": "まっさー", "total": 29.4, "rank": 6}, {"name": "げんがあ", "total": -3.2, "rank": 7}, {"name": "あやみ", "total": -6.6, "rank": 8}, {"name": "フルーツ", "total": -25.4, "rank": 9}, {"name": "shooooo", "total": -36.9, "rank": 10}, {"name": "ふくちゃん", "total": -48.9, "rank": 11}, {"name": "秀幸", "total": -80.4, "rank": 12}, {"name": "ぼっち", "total": -102.0, "rank": 13}, {"name": "ちゃぴ", "total": -107.0, "rank": 14}, {"name": "イナリ", "total": -132.1, "rank": 15}, {"name": "ルイコ", "total": -159.8, "rank": 16}], "18": [{"name": "稲熊", "total": 166.5, "rank": 1}, {"name": "Ryo.F", "total": 133.9, "rank": 2}, {"name": "やまそう", "total": 101.4, "rank": 3}, {"name": "ムーア", "total": 80.7, "rank": 4}, {"name": "あやみ", "total": 53.5, "rank": 5}, {"name": "にちゃで", "total": 52.0, "rank": 6}, {"name": "U-MA", "total": 30.9, "rank": 7}, {"name": "フルーツ", "total": -3.4, "rank": 8}, {"name": "ちゃぴ", "total": -38.2, "rank": 9}, {"name": "まっさー", "total": -39.0, "rank": 10}, {"name": "ヒラケン", "total": -45.9, "rank": 11}, {"name": "セイナ", "total": -48.8, "rank": 12}, {"name": "ルイコ", "total": -79.3, "rank": 13}, {"name": "ツバサ", "total": -107.8, "rank": 14}, {"name": "りすがめ", "total": -121.5, "rank": 15}, {"name": "たけちゃん", "total": -135.0, "rank": 16}], "19": [{"name": "ヒラケン", "total": 190.9, "rank": 1}, {"name": "やまそう", "total": 115.3, "rank": 2}, {"name": "えむこ", "total": 110.7, "rank": 3}, {"name": "ふくちゃん", "total": 98.7, "rank": 4}, {"name": "ぼっち", "total": 66.1, "rank": 5}, {"name": "ルイコ", "total": 60.7, "rank": 6}, {"name": "うぶめ", "total": 48.0, "rank": 7}, {"name": "ゆうじろう", "total": 42.6, "rank": 8}, {"name": "フルーツ", "total": 36.3, "rank": 9}, {"name": "まっさー", "total": -40.3, "rank": 10}, {"name": "にちゃで", "total": -54.8, "rank": 11}, {"name": "コジマる", "total": -86.6, "rank": 12}, {"name": "セイナ", "total": -94.8, "rank": 13}, {"name": "あやみ", "total": -145.0, "rank": 14}, {"name": "げんがあ", "total": -155.3, "rank": 15}, {"name": "九歩", "total": -192.5, "rank": 16}], "20": [{"name": "コジマる", "total": 334.2, "rank": 1}, {"name": "だにー", "total": 241.0, "rank": 2}, {"name": "あやみ", "total": 97.7, "rank": 3}, {"name": "非公表", "total": 51.6, "rank": 4}, {"name": "はやと", "total": 42.3, "rank": 5}, {"name": "らむ", "total": 40.0, "rank": 6}, {"name": "やまそう", "total": 9.6, "rank": 7}, {"name": "ツバサ", "total": -1.8, "rank": 8}, {"name": "やまとー", "total": -10.9, "rank": 9}, {"name": "ヒラケン", "total": -20.8, "rank": 10}, {"name": "フルーツ", "total": -25.6, "rank": 11}, {"name": "ロベ", "total": -85.8, "rank": 12}, {"name": "ちゃぴ", "total": -88.5, "rank": 13}, {"name": "げんがあ", "total": -161.0, "rank": 14}, {"name": "かわにしっしも", "total": -174.5, "rank": 15}, {"name": "ぼっち", "total": -247.5, "rank": 16}], "21": [{"name": "やまそう", "total": 191.2, "rank": 1}, {"name": "shooooo", "total": 114.6, "rank": 2}, {"name": "フルーツ", "total": 101.6, "rank": 3}, {"name": "トモナガ", "total": 30.5, "rank": 4}, {"name": "あやみ", "total": 27.8, "rank": 5}, {"name": "ぽーとぴあ", "total": 13.7, "rank": 6}, {"name": "ふくちゃん", "total": -2.8, "rank": 7}, {"name": "ルイコ", "total": -9.3, "rank": 8}, {"name": "ツバサ", "total": -54.6, "rank": 9}, {"name": "たけちゃん", "total": -89.5, "rank": 10}, {"name": "はるりこ", "total": -120.8, "rank": 11}, {"name": "セイナ", "total": -202.4, "rank": 12}],
@@ -515,7 +463,11 @@ const SL22_IND = [
 ];
 </script>
 <script>
-window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',scrollY>40));
+// NAV (canonical)
+window.addEventListener('scroll', () => { const nav = document.getElementById('navbar'); if (nav) nav.classList.toggle('scrolled', window.scrollY > 40); });
+function toggleMobMenu() { const menu = document.getElementById('mobMenu'); if (!menu) return; const isOpen = menu.classList.toggle('open'); document.body.style.overflow = isOpen ? 'hidden' : ''; }
+function toggleMobSvc(btn) { const list = btn.nextElementSibling; const expanded = btn.getAttribute('aria-expanded') === 'true'; btn.setAttribute('aria-expanded', String(!expanded)); list.classList.toggle('open', !expanded); }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { const m = document.getElementById('mobMenu'); if (m) m.classList.remove('open'); document.body.style.overflow = ''; } });
 // TABS
 document.querySelectorAll('.tab').forEach(t=>{
   t.addEventListener('click',()=>{
@@ -876,29 +828,5 @@ function togTeam(id){
   document.getElementById('ttog-'+id).classList.toggle('open');
 }
 </script>
-  <script>
-    window.addEventListener('scroll', () => {
-      const nb = document.getElementById('navbar');
-      if (nb) nb.classList.toggle('scrolled', window.scrollY > 40);
-    });
-    function toggleMobSvc(btn) {
-      const list = btn.nextElementSibling;
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!expanded));
-      list.classList.toggle('open', !expanded);
-    }
-        function toggleMobMenu() {
-      const m = document.getElementById('mobMenu');
-      if (!m) return;
-      const open = m.classList.toggle('open');
-      document.body.style.overflow = open ? 'hidden' : '';
-    }
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') {
-        const m = document.getElementById('mobMenu');
-        if (m) { m.classList.remove('open'); document.body.style.overflow = ''; }
-      }
-    });
-  </script>
 </body>
 </html>

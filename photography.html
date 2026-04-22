@@ -19,7 +19,7 @@
     }
   </script>
 
-  <meta name="theme-color" content="#c4956a" />
+  <meta name="theme-color" content="#1E88E5" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Photography — LUMA | 風景・航空・ポートレート写真</title>
   <meta name="description" content="LUMA Sho Asano の写真作品集。風景写真・航空写真・飛行機写真・ポートレート撮影のポートフォリオ。Photography portfolio by Sho Asano — landscape, aviation, aircraft & portrait." />
@@ -51,14 +51,23 @@
     /* ── CSS Variables */
     :root {
       color-scheme: light;
-      --cream: #faf8f4; --warm-white: #f5f1eb; --beige: #e8dfd0;
-      --sand: #d4c4ad; --taupe: #b8a898; --brown: #8c7460;
-      --dark: #2d2420; --accent: #c4956a; --accent-light: #e8c9a8;
-      --text: #3d3028; --text-light: #7a6858;
-      --brand: #c4956a; --text-primary: #3d3028; --text-secondary: #7a6858;
-      --border: #d4c4ad; --background: #faf8f4; --surface: #f5f1eb;
-      --success: #2a7d4f; --danger: #c0392b; --warning: #e6a817;
-      --brand-dark: #8c7460; --text-disabled: #b8a898; --border-light: #e8dfd0;
+      --cream: #FFFFFF; --warm-white: #FFFFFF; --beige: #D7E5ED;
+      --sand: #B8CED9; --taupe: #7A8998; --brown: #134E6F;
+      --dark: #134E6F; --accent: #F59E0B; --accent-light: #D6EBF7;
+      --text: #2C3E50; --text-light: #7A8998;
+      --brand: #1E88E5; --text-primary: #2C3E50; --text-secondary: #7A8998;
+      --border: #B8CED9; --background: #FFFFFF; --surface: #FFFFFF;
+      --success: #2a7d4f; --danger: #c0392b; --warning: #F59E0B;
+      --brand-dark: #134E6F; --text-disabled: #B8CED9; --border-light: #D7E5ED;
+      /* Soft Aqua spec variables (LUMA 統一) */
+      --h1: #134E6F;
+      --h2: #1E88E5;
+      --h3: #5BA9D7;
+      --base: #EBF5FA;
+      --ice-white: #F8FBFC;
+      --primary-light: #D6EBF7;
+      --cta-hover: #D97706;
+      --white: #FFFFFF;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; letter-spacing: 0.04em; }
     html { scroll-behavior: smooth; }
@@ -74,66 +83,64 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 999;
       height: 44px; padding: 0 48px; display: flex; align-items: center;
       justify-content: space-between; gap: 24px; transition: all 0.4s;
-      background: rgba(250,248,244,0.96); backdrop-filter: saturate(180%) blur(20px);
+      background: rgba(19,78,111,0.96); backdrop-filter: saturate(180%) blur(20px);
     }
     nav.scrolled {
-      background: rgba(250,248,244,0.98);
-      box-shadow: 0 1px 0 rgba(140,116,96,0.15);
+      background: rgba(19,78,111,0.98);
+      box-shadow: 0 1px 0 rgba(19,78,111,0.15);
     }
     .logo-text {
       font-size: 22px; font-weight: 700;
-      letter-spacing: 0.08em; color: #EDCAA2; text-decoration: none; line-height: 1;
+      letter-spacing: 0.08em; color: #FFFFFF; text-decoration: none; line-height: 1;
     }
     .nav-right { display: flex; align-items: center; gap: 36px; }
     .nav-links { display: flex; gap: 36px; list-style: none; }
     .nav-links a {
       font-size: 12px; font-weight: 400; letter-spacing: 0.04em;
-      text-decoration: none; color: var(--text-light); transition: color 0.3s;
+      text-decoration: none; color: #D6EBF7; transition: color 0.3s;
     }
-    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
-    .lang-switcher { display: flex; gap: 6px; align-items: center; }
-    .lang-btn {
-      font-size: 11px; font-weight: 400;
-      letter-spacing: 0.04em; padding: 5px 12px; border: 1px solid var(--sand);
-      background: transparent; color: var(--text-light); cursor: pointer;
-      transition: all 0.3s; border-radius: 4px;
+    .nav-links a:hover, .nav-links a.active { color: #FFFFFF; }
+    .lang-link {
+      font-size: 12px; font-weight: 400;
+      letter-spacing: 0.04em; padding: 5px 12px;
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #D6EBF7; text-decoration: none;
+      border-radius: 4px; transition: all 0.3s; flex-shrink: 0;
     }
-    .lang-btn.active, .lang-btn:hover {
-      background: var(--text-primary); border-color: var(--text-primary); color: white;
-    }
+    .lang-link:hover { background: #FFFFFF; border-color: #FFFFFF; color: #134E6F; }
 
-    /* ── HERO */
+    /* ── HERO (Soft Aqua light) */
     .photo-hero {
       min-height: 64vh; display: flex; flex-direction: column;
       align-items: center; justify-content: center; text-align: center;
-      padding: 140px 72px 80px; background: var(--dark); position: relative; overflow: hidden;
+      padding: 140px 72px 80px; background: linear-gradient(135deg, #EBF5FA 0%, #D6EBF7 100%);
+      position: relative; overflow: hidden;
     }
     .photo-hero::before {
       content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(196,149,106,0.18) 0%, transparent 70%);
+      background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(30,136,229,0.15) 0%, transparent 70%);
     }
     .hero-eyebrow {
       font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 24px;
+      color: var(--brand); margin-bottom: 24px;
       opacity: 0; animation: fadeUp 0.8s ease 0.2s forwards;
     }
     .hero-title {
-      
       font-size: clamp(40px, 6vw, 80px); line-height: 1.5;
-      color: var(--cream); margin-bottom: 8px; position: relative; z-index: 1;
+      color: #134E6F; margin-bottom: 8px; position: relative; z-index: 1;
       opacity: 0; animation: fadeUp 0.8s ease 0.35s forwards;
     }
-    .hero-title em { color: var(--accent); }
+    .hero-title em { color: var(--brand); }
     .hero-sub {
-      font-size: clamp(13px, 1.4vw, 16px); font-weight: 300; color: var(--taupe);
+      font-size: clamp(13px, 1.4vw, 16px); font-weight: 300; color: #7A8998;
       letter-spacing: 0.04em; margin-bottom: 40px; position: relative; z-index: 1;
       opacity: 0; animation: fadeUp 0.8s ease 0.5s forwards;
     }
     /* 大きなLUMAウォーターマーク */
     .hero-watermark {
-      position: absolute; 
+      position: absolute;
       font-size: clamp(120px, 20vw, 240px); font-weight: 700;
-      color: rgba(196,149,106,0.06); letter-spacing: 0.04em;
+      color: rgba(19,78,111,0.08); letter-spacing: 0.04em;
       pointer-events: none; user-select: none; white-space: nowrap;
       top: 50%; left: 50%; transform: translate(-50%, -50%);
     }
@@ -152,9 +159,9 @@
       border: 1px solid var(--sand); background: transparent;
       color: var(--text-light); cursor: pointer; transition: all 0.3s; border-radius: 980px;
     }
-    .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .filter-btn:hover { border-color: var(--brand); color: var(--brand); }
     .filter-btn.active {
-      background: var(--accent); border-color: var(--accent); color: white;
+      background: var(--brand); border-color: var(--brand); color: white;
     }
     .photo-count {
       font-size: 11px; letter-spacing: 0.04em; color: var(--taupe);
@@ -179,7 +186,7 @@
     .photo-item:hover img { transform: scale(1.04); }
     .photo-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(45,36,32,0.72) 0%, transparent 55%);
+      background: linear-gradient(to top, rgba(19,78,111,0.72) 0%, transparent 55%);
       opacity: 0; transition: opacity 0.4s; border-radius: 2px;
       display: flex; align-items: flex-end; padding: 20px;
     }
@@ -229,12 +236,12 @@
     .upload-banner {
       margin: 0 48px 32px;
       background: var(--warm-white); border: 1px solid var(--beige);
-      border-left: 4px solid var(--accent); border-radius: 12px;
+      border-left: 4px solid var(--brand); border-radius: 12px;
       padding: 18px 24px; display: flex; align-items: center; gap: 16px;
     }
     .upload-banner-icon { font-size: 20px; flex-shrink: 0; }
     .upload-banner-text { font-size: 12px; line-height: 1.5; color: var(--text-light); }
-    .upload-banner-text strong { color: var(--accent); font-weight: 500; }
+    .upload-banner-text strong { color: var(--brand); font-weight: 500; }
     /* 本番では非表示 */
     /* .upload-banner { display: none; } */
 
@@ -275,7 +282,7 @@
       color: rgba(255,255,255,0.5); cursor: pointer; transition: color 0.2s;
       padding: 12px; line-height: 1;
     }
-    .lb-nav:hover { color: var(--accent); }
+    .lb-nav:hover { color: var(--brand); }
     .lb-prev { left: 20px; }
     .lb-next { right: 20px; }
     .lb-counter {
@@ -290,53 +297,44 @@
     }
     .cta-eyebrow {
       font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 20px;
+      color: var(--brand); margin-bottom: 20px;
     }
     .cta-title {
       
       font-size: clamp(26px, 3.5vw, 42px);
       color: var(--cream); margin-bottom: 12px; line-height: 1.5;
     }
-    .cta-title em { color: var(--accent); }
+    .cta-title em { color: var(--brand); }
     .cta-sub {
       font-size: 13px; color: var(--taupe); margin-bottom: 36px; line-height: 1.5;
     }
     .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
     .btn-primary {
-      display: inline-block; padding: 8px 22px; background: var(--text-primary); color: white;
+      display: inline-block; padding: 8px 22px; background: var(--accent); color: white;
       font-size: 16px; font-weight: 700;
       letter-spacing: 0.04em; text-decoration: none; border-radius: 980px;
-      transition: all 0.3s; border: 1px solid var(--text-primary); cursor: pointer;
+      transition: all 0.3s; border: 1px solid var(--accent); cursor: pointer;
     }
-    .btn-primary:hover { background: var(--brand); border-color: var(--brand); color: white; }
+    .btn-primary:hover { background: var(--cta-hover); border-color: var(--cta-hover); color: white; }
     .btn-outline-light {
       display: inline-block; padding: 8px 22px; background: transparent;
       color: var(--taupe); font-size: 16px; font-weight: 700;
       letter-spacing: 0.04em; text-decoration: none; border-radius: 980px;
-      border: 1px solid rgba(184,168,152,0.4); transition: all 0.3s;
+      border: 1px solid rgba(184,206,217,0.4); transition: all 0.3s;
     }
-    .btn-outline-light:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-outline-light:hover { border-color: var(--brand); color: var(--brand); }
 
-    /* ── FOOTER（index.html と完全一致） */
-    footer {
-      background: var(--dark); padding: 56px 48px;
-      display: flex; flex-direction: column; align-items: center; gap: 24px;
-      border-top: 1px solid rgba(255,255,255,0.04);
-    }
-    .logo-text-footer {
-      font-size: 20px; font-weight: 700;
-      letter-spacing: 0.08em; color: #EDCAA2;
-    }
-    .footer-tagline { font-size: 11px; letter-spacing: 0.04em; color: var(--taupe); margin-top: 6px; }
-    .footer-links {
-      display: flex; gap: 32px; list-style: none; flex-wrap: wrap; justify-content: center;
-    }
-    .footer-links a {
-      font-size: 11px; letter-spacing: 0.04em; color: var(--taupe);
-      text-decoration: none; transition: color 0.3s;
-    }
-    .footer-links a:hover { color: var(--brand); }
-    .footer-copy { font-size: 11px; color: var(--brown); }
+    /* ── FOOTER (canonical) ── */
+    footer { background: #134E6F; padding: 56px 48px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: flex-start; align-items: flex-start; flex-wrap: wrap; gap: 40px; }
+    .footer-brand { text-align: left; }
+    .footer-logo { font-size: 20px; font-weight: 700; letter-spacing: 0.08em; color: #FFFFFF; text-decoration: none; display: block; margin-bottom: 6px; }
+    .logo-text-footer { font-size: 20px; font-weight: 700; letter-spacing: 0.08em; color: #FFFFFF; }
+    .footer-tagline { font-size: 12px; letter-spacing: 0.04em; color: #D6EBF7; margin-top: 6px; }
+    .footer-links { display: flex; gap: 28px; list-style: none; padding: 0; }
+    .footer-links a { font-size: 12px; letter-spacing: 0.04em; color: #D6EBF7; text-decoration: none; transition: color 0.3s; }
+    .footer-links a:hover { color: #FFFFFF; }
+    .footer-copy { font-size: 12px; color: #D6EBF7; letter-spacing: 0.04em; }
 
     /* ── ANIMATIONS */
     @keyframes fadeUp {
@@ -351,7 +349,7 @@
 
     /* ── RESPONSIVE */
     @media (max-width: 833px) {
-      nav { padding: 14px 24px; }
+      nav { padding: 0 16px; }
       .photo-hero { padding: 120px 24px 60px; }
       .filter-section { padding: 36px 24px 0; }
       .gallery-section { padding: 32px 16px 80px; }
@@ -359,7 +357,7 @@
       .cta-section { padding: 60px 24px; }
       footer { padding: 48px 24px; }
       .nav-links { display: none; }
-      .lang-switcher { display: none; }
+      .lang-link { display: none; }
       .ham { display: flex; }
     }
   
@@ -368,7 +366,7 @@
       display: none; flex-direction: column; gap: 5px;
       cursor: pointer; padding: 4px; background: none; border: none; flex-shrink: 0;
     }
-    .ham span { display: block; width: 22px; height: 1.5px; background: var(--text-light); }
+    .ham span { display: block; width: 22px; height: 1.5px; background: #D6EBF7; }
     .mob-menu {
       display: none; position: fixed; inset: 0;
       background: var(--cream); z-index: 1100;
@@ -379,7 +377,7 @@
       font-size: 18px; letter-spacing: 0.04em;
       color: var(--text); text-decoration: none; transition: color .3s;
     }
-    .mob-menu a:hover { color: var(--accent); }
+    .mob-menu a:hover { color: var(--brand); }
     .mob-close {
       position: absolute; top: 20px; right: 24px;
       background: none; border: none; font-size: 28px; color: var(--text-light); cursor: pointer;
@@ -395,19 +393,19 @@
       list-style: none; z-index: 1000; min-width: 190px;
     }
     .dropdown-menu-inner {
-      background: rgba(250,248,244,.98); backdrop-filter: blur(16px);
-      border: 1px solid var(--beige,#e8e0d4); border-radius: 4px;
-      padding: 8px 0; box-shadow: 0 8px 32px rgba(45,36,32,.12);
+      background: rgba(255,255,255,.98); backdrop-filter: blur(16px);
+      border: 1px solid var(--beige,#D7E5ED); border-radius: 4px;
+      padding: 8px 0; box-shadow: 0 8px 32px rgba(19,78,111,.12);
     }
     .has-dropdown:hover .dropdown-menu { display: block; }
     .dropdown-menu li { list-style: none; }
     .dropdown-menu li a {
       display: block; padding: 9px 20px;
       font-size: 11px; letter-spacing: 0.04em;
-      color: var(--text-light,#7a6858);
+      color: var(--text-light,#7A8998);
       text-decoration: none; transition: color .2s, background .2s; white-space: nowrap;
     }
-    .dropdown-menu li a:hover { color: var(--accent,#c4956a); background: #f5f1eb; }
+    .dropdown-menu li a:hover { color: var(--brand,#1E88E5); background: #FFFFFF; }
     .dropdown-toggle::after {
       content:''; display: inline-block;
       width: 5px; height: 5px;
@@ -415,29 +413,14 @@
       transform: rotate(45deg) translateY(-2px); margin-left: 5px; vertical-align: middle;
     }
     .dropdown-menu li a.sub-item {
-      font-size: 10px; color: var(--taupe,#b8a898);
+      font-size: 10px; color: var(--taupe,#7A8998);
       margin-left: 20px; padding-left: 12px;
-      border-left: 2px solid var(--beige,#e8e0d4);
+      border-left: 2px solid var(--beige,#D7E5ED);
     }
-    .dropdown-menu li a.sub-item:hover { color: var(--accent,#c4956a); background: #f5f1eb; }
+    .dropdown-menu li a.sub-item:hover { color: var(--brand,#1E88E5); background: #FFFFFF; }
 
   
-    /* ── FOOTER SHARED ── */
-    footer {
-      background: var(--dark,#2d2420); padding: 56px 48px;
-      display: flex; flex-direction: column; align-items: center; gap: 20px;
-    }
-    .footer-brand { text-align: center; }
-    .footer-logo {
-      font-size: 20px; font-weight: 700;
-      letter-spacing: 0.08em; color: #EDCAA2; text-decoration: none; display: block; margin-bottom: 6px;
-    }
-    .footer-tagline { font-size: 11px; letter-spacing: 0.04em; color: var(--taupe,#b8a898); }
-    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; list-style: none; padding: 0; }
-    .footer-links a { font-size: 11px; letter-spacing: 0.04em; color: var(--taupe,#b8a898); text-decoration: none; transition: color .3s; }
-    .footer-links a:hover { color: var(--brand); }
-    .footer-copy { font-size: 10px; color: var(--taupe,#b8a898); opacity: .5; }
-    @media (max-width: 833px) { footer { padding: 36px 20px 24px; } }
+    @media (max-width: 833px) { footer { padding: 40px 16px; } .footer-inner { flex-direction: column; align-items: flex-start; gap: 20px; } .footer-links { flex-wrap: wrap; gap: 16px; } }
 
 
     /* ── MOBILE SERVICE ACCORDION ── */
@@ -446,11 +429,11 @@
       background: none; border: none; cursor: pointer;
       
       font-size: 18px; letter-spacing: 0.04em;
-      color: var(--text, #3d3028); transition: color .3s;
+      color: var(--text, #2C3E50); transition: color .3s;
       display: flex; align-items: center; justify-content: center;
       gap: 8px; width: 100%; padding: 0;
     }
-    .mob-svc-toggle:hover { color: var(--accent, #c4956a); }
+    .mob-svc-toggle:hover { color: var(--brand, #1E88E5); }
     .mob-svc-arrow { font-size: 14px; transition: transform .3s; display: inline-block; }
     .mob-svc-toggle[aria-expanded="true"] .mob-svc-arrow { transform: rotate(180deg); }
     .mob-svc-list {
@@ -464,9 +447,9 @@
     }
     .mob-svc-list a {
       font-size: 14px !important; letter-spacing: 0.04em;
-      color: var(--tl, #7a6858) !important;
+      color: var(--tl, #7A8998) !important;
     }
-    .mob-svc-list a:hover { color: var(--accent, #c4956a) !important; }
+    .mob-svc-list a:hover { color: var(--brand, #1E88E5) !important; }
     em, i, cite, address, var, dfn, blockquote, q { font-style: normal !important; }
   </style>
 </head>
@@ -496,10 +479,7 @@
         <li><a href="./contact.html">お問い合わせ</a></li>
         <li><a href="./legal.html">特商法・プライバシー</a></li>
       </ul>
-      <div class="lang-switcher">
-        <button class="lang-btn active" id="btn-ja" onclick="setLang('ja')">JP</button>
-        <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
-      </div>
+      <a href="./en/photography.html" class="lang-link">English ▸</a>
       <button class="ham" id="hamBtn" onclick="toggleMobMenu()" aria-label="メニュー">
         <span></span><span></span><span></span>
       </button>
@@ -510,7 +490,7 @@
   <div class="mob-menu" id="mobMenu">
     <button class="mob-close" onclick="toggleMobMenu()">✕</button>
     <a href="./index.html#about" onclick="toggleMobMenu()">LUMAとは</a>
-    <a href="./photography.html" onclick="toggleMobMenu()" style="color:var(--accent)">Photography</a>
+    <a href="./photography.html" onclick="toggleMobMenu()" style="color:var(--brand)">Photography</a>
     <!-- サービス アコーディオン -->
     <div class="mob-svc-wrap">
       <button class="mob-svc-toggle" onclick="toggleMobSvc(this)" aria-expanded="false">
@@ -528,40 +508,24 @@
     </div>
     <a href="./contact.html" onclick="toggleMobMenu()">お問い合わせ</a>
     <a href="./legal.html" onclick="toggleMobMenu()">特商法・プライバシー</a>
+    <a href="./en/photography.html" onclick="toggleMobMenu()" style="margin-top:12px;font-size:14px;">English ▸</a>
   </div>
 
   <!-- ══ HERO ══ -->
   <section class="photo-hero">
     <div class="hero-watermark">LUMA</div>
-    <p class="hero-eyebrow">
-      <span data-lang="ja">Sho Asano の写真世界</span>
-      <span data-lang="en" style="display:none">Photography by Sho Asano</span>
-    </p>
-    <h1 class="hero-title">
-      <span data-lang="ja">光と<em>瞬間</em>の記録</span>
-      <span data-lang="en" style="display:none">Light &amp; <em>Moments</em></span>
-    </h1>
-    <p class="hero-sub">
-      <span data-lang="ja">風景 &nbsp;·&nbsp; 航空 &nbsp;·&nbsp; 飛行機 &nbsp;·&nbsp; ポートレート</span>
-      <span data-lang="en" style="display:none">Landscape &nbsp;·&nbsp; Aviation &nbsp;·&nbsp; Aircraft &nbsp;·&nbsp; Portrait</span>
-    </p>
+    <p class="hero-eyebrow">Sho Asano の写真世界</p>
+    <h1 class="hero-title">光と<em>瞬間</em>の記録</h1>
+    <p class="hero-sub">風景 &nbsp;·&nbsp; 航空 &nbsp;·&nbsp; 飛行機 &nbsp;·&nbsp; ポートレート</p>
   </section>
 
   <!-- ══ FILTER ══ -->
   <div class="filter-section">
     <div class="filter-bar" id="filter-bar">
-      <button class="filter-btn active" data-filter="all" onclick="filterGallery('all')">
-        <span data-lang="ja">すべて</span><span data-lang="en" style="display:none">All</span>
-      </button>
-      <button class="filter-btn" data-filter="landscape" onclick="filterGallery('landscape')">
-        <span data-lang="ja">風景</span><span data-lang="en" style="display:none">Landscape</span>
-      </button>
-      <button class="filter-btn" data-filter="aviation" onclick="filterGallery('aviation')">
-        <span data-lang="ja">航空・機体</span><span data-lang="en" style="display:none">Aviation</span>
-      </button>
-      <button class="filter-btn" data-filter="snap" onclick="filterGallery('snap')">
-        <span data-lang="ja">スナップ</span><span data-lang="en" style="display:none">Snap</span>
-      </button>
+      <button class="filter-btn active" data-filter="all" onclick="filterGallery('all')">すべて</button>
+      <button class="filter-btn" data-filter="landscape" onclick="filterGallery('landscape')">風景</button>
+      <button class="filter-btn" data-filter="aviation" onclick="filterGallery('aviation')">航空・機体</button>
+      <button class="filter-btn" data-filter="snap" onclick="filterGallery('snap')">スナップ</button>
     </div>
     <p class="photo-count" id="photo-count"></p>
   </div>
@@ -588,14 +552,11 @@
              alt="路地裏の夜"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-landscape" data-lang="ja">風景</span>
-        <span class="photo-badge badge-landscape" data-lang="en" style="display:none">Landscape</span>
+        <span class="photo-badge badge-landscape">風景</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">路地裏の夜</div>
-            <div class="photo-title" data-lang="en" style="display:none">Backstreet Night</div>
-            <div class="photo-cat-label" data-lang="ja">風景</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Landscape</div>
+            <div class="photo-title">路地裏の夜</div>
+            <div class="photo-cat-label">風景</div>
           </div>
         </div>
       </div>
@@ -608,14 +569,11 @@
              alt="黄昏の江ノ島"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-landscape" data-lang="ja">風景</span>
-        <span class="photo-badge badge-landscape" data-lang="en" style="display:none">Landscape</span>
+        <span class="photo-badge badge-landscape">風景</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">黄昏の江ノ島</div>
-            <div class="photo-title" data-lang="en" style="display:none">Enoshima at Dusk</div>
-            <div class="photo-cat-label" data-lang="ja">風景</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Landscape</div>
+            <div class="photo-title">黄昏の江ノ島</div>
+            <div class="photo-cat-label">風景</div>
           </div>
         </div>
       </div>
@@ -628,14 +586,11 @@
              alt="富士と飛行機"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-landscape" data-lang="ja">風景</span>
-        <span class="photo-badge badge-landscape" data-lang="en" style="display:none">Landscape</span>
+        <span class="photo-badge badge-landscape">風景</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">富士と飛行機</div>
-            <div class="photo-title" data-lang="en" style="display:none">Fuji & Flight</div>
-            <div class="photo-cat-label" data-lang="ja">風景</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Landscape</div>
+            <div class="photo-title">富士と飛行機</div>
+            <div class="photo-cat-label">風景</div>
           </div>
         </div>
       </div>
@@ -648,14 +603,11 @@
              alt="ガラスの向こうの夕陽"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-landscape" data-lang="ja">風景</span>
-        <span class="photo-badge badge-landscape" data-lang="en" style="display:none">Landscape</span>
+        <span class="photo-badge badge-landscape">風景</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">ガラスの向こうの夕陽</div>
-            <div class="photo-title" data-lang="en" style="display:none">Sunset Through Glass</div>
-            <div class="photo-cat-label" data-lang="ja">風景</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Landscape</div>
+            <div class="photo-title">ガラスの向こうの夕陽</div>
+            <div class="photo-cat-label">風景</div>
           </div>
         </div>
       </div>
@@ -668,14 +620,11 @@
              alt="夏の花"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-landscape" data-lang="ja">風景</span>
-        <span class="photo-badge badge-landscape" data-lang="en" style="display:none">Landscape</span>
+        <span class="photo-badge badge-landscape">風景</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">夏の花</div>
-            <div class="photo-title" data-lang="en" style="display:none">Summer Blooms</div>
-            <div class="photo-cat-label" data-lang="ja">風景</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Landscape</div>
+            <div class="photo-title">夏の花</div>
+            <div class="photo-cat-label">風景</div>
           </div>
         </div>
       </div>
@@ -688,14 +637,11 @@
              alt="荒波と江ノ島"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-landscape" data-lang="ja">風景</span>
-        <span class="photo-badge badge-landscape" data-lang="en" style="display:none">Landscape</span>
+        <span class="photo-badge badge-landscape">風景</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">荒波と江ノ島</div>
-            <div class="photo-title" data-lang="en" style="display:none">Rough Waves & Enoshima</div>
-            <div class="photo-cat-label" data-lang="ja">風景</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Landscape</div>
+            <div class="photo-title">荒波と江ノ島</div>
+            <div class="photo-cat-label">風景</div>
           </div>
         </div>
       </div>
@@ -708,14 +654,11 @@
              alt="管制塔の夕日"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-landscape" data-lang="ja">風景</span>
-        <span class="photo-badge badge-landscape" data-lang="en" style="display:none">Landscape</span>
+        <span class="photo-badge badge-landscape">風景</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">管制塔の夕日</div>
-            <div class="photo-title" data-lang="en" style="display:none">Control Tower Silhouette</div>
-            <div class="photo-cat-label" data-lang="ja">風景</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Landscape</div>
+            <div class="photo-title">管制塔の夕日</div>
+            <div class="photo-cat-label">風景</div>
           </div>
         </div>
       </div>
@@ -728,14 +671,11 @@
              alt="大地の松"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-landscape" data-lang="ja">風景</span>
-        <span class="photo-badge badge-landscape" data-lang="en" style="display:none">Landscape</span>
+        <span class="photo-badge badge-landscape">風景</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">大地の松</div>
-            <div class="photo-title" data-lang="en" style="display:none">Ancient Pine</div>
-            <div class="photo-cat-label" data-lang="ja">風景</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Landscape</div>
+            <div class="photo-title">大地の松</div>
+            <div class="photo-cat-label">風景</div>
           </div>
         </div>
       </div>
@@ -748,14 +688,11 @@
              alt="花園の眺望"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-landscape" data-lang="ja">風景</span>
-        <span class="photo-badge badge-landscape" data-lang="en" style="display:none">Landscape</span>
+        <span class="photo-badge badge-landscape">風景</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">花園の眺望</div>
-            <div class="photo-title" data-lang="en" style="display:none">Garden Vista</div>
-            <div class="photo-cat-label" data-lang="ja">風景</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Landscape</div>
+            <div class="photo-title">花園の眺望</div>
+            <div class="photo-cat-label">風景</div>
           </div>
         </div>
       </div>
@@ -768,14 +705,11 @@
              alt="夏の終わり"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-landscape" data-lang="ja">風景</span>
-        <span class="photo-badge badge-landscape" data-lang="en" style="display:none">Landscape</span>
+        <span class="photo-badge badge-landscape">風景</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">夏の終わり</div>
-            <div class="photo-title" data-lang="en" style="display:none">Summer's End</div>
-            <div class="photo-cat-label" data-lang="ja">風景</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Landscape</div>
+            <div class="photo-title">夏の終わり</div>
+            <div class="photo-cat-label">風景</div>
           </div>
         </div>
       </div>
@@ -788,14 +722,11 @@
              alt="湘南の黄昏"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-landscape" data-lang="ja">風景</span>
-        <span class="photo-badge badge-landscape" data-lang="en" style="display:none">Landscape</span>
+        <span class="photo-badge badge-landscape">風景</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">湘南の黄昏</div>
-            <div class="photo-title" data-lang="en" style="display:none">Shonan Twilight</div>
-            <div class="photo-cat-label" data-lang="ja">風景</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Landscape</div>
+            <div class="photo-title">湘南の黄昏</div>
+            <div class="photo-cat-label">風景</div>
           </div>
         </div>
       </div>
@@ -808,14 +739,11 @@
              alt="江ノ島の夜"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-landscape" data-lang="ja">風景</span>
-        <span class="photo-badge badge-landscape" data-lang="en" style="display:none">Landscape</span>
+        <span class="photo-badge badge-landscape">風景</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">江ノ島の夜</div>
-            <div class="photo-title" data-lang="en" style="display:none">Enoshima Night Gate</div>
-            <div class="photo-cat-label" data-lang="ja">風景</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Landscape</div>
+            <div class="photo-title">江ノ島の夜</div>
+            <div class="photo-cat-label">風景</div>
           </div>
         </div>
       </div>
@@ -828,14 +756,11 @@
              alt="海への小道"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-landscape" data-lang="ja">風景</span>
-        <span class="photo-badge badge-landscape" data-lang="en" style="display:none">Landscape</span>
+        <span class="photo-badge badge-landscape">風景</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">海への小道</div>
-            <div class="photo-title" data-lang="en" style="display:none">Path to the Sea</div>
-            <div class="photo-cat-label" data-lang="ja">風景</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Landscape</div>
+            <div class="photo-title">海への小道</div>
+            <div class="photo-cat-label">風景</div>
           </div>
         </div>
       </div>
@@ -848,14 +773,11 @@
              alt="江ノ電の夜"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-landscape" data-lang="ja">風景</span>
-        <span class="photo-badge badge-landscape" data-lang="en" style="display:none">Landscape</span>
+        <span class="photo-badge badge-landscape">風景</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">江ノ電の夜</div>
-            <div class="photo-title" data-lang="en" style="display:none">Enoden After Dark</div>
-            <div class="photo-cat-label" data-lang="ja">風景</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Landscape</div>
+            <div class="photo-title">江ノ電の夜</div>
+            <div class="photo-cat-label">風景</div>
           </div>
         </div>
       </div>
@@ -868,14 +790,11 @@
              alt="滑走路の星"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-landscape" data-lang="ja">風景</span>
-        <span class="photo-badge badge-landscape" data-lang="en" style="display:none">Landscape</span>
+        <span class="photo-badge badge-landscape">風景</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">滑走路の星</div>
-            <div class="photo-title" data-lang="en" style="display:none">Stars on the Runway</div>
-            <div class="photo-cat-label" data-lang="ja">風景</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Landscape</div>
+            <div class="photo-title">滑走路の星</div>
+            <div class="photo-cat-label">風景</div>
           </div>
         </div>
       </div>
@@ -888,14 +807,11 @@
              alt="赤レンガの誇り"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-landscape" data-lang="ja">風景</span>
-        <span class="photo-badge badge-landscape" data-lang="en" style="display:none">Landscape</span>
+        <span class="photo-badge badge-landscape">風景</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">赤レンガの誇り</div>
-            <div class="photo-title" data-lang="en" style="display:none">Pride in Red Brick</div>
-            <div class="photo-cat-label" data-lang="ja">風景</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Landscape</div>
+            <div class="photo-title">赤レンガの誇り</div>
+            <div class="photo-cat-label">風景</div>
           </div>
         </div>
       </div>
@@ -908,14 +824,11 @@
              alt="横浜の夕暮れ"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-landscape" data-lang="ja">風景</span>
-        <span class="photo-badge badge-landscape" data-lang="en" style="display:none">Landscape</span>
+        <span class="photo-badge badge-landscape">風景</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">横浜の夕暮れ</div>
-            <div class="photo-title" data-lang="en" style="display:none">Yokohama at Dusk</div>
-            <div class="photo-cat-label" data-lang="ja">風景</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Landscape</div>
+            <div class="photo-title">横浜の夕暮れ</div>
+            <div class="photo-cat-label">風景</div>
           </div>
         </div>
       </div>
@@ -928,14 +841,11 @@
              alt="回る光の輪"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-landscape" data-lang="ja">風景</span>
-        <span class="photo-badge badge-landscape" data-lang="en" style="display:none">Landscape</span>
+        <span class="photo-badge badge-landscape">風景</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">回る光の輪</div>
-            <div class="photo-title" data-lang="en" style="display:none">Wheel of Light</div>
-            <div class="photo-cat-label" data-lang="ja">風景</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Landscape</div>
+            <div class="photo-title">回る光の輪</div>
+            <div class="photo-cat-label">風景</div>
           </div>
         </div>
       </div>
@@ -948,14 +858,11 @@
              alt="夜のプッシュバック"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-aviation" data-lang="ja">航空</span>
-        <span class="photo-badge badge-aviation" data-lang="en" style="display:none">Aviation</span>
+        <span class="photo-badge badge-aviation">航空</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">夜のプッシュバック</div>
-            <div class="photo-title" data-lang="en" style="display:none">Night Pushback</div>
-            <div class="photo-cat-label" data-lang="ja">航空・機体</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Aviation</div>
+            <div class="photo-title">夜のプッシュバック</div>
+            <div class="photo-cat-label">航空・機体</div>
           </div>
         </div>
       </div>
@@ -968,14 +875,11 @@
              alt="夜明けの羽田"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-aviation" data-lang="ja">航空</span>
-        <span class="photo-badge badge-aviation" data-lang="en" style="display:none">Aviation</span>
+        <span class="photo-badge badge-aviation">航空</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">夜明けの羽田</div>
-            <div class="photo-title" data-lang="en" style="display:none">Haneda at Dawn</div>
-            <div class="photo-cat-label" data-lang="ja">航空・機体</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Aviation</div>
+            <div class="photo-title">夜明けの羽田</div>
+            <div class="photo-cat-label">航空・機体</div>
           </div>
         </div>
       </div>
@@ -988,14 +892,11 @@
              alt="ポケモンジェット"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-aviation" data-lang="ja">航空</span>
-        <span class="photo-badge badge-aviation" data-lang="en" style="display:none">Aviation</span>
+        <span class="photo-badge badge-aviation">航空</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">ポケモンジェット</div>
-            <div class="photo-title" data-lang="en" style="display:none">Pokemon Jet</div>
-            <div class="photo-cat-label" data-lang="ja">航空・機体</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Aviation</div>
+            <div class="photo-title">ポケモンジェット</div>
+            <div class="photo-cat-label">航空・機体</div>
           </div>
         </div>
       </div>
@@ -1008,14 +909,11 @@
              alt="ワンワールドの夕景"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-aviation" data-lang="ja">航空</span>
-        <span class="photo-badge badge-aviation" data-lang="en" style="display:none">Aviation</span>
+        <span class="photo-badge badge-aviation">航空</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">ワンワールドの夕景</div>
-            <div class="photo-title" data-lang="en" style="display:none">oneworld Golden Hour</div>
-            <div class="photo-cat-label" data-lang="ja">航空・機体</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Aviation</div>
+            <div class="photo-title">ワンワールドの夕景</div>
+            <div class="photo-cat-label">航空・機体</div>
           </div>
         </div>
       </div>
@@ -1028,14 +926,11 @@
              alt="蒼海を背に"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-aviation" data-lang="ja">航空</span>
-        <span class="photo-badge badge-aviation" data-lang="en" style="display:none">Aviation</span>
+        <span class="photo-badge badge-aviation">航空</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">蒼海を背に</div>
-            <div class="photo-title" data-lang="en" style="display:none">Against the Azure Sea</div>
-            <div class="photo-cat-label" data-lang="ja">航空・機体</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Aviation</div>
+            <div class="photo-title">蒼海を背に</div>
+            <div class="photo-cat-label">航空・機体</div>
           </div>
         </div>
       </div>
@@ -1048,14 +943,11 @@
              alt="青組発進"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-aviation" data-lang="ja">航空</span>
-        <span class="photo-badge badge-aviation" data-lang="en" style="display:none">Aviation</span>
+        <span class="photo-badge badge-aviation">航空</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">青組発進</div>
-            <div class="photo-title" data-lang="en" style="display:none">Departure TEAM BLUE</div>
-            <div class="photo-cat-label" data-lang="ja">航空・機体</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Aviation</div>
+            <div class="photo-title">青組発進</div>
+            <div class="photo-cat-label">航空・機体</div>
           </div>
         </div>
       </div>
@@ -1068,14 +960,11 @@
              alt="ドリームショウヘイジェット"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-aviation" data-lang="ja">航空</span>
-        <span class="photo-badge badge-aviation" data-lang="en" style="display:none">Aviation</span>
+        <span class="photo-badge badge-aviation">航空</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">ドリームショウヘイジェット</div>
-            <div class="photo-title" data-lang="en" style="display:none">Dream Shohei Jet</div>
-            <div class="photo-cat-label" data-lang="ja">航空・機体</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Aviation</div>
+            <div class="photo-title">ドリームショウヘイジェット</div>
+            <div class="photo-cat-label">航空・機体</div>
           </div>
         </div>
       </div>
@@ -1088,14 +977,11 @@
              alt="光の中を疾る"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-aviation" data-lang="ja">航空</span>
-        <span class="photo-badge badge-aviation" data-lang="en" style="display:none">Aviation</span>
+        <span class="photo-badge badge-aviation">航空</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">光の中を疾る</div>
-            <div class="photo-title" data-lang="en" style="display:none">Racing Through Light</div>
-            <div class="photo-cat-label" data-lang="ja">航空・機体</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Aviation</div>
+            <div class="photo-title">光の中を疾る</div>
+            <div class="photo-cat-label">航空・機体</div>
           </div>
         </div>
       </div>
@@ -1108,14 +994,11 @@
              alt="B6と夕焼け"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-aviation" data-lang="ja">航空</span>
-        <span class="photo-badge badge-aviation" data-lang="en" style="display:none">Aviation</span>
+        <span class="photo-badge badge-aviation">航空</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">B6と夕焼け</div>
-            <div class="photo-title" data-lang="en" style="display:none">Dusk with B6</div>
-            <div class="photo-cat-label" data-lang="ja">航空・機体</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Aviation</div>
+            <div class="photo-title">B6と夕焼け</div>
+            <div class="photo-cat-label">航空・機体</div>
           </div>
         </div>
       </div>
@@ -1128,14 +1011,11 @@
              alt="朝霧の着陸"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-aviation" data-lang="ja">航空</span>
-        <span class="photo-badge badge-aviation" data-lang="en" style="display:none">Aviation</span>
+        <span class="photo-badge badge-aviation">航空</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">朝霧の着陸</div>
-            <div class="photo-title" data-lang="en" style="display:none">Morning Mist Landing</div>
-            <div class="photo-cat-label" data-lang="ja">航空・機体</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Aviation</div>
+            <div class="photo-title">朝霧の着陸</div>
+            <div class="photo-cat-label">航空・機体</div>
           </div>
         </div>
       </div>
@@ -1148,14 +1028,11 @@
              alt="夜の鼻先"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-aviation" data-lang="ja">航空</span>
-        <span class="photo-badge badge-aviation" data-lang="en" style="display:none">Aviation</span>
+        <span class="photo-badge badge-aviation">航空</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">夜の鼻先</div>
-            <div class="photo-title" data-lang="en" style="display:none">Nose at Night</div>
-            <div class="photo-cat-label" data-lang="ja">航空・機体</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Aviation</div>
+            <div class="photo-title">夜の鼻先</div>
+            <div class="photo-cat-label">航空・機体</div>
           </div>
         </div>
       </div>
@@ -1168,14 +1045,11 @@
              alt="鶴の揃い踏み"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-aviation" data-lang="ja">航空</span>
-        <span class="photo-badge badge-aviation" data-lang="en" style="display:none">Aviation</span>
+        <span class="photo-badge badge-aviation">航空</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">鶴の揃い踏み</div>
-            <div class="photo-title" data-lang="en" style="display:none">Three Cranes</div>
-            <div class="photo-cat-label" data-lang="ja">航空・機体</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Aviation</div>
+            <div class="photo-title">鶴の揃い踏み</div>
+            <div class="photo-cat-label">航空・機体</div>
           </div>
         </div>
       </div>
@@ -1188,14 +1062,11 @@
              alt="白い視線"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-snap" data-lang="ja">スナップ</span>
-        <span class="photo-badge badge-snap" data-lang="en" style="display:none">Snap</span>
+        <span class="photo-badge badge-snap">スナップ</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">白い視線</div>
-            <div class="photo-title" data-lang="en" style="display:none">White Gaze</div>
-            <div class="photo-cat-label" data-lang="ja">スナップ</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Snap</div>
+            <div class="photo-title">白い視線</div>
+            <div class="photo-cat-label">スナップ</div>
           </div>
         </div>
       </div>
@@ -1208,14 +1079,11 @@
              alt="東京の夜道"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-snap" data-lang="ja">スナップ</span>
-        <span class="photo-badge badge-snap" data-lang="en" style="display:none">Snap</span>
+        <span class="photo-badge badge-snap">スナップ</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">東京の夜道</div>
-            <div class="photo-title" data-lang="en" style="display:none">Tokyo Night Street</div>
-            <div class="photo-cat-label" data-lang="ja">スナップ</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Snap</div>
+            <div class="photo-title">東京の夜道</div>
+            <div class="photo-cat-label">スナップ</div>
           </div>
         </div>
       </div>
@@ -1228,14 +1096,11 @@
              alt="旅立ち"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-snap" data-lang="ja">スナップ</span>
-        <span class="photo-badge badge-snap" data-lang="en" style="display:none">Snap</span>
+        <span class="photo-badge badge-snap">スナップ</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">旅立ち</div>
-            <div class="photo-title" data-lang="en" style="display:none">Departure</div>
-            <div class="photo-cat-label" data-lang="ja">スナップ</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Snap</div>
+            <div class="photo-title">旅立ち</div>
+            <div class="photo-cat-label">スナップ</div>
           </div>
         </div>
       </div>
@@ -1248,14 +1113,11 @@
              alt="海を見つめる人"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-snap" data-lang="ja">スナップ</span>
-        <span class="photo-badge badge-snap" data-lang="en" style="display:none">Snap</span>
+        <span class="photo-badge badge-snap">スナップ</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">海を見つめる人</div>
-            <div class="photo-title" data-lang="en" style="display:none">Landscaping</div>
-            <div class="photo-cat-label" data-lang="ja">スナップ</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Snap</div>
+            <div class="photo-title">海を見つめる人</div>
+            <div class="photo-cat-label">スナップ</div>
           </div>
         </div>
       </div>
@@ -1268,14 +1130,11 @@
              alt="夜の船出を前に"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-snap" data-lang="ja">スナップ</span>
-        <span class="photo-badge badge-snap" data-lang="en" style="display:none">Snap</span>
+        <span class="photo-badge badge-snap">スナップ</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">夜の船出を前に</div>
-            <div class="photo-title" data-lang="en" style="display:none">Before the Night Voyage</div>
-            <div class="photo-cat-label" data-lang="ja">スナップ</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Snap</div>
+            <div class="photo-title">夜の船出を前に</div>
+            <div class="photo-cat-label">スナップ</div>
           </div>
         </div>
       </div>
@@ -1288,14 +1147,11 @@
              alt="一息"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-snap" data-lang="ja">スナップ</span>
-        <span class="photo-badge badge-snap" data-lang="en" style="display:none">Snap</span>
+        <span class="photo-badge badge-snap">スナップ</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">一息</div>
-            <div class="photo-title" data-lang="en" style="display:none">Take a Break</div>
-            <div class="photo-cat-label" data-lang="ja">スナップ</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Snap</div>
+            <div class="photo-title">一息</div>
+            <div class="photo-cat-label">スナップ</div>
           </div>
         </div>
       </div>
@@ -1308,14 +1164,11 @@
              alt="スマートラウンジ"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-snap" data-lang="ja">スナップ</span>
-        <span class="photo-badge badge-snap" data-lang="en" style="display:none">Snap</span>
+        <span class="photo-badge badge-snap">スナップ</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">スマートラウンジ</div>
-            <div class="photo-title" data-lang="en" style="display:none">Smart Lounge</div>
-            <div class="photo-cat-label" data-lang="ja">スナップ</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Snap</div>
+            <div class="photo-title">スマートラウンジ</div>
+            <div class="photo-cat-label">スナップ</div>
           </div>
         </div>
       </div>
@@ -1328,14 +1181,11 @@
              alt="森の入口"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-snap" data-lang="ja">スナップ</span>
-        <span class="photo-badge badge-snap" data-lang="en" style="display:none">Snap</span>
+        <span class="photo-badge badge-snap">スナップ</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">森の入口</div>
-            <div class="photo-title" data-lang="en" style="display:none">Forest Gate</div>
-            <div class="photo-cat-label" data-lang="ja">スナップ</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Snap</div>
+            <div class="photo-title">森の入口</div>
+            <div class="photo-cat-label">スナップ</div>
           </div>
         </div>
       </div>
@@ -1348,14 +1198,11 @@
              alt="和の門"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-snap" data-lang="ja">スナップ</span>
-        <span class="photo-badge badge-snap" data-lang="en" style="display:none">Snap</span>
+        <span class="photo-badge badge-snap">スナップ</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">和の門</div>
-            <div class="photo-title" data-lang="en" style="display:none">Japanese Gate</div>
-            <div class="photo-cat-label" data-lang="ja">スナップ</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Snap</div>
+            <div class="photo-title">和の門</div>
+            <div class="photo-cat-label">スナップ</div>
           </div>
         </div>
       </div>
@@ -1368,14 +1215,11 @@
              alt="旅の始まり"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-snap" data-lang="ja">スナップ</span>
-        <span class="photo-badge badge-snap" data-lang="en" style="display:none">Snap</span>
+        <span class="photo-badge badge-snap">スナップ</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">旅の始まり</div>
-            <div class="photo-title" data-lang="en" style="display:none">Journey Begins</div>
-            <div class="photo-cat-label" data-lang="ja">スナップ</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Snap</div>
+            <div class="photo-title">旅の始まり</div>
+            <div class="photo-cat-label">スナップ</div>
           </div>
         </div>
       </div>
@@ -1388,14 +1232,11 @@
              alt="羽田の笑顔"
              style="width:100%; display:block; border-radius:12px;"
              loading="lazy" />
-        <span class="photo-badge badge-snap" data-lang="ja">スナップ</span>
-        <span class="photo-badge badge-snap" data-lang="en" style="display:none">Snap</span>
+        <span class="photo-badge badge-snap">スナップ</span>
         <div class="photo-overlay">
           <div class="photo-meta">
-            <div class="photo-title" data-lang="ja">羽田の笑顔</div>
-            <div class="photo-title" data-lang="en" style="display:none">Haneda Nice Day</div>
-            <div class="photo-cat-label" data-lang="ja">スナップ</div>
-            <div class="photo-cat-label" data-lang="en" style="display:none">Snap</div>
+            <div class="photo-title">羽田の笑顔</div>
+            <div class="photo-cat-label">スナップ</div>
           </div>
         </div>
       </div>
@@ -1419,44 +1260,31 @@
 
   <!-- ══ CTA ══ -->
   <section class="cta-section reveal">
-    <p class="cta-eyebrow">
-      <span data-lang="ja">ポートレート撮影のご依頼</span>
-      <span data-lang="en" style="display:none">Book a Portrait Session</span>
-    </p>
-    <h2 class="cta-title">
-      <span data-lang="ja">あなたらしい<em>一枚</em>を、一緒に。</span>
-      <span data-lang="en" style="display:none">Your story, <em>beautifully</em> told.</span>
-    </h2>
-    <p class="cta-sub">
-      <span data-lang="ja">プロフィール写真・就活・記念撮影・SNS用など、目的に合わせて柔軟にご対応します。<br>まずは無料相談からどうぞ。</span>
-      <span data-lang="en" style="display:none">LinkedIn profiles, job applications, milestone moments, and social media — all tailored to you.<br>Start with a free consultation.</span>
-    </p>
+    <p class="cta-eyebrow">ポートレート撮影のご依頼</p>
+    <h2 class="cta-title">あなたらしい<em>一枚</em>を、一緒に。</h2>
+    <p class="cta-sub">プロフィール写真・就活・記念撮影・SNS用など、目的に合わせて柔軟にご対応します。<br>まずは無料相談からどうぞ。</p>
     <div class="cta-btns">
-      <a href="./contact.html" class="btn-primary">
-        <span data-lang="ja">無料相談を予約する</span>
-        <span data-lang="en" style="display:none">Book a Free Consultation</span>
-      </a>
-      <a href="./index.html" class="btn-outline-light">
-        <span data-lang="ja">LUMA トップへ</span>
-        <span data-lang="en" style="display:none">Back to LUMA</span>
-      </a>
+      <a href="./contact.html" class="btn-primary">無料相談を予約する</a>
+      <a href="./index.html" class="btn-outline-light">LUMA トップへ</a>
     </div>
   </section>
 
   <!-- ══ FOOTER ══ -->
     <footer>
-    <div class="footer-brand">
-      <a href="./index.html" class="footer-logo">LUMA</a>
-      <div class="footer-tagline">Clarity by Design &nbsp;|&nbsp; Illuminate Your Confidence</div>
-    </div>
-    <ul class="footer-links">
-      <li><a href="./index.html#about">LUMAとは</a></li>
-      <li><a href="./services.html">サービス</a></li>
-      <li><a href="./contact.html">お問い合わせ</a></li>
-      <li><a href="./legal.html">特商法・プライバシー</a></li>
-    </ul>
-    <div class="footer-copy">© 2026 LUMA — Sho Asano. All rights reserved.</div>
-  </footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="./index.html" class="footer-logo">LUMA</a>
+          <div class="footer-tagline">Clarity by Design &nbsp;|&nbsp; Illuminate Your Confidence</div>
+        </div>
+        <ul class="footer-links">
+          <li><a href="./index.html#about">LUMAとは</a></li>
+          <li><a href="./services.html">サービス</a></li>
+          <li><a href="./contact.html">お問い合わせ</a></li>
+          <li><a href="./legal.html">特商法・プライバシー</a></li>
+        </ul>
+        <div class="footer-copy">© 2026 LUMA — Sho Asano. All rights reserved.</div>
+      </div>
+    </footer>
 
   <script>
   // ══ 写真データ（ライトボックス用）
@@ -1504,23 +1332,6 @@
     { cat:'snap', ja:'羽田の笑顔', en:'Haneda Nice Day', src:'images/photography/portrait-11.jpg' }
   ];
 
-  // ══ 言語切替
-  let currentLang = 'ja';
-  function setLang(lang) {
-    currentLang = lang;
-    const htmlRoot = document.getElementById('html-root');
-    if (htmlRoot) htmlRoot.setAttribute('lang', lang === 'ja' ? 'ja' : 'en');
-    const btnJa = document.getElementById('btn-ja');
-    const btnEn = document.getElementById('btn-en');
-    if (btnJa) btnJa.classList.toggle('active', lang === 'ja');
-    if (btnEn) btnEn.classList.toggle('active', lang === 'en');
-    document.querySelectorAll('[data-lang]').forEach(el => {
-      el.style.display = el.getAttribute('data-lang') === lang ? '' : 'none';
-    });
-    updateCount();
-    try { localStorage.setItem('luma-lang', lang); } catch(_) {}
-  }
-
   // ══ カテゴリフィルター
   let currentFilter = 'all';
   function filterGallery(cat) {
@@ -1540,9 +1351,7 @@
     const total   = document.querySelectorAll('.photo-item').length;
     const el = document.getElementById('photo-count');
     if (!el) return;
-    el.textContent = currentLang === 'ja'
-      ? `${visible} 点 / 全 ${total} 点`
-      : `${visible} of ${total} photos`;
+    el.textContent = `${visible} 点 / 全 ${total} 点`;
   }
 
   // ══ ライトボックス
@@ -1574,10 +1383,9 @@
     const idx = lbVisible[lbIndex];
     const p = PHOTOS[idx];
     const wrap = document.getElementById('lb-img-wrap');
-    const lang = currentLang;
 
     if (p.src) {
-      wrap.innerHTML = `<img class="lb-img" src="${p.src}" alt="${lang==='ja'?p.ja:p.en}" />`;
+      wrap.innerHTML = `<img class="lb-img" src="${p.src}" alt="${p.ja}" />`;
     } else {
       // placeholder
       const colors = { landscape:'#2c4a3c', aviation:'#1a2a4a', portrait:'#4a3020' };
@@ -1585,18 +1393,15 @@
       wrap.innerHTML = `
         <div class="lb-ph" style="background:${bg};height:420px;display:flex;
           align-items:center;justify-content:center;border-radius:12px;">
-          <div style="text-align:center;color:rgba(255,255,255,0.5);
-            ">
+          <div style="text-align:center;color:rgba(255,255,255,0.5);">
             <div style="font-size:48px;margin-bottom:12px;opacity:0.3">📷</div>
-            <div style="font-size:18px;">${lang==='ja'?p.ja:p.en}</div>
-            <div style="font-size:11px;margin-top:8px;opacity:0.6;letter-spacing:0.04em;">
-              ${lang==='ja'?'写真をここに差し替えてください':'Replace with your photo'}
-            </div>
+            <div style="font-size:18px;">${p.ja}</div>
+            <div style="font-size:11px;margin-top:8px;opacity:0.6;letter-spacing:0.04em;">写真をここに差し替えてください</div>
           </div>
         </div>`;
     }
 
-    document.getElementById('lb-caption').textContent = lang === 'ja' ? p.ja : p.en;
+    document.getElementById('lb-caption').textContent = p.ja;
     document.getElementById('lb-counter').textContent =
       `${lbIndex + 1} / ${lbVisible.length}`;
   }
@@ -1641,12 +1446,7 @@
 
   // ══ 初期化
   (function init() {
-    let saved = null;
-    try { saved = localStorage.getItem('luma-lang'); } catch(_) {}
-    const lang = (saved === 'ja' || saved === 'en')
-      ? saved
-      : (navigator.languages || [navigator.language || 'ja']).some(l => l.startsWith('ja')) ? 'ja' : 'en';
-    setLang(lang);
+    updateCount();
   })();
   </script>
 </body>

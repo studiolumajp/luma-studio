@@ -3,6 +3,41 @@
 <head>
   <meta charset="UTF-8" />
 
+  <!--
+    ══ Auto Language Redirect ══
+    ルートアクセス時のみ、ブラウザ言語 + タイムゾーンで日英を自動判定。
+    - 日本語ブラウザ or タイムゾーン=Asia/Tokyo → 日本語ページに滞在
+    - それ以外 → /en/ にリダイレクト
+    - 同一ドメイン内からの遷移（referrer 同一ホスト）はスキップ（ユーザーの明示選択を尊重）
+    - sessionStorage で同セッション内の再判定を抑制
+  -->
+  <script>
+    (function () {
+      try {
+        var p = window.location.pathname;
+        if (p !== '/' && p !== '/index.html') return;
+        if (sessionStorage.getItem('luma_lang_checked') === '1') return;
+        if (document.referrer) {
+          try {
+            if (new URL(document.referrer).hostname === window.location.hostname) {
+              sessionStorage.setItem('luma_lang_checked', '1');
+              return;
+            }
+          } catch (e) {}
+        }
+        var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+        var tz = '';
+        try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+        var isJa = lang.indexOf('ja') === 0;
+        var isInJapan = (tz === 'Asia/Tokyo');
+        sessionStorage.setItem('luma_lang_checked', '1');
+        if (!isJa && !isInJapan) {
+          window.location.replace('/en/');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
   <!-- ══ Google Analytics 4 (GA4) ══ -->
   <!-- 計測ID: G-62F20N179N | 実装日: 2026-03-12 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
@@ -13,7 +48,7 @@
     gtag('config', 'G-62F20N179N');
   </script>
   <!-- ════════════════════════════ -->
-  <meta name="theme-color" content="#c4956a" />
+  <meta name="theme-color" content="#1E88E5" />
   <meta name="color-scheme" content="light only" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -84,37 +119,46 @@
   <style>
     :root {
       color-scheme: light only;
-      /* Brand Colors */
-      --cream: #faf8f4;
-      --warm-white: #f5f1eb;
-      --beige: #e8dfd0;
-      --sand: #d4c4ad;
-      --taupe: #b8a898;
-      --brown: #8c7460;
-      --dark: #2d2420;
-      --accent: #c4956a;
-      --accent-light: #e8c9a8;
-      --text: #3d3028;
-      --text-light: #7a6858;
+      /* Brand Colors (Soft Aqua — 2026-04-19 updated) */
+      --cream: #FFFFFF;          /* default page background — pure white per design update */
+      --warm-white: #FFFFFF;     /* secondary background — unified to white */
+      --beige: #D7E5ED;          /* border light */
+      --sand: #B8CED9;           /* border */
+      --taupe: #7A8998;           /* subtle text */
+      --brown: #134E6F;           /* legacy dark brand → navy */
+      --dark: #134E6F;            /* dark surfaces → navy */
+      --accent: #F59E0B;          /* CTA Orange */
+      --accent-light: #D6EBF7;    /* primary light (cool tint) */
+      --text: #2C3E50;
+      --text-light: #7A8998;
       --success: #5a8a6a;
       --danger: #b54a3a;
-      --warning: #c49840;
+      --warning: #F59E0B;         /* unified with --accent */
       /* Semantic Aliases */
-      --brand: #c4956a;
-      --brand-dark: #8c7460;
-      --text-primary: #3d3028;
-      --text-secondary: #7a6858;
-      --text-disabled: #b8a898;
-      --border: #e8dfd0;
-      --border-light: #e8dfd0;
-      --background: #faf8f4;
-      --surface: #f5f1eb;
+      --brand: #1E88E5;           /* H2 / Primary Blue */
+      --brand-dark: #134E6F;      /* H1 / Navy */
+      --text-primary: #2C3E50;
+      --text-secondary: #7A8998;
+      --text-disabled: #B8CED9;
+      --border: #B8CED9;
+      --border-light: #D7E5ED;
+      --background: #EBF5FA;
+      --surface: #F8FBFC;
+      /* Soft Aqua spec variables (LUMA 統一) */
+      --h1: #134E6F;
+      --h2: #1E88E5;
+      --h3: #5BA9D7;
+      --base: #EBF5FA;
+      --ice-white: #F8FBFC;
+      --primary-light: #D6EBF7;
+      --cta-hover: #D97706;
+      --white: #FFFFFF;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; letter-spacing: 0.04em; }
     html { scroll-behavior: smooth; }
     body {
-      background-color: #faf8f4 !important;
-      color: #3d3028 !important;
+      background-color: #FFFFFF !important;
+      color: #2C3E50 !important;
       font-family: "SF Pro", -apple-system, "system-ui", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
       background: var(--cream); color: var(--text);
       font-size: 16px; font-weight: 400; line-height: 1.5; letter-spacing: 0.04em;
@@ -127,7 +171,7 @@
       font-size: 22px;
       font-weight: 700;
       letter-spacing: 0.08em;
-      color: #EDCAA2;
+      color: #FFFFFF;
       text-decoration: none;
       line-height: 1.0;
     }
@@ -135,44 +179,42 @@
       font-size: 20px;
       font-weight: 700;
       letter-spacing: 0.08em;
-      color: #EDCAA2;
+      color: #FFFFFF;
     }
 
-    /* ── LANGUAGE TOGGLE (inside nav) ── */
-    .lang-switcher {
-      display: flex; gap: 6px; align-items: center; flex-shrink: 0;
-    }
-    .lang-btn {
+    /* ── LANGUAGE LINK (inside nav) ── */
+    .lang-link {
       font-size: 12px; font-weight: 400;
       letter-spacing: 0.04em; padding: 5px 12px;
-      border: 1px solid var(--sand); background: transparent;
-      color: var(--text-light); cursor: pointer; transition: all 0.3s; border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #D6EBF7; text-decoration: none;
+      border-radius: 4px; transition: all 0.3s; flex-shrink: 0;
     }
-    .lang-btn.active, .lang-btn:hover { background: var(--text-primary); border-color: var(--text-primary); color: white; }
+    .lang-link:hover { background: #FFFFFF; border-color: #FFFFFF; color: #134E6F; }
 
     /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 999;
       height: 44px; padding: 0 48px; display: flex; align-items: center;
       justify-content: space-between; gap: 24px; transition: all 0.4s;
-      background: rgba(250,248,244,0.96);
+      background: rgba(19,78,111,0.96);
       backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
     }
     .nav-right {
       display: flex; align-items: center; gap: 36px;
     }
     nav.scrolled {
-      background: rgba(250,248,244,0.98);
-      box-shadow: 0 1px 0 rgba(140,116,96,0.15);
+      background: rgba(19,78,111,0.98);
+      box-shadow: 0 1px 0 rgba(214,235,247,0.2);
     }
     .logo-img { height: 44px; width: auto; display: block; }
     .logo-img-footer { height: 52px; width: auto; display: block; }
     .nav-links { display: flex; gap: 36px; list-style: none; }
     .nav-links a {
       font-size: 12px; font-weight: 400; letter-spacing: 0.04em;
-      text-decoration: none; color: var(--text-secondary); transition: color 0.3s;
+      text-decoration: none; color: #D6EBF7; transition: color 0.3s;
     }
-    .nav-links a:hover { color: var(--brand); }
+    .nav-links a:hover { color: #FFFFFF; }
     /* ── SERVICES DROPDOWN ── */
     .has-dropdown { position: relative; }
     /* padding-top でリンクとメニューの間を橋渡し→ホバー切れを防止 */
@@ -210,7 +252,7 @@
       border-left: 2px solid var(--beige); margin-left: 20px;
       padding-left: 12px;
     }
-    .dropdown-menu li a.sub-item:hover { color: var(--accent); background: var(--warm-white); }
+    .dropdown-menu li a.sub-item:hover { color: var(--brand); background: var(--warm-white); }
 
 
     /* ── HAMBURGER BUTTON ── */
@@ -220,7 +262,7 @@
     }
     .ham span {
       display: block; width: 22px; height: 1.5px;
-      background: var(--text-light); transition: all 0.3s;
+      background: #D6EBF7; transition: all 0.3s;
     }
 
     /* ── MOBILE OVERLAY MENU ── */
@@ -240,14 +282,9 @@
       background: none; border: none; font-size: 28px;
       color: var(--text-light); cursor: pointer; line-height: 1;
     }
-    .mob-lang {
-      display: flex; gap: 8px; margin-top: 8px;
-    }
-
-
     /* ── MY STORY ── */
     #story {
-      background: #8e5f45; padding: 96px 72px;
+      background: #134E6F; padding: 96px 72px;
       position: relative; overflow: hidden;
     }
     #story::before {
@@ -312,7 +349,7 @@
     }
     .hero-eyebrow {
       font-size: 16px; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 28px;
+      color: var(--brand); margin-bottom: 28px;
       opacity: 0; animation: fadeUp 0.8s ease 0.2s forwards;
     }
     .hero-title {
@@ -320,7 +357,7 @@
       line-height: 1.5; color: var(--dark); margin-bottom: 12px;
       opacity: 0; animation: fadeUp 0.8s ease 0.4s forwards;
     }
-    .hero-title em { color: var(--accent); }
+    .hero-title em { color: var(--brand); }
     .hero-subtitle-ja {
       font-size: clamp(16px, 2vw, 22px); font-weight: 400; color: var(--text-secondary);
       margin-bottom: 32px; line-height: 1.5;
@@ -336,12 +373,12 @@
       opacity: 0; animation: fadeUp 0.8s ease 0.85s forwards;
     }
     .btn-primary {
-      display: inline-block; padding: 8px 22px; background: var(--text-primary); color: #ffffff;
+      display: inline-block; padding: 8px 22px; background: var(--accent); color: #ffffff;
       font-size: 16px; font-weight: 700;
       letter-spacing: 0.04em; text-decoration: none; border-radius: 980px;
       transition: all 0.3s; border: none; cursor: pointer;
     }
-    .btn-primary:hover { background: var(--brand); }
+    .btn-primary:hover { background: var(--cta-hover); }
     .btn-outline {
       display: inline-block; padding: 8px 22px; background: transparent; color: var(--text-primary);
       font-size: 16px; font-weight: 700;
@@ -357,8 +394,8 @@
     }
     .hero-visual::before {
       content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse 60% 70% at 60% 40%, rgba(196,149,106,0.25) 0%, transparent 70%),
-                  radial-gradient(ellipse 40% 50% at 30% 70%, rgba(212,196,173,0.4) 0%, transparent 60%);
+      background: radial-gradient(ellipse 60% 70% at 60% 40%, rgba(30,136,229,0.25) 0%, transparent 70%),
+                  radial-gradient(ellipse 40% 50% at 30% 70%, rgba(184,206,217,0.4) 0%, transparent 60%);
     }
     .hero-visual-text { position: absolute; bottom: 60px; left: 48px; right: 48px; }
     .hero-visual-quote {
@@ -367,17 +404,17 @@
     }
     .hero-visual-circle {
       position: absolute; top: 80px; right: 80px; width: 200px; height: 200px;
-      border-radius: 50%; border: 1px solid rgba(196,149,106,0.3); animation: rotateSlow 20s linear infinite;
+      border-radius: 50%; border: 1px solid rgba(30,136,229,0.3); animation: rotateSlow 20s linear infinite;
     }
     .hero-visual-circle::after {
       content: ''; position: absolute; top: 20px; left: 20px; right: 20px; bottom: 20px;
-      border-radius: 50%; border: 1px dashed rgba(196,149,106,0.2);
+      border-radius: 50%; border: 1px dashed rgba(30,136,229,0.2);
     }
     .hero-luma-text {
       position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
       font-size: clamp(64px, 10vw, 120px);
       font-weight: 700;
-      color: #EDCAA2;
+      color: #D6EBF7;
       letter-spacing: 0.08em;
       pointer-events: none;
       white-space: nowrap;
@@ -389,9 +426,9 @@
 
     /* ── SECTION BASE ── */
     section { padding: 80px 48px; }
-    .section-eyebrow { font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+    .section-eyebrow { font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--brand); margin-bottom: 20px; }
     .section-title { font-size: clamp(20px, 3.5vw, 40px); font-weight: 700; line-height: 1.5; color: var(--dark); margin-bottom: 16px; }
-    .section-title em { color: var(--accent); }
+    .section-title em { color: var(--brand); }
     .section-title-ja { font-size: clamp(15px, 1.6vw, 20px); font-weight: 400; color: var(--text-secondary); margin-bottom: 40px; }
 
     /* ── ABOUT ── */
@@ -399,19 +436,19 @@
     .about-body { font-size: 16px; line-height: 1.5; color: var(--text-secondary); margin-bottom: 24px; }
     .about-stats { display: flex; gap: 40px; margin-top: 40px; flex-wrap: wrap; }
     .stat { text-align: center; }
-    .stat-num { font-size: 32px; font-weight: 700; color: var(--accent); line-height: 1.5; }
+    .stat-num { font-size: 32px; font-weight: 700; color: var(--brand); line-height: 1.5; }
     .stat-label { font-size: 12px; letter-spacing: 0.04em; color: var(--text-secondary); margin-top: 6px; }
     .about-visual { position: relative; height: 480px; }
     .about-card {
       position: absolute; background: var(--cream); border: 1px solid var(--beige); border-radius: 12px;
-      padding: 28px; box-shadow: 0 2px 8px rgba(124,75,51,0.08);
+      padding: 28px; box-shadow: 0 2px 8px rgba(19,78,111,0.08);
     }
     .about-card:nth-child(1) { top: 0; left: 0; right: 60px; }
     .about-card:nth-child(2) { top: 160px; left: 60px; right: 0; }
     .about-card:nth-child(3) { top: 320px; left: 0; right: 80px; }
     .about-card-icon { font-size: 22px; margin-bottom: 10px; }
     .about-card-title { font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
-    .about-card-en { font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+    .about-card-en { font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--brand); margin-bottom: 8px; }
     .about-card-text { font-size: 12px; line-height: 1.5; color: var(--text-secondary); }
 
     /* ── SERVICES ── */
@@ -422,28 +459,28 @@
       background: var(--background); border: 1px solid var(--border-light); border-radius: 12px;
       padding: 28px; text-align: left; transition: all 0.4s; position: relative;
       overflow: hidden; cursor: pointer;
-      box-shadow: 0 2px 8px rgba(124,75,51,0.08);
+      box-shadow: 0 2px 8px rgba(19,78,111,0.08);
     }
     .service-card::before {
       content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
       background: var(--brand); transform: scaleX(0); transition: transform 0.4s; transform-origin: left;
     }
-    .service-card:hover { box-shadow: 0 4px 16px rgba(124,75,51,0.12); transform: translateY(-4px); }
+    .service-card:hover { box-shadow: 0 4px 16px rgba(19,78,111,0.12); transform: translateY(-4px); }
     .service-card:hover::before { transform: scaleX(1); }
     .service-card-hint {
-      font-size: 12px; letter-spacing: 0.04em; color: var(--accent); margin-top: 16px;
+      font-size: 12px; letter-spacing: 0.04em; color: var(--brand); margin-top: 16px;
       opacity: 0.7; transition: opacity 0.3s;
     }
     .service-card:hover .service-card-hint { opacity: 1; }
     .service-number { font-size: 12px; color: var(--sand); letter-spacing: 0.04em; margin-bottom: 20px; }
     .service-icon { font-size: 28px; margin-bottom: 16px; }
     .service-name-ja { font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
-    .service-name-en { font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
+    .service-name-en { font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--brand); margin-bottom: 18px; }
     .service-desc { font-size: 16px; line-height: 1.5; color: var(--text-secondary); }
 
     /* ── MODAL ── */
     .modal-overlay {
-      position: fixed; inset: 0; z-index: 2000; background: rgba(45,36,32,0.55);
+      position: fixed; inset: 0; z-index: 2000; background: rgba(19,78,111,0.55);
       backdrop-filter: blur(6px); opacity: 0; pointer-events: none; transition: opacity 0.35s;
       display: flex; align-items: center; justify-content: center; padding: 24px;
     }
@@ -451,7 +488,7 @@
     .modal {
       background: var(--cream); border-radius: 12px; max-width: 600px; width: 100%;
       max-height: 88vh; overflow-y: auto; padding: 48px 40px;
-      box-shadow: 0 8px 32px rgba(124,75,51,0.16);
+      box-shadow: 0 8px 32px rgba(19,78,111,0.16);
       transform: translateY(20px); transition: transform 0.35s;
       position: relative;
     }
@@ -465,22 +502,22 @@
     .modal-number { font-size: 12px; color: var(--sand); letter-spacing: 0.04em; margin-bottom: 16px; }
     .modal-icon { font-size: 36px; margin-bottom: 12px; }
     .modal-title-ja { font-size: 26px; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
-    .modal-title-en { font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); margin-bottom: 28px; }
+    .modal-title-en { font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--brand); margin-bottom: 28px; }
     .modal-divider { width: 40px; height: 1px; background: var(--beige); margin-bottom: 24px; }
     .modal-body { font-size: 16px; line-height: 1.5; color: var(--text-secondary); margin-bottom: 28px; }
     .modal-offers { margin-bottom: 32px; }
-    .modal-offers-title { font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+    .modal-offers-title { font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--brand); margin-bottom: 14px; }
     .modal-offer-item {
       display: flex; align-items: flex-start; gap: 12px; padding: 12px 0;
       border-bottom: 1px solid var(--beige); font-size: 16px; line-height: 1.5; color: var(--text-secondary);
     }
     .modal-offer-item:last-child { border-bottom: none; }
-    .modal-offer-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 7px; }
+    .modal-offer-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--brand); flex-shrink: 0; margin-top: 7px; }
     .modal-price-note {
       background: var(--warm-white); border: 1px solid var(--beige); border-radius: 12px;
       padding: 20px 24px; font-size: 16px; line-height: 1.5; color: var(--text-secondary);
     }
-    .modal-price-note strong { color: var(--accent); font-weight: 500; }
+    .modal-price-note strong { color: var(--brand); font-weight: 500; }
     .modal-cta { margin-top: 28px; text-align: center; }
 
     /* ── PROFILE ── */
@@ -490,22 +527,22 @@
     #profile .section-title-ja { color: var(--taupe); }
     .profile-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: start; margin-top: 48px; }
     .profile-visual {
-      background: linear-gradient(160deg, var(--brown) 0%, rgba(44,36,32,0.8) 100%);
+      background: linear-gradient(160deg, var(--brown) 0%, rgba(19,78,111,0.8) 100%);
       border-radius: 12px; padding: 48px 40px; text-align: center; border: 1px solid rgba(255,255,255,0.06);
     }
     .profile-logo-img { height: 80px; width: auto; margin: 0 auto 20px; display: block; }
     .profile-name { font-size: 22px; font-weight: 700; color: var(--accent-light); margin-bottom: 4px; }
     .profile-name-en { font-size: 12px; letter-spacing: 0.04em; color: var(--taupe); margin-bottom: 24px; }
     .profile-tagline { font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--taupe); margin-bottom: 32px; }
-    .profile-divider { width: 40px; height: 1px; background: var(--accent); margin: 0 auto 32px; }
+    .profile-divider { width: 40px; height: 1px; background: var(--brand); margin: 0 auto 32px; }
     .profile-tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
-    .profile-tag { font-size: 12px; letter-spacing: 0.04em; padding: 6px 14px; border: 1px solid rgba(196,149,106,0.35); color: var(--accent-light); border-radius: 4px; }
+    .profile-tag { font-size: 12px; letter-spacing: 0.04em; padding: 6px 14px; border: 1px solid rgba(30,136,229,0.35); color: var(--accent-light); border-radius: 4px; }
     .profile-items { display: flex; flex-direction: column; gap: 28px; }
     .profile-item { display: flex; gap: 20px; align-items: flex-start; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.06); }
     .profile-item:last-child { border-bottom: none; }
-    .profile-item-icon { font-size: 18px; flex-shrink: 0; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: rgba(196,149,106,0.12); border-radius: 50%; }
+    .profile-item-icon { font-size: 18px; flex-shrink: 0; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: rgba(30,136,229,0.12); border-radius: 50%; }
     .profile-item-title { font-size: 16px; font-weight: 700; color: var(--cream); margin-bottom: 4px; }
-    .profile-item-en { font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+    .profile-item-en { font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--brand); margin-bottom: 6px; }
     .profile-item-desc { font-size: 16px; line-height: 1.5; color: var(--taupe); }
 
     /* ── CONTACT ── */
@@ -521,7 +558,7 @@
       font-weight: 400; outline: none; border-radius: 8px; transition: border-color 0.3s; appearance: none;
       height: 44px;
     }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--text-primary); box-shadow: 0 0 0 3px rgba(0,113,227,0.2); }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--text-primary); box-shadow: 0 0 0 3px rgba(30,136,229,0.2); }
     .form-group textarea { resize: vertical; min-height: 120px; }
     /* ── Phone prefix custom dropdown ── */
     .phone-row { display: flex; gap: 8px; align-items: stretch; position: relative; }
@@ -533,17 +570,17 @@
       color: var(--text); font-size: 12px; white-space: nowrap;
       transition: border-color 0.3s; box-sizing: border-box; position: relative;
     }
-    .phone-trigger:focus { outline: none; border-color: var(--accent); }
+    .phone-trigger:focus { outline: none; border-color: var(--brand); }
     .phone-trigger .pt-flag { font-size: 16px; line-height: 1; }
     .phone-trigger .pt-code { font-size: 12px; flex:1; }
     .phone-trigger .pt-arrow { font-size: 8px; color: var(--text-light); transition: transform 0.2s; }
     .phone-trigger.open .pt-arrow { transform: rotate(180deg); }
-    .phone-trigger.focused, .phone-trigger:hover { border-color: var(--accent); }
+    .phone-trigger.focused, .phone-trigger:hover { border-color: var(--brand); }
     /* dropdown panel */
     .phone-dropdown {
       display: none; position: absolute; top: calc(100% + 4px); left: 0;
       width: 280px; background: var(--cream);
-      border: 1px solid var(--beige); box-shadow: 0 8px 24px rgba(45,36,32,0.14);
+      border: 1px solid var(--beige); box-shadow: 0 8px 24px rgba(19,78,111,0.14);
       z-index: 9999; max-height: 300px; overflow: hidden;
       flex-direction: column;
     }
@@ -554,7 +591,7 @@
       background: white; font-size: 16px;
       color: var(--text); outline: none; box-sizing: border-box; border-radius: 8px;
     }
-    .phone-search:focus { border-color: var(--accent); }
+    .phone-search:focus { border-color: var(--brand); }
     .phone-list { overflow-y: auto; flex: 1; }
     .phone-option {
       display: flex; align-items: center; gap: 10px;
@@ -582,7 +619,7 @@
     /* ── SUBMISSION SUCCESS POPUP ── */
     .success-overlay {
       position: fixed; inset: 0; z-index: 1100;
-      background: rgba(45,36,32,0.55); backdrop-filter: blur(6px);
+      background: rgba(19,78,111,0.55); backdrop-filter: blur(6px);
       display: flex; align-items: center; justify-content: center;
       padding: 24px; opacity: 0; pointer-events: none;
       transition: opacity 0.35s ease;
@@ -592,7 +629,7 @@
       background: var(--cream); border-radius: 12px;
       padding: 56px 48px 48px; max-width: 460px; width: 100%;
       text-align: center; position: relative;
-      box-shadow: 0 32px 80px rgba(45,36,32,0.22);
+      box-shadow: 0 32px 80px rgba(19,78,111,0.22);
       transform: translateY(20px) scale(0.97);
       transition: transform 0.35s ease;
     }
@@ -607,17 +644,17 @@
       font-size: 26px; font-weight: 700;
       color: var(--dark); margin-bottom: 14px; line-height: 1.5;
     }
-    .success-title em { color: var(--accent); }
+    .success-title em { color: var(--brand); }
     .success-body { font-size: 16px; line-height: 1.5; color: var(--text-secondary); margin-bottom: 36px; }
     .success-close {
       display: inline-block; padding: 8px 22px;
-      background: var(--text-primary); color: #ffffff;
+      background: var(--accent); color: #ffffff;
       font-size: 16px; font-weight: 700;
       letter-spacing: 0.04em; border: none; border-radius: 980px;
       cursor: pointer; transition: background 0.3s;
     }
-    .success-close:hover { background: var(--brand); }
-    .success-divider { width: 40px; height: 1px; background: var(--accent); margin: 0 auto 28px; }
+    .success-close:hover { background: var(--cta-hover); }
+    .success-divider { width: 40px; height: 1px; background: var(--brand); margin: 0 auto 28px; }
     @media (max-width: 480px) {
       .success-popup { padding: 44px 24px 36px; }
       .success-title { font-size: 22px; }
@@ -625,14 +662,18 @@
 
     /* ── FOOTER ── */
     footer {
-      background: var(--dark); padding: 56px 48px;
-      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;
+      background: var(--dark);
+      padding: 56px 48px;
     }
-    .footer-tagline { font-size: 12px; letter-spacing: 0.04em; color: var(--taupe); margin-top: 6px; }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; justify-content: flex-start; align-items: flex-start; flex-wrap: wrap; gap: 40px;
+    }
+    .footer-tagline { font-size: 12px; letter-spacing: 0.04em; color: #D6EBF7; margin-top: 6px; }
     .footer-links { display: flex; gap: 28px; list-style: none; }
-    .footer-links a { font-size: 12px; letter-spacing: 0.04em; color: var(--taupe); text-decoration: none; transition: color 0.3s; }
-    .footer-links a:hover { color: var(--brand); }
-    .footer-copy { font-size: 12px; color: var(--taupe); letter-spacing: 0.04em; }
+    .footer-links a { font-size: 12px; letter-spacing: 0.04em; color: #D6EBF7; text-decoration: none; transition: color 0.3s; }
+    .footer-links a:hover { color: #FFFFFF; }
+    .footer-copy { font-size: 12px; color: #D6EBF7; letter-spacing: 0.04em; }
 
     /* ── ANIMATIONS ── */
     @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
@@ -641,14 +682,6 @@
     .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* ── LANGUAGE SWITCH ── */
-    [data-lang] { display: none; }
-    body.lang-ja [data-lang="ja"] { display: block; }
-    body.lang-en [data-lang="en"] { display: block; }
-    body.lang-ja [data-inline="en"], body.lang-en [data-inline="ja"] { display: none; }
-    body.lang-ja [data-inline="ja"], body.lang-en [data-inline="en"] { display: inline; }
-    body.lang-ja [data-opt="en"], body.lang-en [data-opt="ja"] { display: none; }
-
     /* ── RESPONSIVE ── */
     @media (max-width: 1023px) {
       .hero { grid-template-columns: 1fr; }
@@ -656,7 +689,7 @@
       #about, .profile-grid { grid-template-columns: 1fr; }
       .about-visual { display: none; }
       .services-grid { grid-template-columns: 1fr 1fr; }
-      nav, section, footer { padding-left: 24px; padding-right: 24px; }
+      nav, section { padding-left: 24px; padding-right: 24px; }
       nav { height: 44px; padding: 0 24px; }
       .hero-left { padding: 120px 24px 60px; }
       .form-row { grid-template-columns: 1fr; }
@@ -667,14 +700,15 @@
     @media (max-width: 833px) {
       .services-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
-      .lang-switcher { display: none; }
+      .lang-link { display: none; }
       .ham { display: flex; }
       nav { height: 44px; padding: 0 16px; }
       section { padding: 60px 16px; }
       .hero-left { padding: 100px 16px 60px; }
       .logo-text { font-size: 18px; }
       .nav-right { gap: 16px; }
-      footer { padding: 40px 16px; flex-direction: column; align-items: flex-start; gap: 20px; }
+      footer { padding: 40px 16px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
       .footer-links { flex-wrap: wrap; gap: 16px; }
       .modal { padding: 40px 16px 32px; margin: 0 12px; max-height: 90vh; }
       .modal-overlay { padding: 16px; align-items: flex-end; }
@@ -688,43 +722,43 @@
     /* Better touch scrolling on mobile */
     .modal { -webkit-overflow-scrolling: touch; }
     * { -webkit-tap-highlight-color: transparent; }
-    .service-card { -webkit-tap-highlight-color: rgba(196,149,106,0.1); }
+    .service-card { -webkit-tap-highlight-color: rgba(30,136,229,0.1); }
       body {
-        background-color: #faf8f4 !important;
-        color: #3d2e22 !important;
+        background-color: #FFFFFF !important;
+        color: #2C3E50 !important;
       }
-      nav { background: rgba(250,248,244,0.96) !important; }
-      nav.scrolled { background: rgba(250,248,244,0.98) !important; }
-      .hero { background: var(--cream) !important; }
+      nav { background: rgba(19,78,111,0.96) !important; }
+      nav.scrolled { background: rgba(19,78,111,0.98) !important; }
+      .hero { background: #FFFFFF !important; }
       .hero-title { color: var(--dark) !important; }
       .hero-subtitle-ja, .hero-desc { color: var(--text-light) !important; }
-      .hero-luma-text { color: #EDCAA2 !important; }
-      section { background-color: #faf8f4 !important; }
+      .hero-luma-text { color: #D6EBF7 !important; }
+      section { background-color: #FFFFFF !important; }
       #who { background: var(--dark) !important; }
       #who .who-name { color: rgba(255,255,255,0.95) !important; }
       #who .who-body { color: rgba(255,255,255,0.80) !important; }
       #who .who-tagline, #who .who-cta, #who .section-eyebrow, #who .who-name em { color: var(--accent-light) !important; }
-      #story { background: #8e5f45 !important; }
-      .services-section { background: #f5f1eb !important; }
-      .profile-section { background: #faf8f4 !important; }
-      .contact-section { background: #f5f1eb !important; }
-      footer { background: #1a1208 !important; }
+      #story { background: #134E6F !important; }
+      .services-section { background: #FFFFFF !important; }
+      .profile-section { background: #FFFFFF !important; }
+      .contact-section { background: #FFFFFF !important; }
+      footer { background: #134E6F !important; }
       .service-card { background: #ffffff !important; }
-      .modal { background: #faf8f4 !important; }
+      .modal { background: #FFFFFF !important; }
       input, textarea, select {
         background: #ffffff !important;
-        color: #3d2e22 !important;
-        border-color: #c4956a !important;
+        color: #2C3E50 !important;
+        border-color: #1E88E5 !important;
       }
     }
 
   
 
   
-    .footer-brand { text-align: center; }
+    .footer-brand { text-align: left; }
     .footer-logo {
       font-size: 20px; font-weight: 700;
-      letter-spacing: 0.08em; color: #EDCAA2; text-decoration: none;
+      letter-spacing: 0.08em; color: #FFFFFF; text-decoration: none;
       display: block; margin-bottom: 6px;
     }
 
@@ -733,11 +767,11 @@
     .mob-svc-toggle {
       background: none; border: none; cursor: pointer;
       font-size: 18px; letter-spacing: 0.04em;
-      color: var(--text, #3d3028); transition: color .3s;
+      color: var(--text, #2C3E50); transition: color .3s;
       display: flex; align-items: center; justify-content: center;
       gap: 8px; width: 100%; padding: 0;
     }
-    .mob-svc-toggle:hover { color: var(--accent, #c4956a); }
+    .mob-svc-toggle:hover { color: var(--brand, #1E88E5); }
     .mob-svc-arrow { font-size: 14px; transition: transform .3s; display: inline-block; }
     .mob-svc-toggle[aria-expanded="true"] .mob-svc-arrow { transform: rotate(180deg); }
     .mob-svc-list {
@@ -751,35 +785,9 @@
     }
     .mob-svc-list a {
       font-size: 14px !important; letter-spacing: 0.04em;
-      color: var(--text-secondary, #7a6858) !important;
+      color: var(--text-secondary, #7A8998) !important;
     }
-    .mob-svc-list a:hover { color: var(--brand, #c4956a) !important; }
-
-    /* ── ENGLISH VISITOR BANNER (EN mode only) ── */
-    .en-visitor-bar{
-      display:none; /* JSで制御 */
-      background:rgba(196,149,106,.1);
-      border:1px solid rgba(196,149,106,.25);
-      border-radius:12px;
-      padding:12px 24px;
-      margin-top:24px;
-      align-items:center;gap:12px;
-      max-width:fit-content;
-    }
-    .en-visitor-bar.visible{display:flex;}
-    .en-visitor-bar-text{
-      font-size:12px;font-weight:700;
-      letter-spacing:0.04em;text-transform:uppercase;color:var(--text-secondary);
-    }
-    .en-visitor-bar-link{
-      font-size:12px;font-weight:700;
-      letter-spacing:0.04em;text-transform:uppercase;
-      color:var(--accent);text-decoration:none;
-      display:flex;align-items:center;gap:6px;
-      transition:color .2s;
-    }
-    .en-visitor-bar-link:hover{color:var(--brand-dark);}
-    @media(max-width:768px){.en-visitor-bar{padding:10px 16px;}}
+    .mob-svc-list a:hover { color: var(--brand, #1E88E5) !important; }
 
     /* ── HERO QUICK NAV (サービスクイックリンク) ── */
     .hero-quick-nav {
@@ -850,35 +858,32 @@
     }
   </style>
 </head>
-<body class="lang-ja" id="body-root">
+<body id="body-root">
 
   <!-- Navigation -->
   <nav id="navbar">
     <a href="./index.html" class="logo-text">LUMA</a>
     <div class="nav-right">
       <ul class="nav-links">
-        <li><a href="#about"><span data-inline="ja">LUMAとは</span><span data-inline="en">About</span></a></li>
+        <li><a href="./index.html#about">LUMAとは</a></li>
         <li class="has-dropdown">
-          <a href="./services.html" class="dropdown-toggle"><span data-inline="ja">サービス</span><span data-inline="en">Services</span></a>
+          <a href="./services.html" class="dropdown-toggle">サービス</a>
           <ul class="dropdown-menu">
-                                    <div class="dropdown-menu-inner">
-            <li><a href="./services.html"><span data-inline="ja">サービス一覧</span><span data-inline="en">All Services</span></a></li>
-            <li><a href="./service-english.html"><span data-inline="ja">英語教育 — LUMA Voice</span><span data-inline="en">English — LUMA Voice</span></a></li>
-            <li><a href="./s-league.html"><span data-inline="ja">S.League 麻雀大会</span><span data-inline="en">S.League Mahjong</span></a></li>
-            <li><a href="./service-tour.html"><span data-inline="ja">ツアー — LUMA Path</span><span data-inline="en">Tours — LUMA Path</span></a></li>
-            <li><a href="./service-photo.html"><span data-inline="ja">写真撮影 — LUMA Frame</span><span data-inline="en">Photography — LUMA Frame</span></a></li>
-            <li><a href="./service-counselling.html"><span data-inline="ja">カウンセリング — LUMA Space</span><span data-inline="en">Counselling — LUMA Space</span></a></li>
-            <li><a href="./service-karaoke.html"><span data-inline="ja">カラオケ — LUMA Stage</span><span data-inline="en">Karaoke — LUMA Stage</span></a></li>
+            <div class="dropdown-menu-inner">
+            <li><a href="./services.html">サービス一覧</a></li>
+            <li><a href="./service-english.html">英語教育 — LUMA Voice</a></li>
+            <li><a href="./s-league.html">S.League 麻雀大会</a></li>
+            <li><a href="./service-tour.html">ツアー — LUMA Path</a></li>
+            <li><a href="./service-photo.html">写真撮影 — LUMA Frame</a></li>
+            <li><a href="./service-counselling.html">カウンセリング — LUMA Space</a></li>
+            <li><a href="./service-karaoke.html">カラオケ — LUMA Stage</a></li>
             </div>
           </ul>
         </li>
-        <li><a href="./contact.html"><span data-inline="ja">お問い合わせ</span><span data-inline="en">Contact</span></a></li>
-        <li><a href="./legal.html"><span data-inline="ja">特商法・プライバシー</span><span data-inline="en">Legal</span></a></li>
+        <li><a href="./contact.html">お問い合わせ</a></li>
+        <li><a href="./legal.html">特商法・プライバシー</a></li>
       </ul>
-      <div class="lang-switcher">
-        <button class="lang-btn active" onclick="setLang('ja')">JP</button>
-        <button class="lang-btn" onclick="setLang('en')">EN</button>
-      </div>
+      <a href="./en/index.html" class="lang-link">English ▸</a>
       <button class="ham" id="hamBtn" onclick="toggleMobMenu()" aria-label="メニュー">
         <span></span><span></span><span></span>
       </button>
@@ -888,75 +893,57 @@
   <!-- Mobile Menu -->
   <div class="mob-menu" id="mobMenu">
     <button class="mob-close" onclick="toggleMobMenu()">✕</button>
-    <a href="#about"        onclick="toggleMobMenu()"><span data-inline="ja">LUMAとは</span><span data-inline="en">About</span></a>
-    <!-- サービス アコーディオン -->
+    <a href="./index.html#about" onclick="toggleMobMenu()">LUMAとは</a>
     <div class="mob-svc-wrap">
       <button class="mob-svc-toggle" onclick="toggleMobSvc(this)" aria-expanded="false">
-        <span data-inline="ja">サービス</span><span data-inline="en">Services</span> <span class="mob-svc-arrow">▾</span>
+        サービス <span class="mob-svc-arrow">▾</span>
       </button>
       <div class="mob-svc-list" aria-hidden="true">
-        <a href="./services.html"          onclick="toggleMobMenu()"><span data-inline="ja">サービス一覧</span><span data-inline="en">All Services</span></a>
-        <a href="./service-english.html"     onclick="toggleMobMenu()"><span data-inline="ja">英語教育 — LUMA Voice</span><span data-inline="en">English — LUMA Voice</span></a>
-        <a href="./s-league.html"            onclick="toggleMobMenu()"><span data-inline="ja">S.League 麻雀大会</span><span data-inline="en">S.League Mahjong</span></a>
-        <a href="./service-tour.html"        onclick="toggleMobMenu()"><span data-inline="ja">ツアー — LUMA Path</span><span data-inline="en">Tours — LUMA Path</span></a>
-        <a href="./service-photo.html"       onclick="toggleMobMenu()"><span data-inline="ja">写真撮影 — LUMA Frame</span><span data-inline="en">Photography — LUMA Frame</span></a>
-        <a href="./service-counselling.html" onclick="toggleMobMenu()"><span data-inline="ja">カウンセリング — LUMA Space</span><span data-inline="en">Counselling — LUMA Space</span></a>
-        <a href="./service-karaoke.html"     onclick="toggleMobMenu()"><span data-inline="ja">カラオケ — LUMA Stage</span><span data-inline="en">Karaoke — LUMA Stage</span></a>
+        <a href="./services.html" onclick="toggleMobMenu()">サービス一覧</a>
+        <a href="./service-english.html" onclick="toggleMobMenu()">英語教育 — LUMA Voice</a>
+        <a href="./s-league.html" onclick="toggleMobMenu()">S.League 麻雀大会</a>
+        <a href="./service-tour.html" onclick="toggleMobMenu()">ツアー — LUMA Path</a>
+        <a href="./service-photo.html" onclick="toggleMobMenu()">写真撮影 — LUMA Frame</a>
+        <a href="./service-counselling.html" onclick="toggleMobMenu()">カウンセリング — LUMA Space</a>
+        <a href="./service-karaoke.html" onclick="toggleMobMenu()">カラオケ — LUMA Stage</a>
       </div>
     </div>
-    <a href="./contact.html"     onclick="toggleMobMenu()"><span data-inline="ja">お問い合わせ</span><span data-inline="en">Contact</span></a>
-    <a href="./legal.html" onclick="toggleMobMenu()"><span data-inline="ja">特商法・プライバシー</span><span data-inline="en">Legal</span></a>
-    <div class="mob-lang">
-      <button class="lang-btn active" id="mobLangJa" onclick="setLang('ja');toggleMobMenu()">JP</button>
-      <button class="lang-btn" id="mobLangEn" onclick="setLang('en');toggleMobMenu()">EN</button>
-    </div>
+    <a href="./contact.html" onclick="toggleMobMenu()">お問い合わせ</a>
+    <a href="./legal.html" onclick="toggleMobMenu()">特商法・プライバシー</a>
+    <a href="./en/index.html" onclick="toggleMobMenu()" style="margin-top:12px;font-size:14px;">English ▸</a>
   </div>
 
   <!-- Hero -->
   <section class="hero" id="home">
     <div class="hero-left">
       <p class="hero-eyebrow">Clarity by Design &nbsp;|&nbsp; Illuminate Your Confidence</p>
-      <h1 class="hero-title" data-lang="ja">自信の光を、<br>あなたの中に。</h1>
-      <h1 class="hero-title" data-lang="en">Find the <em>light</em><br>within you.</h1>
-      <p class="hero-subtitle-ja" data-lang="ja">英語・写真・カラオケ・ツアー・コミュニティで<br>あなたの自己表現を支えます</p>
-      <p class="hero-subtitle-ja" data-lang="en">Education · Photography · Karaoke · Tours · Community</p>
-      <p class="hero-desc" data-lang="ja">LUMAは、教育・ポートレート撮影・カウンセリング・ツアー企画・コミュニティ活動を通じて、あなたが自分らしく輝けるよう、寄り添いながらサポートします。</p>
-      <p class="hero-desc" data-lang="en">LUMA supports your journey to self-confidence through English education, portrait photography, counselling, tours, and vibrant community events — tailored to help you shine.</p>
+      <h1 class="hero-title">自信の光を、<br>あなたの中に。</h1>
+      <p class="hero-subtitle-ja">英語・写真・カラオケ・ツアー・コミュニティで<br>あなたの自己表現を支えます</p>
+      <p class="hero-desc">LUMAは、教育・ポートレート撮影・カウンセリング・ツアー企画・コミュニティ活動を通じて、あなたが自分らしく輝けるよう、寄り添いながらサポートします。</p>
       <div class="hero-cta">
-        <a href="#services" class="btn-primary"><span data-inline="ja">サービスを見る</span><span data-inline="en">Explore Services</span></a>
-        <a href="./contact.html" class="btn-outline"><span data-inline="ja">無料相談</span><span data-inline="en">Free Consultation</span></a>
+        <a href="#services" class="btn-primary">サービスを見る</a>
+        <a href="./contact.html" class="btn-outline">無料相談</a>
       </div>
 
       <!-- サービスクイックリンク: 趣味・興味から直接サービスへ -->
       <div class="hero-quick-nav">
-        <span class="hero-quick-label">
-          <span data-inline="ja">興味のあるサービスへ</span>
-          <span data-inline="en">Jump to service</span>
-        </span>
+        <span class="hero-quick-label">興味のあるサービスへ</span>
         <div class="hero-quick-links">
-          <a href="./service-english.html">📖 <span data-inline="ja">英語</span><span data-inline="en">English</span></a>
-          <a href="./service-photo.html">📸 <span data-inline="ja">写真</span><span data-inline="en">Photo</span></a>
-          <a href="./s-league.html">🀄 <span data-inline="ja">麻雀</span><span data-inline="en">Mahjong</span></a>
-          <a href="./service-tour.html">🗺️ <span data-inline="ja">ツアー</span><span data-inline="en">Tours</span></a>
-          <a href="./service-counselling.html">💬 <span data-inline="ja">相談</span><span data-inline="en">Coaching</span></a>
-          <a href="./service-karaoke.html">🎤 <span data-inline="ja">カラオケ</span><span data-inline="en">Karaoke</span></a>
+          <a href="./service-english.html">📖 英語</a>
+          <a href="./service-photo.html">📸 写真</a>
+          <a href="./s-league.html">🀄 麻雀</a>
+          <a href="./service-tour.html">🗺️ ツアー</a>
+          <a href="./service-counselling.html">💬 相談</a>
+          <a href="./service-karaoke.html">🎤 カラオケ</a>
         </div>
       </div>
-
-        <div class="en-visitor-bar" id="enVisitorBar">
-          <span class="en-visitor-bar-text">Looking for tours in English?</span>
-          <a href="./tour-en.html" class="en-visitor-bar-link">
-            <span>🌐</span> LUMA Path — English Tour Guide →
-          </a>
-        </div>
     </div>
     <div class="hero-right">
       <div class="hero-visual">
         <div class="hero-luma-text">LUMA</div>
         <div class="hero-visual-circle"></div>
         <div class="hero-visual-text">
-          <p class="hero-visual-quote" data-lang="ja">"光は、<br>外からではなく<br>内側から灯る。"</p>
-          <p class="hero-visual-quote" data-lang="en">"Light doesn't come<br>from outside —<br>it shines from within."</p>
+          <p class="hero-visual-quote">"光は、<br>外からではなく<br>内側から灯る。"</p>
         </div>
       </div>
     </div>
@@ -972,16 +959,10 @@
           <img src="./profile.jpg" alt="Sho Asano / 浅野 彰" />
         </div>
         <div class="who-text">
-          <h2 class="who-name">
-            <span data-lang="ja">浅野 彰 <em>(Sho Asano)</em></span>
-            <span data-lang="en">Sho Asano <em>(浅野 彰)</em></span>
-          </h2>
-          <p class="who-tagline" data-lang="ja">LUMA 代表 / 横浜在住 / 日英バイリンガル</p>
-          <p class="who-tagline" data-lang="en">Founder of LUMA · Based in Yokohama · Bilingual (JP/EN)</p>
-          <p class="who-body" data-lang="ja">愛知県出身、2011〜2020年にオーストラリア・ブリスベンで9年間生活。英語教育・ポートレート撮影・カウンセリング・ツアー・カラオケ指導・コミュニティ運営の6領域で、一人ひとりの「自己肯定感」を支える活動をしています。2022年からは健康麻雀コミュニティ「S.League」を主宰(これまで22回開催・延べ335名が参加)。</p>
-          <p class="who-body" data-lang="en">Born in Aichi, lived in Brisbane, Australia for 9 years (2011–2020). Running LUMA — a personal service brand across English tutoring, portrait photography, counselling, tours, karaoke coaching, and community. Also founded S.League, a healthy-mahjong community (22 events, 335 participants since 2022).</p>
-          <a href="#story" class="who-cta" data-lang="ja">詳しいストーリーを読む →</a>
-          <a href="#story" class="who-cta" data-lang="en">Read my full story →</a>
+          <h2 class="who-name">浅野 彰 <em>(Sho Asano)</em></h2>
+          <p class="who-tagline">LUMA 代表 / 横浜在住 / 日英バイリンガル</p>
+          <p class="who-body">愛知県出身、2011〜2020年にオーストラリア・ブリスベンで9年間生活。英語教育・ポートレート撮影・カウンセリング・ツアー・カラオケ指導・コミュニティ運営の6領域で、一人ひとりの「自己肯定感」を支える活動をしています。2022年からは健康麻雀コミュニティ「S.League」を主宰(これまで22回開催・延べ335名が参加)。</p>
+          <a href="#story" class="who-cta">詳しいストーリーを読む →</a>
         </div>
       </div>
     </div>
@@ -992,42 +973,33 @@
   <section id="about">
     <div class="about-content reveal">
       <p class="section-eyebrow">About LUMA</p>
-      <h2 class="section-title" data-lang="ja">あなたの自信を、<br><em>一緒に育てる</em></h2>
-      <h2 class="section-title" data-lang="en">Growing your <em>confidence</em>,<br>together.</h2>
-      <p class="section-title-ja" data-lang="ja">LUMAのミッション</p>
-      <p class="section-title-ja" data-lang="en">Our Mission</p>
-      <p class="about-body" data-lang="ja">LUMAは「自己肯定感の向上」をテーマに、英語教育・ポートレート・風景画・航空機撮影・カウンセリング・ツアー企画・コミュニティ活動を一体的に提供する個人サービスブランドです。オーストラリア留学9年間で培った英語力と、多様なキャリア経験から生まれた実践知を活かし、一人ひとりに寄り添ったサポートを行います。</p>
-      <p class="about-body" data-lang="en">LUMA is a personal service brand focused on building self-confidence through English education, portrait photography, counselling, local tours, and community events. Drawing on 9 years of experience in Australia and a diverse professional background, LUMA offers genuine, personalized support to help each individual grow.</p>
+      <h2 class="section-title">あなたの自信を、<br><em>一緒に育てる</em></h2>
+      <p class="section-title-ja">LUMAのミッション</p>
+      <p class="about-body">LUMAは「自己肯定感の向上」をテーマに、英語教育・ポートレート・風景画・航空機撮影・カウンセリング・ツアー企画・コミュニティ活動を一体的に提供する個人サービスブランドです。オーストラリア留学9年間で培った英語力と、多様なキャリア経験から生まれた実践知を活かし、一人ひとりに寄り添ったサポートを行います。</p>
       <div class="about-stats">
-        <div class="stat"><div class="stat-num">9年間</div><div class="stat-label" data-lang="ja">豪州留学</div><div class="stat-label" data-lang="en">Years in Australia</div></div>
-        <div class="stat"><div class="stat-num">6分野</div><div class="stat-label" data-lang="ja">提供サービス</div><div class="stat-label" data-lang="en">Services offered</div></div>
-        <div class="stat"><div class="stat-num">2言語</div><div class="stat-label" data-lang="ja">日英バイリンガル対応</div><div class="stat-label" data-lang="en">JP/EN bilingual</div></div>
+        <div class="stat"><div class="stat-num">9年間</div><div class="stat-label">豪州留学</div></div>
+        <div class="stat"><div class="stat-num">6分野</div><div class="stat-label">提供サービス</div></div>
+        <div class="stat"><div class="stat-num">2言語</div><div class="stat-label">日英バイリンガル対応</div></div>
       </div>
     </div>
     <div class="about-visual reveal">
             <div class="about-card">
         <div class="about-card-icon">📖</div>
         <div class="about-card-en">LUMA Voice</div>
-        <div class="about-card-title" data-lang="ja">英語教育・チュータリング</div>
-        <div class="about-card-title" data-lang="en">English Tutoring</div>
-        <p class="about-card-text" data-lang="ja">オーストラリア留学9年の実体験から生まれた、使える英語。日常会話からビジネス英語まで対応。</p>
-        <p class="about-card-text" data-lang="en">Real-world English built on 9 years in Australia — conversation to business level.</p>
+        <div class="about-card-title">英語教育・チュータリング</div>
+        <p class="about-card-text">オーストラリア留学9年の実体験から生まれた、使える英語。日常会話からビジネス英語まで対応。</p>
       </div>
       <div class="about-card">
         <div class="about-card-icon">🀄</div>
         <div class="about-card-en">S.League</div>
-        <div class="about-card-title" data-lang="ja">S.League 麻雀大会</div>
-        <div class="about-card-title" data-lang="en">S.League Mahjong</div>
-        <p class="about-card-text" data-lang="ja">2022年から運営する麻雀コミュニティ。22回・累計335名が参加した本気の健康麻雀大会。</p>
-        <p class="about-card-text" data-lang="en">22 events, 335 participants since 2022 — competitive mahjong with a welcoming community.</p>
+        <div class="about-card-title">S.League 麻雀大会</div>
+        <p class="about-card-text">2022年から運営する麻雀コミュニティ。22回・累計335名が参加した本気の健康麻雀大会。</p>
       </div>
       <div class="about-card">
         <div class="about-card-icon">🗺️</div>
         <div class="about-card-en">LUMA Path</div>
-        <div class="about-card-title" data-lang="ja">ツアー企画・ガイド</div>
-        <div class="about-card-title" data-lang="en">Tour Planning & Guide</div>
-        <p class="about-card-text" data-lang="ja">東京〜全国対応。グルテンフリー・アレルギー対応も自分ごととして丁寧にサポート。</p>
-        <p class="about-card-text" data-lang="en">Bilingual tours nationwide — gluten-free and allergy-friendly from personal experience.</p>
+        <div class="about-card-title">ツアー企画・ガイド</div>
+        <p class="about-card-text">東京〜全国対応。グルテンフリー・アレルギー対応も自分ごととして丁寧にサポート。</p>
       </div>
       </section>
 
@@ -1035,83 +1007,63 @@
   <section id="services">
     <div class="section-header reveal">
       <p class="section-eyebrow">Services</p>
-      <h2 class="section-title" data-lang="ja">LUMAの<em>サービス</em></h2>
-      <h2 class="section-title" data-lang="en">What <em>LUMA</em> offers</h2>
-      <p class="section-title-ja" data-lang="ja">各カードをクリックして詳細をご確認ください</p>
-      <p class="section-title-ja" data-lang="en">Click each card to explore details & pricing</p>
-      <a href="./services.html" class="btn-outline" style="margin-top:8px;display:inline-block;" data-lang="ja">サービス一覧ページへ</a>
+      <h2 class="section-title">LUMAの<em>サービス</em></h2>
+      <p class="section-title-ja">各カードをクリックして詳細をご確認ください</p>
+      <a href="./services.html" class="btn-outline" style="margin-top:8px;display:inline-block;">サービス一覧ページへ</a>
     </div>
     <div class="services-grid">
       <div class="service-card reveal" onclick="location.href='./service-english.html'">
         <div class="service-number">01</div>
         <div class="service-icon">📖</div>
-        <div class="service-name-ja" data-lang="ja">英語教育・チュータリング</div>
-        <div class="service-name-ja" data-lang="en">English Tutoring</div>
+        <div class="service-name-ja">英語教育・チュータリング</div>
         <div class="service-name-en">LUMA Voice</div>
-        <p class="service-desc" data-lang="ja">オーストラリア9年の経験をベースに、日常会話からビジネス英語まで対応。実践的なレッスンで自信を持って話せる英語を身につけます。</p>
-        <p class="service-desc" data-lang="en">From daily conversation to business English — practical lessons built on 9 years of living and working in Australia.</p>
-        <p class="service-card-hint" data-lang="ja">▸ 詳細・料金を見る</p>
-        <p class="service-card-hint" data-lang="en">▸ View details & pricing</p>
+        <p class="service-desc">オーストラリア9年の経験をベースに、日常会話からビジネス英語まで対応。実践的なレッスンで自信を持って話せる英語を身につけます。</p>
+        <p class="service-card-hint">▸ 詳細・料金を見る</p>
       </div>
 
       <div class="service-card reveal" onclick="location.href='./s-league.html'">
         <div class="service-number">02</div>
         <div class="service-icon">🀄</div>
-        <div class="service-name-ja" data-lang="ja">S.League 麻雀大会</div>
-        <div class="service-name-ja" data-lang="en">S.League Mahjong</div>
+        <div class="service-name-ja">S.League 麻雀大会</div>
         <div class="service-name-en">S.League</div>
-        <p class="service-desc" data-lang="ja">2022年から運営する本気の健康麻雀コミュニティ。22回・累計335名が参加。次回大会の申込はこちら。</p>
-        <p class="service-desc" data-lang="en">Competitive mahjong community running since 2022 — 22 events, 335 participants. Join the next tournament.</p>
-        <p class="service-card-hint" data-lang="ja">▸ 詳細・申込を見る</p>
-        <p class="service-card-hint" data-lang="en">▸ View details & sign up</p>
+        <p class="service-desc">2022年から運営する本気の健康麻雀コミュニティ。22回・累計335名が参加。次回大会の申込はこちら。</p>
+        <p class="service-card-hint">▸ 詳細・申込を見る</p>
       </div>
 
       <div class="service-card reveal" onclick="location.href='./service-tour.html'">
         <div class="service-number">03</div>
         <div class="service-icon">🗺️</div>
-        <div class="service-name-ja" data-lang="ja">ツアー企画・ガイド</div>
-        <div class="service-name-ja" data-lang="en">Tour Planning & Guide</div>
+        <div class="service-name-ja">ツアー企画・ガイド</div>
         <div class="service-name-en">LUMA Path</div>
-        <p class="service-desc" data-lang="ja">東京近郊の半日・日帰りツアーを企画・ガイド。英語・日本語対応で、個人・グループを問わず対応します。</p>
-        <p class="service-desc" data-lang="en">Half-day and full-day tours around Tokyo in English or Japanese — for individuals and small groups.</p>
-        <p class="service-card-hint" data-lang="ja">▸ 詳細・料金を見る</p>
-        <p class="service-card-hint" data-lang="en">▸ View details & pricing</p>
+        <p class="service-desc">東京近郊の半日・日帰りツアーを企画・ガイド。英語・日本語対応で、個人・グループを問わず対応します。</p>
+        <p class="service-card-hint">▸ 詳細・料金を見る</p>
       </div>
 
       <div class="service-card reveal" onclick="location.href='./service-photo.html'">
         <div class="service-number">04</div>
         <div class="service-icon">📸</div>
-        <div class="service-name-ja" data-lang="ja">ポートレート・写真撮影</div>
-        <div class="service-name-ja" data-lang="en">Portrait Photography</div>
+        <div class="service-name-ja">ポートレート・写真撮影</div>
         <div class="service-name-en">LUMA Frame</div>
-        <p class="service-desc" data-lang="ja">Nikon Z6III 使用。前撮り・お食い初め・家族写真・カップル写真から、航空機・風景画の撮影代行など、大切な瞬間を美しく残します。</p>
-        <p class="service-desc" data-lang="en">Using Nikon Z6III — capturing pre-weddings, first meals, family moments, landscape and aviation photography with warmth and artistry.</p>
-        <p class="service-card-hint" data-lang="ja">▸ 詳細・料金を見る</p>
-        <p class="service-card-hint" data-lang="en">▸ View details & pricing</p>
+        <p class="service-desc">Nikon Z6III 使用。前撮り・お食い初め・家族写真・カップル写真から、航空機・風景画の撮影代行など、大切な瞬間を美しく残します。</p>
+        <p class="service-card-hint">▸ 詳細・料金を見る</p>
       </div>
 
       <div class="service-card reveal" onclick="location.href='./service-counselling.html'">
         <div class="service-number">05</div>
         <div class="service-icon">💬</div>
-        <div class="service-name-ja" data-lang="ja">カウンセリング・コーチング</div>
-        <div class="service-name-ja" data-lang="en">Counselling & Coaching</div>
+        <div class="service-name-ja">カウンセリング・コーチング</div>
         <div class="service-name-en">LUMA Space</div>
-        <p class="service-desc" data-lang="ja">自己肯定感や対人関係、キャリアの悩みに寄り添います。コンサルタントとしての経験を活かした実践的な視点でのサポートです。</p>
-        <p class="service-desc" data-lang="en">Supportive coaching on self-confidence, relationships, and career — grounded in real consulting and life experience.</p>
-        <p class="service-card-hint" data-lang="ja">▸ 詳細・料金を見る</p>
-        <p class="service-card-hint" data-lang="en">▸ View details & pricing</p>
+        <p class="service-desc">自己肯定感や対人関係、キャリアの悩みに寄り添います。コンサルタントとしての経験を活かした実践的な視点でのサポートです。</p>
+        <p class="service-card-hint">▸ 詳細・料金を見る</p>
       </div>
 
       <div class="service-card reveal" onclick="location.href='./service-karaoke.html'">
         <div class="service-number">06</div>
         <div class="service-icon">🎤</div>
-        <div class="service-name-ja" data-lang="ja">カラオケ指導</div>
-        <div class="service-name-ja" data-lang="en">Karaoke Coaching</div>
+        <div class="service-name-ja">カラオケ指導</div>
         <div class="service-name-en">LUMA Stage</div>
-        <p class="service-desc" data-lang="ja">DAM WAO採点最高98.6点・95点以上の楽曲54曲の実績をもつ講師が、発声・音程・表現力を丁寧に指導します。</p>
-        <p class="service-desc" data-lang="en">Coached by a DAM scoring specialist (98-point track record, 54 songs at 95+) — improve pitch, voice, and stage presence.</p>
-        <p class="service-card-hint" data-lang="ja">▸ 詳細・料金を見る</p>
-        <p class="service-card-hint" data-lang="en">▸ View details & pricing</p>
+        <p class="service-desc">DAM WAO採点最高98.6点・95点以上の楽曲54曲の実績をもつ講師が、発声・音程・表現力を丁寧に指導します。</p>
+        <p class="service-card-hint">▸ 詳細・料金を見る</p>
       </div>
     </div>
   </section>
@@ -1128,22 +1080,16 @@
   <section id="story">
     <div class="story-inner">
       <span class="story-eyebrow reveal">My Story</span>
-      <h2 class="story-heading reveal">
-        <span data-lang="ja">なぜ、<em>LUMAを</em>始めたのか</span>
-        <span data-lang="en">Why I <em>started</em> LUMA</span>
-      </h2>
-      <p class="story-intro reveal" data-lang="ja">LUMA代表の浅野 彰(Sho Asano)です。この物語は、LUMAというサービスがなぜ生まれたのか、私自身の体験から綴ったものです。少し重い話も含まれますが、もし興味があれば読んでみてください。</p>
-      <p class="story-intro reveal" data-lang="en">I'm Sho Asano, the founder of LUMA. This is the personal story behind why LUMA exists — written from my own experience. Some parts are heavy, so feel free to skip if you'd like.</p>
+      <h2 class="story-heading reveal">なぜ、<em>LUMAを</em>始めたのか</h2>
+      <p class="story-intro reveal">LUMA代表の浅野 彰です。この物語は、LUMAというサービスがなぜ生まれたのか、私自身の体験から綴ったものです。少し重い話も含まれますが、もし興味があれば読んでみてください。</p>
       <div class="story-chapters">
 
         <div class="story-chapter reveal">
           <div class="story-chapter-num">I</div>
           <div class="story-chapter-body">
             <span class="story-chapter-tag">幼少期</span>
-            <div class="story-chapter-title" data-lang="ja">信じていた人に、裏切られた日</div>
-            <div class="story-chapter-title" data-lang="en">The day trust was broken</div>
-            <p class="story-chapter-text" data-lang="ja">私は愛知県の小さな町で生まれ育ちました。幼少期の記憶は、いじめられていたこと、周りに助けてくれる人がいなかったこと。それだけです。<br><br>きっかけは7〜8歳の頃、給食でキウイフルーツを残した日のことです。担任の先生が私の口を開けさせて、無理やり押し込みました。その瞬間、私はアナフィラキシーを発症し、意識を失いました。目が覚めると、病院のベッドの上でした。<br><br>小学生にとって最も信頼できるはずの存在である担任の先生が「裏切り」、私は誰も信用することができなくなり、内向的になりました。サッカー、野球などのクラブ活動も辞め、人とコミュニケーションを取ることが怖くなりました。そこから、いじめが始まりました。引っ越しをし、中学生になっても、その影はずっとそこにありました。</p>
-            <p class="story-chapter-text" data-lang="en">I grew up in a small town in Aichi Prefecture. My childhood memories are simple — being bullied, having no one to help. That's all.<br><br>It started when I was 7 or 8. During school lunch, I left some kiwi fruit untouched. My homeroom teacher forced it into my mouth. In that moment, I suffered anaphylactic shock and lost consciousness. I woke up in a hospital bed.<br><br>The person I should have trusted most had betrayed me. I stopped trusting people, became deeply introverted, quit sports clubs, and grew afraid of human connection. The bullying followed. Even after moving and starting middle school, that shadow stayed with me.</p>
+            <div class="story-chapter-title">信じていた人に、裏切られた日</div>
+            <p class="story-chapter-text">私は愛知県の小さな町で生まれ育ちました。幼少期の記憶は、いじめられていたこと、周りに助けてくれる人がいなかったこと。それだけです。<br><br>きっかけは7〜8歳の頃、給食でキウイフルーツを残した日のことです。担任の先生が私の口を開けさせて、無理やり押し込みました。その瞬間、私はアナフィラキシーを発症し、意識を失いました。目が覚めると、病院のベッドの上でした。<br><br>小学生にとって最も信頼できるはずの存在である担任の先生が「裏切り」、私は誰も信用することができなくなり、内向的になりました。サッカー、野球などのクラブ活動も辞め、人とコミュニケーションを取ることが怖くなりました。そこから、いじめが始まりました。引っ越しをし、中学生になっても、その影はずっとそこにありました。</p>
           </div>
         </div>
 
@@ -1151,10 +1097,8 @@
           <div class="story-chapter-num">II</div>
           <div class="story-chapter-body">
             <span class="story-chapter-tag">転機</span>
-            <div class="story-chapter-title" data-lang="ja">オーストラリアが、私を変えた</div>
-            <div class="story-chapter-title" data-lang="en">Australia changed everything</div>
-            <p class="story-chapter-text" data-lang="ja">母は20代の頃にオーストラリアへ留学をしており、いつか子供を海外で生活させたいという思いがあったようです。2011年1月、私は15歳になり、母に押される形でブリスベンへ移住しました。<br><br>ただ、そこは「自由」ではありませんでした。言葉もわからない、文化もわからない、毎日が試行錯誤の連続でした。それでも、その環境が私に「学ぶ機会」を与えてくれました。<br><br>現地で身につけたことは、三つあります。<br><strong style="color:#fff;"><br>自分自身を発信することの大切さ。<br>間違えることへの恐れを手放す自由さ。<br>そして、人と関わり続けることの力。</strong><br><br>15歳で異国の地に来た私が、そこから変われたのです。<em>いつから始めても、遅くはない</em>——それが、私の実体験から導かれた答えです。</p>
-            <p class="story-chapter-text" data-lang="en">My mother had studied in Australia in her twenties and always hoped her children could experience life abroad. In January 2011, at 15, she gave me a push — and I moved to Brisbane.<br><br>But it wasn't freedom — not at first. The language, the culture, the unwritten rules — every day was a process of trial and error. And yet, that very environment gave me something I hadn't expected: the chance to learn.<br><br>Three things became clear to me over those years. <strong style="color:#fff;"><br><br>The importance of putting yourself out there. <br>The freedom that comes from being allowed to make mistakes. <br>And the quiet power of staying connected to people.</strong><br><br>I arrived at 15, not knowing anyone or anything — and I changed. <em>It's never too late to start.</em> That's the truth my own life has taught me.</p>
+            <div class="story-chapter-title">オーストラリアが、私を変えた</div>
+            <p class="story-chapter-text">母は20代の頃にオーストラリアへ留学をしており、いつか子供を海外で生活させたいという思いがあったようです。2011年1月、私は15歳になり、母に押される形でブリスベンへ移住しました。<br><br>ただ、そこは「自由」ではありませんでした。言葉もわからない、文化もわからない、毎日が試行錯誤の連続でした。それでも、その環境が私に「学ぶ機会」を与えてくれました。<br><br>現地で身につけたことは、三つあります。<br><strong style="color:#fff;"><br>自分自身を発信することの大切さ。<br>間違えることへの恐れを手放す自由さ。<br>そして、人と関わり続けることの力。</strong><br><br>15歳で異国の地に来た私が、そこから変われたのです。<em>いつから始めても、遅くはない</em>——それが、私の実体験から導かれた答えです。</p>
           </div>
         </div>
 
@@ -1162,19 +1106,14 @@
           <div class="story-chapter-num">III</div>
           <div class="story-chapter-body">
             <span class="story-chapter-tag">LUMAの原点</span>
-            <div class="story-chapter-title" data-lang="ja">環境が変われば、人生は変わる</div>
-            <div class="story-chapter-title" data-lang="en">Change the environment, change the life</div>
-            <p class="story-chapter-text" data-lang="ja">環境を変え、勇気を持ち、自分を信じることさえできれば、人生は変わります。信頼できる友達を作り、話を聞いてくれる誰かがそばにいることで、人生はうまくいく。<br><br>それが私の実体験から生まれた確信です。LUMAはその確信を、英語教育・写真・ツアー・コミュニティ・カウンセリング・カラオケという形にしたものです。あなたが持っている強みをそのままに、変えられる部分を一緒に変えていく。<em>Clarity by Design — Illuminate Your Confidence.</em> それが、LUMAの始まりです。</p>
-            <p class="story-chapter-text" data-lang="en">Change the environment. Have courage. Believe in yourself. That's all it takes for life to shift. Having trusted friends, someone who listens — that's what makes life work.<br><br>That conviction comes from my own lived experience. LUMA is its expression — through English, photography, tours, community, counselling, and karaoke. Keeping your core strengths intact while changing what can be changed. <em>Clarity by Design — Illuminate Your Confidence.</em> That's where LUMA began.</p>
+            <div class="story-chapter-title">環境が変われば、人生は変わる</div>
+            <p class="story-chapter-text">環境を変え、勇気を持ち、自分を信じることさえできれば、人生は変わります。信頼できる友達を作り、話を聞いてくれる誰かがそばにいることで、人生はうまくいく。<br><br>それが私の実体験から生まれた確信です。LUMAはその確信を、英語教育・写真・ツアー・コミュニティ・カウンセリング・カラオケという形にしたものです。あなたが持っている強みをそのままに、変えられる部分を一緒に変えていく。<em>Clarity by Design — Illuminate Your Confidence.</em> それが、LUMAの始まりです。</p>
           </div>
         </div>
 
       </div>
       <div class="story-cta reveal">
-        <a href="#contact">
-          <span data-lang="ja">お話を聞いてみる →</span>
-          <span data-lang="en">Get in touch →</span>
-        </a>
+        <a href="#contact">お話を聞いてみる →</a>
       </div>
     </div>
   </section>
@@ -1183,32 +1122,29 @@
   <section id="contact" style="padding:80px 40px;text-align:center;background:var(--cream);">
     <div class="section-header reveal">
       <p class="section-eyebrow">Contact</p>
-      <h2 class="section-title" data-lang="ja">まずは<em>無料相談</em>から</h2>
-      <h2 class="section-title" data-lang="en">Start with a <em>free</em> consultation</h2>
-      <p class="section-title-ja" data-lang="ja">2営業日以内にご返信いたします</p>
-      <p class="section-title-ja" data-lang="en">We'll get back to you within 2 business days</p>
+      <h2 class="section-title">まずは<em>無料相談</em>から</h2>
+      <p class="section-title-ja">2営業日以内にご返信いたします</p>
     </div>
     <div class="reveal" style="margin-top:32px;">
-      <a href="./contact.html" class="btn-primary" style="display:inline-block;padding:16px 48px;font-size:13px;letter-spacing:0.18em;">
-        <span data-inline="ja">お問い合わせフォームへ</span>
-        <span data-inline="en">Go to Contact Form</span>
-      </a>
+      <a href="./contact.html" class="btn-primary" style="display:inline-block;padding:16px 48px;font-size:13px;letter-spacing:0.18em;">お問い合わせフォームへ</a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <div class="footer-brand">
-      <a href="./index.html" class="footer-logo">LUMA</a>
-      <div class="footer-tagline">Clarity by Design &nbsp;|&nbsp; Illuminate Your Confidence</div>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="./index.html" class="footer-logo">LUMA</a>
+        <div class="footer-tagline">Clarity by Design &nbsp;|&nbsp; Illuminate Your Confidence</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="./index.html#about">LUMAとは</a></li>
+        <li><a href="./index.html#services">サービス</a></li>
+        <li><a href="./contact.html">お問い合わせ</a></li>
+        <li><a href="./legal.html">特商法・プライバシー</a></li>
+      </ul>
+      <div class="footer-copy">© 2026 LUMA — Sho Asano. All rights reserved.</div>
     </div>
-    <ul class="footer-links">
-      <li><a href="#about"><span data-inline="ja">LUMAとは</span><span data-inline="en">About</span></a></li>
-      <li><a href="#services"><span data-inline="ja">サービス</span><span data-inline="en">Services</span></a></li>
-      <li><a href="./contact.html"><span data-inline="ja">お問い合わせ</span><span data-inline="en">Contact</span></a></li>
-      <li><a href="./legal.html"><span data-inline="ja">特商法・プライバシー</span><span data-inline="en">Legal</span></a></li>
-    </ul>
-    <div class="footer-copy">© 2026 LUMA — Sho Asano. All rights reserved.</div>
   </footer>
 
   <script>
@@ -1278,21 +1214,18 @@
 
     function openModal(key) {
       const d = modalData[key];
-      const isJa = document.body.classList.contains('lang-ja');
-      const title = isJa ? d.titleJa : d.titleEn;
-      const body = isJa ? d.bodyJa : d.bodyEn;
-      const offers = isJa ? d.offersJa : d.offersEn;
-      const price = isJa ? d.priceJa : d.priceEn;
-      const offersTitle = isJa ? '提供内容' : 'What\'s included';
-      const ctaText = isJa 
-        ? (d.ctaLink ? '大会詳細・申込へ' : '無料相談・お問い合わせ')
-        : (d.ctaLink ? 'View details & sign up' : 'Free consultation');
+      const title = d.titleJa;
+      const body = d.bodyJa;
+      const offers = d.offersJa;
+      const price = d.priceJa;
+      const offersTitle = '提供内容';
+      const ctaText = d.ctaLink ? '大会詳細・申込へ' : '無料相談・お問い合わせ';
 
       document.getElementById('modal-body-content').innerHTML = `
         <div class="modal-number">${d.number.toString().padStart(2,'0')}</div>
         <div class="modal-icon">${d.icon}</div>
         <div class="modal-title-ja">${title}</div>
-        <div class="modal-title-en">${isJa ? d.titleEn : d.titleJa}</div>
+        <div class="modal-title-en">${d.titleEn}</div>
         <div class="modal-divider"></div>
         <p class="modal-body">${body}</p>
         <div class="modal-offers">
@@ -1315,48 +1248,6 @@
       if (e.target === document.getElementById('modal-overlay')) closeModal();
     }
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-    // Language switch
-    function setLang(lang) {
-      document.body.className = 'lang-' + lang;
-      document.getElementById('html-root').lang = lang === 'ja' ? 'ja' : 'en';
-      // nav・mob-menu両方のlang-btnを正しく更新
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        const isJaBtn = btn.textContent.trim() === 'JP';
-        btn.classList.toggle('active', (isJaBtn && lang === 'ja') || (!isJaBtn && lang === 'en'));
-      });
-      const ta = document.getElementById('msg-textarea');
-      if (ta) ta.placeholder = lang === 'ja'
-        ? 'お気軽にご相談内容をお書きください'
-        : "Feel free to share what's on your mind";
-      // English visitor bar
-      const evBar = document.getElementById('enVisitorBar');
-      if (evBar) evBar.classList.toggle('visible', lang === 'en');
-
-      // SEO: title も言語に応じて切替
-      document.title = lang === 'ja'
-        ? 'LUMA — Clarity by Design | 自信を照らす東京のスタジオ'
-        : 'LUMA — Clarity by Design | Illuminate Your Confidence';
-      // ── 電話番号プレフィックス：言語に応じてデフォルト値を切替
-      if (window._phonePickerReady && !window._phoneUserChanged) {
-        const code = lang === 'ja' ? '+81' : '+61';
-        window._setPhonePrefix(code);
-      }
-      try { localStorage.setItem('luma-lang', lang); } catch(_) {}
-    }
-
-    // ── ブラウザ言語自動判定（初回アクセス時のみ）
-    (function autoLang() {
-      // 1. ユーザーが前回選択した言語を優先
-      let saved = null;
-      try { saved = localStorage.getItem('luma-lang'); } catch(_) {}
-      if (saved === 'ja' || saved === 'en') { setLang(saved); return; }
-
-      // 2. ブラウザ言語で判定
-      const langs = navigator.languages || [navigator.language || 'ja'];
-      const isJa = langs.some(l => l.toLowerCase().startsWith('ja'));
-      setLang(isJa ? 'ja' : 'en');
-    })();
 
     // ══════════════════════════════════════════
     // INTL_PHONE_PICKER — searchable country dial code picker
@@ -1465,10 +1356,7 @@
         numInput.placeholder = c[3] || '';
         // ヒント表示
         if (c[5] > 0) {
-          const isJa = document.body.classList.contains('lang-ja');
-          hint.textContent = isJa
-            ? `桁数の目安: ${c[4]}〜${c[5]}桁`
-            : `Digits: ${c[4]}–${c[5]}`;
+          hint.textContent = `桁数の目安: ${c[4]}〜${c[5]}桁`;
         } else {
           hint.textContent = '';
         }
