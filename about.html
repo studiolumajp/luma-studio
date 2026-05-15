@@ -153,6 +153,49 @@
   .value-card h4 { font-size: 18px; margin: 0; }
   .value-card p { color: var(--text-muted); font-size: 14px; line-height: 1.6; margin: 0; }
   @media (max-width: 880px) { .values-grid { grid-template-columns: 1fr; } }
+
+  /* ── My Story (interactive accordion) ── */
+  #story { background: var(--bg-soft); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .story-lead {
+    max-width: 720px; color: var(--text-muted); font-size: 16px; line-height: 1.9;
+    margin: 0 0 8px;
+  }
+  .story-note {
+    display: inline-block; font-family: var(--font-mono); font-size: 12px;
+    color: var(--text-soft); border: 1px solid var(--border); border-radius: 999px;
+    padding: 5px 12px; margin-bottom: 24px;
+  }
+  .story-chapters { max-width: 760px; display: flex; flex-direction: column; gap: 12px; }
+  .story-ch {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); overflow: hidden;
+    transition: border-color .2s, box-shadow .2s;
+  }
+  .story-ch[open] { border-color: var(--border-strong); box-shadow: var(--shadow-sm); }
+  .story-ch summary {
+    list-style: none; cursor: pointer; padding: 22px 26px;
+    display: flex; align-items: center; gap: 18px;
+    font-weight: 700; font-size: clamp(17px, 1.8vw, 20px); color: var(--text);
+  }
+  .story-ch summary::-webkit-details-marker { display: none; }
+  .story-ch .ch-num {
+    font-family: var(--font-mono); font-size: 13px; font-weight: 700;
+    color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+    border-radius: 999px; padding: 4px 11px; flex-shrink: 0;
+  }
+  .story-ch .ch-title { flex: 1; }
+  .story-ch .ch-sub { display: block; font-size: 13px; font-weight: 500; color: var(--text-soft); margin-top: 3px; }
+  .story-ch .ch-caret { color: var(--text-soft); transition: transform .25s; flex-shrink: 0; font-size: 14px; }
+  .story-ch[open] .ch-caret { transform: rotate(180deg); }
+  .story-ch .ch-body { padding: 0 26px 26px; }
+  .story-ch .ch-body p { color: var(--text-muted); font-size: 15px; line-height: 1.95; margin: 0 0 16px; }
+  .story-ch .ch-body p:last-child { margin-bottom: 0; }
+  .story-ch .ch-body strong { color: var(--text); }
+  .story-ch .ch-body em { font-style: normal; color: var(--accent); font-weight: 600; }
+  @media (max-width: 640px) {
+    .story-ch summary { padding: 18px 18px; gap: 12px; }
+    .story-ch .ch-body { padding: 0 18px 20px; }
+  }
 </style>
 </head>
 <body id="body-root">
@@ -317,6 +360,62 @@
   </div>
 </section>
 
+<!-- ════ MY STORY ════ -->
+<section id="story" aria-labelledby="story-heading">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">My Story</span>
+      <h2 id="story-heading">なぜ、LUMA を始めたのか</h2>
+      <p class="story-lead">
+        LUMA 代表の浅野 彰です。この物語は、LUMA というサービスがなぜ生まれたのか、私自身の体験から綴ったものです。
+      </p>
+      <span class="story-note">少し重い話も含まれます。もし興味があれば読んでみてください。</span>
+    </div>
+
+    <div class="story-chapters reveal">
+      <details class="story-ch">
+        <summary>
+          <span class="ch-num">I</span>
+          <span class="ch-title">信じていた人に、裏切られた日<span class="ch-sub">幼少期</span></span>
+          <span class="ch-caret" aria-hidden="true">▾</span>
+        </summary>
+        <div class="ch-body">
+          <p>私は愛知県の小さな町で生まれ育ちました。幼少期の記憶は、いじめられていたこと、周りに助けてくれる人がいなかったこと。それだけです。</p>
+          <p>きっかけは 7〜8 歳の頃、給食でキウイフルーツを残した日のことです。担任の先生が私の口を開けさせて、無理やり押し込みました。その瞬間、私はアナフィラキシーを発症し、意識を失いました。目が覚めると、病院のベッドの上でした。</p>
+          <p>小学生にとって最も信頼できるはずの存在である担任の先生が「裏切り」、私は誰も信用することができなくなり、内向的になりました。サッカー、野球などのクラブ活動も辞め、人とコミュニケーションを取ることが怖くなりました。そこから、いじめが始まりました。引っ越しをし、中学生になっても、その影はずっとそこにありました。</p>
+        </div>
+      </details>
+
+      <details class="story-ch">
+        <summary>
+          <span class="ch-num">II</span>
+          <span class="ch-title">オーストラリアが、私を変えた<span class="ch-sub">転機</span></span>
+          <span class="ch-caret" aria-hidden="true">▾</span>
+        </summary>
+        <div class="ch-body">
+          <p>母は 20 代の頃にオーストラリアへ留学をしており、いつか子供を海外で生活させたいという思いがあったようです。2011 年 1 月、私は 15 歳になり、母に押される形でブリスベンへ移住しました。</p>
+          <p>ただ、そこは「自由」ではありませんでした。言葉もわからない、文化もわからない、毎日が試行錯誤の連続でした。それでも、その環境が私に「学ぶ機会」を与えてくれました。</p>
+          <p>現地で身につけたことは、三つあります。<strong>自分自身を発信することの大切さ</strong>。<strong>間違えることへの恐れを手放す自由さ</strong>。そして、<strong>人と関わり続けることの力</strong>。</p>
+          <p>15 歳で異国の地に来た私が、そこから変われたのです。<em>いつから始めても、遅くはない</em> — それが、私の実体験から導かれた答えです。</p>
+        </div>
+      </details>
+
+      <details class="story-ch">
+        <summary>
+          <span class="ch-num">III</span>
+          <span class="ch-title">環境が変われば、人生は変わる<span class="ch-sub">LUMA の原点</span></span>
+          <span class="ch-caret" aria-hidden="true">▾</span>
+        </summary>
+        <div class="ch-body">
+          <p>環境を変え、勇気を持ち、自分を信じることさえできれば、人生は変わります。信頼できる友達を作り、話を聞いてくれる誰かがそばにいることで、人生はうまくいく。</p>
+          <p>それが私の実体験から生まれた確信です。LUMA はその確信を、<strong>英会話レッスン・記念撮影・S.League 健康麻雀・英語で巡る東京ツアー</strong>という形にしたものです。あなたが持っている強みをそのままに、変えられる部分を一緒に変えていく。</p>
+          <p><em>Clarity by Design — Illuminate Your Confidence.</em> それが、LUMA の始まりです。</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
 <!-- ════ CTA BIG ════ -->
 <section style="padding-bottom: 120px;">
   <div class="container">
@@ -350,7 +449,7 @@
         <h4>LUMAについて</h4>
         <ul>
           <li><a href="./about.html">About me</a></li>
-          <li><a href="./index.html#story">My Story</a></li>
+          <li><a href="#story">My Story</a></li>
           <li><a href="./index.html#faq">FAQ</a></li>
         </ul>
       </div>
