@@ -1,450 +1,495 @@
 <!DOCTYPE html>
 <html lang="ja" id="html-root">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="color-scheme" content="light only" />
-  <title>ツアー企画・ガイド | LUMA — Clarity by Design</title>
-  <meta name="description" content="LUMA Path — 東京・関東・関西・北海道・福岡など全国対応のツアー企画・バイリンガルガイド。グルテンフリー・アレルギー対応のレストラン選びも、自身がアレルギー当事者だからこそ安心してお任せいただけます。" />
-  <style>
-    :root {
-      color-scheme: light only;
-      --cream:#FFFFFF;--warm-white:#FFFFFF;--beige:#D7E5ED;--sand:#B8CED9;
-      --taupe:#7A8998;--brown:#134E6F;--dark:#134E6F;--accent:#F59E0B;--accent-light:#D6EBF7;
-      --text:#2C3E50;--text-light:#7A8998;--success:#5a8a6a;--danger:#b54a3a;--warning:#F59E0B;
-      --brand:#1E88E5;--brand-dark:#134E6F;--text-primary:#2C3E50;--text-secondary:#7A8998;
-      --text-disabled:#B8CED9;--border:#B8CED9;--border-light:#D7E5ED;--background:#FFFFFF;--surface:#FFFFFF;
-      --h1:#134E6F;--h2:#1E88E5;--h3:#5BA9D7;--base:#EBF5FA;--ice-white:#F8FBFC;--primary-light:#D6EBF7;--cta-hover:#D97706;--white:#FFFFFF;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0F172A" />
+<meta name="color-scheme" content="light only" />
+
+<!-- ── PRIMARY SEO META ── -->
+<title>英語で巡る東京ツアー・全国対応 | LUMA Path — 浅野彰</title>
+<meta name="description" content="東京・関東から関西・北海道・福岡まで全国対応の英語ツアー。半日・日帰りプライベートガイド、訪日外国人歓迎、グルテンフリー・食物アレルギー対応も自分ごととして丁寧にサポート。" />
+<meta name="keywords" content="東京 英語ツアー,英語 ガイド 東京,プライベートツアー 東京,訪日 ツアー,グルテンフリー ツアー,アレルギー対応 ツアー,LUMA Path,浅野彰" />
+<meta name="author" content="Sho Asano (浅野彰) / LUMA" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://studio-lumadesign.com/service-tour.html" />
+
+<link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-tour.html" />
+<link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/tour-en.html" />
+<link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/service-tour.html" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://studio-lumadesign.com/service-tour.html" />
+<meta property="og:title" content="英語で巡る東京ツアー・全国対応 | LUMA Path — 浅野彰" />
+<meta property="og:description" content="東京から全国対応の英語プライベートツアー。グルテンフリー・食物アレルギーにも自分ごととして対応。" />
+<meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:site_name" content="LUMA" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="英語で巡る東京ツアー | LUMA Path" />
+<meta name="twitter:description" content="東京から全国対応のバイリンガルプライベートツアー。アレルギー対応も丁寧にサポート。" />
+<meta name="twitter:image" content="https://studio-lumadesign.com/og-image.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "英語ツアーガイド (LUMA Path)",
+      "provider": {"@id": "https://studio-lumadesign.com/#business"},
+      "areaServed": ["東京", "首都圏", "全国"],
+      "serviceType": "プライベートツアーガイド",
+      "url": "https://studio-lumadesign.com/service-tour.html",
+      "description": "東京・関東から関西・北海道・福岡まで全国対応の英語プライベートツアー。グルテンフリー・食物アレルギー対応も丁寧にサポート。",
+      "offers": {"@type": "Offer", "priceCurrency": "JPY", "description": "コース・地域・人数・時間により要相談"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://studio-lumadesign.com/"},
+        {"@type": "ListItem", "position": 2, "name": "英語ツアー", "item": "https://studio-lumadesign.com/service-tour.html"}
+      ]
     }
-    *{margin:0;padding:0;box-sizing:border-box;letter-spacing:0.04em;}
-    html{scroll-behavior:smooth;}
-    body{background:var(--cream);color:var(--text);font-family:"SF Pro",-apple-system,"system-ui","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;font-weight:400;font-size:16px;line-height:1.5;letter-spacing:0.04em;overflow-x:hidden;word-break:break-all;overflow-wrap:break-word;line-break:strict;}
+  ]
+}
+</script>
 
-    /* ── NAV ── */
-    .logo-text { font-size: 22px; font-weight: 700; letter-spacing: 0.08em; color: #FFFFFF; text-decoration: none; line-height: 1.0; }
-    .logo-text-footer { font-size: 20px; font-weight: 700; letter-spacing: 0.08em; color: #FFFFFF; }
-    .lang-link { font-size: 12px; font-weight: 400; letter-spacing: 0.04em; padding: 5px 12px; border: 1px solid rgba(255,255,255,0.35); color: #D6EBF7; text-decoration: none; border-radius: 4px; transition: all 0.3s; flex-shrink: 0; }
-    .lang-link:hover { background: #FFFFFF; border-color: #FFFFFF; color: #134E6F; }
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 999; height: 44px; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; gap: 24px; transition: all 0.4s; background: rgba(19,78,111,0.96); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); }
-    .nav-right { display: flex; align-items: center; gap: 36px; }
-    nav.scrolled { background: rgba(19,78,111,0.98); box-shadow: 0 1px 0 rgba(214,235,247,0.2); }
-    .nav-links { display: flex; gap: 36px; list-style: none; }
-    .nav-links a { font-size: 12px; font-weight: 400; letter-spacing: 0.04em; text-decoration: none; color: #D6EBF7; transition: color 0.3s; }
-    .nav-links a:hover { color: #FFFFFF; }
-    .has-dropdown { position: relative; }
-    .dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); padding-top: 12px; list-style: none; z-index: 1000; min-width: 180px; }
-    .dropdown-menu-inner { background: rgba(255,255,255,0.98); backdrop-filter: blur(16px); border: 1px solid #D7E5ED; border-radius: 4px; padding: 8px 0; box-shadow: 0 4px 16px rgba(19,78,111,0.12); }
-    .has-dropdown:hover .dropdown-menu { display: block; }
-    .dropdown-menu li a { display: block; padding: 9px 20px; font-size: 12px; letter-spacing: 0.04em; color: #7A8998; text-decoration: none; transition: color .2s, background .2s; white-space: nowrap; }
-    .dropdown-menu li a:hover { color: #1E88E5; background: #D6EBF7; }
-    .dropdown-toggle::after { content: ''; display: inline-block; width: 5px; height: 5px; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: rotate(45deg) translateY(-2px); margin-left: 5px; vertical-align: middle; }
-    .ham { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; flex-shrink: 0; }
-    .ham span { display: block; width: 22px; height: 1.5px; background: #D6EBF7; transition: all 0.3s; }
-    .mob-menu { display: none; position: fixed; inset: 0; background: #FFFFFF; z-index: 1100; flex-direction: column; align-items: center; justify-content: center; gap: 28px; }
-    .mob-menu.open { display: flex; }
-    .mob-menu a { font-size: 18px; letter-spacing: 0.04em; color: #2C3E50; text-decoration: none; transition: color 0.3s; }
-    .mob-menu a:hover { color: #1E88E5; }
-    .mob-close { position: absolute; top: 20px; right: 24px; background: none; border: none; font-size: 28px; color: #7A8998; cursor: pointer; line-height: 1; }
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-62F20N179N');
+</script>
 
-    /* ── HERO ── */
-    .svc-hero{
-      min-height:52vh;display:flex;align-items:center;
-      background:linear-gradient(135deg,#EBF5FA 0%,#D6EBF7 100%);position:relative;overflow:hidden;
-      padding:120px 48px 80px;
-    }
-    .svc-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 20% 50%,rgba(30,136,229,0.15) 0%,transparent 60%);}
-    .svc-hero-num{font-size:clamp(80px,12vw,160px);color:rgba(19,78,111,0.08);position:absolute;right:5%;top:50%;transform:translateY(-50%);line-height:1;pointer-events:none;user-select:none;}
-    .svc-hero-eyebrow{font-size:16px;letter-spacing:0.04em;text-transform:uppercase;color:var(--brand);margin-bottom:16px;display:block;position:relative;z-index:1;}
-    .svc-hero-icon{font-size:48px;margin-bottom:20px;display:block;position:relative;z-index:1;}
-    .svc-hero-title{font-size:clamp(20px,2.8vw,34px);color:#2C3E50;line-height:1.5;margin-bottom:16px;font-weight:700;letter-spacing:0.04em;position:relative;z-index:1;}
-    .svc-hero-name{
-      font-size:clamp(36px,6vw,72px);
-      font-weight:700;
-      letter-spacing:0.04em;
-      color:#134E6F;
-      line-height:1.5;
-      margin-bottom:10px;
-      display:block;
-      position:relative;z-index:1;
-    }
-    .svc-hero-name em{font-style:normal;color:var(--brand);}
-    .svc-hero-title em{color:var(--brand);}
-    .svc-hero-sub{font-size:clamp(12px,1.3vw,14px);color:#7A8998;max-width:520px;line-height:1.5;position:relative;z-index:1;}
-    @media(max-width:833px){.svc-hero{padding:100px 16px 64px;}.svc-hero-num{font-size:80px;}}
+<link rel="stylesheet" href="./shared.css" />
+<style id="page-overrides">
+  /* ── Service hero (LUMA Path): full-bleed background photo + 左側ダークオーバーレイ ── */
+  .svc-hero {
+    position: relative;
+    padding: 112px 0 128px;
+    min-height: 520px;
+    color: #fff;
+    background:
+      linear-gradient(90deg,
+        rgba(0, 0, 0, 0.82) 0%,
+        rgba(0, 0, 0, 0.72) 25%,
+        rgba(0, 0, 0, 0.35) 45%,
+        rgba(0, 0, 0, 0.00) 58%
+      ),
+      url('./images/compare/compare-tour.jpg?v=2') center/cover no-repeat;
+  }
+  .svc-hero h1 {
+    margin-bottom: 16px; color: #fff; max-width: 560px;
+    font-size: clamp(26px, 4vw, 44px); line-height: 1.28;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.55), 0 1px 3px rgba(0, 0, 0, 0.45);
+  }
+  .svc-hero h1 .t-line { display: block; }
+  .svc-hero h1 .accent {
+    background: none;
+    -webkit-background-clip: initial; background-clip: initial;
+    color: #fbbf24;
+  }
+  .svc-hero .sub {
+    font-size: clamp(16px, 1.4vw, 18px); color: #fff;
+    max-width: 460px; margin-bottom: 28px; font-weight: 500;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.65), 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  .svc-hero .sub strong {
+    color: #fbbf24 !important;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.65), 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  .svc-hero .eyebrow { color: #fff; }
+  .svc-hero .eyebrow::before { background: #fff; }
+  .svc-hero .hero-cta-row { max-width: 460px; }
+  .svc-hero .btn-primary {
+    background: #fff; color: #0A0A0A; border-color: #fff;
+  }
+  .svc-hero .btn-primary:hover {
+    background: rgba(255, 255, 255, 0.88); color: #0A0A0A;
+  }
+  .svc-hero .btn-secondary {
+    background: transparent; color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+  }
+  .svc-hero .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.7);
+  }
+  @media (max-width: 640px) {
+    .svc-hero { padding: 80px 0 96px; min-height: 440px; }
+  }
 
-    /* ── OVERVIEW ── */
-    .svc-overview{padding:80px 48px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
-    .svc-overview-lead{font-size:clamp(22px,2.5vw,32px);line-height:1.5;color:var(--dark);margin-bottom:24px;}
-    .svc-overview-lead em{color:var(--brand-dark);}
-    .svc-overview-body{font-size:16px;line-height:1.5;color:var(--text-light);}
-    .svc-overview-right{}
-    @media(max-width:833px){.svc-overview{grid-template-columns:1fr;gap:36px;padding:60px 16px;}}
+  .svc-overview-grid {
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: start;
+  }
+  .svc-overview-lead {
+    font-size: clamp(22px, 2.4vw, 30px); line-height: 1.4; letter-spacing: -0.02em;
+    color: var(--text); font-weight: 700; margin-bottom: 20px;
+  }
+  .svc-overview-lead em { font-style: normal; color: var(--accent); }
+  .svc-overview-body { font-size: 16px; color: var(--text-muted); line-height: 1.75; }
+  .svc-overview-aside { border-left: 2px solid var(--border-strong); padding-left: 28px; }
+  .svc-overview-aside .label {
+    font-family: var(--font-mono); font-size: 11px; color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; display: block;
+  }
+  .svc-overview-aside .en-lead {
+    font-size: 17px; color: var(--text); line-height: 1.55; font-weight: 600;
+    letter-spacing: -0.01em; margin-bottom: 14px;
+  }
+  .svc-overview-aside .en-body { font-size: 13px; color: var(--text-soft); line-height: 1.75; }
+  @media (max-width: 880px) { .svc-overview-grid { grid-template-columns: 1fr; gap: 32px; } }
 
-    /* ── OFFERS ── */
-    .svc-offers{background:var(--warm-white);padding:80px 48px;}
-    .svc-offers-inner{max-width:1100px;margin:0 auto;}
-    .svc-section-eyebrow{font-size:16px;letter-spacing:0.04em;text-transform:uppercase;color:var(--brand);margin-bottom:12px;display:block;}
-    .svc-section-title{font-size:clamp(24px,3vw,40px);color:var(--dark);margin-bottom:48px;line-height:1.5;font-weight:700;}
-    .svc-section-title em{color:var(--brand-dark);}
-    .offers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;}
-    .offer-card{background:#fff;border:1px solid var(--beige);border-radius:12px;padding:32px 28px;transition:box-shadow .3s,transform .3s;}
-    .offer-card:hover{box-shadow:0 4px 16px rgba(19,78,111,0.12);transform:translateY(-4px);}
-    .offer-card-num{font-size:13px;color:var(--sand);letter-spacing:0.04em;margin-bottom:12px;}
-    .offer-card-title{font-size:15px;font-weight:500;color:var(--dark);margin-bottom:8px;line-height:1.5;}
-    .offer-card-desc{font-size:16px;color:var(--text-light);line-height:1.5;}
-    @media(max-width:833px){.svc-offers{padding:60px 16px;}.offers-grid{grid-template-columns:1fr;}}
+  .offers-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: var(--border); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); overflow: hidden;
+  }
+  .offer-card {
+    background: var(--surface); padding: 28px;
+    display: flex; flex-direction: column; gap: 8px; transition: background .25s;
+  }
+  .offer-card:hover { background: color-mix(in srgb, var(--surface) 92%, var(--accent) 4%); }
+  .offer-card.feature {
+    background: color-mix(in srgb, var(--surface) 88%, var(--accent) 6%);
+    border-left: 3px solid var(--accent);
+  }
+  .offer-card-num {
+    font-family: var(--font-mono); font-size: 12px; color: var(--text-soft);
+    letter-spacing: 0.08em; margin-bottom: 4px;
+  }
+  .offer-card h3 { font-size: 17px; line-height: 1.35; margin-bottom: 2px; }
+  .offer-card .en {
+    font-family: var(--font-mono); font-size: 12px; color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .offer-card p { font-size: 14px; color: var(--text-muted); line-height: 1.65; margin-top: 6px; }
+  @media (max-width: 980px) { .offers-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .offers-grid { grid-template-columns: 1fr; } }
 
-    /* ── PRICE ── */
-    .svc-price{padding:80px 48px;max-width:900px;margin:0 auto;}
-    .price-box{border:1px solid var(--beige);border-radius:12px;padding:48px 52px;position:relative;overflow:hidden;}
-    .price-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--brand-dark));}
-    .price-row{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--beige);}
-    .price-row:last-of-type{border-bottom:none;}
-    .price-label{font-size:14px;color:var(--text-light);}
-    .price-value{font-size:20px;color:var(--dark);}
-    .price-note{font-size:12px;color:var(--taupe);margin-top:20px;line-height:1.5;}
-    @media(max-width:833px){.svc-price{padding:60px 16px;}.price-box{padding:32px 24px;}}
+  #pricing { background: var(--bg-soft); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .price-box {
+    max-width: 760px; margin: 0 auto; background: var(--surface);
+    border: 1px solid var(--border); border-radius: var(--radius-lg);
+    padding: 40px 44px; position: relative; overflow: hidden;
+  }
+  .price-box::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  }
+  .price-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 16px 0; border-bottom: 1px solid var(--border); gap: 16px;
+  }
+  .price-row:last-of-type { border-bottom: none; }
+  .price-label { font-size: 15px; color: var(--text-muted); }
+  .price-value { font-size: 18px; font-weight: 700; color: var(--text); }
+  .price-note { font-size: 13px; color: var(--text-soft); margin-top: 20px; line-height: 1.7; }
+  @media (max-width: 640px) { .price-box { padding: 28px 22px; } }
 
-    /* ── FLOW ── */
-    .svc-flow{background:var(--dark);padding:100px 48px;}
-    .svc-flow-inner{max-width:900px;margin:0 auto;}
-    .svc-flow .svc-section-title em{color:#5BA9D7;}
-    .flow-steps{display:flex;flex-direction:column;gap:0;}
-    .flow-step{display:grid;grid-template-columns:80px 1fr;gap:0 32px;padding:40px 0;border-bottom:1px solid rgba(255,255,255,.12);}
-    .flow-step:last-child{border-bottom:none;}
-    .flow-num{font-size:72px;color:rgba(255,255,255,0.35);text-align:right;padding-top:4px;line-height:1;font-weight:700;}
-    .flow-tag{font-size:13px;letter-spacing:0.04em;text-transform:uppercase;color:#5BA9D7;margin-bottom:10px;display:block;}
-    .flow-title{font-size:22px;font-weight:600;color:#fff;margin-bottom:12px;line-height:1.5;}
-    .flow-desc{font-size:16px;color:rgba(255,255,255,0.75);line-height:1.6;}
-    @media(max-width:833px){.svc-flow{padding:80px 16px;}.flow-step{grid-template-columns:48px 1fr;gap:0 16px;}.flow-num{font-size:48px;}.flow-title{font-size:18px;}.flow-desc{font-size:15px;}}
-
-    /* ── CTA ── */
-    .svc-cta{padding:80px 48px;text-align:center;background:var(--cream);}
-    .svc-cta-title{font-size:clamp(28px,4vw,48px);color:var(--dark);margin-bottom:16px;line-height:1.5;}
-    .svc-cta-title em{color:var(--brand-dark);}
-    .svc-cta-sub{font-size:15px;color:var(--text-light);margin-bottom:40px;line-height:1.5;}
-    .btn-primary{display:inline-block;padding:8px 22px;background:var(--accent);color:#fff;font-size:16px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;text-decoration:none;border-radius:980px;border:none;transition:background .3s,transform .2s;}
-    .btn-primary:hover{background:var(--cta-hover);transform:translateY(-2px);}
-    .btn-outline{display:inline-block;padding:8px 22px;border:1px solid var(--text-primary);color:var(--text-primary);font-size:16px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;text-decoration:none;border-radius:980px;margin-left:16px;transition:all .3s;}
-    .btn-outline:hover{border-color:var(--brand);color:var(--brand);}
-    @media(max-width:833px){.btn-outline{margin-left:0;margin-top:12px;display:block;}}
-
-    /* ── FOOTER ── */
-    footer { background: #134E6F; padding: 56px 48px; }
-    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: flex-start; align-items: flex-start; flex-wrap: wrap; gap: 40px; }
-    .footer-brand { text-align: left; }
-    .footer-logo { font-size: 20px; font-weight: 700; letter-spacing: 0.08em; color: #FFFFFF; text-decoration: none; display: block; margin-bottom: 6px; }
-    .footer-tagline { font-size: 12px; letter-spacing: 0.04em; color: #D6EBF7; margin-top: 6px; }
-    .footer-links { display: flex; gap: 28px; list-style: none; }
-    .footer-links a { font-size: 12px; letter-spacing: 0.04em; color: #D6EBF7; text-decoration: none; transition: color 0.3s; }
-    .footer-links a:hover { color: #FFFFFF; }
-    .footer-copy { font-size: 12px; color: #D6EBF7; letter-spacing: 0.04em; }
-    @media (max-width: 833px) { nav { height: 44px; padding: 0 16px; } .nav-links { display: none; } .lang-link { display: none; } .ham { display: flex; } footer { padding: 40px 16px; } .footer-inner { flex-direction: column; align-items: flex-start; gap: 20px; } .footer-links { flex-wrap: wrap; gap: 16px; } }
-
-    /* ── REVEAL ── */
-    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
-    .reveal.visible{opacity:1;transform:none;}
-
-
-    /* ── MOBILE SERVICE ACCORDION ── */
-    .mob-svc-wrap { width: 100%; text-align: center; }
-    .mob-svc-toggle {
-      background: none; border: none; cursor: pointer;
-      font-size: 18px; letter-spacing: 0.04em;
-      color: var(--text, #2C3E50); transition: color .3s;
-      display: flex; align-items: center; justify-content: center;
-      gap: 8px; width: 100%; padding: 0;
-    }
-    .mob-svc-toggle:hover { color: var(--brand, #1E88E5); }
-    .mob-svc-arrow { font-size: 14px; transition: transform .3s; display: inline-block; }
-    .mob-svc-toggle[aria-expanded="true"] .mob-svc-arrow { transform: rotate(180deg); }
-    .mob-svc-list {
-      display: flex; flex-direction: column; gap: 16px;
-      max-height: 0; overflow: hidden;
-      transition: max-height .35s ease, opacity .3s ease;
-      opacity: 0; margin-top: 0;
-    }
-    .mob-svc-list.open {
-      max-height: 400px; opacity: 1; margin-top: 16px;
-    }
-    .mob-svc-list a {
-      font-size: 14px !important; letter-spacing: 0.04em;
-      color: var(--text-secondary, #7A8998) !important;
-    }
-    .mob-svc-list a:hover { color: var(--brand, #1E88E5) !important; }
-
-    /* ── ENGLISH BANNER ── */
-    .en-banner{
-      position:fixed;bottom:24px;right:24px;z-index:800;
-      background:var(--dark);border:1px solid rgba(30,136,229,.4);
-      border-radius:2px;padding:14px 20px;
-      display:flex;align-items:center;gap:12px;
-      box-shadow:0 8px 32px rgba(19,78,111,.25);
-      animation:slideUp .5s ease .8s both;
-    }
-    @keyframes slideUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
-    .en-banner-text{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;
-      letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.6);}
-    .en-banner-link{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;
-      letter-spacing:.18em;text-transform:uppercase;color:var(--brand);
-      text-decoration:none;white-space:nowrap;
-      border-bottom:1px solid rgba(30,136,229,.4);padding-bottom:1px;
-      transition:color .2s,border-color .2s;}
-    .en-banner-link:hover{color:#fff;border-color:rgba(255,255,255,.4);}
-    .en-banner-close{background:none;border:none;color:rgba(255,255,255,.3);
-      font-size:16px;cursor:pointer;padding:0 0 0 4px;line-height:1;transition:color .2s;}
-    .en-banner-close:hover{color:rgba(255,255,255,.7);}
-    @media(max-width:600px){.en-banner{bottom:16px;right:16px;left:16px;}}
-    em, i, cite, address, var, dfn, blockquote, q { font-style: normal !important; }
-  </style>
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-62F20N179N');
-  </script>
+  .flow-steps { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; }
+  .flow-step {
+    display: grid; grid-template-columns: 88px 1fr; gap: 32px;
+    padding: 28px 0; border-bottom: 1px solid var(--border);
+  }
+  .flow-step:last-child { border-bottom: none; }
+  .flow-num {
+    font-size: 56px; font-weight: 800; line-height: 1;
+    background: linear-gradient(120deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    text-align: right;
+  }
+  .flow-step .tag {
+    font-family: var(--font-mono); font-size: 11px; color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; display: block;
+  }
+  .flow-step h3 { font-size: 19px; margin-bottom: 8px; }
+  .flow-step p { font-size: 15px; color: var(--text-muted); line-height: 1.7; }
+  @media (max-width: 640px) {
+    .flow-step { grid-template-columns: 56px 1fr; gap: 20px; }
+    .flow-num { font-size: 38px; }
+  }
+</style>
 </head>
-<body>
+<body id="body-root">
 
-  <!-- Navigation -->
-  <nav id="navbar">
-    <a href="./index.html" class="logo-text">LUMA</a>
-    <div class="nav-right">
-      <ul class="nav-links">
-        <li><a href="./index.html#about">LUMAとは</a></li>
-        <li class="has-dropdown">
-          <a href="./services.html" class="dropdown-toggle">サービス</a>
-          <ul class="dropdown-menu">
-            <div class="dropdown-menu-inner">
-            <li><a href="./services.html">サービス一覧</a></li>
-            <li><a href="./service-english.html">英語教育 — LUMA Voice</a></li>
-            <li><a href="./s-league.html">S.League 麻雀大会</a></li>
-            <li><a href="./service-tour.html">ツアー — LUMA Path</a></li>
-            <li><a href="./service-photo.html">写真撮影 — LUMA Frame</a></li>
-            <li><a href="./service-counselling.html">カウンセリング — LUMA Space</a></li>
-            <li><a href="./service-karaoke.html">カラオケ — LUMA Stage</a></li>
-            </div>
-          </ul>
-        </li>
-        <li><a href="./contact.html">お問い合わせ</a></li>
-        <li><a href="./legal.html">特商法・プライバシー</a></li>
-      </ul>
-      <a href="./en/service-tour.html" class="lang-link">English ▸</a>
-      <button class="ham" id="hamBtn" onclick="toggleMobMenu()" aria-label="メニュー">
-        <span></span><span></span><span></span>
-      </button>
+<nav class="site-nav" aria-label="メインナビゲーション">
+  <div class="nav-inner">
+    <a href="./index.html" class="brand" aria-label="LUMA ホーム">
+      <span class="brand-mark">L</span><span>LUMA</span>
+    </a>
+    <ul class="nav-links">
+      <li class="has-dropdown">
+        <a href="./services.html" class="dropdown-toggle">サービス</a>
+        <ul class="dropdown-menu">
+          <li><a href="./services.html">サービス一覧</a></li>
+          <li><a href="./service-english.html">英会話レッスン</a></li>
+          <li><a href="./service-photo.html">記念撮影・ポートレート</a></li>
+          <li><a href="./service-tour.html">英語で巡る東京ツアー</a></li>
+          <li><a href="./service-community.html">コミュニティイベント</a></li>
+          <li><a href="./s-league.html">S.League 麻雀大会</a></li>
+        </ul>
+      </li>
+      <li><a href="./about.html">About me</a></li>
+      <li><a href="./index.html#faq">FAQ</a></li>
+    </ul>
+    <div style="display:flex;gap:10px;align-items:center;">
+      <a href="./tour-en.html" class="lang-switch" aria-label="Switch to English">EN</a>
+      <a href="./contact.html" class="nav-cta">無料相談 →</a>
     </div>
-  </nav>
-
-  <!-- Mobile Menu -->
-  <div class="mob-menu" id="mobMenu">
-    <button class="mob-close" onclick="toggleMobMenu()">✕</button>
-    <a href="./index.html#about" onclick="toggleMobMenu()">LUMAとは</a>
-    <div class="mob-svc-wrap">
-      <button class="mob-svc-toggle" onclick="toggleMobSvc(this)" aria-expanded="false">
-        サービス <span class="mob-svc-arrow">▾</span>
-      </button>
-      <div class="mob-svc-list" aria-hidden="true">
-        <a href="./services.html" onclick="toggleMobMenu()">サービス一覧</a>
-        <a href="./service-english.html" onclick="toggleMobMenu()">英語教育 — LUMA Voice</a>
-        <a href="./s-league.html" onclick="toggleMobMenu()">S.League 麻雀大会</a>
-        <a href="./service-tour.html" onclick="toggleMobMenu()">ツアー — LUMA Path</a>
-        <a href="./service-photo.html" onclick="toggleMobMenu()">写真撮影 — LUMA Frame</a>
-        <a href="./service-counselling.html" onclick="toggleMobMenu()">カウンセリング — LUMA Space</a>
-        <a href="./service-karaoke.html" onclick="toggleMobMenu()">カラオケ — LUMA Stage</a>
-      </div>
-    </div>
-    <a href="./contact.html" onclick="toggleMobMenu()">お問い合わせ</a>
-    <a href="./legal.html" onclick="toggleMobMenu()">特商法・プライバシー</a>
-    <a href="./en/service-tour.html" onclick="toggleMobMenu()" style="margin-top:12px;font-size:14px;">English ▸</a>
   </div>
+</nav>
 
-  <!-- HERO -->
-  <section class="svc-hero">
-    <div class="svc-hero-num">03</div>
-    <div>
-      <span class="svc-hero-eyebrow">Services — 03</span>
-      <span class="svc-hero-icon">🗺️</span>
-      <span class="svc-hero-name">LUMA Path</span>
-      <h1 class="svc-hero-title">ツアー企画 · ガイド</h1>
-      <p class="svc-hero-sub">東京・関東から関西・北海道・福岡まで、全国対応。グルテンフリー・アレルギー対応も、自分ごととして丁寧にサポートします。</p>
-      <a href="./tour-en.html" style="display:inline-flex;align-items:center;gap:7px;margin-top:24px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;border:1px solid rgba(255,255,255,.12);padding:8px 16px;border-radius:40px;transition:all .3s;" onmouseover="this.style.color='var(--brand)';this.style.borderColor='rgba(30,136,229,.4)'" onmouseout="this.style.color='rgba(255,255,255,.45)';this.style.borderColor='rgba(255,255,255,.12)'">
-        <span style="font-size:13px;">🌐</span> English page available →
-      </a>
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <ol>
+    <li><a href="./index.html">ホーム</a></li>
+    <li><a href="./services.html">サービス</a></li>
+    <li aria-current="page">英語ツアー (LUMA Path)</li>
+  </ol>
+</nav>
+
+<header class="hero svc-hero" id="home">
+  <div class="container">
+    <span class="eyebrow">LUMA Path — Service 03</span>
+    <h1 class="hero-title" style="margin-top:18px;">
+      <span class="t-line">ガイドブックには</span>
+      <span class="t-line"><span class="accent">載っていない</span>日本を一緒に</span>
+    </h1>
+    <p class="sub">
+      東京・関東から関西・北海道・福岡まで全国対応のバイリンガルプライベートツアー。<strong style="color:var(--text);">グルテンフリー・食物アレルギー対応</strong>も、自分ごととして丁寧にサポートします。
+    </p>
+    <div class="hero-cta-row">
+      <a href="./contact.html" class="btn btn-primary">無料相談を申し込む →</a>
+      <a href="./tour-en.html" class="btn btn-secondary">🌐 View in English</a>
     </div>
-  </section>
-
-  <!-- OVERVIEW -->
-  <section style="background:var(--cream)">
-    <div class="svc-overview">
-      <div class="svc-overview-left">
-        <p class="svc-overview-lead reveal">ガイドブックには<em>載っていない</em>日本を、一緒に歩く。</p>
-        <p class="svc-overview-body reveal">コンサルタントとして東京に拠点を置きながら、航空機撮影で空港や日本各地を訪れてきた経験から、「どこに行けばその場所らしさを感じられるか」を熟知しています。東京・関東はもちろん、関西・北海道・福岡など全国のご要望にも対応します。<br><br>観光スポットを効率よく巡るだけでなく、地元の空気・食・文化・人との出会いを大切にしたツアーをご提供します。英語・日本語どちらにも対応しており、外国人旅行者から日本人の方まで幅広く対応します。<br><br>そして私自身がアレルギー持ちの当事者だからこそ、グルテンフリー対応・食物アレルギーへの配慮は「自分ごと」として捉えています。食事の選択やレストランの事前確認なども、同じ目線で丁寧にサポートします。</p>
-      </div>
-      <div class="svc-overview-right reveal" style="padding-top:8px;">
-        <div style="border-left:2px solid var(--beige);padding-left:32px;">
-          <p style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--brand);margin-bottom:12px;">Overview</p>
-          <p style="font-family:'DM Serif Display',serif;font-size:17px;color:var(--dark);line-height:1.7;">Walking through Japan — beyond what the guidebooks show.</p>
-          <p style="font-size:13px;color:var(--text-light);line-height:1.8;margin-top:16px;">Based in Tokyo and well-travelled across Japan — from Hokkaido to Fukuoka — through aviation photography and consulting work, I know where to find the real character of a place. Tours are available nationwide, not just in Tokyo and the Kanto region.<br><br>As someone who has personally experienced anaphylaxis and lives with food allergies, I understand the importance of allergy-safe dining from the inside. Gluten-free, allergy-friendly restaurant selection and pre-checking are part of the service — not an afterthought. Fully bilingual (EN/JA).</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- OFFERS -->
-  <section class="svc-offers">
-    <div class="svc-offers-inner">
-      <span class="svc-section-eyebrow reveal">What's Included</span>
-      <h2 class="svc-section-title reveal">提供<em>サービス</em>内容</h2>
-      <div class="offers-grid">
-        <div class="offer-card reveal">
-          <div class="offer-card-num">01</div>
-          <div class="offer-card-title">半日ツアー（3〜4時間）<br><span style="font-size:12px;color:var(--taupe)">Half-day tour (3–4 hrs)</span></div>
-          <div class="offer-card-desc">下町・浅草・渋谷・六本木など。テーマに合わせてルートをカスタマイズします。</div>
-        </div>
-        <div class="offer-card reveal">
-          <div class="offer-card-num">02</div>
-          <div class="offer-card-title">日帰りツアー・全国対応<br><span style="font-size:12px;color:var(--taupe)">Full-day tour · Nationwide</span></div>
-          <div class="offer-card-desc">関東（鎌倉・箱根・お台場）はもちろん、関西・北海道・福岡など全国各地へのツアーも対応します。</div>
-        </div>
-        <div class="offer-card reveal">
-          <div class="offer-card-num">03</div>
-          <div class="offer-card-title">航空機・空港ツアー<br><span style="font-size:12px;color:var(--taupe)">Aviation / Airport tour</span></div>
-          <div class="offer-card-desc">羽田・成田の撮影スポット巡りや、航空機ファン向けの特別ツアーを企画します。</div>
-        </div>
-        <div class="offer-card reveal">
-          <div class="offer-card-num">04</div>
-          <div class="offer-card-title">カスタムコース<br><span style="font-size:12px;color:var(--taupe)">Custom route</span></div>
-          <div class="offer-card-desc">ご要望に合わせてゼロからコースを設計。食・写真・歴史・アニメ聖地など対応可。</div>
-        </div>
-        <div class="offer-card reveal">
-          <div class="offer-card-num">05</div>
-          <div class="offer-card-title">バイリンガル対応<br><span style="font-size:12px;color:var(--taupe)">Bilingual (EN/JA)</span></div>
-          <div class="offer-card-desc">英語・日本語どちらでもご案内。外国人のお友達と一緒でも安心です。</div>
-        </div>
-        <div class="offer-card reveal" style="border-left:3px solid var(--brand);">
-          <div class="offer-card-num">06</div>
-          <div class="offer-card-title">グルテンフリー・アレルギー対応<br><span style="font-size:12px;color:var(--taupe)">Gluten-free &amp; Allergy-friendly</span></div>
-          <div class="offer-card-desc">私自身がアレルギー当事者（アナフィラキシー経験あり）だからこそ、グルテンフリーや食物アレルギーへの対応を「自分ごと」として捉えています。レストランの事前確認・メニューの読み解き・緊急時の対応まで、同じ目線で安心してお任せください。</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICE -->
-  <section class="svc-price">
-    <span class="svc-section-eyebrow reveal">Pricing</span>
-    <h2 class="svc-section-title reveal">料金<em>案内</em></h2>
-    <div class="price-box">
-        <div class="price-row reveal">
-          <span class="price-label">半日ツアー（〜4時間・1名）</span>
-          <span class="price-value">要相談</span>
-        </div>
-        <div class="price-row reveal">
-          <span class="price-label">日帰りツアー（〜8時間・1名）</span>
-          <span class="price-value">要相談</span>
-        </div>
-        <div class="price-row reveal">
-          <span class="price-label">グループ割引（2名以上）</span>
-          <span class="price-value">あり</span>
-        </div>
-        <div class="price-row reveal">
-          <span class="price-label">交通費・入場料</span>
-          <span class="price-value">実費別途</span>
-        </div>
-      <p class="price-note reveal">料金はコース・地域・人数・時間により異なります。関東圏外（関西・北海道・福岡など）への遠征の場合は交通費が別途かかります。アレルギー対応のレストラン事前調査も無料でお引き受けします。まずはお問い合わせください。</p>
-    </div>
-  </section>
-
-  <!-- FLOW -->
-  <section class="svc-flow">
-    <div class="svc-flow-inner">
-      <span class="svc-section-eyebrow reveal" style="color:rgba(255,255,255,.5)">How it works</span>
-      <h2 class="svc-section-title reveal" style="color:#fff;margin-bottom:40px;">ご利用の<em>流れ</em></h2>
-      <div class="flow-steps">
-        <div class="flow-step reveal">
-          <div class="flow-num">01</div>
-          <div>
-            <span class="flow-tag">Step 01</span>
-            <div class="flow-title">ご相談・ご要望のヒアリング</div>
-            <div class="flow-desc">行きたい場所・地域・興味・人数・日時に加え、食物アレルギーやグルテンフリー等のご要件もお聞かせください。</div>
-          </div>
-        </div>
-        <div class="flow-step reveal">
-          <div class="flow-num">02</div>
-          <div>
-            <span class="flow-tag">Step 02</span>
-            <div class="flow-title">コース提案</div>
-            <div class="flow-desc">ご要望をもとにルートと所要時間をご提案します。</div>
-          </div>
-        </div>
-        <div class="flow-step reveal">
-          <div class="flow-num">03</div>
-          <div>
-            <span class="flow-tag">Step 03</span>
-            <div class="flow-title">確定・お支払い</div>
-            <div class="flow-desc">コース確定後、料金をご案内します。</div>
-          </div>
-        </div>
-        <div class="flow-step reveal">
-          <div class="flow-num">04</div>
-          <div>
-            <span class="flow-tag">Step 04</span>
-            <div class="flow-title">当日ガイド</div>
-            <div class="flow-desc">集合場所でお待ちしています。英語・日本語どちらでもお気軽にどうぞ。</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="svc-cta">
-    <h2 class="svc-cta-title reveal">あなただけの<em>旅</em>を、一緒に。</h2>
-    <p class="svc-cta-sub reveal">行きたい場所・テーマ・地域・アレルギーのご要件を教えてください。東京から全国、グルテンフリーまで、あなたに合ったルートをご提案します。</p>
-    <div class="reveal">
-      <a href="./contact.html" class="btn-primary">無料相談・お問い合わせ</a>
-      <a href="./services.html" class="btn-outline">他のサービスを見る</a>
-      <a href="./tour-en.html" style="display:inline-block;margin-left:16px;padding:13px 28px;border:1px solid rgba(30,136,229,.5);color:var(--brand);font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:all .3s;" onmouseover="this.style.background='var(--brand)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='var(--brand)'">🌐 View in English</a>
-    </div>
-  </section>
-
-
-  <!-- Floating English banner -->
-  <div class="en-banner" id="enBanner">
-    <span class="en-banner-text">English available</span>
-    <a href="./tour-en.html" class="en-banner-link">View English page →</a>
-    <button class="en-banner-close" onclick="document.getElementById('enBanner').style.display='none'" aria-label="Close">✕</button>
   </div>
-  <!-- Footer -->
-  <footer>
-    <div class="footer-inner">
+</header>
+
+<section id="overview" aria-labelledby="overview-heading">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Overview</span>
+      <h2 id="overview-heading">「その場所らしさ」を感じる旅へ。</h2>
+    </div>
+
+    <div class="svc-overview-grid reveal">
+      <div>
+        <p class="svc-overview-lead">観光名所の<em>その先</em>へ。<br />地元の空気・食・人と出会う旅。</p>
+        <p class="svc-overview-body">
+          コンサルタントとして東京に拠点を置きながら、航空機撮影で空港や日本各地を訪れてきた経験から、「どこに行けばその場所らしさを感じられるか」を熟知しています。東京・関東はもちろん、<strong style="color:var(--text);">関西・北海道・福岡など全国のご要望にも対応</strong>します。<br><br>
+          観光スポットを効率よく巡るだけでなく、地元の空気・食・文化・人との出会いを大切にしたツアーをご提供。英語・日本語どちらにも対応しており、外国人旅行者から日本人の方まで幅広く対応します。<br><br>
+          そして私自身がアレルギー持ちの当事者だからこそ、<strong style="color:var(--text);">グルテンフリー対応・食物アレルギーへの配慮は「自分ごと」として捉えています</strong>。食事の選択やレストランの事前確認なども、同じ目線で丁寧にサポートします。
+        </p>
+      </div>
+      <aside class="svc-overview-aside">
+        <span class="label">English overview</span>
+        <p class="en-lead">Walking through Japan — beyond what the guidebooks show.</p>
+        <p class="en-body">
+          Based in Tokyo and well-travelled across Japan — from Hokkaido to Fukuoka — through aviation photography and consulting work, I know where to find the real character of a place. Tours are available nationwide, not just in Tokyo and the Kanto region.<br><br>
+          As someone who has personally experienced anaphylaxis and lives with food allergies, I understand the importance of allergy-safe dining from the inside. Gluten-free, allergy-friendly restaurant selection and pre-checking are part of the service — not an afterthought. Fully bilingual (EN/JA).
+        </p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="offers" aria-labelledby="offers-heading" style="background:var(--bg-soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">What's Included</span>
+      <h2 id="offers-heading">6つのツアープラン</h2>
+      <p>地域・時間・人数・テーマに合わせたカスタムプランをご提案します。</p>
+    </div>
+
+    <div class="offers-grid reveal">
+      <article class="offer-card">
+        <span class="offer-card-num">01</span>
+        <h3>半日ツアー (3〜4時間)</h3>
+        <span class="en">Half-day Tour</span>
+        <p>下町・浅草・渋谷・六本木など。テーマに合わせてルートをカスタマイズします。</p>
+      </article>
+      <article class="offer-card">
+        <span class="offer-card-num">02</span>
+        <h3>日帰りツアー・全国対応</h3>
+        <span class="en">Full-day · Nationwide</span>
+        <p>関東 (鎌倉・箱根・お台場) はもちろん、関西・北海道・福岡など全国各地へのツアーも対応します。</p>
+      </article>
+      <article class="offer-card">
+        <span class="offer-card-num">03</span>
+        <h3>航空機・空港ツアー</h3>
+        <span class="en">Aviation / Airport Tour</span>
+        <p>羽田・成田の撮影スポット巡りや、航空機ファン向けの特別ツアーを企画します。</p>
+      </article>
+      <article class="offer-card">
+        <span class="offer-card-num">04</span>
+        <h3>カスタムコース</h3>
+        <span class="en">Custom Route</span>
+        <p>ご要望に合わせてゼロからコースを設計。食・写真・歴史・アニメ聖地など対応可。</p>
+      </article>
+      <article class="offer-card">
+        <span class="offer-card-num">05</span>
+        <h3>バイリンガル対応</h3>
+        <span class="en">Bilingual (EN/JA)</span>
+        <p>英語・日本語どちらでもご案内。外国人のお友達と一緒でも安心です。</p>
+      </article>
+      <article class="offer-card feature">
+        <span class="offer-card-num">06</span>
+        <h3>グルテンフリー・アレルギー対応</h3>
+        <span class="en">Gluten-free & Allergy-friendly</span>
+        <p>私自身がアレルギー当事者 (アナフィラキシー経験あり) だからこそ、グルテンフリー・食物アレルギーへの対応を「自分ごと」として捉えています。レストランの事前確認・メニューの読み解き・緊急時の対応まで、同じ目線で安心してお任せください。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" aria-labelledby="pricing-heading">
+  <div class="container">
+    <div class="section-head reveal" style="margin: 0 auto 48px; text-align:center;">
+      <span class="eyebrow">Pricing</span>
+      <h2 id="pricing-heading">料金案内</h2>
+      <p style="margin: 0 auto;">コース・地域・人数・時間によって異なります。</p>
+    </div>
+
+    <div class="price-box reveal">
+      <div class="price-row">
+        <span class="price-label">半日ツアー (〜4時間・1名)</span>
+        <span class="price-value">要相談</span>
+      </div>
+      <div class="price-row">
+        <span class="price-label">日帰りツアー (〜8時間・1名)</span>
+        <span class="price-value">要相談</span>
+      </div>
+      <div class="price-row">
+        <span class="price-label">グループ割引 (2名以上)</span>
+        <span class="price-value">あり</span>
+      </div>
+      <div class="price-row">
+        <span class="price-label">交通費・入場料</span>
+        <span class="price-value">実費別途</span>
+      </div>
+      <p class="price-note">
+        料金はコース・地域・人数・時間により異なります。関東圏外 (関西・北海道・福岡など) への遠征の場合は交通費が別途かかります。<strong style="color:var(--text);">アレルギー対応のレストラン事前調査も無料</strong>でお引き受けします。
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="flow" aria-labelledby="flow-heading">
+  <div class="container">
+    <div class="section-head reveal" style="margin: 0 auto 56px; text-align:center;">
+      <span class="eyebrow">How it works</span>
+      <h2 id="flow-heading">ご利用の流れ</h2>
+      <p style="margin: 0 auto;">ご相談から当日ガイドまで、4ステップで進めます。</p>
+    </div>
+
+    <div class="flow-steps reveal">
+      <div class="flow-step">
+        <div class="flow-num">01</div>
+        <div>
+          <span class="tag">Step 01</span>
+          <h3>ご相談・ご要望のヒアリング</h3>
+          <p>行きたい場所・地域・興味・人数・日時に加え、食物アレルギーやグルテンフリー等のご要件もお聞かせください。</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">02</div>
+        <div>
+          <span class="tag">Step 02</span>
+          <h3>コース提案</h3>
+          <p>ご要望をもとにルートと所要時間をご提案します。</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">03</div>
+        <div>
+          <span class="tag">Step 03</span>
+          <h3>確定・お支払い</h3>
+          <p>コース確定後、料金をご案内します。</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">04</div>
+        <div>
+          <span class="tag">Step 04</span>
+          <h3>当日ガイド</h3>
+          <p>集合場所でお待ちしています。英語・日本語どちらでもお気軽にどうぞ。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-bottom: 120px;">
+  <div class="container">
+    <div class="cta-big reveal">
+      <span class="eyebrow" style="color: color-mix(in srgb, var(--bg) 70%, transparent);">無料相談</span>
+      <h2 style="margin-top:16px;">あなただけの旅を、一緒に。</h2>
+      <p style="font-size:17px;max-width:560px;margin:12px auto 28px;">
+        行きたい場所・テーマ・地域・アレルギーのご要件を教えてください。東京から全国、グルテンフリーまで、あなたに合ったルートをご提案します。
+      </p>
+      <a href="./contact.html" class="btn btn-primary">お問い合わせフォームへ →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
       <div class="footer-brand">
-        <a href="./index.html" class="footer-logo">LUMA</a>
-        <div class="footer-tagline">Clarity by Design &nbsp;|&nbsp; Illuminate Your Confidence</div>
+        <a href="./index.html" class="brand"><span class="brand-mark">L</span><span>LUMA</span></a>
+        <p>東京・横浜で、あなたの自信をデザインする。Clarity by Design — Illuminate Your Confidence.</p>
       </div>
-      <ul class="footer-links">
-        <li><a href="./index.html#about">LUMAとは</a></li>
-        <li><a href="./index.html#services">サービス</a></li>
-        <li><a href="./contact.html">お問い合わせ</a></li>
-        <li><a href="./legal.html">特商法・プライバシー</a></li>
-      </ul>
-      <div class="footer-copy">© 2026 LUMA — Sho Asano. All rights reserved.</div>
+      <div class="footer-col">
+        <h4>サービス</h4>
+        <ul>
+          <li><a href="./service-english.html">英会話レッスン</a></li>
+          <li><a href="./service-photo.html">記念撮影・ポートレート</a></li>
+          <li><a href="./s-league.html">S.League 麻雀</a></li>
+          <li><a href="./service-tour.html">英語で巡る東京ツアー</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>LUMAについて</h4>
+        <ul>
+          <li><a href="./about.html">About me</a></li>
+          <li><a href="./index.html#story">My Story</a></li>
+          <li><a href="./index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>サポート</h4>
+        <ul>
+          <li><a href="./contact.html">お問い合わせ</a></li>
+          <li><a href="./legal.html">特定商取引法</a></li>
+          <li><a href="./legal.html#privacy">プライバシー</a></li>
+          <li><a href="./tour-en.html">English</a></li>
+        </ul>
+      </div>
     </div>
-  </footer>
+    <div class="footer-bottom">
+      <span>© 2026 LUMA — Sho Asano. All rights reserved.</span>
+      <span>横浜市・神奈川県 · 日英バイリンガル</span>
+    </div>
+  </div>
+</footer>
 
-  <script>
-    window.addEventListener('scroll', () => { const nav = document.getElementById('navbar'); if (nav) nav.classList.toggle('scrolled', window.scrollY > 40); });
-    function toggleMobMenu() { const menu = document.getElementById('mobMenu'); if (!menu) return; const isOpen = menu.classList.toggle('open'); document.body.style.overflow = isOpen ? 'hidden' : ''; }
-    function toggleMobSvc(btn) { const list = btn.nextElementSibling; const expanded = btn.getAttribute('aria-expanded') === 'true'; btn.setAttribute('aria-expanded', String(!expanded)); list.classList.toggle('open', !expanded); }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') { const m = document.getElementById('mobMenu'); if (m) m.classList.remove('open'); document.body.style.overflow = ''; } });
-    // reveal
-    const ro = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }});
-    }, {threshold: 0.1});
-    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
-  </script>
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
 </body>
 </html>

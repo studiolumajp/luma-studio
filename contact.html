@@ -1,228 +1,254 @@
 <!DOCTYPE html>
 <html lang="ja" id="html-root">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="color-scheme" content="light only" />
-  <title>お問い合わせ | LUMA — Clarity by Design</title>
-  <meta name="description" content="LUMAへのお問い合わせ・無料相談はこちら。英語教育・写真撮影・ツアー・カウンセリング・カラオケ・S.Leagueについてお気軽にご相談ください。" />
-  <link rel="preconnect" href="https://formspree.io" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0F172A" />
+<meta name="color-scheme" content="light only" />
 
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-62F20N179N');
-  </script>
+<!-- ── PRIMARY SEO META ── -->
+<title>お問い合わせ・無料相談 | LUMA — 浅野彰</title>
+<meta name="description" content="LUMAへの無料相談・お見積もり・お問い合わせはこちらから。英会話・記念撮影・S.League麻雀・英語ツアーすべて対応。2営業日以内にご返信。" />
+<meta name="keywords" content="LUMA 問い合わせ,無料相談,英会話 相談,写真撮影 見積もり,カウンセリング 申込,浅野彰" />
+<meta name="author" content="Sho Asano (浅野彰) / LUMA" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://studio-lumadesign.com/contact.html" />
 
-  <style>
-    :root {
-      --cream: #FFFFFF; --warm-white: #FFFFFF; --beige: #D7E5ED; --sand: #B8CED9;
-      --taupe: #7A8998; --dark: #134E6F; --accent: #F59E0B; --accent-light: #D6EBF7;
-      --text: #2C3E50; --text-light: #7A8998; --brand-dark: #134E6F;
-      --text-primary: #2C3E50; --text-secondary: #7A8998; --border: #B8CED9;
-      --background: #FFFFFF; --surface: #FFFFFF; --brand: #1E88E5;
-      --h1: #134E6F; --h2: #1E88E5; --h3: #5BA9D7;
-      --base: #EBF5FA; --ice-white: #F8FBFC; --primary-light: #D6EBF7;
-      --cta-hover: #D97706; --white: #FFFFFF;
+<link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/contact.html" />
+<link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/contact-en.html" />
+<link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/contact.html" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://studio-lumadesign.com/contact.html" />
+<meta property="og:title" content="お問い合わせ・無料相談 | LUMA" />
+<meta property="og:description" content="LUMAへの無料相談・お見積もり・お問い合わせはこちらから。2営業日以内にご返信。" />
+<meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:site_name" content="LUMA" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="お問い合わせ | LUMA" />
+<meta name="twitter:description" content="無料相談・お見積もり受付中。2営業日以内にご返信。" />
+<meta name="twitter:image" content="https://studio-lumadesign.com/og-image.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://formspree.io" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "name": "LUMA お問い合わせ",
+      "url": "https://studio-lumadesign.com/contact.html",
+      "description": "LUMA への無料相談・お問い合わせフォーム。",
+      "publisher": {"@id": "https://studio-lumadesign.com/#business"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://studio-lumadesign.com/"},
+        {"@type": "ListItem", "position": 2, "name": "お問い合わせ", "item": "https://studio-lumadesign.com/contact.html"}
+      ]
     }
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; letter-spacing: 0.04em; }
-    html { scroll-behavior: smooth; }
-    body { background: var(--cream); color: var(--text); font-family: "SF Pro",-apple-system,"system-ui","Hiragino Kaku Gothic ProN",Meiryo,sans-serif; font-weight: 400; font-size: 16px; line-height: 1.5; letter-spacing: 0.04em; word-break: break-all; overflow-wrap: break-word; line-break: strict; overflow-x: hidden; }
-    /* NAV */
-    #navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 900; display: flex; align-items: center; justify-content: space-between; height: 44px; padding: 0 48px; background: rgba(19,78,111,0.96); backdrop-filter: saturate(180%) blur(20px); transition: background 0.4s, box-shadow 0.4s; }
-    #navbar.scrolled { background: rgba(19,78,111,0.98); backdrop-filter: saturate(180%) blur(20px); box-shadow: 0 1px 0 rgba(214,235,247,0.2); }
-    .logo-text { font-size: 22px; font-weight: 700; letter-spacing: 0.08em; color: #FFFFFF; text-decoration: none; }
-    #navbar.scrolled .logo-text { color: #FFFFFF; }
-    .nav-right { display: flex; align-items: center; gap: 32px; }
-    .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
-    .nav-links a { font-size: 12px; font-weight: 400; letter-spacing: 0.04em; text-decoration: none; color: #D6EBF7; transition: color 0.3s; }
-    #navbar.scrolled .nav-links a { color: #D6EBF7; }
-    .nav-links a:hover { color: #FFFFFF; }
-    .has-dropdown { position: relative; }
-    .dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); padding-top: 12px; list-style: none; z-index: 1000; min-width: 220px; }
-    .dropdown-menu-inner { background: rgba(255,255,255,0.98); backdrop-filter: blur(16px); border: 1px solid var(--beige); border-radius: 4px; padding: 8px 0; box-shadow: 0 8px 32px rgba(19,78,111,0.12); }
-    .has-dropdown:hover .dropdown-menu { display: block; }
-    .dropdown-menu li { list-style: none; }
-    .dropdown-menu li a { display: block; padding: 9px 20px; font-size: 11px; letter-spacing: 0.04em; color: var(--text-light); text-decoration: none; transition: color 0.2s, background 0.2s; white-space: nowrap; }
-    .dropdown-menu li a:hover { color: var(--brand); background: var(--warm-white); }
-    .dropdown-toggle::after { content: ''; display: inline-block; width: 5px; height: 5px; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: rotate(45deg) translateY(-2px); margin-left: 5px; vertical-align: middle; }
-    .lang-link { font-size: 12px; font-weight: 400; letter-spacing: 0.04em; padding: 5px 12px; border: 1px solid rgba(255,255,255,0.35); color: #D6EBF7; text-decoration: none; border-radius: 4px; transition: all 0.3s; flex-shrink: 0; }
-    .lang-link:hover { background: #FFFFFF; border-color: #FFFFFF; color: #134E6F; }
-    .ham { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
-    .ham span { display: block; width: 22px; height: 1.5px; background: #D6EBF7; transition: all 0.3s; }
-    #navbar.scrolled .ham span { background: #D6EBF7; }
-    .mob-menu { display: none; position: fixed; inset: 0; background: var(--cream); z-index: 1100; flex-direction: column; align-items: center; justify-content: center; gap: 28px; }
-    .mob-menu.open { display: flex; }
-    .mob-menu a { font-size: 18px; letter-spacing: 0.16em; color: var(--text); text-decoration: none; transition: color 0.3s; }
-    .mob-menu a:hover { color: var(--brand); }
-    .mob-close { position: absolute; top: 20px; right: 24px; background: none; border: none; font-size: 28px; color: var(--text-light); cursor: pointer; }
-    .mob-svc-wrap { width: 100%; text-align: center; }
-    .mob-svc-toggle { background: none; border: none; cursor: pointer; font-size: 18px; letter-spacing: 0.04em; color: var(--text); display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 0; }
-    .mob-svc-arrow { font-size: 14px; transition: transform .3s; display: inline-block; }
-    .mob-svc-toggle[aria-expanded="true"] .mob-svc-arrow { transform: rotate(180deg); }
-    .mob-svc-list { display: flex; flex-direction: column; gap: 16px; max-height: 0; overflow: hidden; transition: max-height .35s ease, opacity .3s ease; opacity: 0; margin-top: 0; }
-    .mob-svc-list.open { max-height: 500px; opacity: 1; margin-top: 16px; }
-    .mob-svc-list a { font-size: 14px !important; letter-spacing: 0.04em; color: var(--text-light) !important; }
-    @media (max-width: 833px) { .ham { display: flex; } .nav-links { display: none; } .lang-link { display: none; } #navbar { padding: 0 16px; } }
+  ]
+}
+</script>
 
-    /* HERO BANNER */
-    .contact-hero { background: linear-gradient(135deg, #EBF5FA 0%, #D6EBF7 100%); padding: 140px 48px 64px; text-align: center; position: relative; overflow: hidden; }
-    .contact-wrap { max-width: 640px; margin: 0 auto; padding: 72px 32px 96px; }
-    .contact-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 70% at 20% 50%, rgba(30,136,229,0.15) 0%, transparent 60%); }
-    .contact-hero-eyebrow { font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--brand); margin-bottom: 16px; position: relative; }
-    .contact-hero-title { font-size: clamp(32px, 5vw, 56px); color: var(--h1); line-height: 1.5; margin-bottom: 12px; position: relative; }
-    .contact-hero-title em { color: var(--brand); }
-    .contact-hero-sub { font-size: 14px; color: #7A8998; letter-spacing: 0.06em; position: relative; }
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-62F20N179N');
+</script>
 
-    /* FORM AREA */
-    .contact-wrap { max-width: 640px; margin: 0 auto; padding: 72px 32px 96px; }
-    .contact-form { text-align: left; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .form-group { margin-bottom: 20px; }
-    .form-group label { display: block; font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-light); margin-bottom: 8px; }
-    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 16px; border: 1px solid var(--beige); background: #fff; font-size: 14px; color: var(--text); border-radius: 8px; height: 44px; transition: border-color 0.3s, box-shadow 0.3s; outline: none; }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--brand); box-shadow: 0 0 0 3px rgba(30,136,229,0.12); }
-    .form-group textarea { resize: vertical; min-height: 120px; height: auto; }
-    .phone-row { display: flex; gap: 8px; align-items: stretch; position: relative; }
-    .phone-trigger { display: flex; align-items: center; gap: 6px; padding: 12px 12px; border: 1px solid var(--beige); background: #fff; border-radius: 8px; cursor: pointer; min-width: 90px; height: 44px; transition: border-color 0.3s; position: relative; white-space: nowrap; flex-shrink: 0; }
-    .phone-trigger:hover, .phone-trigger.open { border-color: var(--brand); }
-    .phone-trigger .pt-flag { font-size: 16px; line-height: 1; }
-    .phone-trigger .pt-code { font-size: 12px; flex:1; }
-    .phone-trigger .pt-arrow { font-size: 8px; color: var(--text-light); transition: transform 0.2s; }
-    .phone-trigger.open .pt-arrow { transform: rotate(180deg); }
-    .phone-dropdown { display: none; position: absolute; top: calc(100% + 4px); left: 0; width: 280px; max-height: 240px; background: #fff; border: 1px solid var(--beige); border-radius: 8px; box-shadow: 0 8px 24px rgba(19,78,111,0.12); z-index: 200; flex-direction: column; }
-    .phone-dropdown.open { display: flex; }
-    .phone-search-wrap { padding: 8px; border-bottom: 1px solid var(--beige); flex-shrink: 0; }
-    .phone-search { width: 100%; padding: 8px 12px; border: 1px solid var(--beige); border-radius: 8px; font-size: 13px; outline: none; }
-    .phone-list { overflow-y: auto; flex: 1; }
-    .phone-option { display: flex; align-items: center; gap: 10px; padding: 9px 14px; cursor: pointer; transition: background 0.2s; font-size: 13px; }
-    .phone-option:hover { background: var(--warm-white); }
-    .phone-option .po-flag { font-size: 18px; width: 24px; text-align: center; flex-shrink: 0; }
-    .phone-option .po-name { flex: 1; color: var(--text); }
-    .phone-option .po-code { color: var(--text-light); font-size: 11px; flex-shrink: 0; }
-    .phone-option.hidden { display: none; }
-    .phone-row .phone-number-input { flex: 1; }
-    .phone-hint { font-size: 11px; color: var(--text-light); margin-top: 4px; min-height: 16px; }
-    .form-submit { text-align: center; margin-top: 8px; }
-    .btn-primary { display: inline-block; font-size: 16px; font-weight: 700; letter-spacing: 0.04em; padding: 8px 22px; background: var(--accent); color: white; text-decoration: none; border-radius: 980px; transition: all 0.3s; border: 1px solid var(--accent); cursor: pointer; }
-    .btn-primary:hover { background: var(--cta-hover); border-color: var(--cta-hover); }
-    .contact-note { text-align: center; font-size: 12px; color: var(--text-light); margin-top: 20px; }
-    .success-overlay { position: fixed; inset: 0; background: rgba(19,78,111,0.6); backdrop-filter: blur(4px); z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.4s; }
-    .success-overlay.open { opacity: 1; pointer-events: auto; }
-    .success-popup { background: var(--cream); border-radius: 12px; padding: 48px 40px; max-width: 420px; width: 90%; text-align: center; transform: translateY(20px) scale(0.97); transition: transform 0.4s; }
-    .success-overlay.open .success-popup { transform: translateY(0) scale(1); }
-    @media (max-width: 833px) { .form-row { grid-template-columns: 1fr; } .contact-hero { padding: 120px 24px 48px; } .contact-wrap { padding: 48px 20px 72px; } }
+<link rel="stylesheet" href="./shared.css" />
+<style id="page-overrides">
+  .contact-hero { padding: 64px 0 32px; }
+  .contact-hero h1 .accent {
+    background: linear-gradient(120deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .contact-hero .sub {
+    font-size: clamp(16px, 1.4vw, 18px); color: var(--text-muted); margin-bottom: 16px;
+  }
 
-    /* FOOTER */
-    footer { background: #134E6F; padding: 56px 48px; }
-    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: flex-start; align-items: flex-start; flex-wrap: wrap; gap: 40px; }
-    .footer-brand { text-align: left; }
-    .footer-logo { font-size: 20px; font-weight: 700; letter-spacing: 0.08em; color: #FFFFFF; text-decoration: none; display: block; margin-bottom: 6px; }
-    .footer-tagline { font-size: 12px; letter-spacing: 0.04em; color: #D6EBF7; margin-top: 6px; }
-    .footer-links { display: flex; gap: 28px; list-style: none; }
-    .footer-links a { font-size: 12px; letter-spacing: 0.04em; color: #D6EBF7; text-decoration: none; transition: color 0.3s; }
-    .footer-links a:hover { color: #FFFFFF; }
-    .footer-copy { font-size: 12px; color: #D6EBF7; letter-spacing: 0.04em; }
-    @media (max-width: 833px) { footer { padding: 40px 16px; } .footer-inner { flex-direction: column; align-items: flex-start; gap: 20px; } .footer-links { flex-wrap: wrap; gap: 16px; } }
-    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
-    em, i, cite, address, var, dfn, blockquote, q { font-style: normal !important; }
-  </style>
+  /* ── FORM ── */
+  .contact-form {
+    max-width: 720px; margin: 0 auto;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 40px 44px;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .form-group { margin-bottom: 16px; display: flex; flex-direction: column; gap: 6px; }
+  .form-group label {
+    font-size: 13px; font-weight: 600; color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%; padding: 11px 14px;
+    border: 1px solid var(--border-strong); border-radius: var(--radius);
+    font-family: var(--font-sans); font-size: 14px; color: var(--text);
+    background: var(--bg); transition: border-color .2s, box-shadow .2s;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none; border-color: var(--accent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
+  }
+  .form-group textarea { min-height: 140px; resize: vertical; }
+
+  /* ── PHONE PICKER ── */
+  .phone-row { position: relative; display: flex; gap: 8px; }
+  .phone-trigger {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 11px 14px; border: 1px solid var(--border-strong); border-radius: var(--radius);
+    background: var(--bg); cursor: pointer; user-select: none;
+    font-size: 14px; min-width: 110px;
+  }
+  .phone-trigger:hover { border-color: var(--accent); }
+  .pt-flag { font-size: 18px; line-height: 1; }
+  .pt-arrow { font-size: 10px; color: var(--text-soft); margin-left: auto; }
+  .phone-dropdown {
+    display: none; position: absolute; top: calc(100% + 4px); left: 0;
+    width: 320px; max-height: 320px; overflow: hidden;
+    background: var(--surface); border: 1px solid var(--border-strong);
+    border-radius: var(--radius); box-shadow: var(--shadow-lg);
+    z-index: 100; flex-direction: column;
+  }
+  .phone-dropdown.open { display: flex; }
+  .phone-search-wrap { padding: 8px; border-bottom: 1px solid var(--border); }
+  .phone-search {
+    width: 100%; padding: 8px 12px; font-size: 13px;
+    border: 1px solid var(--border); border-radius: 6px;
+    font-family: var(--font-sans);
+  }
+  .phone-search:focus { outline: none; border-color: var(--accent); }
+  .phone-list { overflow-y: auto; flex: 1; }
+  .phone-list-item {
+    display: flex; align-items: center; gap: 10px; padding: 9px 14px;
+    cursor: pointer; font-size: 13px; transition: background .15s;
+  }
+  .phone-list-item:hover { background: var(--bg-soft); }
+  .phone-list-item .flag { font-size: 16px; line-height: 1; }
+  .phone-list-item .name { flex: 1; color: var(--text); }
+  .phone-list-item .code { color: var(--text-soft); font-family: var(--font-mono); font-size: 12px; }
+  .phone-number-input { flex: 1; }
+  .phone-hint {
+    margin-top: 4px; font-size: 11px; color: var(--text-soft);
+    font-family: var(--font-mono);
+  }
+
+  .form-submit { display: flex; justify-content: center; margin-top: 24px; }
+  .contact-note {
+    margin-top: 18px; font-size: 12px; color: var(--text-soft); text-align: center; line-height: 1.6;
+  }
+
+  /* ── SUCCESS OVERLAY ── */
+  .success-overlay {
+    display: none; position: fixed; inset: 0;
+    background: color-mix(in srgb, var(--text) 75%, transparent);
+    z-index: 1000; align-items: center; justify-content: center; padding: 16px;
+  }
+  .success-overlay.open { display: flex; }
+  .success-popup {
+    background: var(--surface); border-radius: var(--radius-lg);
+    padding: 40px 36px; max-width: 420px; width: 100%; text-align: center;
+    border: 1px solid var(--border);
+  }
+  .success-popup h3 { color: var(--text); margin-bottom: 12px; }
+  .success-popup p { color: var(--text-muted); line-height: 1.7; margin-bottom: 24px; font-size: 14px; }
+
+  @media (max-width: 640px) {
+    .contact-form { padding: 28px 22px; }
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    .phone-dropdown { width: 100%; }
+  }
+</style>
 </head>
-<body>
+<body id="body-root">
 
-  <!-- Navigation -->
-  <nav id="navbar">
-    <a href="./index.html" class="logo-text">LUMA</a>
-    <div class="nav-right">
-      <ul class="nav-links">
-        <li><a href="./index.html#about">LUMAとは</a></li>
-        <li class="has-dropdown">
-          <a href="./services.html" class="dropdown-toggle">サービス</a>
-          <ul class="dropdown-menu">
-            <div class="dropdown-menu-inner">
-            <li><a href="./services.html">サービス一覧</a></li>
-            <li><a href="./service-english.html">英語教育 — LUMA Voice</a></li>
-            <li><a href="./s-league.html">S.League 麻雀大会</a></li>
-            <li><a href="./service-tour.html">ツアー — LUMA Path</a></li>
-            <li><a href="./service-photo.html">写真撮影 — LUMA Frame</a></li>
-            <li><a href="./service-counselling.html">カウンセリング — LUMA Space</a></li>
-            <li><a href="./service-karaoke.html">カラオケ — LUMA Stage</a></li>
-            </div>
-          </ul>
-        </li>
-        <li><a href="./contact.html">お問い合わせ</a></li>
-        <li><a href="./legal.html">特商法・プライバシー</a></li>
-      </ul>
-      <a href="./en/contact.html" class="lang-link">English ▸</a>
-      <button class="ham" id="hamBtn" onclick="toggleMobMenu()" aria-label="メニュー">
-        <span></span><span></span><span></span>
-      </button>
+<nav class="site-nav" aria-label="メインナビゲーション">
+  <div class="nav-inner">
+    <a href="./index.html" class="brand" aria-label="LUMA ホーム">
+      <span class="brand-mark">L</span><span>LUMA</span>
+    </a>
+    <ul class="nav-links">
+      <li class="has-dropdown">
+        <a href="./services.html" class="dropdown-toggle">サービス</a>
+        <ul class="dropdown-menu">
+          <li><a href="./services.html">サービス一覧</a></li>
+          <li><a href="./service-english.html">英会話レッスン</a></li>
+          <li><a href="./service-photo.html">記念撮影・ポートレート</a></li>
+          <li><a href="./service-tour.html">英語で巡る東京ツアー</a></li>
+          <li><a href="./service-community.html">コミュニティイベント</a></li>
+          <li><a href="./s-league.html">S.League 麻雀大会</a></li>
+        </ul>
+      </li>
+      <li><a href="./about.html">About me</a></li>
+      <li><a href="./index.html#faq">FAQ</a></li>
+    </ul>
+    <div style="display:flex;gap:10px;align-items:center;">
+      <a href="./contact-en.html" class="lang-switch" aria-label="Switch to English">EN</a>
+      <a href="#contact-form" class="nav-cta">フォームへ →</a>
     </div>
-  </nav>
-
-  <!-- Mobile Menu -->
-  <div class="mob-menu" id="mobMenu">
-    <button class="mob-close" onclick="toggleMobMenu()">✕</button>
-    <a href="./index.html#about" onclick="toggleMobMenu()">LUMAとは</a>
-    <div class="mob-svc-wrap">
-      <button class="mob-svc-toggle" onclick="toggleMobSvc(this)" aria-expanded="false">
-        サービス <span class="mob-svc-arrow">▾</span>
-      </button>
-      <div class="mob-svc-list" aria-hidden="true">
-        <a href="./services.html" onclick="toggleMobMenu()">サービス一覧</a>
-        <a href="./service-english.html" onclick="toggleMobMenu()">英語教育 — LUMA Voice</a>
-        <a href="./s-league.html" onclick="toggleMobMenu()">S.League 麻雀大会</a>
-        <a href="./service-tour.html" onclick="toggleMobMenu()">ツアー — LUMA Path</a>
-        <a href="./service-photo.html" onclick="toggleMobMenu()">写真撮影 — LUMA Frame</a>
-        <a href="./service-counselling.html" onclick="toggleMobMenu()">カウンセリング — LUMA Space</a>
-        <a href="./service-karaoke.html" onclick="toggleMobMenu()">カラオケ — LUMA Stage</a>
-      </div>
-    </div>
-    <a href="./contact.html" onclick="toggleMobMenu()">お問い合わせ</a>
-    <a href="./legal.html" onclick="toggleMobMenu()">特商法・プライバシー</a>
-    <a href="./en/contact.html" onclick="toggleMobMenu()" style="margin-top:12px;font-size:14px;">English ▸</a>
   </div>
+</nav>
 
-  <!-- HERO -->
-  <div class="contact-hero">
-    <p class="contact-hero-eyebrow">Contact</p>
-    <h1 class="contact-hero-title">まずは<em>無料相談</em>から</h1>
-    <p class="contact-hero-sub">2営業日以内にご返信いたします</p>
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <ol>
+    <li><a href="./index.html">ホーム</a></li>
+    <li aria-current="page">お問い合わせ</li>
+  </ol>
+</nav>
+
+<header class="hero contact-hero" id="home">
+  <div class="container">
+    <span class="eyebrow">Contact</span>
+    <h1 class="hero-title" style="margin-top:18px;">
+      まずは、<br />
+      <span class="accent">無料相談</span>から。
+    </h1>
+    <p class="sub">2営業日以内にご返信いたします。サービスを決めかねている方も、お気軽にどうぞ。</p>
   </div>
+</header>
 
-  <!-- FORM -->
-  <div class="contact-wrap">
-    <form class="contact-form reveal" id="contact-form">
+<section style="padding: 24px 0 80px;">
+  <div class="container">
+    <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/mdawgrql" method="POST">
       <div class="form-row">
         <div class="form-group">
-          <label>名字 *</label>
-          <input type="text" name="last_name" required placeholder="山田" />
+          <label for="last_name">名字 *</label>
+          <input id="last_name" type="text" name="last_name" required placeholder="山田" />
         </div>
         <div class="form-group">
-          <label>名前 *</label>
-          <input type="text" name="first_name" required placeholder="太郎" />
+          <label for="first_name">名前 *</label>
+          <input id="first_name" type="text" name="first_name" required placeholder="太郎" />
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
-          <label>メールアドレス *</label>
-          <input type="email" name="email" required placeholder="example@email.com" />
+          <label for="email">メールアドレス *</label>
+          <input id="email" type="email" name="email" required placeholder="example@email.com" />
         </div>
         <div class="form-group">
-          <label>電話番号 *</label>
+          <label for="phone-number">電話番号 *</label>
           <div class="phone-row" id="phone-row-wrap">
-            <div class="phone-trigger" id="phone-trigger" tabindex="0" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-label="Country dial code">
+            <div class="phone-trigger" id="phone-trigger" tabindex="0" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-label="国コードを選択">
               <span class="pt-flag" id="pt-flag">🇯🇵</span>
               <span class="pt-code" id="pt-code">+81</span>
               <span class="pt-arrow">▼</span>
             </div>
             <div class="phone-dropdown" id="phone-dropdown" role="listbox">
               <div class="phone-search-wrap">
-                <input class="phone-search" id="phone-search" type="text" placeholder="Search country..." autocomplete="off" />
+                <input class="phone-search" id="phone-search" type="text" placeholder="国名で検索..." autocomplete="off" />
               </div>
               <div class="phone-list" id="phone-list"></div>
             </div>
@@ -233,172 +259,235 @@
         </div>
       </div>
       <div class="form-group">
-        <label>ご希望のサービス *</label>
-        <select name="service" required>
+        <label for="service">ご希望のサービス *</label>
+        <select id="service" name="service" required>
           <option value="" disabled selected>サービスを選択</option>
-          <option value="英語教育・チュータリング（LUMA Voice）">英語教育・チュータリング（LUMA Voice）</option>
+          <option value="英会話レッスン (LUMA Voice)">英会話レッスン (LUMA Voice)</option>
+          <option value="記念撮影・ポートレート (LUMA Frame)">記念撮影・ポートレート (LUMA Frame)</option>
+          <option value="英語ツアー (LUMA Path)">英語ツアー (LUMA Path)</option>
+          <option value="カウンセリング (LUMA Space)">カウンセリング (LUMA Space)</option>
+          <option value="カラオケ指導 (LUMA Stage)">カラオケ指導 (LUMA Stage)</option>
+          <option value="コミュニティイベント (LUMA Circle)">コミュニティイベント (LUMA Circle)</option>
           <option value="S.League 麻雀大会">S.League 麻雀大会</option>
-          <option value="ツアー企画・ガイド（LUMA Path）">ツアー企画・ガイド（LUMA Path）</option>
-          <option value="ポートレート・写真撮影（LUMA Frame）">ポートレート・写真撮影（LUMA Frame）</option>
-          <option value="カウンセリング・コーチング（LUMA Space）">カウンセリング・コーチング（LUMA Space）</option>
-          <option value="カラオケ指導（LUMA Stage）">カラオケ指導（LUMA Stage）</option>
-          <option value="コミュニティイベント（LUMA Circle）">コミュニティイベント（LUMA Circle）</option>
           <option value="その他">その他</option>
         </select>
       </div>
       <div class="form-group">
-        <label>メッセージ *</label>
+        <label for="msg-textarea">メッセージ *</label>
         <textarea id="msg-textarea" name="message" required placeholder="お気軽にご相談内容をお書きください"></textarea>
       </div>
       <input type="hidden" name="_replyto" value="studio.luma.jp@gmail.com" />
       <div class="form-submit">
-        <button type="submit" class="btn-primary">送信する</button>
+        <button type="submit" class="btn btn-primary">送信する →</button>
       </div>
       <p class="contact-note">※ 送信いただいた情報は、お問い合わせへの返答にのみ使用します。</p>
     </form>
   </div>
+</section>
 
-  <!-- Success Overlay -->
-  <div class="success-overlay" id="success-overlay" onclick="closeSuccess(event)">
-    <div class="success-popup">
-      <div style="font-size:40px;margin-bottom:16px;">✉️</div>
-      <h3 style="font-size:22px;color:var(--dark);margin-bottom:12px;">送信しました！</h3>
-      <p style="font-size:13px;color:var(--text-light);line-height:1.5;margin-bottom:28px;">お問い合わせありがとうございます。<br>2営業日以内にご返信いたします。</p>
-      <button onclick="closeSuccessBtn()" style="padding:8px 22px;background:var(--accent);color:#fff;border:none;border-radius:980px;font-size:16px;font-weight:700;letter-spacing:0.04em;cursor:pointer;">閉じる</button>
+<section style="padding-bottom: 120px;">
+  <div class="container">
+    <div class="cta-big reveal">
+      <span class="eyebrow" style="color: color-mix(in srgb, var(--bg) 70%, transparent);">直接連絡</span>
+      <h2 style="margin-top:16px;">メールでも受付中。</h2>
+      <p style="font-size:17px;max-width:560px;margin:12px auto 28px;">
+        フォーム以外でも、メールで直接ご連絡いただけます。
+        <br><strong style="color:var(--bg);font-family:var(--font-mono);">studio.luma.jp@gmail.com</strong>
+      </p>
+      <a href="mailto:studio.luma.jp@gmail.com" class="btn btn-primary">メールを開く →</a>
     </div>
   </div>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-inner">
+<div class="success-overlay" id="success-overlay" onclick="closeSuccess(event)">
+  <div class="success-popup">
+    <div style="font-size:40px;margin-bottom:16px;">✉️</div>
+    <h3>送信しました!</h3>
+    <p>お問い合わせありがとうございます。<br>2営業日以内にご返信いたします。</p>
+    <button onclick="closeSuccessBtn()" class="btn btn-primary">閉じる</button>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
       <div class="footer-brand">
-        <a href="./index.html" class="footer-logo">LUMA</a>
-        <div class="footer-tagline">Clarity by Design &nbsp;|&nbsp; Illuminate Your Confidence</div>
+        <a href="./index.html" class="brand"><span class="brand-mark">L</span><span>LUMA</span></a>
+        <p>東京・横浜で、あなたの自信をデザインする。Clarity by Design — Illuminate Your Confidence.</p>
       </div>
-      <ul class="footer-links">
-        <li><a href="./index.html#about">LUMAとは</a></li>
-        <li><a href="./index.html#services">サービス</a></li>
-        <li><a href="./contact.html">お問い合わせ</a></li>
-        <li><a href="./legal.html">特商法・プライバシー</a></li>
-      </ul>
-      <div class="footer-copy">© 2026 LUMA — Sho Asano. All rights reserved.</div>
+      <div class="footer-col">
+        <h4>サービス</h4>
+        <ul>
+          <li><a href="./service-english.html">英会話レッスン</a></li>
+          <li><a href="./service-photo.html">記念撮影・ポートレート</a></li>
+          <li><a href="./s-league.html">S.League 麻雀</a></li>
+          <li><a href="./service-tour.html">英語で巡る東京ツアー</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>LUMAについて</h4>
+        <ul>
+          <li><a href="./about.html">About me</a></li>
+          <li><a href="./index.html#story">My Story</a></li>
+          <li><a href="./index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>サポート</h4>
+        <ul>
+          <li><a href="./contact.html">お問い合わせ</a></li>
+          <li><a href="./legal.html">特定商取引法</a></li>
+          <li><a href="./legal.html#privacy">プライバシー</a></li>
+          <li><a href="./contact-en.html">English</a></li>
+        </ul>
+      </div>
     </div>
-  </footer>
+    <div class="footer-bottom">
+      <span>© 2026 LUMA — Sho Asano. All rights reserved.</span>
+      <span>横浜市・神奈川県 · 日英バイリンガル</span>
+    </div>
+  </div>
+</footer>
 
-  <script>
-    // Nav / Mobile menu helpers
-    function toggleMobMenu(){const m=document.getElementById('mobMenu');const o=m.classList.toggle('open');document.body.style.overflow=o?'hidden':'';}
-    function toggleMobSvc(btn){const list=btn.nextElementSibling;const expanded=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!expanded));list.classList.toggle('open',!expanded);}
-    window.addEventListener('scroll',()=>{const nav=document.getElementById('navbar');if(nav) nav.classList.toggle('scrolled',window.scrollY>40);});
-    document.addEventListener('keydown',e=>{if(e.key==='Escape'){const m=document.getElementById('mobMenu');if(m){m.classList.remove('open');document.body.style.overflow='';}}});
-
-    // Reveal
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
-
-    // Phone picker
-    const COUNTRIES = [
-        ['🇯🇵','Japan','+81','090-1234-5678',10,11],
-        ['🇦🇺','Australia','+61','0412-345-678',9,10],
-        ['🇺🇸','United States','+1','(555) 123-4567',10,10],
-        ['🇬🇧','United Kingdom','+44','07700 900123',10,11],
-        ['🇸🇬','Singapore','+65','8123 4567',8,8],
-        ['🇨🇳','China','+86','138 0013 8000',11,11],
-        ['🇰🇷','South Korea','+82','010-1234-5678',9,11],
-        ['🇹🇭','Thailand','+66','081-234-5678',9,9],
-        ['🇮🇳','India','+91','98765 43210',10,10],
-        ['🇵🇭','Philippines','+63','0917 123 4567',10,10],
-        ['🇮🇩','Indonesia','+62','0812-345-6789',9,12],
-        ['🇲🇾','Malaysia','+60','012-345 6789',9,10],
-        ['🇻🇳','Vietnam','+84','090 123 4567',9,10],
-        ['🇭🇰','Hong Kong','+852','5123 4567',8,8],
-        ['🇹🇼','Taiwan','+886','0912-345-678',9,10],
-        ['🇳🇿','New Zealand','+64','021 123 4567',8,10],
-        ['🇨🇦','Canada','+1','(555) 123-4567',10,10],
-        ['🇩🇪','Germany','+49','0151 12345678',10,12],
-        ['🇫🇷','France','+33','06 12 34 56 78',9,9],
-        ['🇮🇹','Italy','+39','333 123 4567',9,11],
-        ['🇪🇸','Spain','+34','612 345 678',9,9],
-        ['🇵🇹','Portugal','+351','912 345 678',9,9],
-        ['🇳🇱','Netherlands','+31','06 12345678',9,9],
-        ['🇧🇪','Belgium','+32','0470 12 34 56',9,9],
-        ['🇨🇭','Switzerland','+41','079 123 45 67',9,9],
-        ['🇦🇹','Austria','+43','0664 123456',10,11],
-        ['🇸🇪','Sweden','+46','070-123 45 67',9,9],
-        ['🇳🇴','Norway','+47','412 34 567',8,8],
-        ['🇩🇰','Denmark','+45','20 12 34 56',8,8],
-        ['🇫🇮','Finland','+358','040 123 4567',9,10],
-        ['🇵🇱','Poland','+48','512 345 678',9,9],
-        ['🇷🇺','Russia','+7','9161234567',10,10],
-        ['🇺🇦','Ukraine','+380','067 123 4567',9,9],
-        ['🇹🇷','Turkey','+90','0532 123 4567',10,10],
-        ['🇸🇦','Saudi Arabia','+966','054 123 4567',9,9],
-        ['🇦🇪','UAE','+971','050 123 4567',9,9],
-        ['🇮🇱','Israel','+972','050-123-4567',9,9],
-        ['🇧🇷','Brazil','+55','11 9 1234-5678',10,11],
-        ['🇲🇽','Mexico','+52','55 1234 5678',10,10],
-        ['🇦🇷','Argentina','+54','11 1234-5678',10,10],
-        ['🇨🇱','Chile','+56','9 1234 5678',9,9],
-        ['🇨🇴','Colombia','+57','315 123 4567',10,10],
-        ['🇿🇦','South Africa','+27','071 123 4567',9,9],
-        ['🇳🇬','Nigeria','+234','080 1234 5678',10,11],
-        ['🇰🇪','Kenya','+254','0712 345678',9,9],
-        ['🇪🇬','Egypt','+20','0100 123 4567',10,11],
-        ['🇵🇰','Pakistan','+92','0301 2345678',10,10],
-        ['🇧🇩','Bangladesh','+880','01712 345678',10,11],
-        ['🇱🇰','Sri Lanka','+94','077 123 4567',9,9],
-        ['🇳🇵','Nepal','+977','9841 123456',10,10],
-        ['🇲🇲','Myanmar','+95','09 123 456789',9,11],
-        ['🇰🇭','Cambodia','+855','010 123 456',8,9],
-        ['🇱🇦','Laos','+856','020 5555 1234',9,10],
-        ['🇧🇳','Brunei','+673','712 3456',7,7],
-        ['🇲🇴','Macau','+853','6123 4567',8,8],
-        ['🇫🇯','Fiji','+679','770 1234',7,7],
-        ['🇵🇬','Papua New Guinea','+675','7123 4567',8,8],
-        ['🌐','Other / その他','+','',0,15],
-      ];
-    
-
-    // Contact form submit
-    document.getElementById('contact-form').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const btn = this.querySelector('button[type="submit"]');
-      const formData = new FormData(this);
-      const prefix = (document.getElementById('phone-prefix')?.value || '').trim();
-      const rawNum = (document.getElementById('phone-number')?.value || '').trim();
-      if (prefix && rawNum) formData.set('phone', prefix + ' ' + rawNum);
-      formData.delete('phone_prefix_hidden');
-      btn.disabled = true; btn.style.opacity = '0.6';
-      btn.innerHTML = '<span>送信中...</span>';
-      try {
-        const res = await fetch('https://formspree.io/f/mdawgrql', {
-          method: 'POST', body: formData, headers: { 'Accept': 'application/json' }
-        });
-        if (res.ok) {
-          this.reset();
-          document.getElementById('success-overlay').classList.add('open');
-          document.body.style.overflow = 'hidden';
-        } else {
-          let data = {}; try { data = await res.json(); } catch(_) {}
-          const msgs = (data.errors || []).map(x => x.message).filter(Boolean);
-          alert(msgs.length ? msgs.join(' / ') : '送信に失敗しました。もう一度お試しください。');
-        }
-      } catch(err) {
-        alert('ネットワークエラーが発生しました。');
-      }
-      btn.disabled = false; btn.style.opacity = '1';
-      btn.innerHTML = '送信する';
+<script>
+  // Reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
     });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-    function closeSuccessBtn() {
-      document.getElementById('success-overlay').classList.remove('open');
-      document.body.style.overflow = '';
+  // ── PHONE PICKER ──
+  const COUNTRIES = [
+    ['🇯🇵','Japan / 日本','+81','090-1234-5678'],
+    ['🇺🇸','United States','+1','(555) 123-4567'],
+    ['🇦🇺','Australia','+61','0412-345-678'],
+    ['🇬🇧','United Kingdom','+44','07700 900123'],
+    ['🇸🇬','Singapore','+65','8123 4567'],
+    ['🇨🇳','China','+86','138 0013 8000'],
+    ['🇰🇷','South Korea','+82','010-1234-5678'],
+    ['🇹🇭','Thailand','+66','081-234-5678'],
+    ['🇮🇳','India','+91','98765 43210'],
+    ['🇵🇭','Philippines','+63','0917 123 4567'],
+    ['🇮🇩','Indonesia','+62','0812-345-6789'],
+    ['🇲🇾','Malaysia','+60','012-345 6789'],
+    ['🇻🇳','Vietnam','+84','090 123 4567'],
+    ['🇭🇰','Hong Kong','+852','5123 4567'],
+    ['🇹🇼','Taiwan','+886','0912-345-678'],
+    ['🇳🇿','New Zealand','+64','021 123 4567'],
+    ['🇨🇦','Canada','+1','(555) 123-4567'],
+    ['🇩🇪','Germany','+49','0151 12345678'],
+    ['🇫🇷','France','+33','06 12 34 56 78'],
+    ['🇮🇹','Italy','+39','333 123 4567'],
+    ['🇪🇸','Spain','+34','612 345 678'],
+    ['🇵🇹','Portugal','+351','912 345 678'],
+    ['🇳🇱','Netherlands','+31','06 12345678'],
+    ['🇧🇪','Belgium','+32','0470 12 34 56'],
+    ['🇨🇭','Switzerland','+41','079 123 45 67'],
+    ['🇸🇪','Sweden','+46','070-123 45 67'],
+    ['🇳🇴','Norway','+47','412 34 567'],
+    ['🇩🇰','Denmark','+45','20 12 34 56'],
+    ['🇫🇮','Finland','+358','040 123 4567'],
+    ['🇵🇱','Poland','+48','512 345 678'],
+    ['🇹🇷','Turkey','+90','0532 123 4567'],
+    ['🇦🇪','UAE','+971','050 123 4567'],
+    ['🇧🇷','Brazil','+55','11 9 1234-5678'],
+    ['🇲🇽','Mexico','+52','55 1234 5678'],
+    ['🇿🇦','South Africa','+27','071 123 4567'],
+    ['🌐','Other / その他','+',''],
+  ];
+
+  const phoneTrigger = document.getElementById('phone-trigger');
+  const phoneDropdown = document.getElementById('phone-dropdown');
+  const phoneList = document.getElementById('phone-list');
+  const phoneSearch = document.getElementById('phone-search');
+  const phonePrefix = document.getElementById('phone-prefix');
+  const ptFlag = document.getElementById('pt-flag');
+  const ptCode = document.getElementById('pt-code');
+  const phoneNumber = document.getElementById('phone-number');
+  const phoneHint = document.getElementById('phone-hint');
+
+  function renderCountries(filter = '') {
+    phoneList.innerHTML = '';
+    const f = filter.trim().toLowerCase();
+    COUNTRIES.filter(c => !f || c[1].toLowerCase().includes(f) || c[2].includes(f)).forEach(c => {
+      const item = document.createElement('div');
+      item.className = 'phone-list-item';
+      item.setAttribute('role', 'option');
+      item.innerHTML = `<span class="flag">${c[0]}</span><span class="name">${c[1]}</span><span class="code">${c[2]}</span>`;
+      item.addEventListener('click', () => {
+        ptFlag.textContent = c[0];
+        ptCode.textContent = c[2];
+        phonePrefix.value = c[2];
+        if (c[3]) {
+          phoneNumber.placeholder = c[3];
+          phoneHint.textContent = `例: ${c[3]}`;
+        } else {
+          phoneNumber.placeholder = '';
+          phoneHint.textContent = '';
+        }
+        phoneDropdown.classList.remove('open');
+        phoneTrigger.setAttribute('aria-expanded', 'false');
+      });
+      phoneList.appendChild(item);
+    });
+  }
+  renderCountries();
+
+  phoneTrigger.addEventListener('click', () => {
+    const open = phoneDropdown.classList.toggle('open');
+    phoneTrigger.setAttribute('aria-expanded', String(open));
+    if (open) { phoneSearch.value = ''; renderCountries(); phoneSearch.focus(); }
+  });
+  phoneSearch.addEventListener('input', e => renderCountries(e.target.value));
+  document.addEventListener('click', e => {
+    if (!phoneTrigger.contains(e.target) && !phoneDropdown.contains(e.target)) {
+      phoneDropdown.classList.remove('open');
+      phoneTrigger.setAttribute('aria-expanded', 'false');
     }
-    function closeSuccess(e) {
-      if (e.target === document.getElementById('success-overlay')) closeSuccessBtn();
+  });
+
+  // ── FORM SUBMIT ──
+  document.getElementById('contact-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('button[type="submit"]');
+    const formData = new FormData(this);
+    const prefix = (phonePrefix?.value || '').trim();
+    const rawNum = (phoneNumber?.value || '').trim();
+    if (prefix && rawNum) formData.set('phone', prefix + ' ' + rawNum);
+    formData.delete('phone_prefix_hidden');
+    btn.disabled = true; btn.style.opacity = '0.6';
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '送信中...';
+    try {
+      const res = await fetch('https://formspree.io/f/mdawgrql', {
+        method: 'POST', body: formData, headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        this.reset();
+        document.getElementById('success-overlay').classList.add('open');
+        document.body.style.overflow = 'hidden';
+      } else {
+        let data = {}; try { data = await res.json(); } catch(_) {}
+        const msgs = (data.errors || []).map(x => x.message).filter(Boolean);
+        alert(msgs.length ? msgs.join(' / ') : '送信に失敗しました。もう一度お試しください。');
+      }
+    } catch(err) {
+      alert('ネットワークエラーが発生しました。');
     }
-  </script>
+    btn.disabled = false; btn.style.opacity = '1';
+    btn.innerHTML = originalText;
+  });
+
+  function closeSuccessBtn() {
+    document.getElementById('success-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function closeSuccess(e) {
+    if (e.target === document.getElementById('success-overlay')) closeSuccessBtn();
+  }
+</script>
+
 </body>
 </html>

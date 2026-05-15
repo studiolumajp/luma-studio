@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ja" id="html-root">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0F172A" />
+<meta name="color-scheme" content="light only" />
+
+<!-- ── PRIMARY SEO META ── -->
+<title>S.League 24 参加申込 | 詳細調整中 — LUMA</title>
+<meta name="description" content="S.League 24 の参加申込ページ。開催日・会場・参加費・申込締切などの詳細は現在調整中です。決まり次第こちらでご案内します。" />
+<meta name="keywords" content="S.League 24,健康麻雀 大会,新橋 麻雀 大会,麻雀大会 東京,LUMA" />
+<meta name="author" content="Sho Asano (浅野彰) / LUMA" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://studio-lumadesign.com/s-league-24.html" />
+
+<link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/s-league-24.html" />
+<link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/s-league-24.html" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://studio-lumadesign.com/s-league-24.html" />
+<meta property="og:title" content="S.League 24 参加申込 | 詳細調整中 — LUMA" />
+<meta property="og:description" content="S.League 24 の開催日・会場・参加費・申込締切などの詳細は現在調整中です。決まり次第ご案内します。" />
+<meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:site_name" content="LUMA" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="S.League 24 参加申込" />
+<meta name="twitter:description" content="S.League 24 の詳細は現在調整中。決まり次第ご案内します。" />
+<meta name="twitter:image" content="https://studio-lumadesign.com/og-image.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Event",
+      "name": "S.League 24",
+      "description": "S.League 第24回大会。開催日・会場・参加費などの詳細は現在調整中です。",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "url": "https://studio-lumadesign.com/s-league-24.html",
+      "organizer": {"@id": "https://studio-lumadesign.com/#business"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://studio-lumadesign.com/"},
+        {"@type": "ListItem", "position": 2, "name": "S.League", "item": "https://studio-lumadesign.com/s-league.html"},
+        {"@type": "ListItem", "position": 3, "name": "S.League 24", "item": "https://studio-lumadesign.com/s-league-24.html"}
+      ]
+    }
+  ]
+}
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-62F20N179N');
+</script>
+
+<link rel="stylesheet" href="./shared.css" />
+<style id="page-overrides">
+  /* ── S.League hero: full-bleed background photo + 左側ダークオーバーレイ (s-league.html と統一) ── */
+  .sl-hero {
+    position: relative; overflow: hidden;
+    padding: 112px 0 128px;
+    min-height: 520px;
+    color: #fff;
+    background:
+      linear-gradient(90deg,
+        rgba(0, 0, 0, 0.82) 0%,
+        rgba(0, 0, 0, 0.72) 25%,
+        rgba(0, 0, 0, 0.35) 45%,
+        rgba(0, 0, 0, 0.00) 58%
+      ),
+      url('./images/compare/compare-mahjong.JPG?v=2') center/cover no-repeat;
+  }
+  .sl-hero h1 {
+    font-size: clamp(40px, 6vw, 72px); max-width: 460px;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.55), 0 1px 3px rgba(0, 0, 0, 0.45);
+  }
+  .sl-hero h1 .accent {
+    background: none;
+    -webkit-background-clip: initial; background-clip: initial;
+    color: #fbbf24;
+  }
+  .sl-hero .date {
+    font-size: clamp(18px, 1.6vw, 22px); color: #fff; font-weight: 600;
+    margin-top: 12px; max-width: 460px;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.65), 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  .status-badge {
+    display: inline-block; margin-top: 16px;
+    padding: 6px 16px; border-radius: 999px; font-size: 13px; font-weight: 700;
+    background: rgba(255, 255, 255, 0.18); color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    font-family: var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .sl-hero .eyebrow { color: #fff; }
+  .sl-hero .eyebrow::before { background: #fff; }
+  .sl-hero .hero-cta-row { max-width: 560px; }
+  .sl-hero .btn-primary {
+    background: #fff; color: #0A0A0A; border-color: #fff;
+  }
+  .sl-hero .btn-primary:hover {
+    background: rgba(255, 255, 255, 0.88); color: #0A0A0A;
+  }
+  .sl-hero .btn-secondary {
+    background: transparent; color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+  }
+  .sl-hero .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.7);
+  }
+  @media (max-width: 640px) {
+    .sl-hero { padding: 80px 0 96px; min-height: 440px; }
+  }
+
+  /* ── Info grid ── */
+  .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .info-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 24px;
+  }
+  .info-label {
+    font-family: var(--font-mono); font-size: 11px; color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; display: block;
+  }
+  .info-val { font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+  .info-sub { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+  @media (max-width: 880px) { .info-grid { grid-template-columns: 1fr; } }
+
+  /* ── Schedule ── */
+  .schedule-list { list-style: none; max-width: 760px; margin: 0 auto; }
+  .schedule-item {
+    display: grid; grid-template-columns: 80px 1fr; gap: 24px;
+    padding: 20px 0; border-bottom: 1px solid var(--border);
+  }
+  .schedule-item:last-child { border-bottom: none; }
+  .schedule-time {
+    font-family: var(--font-mono); font-size: 16px; font-weight: 700;
+    color: var(--accent); padding-top: 2px;
+  }
+  .schedule-text { font-size: 15px; color: var(--text-muted); line-height: 1.7; }
+  .schedule-bold { font-weight: 700; color: var(--text); display: block; margin-bottom: 4px; }
+  @media (max-width: 640px) {
+    .schedule-item { grid-template-columns: 60px 1fr; gap: 16px; }
+    .schedule-time { font-size: 14px; }
+  }
+
+  /* ── Payment ── */
+  .payment-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
+  .payment-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 28px; text-align: center;
+    cursor: pointer; transition: all .25s;
+  }
+  .payment-card:hover { border-color: var(--accent); box-shadow: var(--shadow-md); }
+  .payment-card.selected {
+    border-color: var(--accent); background: color-mix(in srgb, var(--surface) 92%, var(--accent) 6%);
+  }
+  .payment-icon { font-size: 36px; display: block; margin-bottom: 8px; }
+  .payment-name { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+  .payment-desc { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+
+  .payment-detail {
+    display: none; margin-top: 24px;
+    background: var(--bg-soft); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 24px 28px;
+  }
+  .payment-detail.active { display: block; }
+  .payment-detail-title {
+    font-size: 16px; font-weight: 700; margin-bottom: 12px; color: var(--text);
+  }
+  .payment-detail-body { font-size: 14px; color: var(--text-muted); line-height: 1.8; }
+  @media (max-width: 880px) { .payment-grid { grid-template-columns: 1fr; } }
+
+  /* ── Apply steps ── */
+  .apply-steps { max-width: 760px; margin: 32px auto; list-style: none; }
+  .apply-step {
+    display: grid; grid-template-columns: 48px 1fr; gap: 20px;
+    padding: 20px 0; border-bottom: 1px solid var(--border);
+  }
+  .apply-step:last-child { border-bottom: none; }
+  .apply-step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: linear-gradient(120deg, var(--accent), var(--accent-2));
+    color: var(--bg); display: grid; place-items: center;
+    font-weight: 800; font-size: 16px;
+  }
+  .apply-step-text { font-size: 15px; color: var(--text-muted); line-height: 1.7; }
+  .apply-step-text strong { color: var(--text); display: block; margin-bottom: 4px; }
+
+  .deadline-pill {
+    display: inline-block; padding: 10px 22px;
+    border-radius: 999px; background: color-mix(in srgb, var(--accent) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+    color: var(--accent); font-size: 14px; font-weight: 600;
+    font-family: 'Inter', sans-serif; margin-bottom: 24px;
+  }
+
+  .terms-note {
+    font-size: 12px; color: var(--text-soft); line-height: 1.7;
+    border-top: 1px solid var(--border); padding-top: 14px; margin-top: 14px;
+  }
+  .terms-note a { color: var(--accent); text-decoration: underline; }
+</style>
+</head>
+<body id="body-root">
+
+<nav class="site-nav" aria-label="メインナビゲーション">
+  <div class="nav-inner">
+    <a href="./index.html" class="brand" aria-label="LUMA ホーム">
+      <span class="brand-mark">L</span><span>LUMA</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="./s-league.html">S.League</a></li>
+      <li><a href="./s-league-archive.html">アーカイブ</a></li>
+      <li><a href="./service-community.html">LUMA Circle</a></li>
+      <li><a href="./index.html">LUMA トップ</a></li>
+    </ul>
+    <div style="display:flex;gap:10px;align-items:center;">
+      <a href="#apply" class="nav-cta">参加申込 →</a>
+    </div>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <ol>
+    <li><a href="./index.html">ホーム</a></li>
+    <li><a href="./s-league.html">S.League</a></li>
+    <li aria-current="page">S.League 24</li>
+  </ol>
+</nav>
+
+<header class="hero sl-hero" id="home">
+  <div class="container">
+    <span class="eyebrow">S.League — Vol. 24</span>
+    <h1 class="hero-title" style="margin-top:18px;">
+      <span class="accent">S.League 24</span>
+    </h1>
+    <p class="date">開催日・会場 調整中</p>
+    <span class="status-badge">詳細調整中</span>
+    <div class="hero-cta-row" style="margin-top: 28px;">
+      <a href="#apply" class="btn btn-primary">参加申込はこちら →</a>
+      <a href="#info" class="btn btn-secondary">大会概要を見る</a>
+    </div>
+  </div>
+</header>
+
+<section id="info" aria-labelledby="info-heading" style="background:var(--bg-soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">大会概要</span>
+      <h2 id="info-heading">S.League 24 の概要</h2>
+    </div>
+    <div class="info-grid reveal">
+      <div class="info-card">
+        <span class="info-label">開催日</span>
+        <div class="info-val">調整中</div>
+        <div class="info-sub">決まり次第ご案内します</div>
+      </div>
+      <div class="info-card">
+        <span class="info-label">参加費</span>
+        <div class="info-val">調整中</div>
+        <div class="info-sub">決まり次第ご案内します</div>
+      </div>
+      <div class="info-card">
+        <span class="info-label">定員</span>
+        <div class="info-val">調整中</div>
+        <div class="info-sub">決まり次第ご案内します</div>
+      </div>
+      <div class="info-card">
+        <span class="info-label">場所</span>
+        <div class="info-val">調整中</div>
+        <div class="info-sub">決まり次第ご案内します</div>
+      </div>
+      <div class="info-card">
+        <span class="info-label">大会形式</span>
+        <div class="info-val">調整中</div>
+        <div class="info-sub">決まり次第ご案内します</div>
+      </div>
+      <div class="info-card">
+        <span class="info-label">申込締切</span>
+        <div class="info-val">調整中</div>
+        <div class="info-sub">決まり次第ご案内します</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="schedule" aria-labelledby="schedule-heading">
+  <div class="container">
+    <div class="section-head reveal" style="margin: 0 auto 48px; text-align:center;">
+      <span class="eyebrow">当日のスケジュール</span>
+      <h2 id="schedule-heading">1日の流れ</h2>
+      <p style="margin: 0 auto;">9:50受付 → 10:00開会 → 19:30エキシビションまで、約10時間。</p>
+    </div>
+    <ul class="schedule-list reveal">
+      <li class="schedule-item"><span class="schedule-time">9:50</span><div class="schedule-text"><span class="schedule-bold">受付開始</span>会場にお越しの際は時間に余裕を持ってお越しください。</div></li>
+      <li class="schedule-item"><span class="schedule-time">10:00</span><div class="schedule-text"><span class="schedule-bold">開会式・ルール説明</span>初参加の方も安心してご参加いただけるよう丁寧にご説明します。</div></li>
+      <li class="schedule-item"><span class="schedule-time">10:10</span><div class="schedule-text"><span class="schedule-bold">予選 1〜3回戦 (50分打ち切り)</span>本戦開始。3半荘を行います。</div></li>
+      <li class="schedule-item"><span class="schedule-time">13:20頃</span><div class="schedule-text"><span class="schedule-bold">昼食休憩</span>周辺に飲食店多数あり。英気を養って後半戦へ。</div></li>
+      <li class="schedule-item"><span class="schedule-time">14:00</span><div class="schedule-text"><span class="schedule-bold">予選 4〜6回戦 (50分打ち切り)</span>後半戦開始。点棒状況により順位が大きく変動します。</div></li>
+      <li class="schedule-item"><span class="schedule-time">17:00頃</span><div class="schedule-text"><span class="schedule-bold">順位戦 2戦 (60分打ち切り)</span>上位争いを左右する重要な2戦。持ち時間を意識した戦略が問われます。</div></li>
+      <li class="schedule-item"><span class="schedule-time">19:20頃</span><div class="schedule-text"><span class="schedule-bold">表彰式・景品贈呈・閉会</span>全参加者に参加賞をお渡しします。</div></li>
+      <li class="schedule-item"><span class="schedule-time">19:30</span><div class="schedule-text"><span class="schedule-bold">エキシビション</span>本戦終了後のお楽しみ。希望者によるフリー対局など、クローズ後もひと盛り上がり。</div></li>
+    </ul>
+  </div>
+</section>
+
+<section id="payment" aria-labelledby="payment-heading" style="background:var(--text);color:var(--bg);">
+  <div class="container">
+    <div class="section-head reveal" style="text-align:center; margin: 0 auto 32px;">
+      <span class="eyebrow" style="color: color-mix(in srgb, var(--bg) 70%, transparent);">お支払い方法</span>
+      <h2 id="payment-heading" style="color: var(--bg);">3つの方法から選べます</h2>
+      <p style="color: color-mix(in srgb, var(--bg) 70%, transparent); margin: 0 auto;">申込フォームにてお支払い方法をお選びください。選択した方法の案内が自動で表示されます。</p>
+    </div>
+
+    <div class="payment-grid reveal">
+      <div class="payment-card paypay" onclick="showPayment('paypay')">
+        <span class="payment-icon">📱</span>
+        <div class="payment-name">PayPay</div>
+        <div class="payment-desc">PayPay<br>支払い期限: 5日以内</div>
+      </div>
+      <div class="payment-card bank" onclick="showPayment('bank')">
+        <span class="payment-icon">🏦</span>
+        <div class="payment-name">銀行振込</div>
+        <div class="payment-desc">口座振込<br>支払い期限: 5日以内</div>
+      </div>
+      <div class="payment-card square" onclick="showPayment('square')">
+        <span class="payment-icon">💳</span>
+        <div class="payment-name">クレジットカード</div>
+        <div class="payment-desc">Square Invoice<br>VISA / Master / JCB / AMEX</div>
+      </div>
+    </div>
+
+    <div class="payment-detail" id="detail-paypay">
+      <div class="payment-detail-title">PayPay でのお支払い</div>
+      <div class="payment-detail-body">
+        申込フォームの送信後、PayPay ID と QRコードをご案内します。<br><br>
+        <strong>支払い期限: お申込みから5日以内</strong><br><br>
+        入金確認後、主催者より参加確定のご連絡をいたします (通常1〜2営業日以内)。
+      </div>
+    </div>
+    <div class="payment-detail" id="detail-bank">
+      <div class="payment-detail-title">銀行振込でのお支払い</div>
+      <div class="payment-detail-body">
+        申込フォームの送信後、振込先口座情報をご案内します。<br><br>
+        <strong>振込期限: お申込みから5日以内</strong><br><br>
+        入金確認後、主催者より参加確定のご連絡をいたします (通常1〜2営業日以内)。
+      </div>
+    </div>
+    <div class="payment-detail" id="detail-square">
+      <div class="payment-detail-title">クレジットカードでのお支払い</div>
+      <div class="payment-detail-body">
+        申込フォームの送信後、Square より請求書メールをお送りします。<br><br>
+        <strong>対応カード: VISA / Mastercard / JCB / AMEX</strong><br><br>
+        決済完了後、主催者より参加確定のご連絡をいたします (通常1〜2営業日以内)。
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="apply" aria-labelledby="apply-heading">
+  <div class="container">
+    <div class="section-head reveal" style="text-align:center; margin: 0 auto 24px;">
+      <span class="eyebrow">参加申込</span>
+      <h2 id="apply-heading">S.League 24 に参加する</h2>
+      <p style="margin: 0 auto 16px;">以下のボタンから申込フォームへお進みください。フォーム内でお支払い方法をお選びいただきます。</p>
+      <div style="text-align:center;">
+        <span class="deadline-pill">📅 申込締切: 調整中</span>
+      </div>
+    </div>
+
+    <ul class="apply-steps reveal">
+      <li class="apply-step">
+        <span class="apply-step-num">1</span>
+        <div class="apply-step-text"><strong>申込フォームに入力</strong>氏名・連絡先・麻雀経験などの基本情報を入力します。</div>
+      </li>
+      <li class="apply-step">
+        <span class="apply-step-num">2</span>
+        <div class="apply-step-text"><strong>お支払い方法を選択</strong>PayPay / 銀行振込 / クレジットカードからお選びください。</div>
+      </li>
+      <li class="apply-step">
+        <span class="apply-step-num">3</span>
+        <div class="apply-step-text"><strong>お支払いの手続きへ</strong>クレジットカードの場合はそのままお支払いをお願いします。PayPay・銀行振込の場合は、別途お送りするメールにて情報をご確認の上、お支払いをお願いします。</div>
+      </li>
+      <li class="apply-step">
+        <span class="apply-step-num">4</span>
+        <div class="apply-step-text"><strong>参加確定</strong>ご参加確定のメール受信をもって確定となります。</div>
+      </li>
+    </ul>
+
+    <div class="reveal" style="text-align:center; max-width: 760px; margin: 0 auto;">
+      <a href="https://forms.gle/eMqR3irqJMEKdeaB6" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:16px; padding: 16px 28px;">申込フォームへ進む →</a>
+      <p style="font-size: 13px; color: var(--text-soft); margin-top: 16px; line-height: 1.7;">
+        申込締切: <strong style="color:var(--text);">調整中</strong> (決まり次第ご案内します)<br>
+        ご不明な点は <a href="./contact.html" style="color:var(--accent);text-decoration:underline;">お問い合わせフォーム</a> よりご連絡ください。
+      </p>
+      <p class="terms-note">
+        申込完了をもって以下のポリシーに同意いただいたものとみなします。<br>
+        <a href="./legal.html#cancel">キャンセルポリシー</a> ／
+        <a href="./legal.html#tokusho">特定商取引法に基づく表記</a> ／
+        <a href="./legal.html#privacy">プライバシーポリシー</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="./index.html" class="brand"><span class="brand-mark">L</span><span>LUMA</span></a>
+        <p>東京・横浜で、あなたの自信をデザインする。Clarity by Design — Illuminate Your Confidence.</p>
+      </div>
+      <div class="footer-col">
+        <h4>S.League</h4>
+        <ul>
+          <li><a href="./s-league.html">大会概要</a></li>
+          <li><a href="./s-league-24.html">SL24 申込</a></li>
+          <li><a href="./s-league-archive.html">成績アーカイブ</a></li>
+          <li><a href="./service-community.html">LUMA Circle</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>LUMAについて</h4>
+        <ul>
+          <li><a href="./about.html">About me</a></li>
+          <li><a href="./index.html#story">My Story</a></li>
+          <li><a href="./index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>サポート</h4>
+        <ul>
+          <li><a href="./contact.html">お問い合わせ</a></li>
+          <li><a href="./legal.html">特定商取引法</a></li>
+          <li><a href="./legal.html#cancel">キャンセルポリシー</a></li>
+          <li><a href="./legal.html#privacy">プライバシー</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 LUMA — Sho Asano. All rights reserved.</span>
+      <span>横浜市・神奈川県 · 日英バイリンガル</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function showPayment(type) {
+    document.querySelectorAll('.payment-card').forEach(c => c.classList.remove('selected'));
+    document.querySelectorAll('.payment-detail').forEach(d => d.classList.remove('active'));
+    const card = document.querySelector('.payment-card.' + type);
+    const detail = document.getElementById('detail-' + type);
+    if (card) card.classList.add('selected');
+    if (detail) detail.classList.add('active');
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>

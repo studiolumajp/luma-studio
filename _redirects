@@ -1,0 +1,10 @@
+# ══════════════════════════════════════════════════════════════
+#  LUMA — Cloudflare Pages _redirects
+#  2026-04-20 Legacy English URLs → new /en/ structure (301)
+# ══════════════════════════════════════════════════════════════
+
+# Legacy *-en.html → new /en/ paths
+/index-en.html        /en/                        301
+/contact-en.html      /en/contact.html            301
+/photography-en.html  /en/photography.html        301
+/tour-en.html         /en/service-tour.html       301

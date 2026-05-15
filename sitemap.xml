@@ -2,47 +2,206 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- Main pages -->
+  <!-- ============================================================ -->
+  <!-- HOME — bilingual pair                                          -->
+  <!-- ============================================================ -->
   <url>
     <loc>https://studio-lumadesign.com/</loc>
     <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://studio-lumadesign.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/"/>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Tour pages — bilingual pair -->
+  <!-- ============================================================ -->
+  <!-- SERVICES (hub) — bilingual pair                                -->
+  <!-- ============================================================ -->
+  <url>
+    <loc>https://studio-lumadesign.com/services.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/services.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/services.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://studio-lumadesign.com/en/services.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/services.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/services.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ============================================================ -->
+  <!-- SERVICE DETAIL PAGES — bilingual pairs                         -->
+  <!-- ============================================================ -->
+
+  <!-- LUMA Voice -->
+  <url>
+    <loc>https://studio-lumadesign.com/service-english.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-english.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-english.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://studio-lumadesign.com/en/service-english.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-english.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-english.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- LUMA Frame (Photography) -->
+  <url>
+    <loc>https://studio-lumadesign.com/service-photo.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-photo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-photo.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://studio-lumadesign.com/en/service-photo.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-photo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-photo.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- LUMA Circle (Community) -->
+  <url>
+    <loc>https://studio-lumadesign.com/service-community.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-community.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-community.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://studio-lumadesign.com/en/service-community.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-community.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-community.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- LUMA Path (Tour) -->
   <url>
     <loc>https://studio-lumadesign.com/service-tour.html</loc>
     <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-tour.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/tour-en.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-tour.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/tour-en.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/tour-en.html"/>
+    <loc>https://studio-lumadesign.com/en/service-tour.html</loc>
     <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-tour.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-tour.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Service pages -->
-  <url><loc>https://studio-lumadesign.com/service-english.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://studio-lumadesign.com/service-photo.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://studio-lumadesign.com/service-counselling.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://studio-lumadesign.com/service-karaoke.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://studio-lumadesign.com/service-community.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <!-- ============================================================ -->
+  <!-- ABOUT — bilingual pair                                         -->
+  <!-- ============================================================ -->
+  <url>
+    <loc>https://studio-lumadesign.com/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/about.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://studio-lumadesign.com/en/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/about.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-  <!-- Photography portfolio -->
-  <url><loc>https://studio-lumadesign.com/photography.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <!-- ============================================================ -->
+  <!-- PHOTOGRAPHY PORTFOLIO — bilingual pair                         -->
+  <!-- ============================================================ -->
+  <url>
+    <loc>https://studio-lumadesign.com/photography.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/photography.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/photography.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://studio-lumadesign.com/en/photography.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/photography.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/photography.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
-  <!-- S.League -->
-  <url><loc>https://studio-lumadesign.com/s-league.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://studio-lumadesign.com/s-league-23.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://studio-lumadesign.com/s-league-archive.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <!-- ============================================================ -->
+  <!-- S.LEAGUE — Japanese only (community is JP-local)               -->
+  <!-- ============================================================ -->
+  <url>
+    <loc>https://studio-lumadesign.com/s-league.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://studio-lumadesign.com/s-league-24.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://studio-lumadesign.com/s-league-23.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://studio-lumadesign.com/s-league-archive.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
 
-  <!-- Legal -->
-  <url><loc>https://studio-lumadesign.com/legal.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <!-- ============================================================ -->
+  <!-- LEGAL — bilingual pair (noindex in HTML, listed for reference) -->
+  <!-- ============================================================ -->
+  <url>
+    <loc>https://studio-lumadesign.com/legal.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/legal.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://studio-lumadesign.com/en/legal.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/legal.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- ============================================================ -->
+  <!-- CONTACT — bilingual pair (noindex in HTML, listed for context) -->
+  <!-- ============================================================ -->
+  <url>
+    <loc>https://studio-lumadesign.com/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/contact.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://studio-lumadesign.com/en/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/contact.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 
 </urlset>

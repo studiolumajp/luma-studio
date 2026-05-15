@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ja" id="html-root">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0F172A" />
+<meta name="color-scheme" content="light only" />
+
+<!-- ── PRIMARY SEO META ── -->
+<title>About me | 浅野 彰 (Sho Asano) — LUMA代表</title>
+<meta name="description" content="LUMA代表・浅野彰 (Sho Asano) のプロフィール。オーストラリア・ブリスベン9年の留学経験を持つ日英バイリンガル。英会話・記念撮影・S.League麻雀・東京英語ツアーの4領域を一人で担当しています。" />
+<meta name="keywords" content="浅野彰,Sho Asano,LUMA 代表,バイリンガル,ブリスベン 留学,横浜,日英 バイリンガル" />
+<meta name="author" content="Sho Asano (浅野彰) / LUMA" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://studio-lumadesign.com/about.html" />
+
+<!-- ── hreflang ── -->
+<link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/about.html" />
+<link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/about.html" />
+<link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/about.html" />
+
+<!-- ── Open Graph ── -->
+<meta property="og:type" content="profile" />
+<meta property="og:url" content="https://studio-lumadesign.com/about.html" />
+<meta property="og:title" content="About me | 浅野 彰 (Sho Asano) — LUMA代表" />
+<meta property="og:description" content="オーストラリア9年の経験を持つ日英バイリンガル。英会話・記念撮影・S.League麻雀・東京英語ツアーの4領域を担当。" />
+<meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:site_name" content="LUMA" />
+
+<!-- ── Twitter Card ── -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="About me | 浅野 彰 (Sho Asano)" />
+<meta name="twitter:description" content="LUMA代表・浅野彰のプロフィール。オーストラリア9年のバイリンガル。" />
+<meta name="twitter:image" content="https://studio-lumadesign.com/og-image.jpg" />
+
+<!-- ── Performance ── -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<!-- ── JSON-LD: Person + BreadcrumbList ── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://studio-lumadesign.com/#sho-asano",
+      "name": "Sho Asano",
+      "alternateName": "浅野彰",
+      "jobTitle": "LUMA代表 / 英語講師 / フォトグラファー / S.League主宰",
+      "worksFor": {"@id": "https://studio-lumadesign.com/#business"},
+      "knowsLanguage": ["ja", "en"],
+      "alumniOf": "Brisbane, Australia",
+      "homeLocation": {"@type": "Place", "name": "横浜市"},
+      "url": "https://studio-lumadesign.com/about.html",
+      "image": "https://studio-lumadesign.com/profile.jpg",
+      "sameAs": [
+        "https://www.instagram.com/luma_studio_jp",
+        "https://www.linkedin.com/in/shoasano2252/"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://studio-lumadesign.com/"},
+        {"@type": "ListItem", "position": 2, "name": "About me", "item": "https://studio-lumadesign.com/about.html"}
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-62F20N179N');
+</script>
+
+<link rel="stylesheet" href="./shared.css" />
+<style id="page-overrides">
+  /* ── About page layout ── */
+  .about-hero { padding: 64px 0 48px; }
+  .about-hero .hero-meta {
+    font-family: var(--font-mono); font-size: 12px;
+    color: var(--text-soft); letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 12px; display: inline-block;
+  }
+  .about-hero h1 .accent {
+    background: linear-gradient(120deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .about-hero .sub {
+    font-size: clamp(16px, 1.4vw, 18px); color: var(--text-muted);
+    max-width: 640px; margin-top: 16px;
+  }
+
+  /* ── Profile grid (photo + bio) ── */
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: start;
+    margin-top: 40px;
+  }
+  .about-photo {
+    border-radius: var(--radius-lg); overflow: hidden;
+    background: var(--bg-soft); border: 1px solid var(--border);
+    aspect-ratio: 1 / 1;
+  }
+  .about-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .about-bio h3 { margin-bottom: 12px; }
+  .about-bio p { color: var(--text-muted); line-height: 1.85; margin-bottom: 16px; }
+  .about-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .about-tag {
+    padding: 6px 14px; border: 1px solid var(--border); border-radius: 999px;
+    font-size: 13px; color: var(--text-muted); background: var(--surface);
+  }
+  @media (max-width: 880px) {
+    .about-grid { grid-template-columns: 1fr; gap: 32px; }
+    .about-photo { max-width: 360px; }
+  }
+
+  /* ── Timeline ── */
+  .timeline { display: flex; flex-direction: column; gap: 0; margin-top: 32px; }
+  .timeline-item {
+    display: grid; grid-template-columns: 120px 1fr; gap: 24px;
+    padding: 24px 0; border-top: 1px solid var(--border);
+  }
+  .timeline-item:last-child { border-bottom: 1px solid var(--border); }
+  .timeline-year {
+    font-family: var(--font-mono); font-size: 14px; color: var(--accent);
+    font-weight: 600; letter-spacing: 0.04em;
+  }
+  .timeline-body h4 { font-size: 17px; margin-bottom: 6px; }
+  .timeline-body p { color: var(--text-muted); font-size: 14px; line-height: 1.6; margin: 0; }
+  @media (max-width: 640px) {
+    .timeline-item { grid-template-columns: 1fr; gap: 8px; }
+  }
+
+  /* ── Values cards ── */
+  .values-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg);
+    overflow: hidden; margin-top: 32px;
+  }
+  .value-card {
+    background: var(--surface); padding: 32px;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .value-card .value-icon { font-size: 28px; }
+  .value-card h4 { font-size: 18px; margin: 0; }
+  .value-card p { color: var(--text-muted); font-size: 14px; line-height: 1.6; margin: 0; }
+  @media (max-width: 880px) { .values-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body id="body-root">
+
+<!-- ════ NAV ════ -->
+<nav class="site-nav" aria-label="メインナビゲーション">
+  <div class="nav-inner">
+    <a href="./index.html" class="brand" aria-label="LUMA ホーム">
+      <span class="brand-mark">L</span><span>LUMA</span>
+    </a>
+    <ul class="nav-links">
+      <li class="has-dropdown">
+        <a href="./services.html" class="dropdown-toggle">サービス</a>
+        <ul class="dropdown-menu">
+          <li><a href="./services.html">サービス一覧</a></li>
+          <li><a href="./service-english.html">英会話レッスン</a></li>
+          <li><a href="./service-photo.html">記念撮影・ポートレート</a></li>
+          <li><a href="./service-tour.html">英語で巡る東京ツアー</a></li>
+          <li><a href="./service-community.html">コミュニティイベント</a></li>
+          <li><a href="./s-league.html">S.League 麻雀大会</a></li>
+        </ul>
+      </li>
+      <li><a href="./about.html" aria-current="page">About me</a></li>
+      <li><a href="./index.html#faq">FAQ</a></li>
+    </ul>
+    <div style="display:flex;gap:10px;align-items:center;">
+      <a href="./en/about.html" class="lang-switch" aria-label="Switch to English">EN</a>
+      <a href="./contact.html" class="nav-cta">無料相談 →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ════ BREADCRUMB ════ -->
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <ol>
+    <li><a href="./index.html">ホーム</a></li>
+    <li aria-current="page">About me</li>
+  </ol>
+</nav>
+
+<!-- ════ HERO ════ -->
+<header class="hero about-hero" id="home">
+  <div class="container">
+    <span class="eyebrow">About me — 浅野 彰</span>
+    <h1 class="hero-title" style="margin-top:18px;">
+      環境が変われば、<br />
+      <span class="accent">人生は変わる</span>。
+    </h1>
+    <p class="sub">
+      横浜在住・日英バイリンガル。オーストラリア・ブリスベンで9年を過ごした経験を土台に、英会話・記念撮影・健康麻雀コミュニティ・東京英語ツアーの4つの領域で、一人ひとりに寄り添うサービスをお届けしています。
+    </p>
+  </div>
+</header>
+
+<!-- ════ PROFILE ════ -->
+<section id="profile" aria-labelledby="profile-heading">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Profile</span>
+      <h2 id="profile-heading">浅野 彰 (Sho Asano)</h2>
+    </div>
+    <div class="about-grid reveal">
+      <div class="about-photo">
+        <img src="./profile.jpg" alt="Sho Asano (浅野彰) - LUMA代表" loading="lazy" width="560" height="560" />
+      </div>
+      <div class="about-bio">
+        <h3>愛知県生まれ・横浜在住</h3>
+        <p>
+          15歳のとき、母に背中を押されてオーストラリア・ブリスベンへ。言葉も文化もわからない中で過ごした9年間で身についたのは、「自分を発信する力」「間違えることへの恐れを手放す自由さ」「人と関わり続けることの力」でした。
+        </p>
+        <p>
+          帰国後は英語教育・写真・コミュニティ運営など複数の活動を展開。2022年からは健康麻雀コミュニティ「S.League」を主宰し、4年間で22回開催・延べ335名が参加するまでに育てました。
+        </p>
+        <p>
+          「自己肯定感を、言葉と体験で支える」をテーマに、LUMA代表として4つの専門領域を一人で担当しています。
+        </p>
+        <div class="about-tags">
+          <span class="about-tag">🇦🇺 オーストラリア在住 9年</span>
+          <span class="about-tag">🎓 英語講師</span>
+          <span class="about-tag">📸 Nikon Z6III オーナー</span>
+          <span class="about-tag">🀄 健康麻雀コミュニティ運営</span>
+          <span class="about-tag">🎤 DAM最高点 98.6</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ TIMELINE ════ -->
+<section id="timeline" aria-labelledby="timeline-heading">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Timeline</span>
+      <h2 id="timeline-heading">これまでの歩み</h2>
+      <p>愛知の小さな町から、ブリスベン、東京、横浜へ。</p>
+    </div>
+    <div class="timeline reveal">
+      <div class="timeline-item">
+        <div class="timeline-year">2011年1月</div>
+        <div class="timeline-body">
+          <h4>15歳でオーストラリアへ</h4>
+          <p>ブリスベンに留学。言葉も文化もわからないところからのスタートでした。</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2011 – 2020</div>
+        <div class="timeline-body">
+          <h4>ブリスベン在住 9年間</h4>
+          <p>高校・大学・現地就労を通じ、英語と多文化的な視点を獲得。</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2020年3月</div>
+        <div class="timeline-body">
+          <h4>帰国</h4>
+          <p>オーストラリアから帰国し、横浜を拠点に。個人としての活動を構想しはじめる。</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2022年7月</div>
+        <div class="timeline-body">
+          <h4>S.League を主宰</h4>
+          <p>東京・新橋エリアでノーレート・健康麻雀のトーナメントコミュニティを発足。延べ335名以上が参加。</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2026年2月</div>
+        <div class="timeline-body">
+          <h4>LUMA を始動</h4>
+          <p>「Clarity by Design — Illuminate Your Confidence」をスローガンに、4つの専門領域でパーソナルスタジオとして活動開始。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ VALUES ════ -->
+<section id="values" aria-labelledby="values-heading">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Values</span>
+      <h2 id="values-heading">大切にしていること</h2>
+      <p>「いつから始めても、遅くはない」。これが、私の実体験から導いた答えです。</p>
+    </div>
+    <div class="values-grid reveal">
+      <div class="value-card">
+        <span class="value-icon" aria-hidden="true">🤝</span>
+        <h4>一人ひとりに寄り添う</h4>
+        <p>テンプレートではなく、対話のなかからあなたに合った形を一緒に見つけます。</p>
+      </div>
+      <div class="value-card">
+        <span class="value-icon" aria-hidden="true">🌏</span>
+        <h4>多文化的な視点</h4>
+        <p>日本の枠だけにとらわれない選択肢を、9年間の海外経験からお話しできます。</p>
+      </div>
+      <div class="value-card">
+        <span class="value-icon" aria-hidden="true">✨</span>
+        <h4>静かな自信を育てる</h4>
+        <p>派手な変化より、続けられる小さな変化を。言葉と体験で自己肯定感を支えます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CTA BIG ════ -->
+<section style="padding-bottom: 120px;">
+  <div class="container">
+    <div class="cta-big reveal">
+      <span class="eyebrow" style="color: color-mix(in srgb, var(--bg) 70%, transparent);">無料相談</span>
+      <h2 style="margin-top:16px;">まずは、話してみませんか?</h2>
+      <p style="font-size:17px;max-width:560px;margin:12px auto 28px;">どのサービスが合うか分からない方も大歓迎。30分の無料相談で、あなたに最適なロードマップを一緒に作ります。</p>
+      <a href="./contact.html" class="btn btn-primary">お問い合わせフォームへ →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="./index.html" class="brand"><span class="brand-mark">L</span><span>LUMA</span></a>
+        <p>東京・横浜で、あなたの自信をデザインする。Clarity by Design — Illuminate Your Confidence.</p>
+      </div>
+      <div class="footer-col">
+        <h4>サービス</h4>
+        <ul>
+          <li><a href="./service-english.html">英会話レッスン</a></li>
+          <li><a href="./service-photo.html">記念撮影・ポートレート</a></li>
+          <li><a href="./s-league.html">S.League 麻雀</a></li>
+          <li><a href="./service-tour.html">英語で巡る東京ツアー</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>LUMAについて</h4>
+        <ul>
+          <li><a href="./about.html">About me</a></li>
+          <li><a href="./index.html#story">My Story</a></li>
+          <li><a href="./index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>サポート</h4>
+        <ul>
+          <li><a href="./contact.html">お問い合わせ</a></li>
+          <li><a href="./legal.html">特定商取引法</a></li>
+          <li><a href="./legal.html#privacy">プライバシー</a></li>
+          <li><a href="./en/about.html">English</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 LUMA — Sho Asano. All rights reserved.</span>
+      <span>横浜市・神奈川県 · 日英バイリンガル</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
