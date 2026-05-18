@@ -156,7 +156,7 @@
         {"@type": "Question", "name": "どのエリアで対応していますか?", "acceptedAnswer": {"@type": "Answer", "text": "東京・横浜を中心に首都圏全域で対応しています。英語レッスンとカウンセリングはオンラインも可能です。"}},
         {"@type": "Question", "name": "英語レッスンは初心者でも大丈夫ですか?", "acceptedAnswer": {"@type": "Answer", "text": "もちろんです。オーストラリア在住9年の経験をもとに、初級から上級・ビジネス英語・IELTS/TOEIC対策まで一人ひとりに合わせて指導します。"}},
         {"@type": "Question", "name": "写真撮影の料金はいくらですか?", "acceptedAnswer": {"@type": "Answer", "text": "内容・場所・時間・枚数によって異なるため、すべて要相談・無料お見積もりです。記念撮影・ポートレート、プロフィール写真、前撮り・ロケーション撮影、空港・飛行機・風景撮影に対応し、データは当日〜翌日にお渡しします。"}},
-        {"@type": "Question", "name": "S.League麻雀大会はどんな人が参加していますか?参加費は?", "acceptedAnswer": {"@type": "Answer", "text": "2022年から22回開催・延べ335名が参加した健康麻雀コミュニティです。1回16〜20名の参加で、開催時間は約10時間（土曜日が基本）。参加費は¥8,000〜¥8,300前後（開催回により異なる）。プロ雀士から初心者まで幅広く参加し、全員に参加賞＋入賞景品があります。"}},
+        {"@type": "Question", "name": "S.League麻雀大会はどんな人が参加していますか?参加費は?", "acceptedAnswer": {"@type": "Answer", "text": "2022年から23回開催・延べ347名が参加した健康麻雀コミュニティです。1回16〜20名の参加で、開催時間は約10時間（土曜日が基本）。参加費は¥8,000〜¥8,300前後（開催回により異なる）。プロ雀士から初心者まで幅広く参加し、全員に参加賞＋入賞景品があります。"}},
         {"@type": "Question", "name": "海外からの観光客でも英語ツアーを依頼できますか?", "acceptedAnswer": {"@type": "Answer", "text": "はい、東京の英語ツアー(LUMA Path)は訪日外国人の方を歓迎しています。半日・日帰りで2〜6名のプライベートツアーをカスタムで企画します。"}},
         {"@type": "Question", "name": "無料相談はどう申し込めますか?", "acceptedAnswer": {"@type": "Answer", "text": "サイト下部のお問い合わせフォームから24時間受け付けています。2営業日以内に返信します。"}}
       ]
@@ -248,6 +248,12 @@
   @media (max-width: 640px) {
     .hero { padding: 80px 0 96px; min-height: 480px; }
   }
+
+  /* ── Compare 見出し: 折り返さず常に一列で表示 (モバイルは幅に応じ縮小) ── */
+  #compare-heading {
+    white-space: nowrap;
+    font-size: min(64px, 7.2vw);
+  }
 </style>
 </head>
 <body id="body-root">
@@ -309,8 +315,7 @@
       </div>
       <div class="hero-trust">
         <div class="trust-item"><div class="num">9年</div><div class="label">オーストラリア在住</div></div>
-        <div class="trust-item"><div class="num">335名</div><div class="label">S.League累計参加</div></div>
-        <div class="trust-item"><div class="num">98.6点</div><div class="label">DAM WAO最高得点</div></div>
+        <div class="trust-item"><div class="num">347名</div><div class="label">S.League累計参加</div></div>
       </div>
     </div>
     <div class="hero-visual" aria-hidden="true">
@@ -392,7 +397,7 @@
         <div class="svc-icon" aria-hidden="true">🀄</div>
         <h3>S.League 健康麻雀</h3>
         <span class="svc-en" style="font-family: Inter">S.League</span>
-        <p>2022年から運営する健康麻雀コミュニティ。22回開催・延べ335名が参加した大会で、お酒・タバコ・賭け事なしの健全な空間で麻雀を楽しめます。プロ雀士から初心者まで歓迎、初参加には進行サポートも実施。約10時間、参加費¥8,000前後で参加賞+入賞景品もあり。</p>
+        <p>2022年から運営する健康麻雀コミュニティ。23回開催・延べ347名が参加した大会で、お酒・タバコ・賭け事なしの健全な空間で麻雀を楽しめます。プロ雀士から初心者まで歓迎、初参加には進行サポートも実施。約10時間、参加費¥8,000前後で参加賞+入賞景品もあり。</p>
         <div class="svc-meta">
           <span class="svc-price">参加費 ¥8,300</span>
           <a class="svc-link" href="./s-league.html">詳細 →</a>
@@ -522,7 +527,7 @@
         <p style="color:var(--text-muted);margin-bottom:16px;">
           15歳でオーストラリアに渡り、9年間の留学と現地就労を経験。
           帰国後は英語教育・写真・コミュニティ運営など複数の活動を展開。
-          2022年からは健康麻雀コミュニティ「S.League」を主宰し、4年間で22回開催・延べ335名が参加。
+          2022年からは健康麻雀コミュニティ「S.League」を主宰し、4年間で23回開催・延べ347名が参加。
         </p>
         <p style="color:var(--text-muted);">
           「自己肯定感を、言葉と体験で支える」をテーマに、
@@ -533,7 +538,6 @@
           <span class="who-tag">🎓 英語講師</span>
           <span class="who-tag">📸 Nikonオーナー</span>
           <span class="who-tag">🀄 健康麻雀コミュニティ運営</span>
-          <span class="who-tag">🎤 DAM最高点 98.6点</span>
         </div>
       </div>
     </div>
@@ -575,7 +579,7 @@
           <span>S.League麻雀大会はどんな人が参加していますか?</span>
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">2022年から東京で22回開催・延べ335名が参加した健康麻雀コミュニティです。1回16〜20名、約10時間(土曜日基本)で、参加費は¥8,000〜¥8,300前後(開催回により異なる)。プロ雀士から麻雀を始めて間もない方まで幅広く参加されており、お酒・賭け事なしの「健康麻雀」スタイル。初参加の方には進行サポートも行い、全員に参加賞＋入賞景品があります。</div></div>
+        <div class="faq-a"><div class="faq-a-inner">2022年から東京で23回開催・延べ347名が参加した健康麻雀コミュニティです。1回16〜20名、約10時間(土曜日基本)で、参加費は¥8,000〜¥8,300前後(開催回により異なる)。プロ雀士から麻雀を始めて間もない方まで幅広く参加されており、お酒・賭け事なしの「健康麻雀」スタイル。初参加の方には進行サポートも行い、全員に参加賞＋入賞景品があります。</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
