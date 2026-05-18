@@ -129,6 +129,33 @@
   .pmt, .tmt { font-size: 12px; color: var(--text-soft); margin-top: 6px; }
   @media (max-width: 640px) { .podium, .tpodium { grid-template-columns: 1fr; } }
 
+  /* ── Champions tab ── */
+  .sec-mini {
+    font-family: var(--font-mono); font-size: 12px; color: var(--text-soft);
+    text-transform: uppercase; letter-spacing: 0.06em;
+    margin: 0 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border);
+  }
+  .cmgrid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px; margin-bottom: 40px; max-width: 600px;
+  }
+  .cmcard {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 22px 24px; text-align: center;
+  }
+  .cmcard.gold {
+    border-color: var(--accent-2);
+    background: linear-gradient(180deg, color-mix(in srgb, var(--accent-2) 10%, var(--surface)), var(--surface));
+  }
+  .cmcr { font-size: 28px; line-height: 1; margin-bottom: 6px; }
+  .cmnm { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+  .cmw {
+    font-family: var(--font-mono); font-size: 20px; font-weight: 700;
+    color: var(--accent-2); margin-bottom: 6px;
+  }
+  .cmev { font-size: 12px; color: var(--text-soft); }
+  @media (max-width: 640px) { .cmgrid { grid-template-columns: 1fr; } }
+
   /* ── Ranking table ── */
   .rtbl {
     width: 100%; border-collapse: collapse;
@@ -372,6 +399,7 @@
   <div class="tabbar-inner">
     <button class="tab on" data-tab="ranking">累計ランキング</button>
     <button class="tab" data-tab="archive">大会アーカイブ</button>
+    <button class="tab" data-tab="champions">優勝者</button>
     <button class="tab" data-tab="team22">SL22 団体結果</button>
   </div>
 </nav>
@@ -399,6 +427,23 @@
       <h2 class="sec-title">大会アーカイブ</h2>
       <p class="sec-sub">各大会の結果一覧 — 行をクリックで展開</p>
       <div id="alist"></div>
+    </div>
+  </div>
+
+  <div id="p-champions" class="panel">
+    <div class="container">
+      <span class="sec-label">Champions</span>
+      <h2 class="sec-title">優勝者一覧</h2>
+      <p class="sec-sub">全23大会の優勝者 — 複数回優勝者と大会別優勝者</p>
+      <div class="sec-mini">複数回優勝者</div>
+      <div class="cmgrid" id="champ-multi"></div>
+      <div class="sec-mini">大会別 優勝者</div>
+      <table class="rtbl">
+        <thead><tr>
+          <th>大会</th><th>日付</th><th>優勝者</th><th class="r">優勝得点</th>
+        </tr></thead>
+        <tbody id="champ-body"></tbody>
+      </table>
     </div>
   </div>
 
@@ -767,6 +812,50 @@ function togTeam(id) {
   document.getElementById('tbd-' + id).classList.toggle('open');
   document.getElementById('ttog-' + id).classList.toggle('open');
 }
+
+// Champions tab — 各大会の rank:1 を集計
+(function () {
+  const champs = Object.keys(EVENTS).map(Number).sort((a, b) => a - b).map(n => {
+    const w = EVENTS[String(n)].find(p => p.rank === 1);
+    const m = META[String(n)] || {};
+    return {
+      n,
+      label: 'SL' + String(n).padStart(2, '0'),
+      date: m.date || '',
+      name: w ? w.name : '—',
+      total: w ? w.total : 0,
+    };
+  });
+
+  // 複数回優勝者（優勝回数の多い順）
+  const winsBy = {};
+  champs.forEach(c => { (winsBy[c.name] = winsBy[c.name] || []).push(c.label); });
+  const multi = Object.entries(winsBy)
+    .filter(([, labels]) => labels.length >= 2)
+    .sort((a, b) => b[1].length - a[1].length);
+
+  document.getElementById('champ-multi').innerHTML = multi.map(([nm, labels], i) => `
+    <div class="cmcard ${i === 0 ? 'gold' : ''}">
+      <div class="cmcr">👑</div>
+      <div class="cmnm">${nm}</div>
+      <div class="cmw">${labels.length}回 優勝</div>
+      <div class="cmev">${labels.join(' · ')}</div>
+    </div>
+  `).join('');
+
+  // 大会別優勝者一覧（新しい大会順）
+  document.getElementById('champ-body').innerHTML = champs.slice().reverse().map(c => {
+    const cnt = winsBy[c.name] ? winsBy[c.name].length : 0;
+    return `
+      <tr>
+        <td style="font-weight:700;font-family:var(--font-mono);">${c.label}</td>
+        <td style="color:var(--text-soft);font-size:13px;">${c.date}</td>
+        <td><span class="ewcr">🏆</span> <strong>${c.name}</strong>${cnt >= 2 ? ` <span class="wn">👑 ${cnt}</span>` : ''}</td>
+        <td class="r"><span class="sv ${sc(c.total)}">${fmt(c.total)}</span></td>
+      </tr>
+    `;
+  }).join('');
+})();
 </script>
 
 </body>
