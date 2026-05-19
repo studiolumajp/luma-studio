@@ -33,7 +33,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" />
 
 <script type="application/ld+json">
 {
@@ -73,8 +73,9 @@
   /* ── Service hero (LUMA Path): full-bleed background photo + 左側ダークオーバーレイ ── */
   .svc-hero {
     position: relative;
-    padding: 112px 0 128px;
-    min-height: 520px;
+    /* デスクトップ最大値は据え置き、狭幅のみ縮小して崩れ防止 */
+    padding: clamp(64px, 12vw, 112px) 0 clamp(72px, 13vw, 128px);
+    min-height: clamp(360px, 60vh, 520px);
     color: #fff;
     background:
       linear-gradient(90deg,
@@ -243,6 +244,9 @@
       <a href="./tour-en.html" class="lang-switch" aria-label="Switch to English">EN</a>
       <a href="./contact.html" class="nav-cta">無料相談 →</a>
     </div>
+    <button class="nav-toggle" type="button" aria-label="メニューを開閉" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -282,7 +286,7 @@
       <div>
         <p class="svc-overview-lead">観光名所の<em>その先</em>へ。<br />地元の空気・食・人と出会う旅。</p>
         <p class="svc-overview-body">
-          コンサルタントとして東京に拠点を置きながら、航空機撮影で空港や日本各地を訪れてきた経験から、「どこに行けばその場所らしさを感じられるか」を熟知しています。東京・関東はもちろん、<strong style="color:var(--text);">関西・北海道・福岡など全国のご要望にも対応</strong>します。<br><br>
+          東京に拠点を置きながら、航空機撮影で空港や日本各地を訪れてきた経験から、「どこに行けばその場所らしさを感じられるか」を熟知しています。東京・関東はもちろん、<strong style="color:var(--text);">関西・北海道・福岡など全国のご要望にも対応</strong>します。<br><br>
           観光スポットを効率よく巡るだけでなく、地元の空気・食・文化・人との出会いを大切にしたツアーをご提供。英語・日本語どちらにも対応しており、外国人旅行者から日本人の方まで幅広く対応します。<br><br>
           そして私自身がアレルギー持ちの当事者だからこそ、<strong style="color:var(--text);">グルテンフリー対応・食物アレルギーへの配慮は「自分ごと」として捉えています</strong>。食事の選択やレストランの事前確認なども、同じ目線で丁寧にサポートします。
         </p>
@@ -491,5 +495,6 @@
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
+<script src="/nav.js" defer></script>
 </body>
 </html>

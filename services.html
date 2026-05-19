@@ -33,7 +33,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" />
 
 <script type="application/ld+json">
 {
@@ -70,8 +70,9 @@
   /* ── Services hub hero: full-bleed background photo + 左側ダークオーバーレイ ── */
   .svc-hero {
     position: relative;
-    padding: 112px 0 128px;
-    min-height: 520px;
+    /* デスクトップ最大値は据え置き、狭幅のみ縮小して崩れ防止 */
+    padding: clamp(64px, 12vw, 112px) 0 clamp(72px, 13vw, 128px);
+    min-height: clamp(360px, 60vh, 520px);
     color: #fff;
     background:
       linear-gradient(90deg,
@@ -149,6 +150,9 @@
       <a href="./en/services.html" class="lang-switch" aria-label="Switch to English">EN</a>
       <a href="./contact.html" class="nav-cta">無料相談 →</a>
     </div>
+    <button class="nav-toggle" type="button" aria-label="メニューを開閉" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -334,5 +338,6 @@
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
+<script src="/nav.js" defer></script>
 </body>
 </html>

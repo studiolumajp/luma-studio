@@ -37,7 +37,7 @@
 <!-- ── Performance ── -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" />
 
 <!-- ── JSON-LD: Person + BreadcrumbList ── -->
 <script type="application/ld+json">
@@ -225,6 +225,9 @@
       <a href="./en/about.html" class="lang-switch" aria-label="Switch to English">EN</a>
       <a href="./contact.html" class="nav-cta">無料相談 →</a>
     </div>
+    <button class="nav-toggle" type="button" aria-label="メニューを開閉" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -267,7 +270,7 @@
           15歳のとき、母に背中を押されてオーストラリア・ブリスベンへ。言葉も文化もわからない中で過ごした9年間で身についたのは、「自分を発信する力」「間違えることへの恐れを手放す自由さ」「人と関わり続けることの力」でした。
         </p>
         <p>
-          帰国後は英語教育・写真・コミュニティ運営など複数の活動を展開。2022年からは健康麻雀コミュニティ「S.League」を主宰し、4年間で22回開催・延べ335名が参加するまでに育てました。
+          帰国後は英語教育・写真・コミュニティ運営など複数の活動を展開。2022年からは健康麻雀コミュニティ「S.League」を主宰し、4年間で23回開催・延べ347名が参加するまでに育てました。
         </p>
         <p>
           「自己肯定感を、言葉と体験で支える」をテーマに、LUMA代表として4つの専門領域を一人で担当しています。
@@ -277,7 +280,6 @@
           <span class="about-tag">🎓 英語講師</span>
           <span class="about-tag">📸 Nikon Z6III オーナー</span>
           <span class="about-tag">🀄 健康麻雀コミュニティ運営</span>
-          <span class="about-tag">🎤 DAM最高点 98.6</span>
         </div>
       </div>
     </div>
@@ -318,7 +320,7 @@
         <div class="timeline-year">2022年7月</div>
         <div class="timeline-body">
           <h4>S.League を主宰</h4>
-          <p>東京・新橋エリアでノーレート・健康麻雀のトーナメントコミュニティを発足。延べ335名以上が参加。</p>
+          <p>東京・新橋エリアでノーレート・健康麻雀のトーナメントコミュニティを発足。延べ347名以上が参加。</p>
         </div>
       </div>
       <div class="timeline-item">
@@ -482,5 +484,6 @@
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
+<script src="/nav.js" defer></script>
 </body>
 </html>

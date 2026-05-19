@@ -48,7 +48,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="preconnect" href="https://formspree.io" />
 <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" />
 
 <!-- ════════════════════════════════════════════════
      STRUCTURED DATA — JSON-LD
@@ -247,6 +247,8 @@
   .trust-item .label { color: rgba(255, 255, 255, 0.8); }
   @media (max-width: 640px) {
     .hero { padding: 80px 0 96px; min-height: 480px; }
+    /* nowrap を解除して画面内に折り返す（はみ出し=横揺れ防止） */
+    #compare-heading { white-space: normal; font-size: clamp(24px, 6.8vw, 34px); }
   }
 
   /* ── Compare 見出し: 折り返さず常に一列で表示 (モバイルは幅に応じ縮小) ── */
@@ -285,6 +287,9 @@
       <a href="/en/" class="lang-switch" aria-label="Switch to English">EN</a>
       <a href="./contact.html" class="nav-cta">無料相談 →</a>
     </div>
+    <button class="nav-toggle" type="button" aria-label="メニューを開閉" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -789,5 +794,6 @@
   ReactDOM.createRoot(root).render(<LumaTweaks />);
 </script>
 
+<script src="/nav.js" defer></script>
 </body>
 </html>
