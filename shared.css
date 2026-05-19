@@ -62,7 +62,7 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
 body {
   font-family: var(--font-sans);
   background: var(--bg);
@@ -72,6 +72,10 @@ body {
   letter-spacing: -0.005em;
   -webkit-font-smoothing: antialiased;
   transition: background 0.3s, color 0.3s;
+  /* モバイルでサブピクセルのはみ出しが横スクロール(=画面の左右揺れ)を
+     起こすのを全ページ共通で防止する。揺れの主要因への対策。 */
+  overflow-x: hidden;
+  width: 100%;
 }
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
@@ -136,6 +140,35 @@ nav.site-nav {
   border: 1px solid var(--border); border-radius: 8px;
 }
 .lang-switch:hover { border-color: var(--border-strong); color: var(--text); }
+
+/* ── HAMBURGER (モバイルナビ開閉ボタン) ───
+   デスクトップでは非表示。≤960px のメディアクエリで表示する。
+   44x44px は WCAG のタッチターゲット最小サイズに準拠。 */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: transparent;
+}
+.nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  margin: 0 auto;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform .25s ease, opacity .2s ease;
+}
+/* 開いている時はバーを×印に変形 */
+nav.site-nav.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+nav.site-nav.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+nav.site-nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ── NAV DROPDOWN ─────────────────────── */
 nav.site-nav .nav-links .has-dropdown { position: relative; }
@@ -625,7 +658,60 @@ footer {
   .who-grid { grid-template-columns: 1fr; gap: 28px; text-align: left; }
   .who-photo { max-width: 220px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-  .nav-links { display: none; }
+
+  /* ── モバイルナビ: .nav-links を「閉じた状態のパネル」に切替 ──
+     従来は display:none で消すだけ → モバイルでメニューが無かった。
+     ハンバーガー(.nav-toggle)を表示し、開くとパネルが降りる方式へ。 */
+  .nav-toggle { display: inline-flex; }
+
+  nav.site-nav .nav-links {
+    display: none;                 /* 閉じている状態 */
+    position: absolute;            /* sticky な nav.site-nav が基準 */
+    top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin: 0;
+    padding: 8px 0;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+  }
+  /* ハンバーガーで開いた時のみ表示 */
+  nav.site-nav.nav-open .nav-links { display: flex; }
+
+  nav.site-nav .nav-links > li { width: 100%; }
+  nav.site-nav .nav-links a {
+    display: block;
+    padding: 13px 24px;
+    font-size: 15px;
+  }
+  /* サービスのサブメニューはホバー不可なので常時展開・字下げ表示 */
+  nav.site-nav .nav-links .has-dropdown::after { display: none; } /* hoverブリッジ無効 */
+  nav.site-nav .nav-links .dropdown-toggle::after { display: none; } /* 矢印無効 */
+  nav.site-nav .nav-links .dropdown-menu {
+    display: block;
+    position: static;
+    transform: none;
+    min-width: 0;
+    margin: 0;
+    padding: 0 0 6px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+  nav.site-nav .nav-links .dropdown-menu li a {
+    padding: 10px 24px 10px 40px;
+    font-size: 14px;
+    white-space: normal;
+  }
+
+  /* バー内の言語切替はモバイルでは隠し、CTAは省スペース化
+     (はみ出しによる横揺れ防止も兼ねる) */
+  nav.site-nav .lang-switch { display: none; }
+  nav.site-nav .nav-cta { padding: 7px 12px; font-size: 13px; }
 }
 @media (max-width: 640px) {
   section { padding: 64px 0; }
@@ -634,6 +720,8 @@ footer {
   .footer-grid { grid-template-columns: 1fr; }
   .cta-big { padding: 48px 24px; }
   .hero-trust { gap: 20px; }
+  /* nav-inner の余白を詰めて狭幅でのはみ出しを防止 */
+  .nav-inner { gap: 12px; padding: 12px 16px; }
 }
 </content>
 </invoke>
