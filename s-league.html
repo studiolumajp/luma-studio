@@ -7,10 +7,10 @@
 <meta name="color-scheme" content="light only" />
 
 <!-- ── PRIMARY SEO META ── -->
-<title>S.League 健康麻雀大会 東京・新橋 | LUMA — 浅野彰</title>
-<meta name="description" content="S.Leagueは2022年から東京・新橋で運営する本気の健康麻雀コミュニティ。23回開催・累計347名・113選手が参加。次回 S.League 24 は日程調整中、参加者募集中。" />
-<meta name="keywords" content="健康麻雀 大会,S.League,麻雀 大会 東京,新橋 麻雀,健康麻雀 トーナメント,LUMA Circle,浅野彰" />
-<meta name="author" content="Sho Asano (浅野彰) / LUMA" />
+<title>S.League 健康麻雀大会 東京・新橋 | LUMA</title>
+<meta name="description" content="S.Leagueは2022年から東京・新橋で運営する本気の健康麻雀コミュニティ。23回開催・累計347名・113選手が参加。次回 S.League 24 は2026年7月25日(土)開催の4周年記念大会。特別ゲストに漫画家の片山まさゆき先生、最高位戦日本プロ麻雀協会の川嶋美晴プロをお迎えします。" />
+<meta name="keywords" content="健康麻雀 大会,S.League,麻雀 大会 東京,新橋 麻雀,健康麻雀 トーナメント,LUMA Circle" />
+<meta name="author" content="LUMA" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://studio-lumadesign.com/s-league.html" />
 
@@ -20,14 +20,14 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://studio-lumadesign.com/s-league.html" />
 <meta property="og:title" content="S.League 健康麻雀大会 東京・新橋 | LUMA" />
-<meta property="og:description" content="2022年から続く健康麻雀コミュニティ。23回・347名が参加。次回SL24 は日程調整中。" />
+<meta property="og:description" content="2022年から続く健康麻雀コミュニティ。23回・347名が参加。次回SL24 は2026年7月25日(土)・4周年記念大会。特別ゲスト2名をお迎えします。" />
 <meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
 <meta property="og:locale" content="ja_JP" />
 <meta property="og:site_name" content="LUMA" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="S.League 健康麻雀大会 | LUMA" />
-<meta name="twitter:description" content="23回・347名の健康麻雀コミュニティ。次回SL24 は日程調整中。" />
+<meta name="twitter:description" content="23回・347名の健康麻雀コミュニティ。次回SL24 は2026年7月25日(土)・4周年記念大会。特別ゲスト2名。" />
 <meta name="twitter:image" content="https://studio-lumadesign.com/og-image.jpg" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -284,6 +284,57 @@
     border-radius: var(--radius); border: 1px solid var(--border);
   }
   @media (max-width: 640px) { .gallery-grid { grid-template-columns: 1fr 1fr; } }
+
+  /* ── SL24 4周年記念プロモバナー ── */
+  :root { --gold: #C9A227; --gold-2: #E8C766; }
+  .sl24-promo {
+    background: var(--text); color: var(--bg);
+    border-bottom: 1px solid var(--border);
+    position: relative; overflow: hidden;
+  }
+  .sl24-promo::after {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(circle at 10% 15%, color-mix(in srgb, var(--gold) 24%, transparent), transparent 38%),
+      radial-gradient(circle at 92% 90%, color-mix(in srgb, var(--accent-2) 18%, transparent), transparent 42%);
+  }
+  .sl24-promo-inner {
+    position: relative; z-index: 1;
+    max-width: var(--container); margin: 0 auto; padding: 40px 24px;
+    display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: center;
+  }
+  .sl24-promo-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 14px; border-radius: 999px; margin-bottom: 12px;
+    font-family: var(--font-mono); font-size: 12px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase; color: #5A4A12;
+    background: linear-gradient(120deg, var(--gold-2), var(--gold));
+  }
+  .sl24-promo-badge::before { content: '🎉'; }
+  .sl24-promo h2 {
+    color: var(--bg); font-size: clamp(24px, 3.2vw, 36px); line-height: 1.25; margin-bottom: 10px;
+  }
+  .sl24-promo h2 .yr {
+    background: linear-gradient(120deg, var(--gold-2), var(--gold));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .sl24-promo p {
+    color: color-mix(in srgb, var(--bg) 80%, transparent);
+    font-size: 15px; line-height: 1.75; max-width: 640px;
+  }
+  .sl24-promo .guests { font-weight: 700; color: var(--bg); }
+  .sl24-promo-cta { display: flex; flex-direction: column; gap: 10px; align-items: stretch; }
+  .sl24-promo-cta .btn-primary { background: #fff; color: #0A0A0A; border-color: #fff; white-space: nowrap; }
+  .sl24-promo-cta .btn-primary:hover { background: rgba(255,255,255,0.88); color: #0A0A0A; }
+  .sl24-promo-status {
+    text-align: center; font-family: var(--font-mono); font-size: 11px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: color-mix(in srgb, var(--bg) 60%, transparent);
+  }
+  @media (max-width: 880px) {
+    .sl24-promo-inner { grid-template-columns: 1fr; gap: 20px; }
+    .sl24-promo-cta { align-items: flex-start; }
+  }
 </style>
 </head>
 <body id="body-root">
@@ -310,7 +361,7 @@
     </ul>
     <div style="display:flex;gap:10px;align-items:center;">
       <a href="./s-league-archive.html" class="lang-switch" aria-label="成績アーカイブ">📊 アーカイブ</a>
-      <a href="./s-league-24.html" class="nav-cta">SL24 申込 →</a>
+      <a href="./s-league-24.html" class="nav-cta">SL24 記念大会 →</a>
     </div>
     <button class="nav-toggle" type="button" aria-label="メニューを開閉" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -335,12 +386,29 @@
     </h1>
     <p class="sub">アマチュアからプロまで · 健康麻雀 · 全員に景品。<strong style="color:var(--text);">2022年から23回・累計347名</strong>が参加した本気の麻雀トーナメントコミュニティ。</p>
     <div class="hero-cta-row">
-      <a href="./s-league-24.html" class="btn btn-primary">SL24 に参加する →</a>
+      <a href="./s-league-24.html" class="btn btn-primary">SL24 記念大会を見る →</a>
       <a href="#about" class="btn btn-secondary">S.Leagueとは</a>
       <a href="./s-league-archive.html" class="btn btn-secondary">📊 成績アーカイブ</a>
     </div>
   </div>
 </header>
+
+<section class="sl24-promo" aria-label="S.League 24 4周年記念大会のお知らせ">
+  <div class="sl24-promo-inner">
+    <div>
+      <span class="sl24-promo-badge">4th Anniversary</span>
+      <h2>S.League 24 ＝ <span class="yr">4周年記念大会</span></h2>
+      <p>
+        2026年7月25日 (土)・新橋。創設から5年目に突入する節目の大会に、特別ゲスト2名をお迎えします。<br>
+        <span class="guests">片山まさゆき 先生 (漫画家) ／ 川嶋美晴 プロ (最高位戦)</span>
+      </p>
+    </div>
+    <div class="sl24-promo-cta">
+      <a href="./s-league-24.html" class="btn btn-primary">記念大会の詳細を見る →</a>
+      <span class="sl24-promo-status">受付開始 Coming Soon</span>
+    </div>
+  </div>
+</section>
 
 <div class="stats-band">
   <div class="stats-inner">
@@ -404,9 +472,9 @@
             <div class="tl-desc">S.League 22 (2026.3.7開催) にて初の団体戦を実施。チームでの熱戦が新たな盛り上がりを生んだ。</div>
           </div>
           <div class="tl-item">
-            <div class="tl-year">次回</div>
-            <div class="tl-title">S.League 24 開催予定</div>
-            <div class="tl-desc">開催日・会場・参加費は調整中です。決まり次第ご案内します。</div>
+            <div class="tl-year">2026年7月</div>
+            <div class="tl-title">S.League 24 · 4周年記念大会</div>
+            <div class="tl-desc">2026年7月25日(土)、創設から5年目に突入する記念大会を開催。特別ゲストに漫画家の片山まさゆき先生、最高位戦日本プロ麻雀協会の川嶋美晴プロをお迎えします。</div>
           </div>
         </div>
         <div class="gallery-grid">
@@ -536,15 +604,16 @@
         </div>
       </a>
 
-      <a class="event-card disabled" href="#">
+      <a class="event-card featured" href="./s-league-24.html">
         <div class="event-card-top">
           <div class="event-card-num">24</div>
-          <div class="event-card-title">S.League 24</div>
+          <div class="event-card-title">S.League 24 · 4周年記念</div>
         </div>
         <div class="event-card-body">
-          <div class="event-card-date">日程・詳細は調整中</div>
-          <div class="event-card-fee">個人戦 · ベルバードgrow店</div>
-          <span class="event-badge badge-prep">準備中</span>
+          <div class="event-card-date">2026年7月25日 (土)</div>
+          <div class="event-card-fee">個人戦 · ベルバードgrow店 · 参加費 ¥12,000</div>
+          <div class="event-card-fee" style="font-size:13px;color:var(--accent);font-weight:700;">🎉 特別ゲスト: 片山まさゆき先生 / 川嶋美晴プロ</div>
+          <span class="event-badge badge-prep">受付開始 Coming Soon</span>
         </div>
       </a>
     </div>
@@ -560,7 +629,7 @@
         S.League は LUMA のコミュニティ事業として2022年に創設されました。麻雀という共通言語を通じて、新しい仲間との出会いの場を提供しています。
       </p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-        <a href="./s-league-24.html" class="btn btn-primary">SL24 に参加する →</a>
+        <a href="./s-league-24.html" class="btn btn-primary">SL24 記念大会を見る →</a>
       </div>
     </div>
   </div>
@@ -601,7 +670,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 LUMA — Sho Asano. All rights reserved.</span>
+      <span>© 2026 LUMA. All rights reserved.</span>
       <span>横浜市・神奈川県 · 日英バイリンガル</span>
     </div>
   </div>
