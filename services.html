@@ -107,7 +107,18 @@
   }
   .svc-tag:hover { border-color: rgba(255, 255, 255, 0.8); background: rgba(255, 255, 255, 0.2); }
   @media (max-width: 640px) {
-    .svc-hero { padding: 80px 0 96px; min-height: 440px; }
+    .svc-hero {
+      padding: 80px 0 96px; min-height: 440px;
+      /* モバイルはテキストが全幅に広がるため、横グラデ(左のみ暗い)では白文字が読めない。
+         全体を均一に暗くする縦グラデに差し替え。 */
+      background:
+        linear-gradient(180deg,
+          rgba(0, 0, 0, 0.62) 0%,
+          rgba(0, 0, 0, 0.50) 50%,
+          rgba(0, 0, 0, 0.64) 100%
+        ),
+        url('./IMG_0078.jpg?v=1') center/cover no-repeat;
+    }
   }
 
   /* ── CHOOSE YOUR PATH: 日本語の不自然な途中折り返しを防止 (句読点でのみ改行) ── */

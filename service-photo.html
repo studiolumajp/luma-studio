@@ -127,7 +127,18 @@
     background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.7);
   }
   @media (max-width: 640px) {
-    .svc-hero { padding: 80px 0 96px; min-height: 440px; }
+    .svc-hero {
+      padding: 80px 0 96px; min-height: 440px;
+      /* モバイルはテキストが全幅に広がるため、横グラデ(左のみ暗い)では白文字が読めない。
+         全体を均一に暗くする縦グラデに差し替え。 */
+      background:
+        linear-gradient(180deg,
+          rgba(0, 0, 0, 0.62) 0%,
+          rgba(0, 0, 0, 0.50) 50%,
+          rgba(0, 0, 0, 0.64) 100%
+        ),
+        url('./images/compare/compare-photo.jpg?v=2') center/cover no-repeat;
+    }
   }
 
   .portfolio-banner {

@@ -244,7 +244,18 @@
   }
   .trust-item .label { color: rgba(255, 255, 255, 0.8); }
   @media (max-width: 640px) {
-    .hero { padding: 80px 0 96px; min-height: 480px; }
+    .hero {
+      padding: 80px 0 96px; min-height: 480px;
+      /* モバイルはテキストが全幅に広がるため、横グラデ(左のみ暗い)では
+         右側・明るい空の上の白文字が読めない。全体を均一に暗くする縦グラデに差し替え。 */
+      background:
+        linear-gradient(180deg,
+          rgba(0, 0, 0, 0.62) 0%,
+          rgba(0, 0, 0, 0.50) 50%,
+          rgba(0, 0, 0, 0.64) 100%
+        ),
+        url('./images/DSC_0101.jpg?v=1') center/cover no-repeat;
+    }
     /* nowrap を解除して画面内に折り返す（はみ出し=横揺れ防止） */
     #compare-heading { white-space: normal; font-size: clamp(24px, 6.8vw, 34px); }
   }

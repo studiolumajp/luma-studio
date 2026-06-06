@@ -165,7 +165,18 @@
   }
   .trust-item .label { color: rgba(255, 255, 255, 0.8); }
   @media (max-width: 640px) {
-    .hero { padding: 80px 0 96px; min-height: 480px; }
+    .hero {
+      padding: 80px 0 96px; min-height: 480px;
+      /* On mobile the text spans full width, so the left-only horizontal
+         overlay leaves white text unreadable. Use a uniform vertical gradient. */
+      background:
+        linear-gradient(180deg,
+          rgba(0, 0, 0, 0.62) 0%,
+          rgba(0, 0, 0, 0.50) 50%,
+          rgba(0, 0, 0, 0.64) 100%
+        ),
+        url('../images/DSC_0101.jpg?v=1') center/cover no-repeat;
+    }
   }
 </style>
 </head>
