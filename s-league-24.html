@@ -8,7 +8,7 @@
 
 <!-- ── PRIMARY SEO META ── -->
 <title>S.League 24 4周年記念大会 | 2026年7月25日(土) 東京・新橋 — LUMA</title>
-<meta name="description" content="S.League 24 は2026年7月25日(土)・新橋ベルバードgrow店で開催する4周年記念大会。特別ゲストに漫画家の片山まさゆき先生、最高位戦日本プロ麻雀協会の川嶋美晴プロをお迎えします。個人戦・最大28名・参加費 ¥12,000。参加受付中・先着順 (定員になり次第締切)。" />
+<meta name="description" content="S.League 24 は2026年7月25日(土)・新橋ベルバードgrow店で開催する4周年記念大会。特別ゲストに漫画家の片山まさゆき先生、最高位戦日本プロ麻雀協会の川嶋美晴プロをお迎えします。個人戦・最大24名・参加費 ¥12,000 (初参加は¥2,000割引の¥10,000)。申込締切 7月20日(月) 22:00・先着順・残席わずか。" />
 <meta name="keywords" content="S.League 24,健康麻雀 大会 7月,新橋 麻雀 大会,4周年記念,片山まさゆき,川嶋美晴,最高位戦,2026 麻雀大会 東京,LUMA" />
 <meta name="author" content="LUMA" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -20,14 +20,14 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://studio-lumadesign.com/s-league-24.html" />
 <meta property="og:title" content="S.League 24 4周年記念大会 | 2026年7月25日 — LUMA" />
-<meta property="og:description" content="4周年記念大会。特別ゲスト 片山まさゆき先生(漫画家)・川嶋美晴プロ(最高位戦)。個人戦・最大28名・参加費 ¥12,000・新橋ベルバードgrow店。参加受付中・先着順。" />
+<meta property="og:description" content="4周年記念大会。特別ゲスト 片山まさゆき先生(漫画家)・川嶋美晴プロ(最高位戦)。個人戦・最大24名・参加費 ¥12,000 (初参加¥10,000)・新橋ベルバードgrow店。申込締切 7/20 (月) 22:00・先着順・残席わずか。" />
 <meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
 <meta property="og:locale" content="ja_JP" />
 <meta property="og:site_name" content="LUMA" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="S.League 24 4周年記念大会" />
-<meta name="twitter:description" content="2026年7月25日(土)・新橋。特別ゲスト2名・最大28名・¥12,000。参加受付中・先着順。" />
+<meta name="twitter:description" content="2026年7月25日(土)・新橋。特別ゲスト2名・最大24名・¥12,000 (初参加¥10,000)。締切 7/20 (月) 22:00・先着順・残席わずか。" />
 <meta name="twitter:image" content="https://studio-lumadesign.com/og-image.jpg" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,7 +41,7 @@
     {
       "@type": "Event",
       "name": "S.League 24 4周年記念大会",
-      "description": "S.League 第24回・4周年記念大会。個人戦・東南戦・全9戦 (予選8戦+順位決定戦)・最大28名。特別ゲストに漫画家の片山まさゆき、最高位戦日本プロ麻雀協会の川嶋美晴を迎える。",
+      "description": "S.League 第24回・4周年記念大会。個人戦・東南戦・全9戦 (予選8戦+順位決定戦)・最大24名。特別ゲストに漫画家の片山まさゆき、最高位戦日本プロ麻雀協会の川嶋美晴を迎える。",
       "startDate": "2026-07-25T11:00",
       "endDate": "2026-07-25T21:30",
       "eventStatus": "https://schema.org/EventScheduled",
@@ -60,13 +60,30 @@
           "addressCountry": "JP"
         }
       },
-      "offers": {
-        "@type": "Offer",
-        "price": "12000",
-        "priceCurrency": "JPY",
-        "availability": "https://schema.org/InStock",
-        "url": "https://studio-lumadesign.com/s-league-24.html#apply"
-      }
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "一般参加",
+          "price": "12000",
+          "priceCurrency": "JPY",
+          "availability": "https://schema.org/InStock",
+          "availabilityEnds": "2026-07-20T22:00:00+09:00",
+          "url": "https://studio-lumadesign.com/s-league-24.html#apply"
+        },
+        {
+          "@type": "Offer",
+          "name": "初参加割引 (S.League初参加の方は¥2,000割引)",
+          "price": "10000",
+          "priceCurrency": "JPY",
+          "availability": "https://schema.org/InStock",
+          "availabilityEnds": "2026-07-20T22:00:00+09:00",
+          "url": "https://studio-lumadesign.com/s-league-24.html#apply"
+        }
+      ],
+      "performer": [
+        {"@type": "Person", "name": "川嶋美晴"},
+        {"@type": "Person", "name": "片山まさゆき"}
+      ]
     },
     {
       "@type": "BreadcrumbList",
@@ -193,6 +210,34 @@
   @keyframes badge-pulse {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.35; }
+  }
+  /* 締切カウントダウン: 切迫感を出す赤系バッジ (ヒーロー・申込セクション共用) */
+  .deadline-badge {
+    display: inline-block; margin-top: 16px; margin-left: 8px;
+    padding: 6px 16px; border-radius: 999px; font-size: 13px; font-weight: 700;
+    font-family: var(--font-mono); letter-spacing: 0.06em;
+    color: #fff; background: rgba(220, 38, 38, 0.30);
+    border: 1px solid rgba(248, 113, 113, 0.6);
+    backdrop-filter: blur(4px);
+  }
+  .deadline-badge .cd-days { font-size: 15px; }
+  @media (max-width: 640px) { .deadline-badge { margin-left: 0; } }
+  /* 初参加割引の訴求 (ヒーロー内) */
+  .discount-note {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-top: 18px; padding: 10px 18px; border-radius: 12px;
+    font-size: 14px; font-weight: 700; color: #fff;
+    background: rgba(245, 158, 11, 0.22);
+    border: 1px solid rgba(252, 211, 77, 0.55);
+    backdrop-filter: blur(4px);
+  }
+  .discount-note .price-off { color: #FCD34D; }
+  /* 申込セクション内の締切強調 */
+  .apply-deadline {
+    display: inline-block; margin-bottom: 20px; padding: 10px 22px;
+    border-radius: 999px; font-size: 14px; font-weight: 700;
+    color: #DC2626; background: color-mix(in srgb, #DC2626 10%, transparent);
+    border: 1px solid color-mix(in srgb, #DC2626 35%, transparent);
   }
 
   /* ── 特別ゲスト ── */
@@ -440,7 +485,7 @@
     <p class="hero-lead" style="font-size:16px;line-height:1.85;margin-top:16px;max-width:600px;">
       2022年7月、東京・新橋でわずか16名から始まった S.League。回を重ねるごとに仲間が増え、いよいよ創設から5年目を迎えます。この節目を記念して開催する S.League 24 では、麻雀界でご活躍の特別ゲスト2名をお招きし、いつも以上に華やかな一日をお届けします。
     </p>
-    <span class="status-badge open">受付中 · お申込み受付開始</span>
+    <span class="status-badge open">受付中 · 先着順</span><span class="deadline-badge">⏰ 申込締切 7/20 (月) 22:00<span id="cd-hero"></span></span>    <div class="discount-note">🈹 S.League 初参加の方は ¥2,000 割引 → <span class="price-off">参加費 ¥10,000</span></div>
     <div class="hero-cta-row" style="margin-top: 28px;">
       <a href="#apply" class="btn btn-primary">参加を申し込む →</a>
       <a href="#guests" class="btn btn-secondary">特別ゲストを見る</a>
@@ -484,11 +529,11 @@
       <span class="anniv-eyebrow">Since 2022 · 4th Anniversary</span>
       <h2 id="anniv-heading" class="anniv-title">創設から<span class="yr"> 5年目 </span>へ。</h2>
       <p class="anniv-lead">
-        2022年7月、東京・新橋で16名から始まった S.League。回を重ねるごとに仲間が増え、累計347名・113選手が集うコミュニティへと成長しました。S.League 24 は、これまで支えてくださった全ての方への感謝を込めた4周年記念大会です。
+        2022年7月、東京・新橋で16名から始まった S.League。回を重ねるごとに仲間が増え、累計349名・118選手が集うコミュニティへと成長しました。S.League 24 は、これまで支えてくださった全ての方への感謝を込めた4周年記念大会です。
       </p>
       <div class="anniv-stats">
         <div><span class="anniv-stat-num">4<span style="font-size:0.6em;">周年</span></span><span class="anniv-stat-label">2022 → 2026</span></div>
-        <div><span class="anniv-stat-num">347<span style="font-size:0.6em;">+</span></span><span class="anniv-stat-label">累計参加者</span></div>
+        <div><span class="anniv-stat-num">349<span style="font-size:0.6em;">+</span></span><span class="anniv-stat-label">累計参加者</span></div>
         <div><span class="anniv-stat-num">23</span><span class="anniv-stat-label">これまでの開催</span></div>
       </div>
       <p style="position:relative;z-index:1;font-size:13px;color:color-mix(in srgb, var(--bg) 60%, transparent);margin-top:28px;">
@@ -513,12 +558,12 @@
       <div class="info-card">
         <span class="info-label">参加費</span>
         <div class="info-val">¥12,000</div>
-        <div class="info-sub">クレジットカード / 銀行振込</div>
+        <div class="info-sub"><strong style="color:var(--accent-2);">S.League 初参加の方は ¥2,000 割引 → ¥10,000</strong><br>クレジットカード / 銀行振込</div>
       </div>
       <div class="info-card">
         <span class="info-label">定員</span>
-        <div class="info-val">最大28名</div>
-        <div class="info-sub">7卓・先着順・定員になり次第締切</div>
+        <div class="info-val">最大24名</div>
+        <div class="info-sub">6卓・先着順・定員になり次第締切</div>
       </div>
       <div class="info-card">
         <span class="info-label">場所</span>
@@ -645,19 +690,20 @@
     <div class="section-head reveal" style="text-align:center; margin: 0 auto 24px;">
       <span class="eyebrow">参加申込</span>
       <h2 id="apply-heading">S.League 24 に参加する</h2>
-      <p style="margin: 0 auto 16px;">4周年記念大会の参加を受け付けています。下記フォームよりお申込みください。定員 (最大28名) になり次第、締め切ります。</p>
+      <p style="margin: 0 auto 16px;">4周年記念大会の参加を受け付けています。下記フォームよりお申込みください。定員 (最大24名) になり次第、締め切ります。</p>
     </div>
 
     <div class="reveal" style="text-align:center; max-width: 760px; margin: 0 auto;">
+      <div class="apply-deadline">⏰ 申込締切: 7月20日 (月) 22:00<span id="cd-apply"></span> · 定員になり次第早期終了</div>
       <div class="comingsoon-note">
-        🎉 参加受付 <strong>受付中</strong><br>
+        🎉 参加受付 <strong>受付中</strong> — <strong>S.League 初参加の方は ¥2,000 割引 (¥12,000 → ¥10,000)</strong><br>
         下記の申込フォームよりお申込みください。最新情報は S.League 公式 X (@s_league_Japan) でもお知らせします。
       </div>
       <div>
         <a class="btn btn-primary" href="https://forms.gle/JwLZqa4xx3uFTmdc7" target="_blank" rel="noopener" style="font-size:16px; padding: 16px 28px;">参加を申し込む →</a>
       </div>
       <p style="font-size: 13px; color: var(--text-soft); margin-top: 16px; line-height: 1.7;">
-        開催日: <strong style="color:var(--text);">2026年7月25日 (土)</strong> · 参加費 ¥12,000 · 個人戦 (最大28名)<br>
+        開催日: <strong style="color:var(--text);">2026年7月25日 (土)</strong> · 参加費 ¥12,000 (初参加は ¥10,000) · 個人戦 (最大24名)<br>
         ご不明な点は <a href="./contact.html" style="color:var(--accent);text-decoration:underline;">お問い合わせフォーム</a> よりご連絡ください。
       </p>
       <p class="terms-note">
@@ -728,6 +774,30 @@
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // 申込締切 (2026-07-20 22:00 JST) までの残り日数を表示して切迫感を演出
+  (function () {
+    const deadline = new Date('2026-07-20T22:00:00+09:00');
+    const now = new Date();
+    // 閲覧者のタイムゾーンに依存しないよう、JST のカレンダー日付同士で日数差を取る
+    const jstDate = d => {
+      const t = new Date(d.getTime() + 9 * 3600000);
+      return Date.UTC(t.getUTCFullYear(), t.getUTCMonth(), t.getUTCDate());
+    };
+    const dayDiff = Math.round((jstDate(deadline) - jstDate(now)) / 86400000);
+    let label = '';
+    if (deadline - now <= 0) {
+      label = ' — 受付終了';
+    } else if (dayDiff <= 0) {
+      label = ' — 本日締切!';
+    } else {
+      label = ' — あと' + dayDiff + '日';
+    }
+    ['cd-hero', 'cd-apply'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = label;
+    });
+  })();
 </script>
 
 <script src="/nav.js" defer></script>

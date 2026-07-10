@@ -7,6 +7,7 @@
   <!-- ============================================================ -->
   <url>
     <loc>https://studio-lumadesign.com/</loc>
+    <lastmod>2026-07-10</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/"/>
@@ -15,6 +16,7 @@
   </url>
   <url>
     <loc>https://studio-lumadesign.com/en/</loc>
+    <lastmod>2026-07-10</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/"/>
@@ -79,6 +81,7 @@
   <!-- LUMA Circle (Community) -->
   <url>
     <loc>https://studio-lumadesign.com/service-community.html</loc>
+    <lastmod>2026-07-10</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-community.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-community.html"/>
     <changefreq>monthly</changefreq>
@@ -86,6 +89,7 @@
   </url>
   <url>
     <loc>https://studio-lumadesign.com/en/service-community.html</loc>
+    <lastmod>2026-07-10</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-community.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-community.html"/>
     <changefreq>monthly</changefreq>
@@ -113,6 +117,7 @@
   <!-- ============================================================ -->
   <url>
     <loc>https://studio-lumadesign.com/about.html</loc>
+    <lastmod>2026-07-10</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/about.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/about.html"/>
     <changefreq>monthly</changefreq>
@@ -120,6 +125,7 @@
   </url>
   <url>
     <loc>https://studio-lumadesign.com/en/about.html</loc>
+    <lastmod>2026-07-10</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/about.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/about.html"/>
     <changefreq>monthly</changefreq>
@@ -149,21 +155,25 @@
   <!-- ============================================================ -->
   <url>
     <loc>https://studio-lumadesign.com/s-league.html</loc>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://studio-lumadesign.com/s-league-24.html</loc>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://studio-lumadesign.com/s-league-23.html</loc>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://studio-lumadesign.com/s-league-archive.html</loc>
+    <lastmod>2026-07-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
