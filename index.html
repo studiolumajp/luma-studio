@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#0F172A" />
+<meta name="theme-color" content="#134E6F" />
 <meta name="color-scheme" content="light only" />
 
 <!-- ════════════════════════════════════════════════
@@ -48,7 +48,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="preconnect" href="https://formspree.io" />
 <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="preload" as="image" href="./images/DSC_0101.jpg?v=1" fetchpriority="high" />
 
 <!-- ════════════════════════════════════════════════
      STRUCTURED DATA — JSON-LD
@@ -151,7 +152,7 @@
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {"@type": "Question", "name": "どのエリアで対応していますか?", "acceptedAnswer": {"@type": "Answer", "text": "東京・横浜を中心に首都圏全域で対応しています。英語レッスンとカウンセリングはオンラインも可能です。"}},
+        {"@type": "Question", "name": "どのエリアで対応していますか?", "acceptedAnswer": {"@type": "Answer", "text": "東京・横浜を中心に首都圏全域で対応しています。英語レッスンはオンラインも可能です。"}},
         {"@type": "Question", "name": "英語レッスンは初心者でも大丈夫ですか?", "acceptedAnswer": {"@type": "Answer", "text": "もちろんです。オーストラリア在住9年の経験をもとに、初級から上級・ビジネス英語・IELTS/TOEIC対策まで一人ひとりに合わせて指導します。"}},
         {"@type": "Question", "name": "写真撮影の料金はいくらですか?", "acceptedAnswer": {"@type": "Answer", "text": "内容・場所・時間・枚数によって異なるため、すべて要相談・無料お見積もりです。記念撮影・ポートレート、プロフィール写真、前撮り・ロケーション撮影、空港・飛行機・風景撮影に対応し、データは当日〜翌日にお渡しします。"}},
         {"@type": "Question", "name": "S.League麻雀大会はどんな人が参加していますか?参加費は?", "acceptedAnswer": {"@type": "Answer", "text": "2022年から23回開催・延べ349名が参加した健康麻雀コミュニティです。1回16〜20名の参加で、開催時間は約10時間（土曜日が基本）。参加費は¥8,000〜¥12,000（開催回により異なる）。プロ雀士から初心者まで幅広く参加し、全員に参加賞＋入賞景品があります。"}},
@@ -178,7 +179,7 @@
   gtag('config', 'G-62F20N179N');
 </script>
 
-<link rel="stylesheet" href="./shared.css" />
+<link rel="stylesheet" href="./shared.css?v=aqua3" />
 <style id="page-overrides">
   /* ── Home hero: full-bleed background photo + 左側ダークオーバーレイ (他ページと統一) ── */
   .hero {
@@ -212,7 +213,7 @@
   h1.hero-title .accent {
     background: none;
     -webkit-background-clip: initial; background-clip: initial;
-    color: #fbbf24;
+    color: #F59E0B;
   }
   .hero-sub {
     color: #fff !important; width: auto !important; max-width: 520px;
@@ -220,7 +221,7 @@
     text-shadow: 0 1px 12px rgba(0, 0, 0, 0.65), 0 1px 2px rgba(0, 0, 0, 0.5);
   }
   .hero-sub strong {
-    color: #fbbf24 !important;
+    color: #F59E0B !important;
     text-shadow: 0 1px 12px rgba(0, 0, 0, 0.65), 0 1px 2px rgba(0, 0, 0, 0.5);
   }
   .hero .btn-primary {
@@ -240,7 +241,7 @@
   .trust-item .num {
     background: none;
     -webkit-background-clip: initial; background-clip: initial;
-    color: #fbbf24;
+    color: #F59E0B;
   }
   .trust-item .label { color: rgba(255, 255, 255, 0.8); }
   @media (max-width: 640px) {
@@ -268,6 +269,7 @@
 </style>
 </head>
 <body id="body-root">
+<a class="skip-link" href="#home">メインコンテンツへスキップ</a>
 
 <!-- ════ NAV ════ -->
 <nav class="site-nav" aria-label="メインナビゲーション">
@@ -306,12 +308,12 @@
 <nav class="breadcrumb" aria-label="パンくずリスト">
   <ol>
     <li><a href="/">ホーム</a></li>
-    <li aria-current="page" style="font-family: Inter">LUMA — 東京・横浜の英語/写真/麻雀/英語ツアー</li>
+    <li aria-current="page" style="font-family: Poppins">LUMA — 東京・横浜の英語/写真/麻雀/英語ツアー</li>
   </ol>
 </nav>
 
 <!-- ════ HERO ════ -->
-<header class="hero" id="home">
+<header class="hero" id="home" tabindex="-1">
   <div class="container hero-grid">
     <div class="hero-text">
       <span class="hero-pill"><span class="dot"></span>2026年・新規予約受付中 — 無料相談あり</span>
@@ -386,7 +388,7 @@
         <span class="svc-num">01 / SERVICE</span>
         <div class="svc-icon" aria-hidden="true">📖</div>
         <h3>英会話レッスン</h3>
-        <span class="svc-en" style="font-family: Inter">LUMA Voice</span>
+        <span class="svc-en" style="font-family: Poppins">LUMA Voice</span>
         <p>オーストラリア・ブリスベン9年の実体験を土台に、生きた英語表現を伝えます。日常会話・ビジネス英語・IELTS/TOEIC対策まで、レベルと目的に合わせてカリキュラムをカスタマイズ。相手に伝わる「話し方」と「文化の違い」もお伝えします。オンライン/対面どちらも可。</p>
         <div class="svc-meta">
           <span class="svc-price">無料相談 60分</span>
@@ -398,7 +400,7 @@
         <span class="svc-num">02 / SERVICE</span>
         <div class="svc-icon" aria-hidden="true">📸</div>
         <h3>記念撮影・ポートレート・風景</h3>
-        <span class="svc-en" style="font-family: Inter">LUMA Frame</span>
+        <span class="svc-en" style="font-family: Poppins">LUMA Frame</span>
         <p>Nikon Z6IIIで、自然な表情を切り取ります。<strong>記念撮影</strong>(前撮り・お宮参り・お食い初め・七五三・家族・カップル)、<strong>ポートレート</strong>(友人・単独・プロフィール)、<strong>風景・航空機撮影</strong>まで幅広く対応。東京・横浜中心。作例は<a href="https://www.instagram.com/luma_frame.jp" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">@luma_frame.jp</a>でご覧いただけます。</p>
         <div class="svc-meta">
           <span class="svc-price">要相談・無料見積</span>
@@ -407,10 +409,10 @@
       </article>
 
       <article class="svc">
-        <span class="svc-num">03 / SERVICE</span>
+        <span class="svc-num">COMMUNITY</span>
         <div class="svc-icon" aria-hidden="true">🀄</div>
         <h3>S.League 健康麻雀</h3>
-        <span class="svc-en" style="font-family: Inter">S.League</span>
+        <span class="svc-en" style="font-family: Poppins">S.League</span>
         <p>2022年から運営する健康麻雀コミュニティ。23回開催・延べ349名が参加した大会で、お酒・タバコ・賭け事なしの健全な空間で麻雀を楽しめます。プロ雀士から初心者まで歓迎、初参加には進行サポートも実施。約10時間、参加費は開催回により異なり、参加賞+入賞景品もあり。</p>
         <div class="svc-meta">
           <span class="svc-price">参加費 ¥8,000〜¥12,000</span>
@@ -419,10 +421,10 @@
       </article>
 
       <article class="svc">
-        <span class="svc-num">04 / SERVICE</span>
+        <span class="svc-num">03 / SERVICE</span>
         <div class="svc-icon" aria-hidden="true">🗺️</div>
         <h3>英語で巡る東京ツアー</h3>
-        <span class="svc-en" style="font-family: Inter">LUMA Path × Voice</span>
+        <span class="svc-en" style="font-family: Poppins">LUMA Path × Voice</span>
         <p>訪日外国人へのバイリンガルガイドはもちろん、<strong>日本人向けの「英語で巡る東京ツアー」</strong>もご好評。LUMA Voiceの実践レッスンとして、浅草・築地・お台場などを英語ガイドで散策。教室で学んだ英語を、生きたシーンで使う一日。</p>
         <div class="svc-meta">
           <span class="svc-price">要相談・無料見積</span>
@@ -509,7 +511,7 @@
         </div>
         <div class="cmp-body">
           <h3>英語で巡る東京</h3>
-          <p class="cmp-pitch">街を歩きながら、英語が身につく。浅草・銭座・豊洲、あなたの目的に合わせたルートで、訪日ゲストとも日本人生徒とも進める実践型ツアー。</p>
+          <p class="cmp-pitch">街を歩きながら、英語が身につく。浅草・銀座・豊洲、あなたの目的に合わせたルートで、訪日ゲストとも日本人生徒とも進める実践型ツアー。</p>
           <div class="cmp-meta">
             <span>東京近郊</span><span class="cmp-meta-dot"></span><span>3〜8時間</span>
           </div>
@@ -572,7 +574,7 @@
           <span>どのエリアで対応していますか?</span>
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">東京を中心に、首都圏全域で対応しています。英語レッスンとカウンセリングはオンラインも可能で、全国・海外からのご利用も受け付けています。出張撮影は神奈川・東京近郊が基本ですが、交通費別途で他エリアにも伺えます。</div></div>
+        <div class="faq-a"><div class="faq-a-inner">東京を中心に、首都圏全域で対応しています。英語レッスンはオンラインも可能で、全国・海外からのご利用も受け付けています。出張撮影は神奈川・東京近郊が基本ですが、交通費別途で他エリアにも伺えます。</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
@@ -693,12 +695,6 @@
   </div>
 </footer>
 
-<!-- Tweaks scripts -->
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-<script type="text/babel" src="tweaks-panel.jsx"></script>
-
 <script>
   // FAQ toggle
   function toggleFaq(btn) {
@@ -722,7 +718,7 @@
   // Apply persisted tweaks BEFORE Tweaks panel mounts (avoids flash)
   (function() {
     const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-      "tone": "editorial",
+      "tone": "light",
       "heroStyle": "split",
       "density": "comfortable",
       "showLogoStrip": true,
@@ -734,73 +730,7 @@
     if (!TWEAK_DEFAULTS.showLogoStrip) document.querySelector('.logo-strip')?.style.setProperty('display','none');
     if (!TWEAK_DEFAULTS.showCompare) document.getElementById('compare')?.style.setProperty('display','none');
     if (!TWEAK_DEFAULTS.showBlog) document.getElementById('blog')?.style.setProperty('display','none');
-    window.__LUMA_TWEAK_DEFAULTS__ = TWEAK_DEFAULTS;
   })();
-</script>
-
-<!-- Tweaks Panel App -->
-<script type="text/babel">
-  const { useEffect } = React;
-  const { TweaksPanel, useTweaks, TweakSection, TweakRadio, TweakToggle } = window;
-
-  function LumaTweaks() {
-    const [t, setTweak] = useTweaks(window.__LUMA_TWEAK_DEFAULTS__);
-
-    useEffect(() => {
-      document.documentElement.setAttribute('data-tone', t.tone);
-      document.documentElement.setAttribute('data-density', t.density);
-    }, [t.tone, t.density]);
-
-    useEffect(() => {
-      const ls = document.querySelector('.logo-strip');
-      if (ls) ls.style.display = t.showLogoStrip ? '' : 'none';
-    }, [t.showLogoStrip]);
-    useEffect(() => {
-      const c = document.getElementById('compare');
-      if (c) c.style.display = t.showCompare ? '' : 'none';
-    }, [t.showCompare]);
-    useEffect(() => {
-      const b = document.getElementById('blog');
-      if (b) b.style.display = t.showBlog ? '' : 'none';
-    }, [t.showBlog]);
-
-    return (
-      <TweaksPanel title="LUMA Tweaks">
-        <TweakSection label="Tone / 配色">
-          <TweakRadio
-            label="Theme"
-            value={t.tone}
-            onChange={(v) => setTweak('tone', v)}
-            options={[
-              { value: 'light', label: 'Light' },
-              { value: 'dark', label: 'Dark' },
-              { value: 'editorial', label: 'Editorial' },
-            ]}
-          />
-        </TweakSection>
-        <TweakSection label="密度">
-          <TweakRadio
-            label="Density"
-            value={t.density}
-            onChange={(v) => setTweak('density', v)}
-            options={[
-              { value: 'compact', label: 'Compact' },
-              { value: 'comfortable', label: 'Comfortable' },
-            ]}
-          />
-        </TweakSection>
-        <TweakSection label="表示セクション">
-          <TweakToggle label="信頼ストリップ" value={t.showLogoStrip} onChange={(v) => setTweak('showLogoStrip', v)} />
-          <TweakToggle label="サービス比較表" value={t.showCompare} onChange={(v) => setTweak('showCompare', v)} />
-          <TweakToggle label="ブログ・コラム" value={t.showBlog} onChange={(v) => setTweak('showBlog', v)} />
-        </TweakSection>
-      </TweaksPanel>
-    );
-  }
-
-  const root = document.createElement('div');
-  document.body.appendChild(root);
-  ReactDOM.createRoot(root).render(<LumaTweaks />);
 </script>
 
 <script src="/nav.js" defer></script>

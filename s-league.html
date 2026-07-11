@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#0F172A" />
+<meta name="theme-color" content="#134E6F" />
 <meta name="color-scheme" content="light only" />
 
 <!-- ── PRIMARY SEO META ── -->
@@ -32,7 +32,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
 <script type="application/ld+json">
 {
@@ -71,7 +71,7 @@
   gtag('config', 'G-62F20N179N');
 </script>
 
-<link rel="stylesheet" href="./shared.css" />
+<link rel="stylesheet" href="./shared.css?v=aqua3" />
 <style id="page-overrides">
   /* ── S.League hero: full-bleed background photo + 左側ダークオーバーレイ ── */
   .sl-hero {
@@ -231,7 +231,7 @@
   }
   .format-item:last-child { border-bottom: none; }
   .format-num {
-    font-family: 'Inter', sans-serif; font-size: 22px; font-weight: 800;
+    font-family:'Poppins', sans-serif; font-size: 22px; font-weight: 800;
     background: linear-gradient(120deg, var(--accent), var(--accent-2));
     -webkit-background-clip: text; background-clip: text; color: transparent;
   }
@@ -274,7 +274,7 @@
     padding: 24px; display: flex; align-items: center; gap: 16px;
   }
   .event-card-num {
-    font-family: 'Inter', sans-serif; font-size: 36px; font-weight: 800; line-height: 1;
+    font-family:'Poppins', sans-serif; font-size: 36px; font-weight: 800; line-height: 1;
     background: linear-gradient(120deg, var(--accent), var(--accent-2));
     -webkit-background-clip: text; background-clip: text; color: transparent;
   }
@@ -372,6 +372,7 @@
 </style>
 </head>
 <body id="body-root">
+<a class="skip-link" href="#home">メインコンテンツへスキップ</a>
 
 <nav class="site-nav" aria-label="メインナビゲーション">
   <div class="nav-inner">
@@ -411,7 +412,7 @@
   </ol>
 </nav>
 
-<header class="hero sl-hero" id="home">
+<header class="hero sl-hero" id="home" tabindex="-1">
   <div class="container">
     <span class="eyebrow">LUMA presents — 東京・新橋・定期開催</span>
     <h1 class="hero-title" style="margin-top:18px;">

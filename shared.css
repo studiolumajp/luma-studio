@@ -6,26 +6,29 @@
    ============================================================ */
 
 :root {
-  /* Light tokens (default — Stripe/Notion風) */
-  --bg: #FFFFFF;
-  --bg-soft: #FAFAF9;
-  --bg-muted: #F4F4F2;
-  --surface: #FFFFFF;
-  --border: #E6E6E3;
-  --border-strong: #D4D4D0;
-  --text: #0A0A0A;
-  --text-muted: #4B5563;
-  --text-soft: #6B7280;
-  --accent: #1E40AF;       /* deep blue */
-  --accent-soft: #EEF2FF;
-  --accent-2: #F59E0B;
+  /* Light tokens (LUMA Soft Aqua — CLAUDE.md 4-1) */
+  --bg: #EBF5FA;           /* Base 背景 */
+  --bg-soft: #F8FBFC;      /* Ice White */
+  --bg-muted: #D6EBF7;     /* Primary Light */
+  --surface: #FFFFFF;      /* カード背景 */
+  --border: #D7E5ED;       /* Border Light */
+  --border-strong: #B8CED9;/* Border */
+  --text: #2C3E50;         /* 本文テキスト */
+  --text-muted: #566575;   /* 補足(AA確保) */
+  --text-soft: #5C6B7A;    /* テキストライト(AA) */
+  --accent: #1E88E5;       /* Primary Blue */
+  --accent-soft: #D6EBF7;  /* Primary Light */
+  --accent-2: #F59E0B;     /* CTA Orange */
+  --navy: #134E6F;         /* H1 / Navy */
+  --sky: #5BA9D7;          /* H3 / Sky Blue */
+  --cta-hover: #D97706;    /* CTA Hover */
   --success: #047857;
   --radius: 10px;
   --radius-lg: 16px;
   --shadow-sm: 0 1px 2px rgba(15,23,42,0.04), 0 1px 3px rgba(15,23,42,0.06);
   --shadow-md: 0 4px 12px rgba(15,23,42,0.06), 0 2px 4px rgba(15,23,42,0.04);
   --shadow-lg: 0 24px 48px -12px rgba(15,23,42,0.18);
-  --font-sans: 'Inter', 'Noto Sans JP', -apple-system, system-ui, sans-serif;
+  --font-sans: 'Poppins', 'Noto Sans JP', -apple-system, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
   --container: 1200px;
 }
@@ -46,19 +49,19 @@
   --shadow-md: 0 4px 16px rgba(0,0,0,0.5);
   --shadow-lg: 0 24px 48px -12px rgba(0,0,0,0.7);
 }
-/* EDITORIAL (Airbnb風 — warm) */
+/* EDITORIAL — LUMA Soft Aqua に統一 (旧warm/rustは廃止) */
 [data-tone="editorial"] {
-  --bg: #FFFEFB;
-  --bg-soft: #FAF6EE;
-  --bg-muted: #F5EFE0;
+  --bg: #EBF5FA;
+  --bg-soft: #F8FBFC;
+  --bg-muted: #D6EBF7;
   --surface: #FFFFFF;
-  --border: #E8DFC9;
-  --border-strong: #D4C49E;
-  --text: #1F1B16;
-  --text-muted: #574F3F;
-  --accent: #B8401E;
-  --accent-soft: #FDF1EC;
-  --accent-2: #B8401E;
+  --border: #D7E5ED;
+  --border-strong: #B8CED9;
+  --text: #2C3E50;
+  --text-muted: #566575;
+  --accent: #1E88E5;
+  --accent-soft: #D6EBF7;
+  --accent-2: #F59E0B;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -81,9 +84,13 @@ img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; cursor: pointer; }
 
+/* スキップリンク: キーボードでフォーカスすると出現し、メインへジャンプ */
+.skip-link { position: absolute; left: 8px; top: -60px; z-index: 200; background: var(--navy); color: #fff; padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 500; transition: top .2s; }
+.skip-link:focus { top: 8px; outline: 3px solid var(--accent-2); outline-offset: 2px; }
+
 .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
 .eyebrow {
-  font-family: 'Inter', -apple-system, system-ui, sans-serif; font-size: 16px; font-weight: 500;
+  font-family: 'Poppins', -apple-system, system-ui, sans-serif; font-size: 16px; font-weight: 500;
   color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em;
   display: inline-flex; align-items: center; gap: 8px;
 }
@@ -289,7 +296,7 @@ h1.hero-title .accent {
 .trust-item .label {
   font-size: 16px; color: var(--text-soft); margin-top: 2px;
   text-transform: uppercase; letter-spacing: 0.06em;
-  font-family: 'Inter', -apple-system, system-ui, sans-serif;
+  font-family: 'Poppins', -apple-system, system-ui, sans-serif;
 }
 
 /* Hero visual — abstract grid card stack */
@@ -302,7 +309,7 @@ h1.hero-title .accent {
   display: flex; flex-direction: column; gap: 6px;
 }
 .hv-card .ico { font-size: 22px; line-height: 1; }
-.hv-card .label { font-size: 16px; font-family: 'Inter', -apple-system, system-ui, sans-serif; color: var(--text-soft); text-transform: uppercase; letter-spacing: 0.08em; }
+.hv-card .label { font-size: 16px; font-family: 'Poppins', -apple-system, system-ui, sans-serif; color: var(--text-soft); text-transform: uppercase; letter-spacing: 0.08em; }
 .hv-card .title { font-size: 15px; font-weight: 600; color: var(--text); }
 .hv-1 { top: 6%; left: 8%; width: 56%; }
 .hv-2 { top: 28%; right: 4%; width: 50%; }
@@ -359,7 +366,7 @@ section { padding: 96px 0; }
 }
 .svc:hover { background: color-mix(in srgb, var(--surface) 90%, var(--accent) 4%); }
 .svc-num {
-  font-family: 'Inter', -apple-system, system-ui, sans-serif; font-size: 14px; color: var(--text-soft);
+  font-family: 'Poppins', -apple-system, system-ui, sans-serif; font-size: 14px; color: var(--text-soft);
   letter-spacing: 0.08em;
 }
 .svc-icon {
@@ -393,11 +400,11 @@ section { padding: 96px 0; }
 .cmp-head h2 {
   font-size: clamp(40px, 5.5vw, 64px);
   line-height: 1.05; letter-spacing: -0.035em;
-  font-weight: 600; margin: 0 0 20px; color: #1D1D1F;
+  font-weight: 600; margin: 0 0 20px; color: var(--navy);
 }
 .cmp-head p {
   font-size: clamp(17px, 1.4vw, 21px);
-  line-height: 1.5; color: #6E6E73;
+  line-height: 1.5; color: var(--text-soft);
   max-width: 560px; margin: 0 auto;
 }
 .cmp-grid {
@@ -455,7 +462,7 @@ section { padding: 96px 0; }
   position: relative; z-index: 2;
   font-size: 12px; font-weight: 600;
   letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--cmp-tag, #1D1D1F);
+  color: var(--cmp-tag, #134E6F);
   background: rgba(255,255,255,.85);
   backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
   padding: 6px 12px; border-radius: 999px;
@@ -468,21 +475,21 @@ section { padding: 96px 0; }
 .cmp-card h3 {
   font-size: 24px; line-height: 1.2;
   font-weight: 600; letter-spacing: -0.02em;
-  color: #1D1D1F; margin: 0 0 8px;
+  color: var(--navy); margin: 0 0 8px;
 }
 .cmp-card .cmp-pitch {
   font-size: 15px; line-height: 1.5;
-  color: #6E6E73; margin: 0 0 20px;
+  color: var(--text-soft); margin: 0 0 20px;
   flex: 1;
 }
 .cmp-card .cmp-meta {
   display: flex; align-items: center; gap: 8px;
-  font-size: 13px; color: #86868B;
+  font-size: 13px; color: var(--text-soft);
   margin-bottom: 18px;
 }
 .cmp-card .cmp-meta-dot {
   width: 3px; height: 3px; border-radius: 50%;
-  background: #C7C7CC;
+  background: var(--border-strong);
 }
 .cmp-card .cmp-actions {
   display: flex; gap: 10px;
@@ -505,19 +512,19 @@ section { padding: 96px 0; }
   text-decoration: none;
 }
 .cmp-btn-primary {
-  background: #0071E3; color: #fff;
+  background: #1E88E5; color: #fff;
 }
 .cmp-btn-primary:hover { background: #0077ED; }
 .cmp-btn-link {
-  color: #0071E3; padding-left: 4px;
+  color: #1E88E5; padding-left: 4px;
 }
 .cmp-btn-link:hover { text-decoration: underline; }
 
 /* Per-service color themes (Apple-style soft tints) */
-.cmp-card.theme-eng    { --cmp-bg: linear-gradient(135deg, #E8F0FE 0%, #C9DCFD 100%); --cmp-tag: #1A56DB; }
-.cmp-card.theme-photo  { --cmp-bg: linear-gradient(135deg, #FCE7F0 0%, #F9C8D9 100%); --cmp-tag: #BE185D; }
-.cmp-card.theme-mahjong{ --cmp-bg: linear-gradient(135deg, #DCFCE7 0%, #BBF7D0 100%); --cmp-tag: #15803D; }
-.cmp-card.theme-tour   { --cmp-bg: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); --cmp-tag: #B45309; }
+.cmp-card.theme-eng    { --cmp-bg: linear-gradient(135deg, #EBF5FA 0%, #D6EBF7 100%); --cmp-tag: #1E88E5; }
+.cmp-card.theme-photo  { --cmp-bg: linear-gradient(135deg, #EBF5FA 0%, #D6EBF7 100%); --cmp-tag: #134E6F; }
+.cmp-card.theme-mahjong{ --cmp-bg: linear-gradient(135deg, #EBF5FA 0%, #D6EBF7 100%); --cmp-tag: #5BA9D7; }
+.cmp-card.theme-tour   { --cmp-bg: linear-gradient(135deg, #EBF5FA 0%, #D6EBF7 100%); --cmp-tag: #D97706; }
 
 /* ── TESTIMONIALS (Airbnb風) ─────────── */
 .testimonials-grid {
@@ -648,6 +655,8 @@ footer {
 /* Reveal */
 .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
+/* JS無効時は reveal を最初から表示（本文が消えないためのフォールバック） */
+@media (scripting: none) { .reveal { opacity: 1 !important; transform: none !important; } }
 
 /* ── RESPONSIVE ────────────────────── */
 @media (max-width: 960px) {
