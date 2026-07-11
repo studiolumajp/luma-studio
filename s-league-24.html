@@ -8,7 +8,7 @@
 
 <!-- ── PRIMARY SEO META ── -->
 <title>S.League 24 4周年記念大会 | 2026年7月25日(土) 東京・新橋 — LUMA</title>
-<meta name="description" content="S.League 24 は2026年7月25日(土)・新橋ベルバードgrow店で開催する4周年記念大会。特別ゲストに漫画家の片山まさゆき先生、最高位戦日本プロ麻雀協会の川嶋美晴プロをお迎えします。個人戦・最大24名・参加費 ¥12,000 (初参加は¥2,000割引の¥10,000)。申込締切 7月20日(月) 22:00・先着順・残席わずか。" />
+<meta name="description" content="S.League 24 は2026年7月25日(土)・新橋ベルバードgrow店で開催する4周年記念大会。特別ゲストに漫画家の片山まさゆき先生、最高位戦日本プロ麻雀協会の川嶋美晴プロをお迎えします。参加者全員がお二人それぞれと必ず同卓。個人戦・24名(6卓)・参加費 ¥12,000 (初参加は¥2,000割引の¥10,000)。申込締切 7月20日(月) 22:00・先着順。" />
 <meta name="keywords" content="S.League 24,健康麻雀 大会 7月,新橋 麻雀 大会,4周年記念,片山まさゆき,川嶋美晴,最高位戦,2026 麻雀大会 東京,LUMA" />
 <meta name="author" content="LUMA" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -232,6 +232,41 @@
     backdrop-filter: blur(4px);
   }
   .discount-note .price-off { color: #FCD34D; }
+  /* ── 同卓保証: ヒーローの主役。他大会は「いずれか1名」だが SL24 は2名どちらとも ── */
+  .table-guarantee {
+    margin-top: 26px; margin-bottom: 4px; padding: 20px 24px; border-radius: 16px;
+    max-width: 580px;
+    background: rgba(28, 22, 8, 0.56);
+    border: 1px solid rgba(232, 199, 102, 0.6);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.34);
+    backdrop-filter: blur(5px);
+  }
+  .table-guarantee .tg-eyebrow {
+    display: inline-flex; align-items: center; gap: 7px; margin-bottom: 10px;
+    font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-2);
+  }
+  .table-guarantee .tg-eyebrow::before {
+    content: '✓'; display: inline-flex; align-items: center; justify-content: center;
+    width: 18px; height: 18px; border-radius: 50%; font-size: 11px;
+    color: #4A3C0E; background: linear-gradient(120deg, var(--gold-2), var(--gold));
+  }
+  .table-guarantee .tg-title {
+    font-size: clamp(20px, 3.6vw, 26px); font-weight: 800; line-height: 1.35;
+    color: #fff; text-shadow: 0 1px 12px rgba(0, 0, 0, 0.6);
+  }
+  .table-guarantee .tg-title .hl { color: var(--gold-2); }
+  .table-guarantee .tg-sub {
+    margin-top: 10px; font-size: 13.5px; line-height: 1.75;
+    color: rgba(255, 255, 255, 0.9); text-shadow: 0 1px 10px rgba(0, 0, 0, 0.6);
+  }
+  /* 締切・割引を1つの横並びラインに集約し、保証ボックスとの間に余白をつくる (提案 X2) */
+  .hero-meta-row {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 20px;
+  }
+  .hero-meta-row .status-badge,
+  .hero-meta-row .deadline-badge,
+  .hero-meta-row .discount-note { margin-top: 0; margin-left: 0; }
   /* 申込セクション内の締切強調 */
   .apply-deadline {
     display: inline-block; margin-bottom: 20px; padding: 10px 22px;
@@ -272,7 +307,9 @@
   }
   .guest-name { font-size: 22px; font-weight: 700; color: var(--text); line-height: 1.3; }
   .guest-name .hon { font-size: 14px; font-weight: 600; color: var(--text-muted); margin-left: 4px; }
-  .guest-role { font-size: 14px; color: var(--text-muted); margin-top: 6px; line-height: 1.75; }
+  /* 一言で「誰か」を掴ませるリード行 (提案 X4) */
+  .guest-lead { font-size: 14.5px; font-weight: 700; color: var(--text); margin-top: 8px; line-height: 1.5; }
+  .guest-role { font-size: 14px; color: var(--text-muted); margin-top: 5px; line-height: 1.75; }
   .guest-link {
     display: inline-block; margin-top: 12px;
     font-family: var(--font-mono); font-size: 13px; font-weight: 600;
@@ -443,6 +480,18 @@
   }
   .terms-note a { color: var(--accent); text-decoration: underline; }
 </style>
+<style id="soft-aqua-palette">
+  /* S.League を CLAUDE.md 4-1 の Soft Aqua パレットへ統一 (Sho 決定 2026-07-11)。
+     shared.css の既定トークンをこのページ内で上書きする。 */
+  :root{
+    --bg:#FFFFFF; --bg-soft:#F8FBFC; --bg-muted:#EBF5FA; --surface:#FFFFFF;
+    --border:#D7E5ED; --border-strong:#B8CED9;
+    --text:#134E6F; --text-muted:#51697B; --text-soft:#7A8998;
+    --accent:#1E88E5; --accent-soft:#D6EBF7; --accent-2:#F59E0B;
+    --gold:#F59E0B; --gold-2:#FBBF24;
+  }
+  body{ background:#EBF5FA; }
+</style>
 </head>
 <body id="body-root">
 
@@ -477,16 +526,27 @@
 <header class="hero sl-hero" id="home">
   <div class="container">
     <span class="anniv-badge">4th Anniversary</span>
-    <span class="eyebrow" style="display:block;margin-top:14px;">S.League — Vol. 24 · 4周年記念大会</span>
+    <span class="eyebrow" style="display:block;margin-top:14px;">4周年記念 · ゲスト2名と全員が同卓できる特別大会</span>
     <h1 class="hero-title" style="margin-top:14px;">
       S.League <span class="accent">24</span>
     </h1>
     <p class="date">2026年7月25日 (土) · ベルバードgrow店 (新橋)</p>
     <p class="hero-lead" style="font-size:16px;line-height:1.85;margin-top:16px;max-width:600px;">
-      2022年7月、東京・新橋でわずか16名から始まった S.League。回を重ねるごとに仲間が増え、いよいよ創設から5年目を迎えます。この節目を記念して開催する S.League 24 では、麻雀界でご活躍の特別ゲスト2名をお招きし、いつも以上に華やかな一日をお届けします。
+      2022年7月、東京・新橋でわずか16名から始まった S.League。いよいよ創設から5年目を迎えるこの節目に、麻雀界でご活躍の特別ゲスト2名をお招きします。しかも、お一人だけではありません——
     </p>
-    <span class="status-badge open">受付中 · 先着順</span><span class="deadline-badge">⏰ 申込締切 7/20 (月) 22:00<span id="cd-hero"></span></span>    <div class="discount-note">🈹 S.League 初参加の方は ¥2,000 割引 → <span class="price-off">参加費 ¥10,000</span></div>
-    <div class="hero-cta-row" style="margin-top: 28px;">
+    <div class="table-guarantee reveal">
+      <span class="tg-eyebrow">この記念大会だけの約束</span>
+      <div class="tg-title">参加者全員が、<span class="hl">お二人それぞれと必ず同卓。</span></div>
+      <p class="tg-sub">
+        川嶋美晴プロと片山まさゆき先生、そのどちらか一方ではありません。全9戦の配卓を工夫し、あなたが必ずお二人それぞれと同じ卓を囲めるように組みます。プロと漫画界のレジェンド、両方と本気の一局を。
+      </p>
+    </div>
+    <div class="hero-meta-row">
+      <span class="status-badge open">受付中 · 先着順</span>
+      <span class="deadline-badge">⏰ 申込締切 7/20 (月) 22:00<span id="cd-hero"></span></span>
+      <div class="discount-note">🈹 初参加は ¥2,000 割引 → <span class="price-off">¥10,000</span></div>
+    </div>
+    <div class="hero-cta-row" style="margin-top: 24px;">
       <a href="#apply" class="btn btn-primary">参加を申し込む →</a>
       <a href="#guests" class="btn btn-secondary">特別ゲストを見る</a>
     </div>
@@ -498,7 +558,7 @@
     <div class="section-head reveal" style="text-align:center; margin: 0 auto 8px;">
       <span class="eyebrow">特別ゲスト</span>
       <h2 id="guests-heading">4周年を彩る、2名のゲスト</h2>
-      <p class="guest-intro">S.League 24 では、麻雀界でご活躍のお二人を特別ゲストとしてお招きします。必ずゲストと卓を囲める、記念大会だけの特別な一日です。</p>
+      <p class="guest-intro">S.League 24 では、麻雀界でご活躍のお二人を特別ゲストとしてお招きします。「どちらか一方」ではありません。全9戦の配卓を工夫し、参加者全員がお二人それぞれと最低1回は同卓できるように組む、記念大会だけの特別な一日です。</p>
     </div>
     <div class="guest-grid reveal">
       <article class="guest-card">
@@ -506,7 +566,8 @@
         <div class="guest-body">
           <div class="guest-affil">最高位戦日本プロ麻雀協会</div>
           <div class="guest-name">川嶋 美晴<span class="hon">プロ</span></div>
-          <div class="guest-role">最高位戦日本プロ麻雀協会所属のプロ雀士。名古屋発のアイドルグループ SKE48 (チームKII) での活動を経て麻雀の世界へ転身し、2023年に同協会へ入会、2024年に女流合格を果たしました。AKB48グループ出身のプロ雀士として話題を集め、麻雀番組やイベントでも活躍する注目の若手女流プロです。</div>
+          <div class="guest-lead">SKE48出身、いま注目の若手女流プロ。</div>
+          <div class="guest-role">名古屋発のアイドルグループ SKE48 (チームKII) での活動を経て麻雀の世界へ転身。2023年に最高位戦日本プロ麻雀協会へ入会し、2024年に女流合格を果たしました。麻雀番組やイベントでも活躍しています。</div>
           <a class="guest-link" href="https://x.com/kawachimachan" target="_blank" rel="noopener">𝕏 @kawachimachan</a>
         </div>
       </article>
@@ -515,7 +576,8 @@
         <div class="guest-body">
           <div class="guest-affil">漫画家 · 麻雀漫画のパイオニア</div>
           <div class="guest-name">片山 まさゆき<span class="hon">先生</span></div>
-          <div class="guest-role">1959年・千葉県出身。1980年代から活躍し、「麻雀漫画」というジャンルを切り開いた草分け的存在。コミカルな作風で知られ、代表作に『ぎゅわんぶらあ自己中心派』『スーパーヅガン』『ノーマーク爆牌党』『打姫オバカミーコ』など。麻雀ファンにはおなじみのレジェンドです。</div>
+          <div class="guest-lead">「麻雀漫画」を切り開いたレジェンド。</div>
+          <div class="guest-role">1959年・千葉県出身。1980年代から活躍し、コミカルな作風で知られる草分け的存在。代表作に『ぎゅわんぶらあ自己中心派』『スーパーヅガン』『ノーマーク爆牌党』『打姫オバカミーコ』など。麻雀ファンにはおなじみのレジェンドです。</div>
           <a class="guest-link" href="https://x.com/gpc_katachin" target="_blank" rel="noopener">𝕏 @gpc_katachin</a>
         </div>
       </article>
@@ -562,8 +624,8 @@
       </div>
       <div class="info-card">
         <span class="info-label">定員</span>
-        <div class="info-val">最大24名</div>
-        <div class="info-sub">6卓・先着順・定員になり次第締切</div>
+        <div class="info-val">24名 (6卓)</div>
+        <div class="info-sub">先着順・定員になり次第締切<br>お申込状況により 20名 (5卓) での開催となる場合があります</div>
       </div>
       <div class="info-card">
         <span class="info-label">場所</span>

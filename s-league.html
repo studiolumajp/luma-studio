@@ -105,14 +105,25 @@
     text-shadow: 0 1px 12px rgba(0, 0, 0, 0.65), 0 1px 2px rgba(0, 0, 0, 0.5);
     font-weight: 500;
   }
-  /* HTML 側インライン color:var(--text)（黒）の <strong> を白背景写真用にアンバー上書き */
+  /* HTML 側インライン color:var(--text)（黒）の <strong> を白背景写真用に白で上書き。
+     ゴールド(アンバー)はヒーロー見出しと実績バンド・記念プロモに用途を限定するため、
+     ヒーロー本文の実績数値は白の太字で強調する (提案 S4)。 */
   .sl-hero .sub strong {
-    color: #fbbf24 !important;
+    color: #fff !important;
     text-shadow: 0 1px 12px rgba(0, 0, 0, 0.65), 0 1px 2px rgba(0, 0, 0, 0.5);
   }
   .sl-hero .eyebrow { color: #fff; }
   .sl-hero .eyebrow::before { background: #fff; }
-  .sl-hero .hero-cta-row { max-width: 560px; }
+  .sl-hero .hero-cta-row { max-width: 560px; align-items: center; }
+  /* 主導線は SL24 の1本に集中。残る2つは控えめなテキストリンクに格下げ (提案 S1) */
+  .sl-hero .hero-textlink {
+    color: #fff; font-weight: 500; font-size: 15px; text-decoration: none;
+    padding: 8px 2px; opacity: 0.88; display: inline-flex; align-items: center; gap: 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
+    transition: opacity .2s, border-color .2s;
+  }
+  .sl-hero .hero-textlink:hover { opacity: 1; border-bottom-color: #fff; }
   .sl-hero .btn-primary {
     background: #fff; color: #0A0A0A; border-color: #fff;
   }
@@ -347,6 +358,18 @@
     .sl24-promo-cta { align-items: flex-start; }
   }
 </style>
+<style id="soft-aqua-palette">
+  /* S.League を CLAUDE.md 4-1 の Soft Aqua パレットへ統一 (Sho 決定 2026-07-11)。
+     shared.css の既定トークンをこのページ内で上書きする。 */
+  :root{
+    --bg:#FFFFFF; --bg-soft:#F8FBFC; --bg-muted:#EBF5FA; --surface:#FFFFFF;
+    --border:#D7E5ED; --border-strong:#B8CED9;
+    --text:#134E6F; --text-muted:#51697B; --text-soft:#7A8998;
+    --accent:#1E88E5; --accent-soft:#D6EBF7; --accent-2:#F59E0B;
+    --gold:#F59E0B; --gold-2:#FBBF24;
+  }
+  body{ background:#EBF5FA; }
+</style>
 </head>
 <body id="body-root">
 
@@ -395,11 +418,11 @@
       一日限りの、<br />
       <span class="accent">真剣勝負</span>。
     </h1>
-    <p class="sub">アマチュアからプロまで · 健康麻雀 · 全員に景品。<strong style="color:var(--text);">2022年から23回・累計349名</strong>が参加した本気の麻雀トーナメントコミュニティ。</p>
+    <p class="sub">初心者もプロも、全員に景品あり。<strong style="color:var(--text);">2022年から23回・のべ349名</strong>が集ってきた、ノーレートで本気の麻雀コミュニティです。</p>
     <div class="hero-cta-row">
       <a href="./s-league-24.html" class="btn btn-primary">SL24 記念大会を見る →</a>
-      <a href="#about" class="btn btn-secondary">S.Leagueとは</a>
-      <a href="./s-league-archive.html" class="btn btn-secondary">📊 成績アーカイブ</a>
+      <a href="#about" class="hero-textlink">S.Leagueとは</a>
+      <a href="./s-league-archive.html" class="hero-textlink">📊 成績アーカイブ →</a>
     </div>
   </div>
 </header>
@@ -410,7 +433,7 @@
       <span class="sl24-promo-badge">4th Anniversary</span>
       <h2>S.League 24 ＝ <span class="yr">4周年記念大会</span></h2>
       <p>
-        2026年7月25日 (土)・新橋。創設から5年目に突入する節目の大会に、特別ゲスト2名をお迎えします。<br>
+        2026年7月25日 (土)・新橋。創設5年目の節目に、特別ゲスト2名をお迎えします。参加者全員が、お二人それぞれと必ず同卓できる記念大会です。<br>
         <span class="guests">川嶋美晴 プロ (最高位戦) ／ 片山まさゆき 先生 (漫画家)</span>
       </p>
     </div>
@@ -437,7 +460,7 @@
         <span class="eyebrow">S.League について</span>
         <h2 id="about-heading">新しいつながりを、<br />麻雀卓から。</h2>
         <p style="color:var(--text-muted);font-size:16px;line-height:1.85;margin: 16px 0 24px;">
-          S.League は2022年に創設された本格麻雀トーナメントです。「より多くの仲間と麻雀を楽しめる機会を創ろう」という想いから始まり、今では総参加者349名を超えるコミュニティとなりました。<br><br>
+          S.League は2022年に創設された本格麻雀トーナメントです(賭けない・飲まない、ノーレートの『健康麻雀』)。「より多くの仲間と麻雀を楽しめる機会を創ろう」という想いから始まり、今では総参加者349名を超えるコミュニティとなりました。<br><br>
           各プロ団体に所属する方から麻雀を始めたばかりの方まで、幅広い層の方に参加していただいています。東南戦6〜8戦+エキシビションマッチを約10時間かけて行う本格的な大会でありながら、「楽しく、真剣に」をモットーに、誰もが参加しやすい雰囲気を大切にしています。
         </p>
         <div class="community-grid">
