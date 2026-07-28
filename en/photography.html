@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#0F172A" />
+<meta name="theme-color" content="#134E6F" />
 <meta name="color-scheme" content="light only" />
 
 <title>Photography Portfolio | LUMA Frame</title>
-<meta name="description" content="A 41-image portfolio shot on the Nikon Z6III — landscapes, aviation, and street snaps from Enoshima, Haneda, Yokohama and beyond. Family and pre-wedding bookings welcome." />
+<meta name="description" content="An 85-image portfolio shot on the Nikon Z6III — landscapes, aviation, and street snaps from Enoshima, Haneda, Yokohama and beyond. Family and pre-wedding bookings welcome." />
 <meta name="keywords" content="photography portfolio,Nikon Z6III,aviation photography,landscape photography Japan,street photography Tokyo,LUMA Frame" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://studio-lumadesign.com/en/photography.html" />
@@ -19,7 +19,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://studio-lumadesign.com/en/photography.html" />
 <meta property="og:title" content="Photography Portfolio | LUMA Frame" />
-<meta property="og:description" content="41 frames — landscape, aviation, snap. Shot on the Nikon Z6III." />
+<meta property="og:description" content="85 frames — landscape, aviation, snap. Shot on the Nikon Z6III." />
 <meta property="og:image" content="https://studio-lumadesign.com/images/photography/landscape-01.jpg" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:site_name" content="LUMA" />
@@ -30,7 +30,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
 <script type="application/ld+json">
 {
@@ -49,7 +49,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
 <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-62F20N179N');</script>
 
-<link rel="stylesheet" href="../shared.css" />
+<link rel="stylesheet" href="../shared.css?v=aqua3" />
 <style id="page-overrides">
   .photo-hero { padding: 64px 0 32px; }
   .photo-hero h1 .accent { background: linear-gradient(120deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
@@ -57,7 +57,7 @@
   .filter-bar { position: sticky; top: 56px; z-index: 40; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: saturate(180%) blur(12px); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
   .filter-bar-inner { max-width: var(--container); margin: 0 auto; padding: 14px 24px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: space-between; }
   .filter-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
-  .filter-btn { padding: 8px 16px; font-size: 13px; font-weight: 600; border: 1px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--text-muted); transition: all .2s; }
+  .filter-btn { padding: 10px 16px; min-height: 44px; display: inline-flex; align-items: center; flex: 0 0 auto; white-space: nowrap; font-size: 13px; font-weight: 600; border: 1px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--text-muted); transition: all .2s; }
   .filter-btn:hover { border-color: var(--text-muted); color: var(--text); }
   .filter-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
   .photo-count { font-family: var(--font-mono); font-size: 12px; color: var(--text-soft); text-transform: uppercase; letter-spacing: 0.06em; }
@@ -65,6 +65,7 @@
   .photo-item { break-inside: avoid; margin-bottom: 16px; position: relative; cursor: pointer; overflow: hidden; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-soft); display: block; transition: transform .25s, box-shadow .25s; }
   .photo-item:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
   .photo-item.hidden { display: none; }
+  .photo-item:focus-visible, .filter-btn:focus-visible, .lb-btn:focus-visible, .lb-close:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
   .photo-item img { width: 100%; height: auto; display: block; transition: transform .5s cubic-bezier(.2,.8,.2,1); }
   .photo-item:hover img { transform: scale(1.03); }
   .photo-overlay { position: absolute; inset: 0; padding: 14px 16px; background: linear-gradient(0deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 50%); color: #fff; opacity: 0; transition: opacity .25s; display: flex; flex-direction: column; justify-content: flex-end; }
@@ -84,12 +85,13 @@
   .lb-btn:hover { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.4); }
   .lb-prev { left: 16px; }
   .lb-next { right: 16px; }
-  .lb-close { position: absolute; top: 16px; right: 16px; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; font-size: 18px; cursor: pointer; display: grid; place-items: center; transition: background .2s; }
+  .lb-close { position: absolute; top: 16px; right: 16px; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; font-size: 18px; cursor: pointer; display: grid; place-items: center; transition: background .2s; }
   .lb-close:hover { background: rgba(255,255,255,0.2); }
   @media (max-width: 640px) { .lb-prev, .lb-next { width: 40px; height: 40px; } .lb-prev { left: 8px; } .lb-next { right: 8px; } }
 </style>
 </head>
 <body id="body-root">
+<a class="skip-link" href="#home">Skip to main content</a>
 
 <nav class="site-nav" aria-label="Main navigation">
   <div class="nav-inner">
@@ -110,6 +112,7 @@
       <li><a href="./about.html">About me</a></li>
       <li><a href="./contact.html">Contact</a></li>
     </ul>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <div style="display:flex;gap:10px;align-items:center;"><a href="../photography.html" class="lang-switch">JP</a><a href="./contact.html" class="nav-cta">Book a shoot →</a></div>
   </div>
 </nav>
@@ -118,11 +121,11 @@
   <ol><li><a href="./index.html">Home</a></li><li><a href="./service-photo.html">LUMA Frame</a></li><li aria-current="page">Photography Portfolio</li></ol>
 </nav>
 
-<header class="hero photo-hero" id="home">
+<header class="hero photo-hero" id="home" tabindex="-1">
   <div class="container">
     <span class="eyebrow">LUMA Frame · Photography</span>
     <h1 class="hero-title" style="margin-top:18px;">Light, and the <span class="accent">moments</span> it touches.</h1>
-    <p class="sub">Landscape · Aviation · Snap — 41 frames shot on the Nikon Z6III.</p>
+    <p class="sub">Landscape · Aviation · Snap — 85 frames shot on the Nikon Z6III.</p>
   </div>
 </header>
 
@@ -131,6 +134,7 @@
     <div class="filter-buttons">
       <button class="filter-btn active" data-filter="all">All</button>
       <button class="filter-btn" data-filter="landscape">Landscape</button>
+      <button class="filter-btn" data-filter="city">City</button>
       <button class="filter-btn" data-filter="aviation">Aviation</button>
       <button class="filter-btn" data-filter="snap">Snap</button>
     </div>
@@ -158,7 +162,7 @@
     <div class="cta-big reveal">
       <span class="eyebrow" style="color: color-mix(in srgb, var(--bg) 70%, transparent);">Book a portrait</span>
       <h2 style="margin-top:16px;">Let's create something to keep.</h2>
-      <p style="font-size:17px;max-width:560px;margin:12px auto 28px;">Profiles, job-search shots, family portraits, SNS — pricing flexes around the brief. Start with a free consultation.</p>
+      <p style="font-size:17px;max-width:560px;margin:12px auto 28px;">Profiles, headshots for job hunting, family portraits, social media — pricing flexes around the brief. Start with a free consultation.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
         <a href="./contact.html" class="btn btn-primary">Book a free consult →</a>
         <a href="./service-photo.html" class="btn btn-secondary" style="background:transparent;color:var(--bg);border-color:var(--bg);">LUMA Frame details</a>
@@ -214,26 +218,77 @@
     { cat:'snap', ja:'白い視線', en:'White Gaze', src:'images/photography/portrait-01.jpg' },
     { cat:'snap', ja:'東京の夜道', en:'Tokyo Night Street', src:'images/photography/portrait-02.jpg' },
     { cat:'snap', ja:'旅立ち', en:'Departure', src:'images/photography/portrait-03.jpg' },
-    { cat:'snap', ja:'海を見つめる人', en:'Landscaping', src:'images/photography/portrait-04.jpg' },
+    { cat:'snap', ja:'海を見つめる人', en:'Gazing at the Sea', src:'images/photography/portrait-04.jpg' },
     { cat:'snap', ja:'夜の船出を前に', en:'Before the Night Voyage', src:'images/photography/portrait-05.jpg' },
     { cat:'snap', ja:'一息', en:'Take a Break', src:'images/photography/portrait-06.jpg' },
     { cat:'snap', ja:'スマートラウンジ', en:'Smart Lounge', src:'images/photography/portrait-07.jpg' },
     { cat:'snap', ja:'森の入口', en:'Forest Gate', src:'images/photography/portrait-08.jpg' },
     { cat:'snap', ja:'和の門', en:'Japanese Gate', src:'images/photography/portrait-09.jpg' },
     { cat:'snap', ja:'旅の始まり', en:'Journey Begins', src:'images/photography/portrait-10.jpg' },
-    { cat:'snap', ja:'羽田の笑顔', en:'Haneda Nice Day', src:'images/photography/portrait-11.jpg' }
+    { cat:'snap', ja:'羽田の笑顔', en:'Smiles at Haneda', src:'images/photography/portrait-11.jpg' },
+    { cat:'city', ja:'赤れんが庁舎', en:'Red Brick Office', src:'images/photography/city-01.jpg' },
+    { cat:'city', ja:'春の赤れんが', en:'Red Brick in Spring', src:'images/photography/city-02.jpg' },
+    { cat:'city', ja:'庁舎の正面', en:'The Front Facade', src:'images/photography/city-03.jpg' },
+    { cat:'city', ja:'天井の意匠', en:'Ceiling Ornament', src:'images/photography/city-04.jpg' },
+    { cat:'city', ja:'れんがのアーチ', en:'Brick Arch', src:'images/photography/city-05.jpg' },
+    { cat:'city', ja:'大通の午後', en:'Odori Afternoon', src:'images/photography/city-06.jpg' },
+    { cat:'city', ja:'駅前の通り', en:'Downtown Street', src:'images/photography/city-07.jpg' },
+    { cat:'city', ja:'すすきのの夕', en:'Susukino Evening', src:'images/photography/city-08.jpg' },
+    { cat:'city', ja:'並木の道', en:'Tree-lined Path', src:'images/photography/city-09.jpg' },
+    { cat:'city', ja:'宵の街', en:'City at Dusk', src:'images/photography/city-10.jpg' },
+    { cat:'city', ja:'ブルーアワー', en:'Blue Hour', src:'images/photography/city-11.jpg' },
+    { cat:'city', ja:'群青の街', en:'Ultramarine City', src:'images/photography/city-12.jpg' },
+    { cat:'city', ja:'光の海', en:'Sea of Lights', src:'images/photography/city-13.jpg' },
+    { cat:'city', ja:'遠くの灯', en:'Distant Lights', src:'images/photography/city-14.jpg' },
+    { cat:'landscape', ja:'テレビ塔とライラック', en:'TV Tower and Lilac', src:'images/photography/landscape-19.jpg' },
+    { cat:'landscape', ja:'ライラック越しの塔', en:'Tower Through Lilac', src:'images/photography/landscape-20.jpg' },
+    { cat:'landscape', ja:'チューリップ花壇', en:'Tulip Bed', src:'images/photography/landscape-21.jpg' },
+    { cat:'landscape', ja:'春の花壇', en:'Spring Flowerbed', src:'images/photography/landscape-22.jpg' },
+    { cat:'landscape', ja:'つつじの丘', en:'Azalea Hill', src:'images/photography/landscape-23.jpg' },
+    { cat:'landscape', ja:'つつじの彩り', en:'Azalea Colors', src:'images/photography/landscape-24.jpg' },
+    { cat:'landscape', ja:'梅ひらく', en:'Plum Blossoms', src:'images/photography/landscape-25.jpg' },
+    { cat:'landscape', ja:'新緑のもみじ', en:'Fresh Green Maple', src:'images/photography/landscape-26.jpg' },
+    { cat:'landscape', ja:'泳ぐ鯉のぼり', en:'Flying Koinobori', src:'images/photography/landscape-27.jpg' },
+    { cat:'landscape', ja:'五月の空', en:'May Sky', src:'images/photography/landscape-28.jpg' },
+    { cat:'landscape', ja:'風の鯉のぼり', en:'Koinobori in the Wind', src:'images/photography/landscape-29.jpg' },
+    { cat:'landscape', ja:'春紅葉', en:'Spring Red Leaves', src:'images/photography/landscape-30.jpg' },
+    { cat:'landscape', ja:'大通の噴水', en:'Odori Fountain', src:'images/photography/landscape-31.jpg' },
+    { cat:'landscape', ja:'噴水の午後', en:'Fountain Afternoon', src:'images/photography/landscape-32.jpg' },
+    { cat:'landscape', ja:'白い花の木', en:'White Blossom Tree', src:'images/photography/landscape-33.jpg' },
+    { cat:'aviation', ja:'oneworld 駐機', en:'oneworld on the Apron', src:'images/photography/aviation-13.jpg' },
+    { cat:'aviation', ja:'滑走路脇のJAL', en:'JAL by the Runway', src:'images/photography/aviation-14.jpg' },
+    { cat:'aviation', ja:'格納庫の787', en:'787 in the Hangar', src:'images/photography/aviation-15.jpg' },
+    { cat:'aviation', ja:'787 の機首', en:'Nose of the 787', src:'images/photography/aviation-16.jpg' },
+    { cat:'aviation', ja:'静かな巨体', en:'The Quiet Giant', src:'images/photography/aviation-17.jpg' },
+    { cat:'aviation', ja:'格納庫の朝', en:'Morning in the Hangar', src:'images/photography/aviation-18.jpg' },
+    { cat:'aviation', ja:'787 正面', en:'787 Head-on', src:'images/photography/aviation-19.jpg' },
+    { cat:'aviation', ja:'JALの尾翼', en:'JAL Tailfin', src:'images/photography/aviation-20.jpg' },
+    { cat:'aviation', ja:'鶴丸', en:'The Tsurumaru', src:'images/photography/aviation-21.jpg' },
+    { cat:'aviation', ja:'主翼のライン', en:'Wing Line', src:'images/photography/aviation-22.jpg' },
+    { cat:'aviation', ja:'機尾', en:'Tail Section', src:'images/photography/aviation-23.jpg' },
+    { cat:'aviation', ja:'格納庫全景', en:'Hangar View', src:'images/photography/aviation-24.jpg' },
+    { cat:'aviation', ja:'整備の現場', en:'Maintenance Floor', src:'images/photography/aviation-25.jpg' },
+    { cat:'snap', ja:'街の相棒', en:'A City Companion', src:'images/photography/snap-01.jpg' },
+    { cat:'snap', ja:'公園の散歩', en:'A Walk in the Park', src:'images/photography/snap-02.jpg' },
   ];
 
+  const DIMS = {"images/photography/aviation-01.jpg":[6048,3400],"images/photography/aviation-02.jpg":[6048,3400],"images/photography/aviation-03.jpg":[6048,3400],"images/photography/aviation-04.jpg":[5684,3195],"images/photography/aviation-05.jpg":[6048,3400],"images/photography/aviation-06.jpg":[6048,3400],"images/photography/aviation-07.jpg":[6048,3400],"images/photography/aviation-08.jpg":[6048,3400],"images/photography/aviation-09.jpg":[6048,3400],"images/photography/aviation-10.jpg":[6048,3400],"images/photography/aviation-11.jpg":[6048,4032],"images/photography/aviation-12.jpg":[6048,3400],"images/photography/landscape-01.jpg":[6048,4032],"images/photography/landscape-02.jpg":[6048,4032],"images/photography/landscape-03.jpg":[6048,3400],"images/photography/landscape-04.jpg":[3400,6048],"images/photography/landscape-05.jpg":[6048,4032],"images/photography/landscape-06.jpg":[6048,4032],"images/photography/landscape-07.jpg":[3400,6048],"images/photography/landscape-08.jpg":[6048,4032],"images/photography/landscape-09.jpg":[4032,6048],"images/photography/landscape-10.jpg":[6048,4032],"images/photography/landscape-11.jpg":[6048,4032],"images/photography/landscape-12.jpg":[6048,4032],"images/photography/landscape-13.jpg":[4032,6048],"images/photography/landscape-14.jpg":[6048,4032],"images/photography/landscape-15.jpg":[6048,3400],"images/photography/landscape-16.jpg":[4032,6048],"images/photography/landscape-17.jpg":[6048,4032],"images/photography/landscape-18.jpg":[6048,3400],"images/photography/portrait-01.jpg":[6048,4032],"images/photography/portrait-02.jpg":[4032,6048],"images/photography/portrait-03.jpg":[3400,6048],"images/photography/portrait-04.jpg":[4032,6048],"images/photography/portrait-05.jpg":[2734,1537],"images/photography/portrait-06.jpg":[4032,6048],"images/photography/portrait-07.jpg":[4032,6048],"images/photography/portrait-08.jpg":[4032,6048],"images/photography/portrait-09.jpg":[4032,6048],"images/photography/portrait-10.jpg":[6048,4032],"images/photography/portrait-11.jpg":[6048,4032], "images/photography/city-01.jpg":[2000,1124], "images/photography/city-02.jpg":[1124,2000], "images/photography/city-03.jpg":[1125,2000], "images/photography/city-04.jpg":[2000,1124], "images/photography/city-05.jpg":[2000,1124], "images/photography/city-06.jpg":[1124,2000], "images/photography/city-07.jpg":[2000,1124], "images/photography/city-08.jpg":[1124,2000], "images/photography/city-09.jpg":[1124,2000], "images/photography/city-10.jpg":[2000,1124], "images/photography/city-11.jpg":[2000,1124], "images/photography/city-12.jpg":[2000,1124], "images/photography/city-13.jpg":[2000,1124], "images/photography/city-14.jpg":[2000,1124], "images/photography/landscape-19.jpg":[2000,1124], "images/photography/landscape-20.jpg":[1124,2000], "images/photography/landscape-21.jpg":[1124,2000], "images/photography/landscape-22.jpg":[1124,2000], "images/photography/landscape-23.jpg":[2000,1124], "images/photography/landscape-24.jpg":[1124,2000], "images/photography/landscape-25.jpg":[2000,1124], "images/photography/landscape-26.jpg":[2000,1124], "images/photography/landscape-27.jpg":[1124,2000], "images/photography/landscape-28.jpg":[1124,2000], "images/photography/landscape-29.jpg":[1124,2000], "images/photography/landscape-30.jpg":[1124,2000], "images/photography/landscape-31.jpg":[2000,1124], "images/photography/landscape-32.jpg":[2000,1124], "images/photography/landscape-33.jpg":[2000,1124], "images/photography/aviation-13.jpg":[2000,1125], "images/photography/aviation-14.jpg":[2000,1125], "images/photography/aviation-15.jpg":[2000,1124], "images/photography/aviation-16.jpg":[2000,1124], "images/photography/aviation-17.jpg":[2000,1124], "images/photography/aviation-18.jpg":[2000,1124], "images/photography/aviation-19.jpg":[2000,1124], "images/photography/aviation-20.jpg":[2000,1124], "images/photography/aviation-21.jpg":[2000,1124], "images/photography/aviation-22.jpg":[2000,1124], "images/photography/aviation-23.jpg":[2000,1124], "images/photography/aviation-24.jpg":[2000,1124], "images/photography/aviation-25.jpg":[2000,1124], "images/photography/snap-01.jpg":[1900,1069], "images/photography/snap-02.jpg":[2000,1124]};
   const gallery = document.getElementById('gallery');
   gallery.innerHTML = PHOTOS.map((p, i) => `
-    <div class="photo-item" data-cat="${p.cat}" data-idx="${i}" onclick="openLightbox(${i})">
-      <img src="../${p.src}" alt="${p.en} (${p.ja})" loading="lazy" />
+    <div class="photo-item" data-cat="${p.cat}" data-idx="${i}" role="button" tabindex="0" aria-label="Enlarge: ${p.en}" onclick="openLightbox(${i})">
+      <img src="../${p.src}" alt="${p.en} (${p.ja})" loading="lazy" width="${(DIMS[p.src]||[3,2])[0]}" height="${(DIMS[p.src]||[3,2])[1]}" />
       <div class="photo-overlay">
         <div class="photo-title">${p.en}</div>
         <div class="photo-en">${p.ja}</div>
       </div>
     </div>
   `).join('');
+
+  gallery.addEventListener('keydown', e => {
+    const item = e.target.closest('.photo-item');
+    if (!item) return;
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(Number(item.dataset.idx)); }
+  });
 
   let currentFilter = 'all';
   function filterGallery(cat) {
@@ -250,16 +305,18 @@
     document.getElementById('photo-count').textContent = `${visible} / ${total} photos`;
   }
 
-  let lbIndex = 0, lbVisible = [];
+  let lbIndex = 0, lbVisible = [], lbTrigger = null;
   function openLightbox(idx) {
+    lbTrigger = document.activeElement;
     lbVisible = PHOTOS.map((_, i) => i).filter(i => currentFilter === 'all' || PHOTOS[i].cat === currentFilter);
     lbIndex = lbVisible.indexOf(idx);
     if (lbIndex < 0) lbIndex = 0;
     renderLb();
     document.getElementById('lightbox').classList.add('open');
     document.body.style.overflow = 'hidden';
+    document.querySelector('.lb-close').focus();
   }
-  function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow = ''; }
+  function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow = ''; if (lbTrigger && typeof lbTrigger.focus === 'function') lbTrigger.focus(); }
   function lbNav(dir) { lbIndex = (lbIndex + dir + lbVisible.length) % lbVisible.length; renderLb(); }
   function renderLb() {
     const idx = lbVisible[lbIndex]; const p = PHOTOS[idx];
@@ -272,10 +329,18 @@
     if (e.key === 'ArrowRight') lbNav(1);
     if (e.key === 'ArrowLeft') lbNav(-1);
     if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'Tab') {
+      const f = [...document.querySelectorAll('#lightbox button')].filter(b => b.offsetParent !== null);
+      if (!f.length) return;
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
   });
   document.getElementById('lightbox').addEventListener('click', function(e) { if (e.target === this) closeLightbox(); });
   updateCount();
 </script>
 
+<script src="/nav.js" defer></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#0F172A" />
+<meta name="theme-color" content="#134E6F" />
 <meta name="color-scheme" content="light only" />
 
 <title>Tokyo & Nationwide English Tours · Allergy-Aware Guide | LUMA Path</title>
@@ -30,7 +30,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
 <script type="application/ld+json">
 {
@@ -48,7 +48,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
 <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-62F20N179N');</script>
 
-<link rel="stylesheet" href="../shared.css" />
+<link rel="stylesheet" href="../shared.css?v=aqua3" />
 <style id="page-overrides">
   /* ── Service hero (LUMA Path): full-bleed background photo + left dark overlay (matches JP) ── */
   .svc-hero {
@@ -148,6 +148,7 @@
 </style>
 </head>
 <body id="body-root">
+<a class="skip-link" href="#home">Skip to main content</a>
 
 <nav class="site-nav" aria-label="Main navigation">
   <div class="nav-inner">
@@ -167,6 +168,7 @@
       <li><a href="./about.html">About me</a></li>
       <li><a href="./index.html#faq">FAQ</a></li>
     </ul>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <div style="display:flex;gap:10px;align-items:center;"><a href="../service-tour.html" class="lang-switch">JP</a><a href="./contact.html" class="nav-cta">Free Quote →</a></div>
   </div>
 </nav>
@@ -175,12 +177,12 @@
   <ol><li><a href="./index.html">Home</a></li><li><a href="./services.html">Services</a></li><li aria-current="page">Tokyo Tours (LUMA Path)</li></ol>
 </nav>
 
-<header class="hero svc-hero" id="home">
+<header class="hero svc-hero" id="home" tabindex="-1">
   <div class="container">
     <span class="eyebrow">LUMA Path — Service 03</span>
     <h1 class="hero-title" style="margin-top:18px;">Walking through the <span class="accent">real</span> Japan.</h1>
     <p class="sub">Bilingual private tours from Tokyo to Kansai, Hokkaido, and Fukuoka. <strong style="color:var(--text);">Gluten-free and allergy-aware dining</strong> are personal priorities — not afterthoughts.</p>
-    <div class="hero-cta-row"><a href="./contact.html" class="btn btn-primary">Get a quote →</a><a href="../tour-en.html" class="btn btn-secondary">Tour landing page</a></div>
+    <div class="hero-cta-row"><a href="./contact.html" class="btn btn-primary">Get a quote →</a></div>
   </div>
 </header>
 
@@ -190,7 +192,7 @@
     <div class="svc-overview-grid reveal">
       <div>
         <p class="svc-overview-lead">Local air, local food, <em>local people</em>.</p>
-        <p class="svc-overview-body">Based in Tokyo and well-travelled across Japan — from Hokkaido to Fukuoka — through aviation photography and consulting work, I know where to find the real character of a place. <strong style="color:var(--text);">Tours are available nationwide</strong>, not just Tokyo and the Kanto region.<br><br>Routes are designed for atmosphere, food, and people, not just for ticking sights. Fully bilingual EN/JA, suitable for inbound travellers and Japanese learners alike.<br><br>And because I personally live with food allergies (with anaphylaxis history), <strong style="color:var(--text);">gluten-free and allergy-aware dining are at the core</strong> of every tour. Restaurant pre-checks, menu reading, and emergency protocols are part of the service.</p>
+        <p class="svc-overview-body">I'm based in Tokyo, but through aviation photography and consulting work I've travelled widely across Japan — from Hokkaido to Fukuoka. That means I know where to find the real character of a place, not just the postcard version. <strong style="color:var(--text);">Tours are available nationwide</strong>, not just Tokyo and the Kanto region.<br><br>Routes are designed for atmosphere, food, and people, not just for ticking off sights. Fully bilingual EN/JA, suitable for inbound travellers and Japanese learners alike.<br><br>Because I personally live with food allergies (with anaphylaxis history), <strong style="color:var(--text);">gluten-free and allergy-aware dining are built into every tour</strong> — not offered as an add-on.</p>
       </div>
       <div>
         <p style="font-family:var(--font-mono);font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px;border-left:2px solid var(--border-strong);padding-left:24px;">What sets this apart</p>
@@ -272,5 +274,6 @@
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
+<script src="/nav.js" defer></script>
 </body>
 </html>

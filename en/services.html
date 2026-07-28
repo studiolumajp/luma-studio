@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#0F172A" />
+<meta name="theme-color" content="#134E6F" />
 <meta name="color-scheme" content="light only" />
 
 <title>Services | LUMA — English / Photography / Mahjong / Tokyo Tours</title>
@@ -19,7 +19,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://studio-lumadesign.com/en/services.html" />
 <meta property="og:title" content="Services | LUMA — Clarity by Design" />
-<meta property="og:description" content="Four services from a Tokyo-based personal studio. Pick the one that fits you." />
+<meta property="og:description" content="Four services from a personal brand based in Tokyo and Yokohama. Pick the one that fits you." />
 <meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:site_name" content="LUMA" />
@@ -30,7 +30,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
 <script type="application/ld+json">
 {
@@ -48,7 +48,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
 <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-62F20N179N');</script>
 
-<link rel="stylesheet" href="../shared.css" />
+<link rel="stylesheet" href="../shared.css?v=aqua3" />
 <style id="page-overrides">
   /* ── Services hub hero: full-bleed background photo + left dark overlay (matches JP) ── */
   .svc-hero {
@@ -105,6 +105,7 @@
 </style>
 </head>
 <body id="body-root">
+<a class="skip-link" href="#home">Skip to main content</a>
 
 <nav class="site-nav" aria-label="Main navigation">
   <div class="nav-inner">
@@ -124,6 +125,7 @@
       <li><a href="./about.html">About me</a></li>
       <li><a href="./index.html#faq">FAQ</a></li>
     </ul>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <div style="display:flex;gap:10px;align-items:center;">
       <a href="../services.html" class="lang-switch" aria-label="日本語">JP</a>
       <a href="./contact.html" class="nav-cta">Free Consult →</a>
@@ -138,7 +140,7 @@
   </ol>
 </nav>
 
-<header class="hero svc-hero" id="home">
+<header class="hero svc-hero" id="home" tabindex="-1">
   <div class="container">
     <span class="eyebrow">Services — LUMA</span>
     <h1 class="hero-title" style="margin-top:18px;">
@@ -182,7 +184,7 @@
         <div class="cmp-visual"><span class="cmp-emoji">📸</span><span class="cmp-tag">Photography</span></div>
         <div class="cmp-body">
           <h3>Family & Couple Photos</h3>
-          <p class="cmp-pitch">For family milestones and couple memories — pre-wedding, family, couple, profile shoots. One photo to keep forever, with the Nikon Z6III.</p>
+          <p class="cmp-pitch">For family milestones and couple memories — pre-wedding, family, couple, profile shoots. A once-in-a-lifetime shot, captured on the Nikon Z6III.</p>
           <div class="cmp-meta"><span>Tokyo · Yokohama</span><span class="cmp-meta-dot"></span><span>On-location</span></div>
           <div class="cmp-actions">
             <a class="cmp-btn cmp-btn-primary" href="./contact.html">Get a quote</a>
@@ -198,7 +200,7 @@
           <p class="cmp-pitch">More about connection than winning. A health-mahjong community from Tokyo — beginners to pros, all generations welcome.</p>
           <div class="cmp-meta"><span>Tokyo</span><span class="cmp-meta-dot"></span><span>Saturdays</span></div>
           <div class="cmp-actions">
-            <a class="cmp-btn cmp-btn-primary" href="../s-league-24.html">Sign up</a>
+            <a class="cmp-btn cmp-btn-primary" href="../s-league.html">Sign up</a>
             <a class="cmp-btn cmp-btn-link" href="../s-league.html">Tournaments →</a>
           </div>
         </div>
@@ -269,5 +271,6 @@
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
+<script src="/nav.js" defer></script>
 </body>
 </html>

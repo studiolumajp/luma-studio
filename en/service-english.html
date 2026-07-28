@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#0F172A" />
+<meta name="theme-color" content="#134E6F" />
 <meta name="color-scheme" content="light only" />
 
 <title>English Lessons in Tokyo · Yokohama · Online | LUMA Voice</title>
@@ -30,7 +30,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
 <script type="application/ld+json">
 {
@@ -48,7 +48,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
 <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-62F20N179N');</script>
 
-<link rel="stylesheet" href="../shared.css" />
+<link rel="stylesheet" href="../shared.css?v=aqua3" />
 <style id="page-overrides">
   /* ── Service hero (LUMA Voice): full-bleed background photo + left dark overlay (matches JP) ── */
   .svc-hero {
@@ -159,6 +159,7 @@
 </style>
 </head>
 <body id="body-root">
+<a class="skip-link" href="#home">Skip to main content</a>
 
 <nav class="site-nav" aria-label="Main navigation">
   <div class="nav-inner">
@@ -178,6 +179,7 @@
       <li><a href="./about.html">About me</a></li>
       <li><a href="./index.html#faq">FAQ</a></li>
     </ul>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <div style="display:flex;gap:10px;align-items:center;">
       <a href="../service-english.html" class="lang-switch">JP</a>
       <a href="./contact.html" class="nav-cta">Free Consult →</a>
@@ -193,7 +195,7 @@
   </ol>
 </nav>
 
-<header class="hero svc-hero" id="home">
+<header class="hero svc-hero" id="home" tabindex="-1">
   <div class="container">
     <span class="eyebrow">LUMA Voice — Service 01</span>
     <h1 class="hero-title" style="margin-top:18px;">
@@ -221,7 +223,7 @@
       <div>
         <p class="svc-overview-lead">Not just <em>"correct"</em> English —<br />English that lands, that lasts.</p>
         <p class="svc-overview-body">
-          I lived in Australia from age 15 to 24, served as vice president of a Japanese students association supporting 500+ students, and tutored English throughout. Rather than teaching "correct" English in the abstract, the focus is on building <strong style="color:var(--text);">your confidence in actual communication</strong>. Online or in-person — both work equally well.
+          I lived in Australia from age 15 to 24, served as vice president of a Japanese students association supporting 500+ students, and tutored English throughout. Rather than teaching "correct" English in the abstract, I focus on building <strong style="color:var(--text);">your confidence in actual communication</strong>. Online or in-person — both work equally well.
         </p>
       </div>
       <div>
@@ -268,13 +270,13 @@
         <span class="offer-card-num">04</span>
         <h3>Pronunciation & Listening</h3>
         <span class="ja">発音・リスニング</span>
-        <p>Train clear, intelligible pronunciation alongside native-speed listening — at the same time.</p>
+        <p>Train clear, intelligible pronunciation alongside native-speed listening.</p>
       </article>
       <article class="offer-card">
         <span class="offer-card-num">05</span>
         <h3>Study Abroad Advice</h3>
         <span class="ja">留学サポート</span>
-        <p>From school choice to life prep and mindset, drawn from 9 years of lived experience in Australia.</p>
+        <p>From choosing a school to everyday life and mindset, drawn from 9 years of lived experience in Australia.</p>
       </article>
     </div>
   </div>
@@ -364,5 +366,6 @@
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
+<script src="/nav.js" defer></script>
 </body>
 </html>
