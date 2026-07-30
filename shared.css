@@ -222,6 +222,35 @@ nav.site-nav .nav-links .dropdown-menu li a:hover {
   color: var(--accent); background: var(--bg-soft);
 }
 
+/* ── PROMO BAR (期間限定告知) ────────── */
+.promo-bar {
+  background: var(--navy); color: #fff; text-align: center;
+  padding: 10px 16px; font-size: 14px; font-weight: 500; line-height: 1.5;
+}
+.promo-bar a {
+  color: var(--accent-2); font-weight: 700; margin-left: 8px;
+  text-decoration: underline; text-underline-offset: 2px;
+}
+.promo-bar a:hover { color: #fff; }
+
+/* ── AVAILABILITY BOX (期間限定告知ボックス) ─ */
+.availability-box {
+  max-width: 760px; margin: 0 auto; background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: 36px 40px; position: relative; overflow: hidden;
+}
+.availability-box::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent-2), var(--accent));
+}
+.availability-box .label {
+  font-family: var(--font-mono); font-size: 11px; color: var(--accent-2);
+  text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; display: block;
+}
+.availability-box h2 { font-size: clamp(19px, 2.2vw, 24px); margin-bottom: 12px; color: var(--text); }
+.availability-box p { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 20px; }
+@media (max-width: 640px) { .availability-box { padding: 26px 22px; } }
+
 /* ── BREADCRUMB ─────────────────────── */
 .breadcrumb {
   border-bottom: 1px solid var(--border); background: var(--bg-soft);
