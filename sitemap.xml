@@ -160,6 +160,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://studio-lumadesign.com/s-league-sponsor.html</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://studio-lumadesign.com/en/s-league-sponsor.html</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://studio-lumadesign.com/s-league-25.html</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
