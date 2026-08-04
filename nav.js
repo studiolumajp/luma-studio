@@ -19,6 +19,20 @@
   toggle.setAttribute('aria-controls', links.id);
   toggle.setAttribute('aria-expanded', 'false');
 
+  // ── バー内の .lang-switch をパネル内へ複製 ──
+  // shared.css は ≤960px でバー内の .lang-switch を隠すため(横揺れ防止)、
+  // そのままだとモバイルから言語を切り替えられない。パネル末尾に複製を足し、
+  // CSS 側で ≤960px のときだけ表示する。複製なのでデスクトップの見た目は不変。
+  Array.prototype.forEach.call(nav.querySelectorAll('.lang-switch'), function (src) {
+    var li = document.createElement('li');
+    li.className = 'nav-lang-item';
+    var clone = src.cloneNode(true);
+    clone.classList.remove('lang-switch'); // パネル内リンクの標準スタイルを当てる
+    clone.removeAttribute('id');
+    li.appendChild(clone);
+    links.appendChild(li);
+  });
+
   function isOpen() {
     return nav.classList.contains('nav-open');
   }

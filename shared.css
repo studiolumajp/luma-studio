@@ -148,6 +148,10 @@ nav.site-nav {
 }
 .lang-switch:hover { border-color: var(--border-strong); color: var(--text); }
 
+/* nav.js がモバイル用にパネル末尾へ複製する言語切替リンク。
+   デスクトップではバー内の .lang-switch が見えているので複製側は隠す。 */
+.nav-links .nav-lang-item { display: none; }
+
 /* ── HAMBURGER (モバイルナビ開閉ボタン) ───
    デスクトップでは非表示。≤960px のメディアクエリで表示する。
    44x44px は WCAG のタッチターゲット最小サイズに準拠。 */
@@ -747,8 +751,14 @@ footer {
   }
 
   /* バー内の言語切替はモバイルでは隠し、CTAは省スペース化
-     (はみ出しによる横揺れ防止も兼ねる) */
+     (はみ出しによる横揺れ防止も兼ねる)。
+     代わりに nav.js が複製した .nav-lang-item をパネル内に表示する。 */
   nav.site-nav .lang-switch { display: none; }
+  nav.site-nav .nav-links .nav-lang-item {
+    display: block;
+    margin-top: 6px; padding-top: 6px;
+    border-top: 1px solid var(--border);
+  }
   nav.site-nav .nav-cta { padding: 7px 12px; font-size: 13px; }
 }
 @media (max-width: 640px) {

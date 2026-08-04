@@ -7,7 +7,7 @@
 <meta name="color-scheme" content="light only" />
 
 <title>S.League Sponsorship | Healthy Mahjong Tournaments in Shimbashi, Tokyo | LUMA</title>
-<meta name="description" content="Become a sponsor of S.League, a no-gambling, no-alcohol mahjong community in Shimbashi, Tokyo — 24 events and 367 cumulative participants since 2022. Four sponsorship plans from in-kind prizes to title sponsorship and annual partnership." />
+<meta name="description" content="Become a sponsor of S.League, a no-gambling, no-alcohol mahjong community in Shimbashi, Tokyo — 24 events and 367 cumulative participants since 2022. Three sponsorship plans — in-kind, event partner, and title sponsor — available per event or as an annual contract." />
 <meta name="keywords" content="S.League sponsorship,mahjong tournament sponsor,event sponsorship Tokyo,Shimbashi,LUMA" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://studio-lumadesign.com/en/s-league-sponsor.html" />
@@ -19,14 +19,14 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://studio-lumadesign.com/en/s-league-sponsor.html" />
 <meta property="og:title" content="S.League Sponsorship | LUMA" />
-<meta property="og:description" content="Sponsor a healthy-mahjong community in Tokyo: 24 events, 367 cumulative participants since 2022. Four plans from in-kind to title sponsorship." />
+<meta property="og:description" content="Sponsor a healthy-mahjong community in Tokyo: 24 events, 367 cumulative participants since 2022. Three plans from in-kind to title sponsorship." />
 <meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:site_name" content="LUMA" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="S.League Sponsorship | LUMA" />
-<meta name="twitter:description" content="Sponsor a healthy-mahjong community in Tokyo. Four plans from in-kind to title sponsorship." />
+<meta name="twitter:description" content="Sponsor a healthy-mahjong community in Tokyo. Three plans from in-kind to title sponsorship." />
 <meta name="twitter:image" content="https://studio-lumadesign.com/og-image.jpg" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -53,17 +53,67 @@
   gtag('config', 'G-62F20N179N');
 </script>
 
-<link rel="stylesheet" href="../shared.css?v=aqua3" />
+<link rel="stylesheet" href="../shared.css?v=aqua4" />
 <style id="page-overrides">
+  /* HERO: background video + scrim + white text (same spec as s-league.html) */
   .sp-hero {
-    background: linear-gradient(135deg, #134E6F 0%, #1E88E5 100%);
-    color: #fff;
-    padding: clamp(64px, 11vw, 104px) 0 clamp(56px, 10vw, 96px);
+    position: relative; overflow: hidden; color: #fff;
+    padding: clamp(56px, 10vw, 96px) 0 clamp(64px, 11vw, 104px);
+    min-height: clamp(380px, 56vh, 500px);
+    display: flex; align-items: center;
+    background: url('../images/sleague/DSC_0801.jpg') center 38%/cover no-repeat;
   }
-  .sp-hero h1 { color: #fff; margin: 18px 0 16px; }
+  .sp-hero .hero-video {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; z-index: 0;
+  }
+  /* Navy-tinted scrim rather than black, kept light enough to show the photo
+     while white text still clears WCAG AA. */
+  .sp-hero::after {
+    content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background:
+      linear-gradient(to top,
+        rgba(10, 42, 62, 0.70) 0%,
+        rgba(10, 42, 62, 0.48) 45%,
+        rgba(10, 42, 62, 0.36) 100%
+      ),
+      linear-gradient(rgba(10, 42, 62, 0.20), rgba(10, 42, 62, 0.20));
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sp-hero .hero-video { display: none; }
+  }
+  .sp-hero .container { position: relative; z-index: 2; }
+  .sp-hero h1 {
+    font-size: clamp(38px, 5.4vw, 60px);
+    line-height: 1.18; letter-spacing: -0.01em; font-weight: 800;
+    color: #fff; margin: 16px 0 16px; padding-bottom: 0.12em;
+    text-shadow: 0 3px 14px rgba(0, 0, 0, 0.55), 0 1px 3px rgba(0, 0, 0, 0.45);
+  }
+  .sp-hero h1 .accent {
+    color: var(--accent-2);
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
   .sp-hero .eyebrow { color: #fff; }
   .sp-hero .eyebrow::before { background: #fff; }
-  .sp-hero .sub { color: rgba(255, 255, 255, 0.92); font-size: clamp(16px, 1.4vw, 18px); max-width: 620px; line-height: 1.85; }
+  .sp-hero .sub {
+    color: rgba(255, 255, 255, 0.92); font-size: clamp(16px, 1.4vw, 18px);
+    max-width: 640px; line-height: 1.85;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.6);
+  }
+  .sp-hero .btn-secondary {
+    background: #134E6F; color: #fff; border: 1px solid rgba(255, 255, 255, 0.45);
+  }
+  .sp-hero .btn-secondary:hover {
+    background: #175E86; color: #fff; border-color: rgba(255, 255, 255, 0.7);
+  }
+  .sp-hero-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+  .sp-hero-badge {
+    display: inline-block; padding: 6px 16px; border-radius: 999px;
+    font-size: 13px; font-weight: 700; color: #fff;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(4px);
+  }
   .sp-stats { background: #134E6F; color: #fff; padding: 28px 0; }
   .sp-stats-inner {
     max-width: 900px; margin: 0 auto; padding: 0 24px;
@@ -73,9 +123,20 @@
   .sp-stat-label { font-size: 13px; color: rgba(255, 255, 255, 0.85); }
   @media (max-width: 640px) { .sp-stats-inner { grid-template-columns: repeat(2, 1fr); row-gap: 20px; } }
 
-  .sp-plan-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 36px; }
-  @media (max-width: 1000px) { .sp-plan-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 560px) { .sp-plan-grid { grid-template-columns: 1fr; } }
+  .sp-toggle {
+    display: inline-flex; gap: 4px; margin-top: 28px; padding: 4px;
+    background: var(--bg-muted); border: 1px solid var(--border); border-radius: 999px;
+  }
+  .sp-toggle button {
+    appearance: none; border: 0; cursor: pointer; border-radius: 999px;
+    padding: 9px 20px; font-family: inherit; font-size: 14px; font-weight: 700;
+    background: transparent; color: var(--text-muted); transition: background .18s, color .18s;
+  }
+  .sp-toggle button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+  .sp-toggle button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .sp-plan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
+  @media (max-width: 860px) { .sp-plan-grid { grid-template-columns: 1fr; } }
   .sp-plan {
     background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
     padding: 26px 22px; display: flex; flex-direction: column; position: relative;
@@ -164,17 +225,24 @@
 </nav>
 
 <header class="sp-hero" id="home" tabindex="-1">
+  <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="../images/sleague/SL24/sl24-hero-poster.jpg" aria-hidden="true" tabindex="-1">
+    <source src="../images/sleague/SL24/sl24-hero.webm" type="video/webm" />
+    <source src="../images/sleague/SL24/sl24-hero.mp4" type="video/mp4" />
+  </video>
   <div class="container">
     <span class="eyebrow">S.League — Sponsorship</span>
-    <h1 class="hero-title">Help us grow S.League.</h1>
+    <h1 class="hero-title">Help us <span class="accent">grow</span> S.League.</h1>
     <p class="sub">
-      S.League is a no-gambling, no-alcohol, no-smoking "healthy mahjong" community that has run in Shimbashi, Tokyo since 2022 —
-      24 events and 367 cumulative participants, from first-timers to professional players.
-      We are looking for companies and local businesses to sponsor our tournaments.
+      No betting, no alcohol, no smoking. Help us support a healthy-mahjong community
+      that has run in Shimbashi, Tokyo since 2022.
     </p>
-    <div class="hero-cta-row" style="margin-top:28px;">
-      <a href="./contact.html" class="btn btn-primary" style="background:#F59E0B;border-color:#F59E0B;">Ask about sponsorship →</a>
-      <a href="#plans" class="btn btn-secondary" style="background:transparent;border-color:rgba(255,255,255,0.6);color:#fff;">See the plans</a>
+    <div class="sp-hero-badges">
+      <span class="sp-hero-badge">In-kind sponsorship from ¥5,000</span>
+      <span class="sp-hero-badge">Title sponsor: one per event</span>
+    </div>
+    <div class="hero-cta-row" style="margin-top:26px;">
+      <a href="./contact.html" class="btn btn-primary" style="background:#F59E0B;border-color:#F59E0B;color:#fff;">Ask about sponsorship →</a>
+      <a href="#plans" class="btn btn-secondary">See the plans</a>
     </div>
   </div>
 </header>
@@ -193,14 +261,14 @@
     <span class="eyebrow">Why S.League</span>
     <h2 id="why-heading" style="margin-top:16px;">Small community, guaranteed reach.</h2>
     <p style="color:var(--text-muted);font-size:16px;line-height:1.85;max-width:720px;margin:16px 0 32px;">
-      S.League's strength is density, not scale. Each event brings 18-24 participants together for about 10 hours,
+      S.League's strength is density, not scale. Each event brings 16–20 players together for 6–10 hours,
       so your brand is remembered not as an ad, but as a supporter of the community.
     </p>
     <div class="community-grid">
       <div class="community-card">
         <span class="community-card-icon">🤝</span>
         <h3>Face-to-face reach</h3>
-        <p>18-24 participants spend around 10 hours at each event. On-site logos, prizes, and sampling reach every single one of them.</p>
+        <p>16–20 players spend 6–10 hours at each event. On-site logos, prizes, and sampling reach every single one of them.</p>
       </div>
       <div class="community-card">
         <span class="community-card-icon">📊</span>
@@ -224,11 +292,21 @@
 <section id="plans" aria-labelledby="plans-heading" style="background:var(--bg-soft);">
   <div class="container">
     <span class="eyebrow">Sponsorship plans</span>
-    <h2 id="plans-heading" style="margin-top:16px;">Four plans to choose from.</h2>
+    <h2 id="plans-heading" style="margin-top:16px;">Three plans to choose from.</h2>
+    <p style="color:var(--text-muted);font-size:15px;line-height:1.85;max-width:640px;margin:12px 0 0;">
+      From a single event to a full year of support. Use the buttons below to switch how prices are shown.
+    </p>
+
+    <div class="sp-toggle" role="group" aria-label="Switch pricing period">
+      <button type="button" id="sp-mode-single" aria-pressed="true">Per event</button>
+      <button type="button" id="sp-mode-year" aria-pressed="false">Annual (6 events)</button>
+    </div>
+
     <div class="sp-plan-grid">
       <div class="sp-plan">
         <h3>In-kind sponsor</h3>
-        <p class="sp-price">¥5,000<small>+ worth of goods</small></p>
+        <p class="sp-price"><span class="sp-amt" data-single="¥5,000" data-year="¥5,000">¥5,000</span><small class="sp-unit" data-single="+ worth of goods" data-year="+ worth of goods, per event">+ worth of goods</small></p>
+        <p class="sp-launch">The easiest way to start</p>
         <ul>
           <li>Provide prizes or product samples</li>
           <li>Name announced at the awards ceremony</li>
@@ -237,43 +315,54 @@
         </ul>
       </div>
       <div class="sp-plan">
-        <h3>Event sponsor</h3>
-        <p class="sp-price">¥10,000<small> / event</small></p>
+        <h3>Event partner</h3>
+        <p class="sp-price"><span class="sp-amt" data-single="¥30,000" data-year="¥150,000">¥30,000</span><small class="sp-unit" data-single=" / event" data-year=" / year, 6 events"> / event</small></p>
+        <p class="sp-launch sp-note-line" data-single="Can be combined with in-kind sponsorship" data-year="¥25,000 per event (17% off)">Can be combined with in-kind sponsorship</p>
         <ul>
           <li>Logo and link on the event page</li>
           <li>Logo panel and flyers at the venue</li>
           <li>Mentions in two posts on X</li>
           <li>Event photos featuring your logo</li>
+          <li>Sampling and flyers to all participants</li>
         </ul>
       </div>
       <div class="sp-plan featured">
         <span class="sp-plan-badge">Recommended · one per event</span>
         <h3>Title sponsor</h3>
-        <p class="sp-price">¥50,000<small> / event</small></p>
-        <p class="sp-launch">First-time sponsors: ¥40,000</p>
+        <p class="sp-price"><span class="sp-amt" data-single="¥60,000" data-year="¥300,000">¥60,000</span><small class="sp-unit" data-single=" / event" data-year=" / year, 6 events"> / event</small></p>
+        <p class="sp-launch sp-note-line" data-single="First-time sponsors: ¥48,000" data-year="¥50,000 per event (17% off)">First-time sponsors: ¥48,000</p>
         <ul>
+          <li>Everything in Event partner</li>
           <li>Your name in the event title, on all announcements</li>
           <li>Announcements and a greeting slot at the event</li>
-          <li>Permanent logo on our site and archive</li>
-          <li>Sampling and flyers to all participants</li>
+          <li>Permanent logo on our site and all-time rankings</li>
           <li>Reuse licence for photos and reports</li>
         </ul>
       </div>
-      <div class="sp-plan">
-        <h3>Annual partner</h3>
-        <p class="sp-price">¥120,000<small> / year (approx. 6 events)</small></p>
-        <p class="sp-launch">Premium plan ¥150,000 available</p>
-        <ul>
-          <li>Title-level exposure at every event</li>
-          <li>Permanent logo on the all-time rankings page</li>
-          <li>Year-round reuse licence for photos and reports</li>
-          <li>Ongoing coupon and offer distribution to participants</li>
-          <li>Premium plan includes title rights for two events</li>
-        </ul>
-      </div>
+    </div>
+
+    <div class="sp-table-wrap">
+      <table class="sp-table">
+        <caption style="text-align:left;font-size:13px;color:var(--text-soft);padding:8px 0;">Benefit comparison (○ = included / — = not included)</caption>
+        <thead>
+          <tr><th>Benefit</th><th>In-kind</th><th>Event partner</th><th>Title sponsor</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Name announced at the awards ceremony</td><td class="ok">○</td><td class="ok">○</td><td class="ok">○</td></tr>
+          <tr><td>Post-event report</td><td class="ok">○</td><td class="ok">○</td><td class="ok">○</td></tr>
+          <tr><td>Logo and link on the event page</td><td class="no">—</td><td class="ok">○</td><td class="ok">○</td></tr>
+          <tr><td>Logo signage and flyers at the venue</td><td class="no">—</td><td class="ok">○</td><td class="ok">○</td></tr>
+          <tr><td>Sampling and flyers to all participants</td><td class="no">—</td><td class="ok">○</td><td class="ok">○</td></tr>
+          <tr><td>Your name in the event title (one per event)</td><td class="no">—</td><td class="no">—</td><td class="ok">○</td></tr>
+          <tr><td>Announcements and a greeting slot</td><td class="no">—</td><td class="no">—</td><td class="ok">○</td></tr>
+          <tr><td>Permanent logo on the all-time rankings page</td><td class="no">—</td><td class="no">—</td><td class="ok">○</td></tr>
+          <tr><td>Reuse licence for photos and reports</td><td class="no">—</td><td class="no">—</td><td class="ok">○</td></tr>
+        </tbody>
+      </table>
     </div>
     <p class="sp-note">
-      All prices include tax. The ¥40,000 first-time rate applies to companies sponsoring S.League for the first time.<br />
+      All prices include tax. Annual plans are billed up front for a season of six events, at 17% off the per-event rate.<br />
+      The ¥48,000 first-time rate applies to companies sponsoring S.League for the first time.<br />
       Reuse licence = permission to use event photos and reports featuring your logo in your own website, social media, in-store, and print marketing. Terms and duration are provided on application.<br />
       We may decline sponsorships that conflict with the healthy-mahjong ethos, such as gambling-related products or products unsuitable for under-20s.
     </p>
@@ -329,6 +418,22 @@
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Pricing period toggle. The HTML ships with the per-event view already rendered,
+  // so prices stay readable even if this script never runs.
+  (function () {
+    const btnSingle = document.getElementById('sp-mode-single');
+    const btnYear = document.getElementById('sp-mode-year');
+    if (!btnSingle || !btnYear) return;
+    const fields = document.querySelectorAll('.sp-amt, .sp-unit, .sp-note-line');
+    function setMode(mode) {
+      fields.forEach(el => { el.textContent = el.dataset[mode]; });
+      btnSingle.setAttribute('aria-pressed', String(mode === 'single'));
+      btnYear.setAttribute('aria-pressed', String(mode === 'year'));
+    }
+    btnSingle.addEventListener('click', () => setMode('single'));
+    btnYear.addEventListener('click', () => setMode('year'));
+  })();
 </script>
 
 <script src="/nav.js" defer></script>

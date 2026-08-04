@@ -103,7 +103,7 @@
   gtag('config', 'G-62F20N179N');
 </script>
 
-<link rel="stylesheet" href="./shared.css?v=aqua3" />
+<link rel="stylesheet" href="./shared.css?v=aqua4" />
 <style id="page-overrides">
   /* ── 4周年記念のゴールドアクセント (このページ限定の特別装飾) ── */
   :root {
@@ -118,14 +118,18 @@
     min-height: clamp(420px, 64vh, 560px);
     display: flex; align-items: center;
     background:
-      /* 下から上への縦グラデで文字エリアを確実に暗く */
+      /* 下から上への縦グラデで文字エリアを暗く。
+         黒ではなく Navy 系 (#0A2A3E) を重ねる (Sho指示 2026-08-03)。
+         このページの背景 DSC_0813.jpg は他ページより明るいため、他の S.League ページ
+         (0.70/0.48/0.36 + 0.20) より一段濃い設定。実測コントラスト比は
+         .date 5.8:1 / .hero-lead 6.6:1 (WCAG AA 適合)。 */
       linear-gradient(to top,
-        rgba(6, 10, 16, 0.85) 0%,
-        rgba(6, 10, 16, 0.62) 45%,
-        rgba(6, 10, 16, 0.50) 100%
+        rgba(10, 42, 62, 0.74) 0%,
+        rgba(10, 42, 62, 0.56) 45%,
+        rgba(10, 42, 62, 0.46) 100%
       ),
-      /* 全面に均一なダークベールを重ねてコントラストを安定させる */
-      linear-gradient(rgba(6, 10, 16, 0.45), rgba(6, 10, 16, 0.45)),
+      /* 全面に均一なベールを重ねてコントラストを安定させる */
+      linear-gradient(rgba(10, 42, 62, 0.30), rgba(10, 42, 62, 0.30)),
       url('./images/sleague/DSC_0813.jpg') center 38%/cover no-repeat;
   }
   /* ゴールドの光彩を上から重ねて記念感を演出 (控えめに) */
@@ -555,7 +559,7 @@
     </a>
     <ul class="nav-links">
       <li><a href="./s-league.html">S.League</a></li>
-      <li><a href="./s-league-25.html">SL25</a></li>
+      <li><a href="./s-league-25.html">S.League 25</a></li>
       <li><a href="./s-league-archive.html">アーカイブ</a></li>
       <li><a href="./service-community.html">LUMA Circle</a></li>
       <li><a href="./index.html">LUMA トップ</a></li>
@@ -819,7 +823,7 @@
     <div class="reveal" style="text-align:center; max-width: 760px; margin: 0 auto;">
       <div class="apply-deadline">⏰ Waitlist締切: 本日 7月24日 (金) 17:00<span id="cd-apply"></span></div>
       <div class="comingsoon-note">
-        🎉 <strong>本日17:00</strong> までに全席が揃った場合のみ、第5卓の開催が確定し、Waitlist の皆さまのご参加が確定します。1席でも空いたまま締切を迎えた場合、第5卓は開設されず、Waitlist でのご参加は見送りとなります (この場合、ご負担は発生しません)。<br>
+        🎉 <strong>本日17:00</strong> までに全席が揃った場合のみ、第5卓の開催が確定し、Waitlist の皆様のご参加が確定します。1席でも空いたまま締切を迎えた場合、第5卓は開設されず、Waitlist でのご参加は見送りとなります (この場合、ご負担は発生しません)。<br>
         <strong>S.League 初参加の方は ¥2,000 割引 (¥12,000 → ¥10,000)</strong>。最新情報は S.League 公式 X (@s_league_Japan) でもお知らせします。
       </div>
       <div>
@@ -851,9 +855,10 @@
         <h4>S.League</h4>
         <ul>
           <li><a href="./s-league.html">大会概要</a></li>
-          <li><a href="./s-league-24.html">SL24 4周年記念</a></li>
-          <li><a href="./s-league-25.html">SL25 情報 →</a></li>
+          <li><a href="./s-league-24.html">S.League 24 4周年記念</a></li>
+          <li><a href="./s-league-25.html">S.League 25 情報 →</a></li>
           <li><a href="./s-league-archive.html">成績アーカイブ</a></li>
+          <li><a href="./s-league-sponsor.html">スポンサー募集</a></li>
           <li><a href="./service-community.html">LUMA Circle</a></li>
         </ul>
       </div>

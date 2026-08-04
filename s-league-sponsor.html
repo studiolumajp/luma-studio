@@ -8,7 +8,7 @@
 
 <!-- ── PRIMARY SEO META ── -->
 <title>S.League スポンサー募集 | 健康麻雀大会 東京・新橋 | LUMA</title>
-<meta name="description" content="東京・新橋で2022年から24回開催、累計367名が参加する健康麻雀コミュニティ S.League のスポンサーを募集しています。物品協賛から冠スポンサー・年間パートナーまで、御社に合わせた4つのプランをご用意しています。" />
+<meta name="description" content="東京・新橋で2022年から24回開催、累計367名が参加する健康麻雀コミュニティ S.League のスポンサーを募集しています。物品協賛・大会パートナー・冠スポンサーの3プランを、1大会ごと / 年間契約からお選びいただけます。" />
 <meta name="keywords" content="S.League スポンサー,麻雀大会 協賛,健康麻雀 スポンサー,イベント協賛 新橋,LUMA" />
 <meta name="author" content="LUMA" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -21,14 +21,14 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://studio-lumadesign.com/s-league-sponsor.html" />
 <meta property="og:title" content="S.League スポンサー募集 | LUMA" />
-<meta property="og:description" content="24回開催・累計367名の健康麻雀コミュニティ S.League のスポンサーを募集中。物品協賛から冠スポンサーまで4つのプラン。" />
+<meta property="og:description" content="24回開催・累計367名の健康麻雀コミュニティ S.League のスポンサーを募集中。物品協賛から冠スポンサーまで3つのプラン。" />
 <meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
 <meta property="og:locale" content="ja_JP" />
 <meta property="og:site_name" content="LUMA" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="S.League スポンサー募集 | LUMA" />
-<meta name="twitter:description" content="24回開催・累計367名の健康麻雀コミュニティのスポンサーを募集中。4つの協賛プランをご用意しています。" />
+<meta name="twitter:description" content="24回開催・累計367名の健康麻雀コミュニティのスポンサーを募集中。3つの協賛プランをご用意しています。" />
 <meta name="twitter:image" content="https://studio-lumadesign.com/og-image.jpg" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -55,18 +55,74 @@
   gtag('config', 'G-62F20N179N');
 </script>
 
-<link rel="stylesheet" href="./shared.css?v=aqua3" />
+<link rel="stylesheet" href="./shared.css?v=aqua4" />
 <style id="page-overrides">
-  /* ── スポンサー募集ページ固有スタイル ── */
+  /* ── HERO: 背景動画 + 暗幕 + 白文字 (s-league.html / s-league-25.html と同仕様) ── */
   .sp-hero {
-    background: linear-gradient(135deg, #134E6F 0%, #1E88E5 100%);
-    color: #fff;
-    padding: clamp(64px, 11vw, 104px) 0 clamp(56px, 10vw, 96px);
+    position: relative; overflow: hidden; color: #fff;
+    padding: clamp(56px, 10vw, 96px) 0 clamp(64px, 11vw, 104px);
+    min-height: clamp(380px, 56vh, 500px);
+    display: flex; align-items: center;
+    /* 画像は動画非対応環境・reduced-motion時のフォールバック。暗幕は ::after が担当 */
+    background: url('./images/sleague/DSC_0801.jpg') center 38%/cover no-repeat;
   }
-  .sp-hero h1 { color: #fff; margin: 18px 0 16px; }
+  .sp-hero .hero-video {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; z-index: 0;
+  }
+  /* 暗幕は黒ではなく Navy 系 (#0A2A3E) を薄めに重ねる。
+     写真の情報量を残しつつ、白文字のコントラストは AA を維持する (Sho指示 2026-08-03)。 */
+  .sp-hero::after {
+    content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background:
+      linear-gradient(to top,
+        rgba(10, 42, 62, 0.70) 0%,
+        rgba(10, 42, 62, 0.48) 45%,
+        rgba(10, 42, 62, 0.36) 100%
+      ),
+      linear-gradient(rgba(10, 42, 62, 0.20), rgba(10, 42, 62, 0.20));
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sp-hero .hero-video { display: none; }
+  }
+  .sp-hero .container { position: relative; z-index: 2; }
+  .sp-hero h1 {
+    font-size: clamp(38px, 5.4vw, 60px);
+    line-height: 1.18; letter-spacing: -0.01em; font-weight: 800;
+    color: #fff; margin: 16px 0 16px; padding-bottom: 0.12em;
+    text-shadow: 0 3px 14px rgba(0, 0, 0, 0.55), 0 1px 3px rgba(0, 0, 0, 0.45);
+  }
+  .sp-hero h1 .accent {
+    color: var(--accent-2);
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+  /* 狭幅では「一緒に育てませんか。」が3行目に数文字だけ残るため1段下げる */
+  @media (max-width: 480px) {
+    .sp-hero h1 { font-size: 30px; line-height: 1.24; }
+  }
   .sp-hero .eyebrow { color: #fff; }
   .sp-hero .eyebrow::before { background: #fff; }
-  .sp-hero .sub { color: rgba(255, 255, 255, 0.92); font-size: clamp(16px, 1.4vw, 18px); max-width: 620px; line-height: 1.85; }
+  .sp-hero .sub {
+    color: rgba(255, 255, 255, 0.92); font-size: clamp(16px, 1.4vw, 18px);
+    max-width: 640px; line-height: 1.85;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.6);
+  }
+  /* 副導線も塗りつぶし (透明地は背景動画と被ると読みにくい)。
+     白文字 on #134E6F はコントラスト比 約8.9:1 (WCAG AA/AAA 適合)。 */
+  .sp-hero .btn-secondary {
+    background: #134E6F; color: #fff; border: 1px solid rgba(255, 255, 255, 0.45);
+  }
+  .sp-hero .btn-secondary:hover {
+    background: #175E86; color: #fff; border-color: rgba(255, 255, 255, 0.7);
+  }
+  .sp-hero-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+  .sp-hero-badge {
+    display: inline-block; padding: 6px 16px; border-radius: 999px;
+    font-size: 13px; font-weight: 700; color: #fff;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(4px);
+  }
   .sp-stats {
     background: #134E6F; color: #fff; padding: 28px 0;
   }
@@ -78,9 +134,21 @@
   .sp-stat-label { font-size: 13px; color: rgba(255, 255, 255, 0.85); }
   @media (max-width: 640px) { .sp-stats-inner { grid-template-columns: repeat(2, 1fr); row-gap: 20px; } }
 
-  .sp-plan-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 36px; }
-  @media (max-width: 1000px) { .sp-plan-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 560px) { .sp-plan-grid { grid-template-columns: 1fr; } }
+  /* ── 単発 / 年間 の料金トグル ── */
+  .sp-toggle {
+    display: inline-flex; gap: 4px; margin-top: 28px; padding: 4px;
+    background: var(--bg-muted); border: 1px solid var(--border); border-radius: 999px;
+  }
+  .sp-toggle button {
+    appearance: none; border: 0; cursor: pointer; border-radius: 999px;
+    padding: 9px 20px; font-family: inherit; font-size: 14px; font-weight: 700;
+    background: transparent; color: var(--text-muted); transition: background .18s, color .18s;
+  }
+  .sp-toggle button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+  .sp-toggle button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .sp-plan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
+  @media (max-width: 860px) { .sp-plan-grid { grid-template-columns: 1fr; } }
   .sp-plan {
     background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
     padding: 26px 22px; display: flex; flex-direction: column; position: relative;
@@ -164,7 +232,7 @@
       <li><a href="./index.html#faq">FAQ</a></li>
     </ul>
     <div style="display:flex;gap:10px;align-items:center;">
-      <a href="./s-league-archive.html" class="lang-switch" aria-label="成績アーカイブ">📊 アーカイブ</a>
+      <a href="./en/s-league-sponsor.html" class="lang-switch" aria-label="English version">EN</a>
       <a href="./contact.html" class="nav-cta">協賛のご相談 →</a>
     </div>
     <button class="nav-toggle" type="button" aria-label="メニューを開閉" aria-expanded="false">
@@ -182,17 +250,23 @@
 </nav>
 
 <header class="sp-hero" id="home" tabindex="-1">
+  <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="./images/sleague/SL24/sl24-hero-poster.jpg" aria-hidden="true" tabindex="-1">
+    <source src="./images/sleague/SL24/sl24-hero.webm" type="video/webm" />
+    <source src="./images/sleague/SL24/sl24-hero.mp4" type="video/mp4" />
+  </video>
   <div class="container">
     <span class="eyebrow">S.League — Sponsorship</span>
-    <h1 class="hero-title">S.League を、<br />一緒に育てませんか。</h1>
+    <h1 class="hero-title">S.League を、<br />一緒に<span class="accent">育てませんか</span>。</h1>
     <p class="sub">
-      S.League は2022年から東京・新橋で続く、賭けない・飲まない・吸わないノーレートの健康麻雀コミュニティです。
-      24回の開催で累計367名が参加し、初心者からプロまでが同じ卓を囲んできました。
-      この大会を支えてくださるスポンサー企業・店舗さまを募集しています。
+      賭けない・飲まない・吸わない。東京・新橋で2022年から続く健康麻雀コミュニティを、一緒に支えてくださる企業・店舗様を募集しています。
     </p>
-    <div class="hero-cta-row" style="margin-top:28px;">
-      <a href="./contact.html" class="btn btn-primary" style="background:#F59E0B;border-color:#F59E0B;">協賛について問い合わせる →</a>
-      <a href="#plans" class="btn btn-secondary" style="background:transparent;border-color:rgba(255,255,255,0.6);color:#fff;">プランを見る</a>
+    <div class="sp-hero-badges">
+      <span class="sp-hero-badge">物品協賛は ¥5,000 相当から</span>
+      <span class="sp-hero-badge">冠スポンサーは各大会1社限定</span>
+    </div>
+    <div class="hero-cta-row" style="margin-top:26px;">
+      <a href="./contact.html" class="btn btn-primary" style="background:#F59E0B;border-color:#F59E0B;color:#fff;">協賛について問い合わせる →</a>
+      <a href="#plans" class="btn btn-secondary">プランを見る</a>
     </div>
   </div>
 </header>
@@ -211,14 +285,14 @@
     <span class="eyebrow">なぜ S.League なのか</span>
     <h2 id="why-heading" style="margin-top:16px;">小さくても、確実に届くコミュニティ。</h2>
     <p style="color:var(--text-muted);font-size:16px;line-height:1.85;max-width:720px;margin:16px 0 32px;">
-      S.League の強みは規模ではなく密度です。1大会18〜24名の参加者と約10時間をともにする場だからこそ、
+      S.League の強みは規模ではなく密度です。1回16〜20名の参加者と半日 (約6時間) 〜終日 (約10時間) をともにする場だからこそ、
       御社の名前・商品・サービスを「広告」ではなく「応援してくれている存在」として、確実に記憶してもらえます。
     </p>
     <div class="community-grid">
       <div class="community-card">
         <span class="community-card-icon">🤝</span>
         <h3>対面で確実に届く</h3>
-        <p>1大会18〜24名が約10時間滞在。会場でのロゴ掲示・賞品提供・サンプリングは、全参加者に確実に届きます。</p>
+        <p>1回16〜20名が半日 (約6時間) 〜終日 (約10時間) 滞在。会場でのロゴ掲示・賞品提供・サンプリングは、全参加者に確実に届きます。</p>
       </div>
       <div class="community-card">
         <span class="community-card-icon">📊</span>
@@ -243,11 +317,21 @@
 <section id="plans" aria-labelledby="plans-heading" style="background:var(--bg-soft);">
   <div class="container">
     <span class="eyebrow">スポンサープラン</span>
-    <h2 id="plans-heading" style="margin-top:16px;">4つのプランをご用意しています。</h2>
+    <h2 id="plans-heading" style="margin-top:16px;">3つのプランをご用意しています。</h2>
+    <p style="color:var(--text-muted);font-size:15px;line-height:1.85;max-width:640px;margin:12px 0 0;">
+      まずは1大会だけのお試しから、1年を通したご支援まで。下のボタンで料金の表示を切り替えられます。
+    </p>
+
+    <div class="sp-toggle" role="group" aria-label="料金の表示単位を切り替える">
+      <button type="button" id="sp-mode-single" aria-pressed="true">1大会ごと</button>
+      <button type="button" id="sp-mode-year" aria-pressed="false">年間契約 (6大会)</button>
+    </div>
+
     <div class="sp-plan-grid">
       <div class="sp-plan">
         <h3>物品協賛</h3>
-        <p class="sp-price">¥5,000<small> 相当〜の物品</small></p>
+        <p class="sp-price"><span class="sp-amt" data-single="¥5,000" data-year="¥5,000">¥5,000</span><small class="sp-unit" data-single=" 相当〜の物品" data-year=" 相当〜の物品 / 都度"> 相当〜の物品</small></p>
+        <p class="sp-launch">協賛の入口としておすすめです</p>
         <ul>
           <li>賞品・サンプルのご提供</li>
           <li>表彰時に社名・商品名を紹介</li>
@@ -256,38 +340,28 @@
         </ul>
       </div>
       <div class="sp-plan">
-        <h3>大会協賛</h3>
-        <p class="sp-price">¥10,000<small> / 1大会</small></p>
+        <h3>大会パートナー</h3>
+        <p class="sp-price"><span class="sp-amt" data-single="¥30,000" data-year="¥150,000">¥30,000</span><small class="sp-unit" data-single=" / 1大会" data-year=" / 年 6大会"> / 1大会</small></p>
+        <p class="sp-launch sp-note-line" data-single="物品協賛との併用も可能です" data-year="1大会あたり ¥25,000 (17%お得)">物品協賛との併用も可能です</p>
         <ul>
           <li>大会ページにロゴ+リンク掲載</li>
           <li>会場内にロゴパネル・チラシ設置</li>
           <li>X 告知・結果投稿でのご紹介 (計2回)</li>
           <li>ロゴ入り大会写真のご提供</li>
+          <li>全参加者へのサンプリング・チラシ配布</li>
         </ul>
       </div>
       <div class="sp-plan featured">
         <span class="sp-plan-badge">おすすめ · 各大会1社限定</span>
         <h3>冠スポンサー</h3>
-        <p class="sp-price">¥50,000<small> / 1大会</small></p>
-        <p class="sp-launch">初回ご協賛は ¥40,000</p>
+        <p class="sp-price"><span class="sp-amt" data-single="¥60,000" data-year="¥300,000">¥60,000</span><small class="sp-unit" data-single=" / 1大会" data-year=" / 年 6大会"> / 1大会</small></p>
+        <p class="sp-launch sp-note-line" data-single="初回ご協賛は ¥48,000" data-year="1大会あたり ¥50,000 (17%お得)">初回ご協賛は ¥48,000</p>
         <ul>
+          <li>大会パートナーの特典をすべて含む</li>
           <li>大会名に社名を冠して全告知物に表記</li>
           <li>開会・表彰時の社名アナウンス+ご挨拶枠</li>
-          <li>公式サイト・アーカイブに常設ロゴ掲載</li>
-          <li>全参加者へのサンプリング・チラシ配布</li>
+          <li>公式サイト・通算成績DBに常設ロゴ掲載</li>
           <li>大会写真・レポートの二次利用権</li>
-        </ul>
-      </div>
-      <div class="sp-plan">
-        <h3>年間パートナー</h3>
-        <p class="sp-price">¥120,000<small> / 年 (年6大会前後)</small></p>
-        <p class="sp-launch">上位プラン ¥150,000 もご用意</p>
-        <ul>
-          <li>全大会で冠協賛に準ずる露出</li>
-          <li>通算成績DBページに常設ロゴ掲載</li>
-          <li>写真・レポートの通年二次利用権</li>
-          <li>参加者向け特典 (クーポン等) の継続配布枠</li>
-          <li>上位プランは冠権利を年2大会分含む</li>
         </ul>
       </div>
     </div>
@@ -296,22 +370,24 @@
       <table class="sp-table">
         <caption style="text-align:left;font-size:13px;color:var(--text-soft);padding:8px 0;">特典の比較 (○=含まれる / —=含まれない)</caption>
         <thead>
-          <tr><th>特典</th><th>物品協賛</th><th>大会協賛</th><th>冠スポンサー</th><th>年間パートナー</th></tr>
+          <tr><th>特典</th><th>物品協賛</th><th>大会パートナー</th><th>冠スポンサー</th></tr>
         </thead>
         <tbody>
-          <tr><td>表彰時の社名・商品名のご紹介</td><td class="ok">○</td><td class="ok">○</td><td class="ok">○</td><td class="ok">○</td></tr>
-          <tr><td>大会ページへのロゴ+リンク掲載</td><td class="no">—</td><td class="ok">○</td><td class="ok">○</td><td class="ok">○</td></tr>
-          <tr><td>会場でのロゴ掲示・チラシ設置</td><td class="no">—</td><td class="ok">○</td><td class="ok">○</td><td class="ok">○</td></tr>
-          <tr><td>大会名への社名の冠表記 (1社限定)</td><td class="no">—</td><td class="no">—</td><td class="ok">○</td><td class="ok">年2大会分</td></tr>
-          <tr><td>開会・表彰時のアナウンス+ご挨拶枠</td><td class="no">—</td><td class="no">—</td><td class="ok">○</td><td class="ok">○</td></tr>
-          <tr><td>写真・レポートの二次利用権</td><td class="no">—</td><td class="no">—</td><td class="ok">当該大会分</td><td class="ok">通年</td></tr>
-          <tr><td>通算成績DBページへの常設ロゴ</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="ok">○</td></tr>
-          <tr><td>開催後レポートのお届け</td><td class="ok">○</td><td class="ok">○</td><td class="ok">○</td><td class="ok">○</td></tr>
+          <tr><td>表彰時の社名・商品名のご紹介</td><td class="ok">○</td><td class="ok">○</td><td class="ok">○</td></tr>
+          <tr><td>開催後レポートのお届け</td><td class="ok">○</td><td class="ok">○</td><td class="ok">○</td></tr>
+          <tr><td>大会ページへのロゴ+リンク掲載</td><td class="no">—</td><td class="ok">○</td><td class="ok">○</td></tr>
+          <tr><td>会場でのロゴ掲示・チラシ設置</td><td class="no">—</td><td class="ok">○</td><td class="ok">○</td></tr>
+          <tr><td>全参加者へのサンプリング・チラシ配布</td><td class="no">—</td><td class="ok">○</td><td class="ok">○</td></tr>
+          <tr><td>大会名への社名の冠表記 (1社限定)</td><td class="no">—</td><td class="no">—</td><td class="ok">○</td></tr>
+          <tr><td>開会・表彰時のアナウンス+ご挨拶枠</td><td class="no">—</td><td class="no">—</td><td class="ok">○</td></tr>
+          <tr><td>通算成績DBページへの常設ロゴ</td><td class="no">—</td><td class="no">—</td><td class="ok">○</td></tr>
+          <tr><td>写真・レポートの二次利用権</td><td class="no">—</td><td class="no">—</td><td class="ok">○</td></tr>
         </tbody>
       </table>
     </div>
     <p class="sp-note">
-      ※ 金額はすべて税込です。冠スポンサーの「初回 ¥40,000」は、S.League へのご協賛が初めての企業さま向けの特別価格です。<br />
+      ※ 金額はすべて税込です。年間契約は年6大会を想定した一括のお申込みで、1大会あたり17%割引となります。<br />
+      ※ 冠スポンサーの「初回 ¥48,000」は、S.League へのご協賛が初めての企業様向けの特別価格です。<br />
       ※ 二次利用権 = ロゴ入り大会写真や開催後レポートを、御社サイト・SNS・店頭・チラシ等の広報にご利用いただける利用許諾です。期間・条件はお申込み時にご案内します。<br />
       ※ 賭博・射幸性の高い商品、20歳未満に不適切な商品・サービスなど、健康麻雀の理念にそぐわないご協賛はお断りする場合があります。
     </p>
@@ -359,7 +435,7 @@
         <h4>S.League</h4>
         <ul>
           <li><a href="./s-league.html">大会概要</a></li>
-          <li><a href="./s-league-25.html">SL25 情報</a></li>
+          <li><a href="./s-league-25.html">S.League 25 情報</a></li>
           <li><a href="./s-league-archive.html">成績アーカイブ</a></li>
           <li><a href="./s-league-sponsor.html">スポンサー募集</a></li>
         </ul>
@@ -379,6 +455,7 @@
           <li><a href="./legal.html">特定商取引法</a></li>
           <li><a href="./legal.html#cancel">キャンセルポリシー</a></li>
           <li><a href="./legal.html#privacy">プライバシー</a></li>
+          <li><a href="./en/s-league-sponsor.html">English</a></li>
         </ul>
       </div>
     </div>
@@ -396,6 +473,22 @@
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // ── 料金表示の切替 (1大会ごと / 年間契約)。
+  //    HTML 側は「1大会ごと」を初期表示済みなので、JS が動かなくても料金は読める。
+  (function () {
+    const btnSingle = document.getElementById('sp-mode-single');
+    const btnYear = document.getElementById('sp-mode-year');
+    if (!btnSingle || !btnYear) return;
+    const fields = document.querySelectorAll('.sp-amt, .sp-unit, .sp-note-line');
+    function setMode(mode) {
+      fields.forEach(el => { el.textContent = el.dataset[mode]; });
+      btnSingle.setAttribute('aria-pressed', String(mode === 'single'));
+      btnYear.setAttribute('aria-pressed', String(mode === 'year'));
+    }
+    btnSingle.addEventListener('click', () => setMode('single'));
+    btnYear.addEventListener('click', () => setMode('year'));
+  })();
 </script>
 
 <script src="/nav.js" defer></script>
