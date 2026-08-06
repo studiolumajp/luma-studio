@@ -936,3 +936,38 @@ footer .brand-mark::after { box-shadow: 0 0 0 2px #134E6F; }
 /* 反転セクション内の強調時刻(S.League 24 のタイムライン)は
    Navy 上で AA を満たす明色オレンジに置き換える */
 .section-invert .schedule-item.highlight .schedule-time { color: var(--accent-2-light); }
+
+/* ══════════════════════════════════════════════════════════════
+   FLOATING CARD — 案4 のカード表現を全ページのカード類へ (2026-08-06)
+   各ページで個別定義されている枠線だけのカードに、
+   影とホバー時の浮上を共通で付与する。
+   ページ側の定義(詳細度 0-1-0)より強くするため body を前置している。
+   ══════════════════════════════════════════════════════════════ */
+body .info-card,
+body .sp-plan,
+body .prize-card,
+body .type-card,
+body .event-card,
+body .review-card,
+body .stat-card {
+  box-shadow: 0 1px 2px rgba(19, 78, 111, 0.05), 0 8px 24px -12px rgba(19, 78, 111, 0.18);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+body .info-card:hover,
+body .sp-plan:hover,
+body .prize-card:hover,
+body .type-card:hover,
+body .event-card:hover,
+body .review-card:hover,
+body .stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-strong);
+}
+/* 反転セクション内のカードは Navy 上に置かれるため影を強める */
+.section-invert .info-card,
+.section-invert .prize-card,
+.section-invert .type-card,
+.section-invert .event-card {
+  box-shadow: 0 10px 30px -14px rgba(6, 26, 40, 0.55);
+}
