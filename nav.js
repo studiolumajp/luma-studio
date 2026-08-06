@@ -10,6 +10,17 @@
   var nav = document.querySelector('nav.site-nav');
   if (!nav) return;
 
+  // ── スクロール検知 (案4 / 2026-08-06) ──
+  // ヘッダーの背景色は常時固定 (Sho指示)。スクロール時に付く .is-scrolled は
+  // 「浮いている」ことを示す影の有無だけに使う。
+  // 見た目の切替は shared.css 側。ここでは class の付け外しのみ。
+  // ハンバーガー処理より前に登録するので、以降の early return の影響を受けない。
+  var syncScrolled = function () {
+    nav.classList.toggle('is-scrolled', (window.pageYOffset || document.documentElement.scrollTop) > 8);
+  };
+  syncScrolled();
+  window.addEventListener('scroll', syncScrolled, { passive: true });
+
   var toggle = nav.querySelector('.nav-toggle');
   var links = nav.querySelector('.nav-links');
   if (!toggle || !links) return;

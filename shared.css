@@ -22,46 +22,27 @@
   --navy: #134E6F;         /* H1 / Navy */
   --sky: #5BA9D7;          /* H3 / Sky Blue */
   --cta-hover: #D97706;    /* CTA Hover */
+  /* Navy 面で AA(4.5:1)を満たす CTA Orange の明色版。濃色セクション専用 */
+  --accent-2-light: #FBBF24;
   --success: #047857;
-  --radius: 10px;
-  --radius-lg: 16px;
-  --shadow-sm: 0 1px 2px rgba(15,23,42,0.04), 0 1px 3px rgba(15,23,42,0.06);
-  --shadow-md: 0 4px 12px rgba(15,23,42,0.06), 0 2px 4px rgba(15,23,42,0.04);
-  --shadow-lg: 0 24px 48px -12px rgba(15,23,42,0.18);
+  --radius: 12px;
+  --radius-lg: 18px;         /* カード角丸: 全ページ 18px に統一 (2026-08-06) */
+  /* 影は Navy 系に統一 (黒の影はブランド外) */
+  --shadow-sm: 0 1px 2px rgba(19,78,111,0.05), 0 1px 3px rgba(19,78,111,0.06);
+  --shadow-md: 0 4px 12px rgba(19,78,111,0.07), 0 2px 4px rgba(19,78,111,0.05);
+  --shadow-lg: 0 24px 48px -12px rgba(19,78,111,0.22);
   --font-sans: 'Poppins', 'Noto Sans JP', -apple-system, system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  /* ラベル用書体は Poppins に一本化 (2026-08-06)。日本語は Noto Sans JP のまま。
+     変数名は既存の参照互換のため --font-mono を維持している。 */
+  --font-mono: 'Poppins', 'Noto Sans JP', -apple-system, system-ui, sans-serif;
+  --font-label: 'Poppins', 'Noto Sans JP', -apple-system, system-ui, sans-serif;
+  /* HERO 暗幕 (Navy)。全ページ共通の被覆値 (案4 の配分に統一) */
+  --scrim-1: rgba(10, 42, 62, 0.90);
+  --scrim-2: rgba(10, 42, 62, 0.72);
+  --scrim-3: rgba(10, 42, 62, 0.34);
+  --scrim-4: rgba(10, 42, 62, 0.06);
+  --scrim-text-shadow: 0 2px 20px rgba(10, 42, 62, 0.55), 0 1px 3px rgba(10, 42, 62, 0.45);
   --container: 1200px;
-}
-/* DARK TONE (Linear/Vercel風) */
-[data-tone="dark"] {
-  --bg: #0A0A0A;
-  --bg-soft: #111111;
-  --bg-muted: #171717;
-  --surface: #141414;
-  --border: #262626;
-  --border-strong: #333333;
-  --text: #FAFAFA;
-  --text-muted: #A1A1AA;
-  --text-soft: #71717A;
-  --accent: #818CF8;
-  --accent-soft: #1E1B4B;
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.4);
-  --shadow-md: 0 4px 16px rgba(0,0,0,0.5);
-  --shadow-lg: 0 24px 48px -12px rgba(0,0,0,0.7);
-}
-/* EDITORIAL — LUMA Soft Aqua に統一 (旧warm/rustは廃止) */
-[data-tone="editorial"] {
-  --bg: #EBF5FA;
-  --bg-soft: #F8FBFC;
-  --bg-muted: #D6EBF7;
-  --surface: #FFFFFF;
-  --border: #D7E5ED;
-  --border-strong: #B8CED9;
-  --text: #2C3E50;
-  --text-muted: #566575;
-  --accent: #1E88E5;
-  --accent-soft: #D6EBF7;
-  --accent-2: #F59E0B;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -71,13 +52,16 @@ body {
   background: var(--bg);
   color: var(--text);
   font-size: 16px;
-  line-height: 1.6;
-  letter-spacing: -0.005em;
+  line-height: 1.7;   /* 案4 の行間 */
+  letter-spacing: normal;
   -webkit-font-smoothing: antialiased;
   transition: background 0.3s, color 0.3s;
   /* モバイルでサブピクセルのはみ出しが横スクロール(=画面の左右揺れ)を
-     起こすのを全ページ共通で防止する。揺れの主要因への対策。 */
-  overflow-x: hidden;
+     起こすのを全ページ共通で防止する。揺れの主要因への対策。
+     2026-08-06: hidden → clip に変更。hidden は body をスクロールコンテナに
+     変えてしまい、position:sticky のナビが固定されず流れていた(既存不具合)。
+     clip は同じくはみ出しを切り落としつつスクロールコンテナを作らない。 */
+  overflow-x: clip;
   width: 100%;
 }
 img { max-width: 100%; display: block; }
@@ -90,8 +74,8 @@ button { font-family: inherit; cursor: pointer; }
 
 .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
 .eyebrow {
-  font-family: 'Poppins', -apple-system, system-ui, sans-serif; font-size: 16px; font-weight: 500;
-  color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em;
+  font-family: var(--font-label); font-size: 12px; font-weight: 600;
+  color: var(--accent); text-transform: uppercase; letter-spacing: 0.10em;
   display: inline-flex; align-items: center; gap: 8px;
 }
 .eyebrow::before {
@@ -101,30 +85,50 @@ h1, h2, h3, h4 {
   font-weight: 700; letter-spacing: -0.02em; line-height: 1.15;
   color: var(--text); text-wrap: pretty;
 }
+/* 見出し色ルール (2026-08-06 統一): h1・h2 = Navy / h3・h4 = テキスト色 */
+h1, h2 { color: var(--navy); }
 h1 { font-size: clamp(36px, 5.5vw, 64px); letter-spacing: -0.03em; }
-h2 { font-size: clamp(28px, 3.6vw, 44px); }
+h2 { font-size: clamp(26px, 3.4vw, 42px); }
 h3 { font-size: clamp(20px, 2vw, 26px); }
 
 /* ── NAV ─────────────────────────────── */
+/* 2026-08-06 Sho指示: ヘッダーは常時固定・背景色も固定(スクロールで色を変えない)。
+   配色は design-lab の案4 (Photo Immersive) に統一 = 白 86% + ぼかし + 細い境界線。
+   nav.js が付与する .is-scrolled は影の有無だけに使う(色は変えない)。 */
 nav.site-nav {
   position: sticky; top: 0; z-index: 50;
-  background: color-mix(in srgb, var(--bg) 80%, transparent);
+  background: color-mix(in srgb, #FFFFFF 86%, transparent);
   backdrop-filter: saturate(180%) blur(16px);
   -webkit-backdrop-filter: saturate(180%) blur(16px);
   border-bottom: 1px solid var(--border);
+  transition: box-shadow .25s ease;
 }
+nav.site-nav.is-scrolled { box-shadow: 0 10px 28px -22px rgba(19, 78, 111, 0.65); }
 .nav-inner {
   max-width: var(--container); margin: 0 auto; padding: 14px 24px;
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
 }
 .brand {
   font-weight: 800; font-size: 18px; letter-spacing: -0.02em;
-  display: inline-flex; align-items: center; gap: 8px;
+  display: inline-flex; align-items: center; gap: 9px;
+  color: var(--navy);
 }
+/* ロゴマーク (2026-08-06 案4対応):
+   before = Blue→Orange グラデの角丸四角 26px/r7
+   after  = Blue→Navy グラデ 28px/r8 + 右下に Orange の差し色ドット */
 .brand-mark {
-  width: 26px; height: 26px; border-radius: 7px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  position: relative;
+  width: 28px; height: 28px; border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--navy) 100%);
   display: grid; place-items: center; color: #fff; font-weight: 800; font-size: 13px;
+  line-height: 1;
+  box-shadow: 0 2px 6px -2px rgba(19, 78, 111, 0.45);
+}
+.brand-mark::after {
+  content: ''; position: absolute; right: -2px; bottom: -2px;
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--accent-2);
+  box-shadow: 0 0 0 2px var(--bg);
 }
 .nav-links {
   display: flex; gap: 28px; list-style: none; align-items: center;
@@ -136,11 +140,11 @@ nav.site-nav {
 .nav-links a:hover { color: var(--text); }
 .nav-cta {
   display: inline-flex; align-items: center; gap: 6px;
-  padding: 8px 14px; background: var(--text); color: var(--bg);
-  border-radius: 8px; font-size: 14px; font-weight: 600;
-  transition: opacity .2s;
+  padding: 9px 16px; background: var(--navy); color: #fff;
+  border-radius: 10px; font-size: 14px; font-weight: 600;
+  transition: background .2s;
 }
-.nav-cta:hover { opacity: 0.85; }
+.nav-cta:hover { background: var(--accent); }
 .lang-switch {
   display: inline-flex; align-items: center; gap: 4px;
   font-size: 13px; color: var(--text-muted); padding: 6px 10px;
@@ -210,7 +214,7 @@ nav.site-nav .nav-links .dropdown-menu {
   list-style: none; z-index: 100;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
 }
 nav.site-nav .nav-links .has-dropdown:hover .dropdown-menu,
@@ -313,8 +317,12 @@ h1.hero-title .accent {
   font-size: 15px; transition: transform .15s, box-shadow .2s, background .2s;
   border: 1px solid transparent;
 }
-.btn-primary { background: var(--text); color: var(--bg); }
-.btn-primary:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+/* CTA は Orange に統一 (2026-08-06)。文字色 #3A2708 で AA 以上を確保 */
+.btn-primary { background: var(--accent-2); color: #3A2708; border-color: var(--accent-2); }
+.btn-primary:hover {
+  background: var(--cta-hover); color: #fff; border-color: var(--cta-hover);
+  transform: translateY(-1px); box-shadow: 0 10px 24px -10px rgba(217,119,6,0.55);
+}
 .btn-secondary { background: var(--surface); color: var(--text); border-color: var(--border-strong); }
 .btn-secondary:hover { border-color: var(--text); }
 .hero-trust {
@@ -338,7 +346,7 @@ h1.hero-title .accent {
 }
 .hv-card {
   position: absolute; background: var(--surface); border: 1px solid var(--border);
-  border-radius: 14px; padding: 18px 20px; box-shadow: var(--shadow-md);
+  border-radius: var(--radius-lg); padding: 18px 20px; box-shadow: var(--shadow-md);
   display: flex; flex-direction: column; gap: 6px;
 }
 .hv-card .ico { font-size: 22px; line-height: 1; }
@@ -379,47 +387,54 @@ h1.hero-title .accent {
 }
 
 /* ── SECTION BASE ───────────────────── */
-section { padding: 96px 0; }
+section { padding: 104px 0; }   /* 案4 の余白 */
 .section-head { max-width: 720px; margin-bottom: 56px; }
 .section-head h2 { margin: 16px 0 12px; }
 .section-head p { color: var(--text-muted); font-size: 17px; }
 
-/* ── SERVICES GRID (Stripe/Notion風) ─── */
+/* ── SERVICES GRID (案4 Photo Immersive / 2026-08-06) ───
+   旧: 1px罫線でつないだテーブル状グリッド
+   新: 24px 間隔で独立した白カード + 角丸18px + 影 + ホバーで浮上 */
 #services { background: var(--bg-soft); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .services-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
-  background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg);
-  overflow: hidden;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
 }
 .svc {
-  background: var(--surface); padding: 32px;
-  display: flex; flex-direction: column; gap: 12px;
-  transition: background .25s;
+  background: var(--surface); padding: 30px;
+  border: 1px solid var(--border); border-radius: var(--radius-lg);
+  display: flex; flex-direction: column; gap: 10px;
+  box-shadow: 0 1px 2px rgba(19,78,111,0.05), 0 8px 24px -12px rgba(19,78,111,0.18);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
   position: relative;
 }
-.svc:hover { background: color-mix(in srgb, var(--surface) 90%, var(--accent) 4%); }
+.svc:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-strong);
+}
 .svc-num {
-  font-family: 'Poppins', -apple-system, system-ui, sans-serif; font-size: 14px; color: var(--text-soft);
-  letter-spacing: 0.08em;
+  font-family: var(--font-label); font-size: 11px; color: var(--sky);
+  letter-spacing: 0.12em;
 }
 .svc-icon {
-  width: 44px; height: 44px; border-radius: 10px;
-  background: var(--accent-soft); color: var(--accent);
-  display: grid; place-items: center; font-size: 22px;
-  margin-bottom: 4px;
+  /* 案4: アイコンは Navy 面 + 白抜き (design-lab [data-design="4"] 準拠) */
+  width: 48px; height: 48px; border-radius: 10px;
+  background: var(--navy); color: #fff;
+  display: grid; place-items: center; font-size: 23px;
+  margin-bottom: 6px;
 }
-.svc h3 { font-size: 19px; }
+.svc h3 { font-size: 20px; font-weight: 600; color: var(--navy); }
 .svc-en {
-  font-family: var(--font-mono); font-size: 12px; color: var(--accent);
-  text-transform: uppercase; letter-spacing: 0.06em;
+  font-family: var(--font-label); font-size: 11px; font-weight: 600; color: var(--accent);
+  text-transform: uppercase; letter-spacing: 0.12em;
 }
-.svc p { color: var(--text-muted); font-size: 14px; line-height: 1.6; }
+.svc p { color: var(--text-muted); font-size: 14.5px; line-height: 1.75; }
 .svc-meta {
   display: flex; align-items: center; justify-content: space-between;
   margin-top: auto; padding-top: 16px; border-top: 1px dashed var(--border);
   font-size: 13px;
 }
-.svc-price { color: var(--text); font-weight: 600; }
+.svc-price { color: var(--navy); font-weight: 600; }
 .svc-link {
   color: var(--accent); font-weight: 600;
   display: inline-flex; gap: 4px; align-items: center;
@@ -427,7 +442,7 @@ section { padding: 96px 0; }
 .svc-link:hover { gap: 8px; transition: gap .2s; }
 
 /* ── COMPARE — Apple-inspired card grid ───────────────────── */
-#compare { background: #FBFBFD; }
+#compare { background: var(--bg-soft); }
 .cmp-head { text-align: center; max-width: 760px; margin: 0 auto 64px; }
 .cmp-head .eyebrow { display: inline-block; margin-bottom: 18px; }
 .cmp-head h2 {
@@ -453,8 +468,8 @@ section { padding: 96px 0; }
 
 .cmp-card {
   position: relative;
-  background: #FFFFFF;
-  border-radius: 24px;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   display: flex; flex-direction: column;
   min-height: 460px;
@@ -463,7 +478,7 @@ section { padding: 96px 0; }
 }
 .cmp-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 50px -20px rgba(0,0,0,.18);
+  box-shadow: var(--shadow-lg);
 }
 .cmp-card .cmp-visual {
   position: relative; height: 240px;
@@ -473,7 +488,7 @@ section { padding: 96px 0; }
 }
 .cmp-card .cmp-visual::before {
   content: ''; position: absolute; inset: 0;
-  background: var(--cmp-bg, linear-gradient(135deg, #f5f5f7, #e8e8ed));
+  background: var(--cmp-bg, linear-gradient(135deg, var(--bg) 0%, var(--bg-muted) 100%));
   z-index: 0;
 }
 .cmp-card .cmp-emoji {
@@ -489,13 +504,13 @@ section { padding: 96px 0; }
 .cmp-card.has-photo .cmp-emoji { display: none; }
 .cmp-card.has-photo .cmp-visual::after {
   content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.35) 100%);
+  background: linear-gradient(180deg, rgba(10,42,62,0) 50%, rgba(10,42,62,0.45) 100%);
 }
 .cmp-card .cmp-tag {
   position: relative; z-index: 2;
   font-size: 12px; font-weight: 600;
   letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--cmp-tag, #134E6F);
+  color: var(--cmp-tag, var(--navy));
   background: rgba(255,255,255,.85);
   backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
   padding: 6px 12px; border-radius: 999px;
@@ -545,19 +560,19 @@ section { padding: 96px 0; }
   text-decoration: none;
 }
 .cmp-btn-primary {
-  background: #1E88E5; color: #fff;
+  background: var(--accent); color: #fff;
 }
-.cmp-btn-primary:hover { background: #0077ED; }
+.cmp-btn-primary:hover { background: var(--navy); }
 .cmp-btn-link {
-  color: #1E88E5; padding-left: 4px;
+  color: var(--accent); padding-left: 4px;
 }
 .cmp-btn-link:hover { text-decoration: underline; }
 
 /* Per-service color themes (Apple-style soft tints) */
-.cmp-card.theme-eng    { --cmp-bg: linear-gradient(135deg, #EBF5FA 0%, #D6EBF7 100%); --cmp-tag: #1E88E5; }
-.cmp-card.theme-photo  { --cmp-bg: linear-gradient(135deg, #EBF5FA 0%, #D6EBF7 100%); --cmp-tag: #134E6F; }
-.cmp-card.theme-mahjong{ --cmp-bg: linear-gradient(135deg, #EBF5FA 0%, #D6EBF7 100%); --cmp-tag: #5BA9D7; }
-.cmp-card.theme-tour   { --cmp-bg: linear-gradient(135deg, #EBF5FA 0%, #D6EBF7 100%); --cmp-tag: #D97706; }
+.cmp-card.theme-eng    { --cmp-bg: linear-gradient(135deg, var(--bg) 0%, var(--bg-muted) 100%); --cmp-tag: var(--accent); }
+.cmp-card.theme-photo  { --cmp-bg: linear-gradient(135deg, var(--bg) 0%, var(--bg-muted) 100%); --cmp-tag: var(--navy); }
+.cmp-card.theme-mahjong{ --cmp-bg: linear-gradient(135deg, var(--bg) 0%, var(--bg-muted) 100%); --cmp-tag: var(--sky); }
+.cmp-card.theme-tour   { --cmp-bg: linear-gradient(135deg, var(--bg) 0%, var(--bg-muted) 100%); --cmp-tag: var(--cta-hover); }
 
 /* ── TESTIMONIALS (Airbnb風) ─────────── */
 .testimonials-grid {
@@ -569,7 +584,7 @@ section { padding: 96px 0; }
   transition: transform .2s, box-shadow .2s;
 }
 .review:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
-.review-stars { color: #F59E0B; font-size: 14px; letter-spacing: 2px; }
+.review-stars { color: var(--accent-2); font-size: 14px; letter-spacing: 2px; }
 .review-quote { font-size: 15px; line-height: 1.6; color: var(--text); }
 .review-author {
   display: flex; align-items: center; gap: 12px;
@@ -618,7 +633,7 @@ section { padding: 96px 0; }
   border-radius: 6px; flex-shrink: 0; display: grid; place-items: center;
   font-size: 14px; color: var(--text-muted); transition: transform .25s;
 }
-.faq-item[data-open="true"] .faq-icon { transform: rotate(45deg); background: var(--text); color: var(--bg); border-color: var(--text); }
+.faq-item[data-open="true"] .faq-icon { transform: rotate(45deg); background: var(--navy); color: #fff; border-color: var(--navy); }
 .faq-a {
   max-height: 0; overflow: hidden; transition: max-height .35s ease;
   color: var(--text-muted); font-size: 15px; line-height: 1.7;
@@ -652,38 +667,61 @@ section { padding: 96px 0; }
 
 /* ── CTA BIG ─────────────────────────── */
 .cta-big {
-  background: var(--text); color: var(--bg);
+  background: var(--navy); color: #fff;
   border-radius: var(--radius-lg); padding: 64px 48px;
   text-align: center; position: relative; overflow: hidden;
 }
 .cta-big::before {
   content: ''; position: absolute; inset: 0;
-  background: radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--accent) 30%, transparent), transparent 60%);
+  background: radial-gradient(600px 320px at 28% 12%, color-mix(in srgb, var(--accent) 45%, transparent), transparent 65%);
 }
 .cta-big > * { position: relative; }
-.cta-big h2 { color: var(--bg); margin-bottom: 12px; }
-.cta-big p { color: color-mix(in srgb, var(--bg) 70%, transparent); margin-bottom: 28px; }
-.cta-big .btn-primary { background: var(--bg); color: var(--text); }
+.cta-big h2 { color: #fff; margin-bottom: 12px; }
+.cta-big p { color: rgba(255,255,255,0.82); margin-bottom: 28px; }
 
-/* ── FOOTER ─────────────────────────── */
+/* ── FOOTER ───────────────────────────
+   案4 のリズム(濃色で締める)に合わせ Navy 反転 (2026-08-06)。
+   before = --bg-soft の淡い面 / after = Navy #134E6F。
+   Navy(相対輝度 0.0674)上の文字は全て AA(4.5:1)以上を実測で確認済み。 */
 footer {
-  background: var(--bg-soft); border-top: 1px solid var(--border);
-  padding: 64px 0 32px;
+  background: #134E6F; color: #fff;
+  border-top: none;
+  padding: 72px 0 32px;
+  position: relative; overflow: hidden;
 }
+footer::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(720px 380px at 86% -20%, rgba(30, 136, 229, 0.32), transparent 62%),
+    radial-gradient(560px 300px at 2% 118%, rgba(245, 158, 11, 0.14), transparent 70%);
+}
+footer > * { position: relative; z-index: 1; }
+footer .brand { color: #fff; }
+/* Navy 面ではロゴマークを白地 + Navy 文字に反転する */
+footer .brand-mark {
+  background: #fff; color: #134E6F;
+  box-shadow: 0 2px 8px -2px rgba(6, 26, 40, 0.6);
+}
+footer .brand-mark::after { box-shadow: 0 0 0 2px #134E6F; }
 .footer-grid {
   display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px;
-  padding-bottom: 48px; border-bottom: 1px solid var(--border);
+  padding-bottom: 48px; border-bottom: 1px solid rgba(255, 255, 255, 0.22);
 }
-.footer-col h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; color: var(--text-soft); font-family: var(--font-mono); font-weight: 500; }
+/* #8ECDF7 on #134E6F = 5.21:1 (AA) */
+.footer-col h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; color: #8ECDF7; font-family: var(--font-mono); font-weight: 500; }
 .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.footer-col a { color: var(--text-muted); font-size: 14px; }
-.footer-col a:hover { color: var(--text); }
-.footer-brand p { font-size: 14px; color: var(--text-muted); margin-top: 12px; max-width: 320px; }
+/* rgba(255,255,255,.86) on #134E6F = 7.07:1 (AA) */
+.footer-col a { color: rgba(255, 255, 255, 0.86); font-size: 14px; transition: color .18s; }
+.footer-col a:hover { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+.footer-brand p { font-size: 14px; color: rgba(255, 255, 255, 0.86); margin-top: 12px; max-width: 320px; }
 .footer-bottom {
   padding-top: 24px; display: flex; justify-content: space-between;
   align-items: center; flex-wrap: wrap; gap: 16px;
-  font-size: 12px; color: var(--text-soft);
+  /* rgba(255,255,255,.74) on #134E6F = 5.71:1 (AA) */
+  font-size: 12px; color: rgba(255, 255, 255, 0.74);
 }
+.footer-bottom a { color: rgba(255, 255, 255, 0.86); }
+.footer-bottom a:hover { color: #fff; }
 
 /* Reveal */
 .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
@@ -771,5 +809,130 @@ footer {
   /* nav-inner の余白を詰めて狭幅でのはみ出しを防止 */
   .nav-inner { gap: 12px; padding: 12px 16px; }
 }
-</content>
-</invoke>
+/* ══════════════════════════════════════════════════════════════
+   HERO PHOTO — 全ページ共通の写真ヒーロー (2026-08-06 集約)
+   使い方: <header class="hero hero--photo" style="--hero-photo:url('...')">
+   暗幕は Navy (--scrim-*)。各ページで個別に定義していた
+   linear-gradient(rgba(0,0,0,…)) 版はすべてこれに置き換えた。
+   ══════════════════════════════════════════════════════════════ */
+.hero--photo {
+  position: relative; color: #fff;
+  background:
+    linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 34%, var(--scrim-3) 58%, var(--scrim-4) 76%),
+    var(--hero-photo, linear-gradient(135deg, var(--navy), var(--accent))) center / cover no-repeat;
+}
+.hero--photo::before { display: none; }
+.hero--photo h1, .hero--photo h2, .hero--photo h3 { color: #fff; text-shadow: var(--scrim-text-shadow); }
+.hero--photo h1 .accent, .hero--photo .accent {
+  background: none; -webkit-background-clip: initial; background-clip: initial;
+  color: var(--accent-2);
+}
+.hero--photo .sub, .hero--photo .hero-sub, .hero--photo p {
+  color: #fff; font-weight: 500;
+  text-shadow: 0 1px 12px rgba(10, 42, 62, 0.65), 0 1px 2px rgba(10, 42, 62, 0.5);
+}
+.hero--photo .sub strong, .hero--photo .hero-sub strong { color: var(--accent-2) !important; }
+.hero--photo .eyebrow { color: #fff; }
+.hero--photo .eyebrow::before { background: var(--accent-2); }
+.hero--photo .hero-meta { color: rgba(255, 255, 255, 0.75); }
+.hero--photo .hero-pill, .hero--photo .pill {
+  background: rgba(255, 255, 255, 0.14); border-color: rgba(255, 255, 255, 0.38); color: #fff;
+}
+.hero--photo .btn-secondary {
+  background: transparent; color: #fff; border-color: rgba(255, 255, 255, 0.45);
+}
+.hero--photo .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.14); border-color: #fff;
+}
+.hero--photo .hero-trust { border-top-color: rgba(255, 255, 255, 0.30); }
+/* 実績数値は案4に合わせ白抜き 30px/800。Orange は h1 と CTA に限定する */
+.hero--photo .trust-item .num {
+  background: none; -webkit-background-clip: initial; background-clip: initial;
+  color: var(--accent-2); font-size: 30px; line-height: 1.1;
+  text-shadow: var(--scrim-text-shadow);
+}
+.hero--photo .trust-item .label {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 12px; letter-spacing: 0.08em; margin-top: 4px;
+}
+.hero--photo .svc-tag {
+  border-color: rgba(255, 255, 255, 0.4); color: #fff; background: rgba(255, 255, 255, 0.10);
+}
+.hero--photo .svc-tag:hover { border-color: rgba(255, 255, 255, 0.8); background: rgba(255, 255, 255, 0.2); }
+/* モバイルはテキストが全幅に広がるため、横グラデでは右側の白文字が読めない。
+   全体を均一に暗くする縦グラデへ差し替える (従来の各ページ実装と同じ考え方)。 */
+@media (max-width: 640px) {
+  .hero--photo {
+    background:
+      linear-gradient(180deg, rgba(10, 42, 62, 0.70) 0%, rgba(10, 42, 62, 0.52) 50%, rgba(10, 42, 62, 0.72) 100%),
+      var(--hero-photo, linear-gradient(135deg, var(--navy), var(--accent))) center / cover no-repeat;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   SECTION INVERT — Navy 反転セクション (案4 / 2026-08-06)
+   全ページに1つ、リズムを作る濃色ブロックとして使う。
+   実装方針: 色を直接指定するのではなく「配下で使われるトークンを反転」する。
+   各ページの page-overrides も var(--text) / var(--text-muted) 等を
+   参照しているため、セレクタの詳細度に関係なく確実に反転できる。
+   ══════════════════════════════════════════════════════════════ */
+.section-invert {
+  --text: #FFFFFF;
+  --text-muted: rgba(255, 255, 255, 0.86);
+  --text-soft: rgba(255, 255, 255, 0.74);
+  --navy: #FFFFFF;                      /* h1・h2 の色として参照される */
+  --sky: rgba(255, 255, 255, 0.78);
+  --surface: rgba(255, 255, 255, 0.08);
+  --bg: #134E6F;
+  --bg-soft: rgba(255, 255, 255, 0.06);
+  --bg-muted: rgba(255, 255, 255, 0.12);
+  --border: rgba(255, 255, 255, 0.22);
+  --border-strong: rgba(255, 255, 255, 0.38);
+  --accent: #8ECDF7;                    /* Navy 上で AA を満たす明るいブルー */
+  --accent-soft: rgba(255, 255, 255, 0.12);
+  --shadow-sm: none;
+  --shadow-md: 0 8px 24px rgba(6, 26, 40, 0.35);
+  --shadow-lg: 0 24px 48px -12px rgba(6, 26, 40, 0.55);
+  background: #134E6F;
+  color: #fff;
+  border-top: none; border-bottom: none;
+  position: relative; overflow: hidden;
+}
+/* id セレクタ(詳細度 1-0-0)で背景が指定されているセクションにも効かせる */
+#about.section-invert, #story.section-invert, #values.section-invert,
+#compare.section-invert, #flow.section-invert, #gallery.section-invert,
+#schedule.section-invert, #faq.section-invert, #services.section-invert,
+#spotlight.section-invert, #prizes.section-invert {
+  background: #134E6F;
+  border-top: none; border-bottom: none;
+}
+.section-invert::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(720px 380px at 84% -10%, rgba(30, 136, 229, 0.38), transparent 62%),
+    radial-gradient(560px 300px at 4% 108%, rgba(245, 158, 11, 0.16), transparent 70%);
+}
+.section-invert > * { position: relative; z-index: 1; }
+.section-invert .eyebrow { color: var(--accent-2-light); }
+.section-invert .eyebrow::before { background: var(--accent-2-light); }
+.section-invert a:not(.btn):not(.svc-link):not(.cmp-btn):not(.cmp-cardlink) { color: var(--accent-2-light); }
+.section-invert .btn-secondary { background: transparent; color: #fff; border-color: rgba(255, 255, 255, 0.45); }
+.section-invert .btn-secondary:hover { background: rgba(255, 255, 255, 0.14); border-color: #fff; }
+.section-invert .who-tag, .section-invert .about-tag, .section-invert .svc-tag {
+  background: rgba(255, 255, 255, 0.10); border-color: rgba(255, 255, 255, 0.30); color: #fff;
+}
+.section-invert .timeline-year { color: var(--accent-2-light); }
+/* 反転セクション内で「白面の上に置かれる要素」は固定色に戻す
+   (トークン反転が二重に効いて白地に白文字になるのを防ぐ) */
+.section-invert .cmp-tag { color: #134E6F; background: rgba(255, 255, 255, 0.92); }
+.section-invert .cmp-btn-primary { background: #1E88E5; color: #fff; }
+.section-invert .cmp-btn-primary:hover { background: #0B6BC4; }
+.section-invert .cmp-btn-link { color: #1E88E5; }
+.section-invert .cmp-card { background: #fff; }
+.section-invert .cmp-card h3 { color: #134E6F; }
+.section-invert .cmp-card .cmp-pitch, .section-invert .cmp-card .cmp-meta { color: #566575; }
+/* 円形ステップ番号は Navy 上で AA を満たすよう白文字に */
+.section-invert .sp-flow-num { background: rgba(255, 255, 255, 0.18); color: #fff; }
+/* 反転セクション内の強調時刻(S.League 24 のタイムライン)は
+   Navy 上で AA を満たす明色オレンジに置き換える */
+.section-invert .schedule-item.highlight .schedule-time { color: var(--accent-2-light); }

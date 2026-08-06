@@ -8,7 +8,7 @@
 
 <!-- ── PRIMARY SEO META ── -->
 <title>記念撮影・ポートレート・風景写真 横浜・東京 | LUMA Frame</title>
-<meta name="description" content="Nikon Z6IIIで自然光撮影。記念撮影(前撮り・お宮参り・お食い初め・七五三・家族・カップル)、ポートレート(友人・単独・プロフィール)、空港・飛行機・風景まで横浜・東京で幅広く対応。当日データ納品。" />
+<meta name="description" content="横浜・東京の出張撮影。前撮り・お宮参り・お食い初め・七五三などの記念撮影、友人/単独ポートレート、航空機・風景まで。Nikon Z6IIIの自然光撮影、データは当日〜翌日納品。無料見積もり。" />
 <meta name="keywords" content="記念撮影 横浜,ポートレート 横浜,前撮り 東京,お食い初め 撮影,お宮参り 撮影,七五三 撮影,プロフィール写真,友人 写真,単独 ポートレート,空港 撮影,飛行機 撮影,風景写真,LUMA Frame,Nikon Z6III" />
 <meta name="author" content="LUMA" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -21,7 +21,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://studio-lumadesign.com/service-photo.html" />
 <meta property="og:title" content="記念撮影・ポートレート・風景写真 | LUMA Frame" />
-<meta property="og:description" content="Nikon Z6IIIで自然光撮影。記念撮影・友人/単独ポートレート・空港/飛行機・風景まで、横浜・東京で幅広く対応。" />
+<meta property="og:description" content="横浜・東京の出張撮影。記念撮影・友人/単独ポートレート・航空機・風景まで。Nikon Z6IIIの自然光撮影、データは当日〜翌日納品。" />
 <meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
 <meta property="og:locale" content="ja_JP" />
 <meta property="og:site_name" content="LUMA" />
@@ -33,7 +33,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
 
 <script type="application/ld+json">
 {
@@ -68,9 +68,10 @@
   gtag('config', 'G-62F20N179N');
 </script>
 
-<link rel="stylesheet" href="./shared.css?v=aqua4" />
+<link rel="stylesheet" href="./shared.css?v=aqua8" />
 <style id="page-overrides">
-  /* ── Service hero (LUMA Frame): full-bleed background photo + dark overlay ── */
+  /* ── HERO: 暗幕・文字色・ボタンは shared.css の .hero--photo で共通化。
+     ここではサイズと固有レイアウトのみ指定する (2026-08-06) ── */
   .svc-hero {
     position: relative;
     /* デスクトップ最大値は据え置き、狭幅のみ縮小して崩れ防止 */
@@ -78,66 +79,23 @@
     min-height: clamp(360px, 60vh, 520px);
     color: #fff;
     /* 左側のみ暗くする横グラデのみ。右側(顔)は完全透明=写真本来の明るさを保つ */
-    background:
-      linear-gradient(90deg,
-        rgba(0, 0, 0, 0.82) 0%,
-        rgba(0, 0, 0, 0.72) 25%,
-        rgba(0, 0, 0, 0.35) 45%,
-        rgba(0, 0, 0, 0.00) 58%
-      ),
-      url('./images/compare/compare-photo.jpg?v=2') center/cover no-repeat;
   }
   .svc-hero h1 {
-    margin-bottom: 16px; color: #fff;
+    margin-bottom: 16px;
     max-width: 460px;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.55), 0 1px 3px rgba(0, 0, 0, 0.45);
-  }
-  .svc-hero h1 .accent {
-    background: none;
-    -webkit-background-clip: initial; background-clip: initial;
-    color: #fbbf24;
   }
   .svc-hero .sub {
-    font-size: clamp(16px, 1.4vw, 18px); color: #fff;
+    font-size: clamp(16px, 1.4vw, 18px);
     max-width: 460px; margin-bottom: 28px;
-    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.65), 0 1px 2px rgba(0, 0, 0, 0.5);
     font-weight: 500;
   }
   /* HTML 側でインライン color:var(--text)（黒）が当たる <strong> を白＋アンバー強調へ上書き */
-  .svc-hero .sub strong {
-    color: #fbbf24 !important;
-    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.65), 0 1px 2px rgba(0, 0, 0, 0.5);
-  }
   .svc-hero .hero-cta-row { max-width: 460px; }
   /* Eyebrow on dark hero */
-  .svc-hero .eyebrow { color: #fff; }
-  .svc-hero .eyebrow::before { background: #fff; }
   /* CTA buttons on dark hero */
-  .svc-hero .btn-primary {
-    background: #fff; color: #0A0A0A; border-color: #fff;
-  }
-  .svc-hero .btn-primary:hover {
-    background: rgba(255, 255, 255, 0.88); color: #0A0A0A;
-  }
-  .svc-hero .btn-secondary {
-    background: transparent; color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.45);
-  }
-  .svc-hero .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.7);
-  }
   @media (max-width: 640px) {
     .svc-hero {
       padding: 80px 0 96px; min-height: 440px;
-      /* モバイルはテキストが全幅に広がるため、横グラデ(左のみ暗い)では白文字が読めない。
-         全体を均一に暗くする縦グラデに差し替え。 */
-      background:
-        linear-gradient(180deg,
-          rgba(0, 0, 0, 0.62) 0%,
-          rgba(0, 0, 0, 0.50) 50%,
-          rgba(0, 0, 0, 0.64) 100%
-        ),
-        url('./images/compare/compare-photo.jpg?v=2') center/cover no-repeat;
     }
   }
 
@@ -149,7 +107,7 @@
     display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
   }
   .portfolio-banner-label {
-    font-family: var(--font-mono); font-size: 11px;
+    font-family: var(--font-label); font-size: 11px;
     color: rgba(255, 255, 255, 0.85);
     text-transform: uppercase; letter-spacing: 0.16em;
   }
@@ -173,7 +131,7 @@
   .svc-overview-body { font-size: 16px; color: var(--text-muted); line-height: 1.75; }
   .svc-overview-aside { border-left: 2px solid var(--border-strong); padding-left: 28px; }
   .svc-overview-aside .label {
-    font-family: var(--font-mono); font-size: 11px; color: var(--accent);
+    font-family: var(--font-label); font-size: 11px; color: var(--accent);
     text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; display: block;
   }
   .svc-overview-aside .en-lead {
@@ -194,12 +152,12 @@
   }
   .offer-card:hover { background: color-mix(in srgb, var(--surface) 92%, var(--accent) 4%); }
   .offer-card-num {
-    font-family: var(--font-mono); font-size: 12px; color: var(--text-soft);
+    font-family: var(--font-label); font-size: 12px; color: var(--text-soft);
     letter-spacing: 0.08em; margin-bottom: 4px;
   }
   .offer-card h3 { font-size: 17px; line-height: 1.35; margin-bottom: 2px; }
   .offer-card .en {
-    font-family: var(--font-mono); font-size: 12px; color: var(--accent);
+    font-family: var(--font-label); font-size: 12px; color: var(--accent);
     text-transform: uppercase; letter-spacing: 0.06em;
   }
   .offer-card p { font-size: 14px; color: var(--text-muted); line-height: 1.65; margin-top: 6px; }
@@ -239,7 +197,7 @@
     text-align: right;
   }
   .flow-step .tag {
-    font-family: var(--font-mono); font-size: 11px; color: var(--accent);
+    font-family: var(--font-label); font-size: 11px; color: var(--accent);
     text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; display: block;
   }
   .flow-step h3 { font-size: 19px; margin-bottom: 8px; }
@@ -291,7 +249,7 @@
   </ol>
 </nav>
 
-<header class="hero svc-hero" id="home" tabindex="-1">
+<header class="hero hero--photo svc-hero" id="home" tabindex="-1" style="--hero-photo:url('./images/compare/compare-photo.jpg?v=2');">
   <div class="container">
     <span class="eyebrow">LUMA Frame — Service 02</span>
     <h1 class="hero-title" style="margin-top:18px;">
@@ -299,10 +257,10 @@
       <span class="accent">美しく</span>残す。
     </h1>
     <p class="sub">
-      Nikon Z6IIIで自然光撮影。記念撮影(前撮り・お宮参り・お食い初め・家族・カップル)、友人・単独ポートレート、空港・飛行機・風景写真まで幅広く対応。<strong style="color:var(--text);">横浜・東京</strong>を中心に、当日データ納品も可能です。
+      自然光で、つくり笑顔ではない一枚を。前撮り・お宮参り・お食い初めなどの記念撮影から、友人・単独ポートレート、航空機・風景まで。<strong style="color:var(--text);">横浜・東京</strong>を中心に出張、データは当日〜翌日にお渡しします。
     </p>
     <div class="hero-cta-row">
-      <a href="./contact.html" class="btn btn-primary">無料相談 →</a>
+      <a href="./contact.html" class="btn btn-primary">無料でお見積もりを依頼する →</a>
       <a href="./photography.html" class="btn btn-secondary">作品ポートフォリオを見る</a>
     </div>
   </div>
@@ -319,14 +277,14 @@
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Overview</span>
-      <h2 id="overview-heading">写真に残る、あなたの物語。</h2>
+      <h2 id="overview-heading">あとで見返したときに、いい顔をしていること。</h2>
     </div>
 
     <div class="svc-overview-grid reveal">
       <div>
-        <p class="svc-overview-lead">自然光を活かした、<em>やわらかい</em>一枚。</p>
+        <p class="svc-overview-lead">自然光を活かした、<em>気負わない</em>一枚。</p>
         <p class="svc-overview-body">
-          Nikon Z6IIIを使用し、自然光を活かしたやわらかく印象的な写真を撮影します。前撮り・お宮参り・お食い初め・家族撮影などの記念撮影から、友人との写真・単独ポートレート・プロフィール写真、さらには空港・飛行機・風景の撮影代行まで幅広く対応。撮影したデータはその場でご確認いただき、<strong style="color:var(--text);">当日〜翌日のスピード納品</strong>も可能です。Instagram <a href="https://www.instagram.com/luma_frame.jp" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">@luma_frame.jp</a> も合わせてご覧ください。
+          Nikon Z6IIIと自然光で、やわらかく、作り込みすぎない一枚を残します。撮影したデータはその場でご確認いただけます。<strong style="color:var(--text);">データは当日〜翌日にお渡し</strong>するので、SNSや年賀状の準備にもすぐ使えます。Instagram <a href="https://www.instagram.com/luma_frame.jp" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">@luma_frame.jp</a> も合わせてご覧ください。
         </p>
       </div>
       <aside class="svc-overview-aside">
@@ -394,7 +352,7 @@
     <div class="section-head reveal" style="margin: 0 auto 48px; text-align:center;">
       <span class="eyebrow">Pricing</span>
       <h2 id="pricing-heading">料金案内</h2>
-      <p style="margin: 0 auto;">撮影内容・場所・時間・枚数によって異なります。まずは無料相談から。</p>
+      <p style="margin: 0 auto;">撮影内容・場所・時間・枚数で変わるため、すべて無料でお見積もりします。</p>
     </div>
 
     <div class="price-box reveal">
@@ -415,13 +373,13 @@
         <span class="price-value">当日〜翌日</span>
       </div>
       <p class="price-note">
-        料金は撮影内容・場所・時間・枚数によって異なります。まず無料相談でご要望をお聞かせください。交通費は実費を別途いただく場合があります。
+        ご希望をうかがってから、金額を明記したお見積もりをお送りします。見積もりの段階では費用は一切かかりません。横浜・東京以外へ伺う場合のみ、交通費を実費でいただきます。
       </p>
     </div>
   </div>
 </section>
 
-<section id="flow" aria-labelledby="flow-heading">
+<section id="flow" aria-labelledby="flow-heading" class="section-invert">
   <div class="container">
     <div class="section-head reveal" style="margin: 0 auto 56px; text-align:center;">
       <span class="eyebrow">How it works</span>
@@ -470,9 +428,9 @@
   <div class="container">
     <div class="cta-big reveal">
       <span class="eyebrow" style="color: color-mix(in srgb, var(--bg) 70%, transparent);">無料相談</span>
-      <h2 style="margin-top:16px;">大切な瞬間を、一緒に残しましょう。</h2>
+      <h2 style="margin-top:16px;">日程だけ決まっていれば、あとは相談しながらで大丈夫です。</h2>
       <p style="font-size:17px;max-width:560px;margin:12px auto 28px;">
-        どんな写真を撮りたいか、まずは気軽にご相談ください。ポートフォリオもあわせてご覧いただけます。
+        撮りたいイメージが固まっていなくても構いません。ご希望をうかがって、無料でお見積もりをお出しします。
       </p>
       <a href="./contact.html" class="btn btn-primary">お問い合わせフォームへ →</a>
     </div>

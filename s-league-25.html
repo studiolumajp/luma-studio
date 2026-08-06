@@ -32,7 +32,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
 
 <script type="application/ld+json">
 {
@@ -101,7 +101,7 @@
   gtag('config', 'G-62F20N179N');
 </script>
 
-<link rel="stylesheet" href="./shared.css?v=aqua4" />
+<link rel="stylesheet" href="./shared.css?v=aqua8" />
 <style id="page-overrides">
   /* ── HERO: 背景写真 + ダークオーバーレイ + 白文字 ── */
   .sl-hero {
@@ -135,25 +135,23 @@
     font-size: clamp(44px, 6.4vw, 72px);
     line-height: 1.14; letter-spacing: -0.01em; font-weight: 800;
     padding-bottom: 0.12em; color: #fff;
-    text-shadow: 0 3px 14px rgba(0, 0, 0, 0.55), 0 1px 3px rgba(0, 0, 0, 0.45);
+    text-shadow: 0 3px 14px rgba(10, 42, 62, 0.55), 0 1px 3px rgba(10, 42, 62, 0.45);
   }
   .sl-hero h1 .accent {
     color: var(--accent-2);
-    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 16px rgba(10, 42, 62, 0.6), 0 1px 3px rgba(10, 42, 62, 0.5);
   }
   .sl-hero .eyebrow { color: #fff; }
   .sl-hero .eyebrow::before { background: #fff; }
   .sl-hero .date {
     font-size: clamp(18px, 1.6vw, 22px); color: #fff; font-weight: 700;
     margin-top: 12px;
-    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.65), 0 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 1px 12px rgba(10, 42, 62, 0.65), 0 1px 2px rgba(10, 42, 62, 0.5);
   }
   .sl-hero .hero-lead {
     color: rgba(255, 255, 255, 0.92) !important;
-    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.6);
+    text-shadow: 0 1px 12px rgba(10, 42, 62, 0.6);
   }
-  .sl-hero .btn-primary { background: #fff; color: #0A0A0A; border-color: #fff; }
-  .sl-hero .btn-primary:hover { background: rgba(255, 255, 255, 0.88); color: #0A0A0A; }
   /* 副導線も塗りつぶしボタン (Sho指示 2026-08-03: 透明地は背景動画と被ると読みにくい)。
      白文字 on #134E6F はコントラスト比 約8.9:1 (WCAG AA/AAA 適合)。 */
   .sl-hero .btn-secondary {
@@ -307,7 +305,7 @@
       <li><a href="./index.html">LUMA トップ</a></li>
     </ul>
     <div style="display:flex;gap:10px;align-items:center;">
-      <a href="#apply" class="nav-cta">登録は8/10から →</a>
+      <a href="#apply" class="nav-cta">登録開始 8/10(月) →</a>
     </div>
     <button class="nav-toggle" type="button" aria-label="メニューを開閉" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -336,14 +334,14 @@
     </h1>
     <p class="date">2026年9月12日 (土) 12:00〜18:00 · ベルバードgrow店 (新橋)</p>
     <p class="hero-lead" style="font-size:16px;line-height:1.85;margin-top:16px;max-width:600px;">
-      S.League 25 は、2026年3月のS.League 22以来2回目となる団体戦(2人1組)。全6回戦を戦う半日大会です。お申込みは個人単位で行っていただき、チームを希望する方はお申込みフォームでチームメイトのお名前をご指定いただけます。
+      2人1組で挑む、6時間・全6回戦の団体戦。2026年3月の S.League 22 以来、2回目の開催です。お申込みは個人単位。相方が決まっていなくても参加でき、チームを組みたい方はフォームでお名前をご指定いただけます。
     </p>
     <div class="hero-meta-row">
       <span class="status-badge">🔔 Coming Soon</span>
-      <span class="status-badge">登録受付は 2026年8月10日 (月) から</span>
+      <span class="status-badge">登録受付 2026年8月10日(月)スタート · 定員24名</span>
     </div>
     <div class="hero-cta-row" style="margin-top: 24px;">
-      <a href="#apply" class="btn btn-primary">登録開始のお知らせを見る →</a>
+      <a href="#apply" class="btn btn-primary">8月10日(月)の登録開始を待つ →</a>
       <a href="#rules" class="btn btn-secondary">大会ルールを見る</a>
     </div>
   </div>
@@ -455,7 +453,7 @@
 </section>
 
 <!-- ── フォトギャラリー: 前回大会 SL24 の様子 ── -->
-<section id="gallery" aria-labelledby="gallery-heading">
+<section id="gallery" aria-labelledby="gallery-heading" class="section-invert">
   <div class="container">
     <div class="section-head reveal" style="margin: 0 auto 48px; text-align:center;">
       <span class="eyebrow">Gallery</span>

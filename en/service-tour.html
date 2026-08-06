@@ -30,7 +30,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
 
 <script type="application/ld+json">
 {
@@ -48,69 +48,28 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
 <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-62F20N179N');</script>
 
-<link rel="stylesheet" href="../shared.css?v=aqua4" />
+<link rel="stylesheet" href="../shared.css?v=aqua8" />
 <style id="page-overrides">
-  /* ── Service hero (LUMA Path): full-bleed background photo + left dark overlay (matches JP) ── */
+  /* ── HERO: 暗幕・文字色・ボタンは shared.css の .hero--photo で共通化。
+     ここではサイズと固有レイアウトのみ指定する (2026-08-06) ── */
   .svc-hero {
     position: relative;
     padding: 112px 0 128px;
     min-height: 520px;
-    color: #fff;
-    background:
-      linear-gradient(90deg,
-        rgba(0, 0, 0, 0.82) 0%,
-        rgba(0, 0, 0, 0.72) 25%,
-        rgba(0, 0, 0, 0.35) 45%,
-        rgba(0, 0, 0, 0.00) 58%
-      ),
-      url('../images/compare/compare-tour.jpg?v=2') center/cover no-repeat;
   }
   .svc-hero h1 {
-    margin-bottom: 16px; color: #fff; max-width: 460px;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.55), 0 1px 3px rgba(0, 0, 0, 0.45);
-  }
-  .svc-hero h1 .accent {
-    background: none;
-    -webkit-background-clip: initial; background-clip: initial;
-    color: #fbbf24;
+    margin-bottom: 16px; max-width: 460px;
   }
   .svc-hero .sub {
-    font-size: clamp(16px, 1.4vw, 18px); color: #fff;
+    font-size: clamp(16px, 1.4vw, 18px);
     max-width: 460px; margin-bottom: 28px; font-weight: 500;
-    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.65), 0 1px 2px rgba(0, 0, 0, 0.5);
   }
-  .svc-hero .sub strong {
-    color: #fbbf24 !important;
-    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.65), 0 1px 2px rgba(0, 0, 0, 0.5);
-  }
-  .svc-hero .eyebrow { color: #fff; }
-  .svc-hero .eyebrow::before { background: #fff; }
   .svc-hero .hero-cta-row { max-width: 460px; }
-  .svc-hero .btn-primary {
-    background: #fff; color: #0A0A0A; border-color: #fff;
-  }
-  .svc-hero .btn-primary:hover {
-    background: rgba(255, 255, 255, 0.88); color: #0A0A0A;
-  }
-  .svc-hero .btn-secondary {
-    background: transparent; color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.45);
-  }
-  .svc-hero .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.7);
-  }
   @media (max-width: 640px) {
     .svc-hero {
       padding: 80px 0 96px; min-height: 440px;
       /* On mobile the text spans full width, so the left-only horizontal
          overlay leaves white text unreadable. Use a uniform vertical gradient. */
-      background:
-        linear-gradient(180deg,
-          rgba(0, 0, 0, 0.62) 0%,
-          rgba(0, 0, 0, 0.50) 50%,
-          rgba(0, 0, 0, 0.64) 100%
-        ),
-        url('../images/compare/compare-tour.jpg?v=2') center/cover no-repeat;
     }
   }
   .svc-overview-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: start; }
@@ -122,9 +81,9 @@
   .offer-card { background: var(--surface); padding: 28px; display: flex; flex-direction: column; gap: 8px; transition: background .25s; }
   .offer-card:hover { background: color-mix(in srgb, var(--surface) 92%, var(--accent) 4%); }
   .offer-card.feature { background: color-mix(in srgb, var(--surface) 88%, var(--accent) 6%); border-left: 3px solid var(--accent); }
-  .offer-card-num { font-family: var(--font-mono); font-size: 12px; color: var(--text-soft); letter-spacing: 0.08em; margin-bottom: 4px; }
+  .offer-card-num { font-family: var(--font-label); font-size: 12px; color: var(--text-soft); letter-spacing: 0.08em; margin-bottom: 4px; }
   .offer-card h3 { font-size: 17px; line-height: 1.35; }
-  .offer-card .ja { font-family: var(--font-mono); font-size: 12px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; }
+  .offer-card .ja { font-family: var(--font-label); font-size: 12px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; }
   .offer-card p { font-size: 14px; color: var(--text-muted); line-height: 1.65; margin-top: 6px; }
   @media (max-width: 980px) { .offers-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 640px) { .offers-grid { grid-template-columns: 1fr; } }
@@ -141,7 +100,7 @@
   .flow-step { display: grid; grid-template-columns: 88px 1fr; gap: 32px; padding: 28px 0; border-bottom: 1px solid var(--border); }
   .flow-step:last-child { border-bottom: none; }
   .flow-num { font-size: 56px; font-weight: 800; line-height: 1; background: linear-gradient(120deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; text-align: right; }
-  .flow-step .tag { font-family: var(--font-mono); font-size: 11px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; display: block; }
+  .flow-step .tag { font-family: var(--font-label); font-size: 11px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; display: block; }
   .flow-step h3 { font-size: 19px; margin-bottom: 8px; }
   .flow-step p { font-size: 15px; color: var(--text-muted); line-height: 1.7; }
   @media (max-width: 640px) { .flow-step { grid-template-columns: 56px 1fr; gap: 20px; } .flow-num { font-size: 38px; } }
@@ -181,12 +140,12 @@
   <ol><li><a href="./index.html">Home</a></li><li><a href="./services.html">Services</a></li><li aria-current="page">Tokyo Tours (LUMA Path)</li></ol>
 </nav>
 
-<header class="hero svc-hero" id="home" tabindex="-1">
+<header class="hero hero--photo svc-hero" id="home" tabindex="-1" style="--hero-photo:url('../images/compare/compare-tour.jpg?v=2');">
   <div class="container">
     <span class="eyebrow">LUMA Path — Service 03</span>
     <h1 class="hero-title" style="margin-top:18px;">Walking through the <span class="accent">real</span> Japan.</h1>
-    <p class="sub">Bilingual private tours from Tokyo to Kansai, Hokkaido, and Fukuoka. <strong style="color:var(--text);">Gluten-free and allergy-aware dining</strong> are personal priorities — not afterthoughts.</p>
-    <div class="hero-cta-row"><a href="./contact.html" class="btn btn-primary">Get a quote →</a></div>
+    <p class="sub">Bilingual private tours anywhere in Japan — Tokyo, Kansai, Hokkaido, Fukuoka. <strong style="color:var(--text);">Gluten-free and allergy-aware dining</strong> are built in, because I live with food allergies myself.</p>
+    <div class="hero-cta-row"><a href="./contact.html" class="btn btn-primary">Get a quote →</a><a href="#offers" class="btn btn-secondary">See sample routes</a></div>
   </div>
 </header>
 
@@ -196,7 +155,7 @@
       <span class="label">Limited Availability</span>
       <h2>Openings: Sun Aug 9 – Wed Aug 12</h2>
       <p>
-        During this window only, I can travel anywhere in Japan to match your plans — day trips or multi-day itineraries (transportation costs discussed separately). If you're free over Obon, let's talk about where you'd like to go.
+        During this window only, I can travel anywhere in Japan — day trips or multi-day itineraries (transport costs discussed separately). Tours can run entirely in English, so it doubles as speaking practice if you want it to. Nothing needs to be planned yet; just tell me roughly where you'd like to go.
       </p>
       <a href="./contact.html" class="btn btn-primary">Check availability for these dates →</a>
     </div>
@@ -209,10 +168,10 @@
     <div class="svc-overview-grid reveal">
       <div>
         <p class="svc-overview-lead">Local air, local food, <em>local people</em>.</p>
-        <p class="svc-overview-body">I'm based in Tokyo, but through aviation photography and consulting work I've travelled widely across Japan — from Hokkaido to Fukuoka. That means I know where to find the real character of a place, not just the postcard version. <strong style="color:var(--text);">Tours are available nationwide</strong>, not just Tokyo and the Kanto region.<br><br>Routes are designed for atmosphere, food, and people, not just for ticking off sights. Fully bilingual EN/JA, suitable for inbound travellers and Japanese learners alike.<br><br>Because I personally live with food allergies (with anaphylaxis history), <strong style="color:var(--text);">gluten-free and allergy-aware dining are built into every tour</strong> — not offered as an add-on.</p>
+        <p class="svc-overview-body">I'm based in Tokyo, but aviation photography has taken me across Japan — from Hokkaido to Fukuoka. That means I know where to find the real character of a place, not just the postcard version. <strong style="color:var(--text);">Tours are available nationwide</strong>, not just Tokyo and the Kanto region.<br><br>Routes are designed for atmosphere, food, and people, not just for ticking off sights. Fully bilingual EN/JA, suitable for inbound travellers and Japanese learners alike.<br><br>Because I personally live with food allergies (with anaphylaxis history), <strong style="color:var(--text);">gluten-free and allergy-aware dining are built into every tour</strong> — not offered as an add-on.</p>
       </div>
       <div>
-        <p style="font-family:var(--font-mono);font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px;border-left:2px solid var(--border-strong);padding-left:24px;">What sets this apart</p>
+        <p style="font-family:var(--font-label);font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px;border-left:2px solid var(--border-strong);padding-left:24px;">What sets this apart</p>
         <ul style="border-left:2px solid var(--border-strong);padding-left:24px;list-style:none;display:flex;flex-direction:column;gap:14px;color:var(--text-muted);font-size:15px;line-height:1.7;">
           <li>🌐 Fully bilingual EN/JA</li>
           <li>🇯🇵 Local-first routes — atmosphere over checklists</li>
@@ -252,7 +211,7 @@
   </div>
 </section>
 
-<section id="flow" aria-labelledby="flow-heading">
+<section id="flow" aria-labelledby="flow-heading" class="section-invert">
   <div class="container">
     <div class="section-head reveal" style="margin: 0 auto 56px; text-align:center;"><span class="eyebrow">How it works</span><h2 id="flow-heading">From request to tour day</h2><p style="margin: 0 auto;">Four steps from initial brief to meeting up.</p></div>
     <div class="flow-steps reveal">

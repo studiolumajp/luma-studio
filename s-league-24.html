@@ -32,7 +32,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
 
 <script type="application/ld+json">
 {
@@ -103,7 +103,7 @@
   gtag('config', 'G-62F20N179N');
 </script>
 
-<link rel="stylesheet" href="./shared.css?v=aqua4" />
+<link rel="stylesheet" href="./shared.css?v=aqua8" />
 <style id="page-overrides">
   /* ── 4周年記念のゴールドアクセント (このページ限定の特別装飾) ── */
   :root {
@@ -147,7 +147,7 @@
     background: linear-gradient(135deg, #FFF1C2 0%, #FCD34D 45%, #E6A817 100%);
     -webkit-background-clip: text; background-clip: text; color: transparent;
     /* グラデ文字は text-shadow が乗らないため drop-shadow で浮きと立体感を表現 */
-    filter: drop-shadow(0 3px 12px rgba(0, 0, 0, 0.5)) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(0 3px 12px rgba(10, 42, 62, 0.5)) drop-shadow(0 1px 2px rgba(10, 42, 62, 0.4));
   }
   /* 「24」を shared.css のオレンジから「S.League」側のゴールドへ統一して上書き */
   .sl-hero h1 .accent {
@@ -160,15 +160,13 @@
   .sl-hero .date {
     font-size: clamp(20px, 1.8vw, 24px); color: #fff; font-weight: 700;
     margin-top: 14px;
-    text-shadow: 0 1px 14px rgba(0, 0, 0, 0.7), 0 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 1px 14px rgba(10, 42, 62, 0.7), 0 1px 2px rgba(10, 42, 62, 0.5);
   }
   .sl-hero .hero-lead {
     color: rgba(255, 255, 255, 0.92) !important;
-    text-shadow: 0 1px 14px rgba(0, 0, 0, 0.7);
+    text-shadow: 0 1px 14px rgba(10, 42, 62, 0.7);
   }
   /* ヒーロー内ボタン: 白背景プライマリ + 半透明セカンダリ */
-  .sl-hero .btn-primary { background: #fff; color: #0A0A0A; border-color: #fff; }
-  .sl-hero .btn-primary:hover { background: rgba(255, 255, 255, 0.88); color: #0A0A0A; }
   .sl-hero .btn-secondary {
     background: transparent; color: #fff; border: 1px solid rgba(255, 255, 255, 0.5);
   }
@@ -200,7 +198,7 @@
     padding: 9px 20px 10px; border-radius: 8px; margin-bottom: 4px;
     background: #0A0D10;
     border: 1px solid rgba(245, 158, 11, 0.3);
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04), 0 4px 18px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04), 0 4px 18px rgba(10, 42, 62, 0.4);
     position: relative;
   }
   .lastcall-a::before, .lastcall-a::after {
@@ -283,7 +281,7 @@
     max-width: 580px;
     background: rgba(28, 22, 8, 0.56);
     border: 1px solid rgba(232, 199, 102, 0.6);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.34);
+    box-shadow: 0 8px 32px rgba(10, 42, 62, 0.34);
     backdrop-filter: blur(5px);
   }
   .table-guarantee .tg-eyebrow {
@@ -298,12 +296,12 @@
   }
   .table-guarantee .tg-title {
     font-size: clamp(20px, 3.6vw, 26px); font-weight: 800; line-height: 1.35;
-    color: #fff; text-shadow: 0 1px 12px rgba(0, 0, 0, 0.6);
+    color: #fff; text-shadow: 0 1px 12px rgba(10, 42, 62, 0.6);
   }
   .table-guarantee .tg-title .hl { color: var(--gold-2); }
   .table-guarantee .tg-sub {
     margin-top: 10px; font-size: 13.5px; line-height: 1.75;
-    color: rgba(255, 255, 255, 0.9); text-shadow: 0 1px 10px rgba(0, 0, 0, 0.6);
+    color: rgba(255, 255, 255, 0.9); text-shadow: 0 1px 10px rgba(10, 42, 62, 0.6);
   }
   /* 締切・割引を1つの横並びラインに集約し、保証ボックスとの間に余白をつくる (提案 X2) */
   .hero-meta-row {
@@ -660,7 +658,7 @@
       </p>
       <div class="anniv-stats">
         <div><span class="anniv-stat-num">4<span style="font-size:0.6em;">周年</span></span><span class="anniv-stat-label">2022 → 2026</span></div>
-        <div><span class="anniv-stat-num">367<span style="font-size:0.6em;">+</span></span><span class="anniv-stat-label">累計参加者</span></div>
+        <div><span class="anniv-stat-num">367</span><span class="anniv-stat-label">累計参加者</span></div>
         <div><span class="anniv-stat-num">24</span><span class="anniv-stat-label">開催回数</span></div>
       </div>
       <p style="position:relative;z-index:1;font-size:13px;color:color-mix(in srgb, var(--bg) 60%, transparent);margin-top:28px;">
@@ -752,7 +750,7 @@
   </div>
 </section>
 
-<section id="schedule" aria-labelledby="schedule-heading" style="background:var(--bg-soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+<section id="schedule" aria-labelledby="schedule-heading" class="section-invert">
   <div class="container">
     <div class="section-head reveal" style="margin: 0 auto 48px; text-align:center;">
       <span class="eyebrow">当日のスケジュール</span>

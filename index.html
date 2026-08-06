@@ -12,7 +12,7 @@
      「記念撮影 横浜」「健康麻雀 大会」「東京 英語ツアー」
      ════════════════════════════════════════════════ -->
 <title>LUMA | 東京・横浜の英語レッスン / 写真撮影 / 麻雀大会 / 英語ツアー</title>
-<meta name="description" content="LUMA(ルーマ)は東京・横浜で活動するパーソナルブランド。オーストラリア9年の英語講師による英会話レッスン、Nikon Z6IIIの記念撮影・ポートレート、健康麻雀コミュニティS.League、東京の英語ツアーを提供。日英バイリンガル対応・無料相談受付中。" />
+<meta name="description" content="東京・横浜のパーソナルブランド LUMA。オーストラリア9年のバイリンガル講師による英会話、Nikon Z6IIIの記念撮影、健康麻雀 S.League、英語で巡る東京ツアー。30分の無料相談から。" />
 <meta name="keywords" content="英語レッスン 横浜,英会話 横浜,記念撮影 横浜,ポートレート 横浜,前撮り 東京,お食い初め 撮影,健康麻雀 大会,S.League,東京 英語ツアー,LUMA" />
 <meta name="author" content="LUMA" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -40,7 +40,7 @@
 <!-- ── Twitter Card ── -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="LUMA | 東京・横浜の英語/写真/麻雀/英語ツアー" />
-<meta name="twitter:description" content="オーストラリア9年の英語講師・Nikon Z6IIIフォトグラファー・S.League主宰。日英バイリンガル対応の個人スタジオ。" />
+<meta name="twitter:description" content="オーストラリア9年の英語講師・Nikon Z6IIIフォトグラファー・S.League主宰。東京・横浜の日英バイリンガル パーソナルブランド。" />
 <meta name="twitter:image" content="https://studio-lumadesign.com/og-image.jpg" />
 
 <!-- ── Performance ── -->
@@ -48,7 +48,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="preconnect" href="https://formspree.io" />
 <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
 <link rel="preload" as="image" href="./images/DSC_0101.jpg?v=1" fetchpriority="high" />
 
 <!-- ════════════════════════════════════════════════
@@ -179,84 +179,23 @@
   gtag('config', 'G-62F20N179N');
 </script>
 
-<link rel="stylesheet" href="./shared.css?v=aqua4" />
+<link rel="stylesheet" href="./shared.css?v=aqua8" />
 <style id="page-overrides">
-  /* ── Home hero: full-bleed background photo + 左側ダークオーバーレイ (他ページと統一) ── */
-  .hero {
-    position: relative;
-    padding: 112px 0 128px;
-    min-height: 580px;
-    color: #fff;
-    background:
-      linear-gradient(90deg,
-        rgba(0, 0, 0, 0.84) 0%,
-        rgba(0, 0, 0, 0.74) 25%,
-        rgba(0, 0, 0, 0.42) 45%,
-        rgba(0, 0, 0, 0.08) 62%
-      ),
-      url('./images/DSC_0101.jpg?v=1') center/cover no-repeat;
+  /* ── HERO: 暗幕・文字色・ボタン・実績数値は shared.css の .hero--photo
+     で全ページ共通化済み。ここでは案4のサイズと単一カラム構成のみ (2026-08-06) ── */
+  .hero { position: relative; padding: 150px 0 130px; }
+  .hero-grid {
+    display: grid;                            /* 2カラム解除 → 単一カラム */
+    grid-template-columns: minmax(0, 620px);
+    gap: 0;
   }
-  .hero::before { display: none; }            /* 既存の淡いラジアルグラデを無効化 */
-  .hero-grid { display: block; }              /* 2カラム解除 → 単一カラム */
   .hero-visual { display: none; }             /* 装飾カード hv-1〜4 を非表示 */
-  .hero-text { max-width: 540px; }            /* テキストを左ゾーンに収める */
-
-  .hero-pill {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.35);
-    color: #fff;
-  }
-  h1.hero-title {
-    color: #fff;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.55), 0 1px 3px rgba(0, 0, 0, 0.45);
-  }
-  h1.hero-title .accent {
-    background: none;
-    -webkit-background-clip: initial; background-clip: initial;
-    color: #F59E0B;
-  }
-  .hero-sub {
-    color: #fff !important; width: auto !important; max-width: 520px;
-    font-weight: 500;
-    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.65), 0 1px 2px rgba(0, 0, 0, 0.5);
-  }
-  .hero-sub strong {
-    color: #F59E0B !important;
-    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.65), 0 1px 2px rgba(0, 0, 0, 0.5);
-  }
-  .hero .btn-primary {
-    background: #fff; color: #0A0A0A; border-color: #fff;
-  }
-  .hero .btn-primary:hover {
-    background: rgba(255, 255, 255, 0.88); color: #0A0A0A;
-  }
-  .hero .btn-secondary {
-    background: transparent; color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.45);
-  }
-  .hero .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.7);
-  }
-  .hero-trust { border-top-color: rgba(255, 255, 255, 0.25); }
-  .trust-item .num {
-    background: none;
-    -webkit-background-clip: initial; background-clip: initial;
-    color: #F59E0B;
-  }
-  .trust-item .label { color: rgba(255, 255, 255, 0.8); }
+  .hero-text { max-width: 620px; }            /* テキストを左ゾーンに収める */
+  .hero .hero-title { font-size: clamp(36px, 5.8vw, 64px); line-height: 1.14; }
+  .hero .hero-sub { font-size: 17px; margin-bottom: 30px; }
+  .hero .hero-trust { margin-top: 38px; padding-top: 26px; gap: 36px; }
   @media (max-width: 640px) {
-    .hero {
-      padding: 80px 0 96px; min-height: 480px;
-      /* モバイルはテキストが全幅に広がるため、横グラデ(左のみ暗い)では
-         右側・明るい空の上の白文字が読めない。全体を均一に暗くする縦グラデに差し替え。 */
-      background:
-        linear-gradient(180deg,
-          rgba(0, 0, 0, 0.62) 0%,
-          rgba(0, 0, 0, 0.50) 50%,
-          rgba(0, 0, 0, 0.64) 100%
-        ),
-        url('./images/DSC_0101.jpg?v=1') center/cover no-repeat;
-    }
+    .hero { padding: 88px 0 80px; }
     /* nowrap を解除して画面内に折り返す（はみ出し=横揺れ防止） */
     #compare-heading { white-space: normal; font-size: clamp(24px, 6.8vw, 34px); }
   }
@@ -305,33 +244,33 @@
 </nav>
 
 <div class="promo-bar">
-  📅 8月9日〜12日、ツアーに空きあり(全国対応可)<a href="./service-tour.html#obon-availability">詳しく見る</a>
+  📅 8月9日(日)〜12日(水)、ツアーに空きあり — 全国どこへでも<a href="./service-tour.html#obon-availability">詳しく見る</a>
 </div>
 
 <!-- ════ BREADCRUMB ════ -->
 <nav class="breadcrumb" aria-label="パンくずリスト">
   <ol>
     <li><a href="/">ホーム</a></li>
-    <li aria-current="page" style="font-family: Poppins">LUMA — 東京・横浜の英語/写真/麻雀/英語ツアー</li>
+    <li aria-current="page" style="font-family: Poppins">LUMA ホーム</li>
   </ol>
 </nav>
 
 <!-- ════ HERO ════ -->
-<header class="hero" id="home" tabindex="-1">
+<header class="hero hero--photo" id="home" tabindex="-1" style="--hero-photo:url('./images/DSC_0101.jpg?v=1');">
   <div class="container hero-grid">
     <div class="hero-text">
-      <span class="hero-pill"><span class="dot"></span>2026年・新規予約受付中 — 無料相談あり</span>
+      <span class="hero-pill"><span class="dot"></span>2026年の新規受付中 — 初回30分は無料相談</span>
       <h1 class="hero-title">
-        東京・横浜で、<br />
-        <span class="accent">あなたの自信を</span><br />
-        デザインする。
+        英語も、写真も、<br />
+        <span class="accent">自信から変わる。</span><br />
+        東京・横浜から。
       </h1>
       <p class="hero-sub" style="max-width: 550px">
-        LUMA(ルーマ)は、オーストラリアで9年を過ごした経験を持ち、文化や言葉の違いを理解する代表が運営する、東京・横浜を拠点に活動するパーソナルブランド。<strong style="color:var(--text);">英語レッスン・記念撮影・健康麻雀大会・東京英語ツアー</strong>を、日英バイリンガルでお届けします。
+        オーストラリアで9年。言葉と文化の壁を越えてきた日英バイリンガルが、<strong style="color:var(--text);">英語レッスン・記念撮影・健康麻雀大会・英語で巡る東京ツアー</strong>を、東京・横浜からお届けします。
       </p>
       <div class="hero-cta-row">
-        <a href="#services" class="btn btn-primary">サービスを見る →</a>
-        <a href="./contact.html" class="btn btn-secondary">無料相談する</a>
+        <a href="./contact.html" class="btn btn-primary">30分の無料相談を予約する →</a>
+        <a href="#services" class="btn btn-secondary">サービスを見る</a>
       </div>
       <div class="hero-trust">
         <div class="trust-item"><div class="num">9年</div><div class="label">オーストラリア在住</div></div>
@@ -367,7 +306,7 @@
 <!-- ════ LOGO STRIP / TRUST ════ -->
 <div class="logo-strip" aria-label="信頼の指標">
   <div class="logo-strip-inner">
-    <span class="logo-strip-label" style="font-size: 16px">特色</span>
+    <span class="logo-strip-label" style="font-size: 16px">LUMA の特徴</span>
     <div class="logo-strip-items">
       <span>📍 東京・横浜</span>
       <span>🌐 日英バイリンガル</span>
@@ -393,7 +332,7 @@
         <div class="svc-icon" aria-hidden="true">📖</div>
         <h3>英会話レッスン</h3>
         <span class="svc-en" style="font-family: Poppins">LUMA Voice</span>
-        <p>オーストラリア・ブリスベン9年の実体験を土台に、生きた英語表現を伝えます。日常会話・ビジネス英語・IELTS/TOEIC対策まで、レベルと目的に合わせてカリキュラムをカスタマイズ。相手に伝わる「話し方」と「文化の違い」もお伝えします。オンライン/対面どちらも可。</p>
+        <p>「話せない」を「伝わる」に変えるレッスン。オーストラリア・ブリスベン9年の実体験をもとに、日常会話・ビジネス英語・IELTS/TOEIC対策まで、目的とレベルに合わせて設計します。オンライン/対面どちらも対応。</p>
         <div class="svc-meta">
           <span class="svc-price">無料相談 30分</span>
           <a class="svc-link" href="./service-english.html">詳細 →</a>
@@ -405,7 +344,7 @@
         <div class="svc-icon" aria-hidden="true">📸</div>
         <h3>記念撮影・ポートレート・風景</h3>
         <span class="svc-en" style="font-family: Poppins">LUMA Frame</span>
-        <p>Nikon Z6IIIで、自然な表情を切り取ります。<strong>記念撮影</strong>(前撮り・お宮参り・お食い初め・七五三・家族・カップル)、<strong>ポートレート</strong>(友人・単独・プロフィール)、<strong>風景・航空機撮影</strong>まで幅広く対応。東京・横浜中心。作例は<a href="https://www.instagram.com/luma_frame.jp" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">@luma_frame.jp</a>でご覧いただけます。</p>
+        <p>気取らない自然な表情を、Nikon Z6IIIで。前撮り・お宮参り・お食い初め・七五三などの<strong>記念撮影</strong>、友人・単独・プロフィールの<strong>ポートレート</strong>、<strong>風景・航空機撮影</strong>まで。東京・横浜中心、作例は<a href="https://www.instagram.com/luma_frame.jp" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">@luma_frame.jp</a>へ。</p>
         <div class="svc-meta">
           <span class="svc-price">要相談・無料見積</span>
           <a class="svc-link" href="./service-photo.html">詳細 →</a>
@@ -417,7 +356,7 @@
         <div class="svc-icon" aria-hidden="true">🀄</div>
         <h3>S.League 健康麻雀</h3>
         <span class="svc-en" style="font-family: Poppins">S.League</span>
-        <p>2022年から運営する健康麻雀コミュニティ。24回開催・延べ367名が参加した大会で、お酒・タバコ・賭け事なしの健全な空間で麻雀を楽しめます。プロ雀士から初心者まで歓迎、初参加には進行サポートも実施。開催は半日〜終日(約6〜10時間)、参加費は開催回により異なり、参加賞+入賞景品もあり。</p>
+        <p>お酒・タバコ・賭け事なしの健康麻雀コミュニティ。2022年の発足から24回開催・延べ367名が参加しました。プロ雀士から初心者まで歓迎、初参加の方には進行サポートがつきます。開催は半日〜終日(約6〜10時間)、全員に参加賞+入賞景品あり。</p>
         <div class="svc-meta">
           <span class="svc-price">参加費 ¥6,200〜¥12,000</span>
           <a class="svc-link" href="./s-league.html">詳細 →</a>
@@ -470,7 +409,7 @@
       </div>
 
       <div class="cmp-card theme-photo has-photo reveal" style="--cmp-bg: url('./images/compare/compare-photo.jpg?v=2') center / cover no-repeat;">
-        <a class="cmp-cardlink" href="./service-photo.html" aria-label="家族・カップル写真の詳細">家族・カップル写真の詳細</a>
+        <a class="cmp-cardlink" href="./service-photo.html" aria-label="記念撮影・ポートレートの詳細">記念撮影・ポートレートの詳細</a>
         <div class="cmp-visual">
           <span class="cmp-emoji">📸</span>
           <span class="cmp-tag">Photography</span>
@@ -531,7 +470,7 @@
 </section>
 
 <!-- ════ ABOUT / WHO ════ -->
-<section id="about" aria-labelledby="about-heading">
+<section id="about" aria-labelledby="about-heading" class="section-invert">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">About — 代表紹介</span>
@@ -719,18 +658,14 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // Apply persisted tweaks BEFORE Tweaks panel mounts (avoids flash)
+  // セクションの表示切替 (2026-08-06: data-tone / data-density は
+  // 旧ダークトーン廃止に伴い削除。配色は shared.css の Soft Aqua 固定)
   (function() {
     const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-      "tone": "light",
-      "heroStyle": "split",
-      "density": "comfortable",
       "showLogoStrip": true,
       "showCompare": true,
       "showBlog": true
     }/*EDITMODE-END*/;
-    document.documentElement.setAttribute('data-tone', TWEAK_DEFAULTS.tone);
-    document.documentElement.setAttribute('data-density', TWEAK_DEFAULTS.density);
     if (!TWEAK_DEFAULTS.showLogoStrip) document.querySelector('.logo-strip')?.style.setProperty('display','none');
     if (!TWEAK_DEFAULTS.showCompare) document.getElementById('compare')?.style.setProperty('display','none');
     if (!TWEAK_DEFAULTS.showBlog) document.getElementById('blog')?.style.setProperty('display','none');

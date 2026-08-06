@@ -8,7 +8,7 @@
 
 <!-- ── PRIMARY SEO META ── -->
 <title>LUMA | English Lessons / Family Photography / Mahjong / Tours in Tokyo & Yokohama</title>
-<meta name="description" content="LUMA is a personal brand based in Tokyo and Yokohama. English lessons by a 9-year Australia-trained bilingual teacher, Nikon Z6III family photography, S.League mahjong community, English-guided Tokyo tours. Free consultation available." />
+<meta name="description" content="Bilingual English lessons, natural-light portraits, English-guided Tokyo tours and a health-mahjong community — from a Tokyo &amp; Yokohama personal brand. Free 30-min consult." />
 <meta name="keywords" content="English lessons Tokyo,English tutor Yokohama,family photography Tokyo,Tokyo English tour,private mahjong tournament,LUMA" />
 <meta name="author" content="LUMA" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -25,7 +25,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://studio-lumadesign.com/en/" />
 <meta property="og:title" content="LUMA | English Lessons / Photography / Mahjong / Tours in Tokyo" />
-<meta property="og:description" content="English lessons, Nikon Z6III family photography, S.League mahjong community, Tokyo English tours. Bilingual EN/JA service." />
+<meta property="og:description" content="Bilingual English lessons, natural-light portraits, English-guided Tokyo tours and the S.League health-mahjong community. Free 30-min consult." />
 <meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -36,14 +36,14 @@
 <!-- ── Twitter Card ── -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="LUMA | English / Photography / Mahjong / Tours — Tokyo & Yokohama" />
-<meta name="twitter:description" content="A bilingual personal brand based in Tokyo and Yokohama. 9 years in Australia. Nikon Z6III. Founder of S.League." />
+<meta name="twitter:description" content="A bilingual personal brand based in Tokyo and Yokohama. Nine years in Australia. Nikon Z6III. Founder of the S.League health-mahjong community." />
 <meta name="twitter:image" content="https://studio-lumadesign.com/og-image.jpg" />
 
 <!-- ── Performance ── -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="preconnect" href="https://formspree.io" />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
 <link rel="preload" as="image" href="../images/DSC_0101.jpg?v=1" fetchpriority="high" />
 
 <script type="application/ld+json">
@@ -55,7 +55,7 @@
       "@id": "https://studio-lumadesign.com/#business",
       "name": "LUMA",
       "alternateName": ["LUMA Studio", "ルーマ"],
-      "description": "A personal brand based in Tokyo and Yokohama, offering English education, portrait photography, mahjong community, and Tokyo tours.",
+      "description": "A personal brand based in Tokyo and Yokohama, offering English lessons, portrait photography, English-guided Tokyo tours, and a health-mahjong community.",
       "slogan": "Clarity by Design — Illuminate Your Confidence",
       "url": "https://studio-lumadesign.com/",
       "logo": "https://studio-lumadesign.com/logo.png",
@@ -100,83 +100,23 @@
   gtag('config', 'G-62F20N179N');
 </script>
 
-<link rel="stylesheet" href="../shared.css?v=aqua4" />
+<link rel="stylesheet" href="../shared.css?v=aqua8" />
 <style id="page-overrides">
-  /* ── Home hero: full-bleed background photo + left dark overlay (matches JP) ── */
+  /* ── HERO: 暗幕・文字色・ボタンは shared.css の .hero--photo で共通化。
+     ここではサイズと固有レイアウトのみ指定する (2026-08-06) ── */
   .hero {
     position: relative;
-    padding: 112px 0 128px;
-    min-height: 580px;
-    color: #fff;
-    background:
-      linear-gradient(90deg,
-        rgba(0, 0, 0, 0.84) 0%,
-        rgba(0, 0, 0, 0.74) 25%,
-        rgba(0, 0, 0, 0.42) 45%,
-        rgba(0, 0, 0, 0.08) 62%
-      ),
-      url('../images/DSC_0101.jpg?v=1') center/cover no-repeat;
+    padding: 148px 0 132px;
+    min-height: 620px;
   }
-  .hero::before { display: none; }
   .hero-grid { display: block; }
   .hero-visual { display: none; }
-  .hero-text { max-width: 540px; }
-
-  .hero-pill {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.35);
-    color: #fff;
-  }
-  h1.hero-title {
-    color: #fff;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.55), 0 1px 3px rgba(0, 0, 0, 0.45);
-  }
-  h1.hero-title .accent {
-    background: none;
-    -webkit-background-clip: initial; background-clip: initial;
-    color: #F59E0B;
-  }
-  .hero-sub {
-    color: #fff !important; width: auto !important; max-width: 520px;
-    font-weight: 500;
-    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.65), 0 1px 2px rgba(0, 0, 0, 0.5);
-  }
-  .hero-sub strong {
-    color: #F59E0B !important;
-    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.65), 0 1px 2px rgba(0, 0, 0, 0.5);
-  }
-  .hero .btn-primary {
-    background: #fff; color: #0A0A0A; border-color: #fff;
-  }
-  .hero .btn-primary:hover {
-    background: rgba(255, 255, 255, 0.88); color: #0A0A0A;
-  }
-  .hero .btn-secondary {
-    background: transparent; color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.45);
-  }
-  .hero .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.7);
-  }
-  .hero-trust { border-top-color: rgba(255, 255, 255, 0.25); }
-  .trust-item .num {
-    background: none;
-    -webkit-background-clip: initial; background-clip: initial;
-    color: #F59E0B;
-  }
-  .trust-item .label { color: rgba(255, 255, 255, 0.8); }
+  .hero-text { max-width: 620px; }
   @media (max-width: 640px) {
     .hero {
       padding: 80px 0 96px; min-height: 480px;
       /* On mobile the text spans full width, so the left-only horizontal
          overlay leaves white text unreadable. Use a uniform vertical gradient. */
-      background:
-        linear-gradient(180deg,
-          rgba(0, 0, 0, 0.62) 0%,
-          rgba(0, 0, 0, 0.50) 50%,
-          rgba(0, 0, 0, 0.64) 100%
-        ),
-        url('../images/DSC_0101.jpg?v=1') center/cover no-repeat;
     }
   }
 </style>
@@ -223,24 +163,24 @@
   </ol>
 </nav>
 
-<header class="hero" id="home" tabindex="-1">
+<header class="hero hero--photo" id="home" tabindex="-1" style="--hero-photo:url('../images/DSC_0101.jpg?v=1');">
   <div class="container hero-grid">
     <div class="hero-text">
       <span class="hero-pill"><span class="dot"></span>2026 — Now booking · Free consult available</span>
       <h1 class="hero-title">
-        Designing <span class="accent">your confidence</span><br />
-        in Tokyo & Yokohama.
+        English, photos, and <span class="accent">the confidence to use them.</span><br />
+        Tokyo & Yokohama.
       </h1>
       <p class="hero-sub" style="max-width: 550px">
-        LUMA is a personal brand based in Tokyo and Yokohama, led by a bilingual founder who spent 9 years in Australia. I deliver <strong style="color:var(--text);">English lessons, photography & portraits, mahjong tournaments, and English-guided Tokyo tours</strong> — all bilingual EN/JA.
+        Nine years in Australia, now based in Tokyo and Yokohama. I personally run all four services — <strong style="color:var(--text);">English lessons, portraits, mahjong tournaments, and English-guided Tokyo tours</strong> — in English or Japanese, whichever you prefer.
       </p>
       <div class="hero-cta-row">
-        <a href="#services" class="btn btn-primary">Explore services →</a>
-        <a href="./contact.html" class="btn btn-secondary">Get a free consult</a>
+        <a href="./contact.html" class="btn btn-primary">Book a free 30-min consult →</a>
+        <a href="#services" class="btn btn-secondary">Explore services</a>
       </div>
       <div class="hero-trust">
         <div class="trust-item"><div class="num">9 yrs</div><div class="label">In Australia</div></div>
-        <div class="trust-item"><div class="num">367</div><div class="label">S.League guests</div></div>
+        <div class="trust-item"><div class="num">367</div><div class="label">Cumulative S.League players</div></div>
       </div>
     </div>
     <div class="hero-visual" aria-hidden="true">
@@ -286,7 +226,7 @@
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Services</span>
-      <h2 id="services-heading">Four specialties,<br />one personal touch.</h2>
+      <h2 id="services-heading">Four services.<br />One person behind all of them.</h2>
       <p style="max-width: 800px">English, photography, mahjong, tours. Every service is delivered personally.</p>
     </div>
 
@@ -308,7 +248,7 @@
         <div class="svc-icon" aria-hidden="true">📸</div>
         <h3>Family · Couple · Pre-wedding</h3>
         <span class="svc-en" style="font-family: Poppins">LUMA Frame</span>
-        <p>Natural-light portraits with the Nikon Z6III. Pre-weddings, first-meal (okuizome), shichi-go-san, family, couple, and profile shoots in Tokyo & Yokohama. <strong>Airport farewells & arrivals are a specialty.</strong> See <a href="https://www.instagram.com/luma_frame.jp" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">@luma_frame.jp</a>.</p>
+        <p>Natural-light portraits with the Nikon Z6III. Pre-weddings, first-meal (okuizome), shichi-go-san, family, couple, and profile shoots in Tokyo & Yokohama. <strong>Landscape and aviation photography also available.</strong> See <a href="https://www.instagram.com/luma_frame.jp" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">@luma_frame.jp</a>.</p>
         <div class="svc-meta">
           <span class="svc-price">Free quote</span>
           <a class="svc-link" href="./service-photo.html">Details →</a>
@@ -347,7 +287,7 @@
   <div class="container">
     <div class="cmp-head reveal">
       <span class="eyebrow">Choose your path</span>
-      <h2 id="compare-heading" style="max-width: 1000px; margin: 0; text-align: left; padding: 0 0 20px">Find the one for you.</h2>
+      <h2 id="compare-heading" style="max-width: 1000px; margin: 0; text-align: left; padding: 0 0 20px">Which one is yours?</h2>
       <p>Four worlds, four entry points.<br />Start with whichever feels closest.</p>
     </div>
 
@@ -357,7 +297,7 @@
         <div class="cmp-visual"><span class="cmp-emoji">📖</span><span class="cmp-tag">English</span></div>
         <div class="cmp-body">
           <h3>English Lessons</h3>
-          <p class="cmp-pitch">Speak English — the shortest path. Built on 9 years in Australia and a tailor-made curriculum, from beginner to business English and IELTS prep.</p>
+          <p class="cmp-pitch">Speak English sooner, not someday. Built on nine years in Australia and a tailor-made curriculum, from beginner to business English and IELTS prep.</p>
           <div class="cmp-meta"><span>Tokyo · Yokohama</span><span class="cmp-meta-dot"></span><span>Online available</span></div>
           <div class="cmp-actions">
             <a class="cmp-btn cmp-btn-primary" href="./contact.html">Free consult</a>
@@ -367,10 +307,10 @@
       </div>
 
       <div class="cmp-card theme-photo has-photo reveal" style="--cmp-bg: url('../images/compare/compare-photo.jpg?v=2') center / cover no-repeat;">
-        <a class="cmp-cardlink" href="./service-photo.html" aria-label="Family & couple photography details">Family & couple photography details</a>
+        <a class="cmp-cardlink" href="./service-photo.html" aria-label="Portraits and milestone photography details">Portraits and milestone photography details</a>
         <div class="cmp-visual"><span class="cmp-emoji">📸</span><span class="cmp-tag">Photography</span></div>
         <div class="cmp-body">
-          <h3>Family & Couple Photos</h3>
+          <h3>Portraits &amp; Milestones</h3>
           <p class="cmp-pitch">For family milestones and couple memories — shichi-go-san, omiyamairi, pre-wedding, couple portraits. A once-in-a-lifetime shot, captured on the Nikon Z6III.</p>
           <div class="cmp-meta"><span>Tokyo · Yokohama</span><span class="cmp-meta-dot"></span><span>On-location</span></div>
           <div class="cmp-actions">
@@ -412,7 +352,7 @@
   </div>
 </section>
 
-<section id="about" aria-labelledby="about-heading">
+<section id="about" aria-labelledby="about-heading" class="section-invert">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">About — the founder</span>
@@ -501,7 +441,7 @@
     <div class="cta-big reveal">
       <span class="eyebrow" style="color: color-mix(in srgb, var(--bg) 70%, transparent);">Free consultation</span>
       <h2 style="margin-top:16px;">Let's start with a conversation.</h2>
-      <p style="font-size:17px;max-width:560px;margin:12px auto 28px;">Not sure which service fits? That's exactly what the free 30-minute consult is for. We'll map out your best path together.</p>
+      <p style="font-size:17px;max-width:560px;margin:12px auto 28px;">Not sure which service fits? That's exactly what the free 30-minute consult is for — no cost, no obligation.</p>
       <a href="./contact.html" class="btn btn-primary">Open the contact form →</a>
     </div>
   </div>

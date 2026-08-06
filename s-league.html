@@ -8,7 +8,7 @@
 
 <!-- ── PRIMARY SEO META ── -->
 <title>S.League 健康麻雀大会 東京・新橋 | LUMA</title>
-<meta name="description" content="S.Leagueは2022年から東京・新橋で運営する本気の健康麻雀コミュニティ。24回開催・累計367名・126選手が参加。次回 S.League 25 は2026年9月12日(土)12:00〜18:00開催の半日大会(6時間)・S.League 団体戦(2人1組)。登録受付は2026年8月10日(月)開始予定。参加費6,200円(銀行振込6,000円)。会場は新橋ベルバードgrow店。" />
+<meta name="description" content="東京・新橋の健康麻雀コミュニティ S.League。2022年から24回開催・延べ367名・126選手が参加。次回 S.League 25 は2026年9月12日(土)の半日団体戦、参加費6,200円、登録受付は8月10日(月)開始。" />
 <meta name="keywords" content="健康麻雀 大会,S.League,麻雀 大会 東京,新橋 麻雀,健康麻雀 トーナメント,LUMA Circle" />
 <meta name="author" content="LUMA" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -32,7 +32,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
 
 <script type="application/ld+json">
 {
@@ -71,7 +71,7 @@
   gtag('config', 'G-62F20N179N');
 </script>
 
-<link rel="stylesheet" href="./shared.css?v=aqua4" />
+<link rel="stylesheet" href="./shared.css?v=aqua8" />
 <style id="page-overrides">
   /* ── S.League hero: full-bleed background photo + 左側ダークオーバーレイ ── */
   .sl-hero {
@@ -107,17 +107,17 @@
   .sl-hero h1 {
     margin-bottom: 16px; color: #fff;
     max-width: 460px;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.55), 0 1px 3px rgba(0, 0, 0, 0.45);
+    text-shadow: 0 2px 20px rgba(10, 42, 62, 0.55), 0 1px 3px rgba(10, 42, 62, 0.45);
   }
   .sl-hero h1 .accent {
     background: none;
     -webkit-background-clip: initial; background-clip: initial;
-    color: #fbbf24;
+    color: var(--accent-2);
   }
   .sl-hero .sub {
     font-size: clamp(16px, 1.4vw, 18px); color: #fff;
     max-width: 460px; margin-bottom: 28px;
-    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.65), 0 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 1px 12px rgba(10, 42, 62, 0.65), 0 1px 2px rgba(10, 42, 62, 0.5);
     font-weight: 500;
   }
   /* HTML 側インライン color:var(--text)（黒）の <strong> を白背景写真用に白で上書き。
@@ -125,7 +125,7 @@
      ヒーロー本文の実績数値は白の太字で強調する (提案 S4)。 */
   .sl-hero .sub strong {
     color: #fff !important;
-    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.65), 0 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 1px 12px rgba(10, 42, 62, 0.65), 0 1px 2px rgba(10, 42, 62, 0.5);
   }
   .sl-hero .eyebrow { color: #fff; }
   .sl-hero .eyebrow::before { background: #fff; }
@@ -139,12 +139,6 @@
   }
   .sl-hero .btn-navy:hover {
     background: #175E86; border-color: rgba(255, 255, 255, 0.7); color: #fff;
-  }
-  .sl-hero .btn-primary {
-    background: #fff; color: #0A0A0A; border-color: #fff;
-  }
-  .sl-hero .btn-primary:hover {
-    background: rgba(255, 255, 255, 0.88); color: #0A0A0A;
   }
   .sl-hero .btn-secondary {
     background: transparent; color: #fff;
@@ -373,8 +367,7 @@
   }
   .sl-promo .guests { font-weight: 700; color: var(--bg); }
   .sl-promo-cta { display: flex; flex-direction: column; gap: 10px; align-items: stretch; }
-  .sl-promo-cta .btn-primary { background: #fff; color: #0A0A0A; border-color: #fff; white-space: nowrap; }
-  .sl-promo-cta .btn-primary:hover { background: rgba(255,255,255,0.88); color: #0A0A0A; }
+  .sl-promo-cta .btn-primary { white-space: nowrap; }
   /* 登録受付の注記: 11px/白60%では暗地バナー+背景動画上で読みにくい (Sho指摘 2026-08-03)。
      白100% on Navy はコントラスト比 約8.9:1 (WCAG AAA)。 */
   .sl-promo-status {
@@ -425,7 +418,7 @@
     </ul>
     <div style="display:flex;gap:10px;align-items:center;">
       <a href="./s-league-archive.html" class="lang-switch" aria-label="成績アーカイブ">📊 アーカイブ</a>
-      <a href="./s-league-25.html" class="nav-cta">S.League 25 (9/12開催) →</a>
+      <a href="./s-league-25.html" class="nav-cta">S.League 25 · 9/12(土) 登録8/10開始 →</a>
     </div>
     <button class="nav-toggle" type="button" aria-label="メニューを開閉" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -449,10 +442,10 @@
   <div class="container">
     <span class="eyebrow">LUMA presents — 東京・新橋・定期開催</span>
     <h1 class="hero-title" style="margin-top:18px;">
-      一日限りの、<br />
-      <span class="accent">真剣勝負</span>。
+      本気で打つ日を、<br />
+      <span class="accent">年に何度か</span>。
     </h1>
-    <p class="sub">初心者もプロも、全員に景品あり。<strong style="color:var(--text);">2022年から24回・のべ367名</strong>が集ってきた、ノーレートで本気の麻雀コミュニティです。</p>
+    <p class="sub">初参加の方もプロ雀士も、全員に景品があります。<strong style="color:var(--text);">2022年から24回・延べ367名</strong>が集ってきた、ノーレートの健康麻雀コミュニティです。</p>
     <div class="hero-cta-row">
       <a href="./s-league-25.html" class="btn btn-primary">S.League 25 (9/12開催) を見る →</a>
       <a href="#about" class="btn btn-navy">S.Leagueとは</a>
@@ -480,7 +473,7 @@
 
 <div class="stats-band">
   <div class="stats-inner">
-    <div class="stat-item"><span class="stat-num">367<span style="font-size:0.6em;">+</span></span><span class="stat-label">総参加者数</span></div>
+    <div class="stat-item"><span class="stat-num">367</span><span class="stat-label">総参加者数</span></div>
     <div class="stat-item"><span class="stat-num">24</span><span class="stat-label">開催回数</span></div>
     <div class="stat-item"><span class="stat-num">4</span><span class="stat-label">運営年数</span></div>
     <div class="stat-item"><span class="stat-num">126</span><span class="stat-label">参加選手数</span></div>
@@ -494,7 +487,7 @@
         <span class="eyebrow">S.League について</span>
         <h2 id="about-heading">新しいつながりを、<br />麻雀卓から。</h2>
         <p style="color:var(--text-muted);font-size:16px;line-height:1.85;margin: 16px 0 24px;">
-          S.League は2022年に創設された本格麻雀トーナメントです(賭けない・飲まない、ノーレートの『健康麻雀』)。「より多くの仲間と麻雀を楽しめる機会を創ろう」という想いから始まり、今では総参加者367名を超えるコミュニティとなりました。<br><br>
+          S.League は2022年に創設された本格麻雀トーナメントです(賭けない・飲まない、ノーレートの『健康麻雀』)。「より多くの仲間と麻雀を楽しめる機会を創ろう」という想いから始まり、今では延べ367名が参加するコミュニティになりました。<br><br>
           各プロ団体に所属する方から麻雀を始めたばかりの方まで、幅広い層の方に参加していただいています。東南戦6〜8戦+エキシビションマッチを約10時間かけて行う本格的な大会でありながら、「楽しく、真剣に」をモットーに、誰もが参加しやすい雰囲気を大切にしています。
         </p>
         <div class="community-grid">
@@ -589,7 +582,7 @@
     <div class="format-grid">
       <div class="reveal">
         <span class="eyebrow">大会フォーマット</span>
-        <h2 id="format-heading">約10時間、本気で打ち合う。</h2>
+        <h2 id="format-heading">一日がかりで、本気で打ち合う。</h2>
         <p style="color:var(--text-muted);font-size:16px;line-height:1.8;margin-top:16px;">
           健康麻雀でありながら、それでも真剣勝負。「楽しく、真剣に」をモットーに、1日を通じて本格的な大会体験をお届けします。
         </p>
@@ -637,7 +630,7 @@
 </section>
 
 <!-- ── フォトギャラリー: SL24 当日の写真 ── -->
-<section id="gallery" aria-labelledby="gallery-heading">
+<section id="gallery" aria-labelledby="gallery-heading" class="section-invert">
   <div class="container">
     <div class="section-head reveal" style="text-align:center;margin: 0 auto 48px;">
       <span class="eyebrow">Photo Gallery</span>
