@@ -8,7 +8,7 @@
 
 <!-- ── PRIMARY SEO META ── -->
 <title>S.League 健康麻雀大会 東京・新橋 | LUMA</title>
-<meta name="description" content="東京・新橋の健康麻雀コミュニティ S.League。2022年から24回開催・延べ367名・126選手が参加。次回 S.League 25 は2026年9月12日(土)の半日団体戦、参加費6,200円、登録受付は8月13日(木)開始。" />
+<meta name="description" content="東京・新橋の健康麻雀コミュニティ S.League。2022年から24回開催・延べ367名・126選手が参加。次回 S.League 25 は2026年9月12日(土)の半日団体戦、参加費6,200円、参加受付中・締切は9月5日(土)22:00。" />
 <meta name="keywords" content="健康麻雀 大会,S.League,麻雀 大会 東京,新橋 麻雀,健康麻雀 トーナメント,LUMA Circle" />
 <meta name="author" content="LUMA" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -20,14 +20,14 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://studio-lumadesign.com/s-league.html" />
 <meta property="og:title" content="S.League 健康麻雀大会 東京・新橋 | LUMA" />
-<meta property="og:description" content="2022年から続く健康麻雀コミュニティ。24回・367名が参加。次回 S.League 25 は2026年9月12日(土)・半日開催のS.League 団体戦(2人1組)。登録受付は8月13日(木)開始予定。" />
+<meta property="og:description" content="2022年から続く健康麻雀コミュニティ。24回・367名が参加。次回 S.League 25 は2026年9月12日(土)・半日開催のS.League 団体戦(2人1組)。参加受付中・締切は9月5日(土)22:00。" />
 <meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
 <meta property="og:locale" content="ja_JP" />
 <meta property="og:site_name" content="LUMA" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="S.League 健康麻雀大会 | LUMA" />
-<meta name="twitter:description" content="24回・367名の健康麻雀コミュニティ。次回 S.League 25 は2026年9月12日(土)・半日開催のS.League団体戦。登録受付は8/13(木)開始予定。" />
+<meta name="twitter:description" content="24回・367名の健康麻雀コミュニティ。次回 S.League 25 は2026年9月12日(土)・半日開催のS.League団体戦。参加受付中・締切は9/5(土)22:00。" />
 <meta name="twitter:image" content="https://studio-lumadesign.com/og-image.jpg" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -106,7 +106,9 @@
   }
   .sl-hero h1 {
     margin-bottom: 16px; color: #fff;
-    max-width: 460px;
+    /* 見出し変更 (2026-08-13)「ここまで本気になれる。」が1行に収まる幅。
+       460px のままだと「れる。」が3行目に孤立する。 */
+    max-width: 620px;
     text-shadow: 0 2px 20px rgba(10, 42, 62, 0.55), 0 1px 3px rgba(10, 42, 62, 0.45);
   }
   .sl-hero h1 .accent {
@@ -127,6 +129,7 @@
     color: #fff !important;
     text-shadow: 0 1px 12px rgba(10, 42, 62, 0.65), 0 1px 2px rgba(10, 42, 62, 0.5);
   }
+  .br-sp { display: none; }
   .sl-hero .eyebrow { color: #fff; }
   .sl-hero .eyebrow::before { background: #fff; }
   .sl-hero .hero-cta-row { max-width: 560px; align-items: center; }
@@ -151,6 +154,9 @@
     .sl-hero {
       padding: 80px 0 96px; min-height: 440px;
     }
+    /* 狭幅では「ここまで本気になれる。」が1行に入らず「れる。」が孤立するため、
+       「ここまで / 本気になれる。」で3行に割る (2026-08-13)。 */
+    .br-sp { display: inline; }
     /* モバイルはテキストが全幅に広がるため、横グラデ(左のみ暗い)では白文字が読めない。
        全体を均一に暗くする縦グラデに差し替え。 */
     .sl-hero::after {
@@ -306,6 +312,49 @@
   .badge-prep { background: color-mix(in srgb, #DC2626 16%, transparent); color: #DC2626; }
   @media (max-width: 880px) { .events-grid { grid-template-columns: 1fr; } }
 
+  /* ── RTB2026 チームスポンサー (2026-08-13 追加) ──
+     ロゴは先方の許諾待ちのためテキストのみで構成する。 */
+  .rtb-band {
+    background: var(--bg-soft);
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  }
+  .rtb-card {
+    display: grid; grid-template-columns: 1fr 320px; gap: 40px; align-items: start;
+    max-width: 980px; margin: 0 auto; padding: 40px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); box-shadow: var(--shadow-md);
+  }
+  .rtb-tag {
+    display: inline-block; padding: 6px 16px; border-radius: 999px;
+    font-family: var(--font-mono); font-size: 12px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase; color: #5A4A12;
+    background: linear-gradient(120deg, var(--gold-2), var(--gold));
+  }
+  .rtb-card h3 {
+    font-size: clamp(28px, 3.4vw, 40px); line-height: 1.2; font-weight: 800;
+    color: var(--text); margin: 16px 0 6px;
+  }
+  .rtb-lead { font-size: 17px; font-weight: 700; color: var(--accent); margin-bottom: 18px; }
+  .rtb-body { font-size: 15px; line-height: 1.9; color: var(--text-muted); }
+  .rtb-body strong { color: var(--text); font-weight: 700; }
+  .rtb-link {
+    display: inline-block; margin-top: 22px; font-size: 14px; font-weight: 700;
+    color: var(--accent); text-decoration: underline; text-underline-offset: 3px;
+  }
+  .rtb-facts { list-style: none; display: grid; gap: 0; }
+  .rtb-facts li {
+    display: grid; gap: 2px; padding: 14px 0; border-bottom: 1px solid var(--border);
+  }
+  .rtb-facts li:last-child { border-bottom: none; }
+  .rtb-facts span {
+    font-family: var(--font-mono); font-size: 11px; color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  .rtb-facts strong { font-size: 15px; font-weight: 700; color: var(--text); }
+  @media (max-width: 880px) {
+    .rtb-card { grid-template-columns: 1fr; gap: 28px; padding: 28px 24px; }
+  }
+
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
   @media (max-width: 1024px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } }
 
@@ -354,6 +403,8 @@
     background: linear-gradient(120deg, var(--gold-2), var(--gold));
   }
   .sl-promo-badge::before { content: '🔔'; }
+  /* 受付中はベルではなくチェックに変える (「予告」と「今すぐ動ける」を見分けさせるため) */
+  .sl-promo-badge.is-open::before { content: '✅'; }
   .sl-promo h2 {
     color: var(--bg); font-size: clamp(24px, 3.2vw, 36px); line-height: 1.25; margin-bottom: 10px;
   }
@@ -418,7 +469,7 @@
     </ul>
     <div style="display:flex;gap:10px;align-items:center;">
       <a href="./s-league-archive.html" class="lang-switch" aria-label="成績アーカイブ">📊 アーカイブ</a>
-      <a href="./s-league-25.html" class="nav-cta">S.League 25 · 9/12(土) 登録8/13開始 →</a>
+      <a href="./s-league-25.html" class="nav-cta">S.League 25 参加受付中 →</a>
     </div>
     <button class="nav-toggle" type="button" aria-label="メニューを開閉" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -442,8 +493,8 @@
   <div class="container">
     <span class="eyebrow">LUMA presents — 東京・新橋・定期開催</span>
     <h1 class="hero-title" style="margin-top:18px;">
-      本気で打つ日を、<br />
-      <span class="accent">年に何度か</span>。
+      ノーレートで、<br />
+      <span class="accent">ここまで<br class="br-sp" />本気になれる</span>。
     </h1>
     <p class="sub">初めての方もプロ雀士も、帰りは全員が景品を持っています。<strong style="color:var(--text);">2022年から24回・延べ367名</strong>が集まってきた、ノーレートの健康麻雀コミュニティです。</p>
     <div class="hero-cta-row">
@@ -457,16 +508,16 @@
 <section class="sl-promo" aria-label="S.League 25 のお知らせ">
   <div class="sl-promo-inner">
     <div>
-      <span class="sl-promo-badge">Coming Soon</span>
+      <span class="sl-promo-badge is-open">参加受付中</span>
       <h2>S.League 25 は、<span class="yr">半日開催の団体戦</span>。</h2>
       <p>
         2026年9月12日 (土) 12:00〜18:00 に開催します。2人1組の S.League 団体戦は、2026年3月の S.League 22 以来2回目です。全6回戦、1半荘45分打ち切り。定員は24名です。<br>
-        お申込みは個人単位で受け付けます。チームを組みたい方は、申込フォームでチームメイトをご指定ください。参加費は6,200円 (銀行振込の場合は6,000円)。会場は新橋のベルバードgrow店です。登録受付は<span class="guests">2026年8月13日 (木)</span>から始まります。
+        お申込みは個人単位です。組みたい方がいれば申込フォームでご指名を、いなければ運営がペアをお組みします。参加費は6,200円 (銀行振込の場合は6,000円)。会場は新橋のベルバードgrow店です。申込締切は<span class="guests">2026年9月5日 (土) 22:00</span>、定員に達し次第終了します。
       </p>
     </div>
     <div class="sl-promo-cta">
       <a href="./s-league-25.html" class="btn btn-primary">S.League 25 の詳細を見る →</a>
-      <span class="sl-promo-status">登録受付 2026年8月13日 (木) 開始予定</span>
+      <span class="sl-promo-status">申込締切 2026年9月5日 (土) 22:00 · 定員24名</span>
     </div>
   </div>
 </section>
@@ -706,9 +757,40 @@
         <div class="event-card-body">
           <div class="event-card-date">2026年9月12日 (土) 12:00〜18:00</div>
           <div class="event-card-fee">S.League 団体戦 (2人1組) · 全6回戦 · 参加費 ¥6,200 (銀行振込 ¥6,000) · ベルバードgrow店</div>
-          <span class="event-badge badge-prep">🔔 登録受付 8/13 (木) 開始予定</span>
+          <span class="event-badge badge-open">✅ 参加受付中 · 締切 9/5 (土) 22:00</span>
         </div>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── RTB2026「チーム 大奥」チームスポンサー就任 (2026-08-13 Sho承認) ── -->
+<section id="team-sponsor" aria-labelledby="team-sponsor-heading" class="rtb-band">
+  <div class="container">
+    <div class="section-head reveal" style="margin: 0 auto 44px; text-align:center;">
+      <span class="eyebrow">Team Sponsor</span>
+      <h2 id="team-sponsor-heading">S.League は、プロの舞台にも立っています。</h2>
+      <p style="margin: 0 auto;">草の根の健康麻雀コミュニティが、競技麻雀のトップシーンを支える側にまわりました。</p>
+    </div>
+
+    <div class="rtb-card reveal">
+      <div class="rtb-card-main">
+        <span class="rtb-tag">RTB2026 チームスポンサー</span>
+        <h3>チーム 大奥</h3>
+        <p class="rtb-lead">率いるのは、RMU の河野高志プロ。</p>
+        <p class="rtb-body">
+          2026年8月、S.League はプロ競技麻雀団体 RMU が主催する <strong>RTB2026</strong> に出場する<strong>「チーム 大奥」のチームスポンサー</strong>に就任しました。チームを率いるのは、<a href="https://rmu.jp/8349" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">RMUクラウン</a>・<a href="https://rmu.jp/9018" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">令昭位</a>のタイトルを持つ河野高志プロです。<br><br>
+          S.League がこれまで大切にしてきたのは、初心者もベテランも同じ卓を囲める場をつくることでした。その延長線上に、競技麻雀の一線で戦う選手を支えるという役割が加わります。強くなりたい人が本気で打てる場所を、アマチュアからプロまで地続きにしていく ―― それが S.League の次の一歩です。
+        </p>
+        <a class="rtb-link" href="https://x.com/RMU1/status/2081665899166343656" target="_blank" rel="noopener">𝕏 RMU公式によるチームスポンサー発表を見る →</a>
+      </div>
+      <ul class="rtb-facts">
+        <li><span>大会</span><strong>RTB2026</strong></li>
+        <li><span>主催</span><strong>RMU (プロ競技麻雀団体)</strong></li>
+        <li><span>チーム</span><strong>チーム 大奥</strong></li>
+        <li><span>チームリーダー</span><strong>河野高志プロ (RMU)</strong></li>
+        <li><span>S.Leagueの立場</span><strong>チームスポンサー</strong></li>
+      </ul>
     </div>
   </div>
 </section>
