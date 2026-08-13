@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>LUMA Frame — 料金確定案(案B 調整版)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --navy:#134E6F; --blue:#1E88E5; --orange:#F59E0B; --amber:#FBBF24; --cta-hover:#D97706;
+  --base:#EBF5FA; --ice:#F8FBFC; --tint:#D6EBF7; --sky:#5BA9D7;
+  --ink:#2C3E50; --muted:#566575; --line:#D7E5ED; --line-2:#B8CED9; --surface:#fff;
+  --radius:12px; --radius-lg:18px;
+  --shadow:0 1px 2px rgba(19,78,111,.05), 0 8px 24px -12px rgba(19,78,111,.18);
+  --shadow-lg:0 24px 48px -12px rgba(19,78,111,.22);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins','Noto Sans JP',system-ui,sans-serif;background:var(--base);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+h1,h2,h3{color:var(--navy);letter-spacing:-.02em;line-height:1.2}
+h2{font-size:clamp(20px,2.6vw,26px);margin-bottom:6px}
+h3{font-size:16px}
+.lead{color:var(--muted);font-size:14.5px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);display:inline-flex;align-items:center;gap:8px;margin-bottom:10px}
+.eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--orange)}
+
+header{background:var(--navy);color:#fff;padding:34px 0 30px;position:relative;overflow:hidden}
+header::after{content:'';position:absolute;inset:0;background:radial-gradient(760px 340px at 84% -14%,rgba(30,136,229,.42),transparent 62%),radial-gradient(520px 280px at 4% 108%,rgba(245,158,11,.16),transparent 70%)}
+header .wrap{position:relative;z-index:1}
+header h1{color:#fff;font-size:clamp(21px,2.8vw,30px)}
+header p{color:rgba(255,255,255,.85);font-size:14px;margin-top:10px;max-width:860px}
+.decided{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.chip{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.24);border-radius:999px;padding:6px 14px;font-size:12.5px}
+.chip b{color:var(--amber)}
+
+section{padding:34px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:22px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:860px){.grid2{grid-template-columns:1fr}}
+
+.alert{background:#FFF7ED;border:1px solid #FCD9A6;border-radius:var(--radius-lg);padding:18px 20px}
+.alert h3{margin-bottom:8px}
+.alert p,.alert li{font-size:13.5px;color:var(--muted)}
+.alert ul{margin:8px 0 0 18px}
+.alert li{margin-bottom:6px}
+
+/* 料金モード切替 */
+.switch{position:sticky;top:0;z-index:10;background:rgba(235,245,250,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:12px 0}
+.switch .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.sbtn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 16px;font:inherit;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;transition:.15s}
+.sbtn:hover{border-color:var(--line-2);color:var(--navy)}
+.sbtn[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.sbtn .tag{display:block;font-size:11px;font-weight:500;opacity:.8}
+.note-inline{margin-left:auto;font-size:12.5px;color:var(--muted)}
+
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
+@media(max-width:860px){.plans{grid-template-columns:1fr}}
+.plan{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow);position:relative;transition:transform .25s,box-shadow .25s,border-color .25s;display:flex;flex-direction:column}
+.plan:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--line-2)}
+.plan.featured{border:2px solid var(--blue)}
+.plan-badge{position:absolute;top:-12px;left:18px;background:var(--blue);color:#fff;font-size:11.5px;font-weight:700;padding:4px 12px;border-radius:999px}
+.plan h3{font-size:17px;margin-bottom:2px}
+.plan .sub{font-size:12.5px;color:var(--sky);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+.price{font-size:32px;font-weight:800;color:var(--navy);letter-spacing:-.02em;line-height:1.15}
+.price small{font-size:13px;font-weight:600;color:var(--muted);margin-left:4px}
+.price .strike{font-size:15px;color:var(--muted);text-decoration:line-through;font-weight:600;margin-right:8px}
+.price-2{font-size:13.5px;color:var(--muted);margin-top:4px}
+.price-2 b{color:var(--ink)}
+.plan ul{list-style:none;margin:16px 0 0;font-size:13.5px;color:var(--muted)}
+.plan li{position:relative;padding-left:20px;margin-bottom:7px}
+.plan li::before{content:'✓';position:absolute;left:0;color:var(--blue);font-weight:700}
+.plan .work{margin-top:auto;padding-top:14px;border-top:1px dashed var(--line);font-size:12.5px;color:var(--muted)}
+.plan .work b{color:var(--navy)}
+
+table{width:100%;border-collapse:collapse;margin-top:14px;font-size:13.5px}
+th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line)}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--sky);font-weight:600}
+td.num{text-align:right;font-weight:700;color:var(--navy);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.hi{background:var(--ice)}
+
+/* 工数シミュレーター */
+.sim{display:grid;grid-template-columns:1.05fr .95fr;gap:20px;align-items:start}
+@media(max-width:860px){.sim{grid-template-columns:1fr}}
+.slider-row{margin-bottom:15px}
+.slider-row label{display:flex;justify-content:space-between;font-size:13.5px;font-weight:600;color:var(--navy);margin-bottom:6px}
+.slider-row output{color:var(--blue)}
+input[type=range]{width:100%;accent-color:var(--blue)}
+.result{background:var(--navy);color:#fff;border-radius:var(--radius-lg);padding:22px;position:relative;overflow:hidden}
+.result::after{content:'';position:absolute;inset:0;background:radial-gradient(420px 220px at 80% -20%,rgba(30,136,229,.5),transparent 65%)}
+.result>*{position:relative;z-index:1}
+.result .k{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);font-weight:600}
+.result .v{font-size:34px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.result hr{border:0;border-top:1px solid rgba(255,255,255,.2);margin:14px 0}
+.result .row{display:flex;justify-content:space-between;font-size:13.5px;color:rgba(255,255,255,.86);margin-bottom:6px}
+.result .row b{color:#fff}
+.bd{margin-top:12px;font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.7}
+
+.refs{font-size:12.5px;color:var(--muted)}
+.refs li{margin-bottom:8px;line-height:1.7}
+.refs a{color:var(--blue);word-break:break-all}
+footer{background:var(--navy);color:rgba(255,255,255,.75);padding:22px 0;font-size:12.5px;margin-top:30px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>LUMA Frame — 料金確定案(案B 調整版)</h1>
+    <p>Sho の回答(2026-08-06)を反映しました。案B を採用しつつ、「納品スピードをオプション化する」判断に合わせて<b style="color:#fff">値付けの根拠を組み替えています</b>。</p>
+    <div class="decided">
+      <span class="chip"><b>採用</b> 案B 価値訴求</span>
+      <span class="chip"><b>目標</b> 月2〜3件</span>
+      <span class="chip"><b>編集</b> 1枚あたり5分</span>
+      <span class="chip"><b>実績</b> 有償受注はこれから</span>
+      <span class="chip"><b>納品スピード</b> 標準ではなくオプション</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="wrap">
+    <div class="alert">
+      <h3>先にお伝えすべき点 — 案Bの前提が1つ外れました</h3>
+      <p>前回の案Bは <b>「当日〜翌日納品を標準にする」</b>ことを、相場 +15〜20% の主な根拠にしていました。これをオプションにすると、価格の説明材料は「代表が一人で担当」「日英バイリンガル対応」「自然光の作風」の3つになります。加えて<b>有償の受注実績と公開レビューがまだ無い</b>状態です。</p>
+      <ul>
+        <li>相場(fotowa 平日 ¥24,200 / Lovegraph ¥26,180〜)より高い価格を、実績ゼロの状態でいきなり掲げると、比較検討で選ばれにくくなります。</li>
+        <li>そこで <b>定価は案Bのまま掲げ、最初の5件だけ「ローンチ価格(-20%)」を併記</b>する形を推奨します。実質は相場と同水準で受けつつ、後から値上げする必要がありません(定価が最初から見えているため)。</li>
+        <li>納品スピードは<b>標準を「7日以内」と明記</b>し、48時間・当日仕上げを有料オプションにします。これは編集工数(1枚5分)を守るうえでも合理的です。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="switch">
+  <div class="wrap">
+    <button class="sbtn" data-m="list" aria-pressed="true">定価(案B)<span class="tag">サイト掲載価格</span></button>
+    <button class="sbtn" data-m="launch" aria-pressed="false">ローンチ価格<span class="tag">最初の5件・-20%</span></button>
+    <span class="note-inline">表示価格はすべて税込。土日祝は別料金です。</span>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Plan</span>
+    <h2 id="ptitle">定価(案B)</h2>
+    <p class="lead" id="pdesc">サイトに掲載する正価。相場より高い分は「代表が一人で最初から最後まで担当する」ことで説明します。</p>
+    <div class="plans" id="plans"></div>
+    <p class="lead" style="margin-top:14px">
+      <b>納品構成の考え方</b>: 撮影した全カットに基本補正をかけてお渡しし、そのうち「厳選◯枚」を Lightroom で丁寧に仕上げます。枚数だけで大手と競わず、<b>仕上げの密度で差をつける</b>構造にしています(編集1枚5分という実測値をそのまま原価に反映)。
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Options</span>
+    <h2>オプション(納品スピードはここに移動)</h2>
+    <p class="lead">基本料金を相場圏に置きつつ、必要な人だけが払う構造にします。</p>
+    <div class="card" style="margin-top:16px">
+      <table>
+        <thead><tr><th>オプション</th><th>内容</th><th style="text-align:right">価格案</th></tr></thead>
+        <tbody>
+          <tr class="hi"><td><b>特急仕上げ(48時間以内)</b></td><td style="color:var(--muted)">厳選枚数はプランどおり。土日を挟む場合は要確認</td><td class="num">+¥5,000</td></tr>
+          <tr class="hi"><td><b>当日仕上げ(3時間以内)</b></td><td style="color:var(--muted)">厳選10枚のみ先渡し、残りは通常納期。SNS投稿を急ぐ方向け</td><td class="num">+¥10,000</td></tr>
+          <tr><td><b>厳選仕上げの追加</b></td><td style="color:var(--muted)">10枚ごと(編集50分相当)</td><td class="num">+¥5,000</td></tr>
+          <tr><td><b>撮影の延長</b></td><td style="color:var(--muted)">30分ごと。最も発生しやすいオプション</td><td class="num">+¥9,000</td></tr>
+          <tr><td><b>2ロケーション目</b></td><td style="color:var(--muted)">神社 → 自宅など、移動を伴う場合</td><td class="num">+¥5,000</td></tr>
+          <tr><td><b>出張(横浜・東京以外)</b></td><td style="color:var(--muted)">交通費を実費で。現行サイトの記載どおり</td><td class="num">実費</td></tr>
+          <tr><td><b>英語での撮影進行</b></td><td style="color:var(--muted)">訪日・在住外国人向け。差別化のため無料を推奨</td><td class="num">¥0</td></tr>
+          <tr><td><b>航空機・風景の撮影代行</b></td><td style="color:var(--muted)">時間制の別体系</td><td class="num">半日 ¥25,000〜</td></tr>
+          <tr><td><b>プリント・アルバム手配</b></td><td style="color:var(--muted)">外注実費 + 手数料20%</td><td class="num">実費+20%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Simulation</span>
+    <h2>月2〜3件で、実際どうなるか</h2>
+    <p class="lead">編集1枚5分(Sho 実測)を原価に入れた試算です。スライダーを動かすと再計算します。</p>
+    <div class="card sim" style="margin-top:16px">
+      <div>
+        <div class="slider-row">
+          <label>月間の撮影件数 <output id="oCount">3 件</output></label>
+          <input type="range" id="rCount" min="1" max="8" value="3" />
+        </div>
+        <div class="slider-row">
+          <label>1件あたりの移動時間(往復) <output id="oMove">1.5 時間</output></label>
+          <input type="range" id="rMove" min="0.5" max="4" step="0.5" value="1.5" />
+        </div>
+        <div class="slider-row">
+          <label>厳選仕上げの枚数(スタンダード基準) <output id="oSel">25 枚</output></label>
+          <input type="range" id="rSel" min="10" max="60" step="5" value="25" />
+        </div>
+        <div class="slider-row">
+          <label>オプション付帯率 <output id="oOpt">40%</output></label>
+          <input type="range" id="rOpt" min="0" max="100" step="10" value="40" />
+        </div>
+        <p class="lead" style="font-size:12.5px">構成比はライト2 : スタンダード5 : プレミアム3、土日祝7割で計算。オプションは平均 ¥7,000 として加算しています。</p>
+      </div>
+      <div class="result">
+        <span class="k">月の売上(概算)</span>
+        <div class="v" id="rev">¥0</div>
+        <hr />
+        <div class="row"><span>平均単価</span><b id="avg">¥0</b></div>
+        <div class="row"><span>月の作業時間</span><b id="hours">0 時間</b></div>
+        <div class="row"><span>実質時給</span><b id="hourly">¥0</b></div>
+        <div class="row"><span>年換算の売上</span><b id="year">¥0</b></div>
+        <div class="bd" id="bd"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="grid2">
+      <div class="card">
+        <h3>この価格でサイトに載せる場合の書き方</h3>
+        <p class="lead" style="margin-top:8px">現行の service-photo.html は全項目「要相談」です。金額を載せるなら、次の3点をセットにすると価格への不安が消えます。</p>
+        <ul style="margin:10px 0 0 18px;font-size:13.5px;color:var(--muted)">
+          <li>プラン価格(税込)と、含まれるもの・含まれないものの明示</li>
+          <li>「見積もりは無料。金額に合意してから撮影日を確定します」の一文</li>
+          <li>キャンセル規定(何日前まで無料か)— 現在 legal.html にありますが、撮影ページからも参照できるようにする</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>次にやること</h3>
+        <ol style="margin:10px 0 0 18px;font-size:13.5px;color:var(--muted)">
+          <li>この価格表を承認 → service-photo.html(日英)に反映</li>
+          <li>「ローンチ価格・最初の5件」の表示と、終了条件(件数 or 期限)を決める</li>
+          <li>友人撮影の作例を、掲載許可を取ったうえでプラン別に紐づける</li>
+          <li>最初の1件が終わったら、実際にかかった時間を記録してこの試算を更新する</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">References</span>
+    <h2>出典</h2>
+    <div class="card" style="margin-top:14px">
+      <ul class="refs">
+        <li>fotowa. (2026). <em>出張撮影・出張カメラマンならfotowa</em>. 基本料金 平日 24,200円 / 土日祝 29,700円(税込)、撮影60分(目安)、写真データ75枚〜、出張料込み(一部遠方は +3,000円)。2026年8月6日取得, <a href="https://fotowa.com/">https://fotowa.com/</a></li>
+        <li>OurPhoto. (2026). <em>出張撮影・家族写真のOurPhoto</em>. 出張撮影 50分 11,000円(税込)〜、写真データ30枚以上(平均約100枚)、撮影料・出張費・交通費・データ料込み。2026年8月6日取得, <a href="https://our-photo.co/">https://our-photo.co/</a></li>
+        <li>Lovegraph. (2026). <em>出張撮影・出張カメラマンのラブグラフ</em>. 26,180円(税込)〜、撮影1〜1.5時間、データ75枚以上、出張費は原則込み。平日/休日同一料金。2026年8月6日取得, <a href="https://lovegraph.me/">https://lovegraph.me/</a></li>
+        <li>Sho からの直接確認 (2026-08-06). 目標は月2〜3件、Lightroom による編集は1枚あたり約5分(全カットには適用しない)、有償の受注実績はまだ無く友人の前撮り等を撮影、案Bを採用、納品スピードはオプション化。</li>
+        <li>LUMA. (2026). <em>記念撮影・ポートレート・風景写真 (LUMA Frame)</em>. Nikon Z6III・自然光撮影、東京/横浜中心の出張、無料見積もり。service-photo.html の記載に基づく。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer><div class="wrap">2026-08-06 作成 — 金額はすべて提案値(税込)。承認後に service-photo.html(日英)へ反映します。</div></footer>
+
+<script>
+const LIST=[[16000,18000],[29000,33000],[49000,54000]];
+const DISC=0.8;
+const META=[
+ {name:'ライト', sub:'Light — 30分', badge:null, sel:10,
+  li:['撮影30分(1ロケーション)','全カットを基本補正して納品','厳選<b>10枚</b>を丁寧に仕上げ','標準納期 7日以内'],
+  use:'プロフィール・SNS用、単独ポートレート'},
+ {name:'スタンダード', sub:'Standard — 60分', badge:'主力プラン', sel:25,
+  li:['撮影60分(1ロケーション)','全カットを基本補正して納品','厳選<b>25枚</b>を丁寧に仕上げ','標準納期 7日以内'],
+  use:'家族・カップル・お食い初め・記念撮影'},
+ {name:'プレミアム', sub:'Premium — 120分', badge:null, sel:50,
+  li:['撮影120分(2ロケーションまで)','全カットを基本補正して納品','厳選<b>50枚</b>を丁寧に仕上げ','衣装替え・移動の時間を確保'],
+  use:'前撮り・七五三・お宮参り'}
+];
+let mode='list';
+const yen=n=>'¥'+Math.round(n).toLocaleString('ja-JP');
+const price=i=>mode==='list'?LIST[i]:LIST[i].map(v=>Math.round(v*DISC/100)*100);
+
+function drawPlans(){
+  document.getElementById('ptitle').textContent = mode==='list' ? '定価(案B)' : 'ローンチ価格(最初の5件・-20%)';
+  document.getElementById('pdesc').textContent = mode==='list'
+    ? 'サイトに掲載する正価。相場より高い分は「代表が一人で最初から最後まで担当する」ことで説明します。'
+    : '実績づくりの期間だけ適用する価格。定価を併記して割引であることを示すため、期間終了後に値上げしたように見えません。実質は相場(fotowa 平日 ¥24,200)と同水準です。';
+  document.getElementById('plans').innerHTML=META.map((p,i)=>{
+    const [w,h]=price(i), [lw]=LIST[i];
+    return `<div class="plan ${p.badge?'featured':''}">
+      ${p.badge?`<span class="plan-badge">${p.badge}</span>`:''}
+      <h3>${p.name}</h3><div class="sub">${p.sub}</div>
+      <div class="price">${mode==='launch'?`<span class="strike">${yen(lw)}</span>`:''}${yen(w)}<small>平日</small></div>
+      <div class="price-2">土日祝 <b>${yen(h)}</b></div>
+      <ul>${p.li.map(x=>`<li>${x}</li>`).join('')}</ul>
+      <div class="work">向いている用途: ${p.use}<br>編集工数の目安: <b>${p.sel}枚 × 5分 = ${(p.sel*5/60).toFixed(1)}時間</b></div>
+    </div>`}).join('');
+}
+function sim(){
+  const n=+document.getElementById('rCount').value;
+  const mv=+document.getElementById('rMove').value;
+  const sel=+document.getElementById('rSel').value;
+  const opt=+document.getElementById('rOpt').value/100;
+  document.getElementById('oCount').textContent=n+' 件';
+  document.getElementById('oMove').textContent=mv+' 時間';
+  document.getElementById('oSel').textContent=sel+' 枚';
+  document.getElementById('oOpt').textContent=Math.round(opt*100)+'%';
+  const mix=[0.2,0.5,0.3];
+  const avg=mix.reduce((a,w,i)=>{const [wd,we]=price(i);return a+w*(wd*0.3+we*0.7)},0);
+  // 1件あたり作業時間: 撮影(プラン平均1.1h) + 移動 + 基本補正0.5h + 厳選編集(枚数×5分) + 打合せ/納品0.5h
+  const selMix=[sel*0.4, sel, sel*2].map(v=>v*5/60);
+  const editAvg=mix.reduce((a,w,i)=>a+w*selMix[i],0);
+  const perJob=1.1+mv+0.5+editAvg+0.5;
+  const rev=avg*n + n*opt*7000, hrs=perJob*n;
+  document.getElementById('rev').textContent=yen(rev);
+  document.getElementById('avg').textContent=yen(avg);
+  document.getElementById('hours').textContent=hrs.toFixed(1)+' 時間';
+  document.getElementById('hourly').textContent=yen(rev/hrs);
+  document.getElementById('year').textContent=yen(rev*12);
+  document.getElementById('bd').innerHTML=
+    `1件あたりの内訳: 撮影 1.1h + 移動 ${mv}h + 基本補正 0.5h + 厳選編集 ${editAvg.toFixed(1)}h + 打合せ/納品 0.5h = <b style="color:#fff">${perJob.toFixed(1)}時間</b><br>交通費・機材償却・税は含みません。`;
+}
+document.querySelectorAll('.sbtn').forEach(b=>b.onclick=()=>{
+  mode=b.dataset.m;
+  document.querySelectorAll('.sbtn').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+  drawPlans();sim();
+});
+['rCount','rMove','rSel','rOpt'].forEach(id=>document.getElementById(id).oninput=sim);
+drawPlans();sim();
+</script>
+</body>
+</html>
