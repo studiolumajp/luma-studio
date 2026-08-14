@@ -40,13 +40,14 @@
         "@type": "AggregateOffer",
         "priceCurrency": "JPY",
         "lowPrice": "9900",
-        "highPrice": "27500",
-        "offerCount": "3",
-        "description": "Light (60 min) JPY 9,900 / Standard (120 min) JPY 17,600 / Premium (120 min) JPY 27,500. Tax included, with no weekend or holiday surcharge. Quotes are free.",
+        "highPrice": "44000",
+        "offerCount": "4",
+        "description": "Light (60 min) JPY 9,900 / Standard (120 min) JPY 17,600 / Premium (120 min) JPY 27,500 / Wedding (120 min) JPY 44,000. Tax included, with no weekend or holiday surcharge. Quotes are free.",
         "offers": [
           {"@type": "Offer", "name": "Light (60 min)", "price": "9900", "priceCurrency": "JPY", "description": "60-minute shoot, all frames basic-corrected, 20 selected photos retouched"},
           {"@type": "Offer", "name": "Standard (120 min)", "price": "17600", "priceCurrency": "JPY", "description": "120-minute shoot, one or two locations, 30 selected photos retouched"},
-          {"@type": "Offer", "name": "Premium (120 min)", "price": "27500", "priceCurrency": "JPY", "description": "120-minute shoot, one or two locations, 50 selected photos retouched, delivered within 3 days"}
+          {"@type": "Offer", "name": "Premium (120 min)", "price": "27500", "priceCurrency": "JPY", "description": "120-minute shoot, one or two locations, 50 selected photos retouched, delivered within 3 days"},
+          {"@type": "Offer", "name": "Wedding (120 min)", "price": "44000", "priceCurrency": "JPY", "description": "Photo wedding before or after the ceremony. 120-minute shoot, one location, 50 selected photos retouched, 30-minute planning call, delivered within 3 days"}
         ]
       }},
     {"@type": "BreadcrumbList", "itemListElement": [
@@ -135,7 +136,7 @@
   }
   .launch-banner p { font-size: 14px; color: var(--text); margin: 0; line-height: 1.7; }
   .launch-banner strong { color: var(--navy); }
-  .pricing-plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .pricing-plans { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 760px; margin: 0 auto; }
   .pplan {
     background: var(--surface); border: 1px solid var(--border);
     border-radius: var(--radius-lg); padding: 28px 26px;
@@ -167,7 +168,7 @@
     margin-top: auto; padding-top: 14px; border-top: 1px dashed var(--border);
     font-size: 12.5px; color: var(--text-soft); line-height: 1.6;
   }
-  @media (max-width: 900px) { .pricing-plans { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; } }
+  @media (max-width: 640px) { .pricing-plans { grid-template-columns: 1fr; max-width: 460px; } }
   @media (max-width: 640px) {
     .launch-banner { flex-direction: column; align-items: flex-start; gap: 10px; }
   }
@@ -268,7 +269,7 @@
 
 <section id="pricing" aria-labelledby="pricing-heading">
   <div class="container">
-    <div class="section-head reveal" style="margin: 0 auto 48px; text-align:center;"><span class="eyebrow">Pricing</span><h2 id="pricing-heading">Pricing</h2><p style="margin: 0 auto;">Three plans to pick from, all tax included. Quotes are free, and nothing's confirmed until you've agreed to the price.</p></div>
+    <div class="section-head reveal" style="margin: 0 auto 48px; text-align:center;"><span class="eyebrow">Pricing</span><h2 id="pricing-heading">Pricing</h2><p style="margin: 0 auto;">Four plans to pick from, all tax included. Quotes are free, and nothing's confirmed until you've agreed to the price.</p></div>
     <div class="launch-banner reveal">
       <span class="launch-tag">Opening offer</span>
       <p>Bookings made by <strong>31 October 2026</strong> get <strong>20% off</strong> the prices below. That puts Standard at &yen;14,080.</p>
@@ -310,7 +311,21 @@
           <li><strong>50 selected photos</strong> fully retouched</li>
           <li>Photos back <strong>within 3 days</strong></li>
         </ul>
-        <p class="pplan-use">Pre-wedding, shichi-go-san, omiyamairi</p>
+        <p class="pplan-use">Shichi-go-san, omiyamairi, coming-of-age shoots</p>
+      </article>
+
+      <article class="pplan">
+        <h3>Wedding</h3>
+        <span class="pplan-en">Wedding &ndash; 120 min</span>
+        <div class="pplan-price">&yen;44,000<small>tax incl.</small></div>
+        <ul>
+          <li>120-minute shoot, one location</li>
+          <li>Every frame delivered with basic correction</li>
+          <li><strong>50 selected photos</strong> fully retouched</li>
+          <li><strong>30-minute</strong> online planning call beforehand</li>
+          <li>Photos back <strong>within 3 days</strong></li>
+        </ul>
+        <p class="pplan-use">Photo weddings, before or after the ceremony</p>
       </article>
     </div>
 
@@ -324,7 +339,7 @@
       <div class="price-row"><span class="price-label">Shoot conducted in English</span><span class="price-value">&yen;0</span></div>
       <div class="price-row"><span class="price-label">Aviation &amp; landscape commissions</span><span class="price-value">&yen;22,000 / half day</span></div>
       <p class="price-note">
-        <strong>Standard delivery is within 5 days</strong> of the shoot, or within 3 days on the Premium plan. If you need them sooner, add speed delivery above.<br />
+        <strong>Standard delivery is within 5 days</strong> of the shoot, or within 3 days on the Premium and Wedding plans. If you need them sooner, add speed delivery above.<br />
         Every quote is free and itemised, and nothing is charged until you accept it. Travel costs only apply for shoots beyond Tokyo and Yokohama.<br />
         See the <a href="./legal.html#cancel" style="color:var(--accent);text-decoration:underline;">cancellation policy</a> for details.
       </p>
