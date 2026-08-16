@@ -74,7 +74,7 @@ button { font-family: inherit; cursor: pointer; }
 
 .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
 .eyebrow {
-  font-family: var(--font-label); font-size: 12px; font-weight: 600;
+  font-family: var(--font-label); font-size: clamp(12px, 1vw, 14px); font-weight: 600;
   color: var(--accent); text-transform: uppercase; letter-spacing: 0.10em;
   display: inline-flex; align-items: center; gap: 8px;
 }
@@ -236,7 +236,7 @@ nav.site-nav .nav-links .dropdown-menu li a:hover {
 }
 .breadcrumb ol {
   max-width: var(--container); margin: 0 auto; padding: 10px 24px;
-  list-style: none; display: flex; gap: 8px; font-size: 12px;
+  list-style: none; display: flex; gap: 8px; font-size: clamp(12px, 1vw, 14px);
   color: var(--text-soft); font-family: var(--font-mono);
 }
 .breadcrumb li::after { content: '/'; margin-left: 8px; opacity: 0.4; }

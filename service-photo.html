@@ -8,7 +8,7 @@
 
 <!-- ── PRIMARY SEO META ── -->
 <title>記念撮影・ポートレート・風景写真 横浜・東京 | LUMA Frame</title>
-<meta name="description" content="横浜・東京の出張撮影。前撮り・お宮参り・お食い初め・七五三などの記念撮影、友人/単独ポートレート、航空機・風景まで。Nikon Z6IIIの自然光撮影、データは5日以内に納品。無料見積もり。" />
+<meta name="description" content="横浜・東京の出張撮影。前撮り・お宮参り・お食い初め・七五三などの記念撮影、友人/単独ポートレート、航空機・風景まで。Nikon Z6IIIの自然光撮影、データは7日以内に納品。無料見積もり。" />
 <meta name="keywords" content="記念撮影 横浜,ポートレート 横浜,前撮り 東京,お食い初め 撮影,お宮参り 撮影,七五三 撮影,プロフィール写真,友人 写真,単独 ポートレート,空港 撮影,飛行機 撮影,風景写真,LUMA Frame,Nikon Z6III" />
 <meta name="author" content="LUMA" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -21,7 +21,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://studio-lumadesign.com/service-photo.html" />
 <meta property="og:title" content="記念撮影・ポートレート・風景写真 | LUMA Frame" />
-<meta property="og:description" content="横浜・東京の出張撮影。記念撮影・友人/単独ポートレート・航空機・風景まで。Nikon Z6IIIの自然光撮影、データは5日以内に納品。" />
+<meta property="og:description" content="横浜・東京の出張撮影。記念撮影・友人/単独ポートレート・航空機・風景まで。Nikon Z6IIIの自然光撮影、データは7日以内に納品。" />
 <meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
 <meta property="og:locale" content="ja_JP" />
 <meta property="og:site_name" content="LUMA" />
@@ -51,14 +51,15 @@
         "@type": "AggregateOffer",
         "priceCurrency": "JPY",
         "lowPrice": "9900",
-        "highPrice": "44000",
-        "offerCount": "4",
-        "description": "ライト(60分) ¥9,900 / スタンダード(120分) ¥17,600 / プレミアム(120分) ¥27,500 / ウェディング(120分) ¥44,000。いずれも税込、曜日による料金差はありません。お見積もりは無料。",
+        "highPrice": "88000",
+        "offerCount": "5",
+        "description": "ライト(60分) ¥9,900 / スタンダード(120分) ¥17,600 / プレミアム(120分) ¥27,500 / フォトウェディング(120分) ¥44,000 / セレモニー 挙式当日(240分) ¥88,000。いずれも税込、曜日による料金差はありません。お見積もりは無料。",
         "offers": [
           {"@type": "Offer", "name": "ライト (60分)", "price": "9900", "priceCurrency": "JPY", "description": "撮影60分・全カット基本補正・厳選20枚仕上げ"},
           {"@type": "Offer", "name": "スタンダード (120分)", "price": "17600", "priceCurrency": "JPY", "description": "撮影120分・1〜2ロケーション・厳選30枚仕上げ"},
-          {"@type": "Offer", "name": "プレミアム (120分)", "price": "27500", "priceCurrency": "JPY", "description": "撮影120分・1〜2ロケーション・厳選50枚仕上げ・3日以内納品"},
-          {"@type": "Offer", "name": "ウェディング (120分)", "price": "44000", "priceCurrency": "JPY", "description": "フォトウェディング(前撮り・後撮り)。撮影120分・1ロケーション・厳選50枚仕上げ・事前オンライン打合せ30分・3日以内納品"}
+          {"@type": "Offer", "name": "プレミアム (120分)", "price": "27500", "priceCurrency": "JPY", "description": "撮影120分・1〜2ロケーション・厳選50枚仕上げ・5日以内納品"},
+          {"@type": "Offer", "name": "フォトウェディング (120分)", "price": "44000", "priceCurrency": "JPY", "description": "前撮り・後撮り(和装・洋装)。撮影120分・1〜2ロケーション・厳選50枚仕上げ・事前オンライン打合せ30分・5日以内納品"},
+          {"@type": "Offer", "name": "セレモニー 挙式当日 (240分)", "price": "88000", "priceCurrency": "JPY", "description": "挙式・披露宴の当日撮影。撮影240分・厳選120枚仕上げ・事前オンライン打合せ30分・5日以内納品"}
         ]
       }
     },
@@ -212,7 +213,9 @@
   }
   .launch-banner p { font-size: 14px; color: var(--text); margin: 0; line-height: 1.7; }
   .launch-banner strong { color: var(--navy); }
-  .pricing-plans { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 760px; margin: 0 auto; }
+  .pricing-plans { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; max-width: 1080px; margin: 0 auto; }
+  .pplan { grid-column: span 2; }
+  .pplan.wide { grid-column: span 3; }
   .pplan {
     background: var(--surface); border: 1px solid var(--border);
     border-radius: var(--radius-lg); padding: 28px 26px;
@@ -244,6 +247,7 @@
     margin-top: auto; padding-top: 14px; border-top: 1px dashed var(--border);
     font-size: 12.5px; color: var(--text-soft); line-height: 1.6;
   }
+  @media (max-width: 980px) { .pricing-plans { grid-template-columns: repeat(2, 1fr); max-width: 760px; } .pplan, .pplan.wide { grid-column: span 1; } }
   @media (max-width: 640px) { .pricing-plans { grid-template-columns: 1fr; max-width: 460px; } }
   @media (max-width: 640px) {
     .launch-banner { flex-direction: column; align-items: flex-start; gap: 10px; }
@@ -322,7 +326,7 @@
       <span class="accent">きれいに</span>残す。
     </h1>
     <p class="sub">
-      自然光で撮ります。つくり笑顔はいりません。記念撮影は前撮り、お宮参り、お食い初めなど。友人や単独のポートレート、航空機や風景も撮ります。<strong style="color:var(--text);">横浜・東京</strong>を中心に出張し、データは5日以内にお渡しします。
+      自然光で撮ります。つくり笑顔はいりません。記念撮影は前撮り、お宮参り、お食い初めなど。友人や単独のポートレート、航空機や風景も撮ります。<strong style="color:var(--text);">横浜・東京</strong>を中心に出張し、データは7日以内にお渡しします。
     </p>
     <div class="hero-cta-row">
       <a href="./contact.html" class="btn btn-primary">無料でお見積もりを依頼する →</a>
@@ -349,7 +353,7 @@
       <div>
         <p class="svc-overview-lead"><em>気負わなくて大丈夫</em>。自然光のまま撮ります。</p>
         <p class="svc-overview-body">
-          使うのは Nikon Z6III とその場の光だけ。作り込みすぎない、やわらかい一枚を。撮った写真はその場で確認できます。<strong style="color:var(--text);">データは5日以内にお渡し</strong>するので、SNSや年賀状の準備にも間に合います。写りの雰囲気は Instagram <a href="https://www.instagram.com/luma_frame.jp" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">@luma_frame.jp</a> でどうぞ。
+          使うのは Nikon Z6III とその場の光だけ。作り込みすぎない、やわらかい一枚を。撮った写真はその場で確認できます。<strong style="color:var(--text);">データは7日以内にお渡し</strong>するので、SNSや年賀状の準備にも間に合います。写りの雰囲気は Instagram <a href="https://www.instagram.com/luma_frame.jp" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">@luma_frame.jp</a> でどうぞ。
         </p>
       </div>
       <aside class="svc-overview-aside">
@@ -417,12 +421,12 @@
     <div class="section-head reveal" style="margin: 0 auto 48px; text-align:center;">
       <span class="eyebrow">Pricing</span>
       <h2 id="pricing-heading">料金案内</h2>
-      <p style="margin: 0 auto;">プランは4つ。表示はすべて税込です。見積もりは無料で、金額に納得いただいてから撮影日を確定します。</p>
+      <p style="margin: 0 auto;">プランは5つ。表示はすべて税込です。見積もりは無料で、金額に納得いただいてから撮影日を確定します。</p>
     </div>
 
     <div class="launch-banner reveal">
       <span class="launch-tag">開始記念</span>
-      <p><strong>2026年10月31日</strong>までのご予約は、下記のプラン価格から <strong>20% OFF</strong> です。スタンダードなら ¥14,080 になります。</p>
+      <p><strong>2026年10月31日</strong>までのご予約は、下記のプラン価格の<strong>税抜金額から 20% OFF</strong> です。スタンダードなら税抜 ¥16,000 → ¥12,800 (税込 ¥14,080) になります。</p>
     </div>
 
     <div class="pricing-plans reveal">
@@ -459,32 +463,50 @@
           <li>撮影120分(1〜2ロケーション)</li>
           <li>全カットを基本補正してお渡し</li>
           <li>厳選<strong>50枚</strong>を丁寧に仕上げ</li>
-          <li>データを<strong>3日以内</strong>にお渡し</li>
+          <li>データを<strong>5日以内</strong>にお渡し</li>
         </ul>
         <p class="pplan-use">七五三・お宮参り・成人式</p>
       </article>
 
-      <article class="pplan">
-        <h3>ウェディング</h3>
-        <span class="pplan-en">Wedding — 120分</span>
+      <article class="pplan wide">
+        <h3>フォトウェディング</h3>
+        <span class="pplan-en">Photo Wedding — 120分</span>
         <div class="pplan-price">¥44,000<small>税込</small></div>
         <ul>
-          <li>撮影120分(1ロケーション)</li>
+          <li>撮影120分(1〜2ロケーション)</li>
           <li>全カットを基本補正してお渡し</li>
           <li>厳選<strong>50枚</strong>を丁寧に仕上げ</li>
           <li>事前のオンライン打合せ<strong>30分</strong></li>
-          <li>データを<strong>3日以内</strong>にお渡し</li>
+          <li>データを<strong>5日以内</strong>にお渡し</li>
         </ul>
-        <p class="pplan-use">フォトウェディング(前撮り・後撮り)</p>
+        <p class="pplan-use">前撮り・後撮り(和装・洋装)</p>
+      </article>
+
+      <article class="pplan wide">
+        <h3>セレモニー (挙式当日)</h3>
+        <span class="pplan-en">Ceremony — 240分</span>
+        <div class="pplan-price">¥88,000<small>税込</small></div>
+        <ul>
+          <li>撮影240分(お支度から挙式、集合写真まで)</li>
+          <li>全カットを基本補正してお渡し</li>
+          <li>厳選<strong>120枚</strong>を丁寧に仕上げ</li>
+          <li>事前のオンライン打合せ<strong>30分</strong></li>
+          <li>データを<strong>5日以内</strong>にお渡し</li>
+        </ul>
+        <p class="pplan-use">挙式・披露宴の当日撮影。挙式日は動かせないため、<a href="./legal.html#cancel" style="color:var(--accent);text-decoration:underline;">キャンセル規定</a>が他のプランと異なります</p>
       </article>
     </div>
+
+    <p class="reveal" style="max-width:1080px;margin:20px auto 0;font-size:13.5px;color:var(--text-muted);text-align:center;line-height:1.8;">
+      ウェディングの撮影は<strong style="color:var(--text);">フォトウェディング・セレモニーの専用プラン</strong>でお受けしています。ライト・スタンダード・プレミアムでは承っておりませんので、ご予約の際はどちらかをお選びください。
+    </p>
 
     <div class="price-box reveal" style="margin-top:32px;">
       <h3 style="font-size:18px;margin-bottom:4px;">オプション</h3>
       <p style="font-size:14px;color:var(--text-muted);margin-bottom:8px;">必要な分だけ足せます。使わなければ料金はかかりません。</p>
       <div class="price-row">
         <span class="price-label">スピード仕上げ (2日以内の納品)</span>
-        <span class="price-value">+¥4,000</span>
+        <span class="price-value">+¥4,400</span>
       </div>
       <div class="price-row">
         <span class="price-label">厳選仕上げの追加 (20枚ごと)</span>
@@ -496,7 +518,7 @@
       </div>
       <div class="price-row">
         <span class="price-label">ロケーションの追加 (1ヶ所につき)</span>
-        <span class="price-value">+¥4,990</span>
+        <span class="price-value">+¥5,500</span>
       </div>
       <div class="price-row">
         <span class="price-label">英語での撮影進行</span>
@@ -504,11 +526,11 @@
       </div>
       <div class="price-row">
         <span class="price-label">航空機・風景の撮影代行</span>
-        <span class="price-value">半日 ¥22,000</span>
+        <span class="price-value">半日 (3〜4時間) ¥22,000</span>
       </div>
       <p class="price-note">
-        <strong>標準の納期は撮影日から5日以内</strong>です。プレミアムとウェディングは3日以内にお渡しします。それより早く必要なときは、上のスピード仕上げをお使いください。<br />
-        ご希望をうかがってから、金額を明記した見積もりをお送りします。見積もりの段階では費用は一切かかりません。横浜・東京以外へ伺うときだけ、交通費を実費でいただきます。<br />
+        <strong>標準の納期は撮影日から7日以内</strong>です。プレミアム・フォトウェディング・セレモニーは5日以内にお渡しします。それより早く必要なときは、上のスピード仕上げをお使いください。<br />
+        ご希望をうかがってから、金額を明記した見積もりをお送りします。見積もりの段階では費用は一切かかりません。<strong>お支払いは全額前払い制</strong>で、ご入金の確認をもって撮影日が確定します。横浜・東京以外へ伺うときだけ、交通費を実費でいただきます。<br />
         キャンセル規定は<a href="./legal.html#cancel" style="color:var(--accent);text-decoration:underline;">こちら</a>をご確認ください。
       </p>
     </div>
@@ -537,7 +559,7 @@
         <div>
           <span class="tag">Step 02</span>
           <h3>場所とプランを決める</h3>
-          <p>撮影場所の候補、衣装の相談、当日の段取り。私のほうから案を出します。</p>
+          <p>撮影場所の候補、衣装の相談、当日の段取り。私のほうから案を出します。お見積もりにご同意いただいたらお支払いリンクをお送りし、ご入金の確認をもって撮影日が確定します。</p>
         </div>
       </div>
       <div class="flow-step">
@@ -553,7 +575,7 @@
         <div>
           <span class="tag">Step 04</span>
           <h3>データをお渡し</h3>
-          <p>写真を選んでからお渡しします。5日以内を目安にご連絡します。</p>
+          <p>写真を選んでからお渡しします。7日以内を目安にご連絡します。</p>
         </div>
       </div>
     </div>

@@ -8,7 +8,7 @@
 
 <!-- ── PRIMARY SEO META ── -->
 <title>S.League 健康麻雀大会 東京・新橋 | LUMA</title>
-<meta name="description" content="東京・新橋の健康麻雀コミュニティ S.League。2022年から24回開催・延べ367名・126選手が参加。次回 S.League 25 は2026年9月12日(土)の半日団体戦、参加費6,200円、参加受付中・締切は9月5日(土)22:00。" />
+<meta name="description" content="東京・新橋の健康麻雀コミュニティ S.League。2022年から24回開催・延べ367名・126選手が参加。次回 S.League 25 は2026年9月19日(土)の半日団体戦、参加費6,200円、参加受付中・締切は9月12日(土)22:00。" />
 <meta name="keywords" content="健康麻雀 大会,S.League,麻雀 大会 東京,新橋 麻雀,健康麻雀 トーナメント,LUMA Circle" />
 <meta name="author" content="LUMA" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -20,14 +20,14 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://studio-lumadesign.com/s-league.html" />
 <meta property="og:title" content="S.League 健康麻雀大会 東京・新橋 | LUMA" />
-<meta property="og:description" content="2022年から続く健康麻雀コミュニティ。24回・367名が参加。次回 S.League 25 は2026年9月12日(土)・半日開催のS.League 団体戦(2人1組)。参加受付中・締切は9月5日(土)22:00。" />
+<meta property="og:description" content="2022年から続く健康麻雀コミュニティ。24回・367名が参加。次回 S.League 25 は2026年9月19日(土)・半日開催のS.League 団体戦(2人1組)。参加受付中・締切は9月12日(土)22:00。" />
 <meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
 <meta property="og:locale" content="ja_JP" />
 <meta property="og:site_name" content="LUMA" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="S.League 健康麻雀大会 | LUMA" />
-<meta name="twitter:description" content="24回・367名の健康麻雀コミュニティ。次回 S.League 25 は2026年9月12日(土)・半日開催のS.League団体戦。参加受付中・締切は9/5(土)22:00。" />
+<meta name="twitter:description" content="24回・367名の健康麻雀コミュニティ。次回 S.League 25 は2026年9月19日(土)・半日開催のS.League団体戦。参加受付中・締切は9/12(土)22:00。" />
 <meta name="twitter:image" content="https://studio-lumadesign.com/og-image.jpg" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -106,9 +106,9 @@
   }
   .sl-hero h1 {
     margin-bottom: 16px; color: #fff;
-    /* 見出し変更 (2026-08-13)「ここまで本気になれる。」が1行に収まる幅。
-       460px のままだと「れる。」が3行目に孤立する。 */
-    max-width: 620px;
+    /* 見出し変更 (2026-08-13)。3行固定 (.br-sp) のため最長行は「本気になれる。」= 448px。
+       520px なら暗幕の濃い領域に収まりつつ、折返しの余裕もある。 */
+    max-width: 520px;
     text-shadow: 0 2px 20px rgba(10, 42, 62, 0.55), 0 1px 3px rgba(10, 42, 62, 0.45);
   }
   .sl-hero h1 .accent {
@@ -129,7 +129,11 @@
     color: #fff !important;
     text-shadow: 0 1px 12px rgba(10, 42, 62, 0.65), 0 1px 2px rgba(10, 42, 62, 0.5);
   }
-  .br-sp { display: none; }
+  /* 見出しは全幅で「ノーレートで、/ ここまで / 本気になれる。」の3行に固定する (2026-08-13)。
+     1280px ではフォントが64pxまで伸び、「ここまで本気になれる。」(12文字=768px) が
+     1行に収まらず「れる。」が孤立するため。3行なら最長行は448pxで、
+     ヒーロー左側の暗幕 (透過0.64以上の領域) に必ず収まりコントラストも確保できる。 */
+  .br-sp { display: inline; }
   .sl-hero .eyebrow { color: #fff; }
   .sl-hero .eyebrow::before { background: #fff; }
   .sl-hero .hero-cta-row { max-width: 560px; align-items: center; }
@@ -154,9 +158,6 @@
     .sl-hero {
       padding: 80px 0 96px; min-height: 440px;
     }
-    /* 狭幅では「ここまで本気になれる。」が1行に入らず「れる。」が孤立するため、
-       「ここまで / 本気になれる。」で3行に割る (2026-08-13)。 */
-    .br-sp { display: inline; }
     /* モバイルはテキストが全幅に広がるため、横グラデ(左のみ暗い)では白文字が読めない。
        全体を均一に暗くする縦グラデに差し替え。 */
     .sl-hero::after {
@@ -181,24 +182,33 @@
   .stat-item { text-align: center; }
   .stat-num {
     font-size: clamp(36px, 4vw, 52px); font-weight: 800; letter-spacing: -0.02em;
-    background: linear-gradient(120deg, var(--accent), var(--accent-2));
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-    display: block;
+    line-height: 1;
+    color: var(--bg);
+    display: block; position: relative; padding-bottom: 8px;
+  }
+  .stat-num::after {
+    content: ''; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
+    width: 28px; height: 3px; border-radius: 2px; background: var(--accent-2);
   }
   .stat-label {
-    font-family: var(--font-mono); font-size: 12px;
+    font-family: var(--font-mono); font-size: clamp(13px, 1.4vw, 15px);
     color: color-mix(in srgb, var(--bg) 70%, transparent);
-    text-transform: uppercase; letter-spacing: 0.08em; margin-top: 6px; display: block;
+    text-transform: uppercase; letter-spacing: 0.08em; margin-top: 8px; display: block;
   }
   @media (max-width: 640px) { .stats-inner { grid-template-columns: repeat(2, 1fr); } }
 
+  #about .eyebrow { margin-bottom: 14px; }
+  #format .eyebrow { margin-bottom: 14px; }
+
   /* ── Community grid ── */
-  .community-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .community-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
   .community-card {
     background: var(--surface); border: 1px solid var(--border);
     border-radius: var(--radius); padding: 20px;
+    display: flex; align-items: flex-start; gap: 14px;
   }
-  .community-card-icon { font-size: 24px; display: block; margin-bottom: 8px; }
+  .community-card-icon { font-size: 24px; display: block; flex-shrink: 0; line-height: 1; }
+  .community-card-body { flex: 1 1 0%; min-width: 0; }
   .community-card h3 { font-size: 15px; margin-bottom: 6px; }
   .community-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
   @media (max-width: 880px) { .community-grid { grid-template-columns: 1fr; } }
@@ -286,6 +296,10 @@
   .event-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
   .event-card.featured { border-color: var(--accent); box-shadow: 0 8px 32px color-mix(in srgb, var(--accent) 18%, transparent); }
   .event-card.disabled { opacity: 0.55; pointer-events: none; }
+  .event-card.past { opacity: 0.55; }
+  .event-card.past .event-card-num {
+    background: none; color: color-mix(in srgb, var(--bg) 50%, transparent); -webkit-text-fill-color: currentColor;
+  }
   .event-card-top {
     background: var(--text); color: var(--bg);
     padding: 24px; display: flex; align-items: center; gap: 16px;
@@ -355,6 +369,16 @@
     .rtb-card { grid-template-columns: 1fr; gap: 28px; padding: 28px 24px; }
   }
 
+  /* ── Team Sponsor ミニ紹介 (統計数字の上に配置。詳細は #team-sponsor 本セクションへ誘導) ── */
+  .rtb-teaser-band { background: var(--bg-soft); border-bottom: 1px solid var(--border); padding: 40px 0; }
+  .rtb-teaser {
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    flex-wrap: wrap; text-decoration: none;
+  }
+  .rtb-teaser-tag { font-size: 13px; padding: 7px 18px; }
+  .rtb-teaser-team { font-size: clamp(24px, 2.8vw, 32px); font-weight: 800; color: var(--text); margin-top: 10px; }
+  .rtb-teaser-lead { font-size: 16px; color: var(--accent); font-weight: 700; margin-top: 4px; }
+
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
   @media (max-width: 1024px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } }
 
@@ -414,7 +438,7 @@
   }
   .sl-promo p {
     color: color-mix(in srgb, var(--bg) 80%, transparent);
-    font-size: 15px; line-height: 1.75; max-width: 640px;
+    font-size: clamp(16px, 1.6vw, 18px); line-height: 1.75; max-width: 640px;
   }
   .sl-promo .guests { font-weight: 700; color: var(--bg); }
   .sl-promo-cta { display: flex; flex-direction: column; gap: 10px; align-items: stretch; }
@@ -498,7 +522,7 @@
     </h1>
     <p class="sub">初めての方もプロ雀士も、帰りは全員が景品を持っています。<strong style="color:var(--text);">2022年から24回・延べ367名</strong>が集まってきた、ノーレートの健康麻雀コミュニティです。</p>
     <div class="hero-cta-row">
-      <a href="./s-league-25.html" class="btn btn-primary">S.League 25 (9/12開催) を見る →</a>
+      <a href="./s-league-25.html" class="btn btn-primary">S.League 25 (9/19開催) を見る →</a>
       <a href="#about" class="btn btn-navy">S.Leagueとは</a>
       <a href="./s-league-archive.html" class="btn btn-navy">📊 成績アーカイブ →</a>
     </div>
@@ -511,14 +535,27 @@
       <span class="sl-promo-badge is-open">参加受付中</span>
       <h2>S.League 25 は、<span class="yr">半日開催の団体戦</span>。</h2>
       <p>
-        2026年9月12日 (土) 12:00〜18:00 に開催します。2人1組の S.League 団体戦は、2026年3月の S.League 22 以来2回目です。全6回戦、1半荘45分打ち切り。定員は24名です。<br>
-        お申込みは個人単位です。組みたい方がいれば申込フォームでご指名を、いなければ運営がペアをお組みします。参加費は6,200円 (銀行振込の場合は6,000円)。会場は新橋のベルバードgrow店です。申込締切は<span class="guests">2026年9月5日 (土) 22:00</span>、定員に達し次第終了します。
+        9月19日 (土)、新橋で全6回戦。2人1組・定員24名、参加費6,200円。<br>
+        申込締切は<span class="guests">9月12日 (土) 22:00</span>です。
       </p>
     </div>
     <div class="sl-promo-cta">
       <a href="./s-league-25.html" class="btn btn-primary">S.League 25 の詳細を見る →</a>
-      <span class="sl-promo-status">申込締切 2026年9月5日 (土) 22:00 · 定員24名</span>
+      <span class="sl-promo-status">申込締切 2026年9月12日 (土) 22:00 · 定員24名</span>
     </div>
+  </div>
+</section>
+
+<section class="rtb-teaser-band" aria-label="S.League チームスポンサー概要">
+  <div class="container">
+    <a href="#team-sponsor" class="rtb-teaser">
+      <div>
+        <span class="rtb-tag rtb-teaser-tag">RTB2026 チームスポンサー</span>
+        <div class="rtb-teaser-team">チーム 大奥</div>
+        <div class="rtb-teaser-lead">率いるのは、RMU の河野高志プロ。</div>
+      </div>
+      <span class="btn btn-secondary rtb-teaser-link">詳しく見る →</span>
+    </a>
   </div>
 </section>
 
@@ -538,30 +575,38 @@
         <span class="eyebrow">S.League について</span>
         <h2 id="about-heading">新しいつながりを、<br />麻雀卓から。</h2>
         <p style="color:var(--text-muted);font-size:16px;line-height:1.85;margin: 16px 0 24px;">
-          S.League は2022年に始めた本格的な麻雀トーナメントです。賭けない・飲まない、ノーレートの『健康麻雀』でやっています。「より多くの仲間と麻雀を楽しめる機会を創ろう」。そう考えて第1回を開いてから、気づけば延べ367名が集まる場になっていました。<br><br>
-          各プロ団体に所属する方から、麻雀を始めたばかりの方まで来ます。東南戦6〜8戦にエキシビションマッチを加えて、約10時間。中身は本格的な大会です。それでも雰囲気は堅苦しくありません。「楽しく、真剣に」を合言葉に、初めての方でも入りやすい場にしています。
+          S.League は2022年に始めた、本格的な麻雀トーナメントです。<br>
+          賭けない・飲まない・吸わない。ノーレートの「健康麻雀」です。「より多くの仲間と麻雀を楽しめる機会を創ろう」、そう考えて開いた第1回から、気づけば延べ367名が集まる場になりました。<br><br>
+          各プロ団体所属の方から、点数計算に自信がない方まで。東南戦6〜8戦にエキシビションマッチを加えた、約10時間の本格的な大会です。それでも雰囲気は堅苦しくありません。点数計算が苦手でも、周りがフォローするので心配は不要です。「楽しく、真剣に」を合言葉に、初めての方でも入りやすい場にしています。
         </p>
         <div class="community-grid">
           <div class="community-card">
             <span class="community-card-icon">🌏</span>
-            <h3>創設の想い</h3>
-            <p>オーストラリア留学で出会った人たちから、コミュニティの大切さを教わりました。麻雀でも同じような場をつくりたい。そこが出発点です。</p>
+            <div class="community-card-body">
+              <h3>創設の想い</h3>
+              <p>オーストラリア留学で出会った仲間たちが教えてくれたのは、居場所があることの心強さ。麻雀卓を、その居場所にしたいと考えています。国も年齢も超えて、誰もが気軽に集える場所を目指しています。</p>
+            </div>
           </div>
           <div class="community-card">
             <span class="community-card-icon">👥</span>
-            <h3>参加者の多様性</h3>
-            <p>初心者の方から各麻雀団体所属のプロまで、いろいろな打ち手が同じ卓を囲みます。</p>
+            <div class="community-card-body">
+              <h3>参加者の多様性</h3>
+              <p>卓を囲むのは、麻雀を始めたばかりの方から各プロ団体所属の実力者まで。レベルの垣根を越えて同じ卓につくからこそ、毎回新しい学びと出会いが生まれます。</p>
+            </div>
           </div>
           <div class="community-card">
             <span class="community-card-icon">🀄</span>
-            <h3>健康麻雀</h3>
-            <p>賭けなし・タバコなし・お酒なし。安心して座れる環境で、中身は本格的な麻雀です。</p>
+            <div class="community-card-body">
+              <h3>健康麻雀</h3>
+              <p>「賭けない・吸わない・飲まない」を徹底しているから、誰でも安心して卓につけます。それでいて中身は本格的な麻雀。真剣勝負を、健やかに楽しめる場です。</p>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="reveal">
         <span class="eyebrow">歩みと実績</span>
+        <h2>積み重ねてきた4年間</h2>
         <div class="timeline" style="margin-top:24px;">
           <div class="tl-item">
             <div class="tl-year">2022年7月</div>
@@ -635,7 +680,8 @@
         <span class="eyebrow">大会フォーマット</span>
         <h2 id="format-heading">一日がかりで、本気で打ち合う。</h2>
         <p style="color:var(--text-muted);font-size:16px;line-height:1.8;margin-top:16px;">
-          健康麻雀でありながら、それでも真剣勝負。「楽しく、真剣に」をモットーに、1日を通じて本格的な大会体験をお届けします。
+          健康麻雀でありながら、それでも真剣勝負。「楽しく、真剣に」をモットーに、1日を通じて本格的な大会体験をお届けします。<br><br>
+          東南戦を6〜8戦、それにエキシビションマッチを加えた約10時間。16〜20名が同じ会場で戦い抜く、腰を据えた大会形式です。勝敗にこだわりながらも、参加者全員が気持ちよく打ち終えられる場を目指しています。
         </p>
       </div>
       <ul class="format-list reveal">
@@ -721,7 +767,7 @@
         </div>
       </a>
 
-      <a class="event-card" href="./s-league-archive.html">
+      <a class="event-card past" href="./s-league-archive.html">
         <div class="event-card-top">
           <div class="event-card-num">23</div>
           <div class="event-card-title">S.League 23</div>
@@ -735,7 +781,7 @@
         </div>
       </a>
 
-      <a class="event-card" href="./s-league-24.html">
+      <a class="event-card past" href="./s-league-24.html">
         <div class="event-card-top">
           <div class="event-card-num">24</div>
           <div class="event-card-title">S.League 24 · 4周年記念</div>
@@ -755,11 +801,22 @@
           <div class="event-card-title">S.League 25 · 団体戦</div>
         </div>
         <div class="event-card-body">
-          <div class="event-card-date">2026年9月12日 (土) 12:00〜18:00</div>
+          <div class="event-card-date">2026年9月19日 (土) 12:00〜18:00</div>
           <div class="event-card-fee">S.League 団体戦 (2人1組) · 全6回戦 · 参加費 ¥6,200 (銀行振込 ¥6,000) · ベルバードgrow店</div>
-          <span class="event-badge badge-open">✅ 参加受付中 · 締切 9/5 (土) 22:00</span>
+          <span class="event-badge badge-open">✅ 参加受付中 · 締切 9/12 (土) 22:00</span>
         </div>
       </a>
+
+      <div class="event-card disabled">
+        <div class="event-card-top">
+          <div class="event-card-num">26</div>
+          <div class="event-card-title">S.League 26</div>
+        </div>
+        <div class="event-card-body">
+          <div class="event-card-fee">詳細は後日発表</div>
+          <span class="event-badge badge-prep">🔜 準備中</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -804,7 +861,7 @@
         S.League は LUMA のコミュニティ事業として2022年に始まりました。麻雀という共通言語があれば、初対面同士でも同じ卓を囲めます。その出会いの場を、これからも続けていきます。
       </p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-        <a href="./s-league-25.html" class="btn btn-primary">S.League 25 (9/12開催) を見る →</a>
+        <a href="./s-league-25.html" class="btn btn-primary">S.League 25 (9/19開催) を見る →</a>
         <a href="./s-league-sponsor.html" class="btn btn-secondary">スポンサー募集を見る</a>
       </div>
     </div>
