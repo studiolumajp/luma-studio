@@ -841,6 +841,224 @@ footer .brand-mark::after { box-shadow: 0 0 0 2px #134E6F; }
 }
 
 /* ══════════════════════════════════════════════════════════════
+   MARQUEE — 特徴バンドを左へ流し続ける (2026-09-03)
+   同じ並びを2組つないだトラックを -50% まで動かすので、継ぎ目なくつながる。
+   2組目は aria-hidden。読み上げが二重になるのを防ぐ。
+   停止ボタンは置かない (Sho指示 2026-09-03)。止める手段はホバー・フォーカスと
+   prefers-reduced-motion のみ。WCAG 2.2.2 の観点では手段が限られる点に留意する。
+   https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html
+   ══════════════════════════════════════════════════════════════ */
+.marquee {
+  flex: 1 1 320px; min-width: 0; overflow: hidden; position: relative;
+  /* 左右の端で文字が切れて見えないよう、フェードで隠す */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 36px,
+                      #000 calc(100% - 36px), transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 36px,
+                      #000 calc(100% - 36px), transparent 100%);
+}
+.marquee-track {
+  display: flex; width: max-content;
+  animation: marquee-scroll 46s linear infinite;
+}
+.marquee-set { display: flex; gap: 32px; align-items: center; padding-right: 32px; }
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+/* ホバー中とフォーカスが入っているあいだは止める。読みたい語を追えるようにするため。
+   停止ボタンは Sho の指示で置かない (2026-09-03)。 */
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track { animation-play-state: paused; }
+
+@media (prefers-reduced-motion: reduce) {
+  /* 動きを減らす設定では流さない。代わりに横スクロールで全項目に届くようにする */
+  .marquee-track { animation: none; }
+  .marquee { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+  .marquee-set:nth-child(2) { display: none; }
+}
+@media (max-width: 640px) {
+  .marquee { flex-basis: 100%; }
+  .marquee-set { gap: 22px; padding-right: 22px; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   NEWS — ニュースページ (2026-09-03 / 案5: ハイライト + 一覧)
+   分類チップの配色は白または #3A2708 とのコントラストを実測して選んだ。
+   最も低い「新ページ」でも 6.64:1 で WCAG AA (4.5:1) に適合する。
+   ══════════════════════════════════════════════════════════════ */
+.nw-hero { padding: clamp(56px, 8vw, 88px) 0 clamp(40px, 6vw, 64px); min-height: 0; }
+.nw-hero h1 { font-size: clamp(28px, 3.6vw, 42px); margin-top: 14px; }
+.nw-hero .nw-lede { max-width: 52ch; margin-top: 14px; font-size: 15.5px; }
+
+.nw { max-width: 900px; margin: 0 auto; padding: 44px 24px 96px; }
+
+.nw-chip {
+  display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.03em;
+  padding: 3px 10px; border-radius: 999px; white-space: nowrap; line-height: 1.6;
+}
+.nw-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.nw-meta time, .nw-cl time {
+  font-family: var(--font-mono); font-size: 12.5px; color: var(--text-soft);
+  letter-spacing: 0.02em; font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+
+/* ── ハイライト (最新1件) ── */
+.nw-hl {
+  display: grid; grid-template-columns: 1.1fr 1fr;
+  border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;
+  background: var(--surface); text-decoration: none; color: inherit;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.nw-hl:hover, .nw-hl:focus-visible { border-color: var(--accent); transform: translateY(-2px); }
+.nw-hl img {
+  width: 100%; height: 100%; min-height: 260px; object-fit: cover;
+  display: block; background: var(--bg-muted);
+}
+.nw-hl-b { padding: 32px 32px; display: flex; flex-direction: column; justify-content: center; }
+.nw-hl-b h2 { font-size: 22px; color: var(--navy); margin: 13px 0 0; line-height: 1.55; }
+.nw-hl-b p { font-size: 14.5px; color: var(--text-soft); line-height: 1.9; margin: 11px 0 0; }
+.nw-more { margin-top: 17px; font-size: 13.5px; font-weight: 600; color: var(--accent); }
+
+/* ── 一覧 (2件目以降) ── */
+.nw-clh {
+  font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.13em;
+  text-transform: uppercase; color: var(--navy); font-weight: 700; margin: 46px 0 0;
+}
+.nw-cl { list-style: none; margin: 12px 0 0; padding: 0; border-top: 1px solid var(--border); }
+.nw-cl li { border-bottom: 1px solid var(--border); }
+.nw-cl a {
+  display: flex; align-items: center; gap: 13px; padding: 15px 8px;
+  text-decoration: none; color: inherit; flex-wrap: wrap;
+  transition: background 0.2s ease;
+}
+.nw-cl a:hover, .nw-cl a:focus-visible { background: var(--bg-soft); }
+.nw-lt { font-size: 15px; color: var(--navy); line-height: 1.7; font-weight: 500; }
+.nw-empty { color: var(--text-soft); font-size: 15px; }
+
+/* ── 個別ページ ── */
+.nw-art { max-width: 720px; margin: 0 auto; padding: 52px 24px 96px; }
+.nw-art-h { border-bottom: 1px solid var(--border); padding-bottom: 26px; }
+.nw-art h1 { font-size: clamp(24px, 3vw, 34px); color: var(--navy); margin: 15px 0 0; line-height: 1.5; }
+.nw-art-lead { font-size: 16.5px; color: var(--text-soft); line-height: 1.95; margin: 15px 0 0; }
+.nw-art p { font-size: 16.5px; line-height: 2; margin: 22px 0 0; }
+.nw-fig { margin: 32px 0 0; }
+.nw-fig img {
+  width: 100%; height: auto; display: block;
+  border-radius: var(--radius-lg); background: var(--bg-muted);
+}
+.nw-cta { margin-top: 26px !important; }
+.nw-cta a { color: var(--accent); font-weight: 600; text-decoration: none; }
+.nw-cta a:hover { text-decoration: underline; }
+
+/* ── 共有ボタン ── */
+.nw-share {
+  margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border);
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.nw-share-h { font-size: 13px; color: var(--text-soft); margin-right: 4px; }
+.nw-share-b {
+  font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 999px;
+  border: 1px solid var(--border); background: var(--surface); color: var(--navy);
+  text-decoration: none; transition: border-color 0.2s ease, color 0.2s ease;
+}
+.nw-share-b:hover, .nw-share-b:focus-visible { border-color: var(--accent); color: var(--accent); }
+
+/* ── 前後の記事 ── */
+.nw-nbs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 36px; }
+.nw-nb {
+  border: 1px solid var(--border); border-radius: var(--radius); padding: 15px 18px;
+  text-decoration: none; color: inherit; background: var(--surface);
+  transition: border-color 0.2s ease;
+}
+.nw-nb:hover, .nw-nb:focus-visible { border-color: var(--accent); }
+.nw-nb span { font-family: var(--font-mono); font-size: 11.5px; color: var(--text-soft); display: block; }
+.nw-nb b { font-size: 14px; color: var(--navy); font-weight: 600; line-height: 1.6; display: block; margin-top: 6px; }
+.nw-nb.next { text-align: right; }
+.nw-back { margin-top: 34px !important; font-size: 14px; }
+.nw-back a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.nw-back a:hover { text-decoration: underline; }
+
+/* ── トップページの最新3件 ── */
+.nw-home { padding: 88px 0; background: var(--bg-soft); }
+.nw-home h2 { color: var(--navy); margin: 12px 0 0; }
+.nw-cl-home { margin-top: 22px; max-width: 760px; }
+.nw-cl-home a { background: var(--surface); padding: 15px 18px; }
+.nw-home-all { margin-top: 22px; font-size: 14px; }
+.nw-home-all a { color: var(--accent); font-weight: 600; text-decoration: none; }
+.nw-home-all a:hover { text-decoration: underline; }
+
+@media (max-width: 860px) {
+  .nw-hl { grid-template-columns: 1fr; }
+  .nw-hl img { min-height: 200px; }
+  .nw-hl-b { padding: 24px 22px; }
+}
+@media (max-width: 640px) {
+  .nw { padding: 32px 14px 64px; }
+  .nw-art { padding: 36px 16px 64px; }
+  .nw-nbs { grid-template-columns: 1fr; }
+  .nw-nb.next { text-align: left; }
+  .nw-home { padding: 64px 0; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HERO SLIDESHOW — 背景写真を一定間隔で入れ替える (2026-09-03)
+   .hero--photo は背景を1枚の写真で塗るため、クロスフェードできない。
+   写真を子レイヤー2枚に逃がし、暗幕を ::after に移して重ね順を作る。
+   暗幕は .hero--photo と同じ横グラデに、均一な rgba(10,42,62,.25) を重ねたもの。
+   写真ごとに明るさが違うため、15枚それぞれのテキスト領域を実測して .25 を決めた。
+   白文字のコントラスト比は最も不利な1枚 (横浜みなとみらいの夕景) でも 4.77:1 で
+   WCAG AA (4.5:1) に適合する。
+   自動切り替えの停止ボタンは WCAG 2.2.2「一時停止、停止、非表示」への対応。
+   https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html
+   ══════════════════════════════════════════════════════════════ */
+.hero--slideshow {
+  position: relative; overflow: hidden; isolation: isolate;
+  background: var(--navy);
+}
+.hero--slideshow .hero-slides { position: absolute; inset: 0; z-index: 0; }
+.hero--slideshow .hero-slide {
+  position: absolute; inset: 0;
+  background-position: center; background-size: cover; background-repeat: no-repeat;
+  opacity: 0; transition: opacity 1.2s ease-in-out;
+}
+.hero--slideshow .hero-slide.is-on { opacity: 1; }
+.hero--slideshow::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    linear-gradient(0deg, rgba(10, 42, 62, 0.25), rgba(10, 42, 62, 0.25)),
+    linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 34%, var(--scrim-3) 58%, var(--scrim-4) 76%);
+}
+.hero--slideshow > .container { position: relative; z-index: 2; }
+
+/* 停止・再生ボタン。白文字 on rgba(10,42,62,.72) 相当で 8:1 以上を確保する。
+   右下は .line-float (position:fixed / z-index:900) の定位置で必ず重なるため、左下に置く。 */
+.hero-slide-toggle {
+  position: absolute; left: 20px; bottom: 20px; z-index: 3;
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 8px 14px; border-radius: 999px;
+  background: rgba(10, 42, 62, 0.72); border: 1px solid rgba(255, 255, 255, 0.42);
+  color: #fff; font-family: var(--font-sans); font-size: 12.5px; font-weight: 600;
+  cursor: pointer; transition: background 0.2s ease, border-color 0.2s ease;
+}
+.hero-slide-toggle:hover,
+.hero-slide-toggle:focus-visible { background: rgba(10, 42, 62, 0.9); border-color: #fff; }
+.hero-slide-toggle svg { flex: none; }
+.hero-slide-toggle[hidden] { display: none; }
+
+@media (max-width: 640px) {
+  /* .hero--photo と同じ考え方で、モバイルは全体を均一に暗くする縦グラデにする */
+  .hero--slideshow::after {
+    background:
+      linear-gradient(0deg, rgba(10, 42, 62, 0.25), rgba(10, 42, 62, 0.25)),
+      linear-gradient(180deg, rgba(10, 42, 62, 0.70) 0%, rgba(10, 42, 62, 0.52) 50%, rgba(10, 42, 62, 0.72) 100%);
+  }
+  .hero-slide-toggle { left: 14px; bottom: 14px; padding: 7px 12px; font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero--slideshow .hero-slide { transition: none; }
+}
+
+/* ══════════════════════════════════════════════════════════════
    SECTION INVERT — Navy 反転セクション (案4 / 2026-08-06)
    全ページに1つ、リズムを作る濃色ブロックとして使う。
    実装方針: 色を直接指定するのではなく「配下で使われるトークンを反転」する。
@@ -948,6 +1166,11 @@ body .stat-card:hover {
    - 右下フローティング + フッター内リンク
    - 配色は LUMA CTA Orange。LINE 社のロゴ画像は使用しない
    ============================================================ */
+/* 拡大表示 (ライトボックス) 中は LINE ボタンを隠す。暗幕は不透明度0.94のため、
+   明るいアンバーのボタンだけが透けて見えてしまう。.lightbox = 作例ページ / .alb = 撮影ノート */
+body:has(.lightbox.open) .line-float,
+body:has(.alb.open) .line-float { display: none; }
+
 .line-float{
   position: fixed;
   right: 20px;

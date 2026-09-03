@@ -1255,8 +1255,8 @@
     </image:image>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/haneda-star-alliance-ana-fuji.jpg</image:loc>
-      <image:title>スターアライアンスと富士</image:title>
-      <image:caption>スターアライアンスと富士 — 羽田空港で撮影した航空写真。Star Alliance and Fuji (Nikon Z6III / LUMA Frame)</image:caption>
+      <image:title>スターアライアンス塗装の787</image:title>
+      <image:caption>スターアライアンス塗装の787 — 羽田空港で撮影した航空写真。A Star Alliance 787 (Nikon Z6III / LUMA Frame)</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/haneda-oneworld-787-at-the-gate.jpg</image:loc>
@@ -2683,8 +2683,8 @@
     </image:image>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/haneda-star-alliance-ana-fuji.jpg</image:loc>
-      <image:title>Star Alliance and Fuji</image:title>
-      <image:caption>Star Alliance and Fuji — an aviation photo taken at Haneda Airport, Tokyo. Shot on the Nikon Z6III (LUMA Frame)</image:caption>
+      <image:title>A Star Alliance 787</image:title>
+      <image:caption>A Star Alliance 787 — an aviation photo taken at Haneda Airport, Tokyo. Shot on the Nikon Z6III (LUMA Frame)</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/haneda-oneworld-787-at-the-gate.jpg</image:loc>
@@ -3865,8 +3865,8 @@
     </image:image>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/haneda-star-alliance-ana-fuji.jpg</image:loc>
-      <image:title>スターアライアンスと富士</image:title>
-      <image:caption>スターアライアンスと富士 — 羽田空港で撮影した航空写真。Star Alliance and Fuji (Nikon Z6III / LUMA Frame)</image:caption>
+      <image:title>スターアライアンス塗装の787</image:title>
+      <image:caption>スターアライアンス塗装の787 — 羽田空港で撮影した航空写真。A Star Alliance 787 (Nikon Z6III / LUMA Frame)</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/haneda-oneworld-787-at-the-gate.jpg</image:loc>
@@ -4478,8 +4478,8 @@
     </image:image>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/haneda-star-alliance-ana-fuji.jpg</image:loc>
-      <image:title>Star Alliance and Fuji</image:title>
-      <image:caption>Star Alliance and Fuji — an aviation photo taken at Haneda Airport, Tokyo. Shot on the Nikon Z6III (LUMA Frame)</image:caption>
+      <image:title>A Star Alliance 787</image:title>
+      <image:caption>A Star Alliance 787 — an aviation photo taken at Haneda Airport, Tokyo. Shot on the Nikon Z6III (LUMA Frame)</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/haneda-oneworld-787-at-the-gate.jpg</image:loc>
@@ -6066,8 +6066,8 @@
     </image:image>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/haneda-star-alliance-ana-fuji.jpg</image:loc>
-      <image:title>スターアライアンスと富士</image:title>
-      <image:caption>スターアライアンスと富士 — 羽田空港で撮影した航空写真。Star Alliance and Fuji (Nikon Z6III / LUMA Frame)</image:caption>
+      <image:title>スターアライアンス塗装の787</image:title>
+      <image:caption>スターアライアンス塗装の787 — 羽田空港で撮影した航空写真。A Star Alliance 787 (Nikon Z6III / LUMA Frame)</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/haneda-mount-fuji-terminal-sunset.jpg</image:loc>
@@ -6244,8 +6244,8 @@
     </image:image>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/haneda-star-alliance-ana-fuji.jpg</image:loc>
-      <image:title>Star Alliance and Fuji</image:title>
-      <image:caption>Star Alliance and Fuji — an aviation photo taken at Haneda Airport, Tokyo. Shot on the Nikon Z6III (LUMA Frame)</image:caption>
+      <image:title>A Star Alliance 787</image:title>
+      <image:caption>A Star Alliance 787 — an aviation photo taken at Haneda Airport, Tokyo. Shot on the Nikon Z6III (LUMA Frame)</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/haneda-mount-fuji-terminal-sunset.jpg</image:loc>
@@ -7518,4 +7518,114 @@
     </image:image>
   </url>
 
+  <!-- NEWS:START -->
+  <url>
+    <loc>https://studio-lumadesign.com/news/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://studio-lumadesign.com/en/news/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://studio-lumadesign.com/news/hero-slideshow.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/hero-slideshow.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/hero-slideshow.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/hero-slideshow.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://studio-lumadesign.com/en/news/hero-slideshow.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/hero-slideshow.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/hero-slideshow.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/hero-slideshow.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://studio-lumadesign.com/news/shooting-notes-launch.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/shooting-notes-launch.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/shooting-notes-launch.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/shooting-notes-launch.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://studio-lumadesign.com/en/news/shooting-notes-launch.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/shooting-notes-launch.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/shooting-notes-launch.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/shooting-notes-launch.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://studio-lumadesign.com/news/photo-location-pages.html</loc>
+    <lastmod>2026-08-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/photo-location-pages.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/photo-location-pages.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/photo-location-pages.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://studio-lumadesign.com/en/news/photo-location-pages.html</loc>
+    <lastmod>2026-08-31</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/photo-location-pages.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/photo-location-pages.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/photo-location-pages.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://studio-lumadesign.com/news/itami-skypark-shoot.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/itami-skypark-shoot.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/itami-skypark-shoot.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/itami-skypark-shoot.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://studio-lumadesign.com/en/news/itami-skypark-shoot.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/itami-skypark-shoot.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/itami-skypark-shoot.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/itami-skypark-shoot.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://studio-lumadesign.com/news/service-lines-four.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/service-lines-four.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/service-lines-four.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/service-lines-four.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://studio-lumadesign.com/en/news/service-lines-four.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/service-lines-four.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/service-lines-four.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/service-lines-four.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<!-- NEWS:END -->
 </urlset>

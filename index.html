@@ -49,7 +49,6 @@
 <link rel="preconnect" href="https://formspree.io" />
 <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
-<link rel="preload" as="image" href="./images/DSC_0101.jpg?v=1" fetchpriority="high" />
 
 <!-- ════════════════════════════════════════════════
      STRUCTURED DATA — JSON-LD
@@ -179,7 +178,7 @@
   gtag('config', 'G-62F20N179N');
 </script>
 
-<link rel="stylesheet" href="./shared.css?v=aqua12" />
+<link rel="stylesheet" href="./shared.css?v=aqua18" />
 <style id="page-overrides">
   /* ── HERO: 暗幕・文字色・ボタン・実績数値は shared.css の .hero--photo
      で全ページ共通化済み。ここでは案4のサイズと単一カラム構成のみ (2026-08-06) ── */
@@ -230,6 +229,7 @@
         </ul>
       </li>
       <li><a href="./blog/index.html">撮影ノート</a></li>
+        <li><a href="./news/index.html">ニュース</a></li>
       <li><a href="./about.html">About me</a></li>
       <li><a href="#faq">FAQ</a></li>
       <!-- コラム: 今回リリースでは非表示（2026-05-18以降に再追加予定） <li><a href="#blog">コラム</a></li> -->
@@ -253,7 +253,9 @@
 </nav>
 
 <!-- ════ HERO ════ -->
-<header class="hero hero--photo" id="home" tabindex="-1" style="--hero-photo:url('./images/DSC_0101.jpg?v=1');">
+<header class="hero hero--photo hero--slideshow" id="home" tabindex="-1"
+        data-slide-dir="./images/hero/"
+        data-slides="[&quot;yokohama-minatomirai-dusk&quot;,&quot;yokohama-cosmo-clock-night&quot;,&quot;yokohama-osanbashi-night&quot;,&quot;sapporo-jr-tower-night-sea-of-lights&quot;,&quot;shonan-magenta-dusk-coast&quot;,&quot;shonan-moonlit-coast&quot;,&quot;enoshima-sea-candle-at-night&quot;,&quot;enoshima-night-gate&quot;,&quot;enoden-signal-and-tracks-night&quot;,&quot;haneda-mount-fuji-terminal-sunset&quot;,&quot;haneda-mount-fuji-blue-hour&quot;,&quot;haneda-ana-787-cockpit-night&quot;,&quot;itami-terminal-at-night&quot;,&quot;keihinjima-787-underside&quot;,&quot;atami-akao-forest-sea-terrace&quot;]">
   <div class="container hero-grid">
     <div class="hero-text">
       <span class="hero-pill"><span class="dot"></span>2026年の新規受付中 — 初回30分は無料相談</span>
@@ -308,12 +310,41 @@
 <div class="logo-strip" aria-label="信頼の指標">
   <div class="logo-strip-inner">
     <span class="logo-strip-label" style="font-size: 16px">LUMA の特徴</span>
-    <div class="logo-strip-items">
-      <span>📍 東京・横浜</span>
-      <span>🌐 日英バイリンガル</span>
-      <span>📷 Nikon Z6III</span>
-      <span>🎓 オーストラリア留学9年</span>
-      <span>🀄 健康麻雀</span>
+    <div class="marquee" data-marquee>
+      <div class="marquee-track">
+        <div class="marquee-set logo-strip-items">
+        <span>📍 東京・横浜</span>
+        <span>🌐 日英バイリンガル</span>
+        <span>📷 Nikon Z6III</span>
+        <span>🔎 NIKKOR Z 35mm f/1.4</span>
+        <span>🎓 オーストラリア留学9年</span>
+        <span>🗓️ 撮影は2020年から</span>
+        <span>🖼️ 公開写真284点</span>
+        <span>🗣️ 英会話レッスン</span>
+        <span>📸 記念撮影・ポートレート</span>
+        <span>🗺️ 英語で巡る東京ツアー</span>
+        <span>🤝 コミュニティイベント</span>
+        <span>🀄 健康麻雀</span>
+        <span>🏆 S.League 2022年〜</span>
+        <span>💬 初回30分は無料相談</span>
+        </div>
+        <div class="marquee-set logo-strip-items" aria-hidden="true">
+        <span>📍 東京・横浜</span>
+        <span>🌐 日英バイリンガル</span>
+        <span>📷 Nikon Z6III</span>
+        <span>🔎 NIKKOR Z 35mm f/1.4</span>
+        <span>🎓 オーストラリア留学9年</span>
+        <span>🗓️ 撮影は2020年から</span>
+        <span>🖼️ 公開写真284点</span>
+        <span>🗣️ 英会話レッスン</span>
+        <span>📸 記念撮影・ポートレート</span>
+        <span>🗺️ 英語で巡る東京ツアー</span>
+        <span>🤝 コミュニティイベント</span>
+        <span>🀄 健康麻雀</span>
+        <span>🏆 S.League 2022年〜</span>
+        <span>💬 初回30分は無料相談</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -569,6 +600,30 @@
 <!-- ════ BLOG TEASER（コラム）: 今回リリースでは未実装のため削除。2026-05-18 以降に再追加予定。旧マークアップは git 履歴より復元可能 ════ -->
 
 <!-- ════ STORY ════ -->
+<!-- NEWS:START -->
+<section id="news" class="nw-home" aria-labelledby="news-heading">
+  <div class="container">
+    <span class="eyebrow">ニュース</span>
+    <h2 id="news-heading">最新のニュース</h2>
+    <ul class="nw-cl nw-cl-home">
+      <li><a href="./news/hero-slideshow.html">
+        <time datetime="2026-09-03">2026.09.03</time><span class="nw-chip" style="background:#1565C0;color:#fff;">サイト更新</span>
+        <span class="nw-lt">トップページの写真を15枚の入れ替え表示にしました</span>
+      </a></li>
+      <li><a href="./news/shooting-notes-launch.html">
+        <time datetime="2026-09-02">2026.09.02</time><span class="nw-chip" style="background:#F59E0B;color:#3A2708;">新ページ</span>
+        <span class="nw-lt">撮影ノートを開設しました</span>
+      </a></li>
+      <li><a href="./news/photo-location-pages.html">
+        <time datetime="2026-08-31">2026.08.31</time><span class="nw-chip" style="background:#F59E0B;color:#3A2708;">新ページ</span>
+        <span class="nw-lt">撮影地ごとの作例ページを5つ追加しました</span>
+      </a></li>
+    </ul>
+    <p class="nw-home-all"><a href="./news/index.html">ニュースをすべて見る →</a></p>
+  </div>
+</section>
+<!-- NEWS:END -->
+
 <section id="story" aria-labelledby="story-heading">
   <div class="container" style="max-width:820px;">
     <div class="section-head reveal" style="text-align:center;margin: 0 auto 48px;">
@@ -617,6 +672,7 @@
         <h4>LUMAについて</h4>
         <ul>
           <li><a href="./about.html">About me</a></li>
+          <li><a href="./news/index.html">ニュース</a></li>
           <li><a href="#story">My Story</a></li>
           <li><a href="#faq">FAQ</a></li>
           <!-- コラム: 今回リリースでは非表示（2026-05-18以降に再追加予定） <li><a href="#blog">コラム</a></li> -->
@@ -675,6 +731,7 @@
 </script>
 
 <script src="./nav.js" defer></script>
+<script src="./hero-slideshow.js" defer></script>
 <a class="line-float" href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer" aria-label="LINE で LUMA に相談する (新しいタブで開きます)"><svg class="lf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>LINE で相談</span></a>
 </body>
 </html>

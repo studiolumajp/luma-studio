@@ -1,0 +1,172 @@
+[
+  {
+    "slug": "hero-slideshow",
+    "date": "2026-09-03",
+    "cat": "update",
+    "title": {
+      "ja": "トップページの写真を15枚の入れ替え表示にしました",
+      "en": "The Home Page Now Cycles Through Fifteen Photographs"
+    },
+    "lead": {
+      "ja": "羽田・横浜・湘南・札幌などで撮った15枚を、7秒ごとに切り替えます。",
+      "en": "Fifteen photographs from Haneda, Yokohama, Shonan and Sapporo, changing every seven seconds."
+    },
+    "body": {
+      "ja": [
+        "これまでは横浜で撮った1枚を固定で敷いていました。1枚だと、LUMA Frame でどんな写真を撮っているのかが伝わりません。",
+        "15枚は読み込むたびに順番が変わります。停止ボタンを左下に置いたので、動きが気になるときは止められます。",
+        "表示用に軽い版を作りました。15枚ぶんを全部読むことはせず、表示中の1枚と次の1枚だけを読みます。実測で158KBです。"
+      ],
+      "en": [
+        "Until now a single photograph from Yokohama sat behind the headline. One frame cannot show the range of what LUMA Frame shoots.",
+        "The order changes on every page load. A pause button sits in the lower left for anyone who would rather it held still.",
+        "Each photograph has a lighter version made for this. The page loads the one on screen and the one coming next, not all fifteen. Measured, that is 158KB."
+      ]
+    },
+    "image": "images/photography/yokohama-minatomirai-dusk.jpg",
+    "link": {
+      "ja": "index.html",
+      "en": "index.html"
+    },
+    "linkLabel": {
+      "ja": "トップページを見る",
+      "en": "Open the home page"
+    }
+  },
+  {
+    "slug": "shooting-notes-launch",
+    "date": "2026-09-02",
+    "cat": "new",
+    "title": {
+      "ja": "撮影ノートを開設しました",
+      "en": "Shooting Notes Is Now Open"
+    },
+    "lead": {
+      "ja": "羽田・伊丹・京浜島・湘南・熱海・横浜で撮った写真を、撮影の時刻と設定を添えて7本の記事にしました。",
+      "en": "Seven articles on photographs taken at Haneda, Itami, Keihinjima, Shonan, Atami and Yokohama, each with the time of day and the settings used."
+    },
+    "body": {
+      "ja": [
+        "作例ページとは別に、撮っているあいだ何を考えていたかを書く場所を作りました。",
+        "記事は7本、写真は合計180点です。羽田空港の昼と夜、伊丹スカイパーク、京浜島つばさ公園、湘南・江ノ島、熱海、横浜みなとみらい。",
+        "シャッタースピードや ISO を変えた時刻をそのまま書いています。同じ場所で設定を変えると絵がどう変わるか、追いかけられる形にしました。"
+      ],
+      "en": [
+        "The gallery shows the results. These notes are for what was going through my head while shooting.",
+        "Seven articles, 180 photographs in total. Haneda by day and by night, Itami Skypark, Keihinjima Tsubasa Park, Shonan and Enoshima, Atami, and Yokohama Minatomirai.",
+        "The times at which I changed shutter speed or ISO are written down as they happened. Shoot the same place with different settings and the picture changes, and the notes let you follow that."
+      ]
+    },
+    "image": "images/photography/haneda-ana-787-cockpit-night.jpg",
+    "link": {
+      "ja": "blog/index.html",
+      "en": "en/blog/index.html"
+    },
+    "linkLabel": {
+      "ja": "撮影ノートを読む",
+      "en": "Read the notes"
+    }
+  },
+  {
+    "slug": "itami-skypark-shoot",
+    "date": "2026-08-10",
+    "cat": "work",
+    "title": {
+      "ja": "伊丹スカイパークで航空写真を28点撮りました",
+      "en": "Twenty-Eight Frames at Itami Skypark"
+    },
+    "lead": {
+      "ja": "17時03分から19時44分まで。ISO100 から 800 まで上げた2時間41分の記録です。",
+      "en": "From 17:03 to 19:44. Two hours and forty-one minutes, with ISO climbing from 100 to 800."
+    },
+    "body": {
+      "ja": [
+        "大阪国際空港に隣接する伊丹スカイパークで撮りました。滑走路と同じ高さの丘があり、離陸する機体を正面から見られます。",
+        "最初の1枚は1/1250秒、ISO400。最後の1枚は3秒、ISO800。日が落ちるにつれて、設定を端から端まで動かしています。",
+        "写真と経緯は撮影ノートの記事にまとめました。"
+      ],
+      "en": [
+        "Itami Skypark sits alongside Osaka International Airport. A rise in the park puts you level with the runway, facing the aircraft head on as they leave.",
+        "The first frame was 1/1250s at ISO400. The last was 3 seconds at ISO800. As the light went, the settings travelled from one end of the range to the other.",
+        "The photographs and the sequence are written up in Shooting Notes."
+      ]
+    },
+    "image": "images/photography/itami-ana-787-nose-close-up.jpg",
+    "link": {
+      "ja": "blog/itami-skypark.html",
+      "en": "en/blog/itami-skypark.html"
+    },
+    "linkLabel": {
+      "ja": "記事を読む",
+      "en": "Read the article"
+    }
+  },
+  {
+    "slug": "photo-location-pages",
+    "date": "2026-08-31",
+    "cat": "new",
+    "title": {
+      "ja": "撮影地ごとの作例ページを5つ追加しました",
+      "en": "Five Location Galleries Added"
+    },
+    "lead": {
+      "ja": "羽田空港・伊丹スカイパーク・湘南・熱海・横浜。撮影地ごとに分けて、全284点を並べています。",
+      "en": "Haneda, Itami Skypark, Shonan, Atami and Yokohama. All 284 photographs, now split by where they were taken."
+    },
+    "body": {
+      "ja": [
+        "これまでは作例を1ページにまとめていました。撮影地で分けたのは、行きたい場所が決まっている人に、そこで撮った写真だけを見てもらえるようにするためです。",
+        "羽田空港は121点あり、昼と夜で切り替えられます。伊丹スカイパークは33点、湘南・江ノ島は38点、熱海は25点、横浜は23点です。",
+        "写真をクリックすると大きく表示され、矢印キーで次の写真に移れます。"
+      ],
+      "en": [
+        "The gallery used to be one long page. Splitting it by location means someone with a place in mind sees only the photographs taken there.",
+        "Haneda holds 121 frames and can be filtered between day and night. Itami has 33, Shonan and Enoshima 38, Atami 25, Yokohama 23.",
+        "Click any photograph to see it large, then move through the set with the arrow keys."
+      ]
+    },
+    "image": "images/photography/haneda-mount-fuji-terminal-sunset.jpg",
+    "link": {
+      "ja": "photography.html",
+      "en": "en/photography.html"
+    },
+    "linkLabel": {
+      "ja": "作例を見る",
+      "en": "See the gallery"
+    }
+  },
+  {
+    "slug": "service-lines-four",
+    "date": "2026-05-25",
+    "cat": "svc",
+    "title": {
+      "ja": "LUMA Space と LUMA Stage の提供を終了しました",
+      "en": "LUMA Space and LUMA Stage Have Closed"
+    },
+    "lead": {
+      "ja": "現在のサービスは LUMA Voice / Frame / Path / Circle の4本です。",
+      "en": "Four services remain: LUMA Voice, Frame, Path and Circle."
+    },
+    "body": {
+      "ja": [
+        "カウンセリングの LUMA Space と、カラオケ指導の LUMA Stage を終了しました。",
+        "4本に絞ったのは、どのサービスも自己肯定感を高めるという同じ目的でつながっているからです。数を増やすより、1本ずつの中身を厚くする方を選びました。",
+        "終了した2つについてのお問い合わせには、現在は提供していない旨をお伝えしています。"
+      ],
+      "en": [
+        "LUMA Space, which offered counselling, and LUMA Stage, which taught singing, have both closed.",
+        "The four that remain share one purpose: helping someone believe in themselves. Rather than add more, I chose to make each of the four deeper.",
+        "If you write in about either of the closed services, I will let you know they are no longer offered."
+      ]
+    },
+    "image": "images/photography/atami-akao-forest-sea-terrace.jpg",
+    "link": {
+      "ja": "services.html",
+      "en": "en/services.html"
+    },
+    "linkLabel": {
+      "ja": "サービス一覧を見る",
+      "en": "See all services"
+    }
+  }
+]
