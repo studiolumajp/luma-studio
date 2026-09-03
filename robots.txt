@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# インデックスさせないページ (contact-en.html / lp/frame.html / design-lab 配下) は、
+# 各ページの <meta name="robots" content="noindex"> で除外している。
+# ここで Disallow するとクロールされず noindex が読まれないため、あえて許可している。
+# 参照: https://developers.google.com/search/docs/crawling-indexing/block-indexing
+
+Sitemap: https://studio-lumadesign.com/sitemap.xml

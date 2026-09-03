@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>案2 カテゴリ別カード型 | ニュースページ モック</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../shared.css?v=aqua15" />
+<style>
+.mockbar{background:#134E6F;color:#fff;padding:10px 20px;font-size:13px;font-family:var(--font-sans);display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+.mockbar b{font-size:14px;}
+.mockbar a{color:#fff;opacity:.85;}
+.nw{max-width:1000px;margin:0 auto;padding:0 24px 96px;}
+.nw-head{padding:56px 0 8px;}
+.nw-head h1{font-size:clamp(28px,3.4vw,40px);color:var(--navy);margin:12px 0 0;}
+.nw-head p{color:var(--text-soft);margin:12px 0 0;font-size:15.5px;line-height:1.9;max-width:640px;}
+.chip{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.04em;padding:3px 10px;border-radius:999px;color:#fff;white-space:nowrap;}
+
+.nw-filters{display:flex;gap:8px;flex-wrap:wrap;margin:26px 0 6px;}
+.fbtn{font-size:13px;font-weight:600;padding:7px 15px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--text-soft);cursor:pointer;}
+.fbtn.on{background:var(--navy);border-color:var(--navy);color:#fff;}
+.nc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;margin-top:22px;}
+.nc{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s,transform .2s;}
+.nc:hover{border-color:var(--accent);transform:translateY(-2px);}
+.nc img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;display:block;background:var(--bg-muted);}
+.nc-b{padding:18px 20px 22px;}
+.nc-m{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--text-soft);font-family:var(--font-mono);}
+.nc h2{font-size:17px;color:var(--navy);margin:11px 0 0;line-height:1.6;}
+.nc p{font-size:14px;color:var(--text-soft);line-height:1.8;margin:9px 0 0;}
+
+@media(max-width:640px){.nw{padding:0 14px 64px;}}
+</style>
+</head>
+<body>
+<div class="mockbar"><b>モック 案2: カテゴリ別カード型</b><span>撮影ノート一覧と同じ骨格。写真つき</span><a href="./index.html">5案の一覧へ</a></div>
+<nav class="site-nav" aria-label="メインナビゲーション">
+  <div class="nav-inner">
+    <a href="../../index.html" class="brand" aria-label="LUMA ホーム">
+      <span class="brand-mark">L</span><span>LUMA</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../service-photo.html">LUMA Frame</a></li>
+      <li class="has-dropdown">
+        <a href="../../services.html" class="dropdown-toggle">サービス</a>
+        <ul class="dropdown-menu">
+          <li><a href="../../services.html">サービス一覧</a></li>
+          <li><a href="../../service-english.html">英会話レッスン</a></li>
+          <li><a href="../../service-photo.html">記念撮影・ポートレート</a></li>
+          <li><a href="../../service-tour.html">英語で巡る東京ツアー</a></li>
+          <li><a href="../../service-community.html">コミュニティイベント</a></li>
+          <li><a href="../../s-league.html">S.League 麻雀大会</a></li>
+        </ul>
+      </li>
+      <li><a href="../../blog/index.html">撮影ノート</a></li>
+      <li><a href="../../about.html">About me</a></li>
+      <li><a href="../../contact.html">お問い合わせ</a></li>
+    </ul>
+    <div style="display:flex;gap:10px;align-items:center;">
+      <a href="../../contact.html" class="nav-cta">無料見積もりを依頼 →</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="メニューを開閉" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<main class="nw">
+  <div class="nw-head"><span class="eyebrow">ニュース</span>
+  <h1>ニュース</h1>
+  <p>サイトの更新、サービスの変更、大会の開催をお知らせしています。</p></div>
+  <div class="nw-filters"><button class="fbtn on">すべて</button><button class="fbtn">お知らせ</button><button class="fbtn">新ページ</button><button class="fbtn">イベント</button><button class="fbtn">撮影記録</button></div>
+  <div class="nc-grid">
+    <article class="nc">
+      <img src="../../images/hero/yokohama-minatomirai-dusk-960.webp" alt="" loading="lazy" width="960" height="640" />
+      <div class="nc-b">
+        <div class="nc-m"><span class="chip" style="background:#1565C0">サイト更新</span><time datetime="2026-09-03">2026.09.03</time></div>
+        <h2>トップページの写真を15枚の入れ替え表示に変更しました</h2><p>羽田・横浜・湘南・札幌などで撮った15枚を、7秒ごとに切り替えて表示します。</p>
+      </div>
+    </article>
+    <article class="nc">
+      <img src="../../images/hero/haneda-ana-787-cockpit-night-960.webp" alt="" loading="lazy" width="960" height="640" />
+      <div class="nc-b">
+        <div class="nc-m"><span class="chip" style="background:#F59E0B;color:#3A2708">新ページ</span><time datetime="2026-09-02">2026.09.02</time></div>
+        <h2>撮影ノートを開設し、記事7本を公開しました</h2><p>羽田・伊丹・京浜島・湘南・熱海・横浜での撮影を、時刻と設定つきで書いています。</p>
+      </div>
+    </article>
+    <article class="nc">
+      <img src="../../images/hero/itami-terminal-at-night-960.webp" alt="" loading="lazy" width="960" height="640" />
+      <div class="nc-b">
+        <div class="nc-m"><span class="chip" style="background:#134E6F">撮影記録</span><time datetime="2026-08-10">2026.08.10</time></div>
+        <h2>伊丹スカイパークで航空写真を28点撮影しました</h2><p>17時03分から19時44分まで。ISO100 から 800 まで、2時間41分の記録です。</p>
+      </div>
+    </article>
+    <article class="nc">
+      <img src="../../images/hero/atami-akao-forest-sea-terrace-960.webp" alt="" loading="lazy" width="960" height="640" />
+      <div class="nc-b">
+        <div class="nc-m"><span class="chip" style="background:#4A6675">サービス</span><time datetime="2026-05-25">2026.05.25</time></div>
+        <h2>LUMA Space と LUMA Stage の提供を終了しました</h2><p>今後は LUMA Voice / Frame / Path / Circle の4つに絞ります。</p>
+      </div>
+    </article>
+    <article class="nc">
+      <img src="../../images/hero/sapporo-jr-tower-night-sea-of-lights-960.webp" alt="" loading="lazy" width="960" height="640" />
+      <div class="nc-b">
+        <div class="nc-m"><span class="chip" style="background:#C2410C">イベント</span><time datetime="2026-04-19">2026.04.19</time></div>
+        <h2>S.League 第26回大会を新橋で開催します</h2><p>ノーレートの健康麻雀大会です。参加者を募集しています。</p>
+      </div>
+    </article>
+    <article class="nc">
+      <img src="../../images/hero/shonan-magenta-dusk-coast-960.webp" alt="" loading="lazy" width="960" height="640" />
+      <div class="nc-b">
+        <div class="nc-m"><span class="chip" style="background:#0F766E">お知らせ</span><time datetime="2026-02-01">2026.02.01</time></div>
+        <h2>LUMA | Clarity by Design を開始しました</h2><p>英会話・撮影・英語ツアー・コミュニティの4本立てで、東京と横浜から始めます。</p>
+      </div>
+    </article>
+  </div>
+</main>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../../index.html" class="brand"><span class="brand-mark">L</span><span>LUMA</span></a>
+        <p>東京・横浜で、あなたの自信をデザインする。Clarity by Design — Illuminate Your Confidence.</p>
+      </div>
+      <div class="footer-col">
+        <h4>サービス</h4>
+        <ul>
+          <li><a href="../../service-english.html">英会話レッスン</a></li>
+          <li><a href="../../service-photo.html">記念撮影・ポートレート</a></li>
+          <li><a href="../../s-league.html">S.League 麻雀</a></li>
+          <li><a href="../../service-tour.html">英語で巡る東京ツアー</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>LUMAについて</h4>
+        <ul>
+          <li><a href="../../about.html">About me</a></li>
+          <li><a href="../../index.html#story">My Story</a></li>
+          <li><a href="../../index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>サポート</h4>
+        <ul>
+          <li><a href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer">LINE で相談</a></li>
+          <li><a href="../../contact.html">お問い合わせ</a></li>
+          <li><a href="../../legal.html">特定商取引法</a></li>
+          <li><a href="../../legal.html#privacy">プライバシー</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 LUMA. All rights reserved.</span>
+      <span>横浜市 · 神奈川県 · 日英バイリンガル</span>
+    </div>
+  </div>
+</footer>
+<script src="../../nav.js" defer></script>
+</body>
+</html>

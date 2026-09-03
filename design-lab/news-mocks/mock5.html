@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>案5 ハイライト+一覧 | ニュースページ モック</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../shared.css?v=aqua15" />
+<style>
+.mockbar{background:#134E6F;color:#fff;padding:10px 20px;font-size:13px;font-family:var(--font-sans);display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+.mockbar b{font-size:14px;}
+.mockbar a{color:#fff;opacity:.85;}
+.nw{max-width:1000px;margin:0 auto;padding:0 24px 96px;}
+.nw-head{padding:56px 0 8px;}
+.nw-head h1{font-size:clamp(28px,3.4vw,40px);color:var(--navy);margin:12px 0 0;}
+.nw-head p{color:var(--text-soft);margin:12px 0 0;font-size:15.5px;line-height:1.9;max-width:640px;}
+.chip{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.04em;padding:3px 10px;border-radius:999px;color:#fff;white-space:nowrap;}
+
+.hl{display:grid;grid-template-columns:1.15fr 1fr;gap:0;margin:32px 0 0;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;background:var(--surface);}
+.hl img{width:100%;height:100%;min-height:320px;object-fit:cover;display:block;background:var(--bg-muted);}
+.hl-b{padding:38px 36px;display:flex;flex-direction:column;justify-content:center;}
+.hl-m{display:flex;align-items:center;gap:11px;font-family:var(--font-mono);font-size:12.5px;color:var(--text-soft);}
+.hl-b h2{font-size:24px;color:var(--navy);margin:14px 0 0;line-height:1.55;}
+.hl-b p{font-size:15px;color:var(--text-soft);line-height:1.95;margin:13px 0 0;}
+.hl-b .more{margin-top:18px;font-size:13.5px;font-weight:600;color:var(--accent);}
+.cl{list-style:none;margin:44px 0 0;padding:0;border-top:1px solid var(--border);}
+.cl-i{display:flex;align-items:center;gap:14px;padding:16px 8px;border-bottom:1px solid var(--border);}
+.cl-i:hover{background:var(--bg-soft);}
+.cl-i time{font-family:var(--font-mono);font-size:13px;color:var(--text-soft);white-space:nowrap;}
+.cl-t{font-size:15px;color:var(--navy);line-height:1.7;}
+.cl-h{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);font-weight:700;margin:44px 0 0;}
+@media(max-width:860px){.hl{grid-template-columns:1fr;}.hl img{min-height:220px;}.hl-b{padding:26px 22px;}}
+@media(max-width:640px){.cl-i{flex-wrap:wrap;gap:9px;}}
+
+@media(max-width:640px){.nw{padding:0 14px 64px;}}
+</style>
+</head>
+<body>
+<div class="mockbar"><b>モック 案5: ハイライト+一覧</b><span>最新1件を大きく、残りは1行ずつ</span><a href="./index.html">5案の一覧へ</a></div>
+<nav class="site-nav" aria-label="メインナビゲーション">
+  <div class="nav-inner">
+    <a href="../../index.html" class="brand" aria-label="LUMA ホーム">
+      <span class="brand-mark">L</span><span>LUMA</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../service-photo.html">LUMA Frame</a></li>
+      <li class="has-dropdown">
+        <a href="../../services.html" class="dropdown-toggle">サービス</a>
+        <ul class="dropdown-menu">
+          <li><a href="../../services.html">サービス一覧</a></li>
+          <li><a href="../../service-english.html">英会話レッスン</a></li>
+          <li><a href="../../service-photo.html">記念撮影・ポートレート</a></li>
+          <li><a href="../../service-tour.html">英語で巡る東京ツアー</a></li>
+          <li><a href="../../service-community.html">コミュニティイベント</a></li>
+          <li><a href="../../s-league.html">S.League 麻雀大会</a></li>
+        </ul>
+      </li>
+      <li><a href="../../blog/index.html">撮影ノート</a></li>
+      <li><a href="../../about.html">About me</a></li>
+      <li><a href="../../contact.html">お問い合わせ</a></li>
+    </ul>
+    <div style="display:flex;gap:10px;align-items:center;">
+      <a href="../../contact.html" class="nav-cta">無料見積もりを依頼 →</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="メニューを開閉" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<main class="nw">
+  <div class="nw-head"><span class="eyebrow">ニュース</span>
+  <h1>ニュース</h1>
+  <p>最新の1件を大きく見せ、それ以前は1行ずつ並べます。</p></div>
+  <article class="hl">
+    <img src="../../images/hero/yokohama-minatomirai-dusk-960.webp" alt="" loading="lazy" width="960" height="640" />
+    <div class="hl-b">
+      <div class="hl-m"><time datetime="2026-09-03">2026.09.03</time><span class="chip" style="background:#1565C0">サイト更新</span></div>
+      <h2>トップページの写真を15枚の入れ替え表示に変更しました</h2><p>羽田・横浜・湘南・札幌などで撮った15枚を、7秒ごとに切り替えて表示します。</p><span class="more">詳細を読む →</span>
+    </div>
+  </article>
+  <h2 class="cl-h">これまでのニュース</h2>
+  <ul class="cl">
+    <li class="cl-i"><time datetime="2026-09-02">2026.09.02</time><span class="chip" style="background:#F59E0B;color:#3A2708">新ページ</span><span class="cl-t">撮影ノートを開設し、記事7本を公開しました</span></li>
+    <li class="cl-i"><time datetime="2026-08-10">2026.08.10</time><span class="chip" style="background:#134E6F">撮影記録</span><span class="cl-t">伊丹スカイパークで航空写真を28点撮影しました</span></li>
+    <li class="cl-i"><time datetime="2026-05-25">2026.05.25</time><span class="chip" style="background:#4A6675">サービス</span><span class="cl-t">LUMA Space と LUMA Stage の提供を終了しました</span></li>
+    <li class="cl-i"><time datetime="2026-04-19">2026.04.19</time><span class="chip" style="background:#C2410C">イベント</span><span class="cl-t">S.League 第26回大会を新橋で開催します</span></li>
+    <li class="cl-i"><time datetime="2026-02-01">2026.02.01</time><span class="chip" style="background:#0F766E">お知らせ</span><span class="cl-t">LUMA | Clarity by Design を開始しました</span></li>
+  </ul>
+</main>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../../index.html" class="brand"><span class="brand-mark">L</span><span>LUMA</span></a>
+        <p>東京・横浜で、あなたの自信をデザインする。Clarity by Design — Illuminate Your Confidence.</p>
+      </div>
+      <div class="footer-col">
+        <h4>サービス</h4>
+        <ul>
+          <li><a href="../../service-english.html">英会話レッスン</a></li>
+          <li><a href="../../service-photo.html">記念撮影・ポートレート</a></li>
+          <li><a href="../../s-league.html">S.League 麻雀</a></li>
+          <li><a href="../../service-tour.html">英語で巡る東京ツアー</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>LUMAについて</h4>
+        <ul>
+          <li><a href="../../about.html">About me</a></li>
+          <li><a href="../../index.html#story">My Story</a></li>
+          <li><a href="../../index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>サポート</h4>
+        <ul>
+          <li><a href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer">LINE で相談</a></li>
+          <li><a href="../../contact.html">お問い合わせ</a></li>
+          <li><a href="../../legal.html">特定商取引法</a></li>
+          <li><a href="../../legal.html#privacy">プライバシー</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 LUMA. All rights reserved.</span>
+      <span>横浜市 · 神奈川県 · 日英バイリンガル</span>
+    </div>
+  </div>
+</footer>
+<script src="../../nav.js" defer></script>
+</body>
+</html>

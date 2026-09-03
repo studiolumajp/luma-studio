@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>画像ファイル名 リネーム対応表 | LUMA Frame</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../shared.css" />
+<style>
+.wrap{max-width:1200px;margin:0 auto;padding:32px 20px 96px;}
+.bar{position:sticky;top:0;z-index:20;background:var(--bg-soft);border-bottom:1px solid var(--border);padding:12px 20px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+.bar button{font:500 13px var(--font-sans);border:1px solid var(--border-strong);background:var(--surface);color:var(--text);border-radius:999px;padding:7px 16px;cursor:pointer;}
+.bar button.on{background:var(--accent);border-color:var(--accent);color:#fff;}
+.bar .cta{background:var(--accent-2);border-color:var(--accent-2);color:#2C3E50;font-weight:600;margin-left:auto;}
+table{width:100%;border-collapse:collapse;margin-top:20px;background:var(--surface);}
+th,td{border:1px solid var(--border);padding:10px;text-align:left;vertical-align:top;font-size:14px;}
+thead th{background:var(--bg-muted);color:var(--navy);position:sticky;top:53px;z-index:10;}
+.thumbcell{width:170px;}
+.thumbcell img{width:150px;aspect-ratio:3/2;object-fit:cover;border-radius:8px;display:block;background:var(--bg-muted);}
+.ttl{font-weight:500;}
+.cur{display:block;margin-top:4px;font-size:12px;color:var(--text-soft);}
+.kind{display:inline-block;margin-top:6px;font-size:11px;font-weight:600;color:#fff;border-radius:999px;padding:2px 10px;}
+input{width:100%;font:400 13px var(--font-mono);padding:7px 9px;border:1px solid var(--border-strong);border-radius:8px;background:var(--bg-soft);color:var(--text);}
+input:focus{outline:2px solid var(--accent);border-color:var(--accent);}
+.note{margin-top:6px;font-size:12px;color:var(--text-soft);}
+.conf{font-size:12px;font-weight:600;border-radius:999px;padding:3px 10px;white-space:nowrap;}
+.conf.ok{background:#EAF7EF;color:#0F5132;}
+.conf.warn{background:#FFFBEB;color:#92400E;}
+.conf.del{background:var(--bg-muted);color:var(--navy);}
+.del-mark{font-size:13px;color:var(--text-soft);}
+tr[data-kind="remove"] td{background:var(--bg-soft);}
+#out{width:100%;height:220px;margin-top:16px;font:400 12px var(--font-mono);padding:12px;border:1px solid var(--border-strong);border-radius:8px;display:none;}
+.lead{font-size:15px;line-height:1.9;color:var(--text-soft);margin-top:10px;}
+.rule{margin-top:16px;background:var(--bg-muted);border-radius:12px;padding:16px 20px;font-size:14px;color:var(--navy);line-height:1.9;}
+@media(max-width:820px){.thumbcell{width:110px}.thumbcell img{width:96px}thead th{position:static}}
+</style></head>
+<body style="background:var(--bg)">
+<div style="background:#134E6F;color:#fff;padding:10px 16px;font-size:13px;text-align:center;">
+<strong>Phase 1 / 工程1</strong> ｜ 画像ファイル名のリネーム対応表 ｜ 撮影地と新ファイル名を確認してください
+</div>
+<div class="bar">
+<button class="on" data-f="all">すべて (122)</button>
+<button data-f="要確認">要確認 (42)</button>
+<button data-f="高">確定できるもの</button>
+<button data-f="remove">退避する11枚</button>
+<button data-f="new">新規13枚</button>
+<button class="cta" id="export">確認結果を書き出す</button>
+</div>
+<div class="wrap">
+<h1 style="font-size:26px;color:var(--navy);">画像ファイル名 リネーム対応表</h1>
+<p class="lead">現在の連番ファイル名を、内容の分かる名前に変更します。<strong>「撮影地」列に 42 件の要確認があります。</strong>写真を見て、違っていたら直接書き換えてください。新ファイル名も編集できます。編集が終わったら右上の「確認結果を書き出す」を押し、表示されたテキストをそのまま返信に貼り付けてください。</p>
+<div class="rule">
+<strong>命名ルール</strong>ーー <code>撮影地-被写体-状況.jpg</code> の形。すべて半角小文字とハイフンで統一します。例: <code>haneda-jal-a350-night-pushback.jpg</code> / <code>sapporo-odori-tulips.jpg</code><br>
+継続 98枚 + 新規 13枚 = 公開 111枚。退避 11枚は images/photography から外し、公開されない場所へ移します。
+</div>
+<table>
+<thead><tr><th>写真</th><th>現在</th><th>撮影地</th><th>新しいファイル名 (.jpg は不要)</th><th>確度</th></tr></thead>
+<tbody><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/couple-01.jpg" alt="和傘の下で" loading="lazy" /></td>
+<td><div class="ttl">和傘の下で</div><code class="cur">couple-01.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="0" value="神社 (要確認)" /></td>
+<td><input class="newname" data-i="0" value="prewedding-kimono-wagasa-shrine" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/couple-02.jpg" alt="縁側にて" loading="lazy" /></td>
+<td><div class="ttl">縁側にて</div><code class="cur">couple-02.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="1" value="和室 (要確認)" /></td>
+<td><input class="newname" data-i="1" value="prewedding-kimono-engawa" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/couple-03.jpg" alt="座敷の静けさ" loading="lazy" /></td>
+<td><div class="ttl">座敷の静けさ</div><code class="cur">couple-03.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="2" value="和室 (要確認)" /></td>
+<td><input class="newname" data-i="2" value="prewedding-kimono-tatami-room" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/couple-04.jpg" alt="見つめ合う" loading="lazy" /></td>
+<td><div class="ttl">見つめ合う</div><code class="cur">couple-04.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="3" value="和室 (要確認)" /></td>
+<td><input class="newname" data-i="3" value="prewedding-kimono-couple-closeup" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-01.jpg" alt="路地裏の夜" loading="lazy" /></td>
+<td><div class="ttl">路地裏の夜</div><code class="cur">landscape-01.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="4" value="江ノ島?" /></td>
+<td><input class="newname" data-i="4" value="enoshima-backstreet-night" /><div class="note">商店街か別の街か不明</div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-02.jpg" alt="黄昏の江ノ島" loading="lazy" /></td>
+<td><div class="ttl">黄昏の江ノ島</div><code class="cur">landscape-02.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="5" value="江ノ島" /></td>
+<td><input class="newname" data-i="5" value="enoshima-island-dusk" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-03.jpg" alt="富士と飛行機" loading="lazy" /></td>
+<td><div class="ttl">富士と飛行機</div><code class="cur">landscape-03.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="6" value="羽田空港" /></td>
+<td><input class="newname" data-i="6" value="haneda-mount-fuji-aircraft-sunset" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-04.jpg" alt="ガラスの向こうの夕陽" loading="lazy" /></td>
+<td><div class="ttl">ガラスの向こうの夕陽</div><code class="cur">landscape-04.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="7" value="羽田空港?" /></td>
+<td><input class="newname" data-i="7" value="haneda-sunset-through-glass" /><div class="note">ターミナルの窓と推定</div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-05.jpg" alt="夏の花" loading="lazy" /></td>
+<td><div class="ttl">夏の花</div><code class="cur">landscape-05.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="8" value="不明" /></td>
+<td><input class="newname" data-i="8" value="summer-hibiscus-flowers" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-06.jpg" alt="荒波と江ノ島" loading="lazy" /></td>
+<td><div class="ttl">荒波と江ノ島</div><code class="cur">landscape-06.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="9" value="江ノ島" /></td>
+<td><input class="newname" data-i="9" value="enoshima-rough-waves-dusk" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-07.jpg" alt="管制塔の夕日" loading="lazy" /></td>
+<td><div class="ttl">管制塔の夕日</div><code class="cur">landscape-07.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="10" value="羽田空港" /></td>
+<td><input class="newname" data-i="10" value="haneda-control-tower-silhouette" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-08.jpg" alt="大地の松" loading="lazy" /></td>
+<td><div class="ttl">大地の松</div><code class="cur">landscape-08.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="11" value="不明" /></td>
+<td><input class="newname" data-i="11" value="pine-tree-white-sand" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-09.jpg" alt="花園の眺望" loading="lazy" /></td>
+<td><div class="ttl">花園の眺望</div><code class="cur">landscape-09.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="12" value="不明" /></td>
+<td><input class="newname" data-i="12" value="garden-vista-hillside" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-10.jpg" alt="夏の終わり" loading="lazy" /></td>
+<td><div class="ttl">夏の終わり</div><code class="cur">landscape-10.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="13" value="湘南?" /></td>
+<td><input class="newname" data-i="13" value="shonan-beach-summer-end" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-11.jpg" alt="湘南の黄昏" loading="lazy" /></td>
+<td><div class="ttl">湘南の黄昏</div><code class="cur">landscape-11.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="14" value="湘南" /></td>
+<td><input class="newname" data-i="14" value="shonan-twilight-palm-street" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-12.jpg" alt="江ノ島の夜" loading="lazy" /></td>
+<td><div class="ttl">江ノ島の夜</div><code class="cur">landscape-12.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="15" value="江ノ島" /></td>
+<td><input class="newname" data-i="15" value="enoshima-night-gate" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-13.jpg" alt="海への小道" loading="lazy" /></td>
+<td><div class="ttl">海への小道</div><code class="cur">landscape-13.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="16" value="江ノ島?" /></td>
+<td><input class="newname" data-i="16" value="path-to-the-sea" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-14.jpg" alt="江ノ電の夜" loading="lazy" /></td>
+<td><div class="ttl">江ノ電の夜</div><code class="cur">landscape-14.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="17" value="江ノ電沿線" /></td>
+<td><input class="newname" data-i="17" value="enoden-night-crossing" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-15.jpg" alt="滑走路の星" loading="lazy" /></td>
+<td><div class="ttl">滑走路の星</div><code class="cur">landscape-15.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="18" value="羽田空港?" /></td>
+<td><input class="newname" data-i="18" value="haneda-runway-lights-night" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-16.jpg" alt="赤レンガの誇り" loading="lazy" /></td>
+<td><div class="ttl">赤レンガの誇り</div><code class="cur">landscape-16.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="19" value="東京駅? 横浜?" /></td>
+<td><input class="newname" data-i="19" value="red-brick-building" /><div class="note">タイトルは赤レンガだが建物の特定が必要</div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-17.jpg" alt="横浜の夕暮れ" loading="lazy" /></td>
+<td><div class="ttl">横浜の夕暮れ</div><code class="cur">landscape-17.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="20" value="横浜みなとみらい" /></td>
+<td><input class="newname" data-i="20" value="yokohama-minatomirai-dusk" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-18.jpg" alt="回る光の輪" loading="lazy" /></td>
+<td><div class="ttl">回る光の輪</div><code class="cur">landscape-18.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="21" value="横浜みなとみらい" /></td>
+<td><input class="newname" data-i="21" value="yokohama-cosmo-clock-night" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-19.jpg" alt="テレビ塔とライラック" loading="lazy" /></td>
+<td><div class="ttl">テレビ塔とライラック</div><code class="cur">landscape-19.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="22" value="札幌 大通公園" /></td>
+<td><input class="newname" data-i="22" value="sapporo-tv-tower-lilac" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-20.jpg" alt="ライラック越しの塔" loading="lazy" /></td>
+<td><div class="ttl">ライラック越しの塔</div><code class="cur">landscape-20.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="23" value="札幌 大通公園" /></td>
+<td><input class="newname" data-i="23" value="sapporo-tv-tower-through-lilac" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-21.jpg" alt="チューリップ花壇" loading="lazy" /></td>
+<td><div class="ttl">チューリップ花壇</div><code class="cur">landscape-21.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="24" value="札幌 大通公園" /></td>
+<td><input class="newname" data-i="24" value="sapporo-odori-tulips" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-22.jpg" alt="春の花壇" loading="lazy" /></td>
+<td><div class="ttl">春の花壇</div><code class="cur">landscape-22.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="25" value="札幌 大通公園" /></td>
+<td><input class="newname" data-i="25" value="sapporo-odori-spring-flowerbed" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-23.jpg" alt="つつじの丘" loading="lazy" /></td>
+<td><div class="ttl">つつじの丘</div><code class="cur">landscape-23.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="26" value="札幌?" /></td>
+<td><input class="newname" data-i="26" value="sapporo-azalea-hill" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-24.jpg" alt="つつじの彩り" loading="lazy" /></td>
+<td><div class="ttl">つつじの彩り</div><code class="cur">landscape-24.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="27" value="札幌?" /></td>
+<td><input class="newname" data-i="27" value="sapporo-azalea-closeup" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-25.jpg" alt="梅ひらく" loading="lazy" /></td>
+<td><div class="ttl">梅ひらく</div><code class="cur">landscape-25.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="28" value="札幌?" /></td>
+<td><input class="newname" data-i="28" value="sapporo-plum-blossoms" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-26.jpg" alt="新緑のもみじ" loading="lazy" /></td>
+<td><div class="ttl">新緑のもみじ</div><code class="cur">landscape-26.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="29" value="札幌?" /></td>
+<td><input class="newname" data-i="29" value="sapporo-fresh-green-maple" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-27.jpg" alt="泳ぐ鯉のぼり" loading="lazy" /></td>
+<td><div class="ttl">泳ぐ鯉のぼり</div><code class="cur">landscape-27.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="30" value="札幌?" /></td>
+<td><input class="newname" data-i="30" value="sapporo-koinobori" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-28.jpg" alt="五月の空" loading="lazy" /></td>
+<td><div class="ttl">五月の空</div><code class="cur">landscape-28.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="31" value="札幌?" /></td>
+<td><input class="newname" data-i="31" value="sapporo-koinobori-may-sky" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-29.jpg" alt="風の鯉のぼり" loading="lazy" /></td>
+<td><div class="ttl">風の鯉のぼり</div><code class="cur">landscape-29.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="32" value="札幌?" /></td>
+<td><input class="newname" data-i="32" value="sapporo-koinobori-wind" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-30.jpg" alt="春紅葉" loading="lazy" /></td>
+<td><div class="ttl">春紅葉</div><code class="cur">landscape-30.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="33" value="札幌?" /></td>
+<td><input class="newname" data-i="33" value="sapporo-spring-red-leaves" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-31.jpg" alt="大通の噴水" loading="lazy" /></td>
+<td><div class="ttl">大通の噴水</div><code class="cur">landscape-31.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="34" value="札幌 大通公園" /></td>
+<td><input class="newname" data-i="34" value="sapporo-odori-fountain" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-32.jpg" alt="噴水の午後" loading="lazy" /></td>
+<td><div class="ttl">噴水の午後</div><code class="cur">landscape-32.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="35" value="札幌 大通公園" /></td>
+<td><input class="newname" data-i="35" value="sapporo-odori-fountain-afternoon" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/landscape-33.jpg" alt="白い花の木" loading="lazy" /></td>
+<td><div class="ttl">白い花の木</div><code class="cur">landscape-33.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="36" value="札幌?" /></td>
+<td><input class="newname" data-i="36" value="sapporo-white-blossom-tree" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/city-01.jpg" alt="赤れんが庁舎" loading="lazy" /></td>
+<td><div class="ttl">赤れんが庁舎</div><code class="cur">city-01.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="37" value="札幌 北海道庁旧本庁舎" /></td>
+<td><input class="newname" data-i="37" value="sapporo-akarenga-government-office" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/city-02.jpg" alt="春の赤れんが" loading="lazy" /></td>
+<td><div class="ttl">春の赤れんが</div><code class="cur">city-02.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="38" value="札幌 北海道庁旧本庁舎" /></td>
+<td><input class="newname" data-i="38" value="sapporo-akarenga-spring" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/city-03.jpg" alt="庁舎の正面" loading="lazy" /></td>
+<td><div class="ttl">庁舎の正面</div><code class="cur">city-03.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="39" value="札幌 北海道庁旧本庁舎" /></td>
+<td><input class="newname" data-i="39" value="sapporo-akarenga-facade" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/city-04.jpg" alt="天井の意匠" loading="lazy" /></td>
+<td><div class="ttl">天井の意匠</div><code class="cur">city-04.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="40" value="札幌 北海道庁旧本庁舎" /></td>
+<td><input class="newname" data-i="40" value="sapporo-akarenga-ceiling" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/city-05.jpg" alt="れんがのアーチ" loading="lazy" /></td>
+<td><div class="ttl">れんがのアーチ</div><code class="cur">city-05.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="41" value="札幌 北海道庁旧本庁舎" /></td>
+<td><input class="newname" data-i="41" value="sapporo-akarenga-arch" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/city-06.jpg" alt="大通の午後" loading="lazy" /></td>
+<td><div class="ttl">大通の午後</div><code class="cur">city-06.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="42" value="札幌 大通" /></td>
+<td><input class="newname" data-i="42" value="sapporo-odori-afternoon" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/city-07.jpg" alt="駅前の通り" loading="lazy" /></td>
+<td><div class="ttl">駅前の通り</div><code class="cur">city-07.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="43" value="札幌 駅前通" /></td>
+<td><input class="newname" data-i="43" value="sapporo-ekimae-street" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/city-08.jpg" alt="すすきのの夕" loading="lazy" /></td>
+<td><div class="ttl">すすきのの夕</div><code class="cur">city-08.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="44" value="札幌 すすきの" /></td>
+<td><input class="newname" data-i="44" value="sapporo-susukino-evening" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/city-09.jpg" alt="並木の道" loading="lazy" /></td>
+<td><div class="ttl">並木の道</div><code class="cur">city-09.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="45" value="札幌?" /></td>
+<td><input class="newname" data-i="45" value="sapporo-tree-lined-path" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/city-10.jpg" alt="宵の街" loading="lazy" /></td>
+<td><div class="ttl">宵の街</div><code class="cur">city-10.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="46" value="札幌 夜景 (JRタワー?)" /></td>
+<td><input class="newname" data-i="46" value="sapporo-night-view-dusk" /><div class="note">展望施設名の確認が必要</div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/city-11.jpg" alt="ブルーアワー" loading="lazy" /></td>
+<td><div class="ttl">ブルーアワー</div><code class="cur">city-11.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="47" value="札幌 夜景" /></td>
+<td><input class="newname" data-i="47" value="sapporo-night-view-blue-hour" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/city-12.jpg" alt="群青の街" loading="lazy" /></td>
+<td><div class="ttl">群青の街</div><code class="cur">city-12.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="48" value="札幌 夜景" /></td>
+<td><input class="newname" data-i="48" value="sapporo-night-view-ultramarine" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/city-13.jpg" alt="光の海" loading="lazy" /></td>
+<td><div class="ttl">光の海</div><code class="cur">city-13.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="49" value="札幌 夜景" /></td>
+<td><input class="newname" data-i="49" value="sapporo-night-view-sea-of-lights" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/city-14.jpg" alt="遠くの灯" loading="lazy" /></td>
+<td><div class="ttl">遠くの灯</div><code class="cur">city-14.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="50" value="札幌 夜景" /></td>
+<td><input class="newname" data-i="50" value="sapporo-night-view-distant-lights" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/portrait-01.jpg" alt="白い視線" loading="lazy" /></td>
+<td><div class="ttl">白い視線</div><code class="cur">portrait-01.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="51" value="不明" /></td>
+<td><input class="newname" data-i="51" value="dog-portrait-white" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/portrait-02.jpg" alt="東京の夜道" loading="lazy" /></td>
+<td><div class="ttl">東京の夜道</div><code class="cur">portrait-02.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="52" value="東京?" /></td>
+<td><input class="newname" data-i="52" value="tokyo-night-street" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/portrait-03.jpg" alt="旅立ち" loading="lazy" /></td>
+<td><div class="ttl">旅立ち</div><code class="cur">portrait-03.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="53" value="空港ターミナル?" /></td>
+<td><input class="newname" data-i="53" value="airport-departure-hall" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/portrait-04.jpg" alt="海を見つめる人" loading="lazy" /></td>
+<td><div class="ttl">海を見つめる人</div><code class="cur">portrait-04.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="54" value="不明" /></td>
+<td><input class="newname" data-i="54" value="person-gazing-at-sea" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/portrait-05.jpg" alt="夜の船出を前に" loading="lazy" /></td>
+<td><div class="ttl">夜の船出を前に</div><code class="cur">portrait-05.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="55" value="横浜 大さん橋?" /></td>
+<td><input class="newname" data-i="55" value="yokohama-osanbashi-night" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/portrait-06.jpg" alt="一息" loading="lazy" /></td>
+<td><div class="ttl">一息</div><code class="cur">portrait-06.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="56" value="不明" /></td>
+<td><input class="newname" data-i="56" value="cafe-coffee-break" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/portrait-07.jpg" alt="スマートラウンジ" loading="lazy" /></td>
+<td><div class="ttl">スマートラウンジ</div><code class="cur">portrait-07.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="57" value="不明" /></td>
+<td><input class="newname" data-i="57" value="smart-lounge-night" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/portrait-08.jpg" alt="森の入口" loading="lazy" /></td>
+<td><div class="ttl">森の入口</div><code class="cur">portrait-08.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="58" value="不明" /></td>
+<td><input class="newname" data-i="58" value="forest-gate-signboard" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/portrait-09.jpg" alt="和の門" loading="lazy" /></td>
+<td><div class="ttl">和の門</div><code class="cur">portrait-09.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="59" value="不明" /></td>
+<td><input class="newname" data-i="59" value="japanese-gate" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/portrait-10.jpg" alt="旅の始まり" loading="lazy" /></td>
+<td><div class="ttl">旅の始まり</div><code class="cur">portrait-10.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="60" value="羽田空港?" /></td>
+<td><input class="newname" data-i="60" value="haneda-terminal-departure" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/portrait-11.jpg" alt="羽田の笑顔" loading="lazy" /></td>
+<td><div class="ttl">羽田の笑顔</div><code class="cur">portrait-11.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="61" value="羽田空港" /></td>
+<td><input class="newname" data-i="61" value="haneda-nice-day-sign" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/snap-01.jpg" alt="街の相棒" loading="lazy" /></td>
+<td><div class="ttl">街の相棒</div><code class="cur">snap-01.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="62" value="不明" /></td>
+<td><input class="newname" data-i="62" value="dog-walk-city" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/snap-02.jpg" alt="公園の散歩" loading="lazy" /></td>
+<td><div class="ttl">公園の散歩</div><code class="cur">snap-02.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="63" value="不明" /></td>
+<td><input class="newname" data-i="63" value="park-walk-dog" /><div class="note"></div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-01.jpg" alt="夜のプッシュバック" loading="lazy" /></td>
+<td><div class="ttl">夜のプッシュバック</div><code class="cur">aviation-01.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="64" value="羽田空港" /></td>
+<td><input class="newname" data-i="64" value="haneda-jal-a350-night-pushback" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-02.jpg" alt="夜明けの羽田" loading="lazy" /></td>
+<td><div class="ttl">夜明けの羽田</div><code class="cur">aviation-02.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="65" value="羽田空港" /></td>
+<td><input class="newname" data-i="65" value="haneda-jal-767-dawn" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-03.jpg" alt="ポケモンジェット" loading="lazy" /></td>
+<td><div class="ttl">ポケモンジェット</div><code class="cur">aviation-03.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="66" value="羽田空港" /></td>
+<td><input class="newname" data-i="66" value="haneda-airdo-737-sea" /><div class="note">写真は AIR DO 塗装に見えます。タイトルの機体名を要確認</div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-04.jpg" alt="ワンワールドの夕景" loading="lazy" /></td>
+<td><div class="ttl">ワンワールドの夕景</div><code class="cur">aviation-04.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="67" value="羽田空港" /></td>
+<td><input class="newname" data-i="67" value="haneda-oneworld-787-golden-hour" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-05.jpg" alt="蒼海を背に" loading="lazy" /></td>
+<td><div class="ttl">蒼海を背に</div><code class="cur">aviation-05.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="68" value="羽田空港" /></td>
+<td><input class="newname" data-i="68" value="haneda-oneworld-jal-sea" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-06.jpg" alt="青組発進" loading="lazy" /></td>
+<td><div class="ttl">青組発進</div><code class="cur">aviation-06.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="69" value="羽田空港" /></td>
+<td><input class="newname" data-i="69" value="haneda-ana-787-departure" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="要確認" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-07.jpg" alt="ドリームショウヘイジェット" loading="lazy" /></td>
+<td><div class="ttl">ドリームショウヘイジェット</div><code class="cur">aviation-07.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="70" value="羽田空港" /></td>
+<td><input class="newname" data-i="70" value="haneda-jal-shohei-jet" /><div class="note">機体名を要確認</div></td>
+<td><span class="conf warn">要確認</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-08.jpg" alt="光の中を疾る" loading="lazy" /></td>
+<td><div class="ttl">光の中を疾る</div><code class="cur">aviation-08.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="71" value="羽田空港" /></td>
+<td><input class="newname" data-i="71" value="haneda-ana-767-panning" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-09.jpg" alt="B6と夕焼け" loading="lazy" /></td>
+<td><div class="ttl">B6と夕焼け</div><code class="cur">aviation-09.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="72" value="羽田空港" /></td>
+<td><input class="newname" data-i="72" value="haneda-jal-767-dusk-panning" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-10.jpg" alt="朝霧の着陸" loading="lazy" /></td>
+<td><div class="ttl">朝霧の着陸</div><code class="cur">aviation-10.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="73" value="羽田空港" /></td>
+<td><input class="newname" data-i="73" value="haneda-ana-morning-mist" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-11.jpg" alt="夜の鼻先" loading="lazy" /></td>
+<td><div class="ttl">夜の鼻先</div><code class="cur">aviation-11.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="74" value="羽田空港" /></td>
+<td><input class="newname" data-i="74" value="haneda-ana-787-nose-night" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-12.jpg" alt="鶴の揃い踏み" loading="lazy" /></td>
+<td><div class="ttl">鶴の揃い踏み</div><code class="cur">aviation-12.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="75" value="羽田空港" /></td>
+<td><input class="newname" data-i="75" value="haneda-jal-a350-lineup" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-13.jpg" alt="oneworld 駐機" loading="lazy" /></td>
+<td><div class="ttl">oneworld 駐機</div><code class="cur">aviation-13.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="76" value="羽田空港" /></td>
+<td><input class="newname" data-i="76" value="haneda-oneworld-a350-apron" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-14.jpg" alt="滑走路脇のJAL" loading="lazy" /></td>
+<td><div class="ttl">滑走路脇のJAL</div><code class="cur">aviation-14.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="77" value="羽田空港" /></td>
+<td><input class="newname" data-i="77" value="haneda-jal-a350-runway" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="削除" data-kind="remove">
+<td class="thumbcell"><img src="thumbs/aviation-15.jpg" alt="格納庫の787" loading="lazy" /></td>
+<td><div class="ttl">格納庫の787</div><code class="cur">aviation-15.jpg</code>
+<span class="kind" style="background:#7A8998">退避</span></td>
+<td><input class="place" data-i="78" value="羽田 (JAL格納庫)" /></td>
+<td><span class="del-mark">公開から外す</span><div class="note">商用利用NGのため退避</div></td>
+<td><span class="conf del">削除</span></td>
+</tr><tr data-conf="削除" data-kind="remove">
+<td class="thumbcell"><img src="thumbs/aviation-16.jpg" alt="787 の機首" loading="lazy" /></td>
+<td><div class="ttl">787 の機首</div><code class="cur">aviation-16.jpg</code>
+<span class="kind" style="background:#7A8998">退避</span></td>
+<td><input class="place" data-i="79" value="羽田 (JAL格納庫)" /></td>
+<td><span class="del-mark">公開から外す</span><div class="note">商用利用NGのため退避</div></td>
+<td><span class="conf del">削除</span></td>
+</tr><tr data-conf="削除" data-kind="remove">
+<td class="thumbcell"><img src="thumbs/aviation-17.jpg" alt="静かな巨体" loading="lazy" /></td>
+<td><div class="ttl">静かな巨体</div><code class="cur">aviation-17.jpg</code>
+<span class="kind" style="background:#7A8998">退避</span></td>
+<td><input class="place" data-i="80" value="羽田 (JAL格納庫)" /></td>
+<td><span class="del-mark">公開から外す</span><div class="note">商用利用NGのため退避</div></td>
+<td><span class="conf del">削除</span></td>
+</tr><tr data-conf="削除" data-kind="remove">
+<td class="thumbcell"><img src="thumbs/aviation-18.jpg" alt="格納庫の朝" loading="lazy" /></td>
+<td><div class="ttl">格納庫の朝</div><code class="cur">aviation-18.jpg</code>
+<span class="kind" style="background:#7A8998">退避</span></td>
+<td><input class="place" data-i="81" value="羽田 (JAL格納庫)" /></td>
+<td><span class="del-mark">公開から外す</span><div class="note">商用利用NGのため退避</div></td>
+<td><span class="conf del">削除</span></td>
+</tr><tr data-conf="削除" data-kind="remove">
+<td class="thumbcell"><img src="thumbs/aviation-19.jpg" alt="787 正面" loading="lazy" /></td>
+<td><div class="ttl">787 正面</div><code class="cur">aviation-19.jpg</code>
+<span class="kind" style="background:#7A8998">退避</span></td>
+<td><input class="place" data-i="82" value="羽田 (JAL格納庫)" /></td>
+<td><span class="del-mark">公開から外す</span><div class="note">商用利用NGのため退避</div></td>
+<td><span class="conf del">削除</span></td>
+</tr><tr data-conf="削除" data-kind="remove">
+<td class="thumbcell"><img src="thumbs/aviation-20.jpg" alt="JALの尾翼" loading="lazy" /></td>
+<td><div class="ttl">JALの尾翼</div><code class="cur">aviation-20.jpg</code>
+<span class="kind" style="background:#7A8998">退避</span></td>
+<td><input class="place" data-i="83" value="羽田 (JAL格納庫)" /></td>
+<td><span class="del-mark">公開から外す</span><div class="note">商用利用NGのため退避</div></td>
+<td><span class="conf del">削除</span></td>
+</tr><tr data-conf="削除" data-kind="remove">
+<td class="thumbcell"><img src="thumbs/aviation-21.jpg" alt="鶴丸" loading="lazy" /></td>
+<td><div class="ttl">鶴丸</div><code class="cur">aviation-21.jpg</code>
+<span class="kind" style="background:#7A8998">退避</span></td>
+<td><input class="place" data-i="84" value="羽田 (JAL格納庫)" /></td>
+<td><span class="del-mark">公開から外す</span><div class="note">商用利用NGのため退避</div></td>
+<td><span class="conf del">削除</span></td>
+</tr><tr data-conf="削除" data-kind="remove">
+<td class="thumbcell"><img src="thumbs/aviation-22.jpg" alt="主翼のライン" loading="lazy" /></td>
+<td><div class="ttl">主翼のライン</div><code class="cur">aviation-22.jpg</code>
+<span class="kind" style="background:#7A8998">退避</span></td>
+<td><input class="place" data-i="85" value="羽田 (JAL格納庫)" /></td>
+<td><span class="del-mark">公開から外す</span><div class="note">商用利用NGのため退避</div></td>
+<td><span class="conf del">削除</span></td>
+</tr><tr data-conf="削除" data-kind="remove">
+<td class="thumbcell"><img src="thumbs/aviation-23.jpg" alt="機尾" loading="lazy" /></td>
+<td><div class="ttl">機尾</div><code class="cur">aviation-23.jpg</code>
+<span class="kind" style="background:#7A8998">退避</span></td>
+<td><input class="place" data-i="86" value="羽田 (JAL格納庫)" /></td>
+<td><span class="del-mark">公開から外す</span><div class="note">商用利用NGのため退避</div></td>
+<td><span class="conf del">削除</span></td>
+</tr><tr data-conf="削除" data-kind="remove">
+<td class="thumbcell"><img src="thumbs/aviation-24.jpg" alt="格納庫全景" loading="lazy" /></td>
+<td><div class="ttl">格納庫全景</div><code class="cur">aviation-24.jpg</code>
+<span class="kind" style="background:#7A8998">退避</span></td>
+<td><input class="place" data-i="87" value="羽田 (JAL格納庫)" /></td>
+<td><span class="del-mark">公開から外す</span><div class="note">商用利用NGのため退避</div></td>
+<td><span class="conf del">削除</span></td>
+</tr><tr data-conf="削除" data-kind="remove">
+<td class="thumbcell"><img src="thumbs/aviation-25.jpg" alt="整備の現場" loading="lazy" /></td>
+<td><div class="ttl">整備の現場</div><code class="cur">aviation-25.jpg</code>
+<span class="kind" style="background:#7A8998">退避</span></td>
+<td><input class="place" data-i="88" value="羽田 (JAL格納庫)" /></td>
+<td><span class="del-mark">公開から外す</span><div class="note">商用利用NGのため退避</div></td>
+<td><span class="conf del">削除</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-26.jpg" alt="正面から迫る" loading="lazy" /></td>
+<td><div class="ttl">正面から迫る</div><code class="cur">aviation-26.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="89" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="89" value="itami-ana-787-head-on-dusk" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-27.jpg" alt="滑走路の灯" loading="lazy" /></td>
+<td><div class="ttl">滑走路の灯</div><code class="cur">aviation-27.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="90" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="90" value="itami-runway-lights-dusk" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-28.jpg" alt="山を背にして" loading="lazy" /></td>
+<td><div class="ttl">山を背にして</div><code class="cur">aviation-28.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="91" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="91" value="itami-ana-737-against-the-ridge" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-29.jpg" alt="機首をかすめる" loading="lazy" /></td>
+<td><div class="ttl">機首をかすめる</div><code class="cur">aviation-29.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="92" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="92" value="itami-ana-787-nose-close-up" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-30.jpg" alt="流れる787" loading="lazy" /></td>
+<td><div class="ttl">流れる787</div><code class="cur">aviation-30.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="93" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="93" value="itami-ana-787-panning" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-31.jpg" alt="夕暮れの流し撮り" loading="lazy" /></td>
+<td><div class="ttl">夕暮れの流し撮り</div><code class="cur">aviation-31.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="94" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="94" value="itami-ana-panning-dusk" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-32.jpg" alt="撮る人" loading="lazy" /></td>
+<td><div class="ttl">撮る人</div><code class="cur">aviation-32.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="95" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="95" value="itami-skypark-photographer" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-33.jpg" alt="オレンジのプロペラ機" loading="lazy" /></td>
+<td><div class="ttl">オレンジのプロペラ機</div><code class="cur">aviation-33.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="96" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="96" value="itami-jac-turboprop-orange" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-34.jpg" alt="機首の青" loading="lazy" /></td>
+<td><div class="ttl">機首の青</div><code class="cur">aviation-34.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="97" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="97" value="itami-ana-nose-blue" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-35.jpg" alt="山越えの上昇" loading="lazy" /></td>
+<td><div class="ttl">山越えの上昇</div><code class="cur">aviation-35.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="98" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="98" value="itami-climb-over-the-hills" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-36.jpg" alt="街を越えて" loading="lazy" /></td>
+<td><div class="ttl">街を越えて</div><code class="cur">aviation-36.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="99" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="99" value="itami-ana-over-the-city" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-37.jpg" alt="離陸の瞬間" loading="lazy" /></td>
+<td><div class="ttl">離陸の瞬間</div><code class="cur">aviation-37.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="100" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="100" value="itami-ana-737-rotation" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-38.jpg" alt="着陸灯" loading="lazy" /></td>
+<td><div class="ttl">着陸灯</div><code class="cur">aviation-38.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="101" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="101" value="itami-landing-lights-head-on" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-39.jpg" alt="空へ" loading="lazy" /></td>
+<td><div class="ttl">空へ</div><code class="cur">aviation-39.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="102" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="102" value="itami-jal-787-into-the-blue" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-40.jpg" alt="滑走路を駆ける" loading="lazy" /></td>
+<td><div class="ttl">滑走路を駆ける</div><code class="cur">aviation-40.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="103" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="103" value="itami-down-the-runway" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-41.jpg" alt="夕景のJAL" loading="lazy" /></td>
+<td><div class="ttl">夕景のJAL</div><code class="cur">aviation-41.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="104" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="104" value="itami-jal-787-at-dusk" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-42.jpg" alt="夕暮れのANA" loading="lazy" /></td>
+<td><div class="ttl">夕暮れのANA</div><code class="cur">aviation-42.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="105" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="105" value="itami-ana-at-dusk" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-43.jpg" alt="伊丹の夜" loading="lazy" /></td>
+<td><div class="ttl">伊丹の夜</div><code class="cur">aviation-43.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="106" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="106" value="itami-terminal-at-night" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-44.jpg" alt="灯りのターミナル" loading="lazy" /></td>
+<td><div class="ttl">灯りのターミナル</div><code class="cur">aviation-44.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="107" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="107" value="itami-terminal-lights" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="keep">
+<td class="thumbcell"><img src="thumbs/aviation-45.jpg" alt="ひまわり越しの空港" loading="lazy" /></td>
+<td><div class="ttl">ひまわり越しの空港</div><code class="cur">aviation-45.jpg</code>
+<span class="kind" style="background:#1E88E5">継続</span></td>
+<td><input class="place" data-i="108" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="108" value="itami-sunflowers-by-the-runway" /><div class="note"></div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="new">
+<td class="thumbcell"><img src="thumbs/itami-jal-787-departure-sky.jpg" alt="空へ抜ける" loading="lazy" /></td>
+<td><div class="ttl">空へ抜ける</div><code class="cur">itami-jal-787-departure-sky.jpg</code>
+<span class="kind" style="background:#F59E0B">新規</span></td>
+<td><input class="place" data-i="109" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="109" value="itami-jal-787-departure-sky" /><div class="note">今回追加する13枚</div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="new">
+<td class="thumbcell"><img src="thumbs/itami-jal-737-runway-flowers.jpg" alt="花越しの JAL 737" loading="lazy" /></td>
+<td><div class="ttl">花越しの JAL 737</div><code class="cur">itami-jal-737-runway-flowers.jpg</code>
+<span class="kind" style="background:#F59E0B">新規</span></td>
+<td><input class="place" data-i="110" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="110" value="itami-jal-737-runway-flowers" /><div class="note">今回追加する13枚</div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="new">
+<td class="thumbcell"><img src="thumbs/itami-ana-737-taxiing-flowers.jpg" alt="花と誘導路" loading="lazy" /></td>
+<td><div class="ttl">花と誘導路</div><code class="cur">itami-ana-737-taxiing-flowers.jpg</code>
+<span class="kind" style="background:#F59E0B">新規</span></td>
+<td><input class="place" data-i="111" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="111" value="itami-ana-737-taxiing-flowers" /><div class="note">今回追加する13枚</div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="new">
+<td class="thumbcell"><img src="thumbs/itami-ana-737-landing-through-trees.jpg" alt="木々越しの着陸" loading="lazy" /></td>
+<td><div class="ttl">木々越しの着陸</div><code class="cur">itami-ana-737-landing-through-trees.jpg</code>
+<span class="kind" style="background:#F59E0B">新規</span></td>
+<td><input class="place" data-i="112" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="112" value="itami-ana-737-landing-through-trees" /><div class="note">今回追加する13枚</div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="new">
+<td class="thumbcell"><img src="thumbs/itami-ana-737-takeoff-mountains.jpg" alt="山を背にして" loading="lazy" /></td>
+<td><div class="ttl">山を背にして</div><code class="cur">itami-ana-737-takeoff-mountains.jpg</code>
+<span class="kind" style="background:#F59E0B">新規</span></td>
+<td><input class="place" data-i="113" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="113" value="itami-ana-737-takeoff-mountains" /><div class="note">今回追加する13枚</div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="new">
+<td class="thumbcell"><img src="thumbs/itami-sunflowers-summer-sky.jpg" alt="ひまわりと夏の空" loading="lazy" /></td>
+<td><div class="ttl">ひまわりと夏の空</div><code class="cur">itami-sunflowers-summer-sky.jpg</code>
+<span class="kind" style="background:#F59E0B">新規</span></td>
+<td><input class="place" data-i="114" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="114" value="itami-sunflowers-summer-sky" /><div class="note">今回追加する13枚</div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="new">
+<td class="thumbcell"><img src="thumbs/itami-sunflowers-vertical.jpg" alt="ひまわりを見上げる" loading="lazy" /></td>
+<td><div class="ttl">ひまわりを見上げる</div><code class="cur">itami-sunflowers-vertical.jpg</code>
+<span class="kind" style="background:#F59E0B">新規</span></td>
+<td><input class="place" data-i="115" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="115" value="itami-sunflowers-vertical" /><div class="note">今回追加する13枚</div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="new">
+<td class="thumbcell"><img src="thumbs/itami-sunflowers-blue-hour.jpg" alt="日没前のひまわり" loading="lazy" /></td>
+<td><div class="ttl">日没前のひまわり</div><code class="cur">itami-sunflowers-blue-hour.jpg</code>
+<span class="kind" style="background:#F59E0B">新規</span></td>
+<td><input class="place" data-i="116" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="116" value="itami-sunflowers-blue-hour" /><div class="note">今回追加する13枚</div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="new">
+<td class="thumbcell"><img src="thumbs/itami-ana-a320-panning-dusk.jpg" alt="夕暮れの流し撮り" loading="lazy" /></td>
+<td><div class="ttl">夕暮れの流し撮り</div><code class="cur">itami-ana-a320-panning-dusk.jpg</code>
+<span class="kind" style="background:#F59E0B">新規</span></td>
+<td><input class="place" data-i="117" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="117" value="itami-ana-a320-panning-dusk" /><div class="note">今回追加する13枚</div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="new">
+<td class="thumbcell"><img src="thumbs/itami-jal-767-sunset-mountains.jpg" alt="夕景の JAL" loading="lazy" /></td>
+<td><div class="ttl">夕景の JAL</div><code class="cur">itami-jal-767-sunset-mountains.jpg</code>
+<span class="kind" style="background:#F59E0B">新規</span></td>
+<td><input class="place" data-i="118" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="118" value="itami-jal-767-sunset-mountains" /><div class="note">今回追加する13枚</div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="new">
+<td class="thumbcell"><img src="thumbs/itami-jac-turboprop-evening.jpg" alt="夕方のプロペラ機" loading="lazy" /></td>
+<td><div class="ttl">夕方のプロペラ機</div><code class="cur">itami-jac-turboprop-evening.jpg</code>
+<span class="kind" style="background:#F59E0B">新規</span></td>
+<td><input class="place" data-i="119" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="119" value="itami-jac-turboprop-evening" /><div class="note">今回追加する13枚</div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="new">
+<td class="thumbcell"><img src="thumbs/itami-terminal-night-view.jpg" alt="夜の伊丹" loading="lazy" /></td>
+<td><div class="ttl">夜の伊丹</div><code class="cur">itami-terminal-night-view.jpg</code>
+<span class="kind" style="background:#F59E0B">新規</span></td>
+<td><input class="place" data-i="120" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="120" value="itami-terminal-night-view" /><div class="note">今回追加する13枚</div></td>
+<td><span class="conf ok">高</span></td>
+</tr><tr data-conf="高" data-kind="new">
+<td class="thumbcell"><img src="thumbs/itami-airport-sign-night.jpg" alt="ITAMI のサイン" loading="lazy" /></td>
+<td><div class="ttl">ITAMI のサイン</div><code class="cur">itami-airport-sign-night.jpg</code>
+<span class="kind" style="background:#F59E0B">新規</span></td>
+<td><input class="place" data-i="121" value="伊丹スカイパーク" /></td>
+<td><input class="newname" data-i="121" value="itami-airport-sign-night" /><div class="note">今回追加する13枚</div></td>
+<td><span class="conf ok">高</span></td>
+</tr></tbody>
+</table>
+<textarea id="out" readonly></textarea>
+</div>
+<script>
+const btns=[...document.querySelectorAll('.bar button[data-f]')],trs=[...document.querySelectorAll('tbody tr')];
+btns.forEach(b=>b.onclick=()=>{
+  btns.forEach(x=>x.classList.remove('on'));b.classList.add('on');
+  const f=b.dataset.f;
+  trs.forEach(t=>{
+    let show = f==='all' || t.dataset.conf===f || t.dataset.kind===f;
+    t.style.display = show ? '' : 'none';
+  });
+});
+document.getElementById('export').onclick=()=>{
+  const out=document.getElementById('out');
+  const lines=trs.map(t=>{
+    const cur=t.querySelector('.cur').textContent;
+    const place=t.querySelector('.place').value;
+    const ni=t.querySelector('.newname');
+    return cur+' | '+place+' | '+(ni?ni.value+'.jpg':'退避');
+  });
+  out.value=lines.join('\n');
+  out.style.display='block';
+  out.select();
+};
+</script>
+</body></html>
