@@ -942,3 +942,85 @@ body .stat-card:hover {
 .section-invert .event-card {
   box-shadow: 0 10px 30px -14px rgba(6, 26, 40, 0.55);
 }
+
+/* ============================================================
+   LINE 相談ボタン (2026-08-29 追加 / 全ページ共通)
+   - 右下フローティング + フッター内リンク
+   - 配色は LUMA CTA Orange。LINE 社のロゴ画像は使用しない
+   ============================================================ */
+.line-float{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 900;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 20px;
+  border-radius: 999px;
+  background: var(--accent-2, #F59E0B);
+  color: #3A2A02;
+  font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  box-shadow: 0 10px 28px -8px rgba(6, 26, 40, .45);
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+}
+.line-float:hover,
+.line-float:focus-visible{
+  background: var(--cta-hover, #D97706);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px -10px rgba(6, 26, 40, .55);
+}
+.line-float:focus-visible{ outline: 3px solid #134E6F; outline-offset: 3px; }
+.line-float .lf-icon{ width: 18px; height: 18px; flex: none; }
+@media (max-width: 640px){
+  .line-float{ right: 14px; bottom: 14px; padding: 12px 17px; font-size: 13.5px; }
+}
+@media (prefers-reduced-motion: reduce){
+  .line-float{ transition: none; }
+  .line-float:hover, .line-float:focus-visible{ transform: none; }
+}
+
+/* HERO の LINE 相談ボタン (2026-08-29 追加)
+   主CTA(btn-primary / Orange)より一段弱く、btn-secondary より明確に見える中間トーン */
+.btn-line {
+  background: var(--accent-soft);
+  color: #134E6F;
+  border-color: var(--accent-soft);
+  font-weight: 600;
+}
+.btn-line:hover {
+  background: var(--accent, #1E88E5);
+  color: #fff;
+  border-color: var(--accent, #1E88E5);
+  transform: translateY(-1px);
+}
+/* 反転(Navy)セクション上に置かれた場合の可読性確保 */
+.section-invert .btn-line {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.38);
+}
+.section-invert .btn-line:hover {
+  background: #8ECDF7;
+  color: #0B3450;
+}
+/* 写真ヒーロー上: 主CTA(Orange ベタ)と競合しないよう半透明の白面にする。
+   優先度は 予約する(ベタOrange) > LINE で相談(白半透明) > サービスを見る(枠線のみ) */
+.hero--photo .btn-line {
+  background: #06803A;
+  color: #fff;
+  border-color: #06803A;
+  text-shadow: none;
+}
+.hero--photo .btn-line:hover,
+.hero--photo .btn-line:focus-visible {
+  background: #05672F;
+  border-color: #05672F;
+  color: #fff;
+}
+

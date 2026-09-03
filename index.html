@@ -72,7 +72,6 @@
       "description": "東京・横浜で活動するパーソナルブランド。英語教育・ポートレート撮影・麻雀コミュニティ・東京ツアーを提供。",
       "slogan": "Clarity by Design — Illuminate Your Confidence",
       "url": "https://studio-lumadesign.com/",
-      "logo": "https://studio-lumadesign.com/logo.png",
       "image": "https://studio-lumadesign.com/og-image.jpg",
       "email": "studio.luma.jp@gmail.com",
       "priceRange": "¥¥",
@@ -89,7 +88,8 @@
       ],
       "founder": {"@id": "https://studio-lumadesign.com/#representative"},
       "sameAs": [
-        "https://www.instagram.com/luma_studio_jp"
+        "https://www.instagram.com/luma_frame.jp",
+        "https://x.com/s_league_Japan"
       ]
     },
     {
@@ -154,7 +154,7 @@
       "mainEntity": [
         {"@type": "Question", "name": "どのエリアで対応していますか?", "acceptedAnswer": {"@type": "Answer", "text": "東京・横浜を中心に首都圏全域で対応しています。英語レッスンはオンラインも可能です。"}},
         {"@type": "Question", "name": "英語レッスンは初心者でも大丈夫ですか?", "acceptedAnswer": {"@type": "Answer", "text": "もちろんです。オーストラリア在住9年の経験をもとに、初級から上級・ビジネス英語・IELTS/TOEIC対策まで一人ひとりに合わせて指導します。"}},
-        {"@type": "Question", "name": "写真撮影の料金はいくらですか?", "acceptedAnswer": {"@type": "Answer", "text": "プランは4つです。ライト(60分・厳選20枚)¥9,900、スタンダード(120分・厳選30枚)¥17,600、プレミアム(120分・厳選50枚)¥27,500、フォトウェディング(120分・厳選50枚)¥44,000。挙式当日はセレモニー¥88,000(240分・厳選120枚)です。すべて税込で、曜日による料金差はありません。お見積もりは無料。空港・飛行機・風景撮影にも対応し、データは7日以内(プレミアム・フォトウェディング・セレモニーは5日以内)にお渡しします。"}},
+        {"@type": "Question", "name": "写真撮影の料金はいくらですか?", "acceptedAnswer": {"@type": "Answer", "text": "撮影の内容ごとのカテゴリー料金です。プロフィール・ビジネスポートレート(60分・厳選30枚)¥22,000、マタニティー・赤ちゃん(90分・厳選50枚)¥22,000、カップル・記念日(120分・厳選50枚)¥27,500、ファミリー(120分・厳選50枚)¥33,000、お宮参り・七五三(120分・厳選60枚)¥35,200、成人式・卒業袴(120分・厳選60枚)¥38,500、フォトウェディング(120分・厳選60枚)¥77,000、セレモニー 挙式当日(240分・厳選120枚)¥110,000。事業者向けはビジネス 店舗・商品・料理(半日・厳選40枚)¥66,000、イベント・法人(半日・厳選60枚)¥66,000、航空機・風景の撮影代行(120分・厳選40枚)¥22,000。すべて税込で、曜日による料金差はありません。お見積もりは無料。データはどのカテゴリーも7日以内にお渡しします。"}},
         {"@type": "Question", "name": "S.League麻雀大会はどんな人が参加していますか?参加費は?", "acceptedAnswer": {"@type": "Answer", "text": "2022年から24回開催・延べ367名が参加した健康麻雀コミュニティです。1回16〜20名の参加で、開催時間は半日(約6時間)〜終日(約10時間)、土曜日が基本。参加費は¥6,200〜¥12,000(開催回により異なる)。プロ雀士から初心者まで幅広く参加し、全員に参加賞+入賞景品があります。"}},
         {"@type": "Question", "name": "海外からの観光客でも英語ツアーを依頼できますか?", "acceptedAnswer": {"@type": "Answer", "text": "はい、東京の英語ツアー(LUMA Path)は訪日外国人の方を歓迎しています。半日・日帰りで2〜6名のプライベートツアーをカスタムで企画します。"}},
         {"@type": "Question", "name": "無料相談はどう申し込めますか?", "acceptedAnswer": {"@type": "Answer", "text": "サイト下部のお問い合わせフォームから24時間受け付けています。2営業日以内に返信します。"}}
@@ -179,7 +179,7 @@
   gtag('config', 'G-62F20N179N');
 </script>
 
-<link rel="stylesheet" href="./shared.css?v=aqua10" />
+<link rel="stylesheet" href="./shared.css?v=aqua12" />
 <style id="page-overrides">
   /* ── HERO: 暗幕・文字色・ボタン・実績数値は shared.css の .hero--photo
      で全ページ共通化済み。ここでは案4のサイズと単一カラム構成のみ (2026-08-06) ── */
@@ -213,7 +213,7 @@
 <!-- ════ NAV ════ -->
 <nav class="site-nav" aria-label="メインナビゲーション">
   <div class="nav-inner">
-    <a href="/" class="brand" aria-label="LUMA ホーム">
+    <a href="./index.html" class="brand" aria-label="LUMA ホーム">
       <span class="brand-mark">L</span>
       <span>LUMA</span>
     </a>
@@ -229,12 +229,13 @@
           <li><a href="./s-league.html">S.League 麻雀大会</a></li>
         </ul>
       </li>
+      <li><a href="./blog/index.html">撮影ノート</a></li>
       <li><a href="./about.html">About me</a></li>
       <li><a href="#faq">FAQ</a></li>
       <!-- コラム: 今回リリースでは非表示（2026-05-18以降に再追加予定） <li><a href="#blog">コラム</a></li> -->
     </ul>
     <div style="display:flex;gap:10px;align-items:center;">
-      <a href="/en/" class="lang-switch" aria-label="Switch to English">EN</a>
+      <a href="./en/index.html" class="lang-switch" aria-label="Switch to English">EN</a>
       <a href="./contact.html" class="nav-cta">無料相談 →</a>
     </div>
     <button class="nav-toggle" type="button" aria-label="メニューを開閉" aria-expanded="false">
@@ -246,7 +247,7 @@
 <!-- ════ BREADCRUMB ════ -->
 <nav class="breadcrumb" aria-label="パンくずリスト">
   <ol>
-    <li><a href="/">ホーム</a></li>
+    <li><a href="./index.html">ホーム</a></li>
     <li aria-current="page" style="font-family: Poppins">LUMA ホーム</li>
   </ol>
 </nav>
@@ -265,10 +266,15 @@
       </p>
       <div class="hero-cta-row">
         <a href="./contact.html" class="btn btn-primary">30分の無料相談を予約する →</a>
+        <a href="https://lin.ee/YetEeTz" class="btn btn-line" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          LINE で相談
+        </a>
         <a href="#services" class="btn btn-secondary">サービスを見る</a>
       </div>
       <div class="hero-trust">
-        <div class="trust-item"><div class="num">9年</div><div class="label">オーストラリア在住</div></div>
+        <div class="trust-item"><div class="num">500枚+</div><div class="label">納品実績</div></div>
+        <div class="trust-item"><div class="num">2020年〜</div><div class="label">撮影活動</div></div>
         <div class="trust-item"><div class="num">367名</div><div class="label">S.League累計参加</div></div>
       </div>
     </div>
@@ -341,7 +347,7 @@
         <span class="svc-en" style="font-family: Poppins">LUMA Frame</span>
         <p>カメラを構えると顔がこわばる人ほど、撮り終わりの一枚がいい表情になります。使う機材は Nikon Z6III。前撮り・お宮参り・お食い初め・七五三などの<strong>記念撮影</strong>、友人同士や一人での<strong>ポートレート</strong>。プロフィール写真や<strong>風景・航空機撮影</strong>も撮ります。東京・横浜が中心です。作例は<a href="https://www.instagram.com/luma_frame.jp" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">@luma_frame.jp</a>にまとめています。</p>
         <div class="svc-meta">
-          <span class="svc-price">¥9,900〜(税込)</span>
+          <span class="svc-price">¥22,000〜(税込)</span>
           <a class="svc-link" href="./service-photo.html">詳細 →</a>
         </div>
       </article>
@@ -526,7 +532,7 @@
           <span>写真撮影の料金はいくらですか?</span>
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">プランは4つです。ライト (60分・厳選20枚) ¥9,900、スタンダード (120分・厳選30枚) ¥17,600。プレミアム (120分・厳選50枚) ¥27,500、フォトウェディング (120分・厳選50枚) ¥44,000。挙式当日はセレモニー ¥88,000 (240分・厳選120枚) です。すべて税込で、曜日による料金差はありません。お見積もりは無料です。空港・飛行機・風景撮影も撮ります。機材は Nikon Z6III。データは7日以内 (プレミアム・フォトウェディング・セレモニーは5日以内) にお渡しします。急ぐときはスピード仕上げ (2日以内・+¥4,400) もあります。交通費だけ実費を別途いただきます。</div></div>
+        <div class="faq-a"><div class="faq-a-inner">撮影の内容ごとのカテゴリー料金です。プロフィール・ビジネスポートレート (60分・厳選30枚) ¥22,000、マタニティー・赤ちゃん (90分・厳選50枚) ¥22,000、カップル・記念日 (120分・厳選50枚) ¥27,500、ファミリー (120分・厳選50枚) ¥33,000、お宮参り・七五三 (120分・厳選60枚) ¥35,200、成人式・卒業袴 (120分・厳選60枚) ¥38,500、フォトウェディング (120分・厳選60枚) ¥77,000、セレモニー 挙式当日 (240分・厳選120枚) ¥110,000。事業者向けにビジネス 店舗・商品・料理 (半日・厳選40枚) ¥66,000、イベント・法人 (半日・厳選60枚) ¥66,000、航空機・風景の撮影代行 (120分・厳選40枚) ¥22,000 もあります。すべて税込で、曜日による料金差はありません。お見積もりは無料です。機材は Nikon Z6III。データはどのカテゴリーも7日以内にお渡しし、急ぐときはスピード仕上げ (4日以内・+¥6,600) もあります。屋内撮影の施設利用料と、東京都23区内・横浜市・川崎市以外へ伺うときの交通費は実費を別途いただきます。</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
@@ -595,7 +601,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="/" class="brand"><span class="brand-mark">L</span><span>LUMA</span></a>
+        <a href="./index.html" class="brand"><span class="brand-mark">L</span><span>LUMA</span></a>
         <p>東京・横浜で、あなたの自信をデザインする。Clarity by Design — Illuminate Your Confidence.</p>
       </div>
       <div class="footer-col">
@@ -619,10 +625,11 @@
       <div class="footer-col">
         <h4>サポート</h4>
         <ul>
+          <li><a href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer">LINE で相談</a></li>
           <li><a href="./contact.html">お問い合わせ</a></li>
           <li><a href="./legal.html">特定商取引法</a></li>
           <li><a href="./legal.html#privacy">プライバシー</a></li>
-          <li><a href="/en/">English</a></li>
+          <li><a href="./en/index.html">English</a></li>
         </ul>
       </div>
     </div>
@@ -667,6 +674,7 @@
   })();
 </script>
 
-<script src="/nav.js" defer></script>
+<script src="./nav.js" defer></script>
+<a class="line-float" href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer" aria-label="LINE で LUMA に相談する (新しいタブで開きます)"><svg class="lf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>LINE で相談</span></a>
 </body>
 </html>
