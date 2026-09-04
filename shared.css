@@ -844,38 +844,44 @@ footer .brand-mark::after { box-shadow: 0 0 0 2px #134E6F; }
    MARQUEE — 特徴バンドを左へ流し続ける (2026-09-03)
    同じ並びを2組つないだトラックを -50% まで動かすので、継ぎ目なくつながる。
    2組目は aria-hidden。読み上げが二重になるのを防ぐ。
-   停止ボタンは置かない (Sho指示 2026-09-03)。止める手段はホバー・フォーカスと
-   prefers-reduced-motion のみ。WCAG 2.2.2 の観点では手段が限られる点に留意する。
+   停止ボタンは置かない (Sho指示 2026-09-03)。prefers-reduced-motion も見ない
+   (Sho指示 2026-09-04)。止まるのはマウスでのホバー中とフォーカス中だけ。
    https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html
    ══════════════════════════════════════════════════════════════ */
-.marquee {
-  flex: 1 1 320px; min-width: 0; overflow: hidden; position: relative;
-  /* 左右の端で文字が切れて見えないよう、フェードで隠す */
-  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 36px,
-                      #000 calc(100% - 36px), transparent 100%);
-          mask-image: linear-gradient(90deg, transparent 0, #000 36px,
-                      #000 calc(100% - 36px), transparent 100%);
+.marquee { flex: 1 1 320px; min-width: 0; overflow: hidden; position: relative; }
+/* 左右の端で文字が切れて見えないよう、地色のグラデーションを重ねて隠す。
+   mask-image は Safari で transform アニメーションと併用すると描画が止まる例があるため使わない。 */
+.marquee::before, .marquee::after {
+  content: ""; position: absolute; top: 0; bottom: 0; width: 36px;
+  z-index: 1; pointer-events: none;
 }
+.marquee::before { left: 0;  background: linear-gradient(90deg, var(--bg-soft), transparent); }
+.marquee::after  { right: 0; background: linear-gradient(270deg, var(--bg-soft), transparent); }
 .marquee-track {
   display: flex; width: max-content;
   animation: marquee-scroll 46s linear infinite;
+  will-change: transform;          /* iOS Safari でコンポジタに載せる */
 }
 .marquee-set { display: flex; gap: 32px; align-items: center; padding-right: 32px; }
 @keyframes marquee-scroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
 }
-/* ホバー中とフォーカスが入っているあいだは止める。読みたい語を追えるようにするため。
+/* 読みたい語を追えるよう、ホバー中とフォーカス中は止める。
+   ホバーはマウスのある環境だけに限る。iOS Safari はタップした要素に :hover を当てて
+   別の場所をタップするまで外さないため、タッチだと指が触れた時点で永久に止まる。
    停止ボタンは Sho の指示で置かない (2026-09-03)。 */
-.marquee:hover .marquee-track,
+@media (hover: hover) and (pointer: fine) {
+  .marquee:hover .marquee-track { animation-play-state: paused; }
+}
 .marquee:focus-within .marquee-track { animation-play-state: paused; }
 
-@media (prefers-reduced-motion: reduce) {
-  /* 動きを減らす設定では流さない。代わりに横スクロールで全項目に届くようにする */
-  .marquee-track { animation: none; }
-  .marquee { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
-  .marquee-set:nth-child(2) { display: none; }
-}
+/* prefers-reduced-motion は意図的に見ない (Sho指示 2026-09-04)。
+   端末側で「視差効果を減らす」を有効にしている人にも流し続ける。
+   一般には横スクロールを止めるのが望ましく、停止ボタンも置いていないため
+   WCAG 2.2.2 の観点では止める手段がマウスのホバーだけになるが、
+   常に流すことを優先した判断。
+   https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html */
 @media (max-width: 640px) {
   .marquee { flex-basis: 100%; }
   .marquee-set { gap: 22px; padding-right: 22px; }
@@ -1055,7 +1061,10 @@ footer .brand-mark::after { box-shadow: 0 0 0 2px #134E6F; }
   .hero-slide-toggle { left: 14px; bottom: 14px; padding: 7px 12px; font-size: 12px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero--slideshow .hero-slide { transition: none; }
+  /* opacity だけのクロスフェードは要素が動かないため止めない。
+     ただちらつきを抑えるためフェードを長くする。切り替え間隔は JS 側で伸ばす。
+     transition:none にすると逆にハードカットになって目に障るので使わない。 */
+  .hero--slideshow .hero-slide { transition-duration: 2.4s; }
 }
 
 /* ══════════════════════════════════════════════════════════════
