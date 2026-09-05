@@ -4,7 +4,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <url>
-    <loc>https://studio-lumadesign.com/photography.html</loc>
+    <loc>https://studio-lumadesign.com/photography</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/prewedding-kimono-wagasa-shrine.jpg</image:loc>
       <image:title>和傘の下で</image:title>
@@ -1428,7 +1428,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/en/photography.html</loc>
+    <loc>https://studio-lumadesign.com/en/photography</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/prewedding-kimono-wagasa-shrine.jpg</image:loc>
       <image:title>Under the Wagasa</image:title>
@@ -2852,7 +2852,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/photo-itami.html</loc>
+    <loc>https://studio-lumadesign.com/photo-itami</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/itami-ana-787-head-on-dusk.jpg</image:loc>
       <image:title>正面から迫る</image:title>
@@ -3021,7 +3021,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/en/photo-itami.html</loc>
+    <loc>https://studio-lumadesign.com/en/photo-itami</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/itami-ana-787-head-on-dusk.jpg</image:loc>
       <image:title>Head-On</image:title>
@@ -3190,7 +3190,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/photo-haneda.html</loc>
+    <loc>https://studio-lumadesign.com/photo-haneda</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/haneda-mount-fuji-aircraft-sunset.jpg</image:loc>
       <image:title>富士と飛行機</image:title>
@@ -3799,7 +3799,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/en/photo-haneda.html</loc>
+    <loc>https://studio-lumadesign.com/en/photo-haneda</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/haneda-mount-fuji-aircraft-sunset.jpg</image:loc>
       <image:title>Fuji &amp; Flight</image:title>
@@ -4408,7 +4408,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/photo-shonan.html</loc>
+    <loc>https://studio-lumadesign.com/photo-shonan</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/enoshima-island-dusk.jpg</image:loc>
       <image:title>黄昏の江ノ島</image:title>
@@ -4602,7 +4602,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/en/photo-shonan.html</loc>
+    <loc>https://studio-lumadesign.com/en/photo-shonan</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/enoshima-island-dusk.jpg</image:loc>
       <image:title>Enoshima at Dusk</image:title>
@@ -4796,7 +4796,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/photo-atami.html</loc>
+    <loc>https://studio-lumadesign.com/photo-atami</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/atami-akao-forest-hibiscus.jpg</image:loc>
       <image:title>夏の花</image:title>
@@ -4925,7 +4925,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/en/photo-atami.html</loc>
+    <loc>https://studio-lumadesign.com/en/photo-atami</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/atami-akao-forest-hibiscus.jpg</image:loc>
       <image:title>Summer Blooms</image:title>
@@ -5054,7 +5054,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/photo-yokohama.html</loc>
+    <loc>https://studio-lumadesign.com/photo-yokohama</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/yokohama-minatomirai-dusk.jpg</image:loc>
       <image:title>横浜の夕暮れ</image:title>
@@ -5173,7 +5173,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/en/photo-yokohama.html</loc>
+    <loc>https://studio-lumadesign.com/en/photo-yokohama</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/yokohama-minatomirai-dusk.jpg</image:loc>
       <image:title>Yokohama at Dusk</image:title>
@@ -5292,7 +5292,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/blog/keihinjima-tsubasa-park.html</loc>
+    <loc>https://studio-lumadesign.com/blog/keihinjima-tsubasa-park</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/keihinjima-ana-pokemon-jet-apron.jpg</image:loc>
       <image:title>護岸越しのポケモンジェット</image:title>
@@ -5381,7 +5381,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/en/blog/keihinjima-tsubasa-park.html</loc>
+    <loc>https://studio-lumadesign.com/en/blog/keihinjima-tsubasa-park</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/keihinjima-ana-pokemon-jet-apron.jpg</image:loc>
       <image:title>Pokemon Jet Across the Seawall</image:title>
@@ -5470,7 +5470,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/blog/haneda-at-night.html</loc>
+    <loc>https://studio-lumadesign.com/blog/haneda-at-night</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/haneda-ana-a320-night-apron.jpg</image:loc>
       <image:title>夜のエプロン</image:title>
@@ -5584,7 +5584,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/en/blog/haneda-at-night.html</loc>
+    <loc>https://studio-lumadesign.com/en/blog/haneda-at-night</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/haneda-ana-a320-night-apron.jpg</image:loc>
       <image:title>The Apron at Night</image:title>
@@ -5698,7 +5698,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/blog/haneda-observation-deck.html</loc>
+    <loc>https://studio-lumadesign.com/blog/haneda-observation-deck</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/haneda-787-nose-winter.jpg</image:loc>
       <image:title>冬の機首</image:title>
@@ -5872,7 +5872,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/en/blog/haneda-observation-deck.html</loc>
+    <loc>https://studio-lumadesign.com/en/blog/haneda-observation-deck</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/haneda-787-nose-winter.jpg</image:loc>
       <image:title>Nose in Winter</image:title>
@@ -6046,7 +6046,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/blog/itami-skypark.html</loc>
+    <loc>https://studio-lumadesign.com/blog/itami-skypark</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/itami-ana-nose-blue.jpg</image:loc>
       <image:title>機首の青</image:title>
@@ -6190,7 +6190,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/en/blog/itami-skypark.html</loc>
+    <loc>https://studio-lumadesign.com/en/blog/itami-skypark</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/itami-ana-nose-blue.jpg</image:loc>
       <image:title>Blue Nose</image:title>
@@ -6334,7 +6334,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/blog/shonan-enoshima.html</loc>
+    <loc>https://studio-lumadesign.com/blog/shonan-enoshima</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/katase-beach-evening-crowd.jpg</image:loc>
       <image:title>夕方の海辺</image:title>
@@ -6498,7 +6498,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/en/blog/shonan-enoshima.html</loc>
+    <loc>https://studio-lumadesign.com/en/blog/shonan-enoshima</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/katase-beach-evening-crowd.jpg</image:loc>
       <image:title>The Beach at Evening</image:title>
@@ -6662,7 +6662,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/blog/atami-akao-kiunkaku.html</loc>
+    <loc>https://studio-lumadesign.com/blog/atami-akao-kiunkaku</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/atami-akao-forest-bonsai-garden.jpg</image:loc>
       <image:title>砂利と盆栽</image:title>
@@ -6791,7 +6791,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/en/blog/atami-akao-kiunkaku.html</loc>
+    <loc>https://studio-lumadesign.com/en/blog/atami-akao-kiunkaku</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/atami-akao-forest-bonsai-garden.jpg</image:loc>
       <image:title>Gravel and Bonsai</image:title>
@@ -6920,7 +6920,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/blog/yokohama-minatomirai.html</loc>
+    <loc>https://studio-lumadesign.com/blog/yokohama-minatomirai</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/yokohama-pier-and-bay.jpg</image:loc>
       <image:title>桟橋と海</image:title>
@@ -7034,7 +7034,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/en/blog/yokohama-minatomirai.html</loc>
+    <loc>https://studio-lumadesign.com/en/blog/yokohama-minatomirai</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/yokohama-pier-and-bay.jpg</image:loc>
       <image:title>The Pier and the Bay</image:title>

@@ -25,18 +25,18 @@
   <!-- SERVICES (hub) — bilingual pair                                -->
   <!-- ============================================================ -->
   <url>
-    <loc>https://studio-lumadesign.com/services.html</loc>
+    <loc>https://studio-lumadesign.com/services</loc>
     <lastmod>2026-09-05</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/services.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/services.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/services"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/services"/>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/en/services.html</loc>
+    <loc>https://studio-lumadesign.com/en/services</loc>
     <lastmod>2026-09-05</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/services.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/services.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/services"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/services"/>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -47,72 +47,72 @@
 
   <!-- LUMA Voice -->
   <url>
-    <loc>https://studio-lumadesign.com/service-english.html</loc>
+    <loc>https://studio-lumadesign.com/service-english</loc>
     <lastmod>2026-09-05</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-english.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-english.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-english"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-english"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/en/service-english.html</loc>
+    <loc>https://studio-lumadesign.com/en/service-english</loc>
     <lastmod>2026-09-05</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-english.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-english.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-english"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-english"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- LUMA Frame (Photography) -->
   <url>
-    <loc>https://studio-lumadesign.com/service-photo.html</loc>
+    <loc>https://studio-lumadesign.com/service-photo</loc>
     <lastmod>2026-09-05</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-photo.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-photo.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-photo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-photo"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/en/service-photo.html</loc>
+    <loc>https://studio-lumadesign.com/en/service-photo</loc>
     <lastmod>2026-09-05</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-photo.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-photo.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-photo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-photo"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- LUMA Circle (Community) -->
   <url>
-    <loc>https://studio-lumadesign.com/service-community.html</loc>
+    <loc>https://studio-lumadesign.com/service-community</loc>
     <lastmod>2026-09-05</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-community.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-community.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-community"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-community"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/en/service-community.html</loc>
+    <loc>https://studio-lumadesign.com/en/service-community</loc>
     <lastmod>2026-09-05</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-community.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-community.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-community"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-community"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- LUMA Path (Tour) -->
   <url>
-    <loc>https://studio-lumadesign.com/service-tour.html</loc>
+    <loc>https://studio-lumadesign.com/service-tour</loc>
     <lastmod>2026-09-05</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-tour.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-tour.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-tour"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-tour"/>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/en/service-tour.html</loc>
+    <loc>https://studio-lumadesign.com/en/service-tour</loc>
     <lastmod>2026-09-05</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-tour.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-tour.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-tour"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-tour"/>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -121,18 +121,18 @@
   <!-- ABOUT — bilingual pair                                         -->
   <!-- ============================================================ -->
   <url>
-    <loc>https://studio-lumadesign.com/about.html</loc>
+    <loc>https://studio-lumadesign.com/about</loc>
     <lastmod>2026-07-10</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/about.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/about"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/en/about.html</loc>
+    <loc>https://studio-lumadesign.com/en/about</loc>
     <lastmod>2026-07-10</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/about.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/about"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -141,18 +141,18 @@
   <!-- PHOTOGRAPHY PORTFOLIO — bilingual pair                         -->
   <!-- ============================================================ -->
   <url>
-    <loc>https://studio-lumadesign.com/photography.html</loc>
+    <loc>https://studio-lumadesign.com/photography</loc>
     <lastmod>2026-09-05</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/photography.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/photography.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/photography"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/photography"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/en/photography.html</loc>
+    <loc>https://studio-lumadesign.com/en/photography</loc>
     <lastmod>2026-09-05</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/photography.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/photography.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/photography"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/photography"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -161,18 +161,18 @@
   <!-- PHOTO LOCATION — ITAMI SKYPARK — bilingual pair                -->
   <!-- ============================================================ -->
   <url>
-    <loc>https://studio-lumadesign.com/photo-itami.html</loc>
+    <loc>https://studio-lumadesign.com/photo-itami</loc>
     <lastmod>2026-08-30</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/photo-itami.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/photo-itami.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/photo-itami"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/photo-itami"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/en/photo-itami.html</loc>
+    <loc>https://studio-lumadesign.com/en/photo-itami</loc>
     <lastmod>2026-08-30</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/photo-itami.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/photo-itami.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/photo-itami"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/photo-itami"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -181,18 +181,18 @@
   <!-- PHOTO LOCATION — HANEDA AIRPORT — bilingual pair               -->
   <!-- ============================================================ -->
   <url>
-    <loc>https://studio-lumadesign.com/photo-haneda.html</loc>
+    <loc>https://studio-lumadesign.com/photo-haneda</loc>
     <lastmod>2026-08-31</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/photo-haneda.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/photo-haneda.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/photo-haneda"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/photo-haneda"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/en/photo-haneda.html</loc>
+    <loc>https://studio-lumadesign.com/en/photo-haneda</loc>
     <lastmod>2026-08-31</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/photo-haneda.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/photo-haneda.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/photo-haneda"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/photo-haneda"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -201,18 +201,18 @@
   <!-- PHOTO LOCATION — SHONAN AND ENOSHIMA — bilingual pair          -->
   <!-- ============================================================ -->
   <url>
-    <loc>https://studio-lumadesign.com/photo-shonan.html</loc>
+    <loc>https://studio-lumadesign.com/photo-shonan</loc>
     <lastmod>2026-08-31</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/photo-shonan.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/photo-shonan.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/photo-shonan"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/photo-shonan"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/en/photo-shonan.html</loc>
+    <loc>https://studio-lumadesign.com/en/photo-shonan</loc>
     <lastmod>2026-08-31</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/photo-shonan.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/photo-shonan.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/photo-shonan"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/photo-shonan"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -221,18 +221,18 @@
   <!-- PHOTO LOCATION — ATAMI — bilingual pair -->
   <!-- ============================================================ -->
   <url>
-    <loc>https://studio-lumadesign.com/photo-atami.html</loc>
+    <loc>https://studio-lumadesign.com/photo-atami</loc>
     <lastmod>2026-08-31</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/photo-atami.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/photo-atami.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/photo-atami"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/photo-atami"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/en/photo-atami.html</loc>
+    <loc>https://studio-lumadesign.com/en/photo-atami</loc>
     <lastmod>2026-08-31</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/photo-atami.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/photo-atami.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/photo-atami"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/photo-atami"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -241,18 +241,18 @@
   <!-- PHOTO LOCATION — YOKOHAMA — bilingual pair -->
   <!-- ============================================================ -->
   <url>
-    <loc>https://studio-lumadesign.com/photo-yokohama.html</loc>
+    <loc>https://studio-lumadesign.com/photo-yokohama</loc>
     <lastmod>2026-08-31</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/photo-yokohama.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/photo-yokohama.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/photo-yokohama"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/photo-yokohama"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/en/photo-yokohama.html</loc>
+    <loc>https://studio-lumadesign.com/en/photo-yokohama</loc>
     <lastmod>2026-08-31</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/photo-yokohama.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/photo-yokohama.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/photo-yokohama"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/photo-yokohama"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -265,43 +265,43 @@
   <!-- S.LEAGUE — Japanese only (community is JP-local)               -->
   <!-- ============================================================ -->
   <url>
-    <loc>https://studio-lumadesign.com/s-league.html</loc>
+    <loc>https://studio-lumadesign.com/s-league</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/s-league-sponsor.html</loc>
+    <loc>https://studio-lumadesign.com/s-league-sponsor</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/en/s-league-sponsor.html</loc>
+    <loc>https://studio-lumadesign.com/en/s-league-sponsor</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/s-league-25.html</loc>
+    <loc>https://studio-lumadesign.com/s-league-25</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/s-league-24.html</loc>
+    <loc>https://studio-lumadesign.com/s-league-24</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/s-league-23.html</loc>
+    <loc>https://studio-lumadesign.com/s-league-23</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/s-league-archive.html</loc>
+    <loc>https://studio-lumadesign.com/s-league-archive</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
@@ -311,7 +311,7 @@
   <!-- LINKS — Instagram プロフィール用の分岐ページ (JA only)          -->
   <!-- ============================================================ -->
   <url>
-    <loc>https://studio-lumadesign.com/lp/links.html</loc>
+    <loc>https://studio-lumadesign.com/lp/links</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -321,18 +321,18 @@
   <!-- LEGAL — bilingual pair (noindex in HTML, listed for reference) -->
   <!-- ============================================================ -->
   <url>
-    <loc>https://studio-lumadesign.com/legal.html</loc>
+    <loc>https://studio-lumadesign.com/legal</loc>
     <lastmod>2026-09-05</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/legal.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/legal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/legal"/>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/en/legal.html</loc>
+    <loc>https://studio-lumadesign.com/en/legal</loc>
     <lastmod>2026-09-05</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/legal.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/legal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/legal"/>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -341,18 +341,18 @@
   <!-- CONTACT — bilingual pair (noindex in HTML, listed for context) -->
   <!-- ============================================================ -->
   <url>
-    <loc>https://studio-lumadesign.com/contact.html</loc>
+    <loc>https://studio-lumadesign.com/contact</loc>
     <lastmod>2026-09-05</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/contact.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/contact"/>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/en/contact.html</loc>
+    <loc>https://studio-lumadesign.com/en/contact</loc>
     <lastmod>2026-09-05</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/contact.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/contact"/>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -378,114 +378,114 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/blog/keihinjima-tsubasa-park.html</loc>
+    <loc>https://studio-lumadesign.com/blog/keihinjima-tsubasa-park</loc>
     <lastmod>2026-09-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/keihinjima-tsubasa-park.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/keihinjima-tsubasa-park.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/keihinjima-tsubasa-park"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/keihinjima-tsubasa-park"/>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/en/blog/keihinjima-tsubasa-park.html</loc>
+    <loc>https://studio-lumadesign.com/en/blog/keihinjima-tsubasa-park</loc>
     <lastmod>2026-09-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/keihinjima-tsubasa-park.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/keihinjima-tsubasa-park.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/keihinjima-tsubasa-park"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/keihinjima-tsubasa-park"/>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/blog/haneda-at-night.html</loc>
+    <loc>https://studio-lumadesign.com/blog/haneda-at-night</loc>
     <lastmod>2026-09-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/haneda-at-night.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/haneda-at-night.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/haneda-at-night"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/haneda-at-night"/>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/en/blog/haneda-at-night.html</loc>
+    <loc>https://studio-lumadesign.com/en/blog/haneda-at-night</loc>
     <lastmod>2026-09-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/haneda-at-night.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/haneda-at-night.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/haneda-at-night"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/haneda-at-night"/>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/blog/haneda-observation-deck.html</loc>
+    <loc>https://studio-lumadesign.com/blog/haneda-observation-deck</loc>
     <lastmod>2026-09-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/haneda-observation-deck.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/haneda-observation-deck.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/haneda-observation-deck"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/haneda-observation-deck"/>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/en/blog/haneda-observation-deck.html</loc>
+    <loc>https://studio-lumadesign.com/en/blog/haneda-observation-deck</loc>
     <lastmod>2026-09-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/haneda-observation-deck.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/haneda-observation-deck.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/haneda-observation-deck"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/haneda-observation-deck"/>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/blog/itami-skypark.html</loc>
+    <loc>https://studio-lumadesign.com/blog/itami-skypark</loc>
     <lastmod>2026-09-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/itami-skypark.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/itami-skypark.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/itami-skypark"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/itami-skypark"/>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/en/blog/itami-skypark.html</loc>
+    <loc>https://studio-lumadesign.com/en/blog/itami-skypark</loc>
     <lastmod>2026-09-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/itami-skypark.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/itami-skypark.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/itami-skypark"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/itami-skypark"/>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/blog/shonan-enoshima.html</loc>
+    <loc>https://studio-lumadesign.com/blog/shonan-enoshima</loc>
     <lastmod>2026-09-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/shonan-enoshima.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/shonan-enoshima.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/shonan-enoshima"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/shonan-enoshima"/>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/en/blog/shonan-enoshima.html</loc>
+    <loc>https://studio-lumadesign.com/en/blog/shonan-enoshima</loc>
     <lastmod>2026-09-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/shonan-enoshima.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/shonan-enoshima.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/shonan-enoshima"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/shonan-enoshima"/>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/blog/atami-akao-kiunkaku.html</loc>
+    <loc>https://studio-lumadesign.com/blog/atami-akao-kiunkaku</loc>
     <lastmod>2026-09-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/atami-akao-kiunkaku.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/atami-akao-kiunkaku.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/atami-akao-kiunkaku"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/atami-akao-kiunkaku"/>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/en/blog/atami-akao-kiunkaku.html</loc>
+    <loc>https://studio-lumadesign.com/en/blog/atami-akao-kiunkaku</loc>
     <lastmod>2026-09-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/atami-akao-kiunkaku.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/atami-akao-kiunkaku.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/atami-akao-kiunkaku"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/atami-akao-kiunkaku"/>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/blog/yokohama-minatomirai.html</loc>
+    <loc>https://studio-lumadesign.com/blog/yokohama-minatomirai</loc>
     <lastmod>2026-09-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/yokohama-minatomirai.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/yokohama-minatomirai.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/yokohama-minatomirai"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/yokohama-minatomirai"/>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/en/blog/yokohama-minatomirai.html</loc>
+    <loc>https://studio-lumadesign.com/en/blog/yokohama-minatomirai</loc>
     <lastmod>2026-09-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/yokohama-minatomirai.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/yokohama-minatomirai.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/blog/yokohama-minatomirai"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/blog/yokohama-minatomirai"/>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -510,92 +510,92 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/news/hero-slideshow.html</loc>
+    <loc>https://studio-lumadesign.com/news/hero-slideshow</loc>
     <lastmod>2026-09-03</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/hero-slideshow.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/hero-slideshow.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/hero-slideshow.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/hero-slideshow"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/hero-slideshow"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/hero-slideshow"/>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/en/news/hero-slideshow.html</loc>
+    <loc>https://studio-lumadesign.com/en/news/hero-slideshow</loc>
     <lastmod>2026-09-03</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/hero-slideshow.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/hero-slideshow.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/hero-slideshow.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/hero-slideshow"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/hero-slideshow"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/hero-slideshow"/>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/news/shooting-notes-launch.html</loc>
+    <loc>https://studio-lumadesign.com/news/shooting-notes-launch</loc>
     <lastmod>2026-09-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/shooting-notes-launch.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/shooting-notes-launch.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/shooting-notes-launch.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/shooting-notes-launch"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/shooting-notes-launch"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/shooting-notes-launch"/>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/en/news/shooting-notes-launch.html</loc>
+    <loc>https://studio-lumadesign.com/en/news/shooting-notes-launch</loc>
     <lastmod>2026-09-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/shooting-notes-launch.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/shooting-notes-launch.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/shooting-notes-launch.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/shooting-notes-launch"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/shooting-notes-launch"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/shooting-notes-launch"/>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/news/photo-location-pages.html</loc>
+    <loc>https://studio-lumadesign.com/news/photo-location-pages</loc>
     <lastmod>2026-08-31</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/photo-location-pages.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/photo-location-pages.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/photo-location-pages.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/photo-location-pages"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/photo-location-pages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/photo-location-pages"/>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/en/news/photo-location-pages.html</loc>
+    <loc>https://studio-lumadesign.com/en/news/photo-location-pages</loc>
     <lastmod>2026-08-31</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/photo-location-pages.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/photo-location-pages.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/photo-location-pages.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/photo-location-pages"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/photo-location-pages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/photo-location-pages"/>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/news/itami-skypark-shoot.html</loc>
+    <loc>https://studio-lumadesign.com/news/itami-skypark-shoot</loc>
     <lastmod>2026-08-10</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/itami-skypark-shoot.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/itami-skypark-shoot.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/itami-skypark-shoot.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/itami-skypark-shoot"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/itami-skypark-shoot"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/itami-skypark-shoot"/>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/en/news/itami-skypark-shoot.html</loc>
+    <loc>https://studio-lumadesign.com/en/news/itami-skypark-shoot</loc>
     <lastmod>2026-08-10</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/itami-skypark-shoot.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/itami-skypark-shoot.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/itami-skypark-shoot.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/itami-skypark-shoot"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/itami-skypark-shoot"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/itami-skypark-shoot"/>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/news/service-lines-four.html</loc>
+    <loc>https://studio-lumadesign.com/news/service-lines-four</loc>
     <lastmod>2026-05-25</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/service-lines-four.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/service-lines-four.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/service-lines-four.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/service-lines-four"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/service-lines-four"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/service-lines-four"/>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://studio-lumadesign.com/en/news/service-lines-four.html</loc>
+    <loc>https://studio-lumadesign.com/en/news/service-lines-four</loc>
     <lastmod>2026-05-25</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/service-lines-four.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/service-lines-four.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/service-lines-four.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/service-lines-four"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/service-lines-four"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/service-lines-four"/>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
