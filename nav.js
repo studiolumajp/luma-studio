@@ -160,3 +160,19 @@
     }
   });
 })();
+
+/* 画像の保存操作の制限 (2026-09-06)
+   対象は img / picture だけ。右クリックメニュー、ドラッグ、iOS の長押しメニューを抑える。
+   リンクや本文の操作は妨げない。完全な防止ではなく、意図しない持ち出しを減らすための措置。 */
+(function () {
+  'use strict';
+  function isImage(t) {
+    return !!(t && t.closest && t.closest('img, picture, .lb-img, .lb-image, .lightbox img'));
+  }
+  document.addEventListener('contextmenu', function (e) {
+    if (isImage(e.target)) e.preventDefault();
+  });
+  document.addEventListener('dragstart', function (e) {
+    if (isImage(e.target)) e.preventDefault();
+  });
+})();

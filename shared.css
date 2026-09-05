@@ -1640,3 +1640,6 @@ br.sp { display: none; }
 @media (prefers-reduced-motion:reduce){
   .sl-hero .hero-video{display:none}
 }
+
+/* 画像の保存操作の制限 (2026-09-06): ドラッグと iOS 長押しメニューを抑える。クリックは通す */
+img, picture img { -webkit-user-drag: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
