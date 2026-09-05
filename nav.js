@@ -101,3 +101,62 @@
     mq.addListener(handleMq); // 古いブラウザ向けフォールバック
   }
 })();
+
+/* ══════════════════════════════════════════════════════════════
+   HERO 背景動画の遅延読み込み (2026-09-05 / 工程C)
+   768px 未満では poster の静止画だけを表示し、動画 (webm 1.4MB) を読まない。
+   prefers-reduced-motion のときも読まない。
+   HTML 側は <video preload="none" data-src-webm data-src-mp4> で source を持たない。
+   ══════════════════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+  var vids = [].slice.call(document.querySelectorAll('video.hero-video[data-src-webm]'));
+  if (!vids.length) return;
+
+  var wide = window.matchMedia && window.matchMedia('(min-width: 768px)');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (!wide || !wide.matches) return;
+  if (reduce && reduce.matches) return;
+
+  vids.forEach(function (v) {
+    if (v.querySelector('source')) return;
+    [['data-src-webm', 'video/webm'], ['data-src-mp4', 'video/mp4']].forEach(function (pair) {
+      var url = v.getAttribute(pair[0]);
+      if (!url) return;
+      var s = document.createElement('source');
+      s.src = url; s.type = pair[1];
+      v.appendChild(s);
+    });
+    v.muted = true;          // 自動再生の条件 (ブラウザの仕様)
+    v.setAttribute('preload', 'auto');
+    v.load();
+    var p = v.play();
+    if (p && typeof p.catch === 'function') p.catch(function () { /* 自動再生拒否時は poster のまま */ });
+  });
+})();
+
+/* ══════════════════════════════════════════════════════════════
+   GA4 カスタムイベント (2026-09-05 / 工程C)
+   LINE ボタンと mailto: のクリックを計測する。
+   gtag スニペットが無いページでもエラーにならないよう typeof で守る。
+   ══════════════════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+  if (!document.addEventListener || !Element.prototype.closest) return;
+
+  document.addEventListener('click', function (e) {
+    if (typeof gtag !== 'function') return;
+    var t = e.target;
+    if (!t || typeof t.closest !== 'function') return;
+
+    var line = t.closest('a[href*="lin.ee"]');
+    if (line) {
+      gtag('event', 'click_line', { link_url: line.href, location: document.title });
+      return;
+    }
+    var mail = t.closest('a[href^="mailto:"]');
+    if (mail) {
+      gtag('event', 'click_email', { link_url: mail.href });
+    }
+  });
+})();

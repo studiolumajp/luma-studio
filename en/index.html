@@ -7,8 +7,8 @@
 <meta name="color-scheme" content="light only" />
 
 <!-- ── PRIMARY SEO META ── -->
-<title>LUMA | English Lessons / Family Photography / Mahjong / Tours in Tokyo & Yokohama</title>
-<meta name="description" content="Bilingual English lessons, natural-light portraits, English-guided Tokyo tours and a health-mahjong community — from a Tokyo &amp; Yokohama personal brand. Free 30-min consult." />
+<title>English Tutor &amp; Family Photographer in Yokohama/Tokyo | LUMA</title>
+<meta name="description" content="English tutoring, family photography and English-guided tours in Yokohama and Tokyo. Photos delivered within 7 days, from JPY 22,000. Free 30-min consult." />
 <meta name="keywords" content="English lessons Tokyo,English tutor Yokohama,family photography Tokyo,Tokyo English tour,private mahjong tournament,LUMA" />
 <meta name="author" content="LUMA" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -24,9 +24,10 @@
 <!-- ── Open Graph ── -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://studio-lumadesign.com/en/" />
-<meta property="og:title" content="LUMA | English Lessons / Photography / Mahjong / Tours in Tokyo" />
+<meta property="og:title" content="English Tutor &amp; Family Photographer in Yokohama/Tokyo | LUMA" />
 <meta property="og:description" content="Bilingual English lessons, natural-light portraits, English-guided Tokyo tours and the S.League health-mahjong community. Free 30-min consult." />
 <meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
+<meta property="og:image:alt" content="Family portraits, delivered within 7 days." />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:locale" content="en_US" />
@@ -35,7 +36,7 @@
 
 <!-- ── Twitter Card ── -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="LUMA | English / Photography / Mahjong / Tours — Tokyo & Yokohama" />
+<meta name="twitter:title" content="English Tutor &amp; Family Photographer in Yokohama/Tokyo | LUMA" />
 <meta name="twitter:description" content="A bilingual personal brand based in Tokyo and Yokohama. Nine years in Australia. Nikon Z6III. Founder of the S.League health-mahjong community." />
 <meta name="twitter:image" content="https://studio-lumadesign.com/og-image.jpg" />
 
@@ -55,7 +56,7 @@
       "name": "LUMA",
       "alternateName": ["LUMA Studio", "ルーマ"],
       "description": "A personal brand based in Tokyo and Yokohama, offering English lessons, portrait photography, English-guided Tokyo tours, and a health-mahjong community.",
-      "slogan": "Clarity by Design — Illuminate Your Confidence",
+      "slogan": "Clarity by Design / Illuminate Your Confidence",
       "url": "https://studio-lumadesign.com/",
       "image": "https://studio-lumadesign.com/og-image.jpg",
       "email": "studio.luma.jp@gmail.com",
@@ -82,6 +83,16 @@
       "alumniOf": "Brisbane, Australia"
     },
     {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Which areas do you serve?", "acceptedAnswer": {"@type": "Answer", "text": "Tokyo and the Greater Tokyo area. English lessons also run online, so you can join from anywhere in the world. Photo shoots cover Tokyo and Yokohama as standard, and I am happy to travel further with travel costs added."}},
+        {"@type": "Question", "name": "Are English lessons suitable for beginners?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, and plenty of people start from scratch. I lived and worked in Australia for 9 years, and I teach beginner, intermediate and advanced levels, business English and IELTS / TOEIC prep. Every lesson is built around you, and the free first consultation is where we work out your goal and how to get there."}},
+        {"@type": "Question", "name": "How much do family photoshoots cost?", "acceptedAnswer": {"@type": "Answer", "text": "Pricing goes by category, all tax included: Profile & Business Portrait (60 min, 30 retouched photos) 22,000 yen, Maternity & Baby (90 min, 50 photos) 22,000 yen, Couple & Anniversary (120 min, 50 photos) 27,500 yen, Family (120 min, 50 photos) 33,000 yen, Omiyamairi & Shichi-Go-San (120 min, 60 photos) 35,200 yen, Coming-of-Age & Graduation (120 min, 60 photos) 38,500 yen, Photo Wedding (120 min, 60 photos) 77,000 yen and Ceremony on the wedding day (240 min, 120 photos) 110,000 yen. For businesses there is shop, product and food work (half day, 40 photos) 66,000 yen, Event & Corporate (half day, 60 photos) 66,000 yen and aviation and landscape commissions (120 min, 40 photos) 22,000 yen. There is no weekend or holiday surcharge, every quote is free, and photos come back within 7 days in every category."}},
+        {"@type": "Question", "name": "Can foreign visitors book the English Tokyo tour?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, LUMA Path is fully open to travellers from overseas. Private tours run half a day (3-4 hrs) or a full day (8 hrs) for 2-6 people, built around what you are interested in. Allergies and gluten-free dining matter to me personally, so I plan the meals with them in mind from the start."}},
+        {"@type": "Question", "name": "How do I request a free consultation?", "acceptedAnswer": {"@type": "Answer", "text": "Use the contact form at the bottom of the site. It is open 24/7 and you will usually hear back within two business days. From there we will set up a 30-minute consult on Zoom or in person."}}
+      ]
+    },
+    {
       "@type": "BreadcrumbList",
       "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://studio-lumadesign.com/en/"}
@@ -99,7 +110,12 @@
   gtag('config', 'G-62F20N179N');
 </script>
 
-<link rel="stylesheet" href="../shared.css?v=aqua22" />
+<!-- LCP: HERO スライドショーの 1枚目。JS(defer)が背景に描くためプリロードスキャナが見つけられない -->
+<link rel="preload" as="image" fetchpriority="high"
+      href="../images/hero/yokohama-minatomirai-dusk-1920.webp"
+      imagesrcset="../images/hero/yokohama-minatomirai-dusk-960.webp 960w, ../images/hero/yokohama-minatomirai-dusk-1920.webp 1920w"
+      imagesizes="100vw" />
+<link rel="stylesheet" href="../shared.css?v=aqua29" />
 <style id="page-overrides">
   /* ── HERO: 暗幕・文字色・ボタンは shared.css の .hero--photo で共通化。
      ここではサイズと固有レイアウトのみ指定する (2026-08-06) ── */
@@ -137,7 +153,6 @@
           <li><a href="./service-photo.html">Photography</a></li>
           <li><a href="./service-tour.html">Tokyo Tours</a></li>
           <li><a href="./service-community.html">Community Events</a></li>
-          <li><a href="../s-league.html">S.League Mahjong</a></li>
         </ul>
       </li>
       <li><a href="./blog/index.html">Shooting Notes</a></li>
@@ -156,7 +171,7 @@
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <ol>
     <li><a href="./index.html">Home</a></li>
-    <li aria-current="page" style="font-family: Poppins">LUMA — Tokyo & Yokohama personal brand</li>
+    <li aria-current="page" style="font-family: Poppins">LUMA / Tokyo & Yokohama personal brand</li>
   </ol>
 </nav>
 
@@ -165,43 +180,49 @@
         data-slides="[&quot;yokohama-minatomirai-dusk&quot;,&quot;yokohama-cosmo-clock-night&quot;,&quot;yokohama-osanbashi-night&quot;,&quot;sapporo-jr-tower-night-sea-of-lights&quot;,&quot;shonan-magenta-dusk-coast&quot;,&quot;shonan-moonlit-coast&quot;,&quot;enoshima-sea-candle-at-night&quot;,&quot;enoshima-night-gate&quot;,&quot;enoden-signal-and-tracks-night&quot;,&quot;haneda-mount-fuji-terminal-sunset&quot;,&quot;haneda-mount-fuji-blue-hour&quot;,&quot;haneda-ana-787-cockpit-night&quot;,&quot;itami-terminal-at-night&quot;,&quot;keihinjima-787-underside&quot;,&quot;atami-akao-forest-sea-terrace&quot;]">
   <div class="container hero-grid">
     <div class="hero-text">
-      <span class="hero-pill"><span class="dot"></span>2026 — Now booking · Free consult available</span>
+      <span class="hero-pill"><span class="dot"></span>2026 / Now booking · Free consult available</span>
       <h1 class="hero-title">
-        English, photos and a bit more <span class="accent">confidence in yourself.</span><br />
-        Tokyo & Yokohama.
+        <span class="accent">Family portraits,</span><br />
+        delivered within 7 days.
       </h1>
       <p class="hero-sub" style="max-width: 550px">
-        Nine years in Australia, now based in Tokyo and Yokohama. I run all four myself: <strong style="color:var(--text);">English lessons, portraits, mahjong tournaments and English-guided Tokyo tours</strong>. In English or Japanese, whichever you're comfortable with.
+        On-location in Tokyo &amp; Yokohama. <strong style="color:var(--text);">From &yen;22,000 (tax incl.)</strong> Shot in natural light, with nobody told to smile. Photos within 7 days.
       </p>
       <div class="hero-cta-row">
-        <a href="./contact.html" class="btn btn-primary">Book a free 30-min consult →</a>
-        <a href="#services" class="btn btn-secondary">Explore services</a>
+        <a href="./contact.html" class="btn btn-primary">Request a free quote →</a>
+        <a href="https://lin.ee/YetEeTz" class="btn btn-line" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          Chat on LINE →
+        </a>
       </div>
+      <p style="margin-top:16px;font-size:14.5px;">
+        <a href="#services" style="color:var(--accent-2-light);text-decoration:underline;">English lessons, Tokyo tours and community events too</a>
+      </p>
       <div class="hero-trust">
         <div class="trust-item"><div class="num">500+</div><div class="label">Photos delivered</div></div>
         <div class="trust-item"><div class="num">Since 2020</div><div class="label">Shooting</div></div>
-        <div class="trust-item"><div class="num">367</div><div class="label">Cumulative S.League players</div></div>
+        <div class="trust-item"><div class="num">284</div><div class="label">Photographs published</div></div>
       </div>
     </div>
     <div class="hero-visual" aria-hidden="true">
       <div class="hv-grid-bg"></div>
       <div class="hv-card hv-1">
-        <span class="ico">📖</span>
+        <span class="ico"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v16" /> <path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z" /></svg></span>
         <span class="label">LUMA Voice</span>
         <span class="title" style="font-size: 18px">English Lessons</span>
       </div>
       <div class="hv-card hv-2">
-        <span class="ico">📸</span>
+        <span class="ico"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z" /> <circle cx="12" cy="13" r="3" /></svg></span>
         <span class="label">LUMA Frame</span>
         <span class="title" style="font-size: 18px">Family & Pre-wedding</span>
       </div>
       <div class="hv-card hv-3">
-        <span class="ico">🀄</span>
+        <span class="ico"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v18" /> <path d="M3 12h18" /> <rect x="3" y="3" width="18" height="18" rx="2" /></svg></span>
         <span class="label">S.League</span>
         <span class="title" style="font-size: 18px">Mahjong Community</span>
       </div>
       <div class="hv-card hv-4">
-        <span class="ico">🗺️</span>
+        <span class="ico"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z" /> <path d="M15 5.764v15" /> <path d="M9 3.236v15" /></svg></span>
         <span class="label">LUMA Path × Voice</span>
         <span class="title" style="font-size: 18px">Tokyo in English</span>
       </div>
@@ -215,168 +236,189 @@
     <div class="marquee" data-marquee>
       <div class="marquee-track">
         <div class="marquee-set logo-strip-items">
-        <span>📍 Tokyo · Yokohama</span>
-        <span>🌐 EN / JA bilingual</span>
-        <span>📷 Nikon Z6III</span>
-        <span>🔎 NIKKOR Z 35mm f/1.4</span>
-        <span>🎓 9 years in Australia</span>
-        <span>🗓️ Shooting since 2020</span>
-        <span>🖼️ 284 photographs published</span>
-        <span>🗣️ English lessons</span>
-        <span>📸 Portraits & keepsakes</span>
-        <span>🗺️ Tokyo tours in English</span>
-        <span>🤝 Community events</span>
-        <span>🀄 Health Mahjong</span>
-        <span>🏆 S.League since 2022</span>
-        <span>💬 Free 30-min consult</span>
+        <span>Tokyo · Yokohama</span>
+        <span>EN / JA bilingual</span>
+        <span>Nikon Z6III</span>
+        <span>NIKKOR Z 35mm f/1.4</span>
+        <span>9 years in Australia</span>
+        <span>Shooting since 2020</span>
+        <span>284 photographs published</span>
+        <span>English lessons</span>
+        <span>Portraits & keepsakes</span>
+        <span>Tokyo tours in English</span>
+        <span>Community events</span>
+        <span>Health Mahjong</span>
+        <span>S.League since 2022</span>
+        <span>Free 30-min consult</span>
         </div>
         <div class="marquee-set logo-strip-items" aria-hidden="true">
-        <span>📍 Tokyo · Yokohama</span>
-        <span>🌐 EN / JA bilingual</span>
-        <span>📷 Nikon Z6III</span>
-        <span>🔎 NIKKOR Z 35mm f/1.4</span>
-        <span>🎓 9 years in Australia</span>
-        <span>🗓️ Shooting since 2020</span>
-        <span>🖼️ 284 photographs published</span>
-        <span>🗣️ English lessons</span>
-        <span>📸 Portraits & keepsakes</span>
-        <span>🗺️ Tokyo tours in English</span>
-        <span>🤝 Community events</span>
-        <span>🀄 Health Mahjong</span>
-        <span>🏆 S.League since 2022</span>
-        <span>💬 Free 30-min consult</span>
+        <span>Tokyo · Yokohama</span>
+        <span>EN / JA bilingual</span>
+        <span>Nikon Z6III</span>
+        <span>NIKKOR Z 35mm f/1.4</span>
+        <span>9 years in Australia</span>
+        <span>Shooting since 2020</span>
+        <span>284 photographs published</span>
+        <span>English lessons</span>
+        <span>Portraits & keepsakes</span>
+        <span>Tokyo tours in English</span>
+        <span>Community events</span>
+        <span>Health Mahjong</span>
+        <span>S.League since 2022</span>
+        <span>Free 30-min consult</span>
         </div>
       </div>
     </div>
   </div>
 </div>
 
+<!-- ════ WORKS ════ -->
+<section id="works" aria-labelledby="works-heading">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Works</span>
+      <h2 id="works-heading">The photos, exactly as delivered</h2>
+      <p style="max-width: 800px">Natural light, no heavy retouching. Grouped by where they were taken.</p>
+    </div>
+    <div class="work-grid reveal">
+      <a class="work-tile" href="./photo-yokohama.html">
+        <img src="../images/photography/yokohama-cosmo-clock-night.jpg" alt="Cosmo Clock 21 at night, Minato Mirai, Yokohama" loading="lazy" width="2000" height="1124" />
+        <span class="wt-cap"><span>Yokohama</span><span>See portfolio →</span></span>
+      </a>
+      <a class="work-tile" href="./photo-shonan.html">
+        <img src="../images/photography/enoshima-sea-candle-at-night.jpg" alt="Enoshima Sea Candle lit up at night" loading="lazy" width="2000" height="1124" />
+        <span class="wt-cap"><span>Shonan &amp; Enoshima</span><span>See portfolio →</span></span>
+      </a>
+      <a class="work-tile" href="./photo-haneda.html">
+        <img src="../images/photography/haneda-mount-fuji-terminal-sunset.jpg" alt="Haneda Airport terminal with Mount Fuji at sunset" loading="lazy" width="2000" height="1124" />
+        <span class="wt-cap"><span>Haneda</span><span>See portfolio →</span></span>
+      </a>
+      <a class="work-tile" href="./photo-itami.html">
+        <img src="../images/photography/itami-terminal-at-night.jpg" alt="Itami Airport terminal at night" loading="lazy" width="2000" height="1124" />
+        <span class="wt-cap"><span>Itami</span><span>See portfolio →</span></span>
+      </a>
+      <a class="work-tile" href="./photo-atami.html">
+        <img src="../images/photography/atami-akao-forest-sea-terrace.jpg" alt="Sea terrace at Akao Forest, Atami" loading="lazy" width="2000" height="1333" />
+        <span class="wt-cap"><span>Atami</span><span>See portfolio →</span></span>
+      </a>
+      <a class="work-tile" href="./photography.html">
+        <img src="../images/photography/shonan-moonlit-coast.jpg" alt="Moonlit Shonan coastline" loading="lazy" width="2000" height="1333" />
+        <span class="wt-cap"><span>Full portfolio</span><span>See portfolio →</span></span>
+      </a>
+    </div>
+    <p style="margin-top:28px;"><a href="./photography.html" class="btn btn-secondary">See portfolio →</a></p>
+  </div>
+</section>
+
+<!-- ════ PRICING TEASER ════ -->
+<section id="pricing-teaser" aria-labelledby="pricing-teaser-heading" style="background:var(--bg-soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Pricing</span>
+      <h2 id="pricing-teaser-heading">Every price is on the site</h2>
+      <p style="max-width: 800px">Prices are set per category. Every figure includes tax, there is no weekend surcharge, and quotes are free.</p>
+    </div>
+    <div class="mini-plans reveal">
+      <article class="mini-plan">
+        <h3>Family</h3>
+        <span class="mp-en">120 min</span>
+        <div class="mp-price">&yen;33,000<small>incl. tax</small></div>
+        <p class="mp-note">120 minutes at 1〜2 locations. 50 selected photos, carefully finished.</p>
+      </article>
+      <article class="mini-plan">
+        <h3>Maternity &amp; Baby</h3>
+        <span class="mp-en">90 min</span>
+        <div class="mp-price">&yen;22,000<small>incl. tax</small></div>
+        <p class="mp-note">90 minutes at your home or one location. 50 selected photos, carefully finished.</p>
+      </article>
+      <article class="mini-plan">
+        <h3>Omiyamairi &amp; Shichi-Go-San</h3>
+        <span class="mp-en">120 min</span>
+        <div class="mp-price">&yen;35,200<small>incl. tax</small></div>
+        <p class="mp-note">120 minutes at 1〜2 locations. 60 selected photos, carefully finished.</p>
+      </article>
+    </div>
+    <p style="margin-top:28px;"><a href="./service-photo.html#pricing" class="btn btn-secondary">See details →</a></p>
+  </div>
+</section>
+
+<!-- ════ FLOW ════ -->
+<section id="flow" aria-labelledby="flow-heading">
+  <div class="container">
+    <div class="section-head reveal" style="margin: 0 auto 48px; text-align:center;">
+      <span class="eyebrow">How it works</span>
+      <h2 id="flow-heading">From enquiry to delivery, in four steps</h2>
+      <p style="margin: 0 auto;">Four steps from the first message to your photos.</p>
+    </div>
+    <div class="steps-4 reveal">
+      <div class="step-4">
+        <span class="s4-num">STEP 01</span>
+        <h3>Tell me about it</h3>
+        <p>What you want photographed, where, when, how many people and what the photos are for. I reply within two business days.</p>
+      </div>
+      <div class="step-4">
+        <span class="s4-num">STEP 02</span>
+        <h3>I propose a plan</h3>
+        <p>Locations, outfits and the running order for the day. I can scout the location beforehand if that helps.</p>
+      </div>
+      <div class="step-4">
+        <span class="s4-num">STEP 03</span>
+        <h3>The shoot</h3>
+        <p>Relaxed and unhurried. You can preview the shots on the spot while we go.</p>
+      </div>
+      <div class="step-4">
+        <span class="s4-num">STEP 04</span>
+        <h3>Delivery</h3>
+        <p>I select and finish the photos, then send them over. Within 7 days of the shoot.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="services" aria-labelledby="services-heading">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Services</span>
-      <h2 id="services-heading">Four services.<br />Same person every time.</h2>
-      <p style="max-width: 800px">English, photography, mahjong and tours. You'll be dealing with me from the first email to the last photo.</p>
+      <h2 id="services-heading">English, tours and events<br />as well as photography.</h2>
+      <p style="max-width: 800px">Three more things I do. You'll be dealing with me from the first email to the last photo.</p>
     </div>
 
     <div class="services-grid reveal">
       <article class="svc">
         <span class="svc-num">01 / SERVICE</span>
-        <div class="svc-icon" aria-hidden="true">📖</div>
+        <div class="svc-icon" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v16" /> <path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z" /></svg></div>
         <h3>English Lessons</h3>
         <span class="svc-en" style="font-family: Poppins">LUMA Voice</span>
-        <p>I lived and worked in Brisbane, Australia for 9 years, and the lessons come out of that. Everyday conversation, business English, IELTS and TOEIC prep. We'll build them around where you're at and where you want to get to. Online or in person.</p>
+        <p>Your grammar is fine, but the words will not come out. That is where we start. Everyday conversation, business English, IELTS and TOEIC prep. Online or in person, and I rebuild the material each time.</p>
         <div class="svc-meta">
           <span class="svc-price">Free 30-min consult</span>
-          <a class="svc-link" href="./service-english.html">Details →</a>
-        </div>
-      </article>
-
-      <article class="svc">
-        <span class="svc-num">02 / SERVICE</span>
-        <div class="svc-icon" aria-hidden="true">📸</div>
-        <h3>Family · Couple · Pre-wedding</h3>
-        <span class="svc-en" style="font-family: Poppins">LUMA Frame</span>
-        <p>I shoot portraits in natural light on the Nikon Z6III. Pre-weddings, first-meal (okuizome), shichi-go-san, family, couple and profile shoots around Tokyo & Yokohama. <strong>I photograph landscapes and aviation too.</strong> Have a look at <a href="https://www.instagram.com/luma_frame.jp" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">@luma_frame.jp</a>.</p>
-        <div class="svc-meta">
-          <span class="svc-price">From &yen;22,000 (incl. tax)</span>
-          <span class="svc-price">Photos in 7 days</span>
-          <a class="svc-link" href="./service-photo.html">Details →</a>
-        </div>
-      </article>
-
-      <article class="svc">
-        <span class="svc-num">COMMUNITY</span>
-        <div class="svc-icon" aria-hidden="true">🀄</div>
-        <h3>S.League Mahjong</h3>
-        <span class="svc-en" style="font-family: Poppins">S.League</span>
-        <p>I've run this Tokyo health mahjong community since 2022. That's 24 events and 367 people who have taken part. No betting, no smoking, no alcohol. Pros sit down with people who only started last month. Events run half a day to a full day (about 6–10 hours), the entry fee depends on the event and there are prizes for everyone.</p>
-        <div class="svc-meta">
-          <span class="svc-price">¥6,200–¥12,000 per event</span>
-          <a class="svc-link" href="../s-league.html">Details →</a>
+          <a class="svc-link" href="./service-english.html">See details →</a>
         </div>
       </article>
 
       <article class="svc">
         <span class="svc-num">03 / SERVICE</span>
-        <div class="svc-icon" aria-hidden="true">🗺️</div>
+        <div class="svc-icon" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z" /> <path d="M15 5.764v15" /> <path d="M9 3.236v15" /></svg></div>
         <h3>Tokyo in English</h3>
         <span class="svc-en" style="font-family: Poppins">LUMA Path × Voice</span>
-        <p>Private bilingual tours for visitors from overseas, plus <strong>"Tokyo in English"</strong> walks for people learning the language. Asakusa, Tsukiji, Odaiba and further afield. You practise your English out on real streets.</p>
+        <p>Private bilingual tours for visitors from overseas, plus "Tokyo in English" walks for people learning the language. Asakusa, Tsukiji, Odaiba and further afield.</p>
         <div class="svc-meta">
           <span class="svc-price">Free quote</span>
-          <a class="svc-link" href="./service-tour.html">Details →</a>
+          <a class="svc-link" href="./service-tour.html">See details →</a>
         </div>
       </article>
 
-    </div>
-  </div>
-</section>
-
-<section id="compare" aria-labelledby="compare-heading">
-  <div class="container">
-    <div class="cmp-head reveal">
-      <span class="eyebrow">Choose your path</span>
-      <h2 id="compare-heading">So where do you start?</h2>
-      <p>There are four ways in.<br />Pick the one that sounds most like you.</p>
-    </div>
-
-    <div class="cmp-grid">
-      <div class="cmp-card theme-eng has-photo reveal" style="--cmp-bg: url('../images/compare/compare-eng.jpg') center / cover no-repeat;">
-        <a class="cmp-cardlink" href="./service-english.html" aria-label="English Lessons details">English Lessons details</a>
-        <div class="cmp-visual"><span class="cmp-emoji">📖</span><span class="cmp-tag">English</span></div>
-        <div class="cmp-body">
-          <h3>English Lessons</h3>
-          <p class="cmp-pitch">Start speaking sooner rather than someday. Nine years in Australia sits behind every lesson, and we build the plan together – from your first words to business English and IELTS prep.</p>
-          <div class="cmp-meta"><span>Tokyo · Yokohama</span><span class="cmp-meta-dot"></span><span>Online available</span></div>
-          <div class="cmp-actions">
-            <a class="cmp-btn cmp-btn-primary" href="./contact.html">Free consult</a>
-            <a class="cmp-btn cmp-btn-link" href="./service-english.html">Learn more →</a>
-          </div>
+      <article class="svc">
+        <span class="svc-num">04 / SERVICE</span>
+        <div class="svc-icon" aria-hidden="true"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m11 17 2 2a1 1 0 1 0 3-3" /> <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" /> <path d="m21 3 1 11h-2" /> <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" /> <path d="M3 4h8" /></svg></div>
+        <h3>Community Events</h3>
+        <span class="svc-en" style="font-family: Poppins">LUMA Circle</span>
+        <p>Mahjong days, social meetups, get-togethers at work. I'll take it from the planning through to running the event itself, in English or Japanese.</p>
+        <div class="svc-meta">
+          <span class="svc-price">Planning to hosting</span>
+          <a class="svc-link" href="./service-community.html">See details →</a>
         </div>
-      </div>
-
-      <div class="cmp-card theme-photo has-photo reveal" style="--cmp-bg: url('../images/compare/compare-photo.jpg?v=2') center / cover no-repeat;">
-        <a class="cmp-cardlink" href="./service-photo.html" aria-label="Portraits and milestone photography details">Portraits and milestone photography details</a>
-        <div class="cmp-visual"><span class="cmp-emoji">📸</span><span class="cmp-tag">Photography</span></div>
-        <div class="cmp-body">
-          <h3>Portraits &amp; Milestones</h3>
-          <p class="cmp-pitch">For the days you'll want to look back on: shichi-go-san, omiyamairi, pre-wedding and couple portraits. A moment you only get once, taken on the Nikon Z6III.</p>
-          <div class="cmp-meta"><span>Tokyo · Yokohama</span><span class="cmp-meta-dot"></span><span>On-location</span></div>
-          <div class="cmp-actions">
-            <a class="cmp-btn cmp-btn-primary" href="./contact.html">Get a quote</a>
-            <a class="cmp-btn cmp-btn-link" href="./photography.html">See work →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="cmp-card theme-mahjong has-photo reveal" style="--cmp-bg: url('../images/compare/compare-mahjong.jpg?v=2') center / cover no-repeat;">
-        <a class="cmp-cardlink" href="../s-league.html" aria-label="S.League Mahjong details">S.League Mahjong details</a>
-        <div class="cmp-visual"><span class="cmp-emoji">🀄</span><span class="cmp-tag">Community</span></div>
-        <div class="cmp-body">
-          <h3>S.League Mahjong</h3>
-          <p class="cmp-pitch">Winning is nice. Meeting people is the point. A health mahjong community in Tokyo, open to first-timers and pros, whatever your age.</p>
-          <div class="cmp-meta"><span>Tokyo</span><span class="cmp-meta-dot"></span><span>Saturdays</span></div>
-          <div class="cmp-actions">
-            <a class="cmp-btn cmp-btn-primary" href="../s-league.html">Sign up</a>
-            <a class="cmp-btn cmp-btn-link" href="../s-league.html">Tournaments →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="cmp-card theme-tour has-photo reveal" style="--cmp-bg: url('../images/compare/compare-tour.jpg?v=2') center / cover no-repeat;">
-        <a class="cmp-cardlink" href="./service-tour.html" aria-label="Tokyo in English tour details">Tokyo in English tour details</a>
-        <div class="cmp-visual"><span class="cmp-emoji">🗺️</span><span class="cmp-tag">Tour</span></div>
-        <div class="cmp-body">
-          <h3>Tokyo in English</h3>
-          <p class="cmp-pitch">Walk the city and sharpen your English while you're at it. Asakusa, Ginza, Toyosu. It works just as well for visitors as it does for learners.</p>
-          <div class="cmp-meta"><span>Greater Tokyo · Nationwide</span><span class="cmp-meta-dot"></span><span>3–8 hrs</span></div>
-          <div class="cmp-actions">
-            <a class="cmp-btn cmp-btn-primary" href="./contact.html">Get a quote</a>
-            <a class="cmp-btn cmp-btn-link" href="./service-tour.html">Sample routes →</a>
-          </div>
-        </div>
-      </div>
+      </article>
 
     </div>
   </div>
@@ -386,12 +428,12 @@
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">About the founder</span>
-      <h2 id="about-heading">The person behind LUMA</h2>
+      <h2 id="about-heading">The person behind the camera</h2>
       <p>I grew up in Aichi and live in Yokohama now, with nine years in Brisbane, Australia in between. I work in English and Japanese, and I handle all four services myself.</p>
     </div>
     <div class="who-grid reveal">
       <div class="who-photo" aria-label="Portrait of the LUMA founder">
-        <img src="../profile.jpg" alt="Founder of LUMA" loading="lazy" width="560" height="560" />
+        <picture><source type="image/webp" srcset="../profile.webp" /><img src="../profile.jpg" alt="Founder of LUMA" loading="lazy" width="560" height="560" /></picture>
       </div>
       <div>
         <h3 style="margin-bottom:8px;">"Change where you are and you change who you become."</h3>
@@ -402,11 +444,12 @@
           The thread running through all of it is confidence. I try to build it with words, and with time spent alongside other people. Whatever you book, it gets made for you and nobody else.
         </p>
         <div class="who-tags">
-          <span class="who-tag">🇦🇺 9 years</span>
-          <span class="who-tag">🎓 English coach</span>
-          <span class="who-tag">📸 Nikon shooter</span>
-          <span class="who-tag">🀄 Mahjong organiser</span>
+          <span class="who-tag">9 years in Australia</span>
+          <span class="who-tag">English coach</span>
+          <span class="who-tag">Nikon Z6III shooter</span>
+          <span class="who-tag">Mahjong organiser</span>
         </div>
+        <p style="margin-top:26px;"><a href="./about.html" class="btn btn-secondary">See details →</a></p>
       </div>
     </div>
   </div>
@@ -443,17 +486,10 @@
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          <span>Who attends S.League mahjong tournaments?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a"><div class="faq-a-inner">Since 2022 I've run 24 events, and 367 people have taken part. Each tournament seats 16–20 players over 6–10 hours, usually on a Saturday, at ¥6,200–¥12,000 per session depending on the event. Pros play alongside people who only started last month. It's health mahjong, so no betting and no alcohol. If it's your first time I'll walk you through it, everyone goes home with a parting gift and there are prizes for the top finishers.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
           <span>Can foreign visitors book the English Tokyo tour?</span>
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Yes, LUMA Path is fully open to travellers from overseas. Private tours run half a day (3–4 hrs) or a full day (8 hrs) for 2–6 people, built around what you're interested in. Allergies and gluten-free dining matter to me personally, so I plan the meals with them in mind from the start.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes, LUMA Path is fully open to travellers from overseas. Private tours run half a day (3〜4 hrs) or a full day (8 hrs) for 2〜6 people, built around what you're interested in. Allergies and gluten-free dining matter to me personally, so I plan the meals with them in mind from the start.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
@@ -469,10 +505,13 @@
 <section style="padding-bottom: 120px;">
   <div class="container">
     <div class="cta-big reveal">
-      <span class="eyebrow" style="color: color-mix(in srgb, var(--bg) 70%, transparent);">Free consultation</span>
-      <h2 style="margin-top:16px;">Let's have a chat first.</h2>
-      <p style="font-size:17px;max-width:560px;margin:12px auto 28px;">Not sure which service fits? That's exactly what the free 30-minute consult is for. No cost and no obligation.</p>
-      <a href="./contact.html" class="btn btn-primary">Open the contact form →</a>
+      <span class="eyebrow" style="color: color-mix(in srgb, var(--bg) 70%, transparent);">Free quote</span>
+      <h2 style="margin-top:16px;">Just tell me the date.</h2>
+      <p style="font-size:17px;max-width:560px;margin:12px auto 28px;">You don't need a clear picture in mind yet. Tell me what you're after and I'll send a free quote.</p>
+      <div class="cta-row-center">
+        <a href="./contact.html" class="btn btn-primary">Request a free quote →</a>
+        <a href="https://lin.ee/YetEeTz" class="btn btn-line" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Chat on LINE →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -506,14 +545,13 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="./index.html" class="brand"><span class="brand-mark">L</span><span>LUMA</span></a>
-        <p>Designing your confidence in Tokyo & Yokohama. Clarity by Design — Illuminate Your Confidence.</p>
+        <p>Designing your confidence in Tokyo & Yokohama. Clarity by Design / Illuminate Your Confidence.</p>
       </div>
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
           <li><a href="./service-english.html">English Lessons</a></li>
           <li><a href="./service-photo.html">Photography</a></li>
-          <li><a href="../s-league.html">S.League Mahjong</a></li>
           <li><a href="./service-tour.html">Tokyo Tours</a></li>
         </ul>
       </div>
@@ -536,6 +574,11 @@
         </ul>
       </div>
     </div>
+    <div class="footer-sns">
+      <span class="footer-sns-h">SNS</span>
+      <a href="https://www.instagram.com/luma_frame.jp/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer">LINE</a>
+</div>
     <div class="footer-bottom">
       <span>© 2026 LUMA. All rights reserved.</span>
       <span>Yokohama, Kanagawa · Bilingual EN/JA</span>
@@ -558,8 +601,8 @@
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
-<script src="../nav.js" defer></script>
-<script src="../hero-slideshow.js" defer></script>
+<script src="../nav.js?v=aqua29" defer></script>
+<script src="../hero-slideshow.js?v=aqua29" defer></script>
 <a class="line-float" href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer" aria-label="Chat with LUMA on LINE (opens in a new tab)"><svg class="lf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>Chat on LINE</span></a>
 </body>
 </html>

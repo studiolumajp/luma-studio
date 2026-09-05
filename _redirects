@@ -9,6 +9,9 @@
 /photography-en.html  /en/photography.html        301
 /tour-en.html         /en/service-tour.html       301
 
+# 2026-09-05 終了サービス (カウンセリング) → 英会話ページへ
+/service-counselling.html  /service-english.html       301
+
 # ══════════════════════════════════════════════════════════════
 #  2026-08-30 画像ファイル名を内容の分かる名前へ変更 (98件・301)
 # ══════════════════════════════════════════════════════════════
@@ -110,3 +113,4 @@
 /images/photography/aviation-43.jpg          /images/photography/itami-terminal-at-night.jpg                  301
 /images/photography/aviation-44.jpg          /images/photography/itami-terminal-lights.jpg                    301
 /images/photography/aviation-45.jpg          /images/photography/itami-sunflowers-by-the-runway.jpg           301
+/lp/frame.html        /service-photo.html         301

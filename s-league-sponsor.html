@@ -7,7 +7,7 @@
 <meta name="color-scheme" content="light only" />
 
 <!-- ── PRIMARY SEO META ── -->
-<title>S.League スポンサー募集 | 健康麻雀大会 東京・新橋 | LUMA</title>
+<title>S.League スポンサー募集 東京・新橋 | LUMA</title>
 <meta name="description" content="東京・新橋で2022年から24回開催、累計367名が参加する健康麻雀コミュニティ S.League のスポンサーを募集しています。物品協賛・大会パートナー・冠スポンサーの3プランを、1大会ごと / 年間契約からお選びいただけます。" />
 <meta name="keywords" content="S.League スポンサー,麻雀大会 協賛,健康麻雀 スポンサー,イベント協賛 新橋,LUMA" />
 <meta name="author" content="LUMA" />
@@ -20,14 +20,18 @@
 
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://studio-lumadesign.com/s-league-sponsor.html" />
-<meta property="og:title" content="S.League スポンサー募集 | LUMA" />
+<meta property="og:title" content="S.League スポンサー募集 東京・新橋 | LUMA" />
 <meta property="og:description" content="24回開催・累計367名の健康麻雀コミュニティ S.League のスポンサーを募集中。物品協賛から冠スポンサーまで3つのプラン。" />
 <meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="S.League を、一緒に育てませんか。" />
 <meta property="og:locale" content="ja_JP" />
 <meta property="og:site_name" content="LUMA" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="S.League スポンサー募集 | LUMA" />
+<meta name="twitter:site" content="@s_league_Japan" />
+<meta name="twitter:title" content="S.League スポンサー募集 東京・新橋 | LUMA" />
 <meta name="twitter:description" content="24回開催・累計367名の健康麻雀コミュニティのスポンサーを募集中。3つの協賛プランをご用意しています。" />
 <meta name="twitter:image" content="https://studio-lumadesign.com/og-image.jpg" />
 
@@ -55,7 +59,7 @@
   gtag('config', 'G-62F20N179N');
 </script>
 
-<link rel="stylesheet" href="./shared.css?v=aqua22" />
+<link rel="stylesheet" href="./shared.css?v=aqua29" />
 <style id="page-overrides">
   /* ── HERO: 背景動画 + 暗幕 + 白文字 (s-league.html / s-league-25.html と同仕様) ── */
   .sp-hero {
@@ -64,7 +68,7 @@
     min-height: clamp(380px, 56vh, 500px);
     display: flex; align-items: center;
     /* 画像は動画非対応環境・reduced-motion時のフォールバック。暗幕は ::after が担当 */
-    background: url('./images/sleague/DSC_0801.jpg') center 38%/cover no-repeat;
+    background: url('./images/sleague/SL24/sl24-hero-poster.jpg') center/cover no-repeat;
   }
   .sp-hero .hero-video {
     position: absolute; inset: 0; width: 100%; height: 100%;
@@ -191,8 +195,6 @@
     border-radius: var(--radius); padding: 20px;
   }
   .community-card-icon { font-size: 24px; display: block; margin-bottom: 8px; }
-  .community-card h3 { font-size: 15px; margin-bottom: 6px; }
-  .community-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
   @media (max-width: 1000px) { .community-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 560px) { .community-grid { grid-template-columns: 1fr; } }
 </style>
@@ -252,12 +254,9 @@
 </nav>
 
 <header class="sp-hero" id="home" tabindex="-1">
-  <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="./images/sleague/SL24/sl24-hero-poster.jpg" aria-hidden="true" tabindex="-1">
-    <source src="./images/sleague/SL24/sl24-hero.webm" type="video/webm" />
-    <source src="./images/sleague/SL24/sl24-hero.mp4" type="video/mp4" />
-  </video>
+  <video class="hero-video" data-src-webm="./images/sleague/SL24/sl24-hero.webm" data-src-mp4="./images/sleague/SL24/sl24-hero.mp4" muted loop playsinline preload="none" poster="./images/sleague/SL24/sl24-hero-poster.jpg" aria-hidden="true" tabindex="-1"></video>
   <div class="container">
-    <span class="eyebrow">S.League — Sponsorship</span>
+    <span class="eyebrow">S.League / Sponsorship</span>
     <h1 class="hero-title">S.League を、<br />一緒に<span class="accent">育てませんか</span>。</h1>
     <p class="sub">
       賭けない・飲まない・吸わない。東京・新橋で2022年から続けている健康麻雀の大会です。この場を一緒に支えてくださる企業・店舗様を探しています。
@@ -292,22 +291,22 @@
     </p>
     <div class="community-grid">
       <div class="community-card">
-        <span class="community-card-icon">🤝</span>
+        <span class="community-card-icon"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m11 17 2 2a1 1 0 1 0 3-3" /> <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" /> <path d="m21 3 1 11h-2" /> <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" /> <path d="M3 4h8" /></svg></span>
         <h3>顔の見える場で伝わる</h3>
         <p>1回16〜20名が、半日 (約6時間) 〜終日 (約10時間) 会場にいます。ロゴの掲示も、賞品も、配布サンプルも、その場にいる全員の目に触れます。</p>
       </div>
       <div class="community-card">
-        <span class="community-card-icon">📊</span>
+        <span class="community-card-icon"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 3v16a2 2 0 0 0 2 2h16" /> <path d="M18 17V9" /> <path d="M13 17V5" /> <path d="M8 17v-3" /></svg></span>
         <h3>公開の通算成績DB</h3>
         <p>参加選手126名の通算成績を、公式サイトで公開しています。選手が自分の記録を何度も確認しに来るページです。ここに御社のロゴを掲載できます。</p>
       </div>
       <div class="community-card">
-        <span class="community-card-icon">📷</span>
+        <span class="community-card-icon"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z" /> <circle cx="12" cy="13" r="3" /></svg></span>
         <h3>プロ品質の大会写真</h3>
         <p>大会の写真は、ポートレート撮影も仕事にしている私が撮ります。ロゴ入りの写真は御社の広報にそのままお使いいただけます。</p>
       </div>
       <div class="community-card">
-        <span class="community-card-icon">📮</span>
+        <span class="community-card-icon"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /> <rect x="2" y="4" width="20" height="16" rx="2" /></svg></span>
         <h3>開催後レポート</h3>
         <p>毎回の大会後に、参加者数・年代構成・露出実績・写真をまとめてお送りします。何がどう見られたのか、数字と写真でご確認いただけます。</p>
       </div>
@@ -385,20 +384,20 @@
 
     <div class="sp-table-wrap">
       <table class="sp-table">
-        <caption style="text-align:left;font-size:13px;color:var(--text-soft);padding:8px 0;">特典の比較 (○=含まれる / —=含まれない)</caption>
+        <caption style="text-align:left;font-size:13px;color:var(--text-soft);padding:8px 0;">特典の比較 (○=含まれる / ×=含まれない)</caption>
         <thead>
           <tr><th>特典</th><th>物品協賛</th><th>大会パートナー</th><th>冠スポンサー</th></tr>
         </thead>
         <tbody>
           <tr><td>表彰時の社名・商品名のご紹介</td><td class="ok">○</td><td class="ok">○</td><td class="ok">○</td></tr>
           <tr><td>開催後レポートのお届け</td><td class="ok">○</td><td class="ok">○</td><td class="ok">○</td></tr>
-          <tr><td>大会ページへのロゴ+リンク掲載</td><td class="no">—</td><td class="ok">○</td><td class="ok">○</td></tr>
-          <tr><td>会場でのロゴ掲示・チラシ設置</td><td class="no">—</td><td class="ok">○</td><td class="ok">○</td></tr>
-          <tr><td>全参加者へのサンプリング・チラシ配布</td><td class="no">—</td><td class="ok">○</td><td class="ok">○</td></tr>
-          <tr><td>大会名への社名の冠表記 (1社限定)</td><td class="no">—</td><td class="no">—</td><td class="ok">○</td></tr>
-          <tr><td>開会・表彰時のアナウンス+ご挨拶枠</td><td class="no">—</td><td class="no">—</td><td class="ok">○</td></tr>
-          <tr><td>通算成績DBページへの常設ロゴ</td><td class="no">—</td><td class="no">—</td><td class="ok">○</td></tr>
-          <tr><td>写真・レポートの二次利用権</td><td class="no">—</td><td class="no">—</td><td class="ok">○</td></tr>
+          <tr><td>大会ページへのロゴ+リンク掲載</td><td class="no">×</td><td class="ok">○</td><td class="ok">○</td></tr>
+          <tr><td>会場でのロゴ掲示・チラシ設置</td><td class="no">×</td><td class="ok">○</td><td class="ok">○</td></tr>
+          <tr><td>全参加者へのサンプリング・チラシ配布</td><td class="no">×</td><td class="ok">○</td><td class="ok">○</td></tr>
+          <tr><td>大会名への社名の冠表記 (1社限定)</td><td class="no">×</td><td class="no">×</td><td class="ok">○</td></tr>
+          <tr><td>開会・表彰時のアナウンス+ご挨拶枠</td><td class="no">×</td><td class="no">×</td><td class="ok">○</td></tr>
+          <tr><td>通算成績DBページへの常設ロゴ</td><td class="no">×</td><td class="no">×</td><td class="ok">○</td></tr>
+          <tr><td>写真・レポートの二次利用権</td><td class="no">×</td><td class="no">×</td><td class="ok">○</td></tr>
         </tbody>
       </table>
     </div>
@@ -435,7 +434,7 @@
       </p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
         <a href="./contact.html" class="btn btn-primary">協賛について問い合わせる →</a>
-        <a href="./s-league.html" class="btn btn-secondary">S.League について知る</a>
+        <a href="./s-league.html" class="btn btn-secondary"><span class="nb">詳細を見る →</span></a>
       </div>
     </div>
   </div>
@@ -446,7 +445,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="./index.html" class="brand"><span class="brand-mark">L</span><span>LUMA</span></a>
-        <p>東京・横浜で、あなたの自信をデザインする。Clarity by Design — Illuminate Your Confidence.</p>
+        <p>東京・横浜で、あなたの自信をデザインする。Clarity by Design / Illuminate Your Confidence.</p>
       </div>
       <div class="footer-col">
         <h4>S.League</h4>
@@ -479,6 +478,13 @@
         </ul>
       </div>
     </div>
+    <div class="footer-sns">
+      <span class="footer-sns-h">SNS</span>
+      <a href="https://www.instagram.com/luma_frame.jp/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://x.com/s_league_Japan" target="_blank" rel="noopener noreferrer">X</a>
+    
+      <a href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer">LINE</a>
+</div>
     <div class="footer-bottom">
       <span>© 2026 LUMA. All rights reserved.</span>
       <span>横浜市 · 神奈川県 · 日英バイリンガル</span>
@@ -511,7 +517,7 @@
   })();
 </script>
 
-<script src="./nav.js" defer></script>
+<script src="./nav.js?v=aqua29" defer></script>
 <a class="line-float" href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer" aria-label="LINE で LUMA に相談する (新しいタブで開きます)"><svg class="lf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>LINE で相談</span></a>
 </body>
 </html>

@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#134E6F" />
 <meta name="color-scheme" content="light only" />
 
-<title>Tokyo & Nationwide English Tours · Allergy-Aware Guide | LUMA Path</title>
-<meta name="description" content="Bilingual private tours from Tokyo to Kansai, Hokkaido, and Fukuoka. Half-day or full-day routes, custom themes, and gluten-free / allergy-aware dining as a personal priority — not an afterthought." />
+<title>Private English-Guided Tours in Tokyo &amp; Japan | LUMA Path</title>
+<meta name="description" content="Bilingual private tours from Tokyo to Kansai, Hokkaido and Fukuoka. Half-day or full-day routes, custom themes, and gluten-free, allergy-aware dining." />
 <meta name="keywords" content="Tokyo English tour,private tour Japan,bilingual guide Tokyo,gluten-free tour Japan,allergy-friendly tour Tokyo,LUMA Path" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://studio-lumadesign.com/en/service-tour.html" />
@@ -18,14 +18,17 @@
 
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://studio-lumadesign.com/en/service-tour.html" />
-<meta property="og:title" content="Tokyo & Nationwide English Tours | LUMA Path" />
+<meta property="og:title" content="Private English-Guided Tours in Tokyo &amp; Japan | LUMA Path" />
 <meta property="og:description" content="Bilingual private tours with allergy-aware dining at the core. Tokyo, Kansai, Hokkaido, Fukuoka." />
 <meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Walking through the real Japan." />
 <meta property="og:locale" content="en_US" />
 <meta property="og:site_name" content="LUMA" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="LUMA Path — Tokyo & Nationwide Tours" />
+<meta name="twitter:title" content="Private English-Guided Tours in Tokyo &amp; Japan | LUMA Path" />
 <meta name="twitter:image" content="https://studio-lumadesign.com/og-image.jpg" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,11 +39,63 @@
 {
   "@context": "https://schema.org",
   "@graph": [
-    {"@type": "Service", "name": "Tokyo & Nationwide English Tour Guide (LUMA Path)", "provider": {"@id": "https://studio-lumadesign.com/#business"}, "areaServed": ["Tokyo", "Greater Tokyo", "Japan"], "serviceType": "Private bilingual tour guide", "url": "https://studio-lumadesign.com/en/service-tour.html", "description": "Bilingual private tours nationwide. Gluten-free and allergy-aware dining as a personal priority.", "offers": {"@type": "Offer", "priceCurrency": "JPY", "description": "Pricing depends on route, region, group size, and duration."}},
-    {"@type": "BreadcrumbList", "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://studio-lumadesign.com/en/"},
-      {"@type": "ListItem", "position": 2, "name": "Tokyo Tours", "item": "https://studio-lumadesign.com/en/service-tour.html"}
-    ]}
+    {
+      "@type": "Service",
+      "name": "Tokyo & Nationwide English Tour Guide (LUMA Path)",
+      "provider": {
+        "@id": "https://studio-lumadesign.com/#business"
+      },
+      "areaServed": [
+        "Tokyo",
+        "Greater Tokyo",
+        "Japan"
+      ],
+      "serviceType": "Private bilingual tour guide",
+      "url": "https://studio-lumadesign.com/en/service-tour.html",
+      "description": "Bilingual private tours nationwide. Gluten-free and allergy-aware dining as a personal priority.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "JPY",
+        "description": "Pricing depends on route, region, group size, and duration."
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://studio-lumadesign.com/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tokyo Tours",
+          "item": "https://studio-lumadesign.com/en/service-tour.html"
+        }
+      ]
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://studio-lumadesign.com/en/service-tour.html#localbusiness",
+      "name": "LUMA Path / English-Guided Tours",
+      "url": "https://studio-lumadesign.com/en/service-tour.html",
+      "parentOrganization": {
+        "@id": "https://studio-lumadesign.com/#business"
+      },
+      "serviceType": "English-guided tours",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Yokohama"
+        },
+        {
+          "@type": "City",
+          "name": "Tokyo"
+        }
+      ]
+    }
   ]
 }
 </script>
@@ -48,7 +103,9 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
 <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-62F20N179N');</script>
 
-<link rel="stylesheet" href="../shared.css?v=aqua22" />
+<!-- LCP: HERO の背景写真。CSS 背景 / video の poster はプリロードスキャナが見つけられない -->
+<link rel="preload" as="image" fetchpriority="high" type="image/webp" href="../images/compare/compare-tour.webp" />
+<link rel="stylesheet" href="../shared.css?v=aqua29" />
 <style id="page-overrides">
   /* ── HERO: 暗幕・文字色・ボタンは shared.css の .hero--photo で共通化。
      ここではサイズと固有レイアウトのみ指定する (2026-08-06) ── */
@@ -72,42 +129,14 @@
          overlay leaves white text unreadable. Use a uniform vertical gradient. */
     }
   }
-  .svc-overview-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: start; }
-  .svc-overview-lead { font-size: clamp(22px, 2.4vw, 30px); line-height: 1.4; letter-spacing: -0.02em; color: var(--text); font-weight: 700; margin-bottom: 20px; }
-  .svc-overview-lead em { font-style: normal; color: var(--accent); }
-  .svc-overview-body { font-size: 16px; color: var(--text-muted); line-height: 1.75; }
-  @media (max-width: 880px) { .svc-overview-grid { grid-template-columns: 1fr; gap: 32px; } }
-  .offers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .offer-card {
-    background: var(--surface); padding: 28px;
-    border: 1px solid var(--border); border-radius: var(--radius-lg);
-    box-shadow: 0 1px 2px rgba(19,78,111,0.05), 0 8px 24px -12px rgba(19,78,111,0.18);
-    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; display: flex; flex-direction: column; gap: 8px; }
-  .offer-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: var(--border-strong); }
-  .offer-card.feature { background: color-mix(in srgb, var(--surface) 88%, var(--accent) 6%); border-left: 3px solid var(--accent); }
   .offer-card-num { font-family: var(--font-label); font-size: 12px; color: var(--text-soft); letter-spacing: 0.08em; margin-bottom: 4px; }
   .offer-card h3 { font-size: 17px; line-height: 1.35; }
   .offer-card .ja { font-family: var(--font-label); font-size: 12px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; }
-  .offer-card p { font-size: 14px; color: var(--text-muted); line-height: 1.65; margin-top: 6px; }
-  @media (max-width: 980px) { .offers-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 640px) { .offers-grid { grid-template-columns: 1fr; } }
-  #pricing { background: var(--bg-soft); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .price-box { max-width: 760px; margin: 0 auto; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 40px 44px; position: relative; overflow: hidden; }
-  .price-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
-  .price-row { display: flex; justify-content: space-between; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--border); gap: 16px; }
-  .price-row:last-of-type { border-bottom: none; }
-  .price-label { font-size: 15px; color: var(--text-muted); }
   .price-value { font-size: 18px; font-weight: 700; color: var(--text); }
-  .price-note { font-size: 13px; color: var(--text-soft); margin-top: 20px; line-height: 1.7; }
-  @media (max-width: 640px) { .price-box { padding: 28px 22px; } }
-  .flow-steps { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; }
-  .flow-step { display: grid; grid-template-columns: 88px 1fr; gap: 32px; padding: 28px 0; border-bottom: 1px solid var(--border); }
-  .flow-step:last-child { border-bottom: none; }
   .flow-num { font-size: 56px; font-weight: 800; line-height: 1; background: linear-gradient(120deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; text-align: right; }
   .flow-step .tag { font-family: var(--font-label); font-size: 11px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; display: block; }
-  .flow-step h3 { font-size: 19px; margin-bottom: 8px; }
-  .flow-step p { font-size: 15px; color: var(--text-muted); line-height: 1.7; }
-  @media (max-width: 640px) { .flow-step { grid-template-columns: 56px 1fr; gap: 20px; } .flow-num { font-size: 38px; } }
+
+  @media (max-width:640px){ .flow-num{font-size:38px} }
 </style>
 </head>
 <body id="body-root">
@@ -125,7 +154,6 @@
           <li><a href="./service-photo.html">Photography</a></li>
           <li><a href="./service-tour.html">Tokyo Tours</a></li>
           <li><a href="./service-community.html">Community Events</a></li>
-          <li><a href="../s-league.html">S.League Mahjong</a></li>
         </ul>
       </li>
       <li><a href="./blog/index.html">Shooting Notes</a></li>
@@ -134,7 +162,7 @@
       <li><a href="./index.html#faq">FAQ</a></li>
     </ul>
     <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    <div style="display:flex;gap:10px;align-items:center;"><a href="../service-tour.html" class="lang-switch">JP</a><a href="./contact.html" class="nav-cta">Free Quote →</a></div>
+    <div style="display:flex;gap:10px;align-items:center;"><a href="../service-tour.html" class="lang-switch">JP</a><a href="./contact.html" class="nav-cta">Free Consult →</a></div>
   </div>
 </nav>
 
@@ -142,12 +170,12 @@
   <ol><li><a href="./index.html">Home</a></li><li><a href="./services.html">Services</a></li><li aria-current="page">Tokyo Tours (LUMA Path)</li></ol>
 </nav>
 
-<header class="hero hero--photo svc-hero" id="home" tabindex="-1" style="--hero-photo:url('../images/compare/compare-tour.jpg?v=2');">
+<header class="hero hero--photo svc-hero hero-webp-tour" id="home" tabindex="-1" style="--hero-photo:url('../images/compare/compare-tour.jpg?v=2');">
   <div class="container">
-    <span class="eyebrow">LUMA Path — Service 03</span>
+    <span class="eyebrow">LUMA Path / Service 03</span>
     <h1 class="hero-title" style="margin-top:18px;">Walking through the <span class="accent">real</span> Japan.</h1>
-    <p class="sub">Private tours in English or Japanese, anywhere in Japan – Tokyo, Kansai, Hokkaido, Fukuoka. <strong style="color:var(--text);">Gluten-free and allergy-aware dining</strong> are built in, because I live with food allergies myself.</p>
-    <div class="hero-cta-row"><a href="./contact.html" class="btn btn-primary">Get a quote →</a><a href="#offers" class="btn btn-secondary">See sample routes</a></div>
+    <p class="sub">Private tours in English or Japanese, anywhere in Japan: Tokyo, Kansai, Hokkaido, Fukuoka. <strong style="color:var(--text);">Gluten-free and allergy-aware dining</strong> are built in, because I live with food allergies myself.</p>
+    <div class="hero-cta-row"><a href="./contact.html" class="btn btn-primary">Request a free quote →</a><a href="#offers" class="btn btn-secondary">See sample routes</a></div>
   </div>
 </header>
 
@@ -162,10 +190,10 @@
       <div>
         <p style="font-family:var(--font-label);font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px;border-left:2px solid var(--border-strong);padding-left:24px;">What sets this apart</p>
         <ul style="border-left:2px solid var(--border-strong);padding-left:24px;list-style:none;display:flex;flex-direction:column;gap:14px;color:var(--text-muted);font-size:15px;line-height:1.7;">
-          <li>🌐 English, Japanese or a mix of both</li>
-          <li>🇯🇵 Local-first routes built on atmosphere, not checklists</li>
-          <li>🍽️ Gluten-free and allergy-aware dining by default</li>
-          <li>📷 Aviation photography spots if you're keen</li>
+          <li>English, Japanese or a mix of both</li>
+          <li>Local-first routes built on atmosphere, not checklists</li>
+          <li>Gluten-free and allergy-aware dining by default</li>
+          <li>Aviation photography spots if you're keen</li>
         </ul>
       </div>
     </div>
@@ -176,7 +204,7 @@
   <div class="container">
     <div class="section-head reveal"><span class="eyebrow">What's Included</span><h2 id="offers-heading">Six tour formats</h2><p>I build each route around your region, timing, group size and theme.</p></div>
     <div class="offers-grid reveal">
-      <article class="offer-card"><span class="offer-card-num">01</span><h3>Half-day Tour (3–4 hrs)</h3><span class="ja">半日ツアー</span><p>Asakusa, Shibuya, Roppongi and further afield. The route follows whatever theme you pick.</p></article>
+      <article class="offer-card"><span class="offer-card-num">01</span><h3>Half-day Tour (3〜4 hrs)</h3><span class="ja">半日ツアー</span><p>Asakusa, Shibuya, Roppongi and further afield. The route follows whatever theme you pick.</p></article>
       <article class="offer-card"><span class="offer-card-num">02</span><h3>Full-day · Nationwide</h3><span class="ja">日帰りツアー</span><p>Greater Tokyo (Kamakura, Hakone, Odaiba). Kansai, Hokkaido and Fukuoka on request.</p></article>
       <article class="offer-card"><span class="offer-card-num">03</span><h3>Aviation / Airport Tour</h3><span class="ja">航空機・空港ツアー</span><p>Plane-spotting at Haneda or Narita. I can also build a whole day around aviation.</p></article>
       <article class="offer-card"><span class="offer-card-num">04</span><h3>Custom Route</h3><span class="ja">カスタムコース</span><p>I'll build the day from scratch around what you're into: food, photography, history, anime, whatever the niche.</p></article>
@@ -190,8 +218,8 @@
   <div class="container">
     <div class="section-head reveal" style="margin: 0 auto 48px; text-align:center;"><span class="eyebrow">Pricing</span><h2 id="pricing-heading">Pricing</h2><p style="margin: 0 auto;">Rates depend on the route, the region, how many of you there are and how long we're out. All prices below are in USD.</p></div>
     <div class="price-box reveal">
-      <div class="price-row"><span class="price-label">Half-day tour (~4 hrs · per person)</span><span class="price-value">USD $200–250</span></div>
-      <div class="price-row"><span class="price-label">Full-day tour (~8 hrs · per person)</span><span class="price-value">USD $350–400</span></div>
+      <div class="price-row"><span class="price-label">Half-day tour (~4 hrs · per person)</span><span class="price-value">USD $200〜250</span></div>
+      <div class="price-row"><span class="price-label">Full-day tour (~8 hrs · per person)</span><span class="price-value">USD $350〜400</span></div>
       <div class="price-row"><span class="price-label">Trips outside Tokyo</span><span class="price-value">Above + USD $100/person</span></div>
       <div class="price-row"><span class="price-label">Overnight trips</span><span class="price-value">Accommodation · transport at cost</span></div>
       <div class="price-row"><span class="price-label">Group discount (3+ people)</span><span class="price-value">USD $30 off per person, for everyone</span></div>
@@ -218,7 +246,7 @@
       <span class="eyebrow" style="color: color-mix(in srgb, var(--bg) 70%, transparent);">Free quote</span>
       <h2 style="margin-top:16px;">Your route, your way.</h2>
       <p style="font-size:17px;max-width:560px;margin:12px auto 28px;">Tell me where, when and what you can't eat. Anywhere in Japan, with gluten-free dining planned in from the start.</p>
-      <a href="./contact.html" class="btn btn-primary">Open the contact form →</a>
+      <a href="./contact.html" class="btn btn-primary">Request a free quote →</a>
     </div>
   </div>
 </section>
@@ -226,13 +254,18 @@
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand"><a href="./index.html" class="brand"><span class="brand-mark">L</span><span>LUMA</span></a><p>Designing your confidence in Tokyo & Yokohama. Clarity by Design — Illuminate Your Confidence.</p></div>
-      <div class="footer-col"><h4>Services</h4><ul><li><a href="./service-english.html">English Lessons</a></li><li><a href="./service-photo.html">Photography</a></li><li><a href="../s-league.html">S.League Mahjong</a></li><li><a href="./service-tour.html">Tokyo Tours</a></li></ul></div>
+      <div class="footer-brand"><a href="./index.html" class="brand"><span class="brand-mark">L</span><span>LUMA</span></a><p>Designing your confidence in Tokyo & Yokohama. Clarity by Design / Illuminate Your Confidence.</p></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="./service-english.html">English Lessons</a></li><li><a href="./service-photo.html">Photography</a></li><li><a href="./service-tour.html">Tokyo Tours</a></li></ul></div>
       <div class="footer-col"><h4>About</h4><ul><li><a href="./about.html">About me</a></li>
 <li><a href="./news/index.html">News</a></li><li><a href="./index.html#faq">FAQ</a></li><li><a href="./photography.html">Photo Portfolio</a></li></ul></div>
       <div class="footer-col"><h4>Support</h4><ul>
           <li><a href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer">Chat on LINE</a></li><li><a href="./contact.html">Contact</a></li><li><a href="./legal.html">Legal & Policies</a></li><li><a href="../service-tour.html">日本語</a></li></ul></div>
     </div>
+    <div class="footer-sns">
+      <span class="footer-sns-h">SNS</span>
+      <a href="https://www.instagram.com/luma_frame.jp/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer">LINE</a>
+</div>
     <div class="footer-bottom"><span>© 2026 LUMA. All rights reserved.</span><span>Yokohama, Kanagawa · Bilingual EN/JA</span></div>
   </div>
 </footer>
@@ -242,7 +275,7 @@
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
-<script src="../nav.js" defer></script>
+<script src="../nav.js?v=aqua29" defer></script>
 <a class="line-float" href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer" aria-label="Chat with LUMA on LINE (opens in a new tab)"><svg class="lf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>Chat on LINE</span></a>
 </body>
 </html>

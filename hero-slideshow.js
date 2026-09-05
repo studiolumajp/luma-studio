@@ -3,7 +3,10 @@
    ・毎回シャッフルするので、読み込むたびに順番が変わる
    ・1枚目だけ先に読み、2枚目以降は表示の3秒前に読む (初回表示を軽くする)
    ・画面幅と DPR で 960 版と 1920 版を出し分ける
-   ・停止ボタンは WCAG 2.2.2 対応。prefers-reduced-motion では自動切り替えをしない */
+   ・停止ボタンは WCAG 2.2.2 対応
+   ・prefers-reduced-motion のときも写真は入れ替える。切り替えは opacity だけで要素が
+     動かないため、Reduce Motion が避けたい前庭系への刺激にあたらない。
+     ただし間隔を 7秒 → 14秒 に伸ばし、フェードも CSS 側で長くする */
 (function () {
   'use strict';
 
@@ -25,13 +28,15 @@
   // 幅 = min(1920, 960) の出し分け。DPR 込みの実ピクセルで判定する
   function srcOf(name) {
     var need = (window.innerWidth || 1024) * (window.devicePixelRatio || 1);
-    return dir + name + '-' + (need > 1100 ? 1920 : 960) + '.webp';
+    // 境界は preload の imagesrcset (960w / 1920w + sizes=100vw) の選択規則と揃える
+    return dir + name + '-' + (need > 960 ? 1920 : 960) + '.webp';
   }
 
-  // Fisher-Yates
+  // Fisher-Yates。ただし 1枚目は固定する (head の rel="preload" と一致させ、
+  // LCP になる 1枚目を確実に先読みさせるため)。2枚目以降だけシャッフルする
   var order = names.slice();
-  for (var i = order.length - 1; i > 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
+  for (var i = order.length - 1; i > 1; i--) {
+    var j = 1 + Math.floor(Math.random() * i);
     var t = order[i]; order[i] = order[j]; order[j] = t;
   }
 
@@ -61,7 +66,9 @@
 
   function schedule() {
     clearTimeout(timer); clearTimeout(lead);
-    lead = setTimeout(function () { preload(order[(idx + 1) % order.length]); }, INTERVAL - LEAD);
+    // 先読みは切り替えの LEAD ミリ秒前。INTERVAL を変えても負にならないようにする
+    lead = setTimeout(function () { preload(order[(idx + 1) % order.length]); },
+                      Math.max(0, INTERVAL - LEAD));
     timer = setTimeout(function () { advance(); schedule(); }, INTERVAL);
   }
 
@@ -94,12 +101,14 @@
     if (document.hidden) { clearTimeout(timer); clearTimeout(lead); } else { schedule(); }
   });
 
-  if (reduce && reduce.matches) {
-    // 動きを減らす設定では自動で切り替えない。止めるものがないのでボタンも出さない
-    btn.hidden = true;
-    sync();
-  } else {
-    preload(order[1]);
-    play();
+  // 動きを減らす設定では間隔を倍にする (opacity のみの変化なので停止まではしない)
+  if (reduce && reduce.matches) INTERVAL = 14000;
+  if (reduce && reduce.addEventListener) {
+    reduce.addEventListener('change', function (ev) {
+      INTERVAL = ev.matches ? 14000 : 7000;
+      if (playing) schedule();
+    });
   }
+  preload(order[1]);
+  play();
 })();

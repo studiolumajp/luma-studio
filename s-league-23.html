@@ -7,7 +7,7 @@
 <meta name="color-scheme" content="light only" />
 
 <!-- ── PRIMARY SEO META ── -->
-<title>S.League 23 大会結果 | 2026年5月16日(土) 東京・新橋 — LUMA</title>
+<title>S.League 23 大会結果 東京・新橋 | LUMA</title>
 <meta name="description" content="S.League 23 (2026年5月16日土曜・新橋ベルバードgrow店) の大会ページ。個人戦・最大28名・参加費 ¥8,300。本大会は満員御礼にて終了しました。" />
 <meta name="keywords" content="S.League 23,健康麻雀 大会 5月,新橋 麻雀 大会,2026 麻雀大会 東京,LUMA" />
 <meta name="author" content="LUMA" />
@@ -19,14 +19,18 @@
 
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://studio-lumadesign.com/s-league-23.html" />
-<meta property="og:title" content="S.League 23 大会結果 | 2026年5月16日 — LUMA" />
+<meta property="og:title" content="S.League 23 大会結果 東京・新橋 | LUMA" />
 <meta property="og:description" content="個人戦・最大28名・参加費 ¥8,300・新橋ベルバードgrow店。本大会は終了しました。" />
 <meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="S.League 23" />
 <meta property="og:locale" content="ja_JP" />
 <meta property="og:site_name" content="LUMA" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="S.League 23 大会結果" />
+<meta name="twitter:site" content="@s_league_Japan" />
+<meta name="twitter:title" content="S.League 23 大会結果 東京・新橋 | LUMA" />
 <meta name="twitter:description" content="2026年5月16日(土)・新橋。最大28名・¥8,300。本大会は終了しました。" />
 <meta name="twitter:image" content="https://studio-lumadesign.com/og-image.jpg" />
 
@@ -89,7 +93,7 @@
   gtag('config', 'G-62F20N179N');
 </script>
 
-<link rel="stylesheet" href="./shared.css?v=aqua22" />
+<link rel="stylesheet" href="./shared.css?v=aqua29" />
 <style id="page-overrides">
   .sl-hero { padding: 64px 0 48px; }
   .sl-hero h1 { font-size: clamp(40px, 6vw, 72px); }
@@ -107,37 +111,12 @@
     background: color-mix(in srgb, var(--success) 18%, transparent); color: var(--success);
     font-family: var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase;
   }
-
-  /* ── Info grid ── */
-  .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .info-card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius-lg); padding: 24px;
-  }
-  .info-label {
-    font-family: var(--font-mono); font-size: 11px; color: var(--accent);
-    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; display: block;
-  }
-  .info-val { font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
-  .info-sub { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
-  @media (max-width: 880px) { .info-grid { grid-template-columns: 1fr; } }
-
-  /* ── Schedule ── */
-  .schedule-list { list-style: none; max-width: 760px; margin: 0 auto; }
   .schedule-item {
     display: grid; grid-template-columns: 80px 1fr; gap: 24px;
     padding: 20px 0; border-bottom: 1px solid var(--border);
   }
-  .schedule-item:last-child { border-bottom: none; }
-  .schedule-time {
-    font-family: var(--font-mono); font-size: 16px; font-weight: 700;
-    color: var(--accent); padding-top: 2px;
-  }
-  .schedule-text { font-size: 15px; color: var(--text-muted); line-height: 1.7; }
-  .schedule-bold { font-weight: 700; color: var(--text); display: block; margin-bottom: 4px; }
   @media (max-width: 640px) {
     .schedule-item { grid-template-columns: 60px 1fr; gap: 16px; }
-    .schedule-time { font-size: 14px; }
   }
 
   /* ── Payment ── */
@@ -151,9 +130,7 @@
   .payment-card.selected {
     border-color: var(--accent); background: color-mix(in srgb, var(--surface) 92%, var(--accent) 6%);
   }
-  .payment-icon { font-size: 36px; display: block; margin-bottom: 8px; }
   .payment-name { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
-  .payment-desc { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
 
   .payment-detail {
     display: none; margin-top: 24px;
@@ -161,11 +138,6 @@
     border-radius: var(--radius); padding: 24px 28px;
   }
   .payment-detail.active { display: block; }
-  .payment-detail-title {
-    font-size: 16px; font-weight: 700; margin-bottom: 12px; color: var(--text);
-  }
-  .payment-detail-body { font-size: 14px; color: var(--text-muted); line-height: 1.8; }
-  @media (max-width: 880px) { .payment-grid { grid-template-columns: 1fr; } }
 
   /* ── Apply steps ── */
   .apply-steps { max-width: 760px; margin: 32px auto; list-style: none; }
@@ -191,11 +163,7 @@
     font-family:'Poppins', sans-serif; margin-bottom: 24px;
   }
 
-  .terms-note {
-    font-size: 12px; color: var(--text-soft); line-height: 1.7;
-    border-top: 1px solid var(--border); padding-top: 14px; margin-top: 14px;
-  }
-  .terms-note a { color: var(--accent); text-decoration: underline; }
+  @media (max-width:880px){ .payment-grid{grid-template-columns:1fr} }
 </style>
 <style id="soft-aqua-palette">
   /* S.League を CLAUDE.md 4-1 の Soft Aqua パレットへ統一 (Sho 決定 2026-07-11)。
@@ -225,7 +193,7 @@
       <li><a href="./index.html">LUMA トップ</a></li>
     </ul>
     <div style="display:flex;gap:10px;align-items:center;">
-      <a href="./s-league-archive.html" class="nav-cta">📊 成績を見る →</a>
+      <a href="./s-league-archive.html" class="nav-cta"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 3v16a2 2 0 0 0 2 2h16" /> <path d="M18 17V9" /> <path d="M13 17V5" /> <path d="M8 17v-3" /></svg> 成績を見る →</a>
     </div>
     <button class="nav-toggle" type="button" aria-label="メニューを開閉" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -243,14 +211,14 @@
 
 <header class="hero sl-hero" id="home" tabindex="-1">
   <div class="container">
-    <span class="eyebrow">S.League — Vol. 23</span>
+    <span class="eyebrow">S.League / Vol. 23</span>
     <h1 class="hero-title" style="margin-top:18px;">
       <span class="accent">S.League 23</span>
     </h1>
     <p class="date">2026年5月16日 (土) · ベルバードgrow店 (新橋)</p>
     <span class="status-badge" style="background:var(--bg-muted);color:var(--text-soft);">終了 · 満員御礼</span>
     <div class="hero-cta-row" style="margin-top: 28px;">
-      <a href="./s-league-archive.html" class="btn btn-primary">🏆 優勝: にちゃで (+213.6) · 成績を見る →</a>
+      <a href="./s-league-archive.html" class="btn btn-primary"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 14.66V17a1 1 0 0 1-1 1 2 2 0 0 0-2 2v2" /> <path d="M14 14.66V17a1 1 0 0 0 1 1 2 2 0 0 1 2 2v2" /> <path d="M17.916 10H19.5A2.5 2.5 0 0 0 22 7.5V5a1 1 0 0 0-1-1h-3" /> <path d="M4 22h16" /> <path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z" /> <path d="M6.084 10H4.5A2.5 2.5 0 0 1 2 7.5V5a1 1 0 0 1 1-1h3" /></svg> 優勝: にちゃで (+213.6) · 成績を見る →</a>
       <a href="#info" class="btn btn-secondary">大会概要を見る</a>
     </div>
   </div>
@@ -308,7 +276,7 @@
       <li class="schedule-item"><span class="schedule-time">9:50</span><div class="schedule-text"><span class="schedule-bold">受付開始</span>時間に余裕を持ってお越しください。</div></li>
       <li class="schedule-item"><span class="schedule-time">10:00</span><div class="schedule-text"><span class="schedule-bold">開会式・ルール説明</span>はじめての方にもわかるように、ひととおりご説明します。</div></li>
       <li class="schedule-item"><span class="schedule-time">10:10</span><div class="schedule-text"><span class="schedule-bold">予選 1〜3回戦 (50分打ち切り)</span>ここから本戦。まず3半荘を打ちます。</div></li>
-      <li class="schedule-item"><span class="schedule-time">13:20頃</span><div class="schedule-text"><span class="schedule-bold">昼食休憩</span>周辺には飲食店がたくさんあります。しっかり食べて後半戦へ。</div></li>
+      <li class="schedule-item"><span class="schedule-time">13:20頃</span><div class="schedule-text"><span class="schedule-bold">昼食休憩</span>周辺に飲食店が多くあります。昼食をとってから後半戦に入ります。</div></li>
       <li class="schedule-item"><span class="schedule-time">14:00</span><div class="schedule-text"><span class="schedule-bold">予選 4〜6回戦 (50分打ち切り)</span>ここから後半戦。点棒の動き次第で、順位は大きく入れ替わります。</div></li>
       <li class="schedule-item"><span class="schedule-time">17:00頃</span><div class="schedule-text"><span class="schedule-bold">順位戦 2戦 (60分打ち切り)</span>上位争いは、この2戦で決まります。残り時間の読みも問われる場面です。</div></li>
       <li class="schedule-item"><span class="schedule-time">19:20頃</span><div class="schedule-text"><span class="schedule-bold">表彰式・景品贈呈・閉会</span>参加賞は、その場で全員にお渡しします。</div></li>
@@ -326,7 +294,7 @@
     </div>
 
     <div class="reveal" style="text-align:center; max-width: 760px; margin: 0 auto;">
-      <a href="./s-league-archive.html" class="btn btn-primary" style="font-size:16px; padding: 16px 28px;">🏆 大会結果・成績アーカイブを見る →</a>
+      <a href="./s-league-archive.html" class="btn btn-primary" style="font-size:16px; padding: 16px 28px;"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 14.66V17a1 1 0 0 1-1 1 2 2 0 0 0-2 2v2" /> <path d="M14 14.66V17a1 1 0 0 0 1 1 2 2 0 0 1 2 2v2" /> <path d="M17.916 10H19.5A2.5 2.5 0 0 0 22 7.5V5a1 1 0 0 0-1-1h-3" /> <path d="M4 22h16" /> <path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z" /> <path d="M6.084 10H4.5A2.5 2.5 0 0 1 2 7.5V5a1 1 0 0 1 1-1h3" /></svg> 大会結果・成績アーカイブを見る →</a>
       <p style="font-size: 13px; color: var(--text-soft); margin-top: 16px; line-height: 1.7;">
         次回大会の情報は <a href="./s-league.html" style="color:var(--accent);text-decoration:underline;">S.League 大会概要ページ</a> をご覧ください。<br>
         ご不明な点は <a href="./contact.html" style="color:var(--accent);text-decoration:underline;">お問い合わせフォーム</a> よりご連絡ください。
@@ -340,7 +308,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="./index.html" class="brand"><span class="brand-mark">L</span><span>LUMA</span></a>
-        <p>東京・横浜で、あなたの自信をデザインする。Clarity by Design — Illuminate Your Confidence.</p>
+        <p>東京・横浜で、あなたの自信をデザインする。Clarity by Design / Illuminate Your Confidence.</p>
       </div>
       <div class="footer-col">
         <h4>S.League</h4>
@@ -374,6 +342,13 @@
         </ul>
       </div>
     </div>
+    <div class="footer-sns">
+      <span class="footer-sns-h">SNS</span>
+      <a href="https://www.instagram.com/luma_frame.jp/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://x.com/s_league_Japan" target="_blank" rel="noopener noreferrer">X</a>
+    
+      <a href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer">LINE</a>
+</div>
     <div class="footer-bottom">
       <span>© 2026 LUMA. All rights reserved.</span>
       <span>横浜市 · 神奈川県 · 日英バイリンガル</span>
@@ -390,7 +365,7 @@
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
-<script src="./nav.js" defer></script>
+<script src="./nav.js?v=aqua29" defer></script>
 <a class="line-float" href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer" aria-label="LINE で LUMA に相談する (新しいタブで開きます)"><svg class="lf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>LINE で相談</span></a>
 </body>
 </html>

@@ -5,6 +5,32 @@
    ページ固有スタイルは各HTMLの <style> ブロックで上書きする。
    ============================================================ */
 
+
+/* ============================================================
+   Line icons (inline SVG)
+   アイコン形状は Lucide (https://lucide.dev) を使用。
+   ISC License. Copyright (c) for portions of Lucide are held by
+   Cole Bemis 2013-2022 as part of Feather (MIT). All other copyright (c)
+   for Lucide are held by Lucide Contributors 2022.
+   Permission to use, copy, modify, and/or distribute this software for any
+   purpose with or without fee is hereby granted, provided that the above
+   copyright notice and this permission notice appear in all copies.
+   ============================================================ */
+.i {
+  width: 1em; height: 1em; display: inline-block; vertical-align: -0.14em;
+  flex: none; overflow: visible;
+}
+/* Navy 面 + 白抜きの箱では親の色をそのまま継承する */
+.svc-icon .i { width: 24px; height: 24px; vertical-align: 0; }
+/* 単色の箱・カード内アイコンは Navy */
+.cmp-emoji .i, .rule-icon .i, .payment-icon .i, .type-icon .i, .prize-medal .i,
+.community-card-icon .i, .value-icon .i, .hv-card .ico .i,
+.quick-info-card .ico .i, .feature-card .ico .i { color: var(--navy); }
+/* ブロック表示の箱では baseline の余白を出さない */
+.cmp-emoji .i, .payment-icon .i, .type-icon .i, .prize-medal .i,
+.community-card-icon .i, .value-icon .i, .quick-info-card .ico .i,
+.feature-card .ico .i, .pmed .i, .tmed .i { vertical-align: middle; }
+
 :root {
   /* Light tokens (LUMA Soft Aqua — CLAUDE.md 4-1) */
   --bg: #EBF5FA;           /* Base 背景 */
@@ -511,7 +537,7 @@ section { padding: 104px 0; }   /* 案4 の余白 */
   background: var(--border-strong);
 }
 .cmp-card .cmp-actions {
-  display: flex; gap: 10px;
+  display: flex; gap: 10px; flex-wrap: wrap;
   position: relative; z-index: 2;
 }
 .cmp-card .cmp-actions a { position: relative; z-index: 2; }
@@ -544,30 +570,6 @@ section { padding: 104px 0; }   /* 案4 の余白 */
 .cmp-card.theme-photo  { --cmp-bg: linear-gradient(135deg, var(--bg) 0%, var(--bg-muted) 100%); --cmp-tag: var(--navy); }
 .cmp-card.theme-mahjong{ --cmp-bg: linear-gradient(135deg, var(--bg) 0%, var(--bg-muted) 100%); --cmp-tag: var(--sky); }
 .cmp-card.theme-tour   { --cmp-bg: linear-gradient(135deg, var(--bg) 0%, var(--bg-muted) 100%); --cmp-tag: var(--cta-hover); }
-
-/* ── TESTIMONIALS (Airbnb風) ─────────── */
-.testimonials-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
-}
-.review {
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
-  padding: 28px; display: flex; flex-direction: column; gap: 16px;
-  transition: transform .2s, box-shadow .2s;
-}
-.review:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
-.review-stars { color: var(--accent-2); font-size: 14px; letter-spacing: 2px; }
-.review-quote { font-size: 15px; line-height: 1.6; color: var(--text); }
-.review-author {
-  display: flex; align-items: center; gap: 12px;
-  margin-top: auto; padding-top: 16px; border-top: 1px solid var(--border);
-}
-.review-avatar {
-  width: 40px; height: 40px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 14px;
-}
-.review-name { font-weight: 600; font-size: 14px; }
-.review-role { font-size: 12px; color: var(--text-soft); }
 
 /* ── ABOUT / WHO ─────────────────────── */
 .who-grid {
@@ -611,30 +613,6 @@ section { padding: 104px 0; }   /* 案4 の余白 */
 }
 .faq-a-inner { padding: 0 0 24px; }
 .faq-item[data-open="true"] .faq-a { max-height: 400px; }
-
-/* ── BLOG TEASER ─────────────────────── */
-.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.blog-card {
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
-  overflow: hidden; transition: transform .2s, box-shadow .2s;
-  display: flex; flex-direction: column;
-}
-.blog-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
-.blog-thumb {
-  aspect-ratio: 16/9;
-  background: repeating-linear-gradient(45deg, var(--bg-muted), var(--bg-muted) 8px, var(--bg-soft) 8px, var(--bg-soft) 16px);
-  display: grid; place-items: center; color: var(--text-soft); font-family: var(--font-mono); font-size: 11px;
-}
-.blog-body { padding: 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
-.blog-cat {
-  font-family: var(--font-mono); font-size: 11px; color: var(--accent);
-  text-transform: uppercase; letter-spacing: 0.06em;
-}
-.blog-card h3 { font-size: 17px; line-height: 1.35; }
-.blog-meta {
-  margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border);
-  display: flex; justify-content: space-between; font-size: 12px; color: var(--text-soft);
-}
 
 /* ── CTA BIG ─────────────────────────── */
 .cta-big {
@@ -705,7 +683,6 @@ footer .brand-mark::after { box-shadow: 0 0 0 2px #134E6F; }
   .hero-grid { grid-template-columns: 1fr; gap: 40px; }
   .hero-visual { max-width: 420px; margin: 0 auto; justify-self: center; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
-  .testimonials-grid, .blog-grid { grid-template-columns: 1fr; }
   .who-grid { grid-template-columns: 1fr; gap: 28px; text-align: left; }
   .who-photo { max-width: 220px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
@@ -806,7 +783,7 @@ footer .brand-mark::after { box-shadow: 0 0 0 2px #134E6F; }
 .hero--photo .eyebrow { color: #fff; }
 .hero--photo .eyebrow::before { background: var(--accent-2); }
 .hero--photo .hero-meta { color: rgba(255, 255, 255, 0.75); }
-.hero--photo .hero-pill, .hero--photo .pill {
+.hero--photo .hero-pill {
   background: rgba(255, 255, 255, 0.14); border-color: rgba(255, 255, 255, 0.38); color: #fff;
 }
 .hero--photo .btn-secondary {
@@ -939,7 +916,6 @@ footer .brand-mark::after { box-shadow: 0 0 0 2px #134E6F; }
 }
 .nw-cl a:hover, .nw-cl a:focus-visible { background: var(--bg-soft); }
 .nw-lt { font-size: 15px; color: var(--navy); line-height: 1.7; font-weight: 500; }
-.nw-empty { color: var(--text-soft); font-size: 15px; }
 
 /* ── 個別ページ ── */
 .nw-art { max-width: 720px; margin: 0 auto; padding: 52px 24px 96px; }
@@ -1145,9 +1121,7 @@ body .info-card,
 body .sp-plan,
 body .prize-card,
 body .type-card,
-body .event-card,
-body .review-card,
-body .stat-card {
+body .event-card {
   box-shadow: 0 1px 2px rgba(19, 78, 111, 0.05), 0 8px 24px -12px rgba(19, 78, 111, 0.18);
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
@@ -1155,9 +1129,7 @@ body .info-card:hover,
 body .sp-plan:hover,
 body .prize-card:hover,
 body .type-card:hover,
-body .event-card:hover,
-body .review-card:hover,
-body .stat-card:hover {
+body .event-card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-lg);
   border-color: var(--border-strong);
@@ -1256,3 +1228,415 @@ body:has(.alb.open) .line-float { display: none; }
   color: #fff;
 }
 
+
+/* ============================================================
+   Phase 12 / 工程B — 予約導線と作例・料金・流れの共通パーツ
+   (2026-09-05 追加。index / service-photo / s-league 系で共用)
+   ============================================================ */
+
+/* ── 作例グリッド ── */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.work-tile {
+  display: block;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.work-tile:hover,
+.work-tile:focus-visible { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.work-tile img { width: 100%; height: 220px; object-fit: cover; }
+.work-tile .wt-cap {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 12px 16px; font-size: 14px; color: var(--text); font-weight: 600;
+}
+.work-tile .wt-cap span:last-child { color: var(--accent); font-size: 13px; font-weight: 600; }
+@media (max-width: 900px) { .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) {
+  .work-grid { grid-template-columns: 1fr; gap: 14px; }
+  .work-tile img { height: 200px; }
+}
+
+/* ── 料金の抜粋カード (トップ用の簡易版) ── */
+.mini-plans {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.mini-plan {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 26px 24px;
+  box-shadow: var(--shadow-sm);
+}
+.mini-plan h3 { font-size: 17px; color: var(--navy); margin-bottom: 4px; }
+.mini-plan .mp-en {
+  display: block; font-family: var(--font-label); font-size: 12px;
+  color: var(--text-soft); letter-spacing: 0.06em; margin-bottom: 14px;
+}
+.mini-plan .mp-price { font-family: var(--font-label); font-size: 30px; font-weight: 700; color: var(--text); line-height: 1.2; }
+.mini-plan .mp-price small { font-size: 13px; font-weight: 500; color: var(--text-soft); margin-left: 6px; }
+.mini-plan .mp-note { font-size: 14px; color: var(--text-muted); margin-top: 10px; line-height: 1.7; }
+@media (max-width: 900px) { .mini-plans { grid-template-columns: 1fr; } }
+
+/* ── 4ステップ ── */
+.steps-4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+.step-4 {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px 22px;
+}
+.step-4 .s4-num {
+  font-family: var(--font-label); font-size: 13px; font-weight: 700;
+  color: var(--accent); letter-spacing: 0.1em; display: block; margin-bottom: 10px;
+}
+.step-4 h3 { font-size: 17px; color: var(--navy); margin-bottom: 8px; }
+.step-4 p { font-size: 14.5px; color: var(--text-muted); line-height: 1.75; }
+@media (max-width: 900px) { .steps-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .steps-4 { grid-template-columns: 1fr; } }
+
+/* ── 実績の証拠バンド (S.League) ── */
+.proof-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 36px;
+  align-items: center;
+}
+.proof-media { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.proof-media img {
+  width: 100%; height: 200px; object-fit: cover;
+  border-radius: var(--radius-lg); border: 1px solid var(--border);
+}
+.proof-stats { display: flex; gap: 28px; flex-wrap: wrap; margin: 20px 0 24px; }
+.proof-stats .num { font-family: var(--font-label); font-size: 26px; font-weight: 700; color: var(--navy); line-height: 1.2; }
+.proof-stats .label { font-size: 13px; color: var(--text-soft); }
+@media (max-width: 860px) {
+  .proof-grid { grid-template-columns: 1fr; gap: 24px; }
+  .proof-media img { height: 160px; }
+}
+
+/* ── 中央寄せのボタン行 (最終CTA・中間CTA用) ── */
+.cta-row-center { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+
+/* ── 料金カード内のプラン別 CTA ── */
+.pplan-cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 16px; font-size: 14px; font-weight: 600; color: var(--accent);
+}
+.pplan-cta:hover { text-decoration: underline; }
+
+/* ── フォーム冒頭の LINE 案内 ── */
+.form-line-note {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; flex-wrap: wrap;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 22px;
+  margin-bottom: 28px;
+}
+.form-line-note p { font-size: 14.5px; color: var(--text-muted); margin: 0; }
+
+/* ── 記事一覧の末尾 CTA (blog / news) ── */
+.list-end-cta {
+  text-align: center;
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+  padding-top: 40px;
+}
+.list-end-cta h2 { font-size: clamp(20px, 2.6vw, 26px); color: var(--navy); margin-bottom: 10px; }
+.list-end-cta p { color: var(--text-muted); font-size: 15px; margin: 0 auto 22px; max-width: 560px; }
+
+/* ── 375px で HERO のボタンが3行にならないようにする ──
+   .btn は横 padding 20px + font-size 15px。375px (container padding 24px×2 で
+   実効 327px) では主CTA が1行を占め、LINE ボタンが2行目に収まる。 */
+@media (max-width: 400px) {
+  .hero-cta-row { gap: 10px; }
+  .hero-cta-row .btn { padding: 12px 16px; font-size: 14.5px; }
+}
+
+/* ── フッターの SNS 行 (工程D) ──
+   footer-grid と footer-bottom の間に置く1行。Navy #134E6F 面での
+   コントラストは footer-col と同じ値を使う。 */
+.footer-sns {
+  padding-top: 22px;
+  display: flex; align-items: center; flex-wrap: wrap; gap: 8px 18px;
+  font-size: 14px;
+}
+/* #8ECDF7 on #134E6F = 5.21:1 (AA) */
+.footer-sns-h {
+  font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: #8ECDF7; font-family: var(--font-mono); font-weight: 500;
+}
+/* rgba(255,255,255,.86) on #134E6F = 7.07:1 (AA) */
+.footer-sns a { color: rgba(255, 255, 255, 0.86); transition: color .18s; }
+.footer-sns a:hover, .footer-sns a:focus-visible { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+
+/* ── Instagram への導線 (写真系ページ・フッター直上) ── */
+.ig-note { padding: 0 0 96px; }
+.ig-note-in {
+  max-width: 760px; margin: 0 auto;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  text-align: center;
+}
+.ig-note-in h2 { font-size: clamp(19px, 2.4vw, 24px); color: var(--navy); margin: 0 0 10px; }
+.ig-note-in p { color: var(--text-muted); font-size: 15px; margin: 0 auto; max-width: 560px; }
+.ig-note-cta { margin-top: 20px !important; }
+.ig-note-cta a {
+  display: inline-block; min-height: 44px; line-height: 26px;
+  padding: 9px 22px; border-radius: 999px;
+  border: 1px solid var(--border-strong); background: var(--surface);
+  color: var(--navy); font-weight: 600; font-size: 15px; text-decoration: none;
+  transition: border-color .2s ease, color .2s ease;
+}
+.ig-note-cta a:hover, .ig-note-cta a:focus-visible { border-color: var(--accent); color: var(--accent); }
+@media (max-width: 600px) {
+  .ig-note { padding-bottom: 64px; }
+  .ig-note-in { padding: 26px 20px; }
+}
+
+/* ── lp/links.html (Instagram プロフィール用の分岐ページ) ── */
+.lk-wrap { max-width: 520px; margin: 0 auto; padding: 56px 20px 72px; }
+.lk-head { text-align: center; margin-bottom: 32px; }
+.lk-head .brand { justify-content: center; }
+.lk-head h1 { font-size: clamp(22px, 5vw, 28px); color: var(--navy); margin: 18px 0 0; }
+.lk-list { display: flex; flex-direction: column; gap: 12px; }
+.lk-item {
+  display: block; min-height: 44px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 16px 18px;
+  text-decoration: none; box-shadow: var(--shadow-sm);
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.lk-item:hover, .lk-item:focus-visible {
+  border-color: var(--accent); box-shadow: var(--shadow-md); transform: translateY(-1px);
+}
+.lk-item b { display: block; font-size: 16px; color: var(--navy); font-weight: 600; }
+.lk-item span { display: block; font-size: 13.5px; color: var(--text-muted); margin-top: 5px; }
+.lk-item.is-line { background: var(--accent-soft); border-color: var(--border-strong); }
+.lk-sub {
+  margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border);
+  display: flex; flex-wrap: wrap; gap: 10px 20px; justify-content: center;
+}
+.lk-sub a {
+  font-size: 13.5px; color: var(--text-soft); text-decoration: none;
+  min-height: 44px; display: inline-flex; align-items: center;
+}
+.lk-sub a:hover, .lk-sub a:focus-visible { color: var(--accent); text-decoration: underline; }
+.lk-foot { margin-top: 26px; text-align: center; font-size: 12px; color: var(--text-muted); }
+.lk-foot a { color: var(--text-muted); }
+
+/* ── 日本語の折り返し (2026-09-05 追加) ─────────────────
+   Sho 指摘「PC でも変な場所で改行が入る」への対策。
+   word-break: auto-phrase は文節単位で折り返す (Chrome 119+ / 未対応ブラウザは無視)。
+   未対応ブラウザ向けには HTML 側の <wbr> と <span class="nb"> で補う。
+   overflow-wrap: anywhere は使わない (語中で切れるため)。 */
+h1, h2, h3,
+.hero-title, .hero-sub, .hero-pill, .eyebrow,
+.btn, .faq-q, .faq-q > span, .cmp-btn, .svc-link,
+.lk-item b, .nw-clh, .wt-cap {
+  word-break: auto-phrase;
+  text-wrap: balance;
+}
+p, .sub, .hero-sub, .faq-a-inner, .cmp-pitch, .mp-note, .lk-item span, .nw-lede {
+  word-break: auto-phrase;
+  text-wrap: pretty;
+}
+/* 切れてはいけないまとまりを囲む */
+.nb { white-space: nowrap; }
+/* 768px 以下でだけ改行する <br class="sp"> */
+br.sp { display: none; }
+@media (max-width: 768px) {
+  br.sp { display: inline; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   WEBP 差し替え (2026-09-05 / 工程C)
+   image-set() 対応ブラウザには WebP、非対応には従来の JPEG を配る。
+   1行目の background-image (JPEG) を 2行目が上書きする。image-set() を
+   解釈できないブラウザは 2行目をパースエラーとして捨て、1行目が残る。
+   URL は shared.css からの相対パスなので en/ 配下のページでも同じ値で解決する。
+   ══════════════════════════════════════════════════════════════ */
+.cmp-card.has-photo.theme-eng .cmp-visual::before {
+  background-image: url('images/compare/compare-eng.jpg');
+  background-image: image-set(url('images/compare/compare-eng.webp') type("image/webp"), url('images/compare/compare-eng.jpg') type("image/jpeg"));
+}
+.cmp-card.has-photo.theme-photo .cmp-visual::before {
+  background-image: url('images/compare/compare-photo.jpg');
+  background-image: image-set(url('images/compare/compare-photo.webp') type("image/webp"), url('images/compare/compare-photo.jpg') type("image/jpeg"));
+}
+.cmp-card.has-photo.theme-mahjong .cmp-visual::before {
+  background-image: url('images/compare/compare-mahjong.jpg');
+  background-image: image-set(url('images/compare/compare-mahjong.webp') type("image/webp"), url('images/compare/compare-mahjong.jpg') type("image/jpeg"));
+}
+.cmp-card.has-photo.theme-tour .cmp-visual::before {
+  background-image: url('images/compare/compare-tour.jpg');
+  background-image: image-set(url('images/compare/compare-tour.webp') type("image/webp"), url('images/compare/compare-tour.jpg') type("image/jpeg"));
+}
+
+/* HERO 写真 (--hero-photo) の WebP 差し替え。--hero-photo は暗幕グラデーションと
+   2枚重ねなので、image-set 側でも 1枚目のグラデーションを書き直す */
+.hero--photo.hero-webp-eng, .hero--photo.hero-webp-photo,
+.hero--photo.hero-webp-tour, .hero--photo.hero-webp-services {
+  background-image:
+    linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 34%, var(--scrim-3) 58%, var(--scrim-4) 76%),
+    var(--hero-photo, linear-gradient(135deg, var(--navy), var(--accent)));
+}
+.hero--photo.hero-webp-eng {
+  background-image:
+    linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 34%, var(--scrim-3) 58%, var(--scrim-4) 76%),
+    image-set(url('images/compare/compare-eng.webp') type("image/webp"), url('images/compare/compare-eng.jpg') type("image/jpeg"));
+}
+.hero--photo.hero-webp-photo {
+  background-image:
+    linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 34%, var(--scrim-3) 58%, var(--scrim-4) 76%),
+    image-set(url('images/compare/compare-photo.webp') type("image/webp"), url('images/compare/compare-photo.jpg') type("image/jpeg"));
+}
+.hero--photo.hero-webp-tour {
+  background-image:
+    linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 34%, var(--scrim-3) 58%, var(--scrim-4) 76%),
+    image-set(url('images/compare/compare-tour.webp') type("image/webp"), url('images/compare/compare-tour.jpg') type("image/jpeg"));
+}
+.hero--photo.hero-webp-services {
+  background-image:
+    linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 34%, var(--scrim-3) 58%, var(--scrim-4) 76%),
+    image-set(url('IMG_0078.webp') type("image/webp"), url('IMG_0078.jpg') type("image/jpeg"));
+}
+
+/* ギャラリーの <img> を <picture> で包んだため (2026-09-05 / 工程C)。
+   picture は既定でインライン要素なので、行送り分の隙間が出ないよう block にする */
+.photo-item picture { display: block; }
+
+
+/* ── ページ横断で共通の定義(3ページ以上で重複していた page-overrides を集約)── */
+.contact-hero h1 .accent{background:linear-gradient(120deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.nw-art h2{font-size:21px;color:var(--navy);margin:40px 0 0;line-height:1.55}
+.photo-hero{padding:64px 0 32px}
+.photo-hero h1 .accent{background:linear-gradient(120deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.photo-hero .sub{font-size:clamp(15px,1.4vw,18px);color:var(--text-muted);margin-top:12px}
+.filter-bar{position:sticky;top:56px;z-index:40;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:saturate(180%) blur(12px);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.filter-bar-inner{max-width:var(--container);margin:0 auto;padding:14px 24px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.filter-buttons{display:flex;gap:8px;flex-wrap:wrap}
+.filter-btn{padding:10px 16px;min-height:44px;display:inline-flex;align-items:center;flex:0 0 auto;white-space:nowrap;font-size:13px;font-weight:600;border:1px solid var(--border);border-radius:999px;background:var(--surface);color:var(--text-muted);transition:all .2s}
+.filter-btn:hover{border-color:var(--text-muted);color:var(--text)}
+.filter-btn.active{background:var(--text);color:var(--bg);border-color:var(--text)}
+.photo-count{font-family:var(--font-mono);font-size:12px;color:var(--text-soft);text-transform:uppercase;letter-spacing:0.06em}
+.gallery{columns:3 280px;column-gap:16px;padding:48px 24px 96px;max-width:1280px;margin:0 auto}
+.photo-item{break-inside:avoid;margin-bottom:16px;position:relative;cursor:pointer;overflow:hidden;border-radius:var(--radius);border:1px solid var(--border);background:var(--bg-soft);display:block;transition:transform .25s,box-shadow .25s}
+.photo-item:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.photo-item.hidden{display:none}
+.photo-item:focus-visible,.filter-btn:focus-visible,.lb-btn:focus-visible,.lb-close:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.photo-item img{width:100%;height:auto;display:block;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.photo-item:hover img{transform:scale(1.03)}
+.photo-overlay{position:absolute;inset:0;padding:14px 16px;background:linear-gradient(0deg,rgba(10,42,62,0.65) 0%,rgba(10,42,62,0) 50%);color:#fff;opacity:0;transition:opacity .25s;display:flex;flex-direction:column;justify-content:flex-end}
+.photo-item:hover .photo-overlay{opacity:1}
+.photo-title{font-size:14px;font-weight:700}
+.photo-en{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:rgba(255,255,255,0.85);margin-top:2px}
+.lightbox{display:none;position:fixed;inset:0;background:rgba(10,10,10,0.94);z-index:1000;align-items:center;justify-content:center;padding:24px}
+.lightbox.open{display:flex}
+.lb-inner{position:relative;max-width:1200px;max-height:100%;width:100%;display:flex;flex-direction:column;align-items:center;gap:16px}
+.lb-img-wrap{width:100%;max-height:78vh;display:flex;justify-content:center}
+.lb-img{max-width:100%;max-height:78vh;object-fit:contain;border-radius:var(--radius)}
+.lb-info{color:#fff;text-align:center;font-family:var(--font-sans);display:flex;flex-direction:column;gap:4px}
+.lb-caption{font-size:16px;font-weight:600}
+.lb-counter{font-family:var(--font-mono);font-size:12px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.08em}
+.lb-btn{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:18px;cursor:pointer;transition:background .2s,border-color .2s;display:grid;place-items:center}
+.lb-btn:hover{background:rgba(255,255,255,0.2);border-color:rgba(255,255,255,0.4)}
+.lb-prev{left:16px}
+.lb-next{right:16px}
+.lb-close:hover{background:rgba(255,255,255,0.2)}
+.community-card h3{font-size:15px;margin-bottom:6px}
+.community-card p{font-size:13px;color:var(--text-muted);line-height:1.6}
+.stat-item{text-align:center}
+.svc-overview-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:start}
+.svc-overview-lead{font-size:clamp(22px,2.4vw,30px);line-height:1.4;letter-spacing:-0.02em;color:var(--text);font-weight:700;margin-bottom:20px}
+.svc-overview-lead em{font-style:normal;color:var(--accent)}
+.svc-overview-body{font-size:16px;color:var(--text-muted);line-height:1.75}
+.offers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.offer-card{background:var(--surface);padding:28px;border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:0 1px 2px rgba(19,78,111,0.05),0 8px 24px -12px rgba(19,78,111,0.18);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;display:flex;flex-direction:column;gap:8px}
+.offer-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--border-strong)}
+.offer-card.feature{background:color-mix(in srgb,var(--surface) 88%,var(--accent) 6%);border-left:3px solid var(--accent)}
+.offer-card p{font-size:14px;color:var(--text-muted);line-height:1.65;margin-top:6px}
+#pricing{background:var(--bg-soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.price-box{max-width:760px;margin:0 auto;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:40px 44px;position:relative;overflow:hidden}
+.price-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+.price-row{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--border);gap:16px}
+.price-row:last-of-type{border-bottom:none}
+.price-label{font-size:15px;color:var(--text-muted)}
+.price-note{font-size:13px;color:var(--text-soft);margin-top:20px;line-height:1.7}
+.flow-steps{max-width:820px;margin:0 auto;display:flex;flex-direction:column}
+.flow-step{display:grid;grid-template-columns:88px 1fr;gap:32px;padding:28px 0;border-bottom:1px solid var(--border)}
+.flow-step:last-child{border-bottom:none}
+.flow-step h3{font-size:19px;margin-bottom:8px}
+.flow-step p{font-size:15px;color:var(--text-muted);line-height:1.7}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.info-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px}
+.info-label{font-family:var(--font-mono);font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;display:block}
+.info-val{font-size:22px;font-weight:700;color:var(--text);margin-bottom:4px}
+.info-sub{font-size:13px;color:var(--text-muted);line-height:1.6}
+.schedule-list{list-style:none;max-width:760px;margin:0 auto}
+.schedule-item:last-child{border-bottom:none}
+.schedule-time{font-family:var(--font-mono);font-size:16px;font-weight:700;color:var(--accent);padding-top:2px}
+.schedule-text{font-size:15px;color:var(--text-muted);line-height:1.7}
+.schedule-bold{font-weight:700;color:var(--text);display:block;margin-bottom:4px}
+.payment-icon{font-size:36px;display:block;margin-bottom:8px}
+.payment-desc{font-size:12px;color:var(--text-muted);line-height:1.6}
+.payment-detail-title{font-size:16px;font-weight:700;margin-bottom:12px;color:var(--text)}
+.payment-detail-body{font-size:14px;color:var(--text-muted);line-height:1.8}
+.terms-note{font-size:12px;color:var(--text-soft);line-height:1.7;border-top:1px solid var(--border);padding-top:14px;margin-top:14px}
+.terms-note a{color:var(--accent);text-decoration:underline}
+.rules-list{list-style:none;max-width:760px;margin:36px auto 0;display:grid;gap:16px}
+.rule-item{display:grid;grid-template-columns:52px 1fr;gap:18px;align-items:start;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px 24px}
+.rule-icon{width:52px;height:52px;font-size:24px;line-height:1;display:flex;align-items:center;justify-content:center;background:var(--bg-muted);border-radius:14px}
+.rule-title{font-size:17px;font-weight:700;color:var(--text);display:block;margin-bottom:6px}
+.rule-desc{font-size:14px;color:var(--text-muted);line-height:1.85}
+.rule-desc strong{color:var(--accent);font-weight:700}
+.rules-note{text-align:center;font-size:12px;color:var(--text-soft);margin-top:20px;line-height:1.7}
+.sl-hero .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.sl-gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.svc-overview-aside{border-left:2px solid var(--border-strong);padding-left:28px}
+.svc-overview-aside .en-lead{font-size:17px;color:var(--text);line-height:1.55;font-weight:600;letter-spacing:-0.01em;margin-bottom:14px}
+.svc-overview-aside .en-body{font-size:13px;color:var(--text-soft);line-height:1.75}
+
+@media (max-width:980px){
+  .offers-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media (max-width:880px){
+  .svc-overview-grid{grid-template-columns:1fr;gap:32px}
+  .info-grid{grid-template-columns:1fr}
+}
+
+@media (max-width:640px){
+  .gallery{columns:2 160px;column-gap:10px;padding:32px 12px 64px}
+  .photo-item{margin-bottom:10px}
+  .lb-prev,.lb-next{width:40px;height:40px}
+  .lb-prev{left:8px}
+  .lb-next{right:8px}
+  .offers-grid{grid-template-columns:1fr}
+  .price-box{padding:28px 22px}
+  .flow-step{grid-template-columns:56px 1fr;gap:20px}
+  .schedule-time{font-size:14px}
+  .rule-item{grid-template-columns:44px 1fr;gap:14px;padding:18px 18px}
+  .rule-icon{width:44px;height:44px;font-size:20px;border-radius:12px}
+  .sl-gallery-grid{grid-template-columns:1fr 1fr}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .sl-hero .hero-video{display:none}
+}
