@@ -7,7 +7,7 @@
 <meta name="color-scheme" content="light only" />
 
 <title>LUMA Frame のリンク集 | LUMA</title>
-<meta name="description" content="Instagram (@luma_frame.jp) からお越しの方へ。撮影ノート、撮影地ごとの作例、出張撮影の料金、LINE での相談窓口をまとめています。" />
+<meta name="description" content="Instagram (@luma_frame.jp) からお越しの方へ。撮影ノート、撮影地ごとの作品、撮影の受付についてのお知らせ、LINE での相談窓口をまとめています。" />
 <meta name="author" content="LUMA" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://studio-lumadesign.com/lp/links" />
@@ -15,7 +15,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://studio-lumadesign.com/lp/links" />
 <meta property="og:title" content="LUMA Frame のリンク集 | LUMA" />
-<meta property="og:description" content="撮影ノート、撮影地ごとの作例、出張撮影の料金、LINE での相談窓口。Instagram からお越しの方の入口です。" />
+<meta property="og:description" content="撮影ノート、撮影地ごとの作品、撮影の受付についてのお知らせ、LINE での相談窓口。Instagram からお越しの方の入口です。" />
 <meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -25,22 +25,45 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@s_league_Japan" />
 <meta name="twitter:title" content="LUMA Frame のリンク集 | LUMA" />
-<meta name="twitter:description" content="撮影ノート、撮影地ごとの作例、出張撮影の料金、LINE での相談窓口。" />
+<meta name="twitter:description" content="撮影ノート、撮影地ごとの作品、撮影の受付についてのお知らせ、LINE での相談窓口。" />
 <meta name="twitter:image" content="https://studio-lumadesign.com/og-image.jpg" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../shared.css?v=aqua30" />
+<link rel="stylesheet" href="../shared.css?v=aqua32" />
+<style id="page-overrides">
+  /* 2026-09-26 案A: 受付中の大会を最上段に。見出しラベルと受付中の強調だけを足す(shared.css は変更しない) */
+  .lk-label { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; color: var(--text-muted); margin: 26px 0 10px; }
+  .lk-label:first-child { margin-top: 0; }
+  .lk-item.is-open { border-color: var(--accent); box-shadow: inset 4px 0 0 var(--accent); }
+  .lk-item span .nb { display: inline-block; margin-top: 0; } /* 日付を行の途中で折らない */
+  .lk-item .lk-badge { display: inline-block; font-size: 11.5px; font-weight: 600; color: var(--navy); background: var(--accent-soft); border-radius: 999px; padding: 2px 10px; margin: 0 0 6px; }
+</style>
 </head>
 <body id="body-root">
 <main id="main-content" tabindex="-1">
   <div class="lk-wrap">
     <div class="lk-head">
       <a href="../" class="brand"><span class="brand-mark">L</span><span>LUMA</span></a>
-      <h1><span class="nb">LUMA Frame</span> の<wbr />写真と撮影の<wbr />ご案内</h1>
+      <h1><span class="nb">LUMA Frame</span> の<wbr />写真と<wbr />LUMA のご案内</h1>
     </div>
 
+    <p class="lk-label">いま受付中の大会</p>
+    <div class="lk-list">
+      <a class="lk-item is-open" href="../s-league-25">
+        <span class="lk-badge">受付中</span>
+        <b>S.League 25 個人戦 10月18日(日)</b>
+        <span>12:00〜20:00、全7戦。申込締切は<span class="nb">10月12日(月) 22:00</span>です。</span>
+      </a>
+      <a class="lk-item is-open" href="../s-league-26">
+        <span class="lk-badge">受付中</span>
+        <b>S.League 26 個人戦 11月8日(日)</b>
+        <span>12:00〜18:00、全5戦。申込締切は<span class="nb">11月1日(日) 22:00</span>です。</span>
+      </a>
+    </div>
+
+    <p class="lk-label">写真</p>
     <div class="lk-list">
       <a class="lk-item" href="../blog/">
         <b>撮影ノート</b>
@@ -50,13 +73,21 @@
         <b>撮影地の作例</b>
         <span>羽田、伊丹、湘南、熱海、横浜で撮った写真をまとめています。</span>
       </a>
-      <a class="lk-item" href="../service-photo#pricing">
-        <b>出張撮影の料金</b>
-        <span>カテゴリー別の税込料金です。<wbr />データは撮影日から<span class="nb">7日以内に</span><wbr />お渡しします。</span>
+      <a class="lk-item" href="../service-photo">
+        <b>撮影の受付について</b>
+        <span>撮影の新規受付は<wbr /><span class="nb">2026年9月30日</span>で終了します。<wbr />作品と撮影ノートは公開を続けます。</span>
+      </a>
+    </div>
+
+    <p class="lk-label">ご相談</p>
+    <div class="lk-list">
+      <a class="lk-item" href="../lp/craft">
+        <b>Web・SNS・アプリ制作 (LUMA Craft)</b>
+        <span>日本語と英語のサイト、SNS、iOS アプリを作ります。</span>
       </a>
       <a class="lk-item is-line" href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer">
         <b>LINE で相談</b>
-        <span>撮りたい場所や日程が<wbr />決まっていなくても、<wbr />そのままご相談ください。</span>
+        <span>英会話、英語ツアー、<wbr />サイトや SNS の制作の<wbr />ご相談を受け付けています。</span>
       </a>
     </div>
 

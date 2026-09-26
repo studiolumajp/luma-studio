@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#FFFFFF" />
+<meta name="color-scheme" content="light only" />
+
+<title>Bilingual Websites &amp; Social Media for Japan | LUMA</title>
+<meta name="description" content="Websites, social media and iOS apps in English and Japanese, written by one bilingual writer in Yokohama. Landing pages from ¥242,000. Free first consult." />
+<meta name="author" content="LUMA" />
+<meta name="robots" content="noindex, follow" />
+<link rel="canonical" href="https://studio-lumadesign.com/en/lp/craft" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://studio-lumadesign.com/en/lp/craft" />
+<meta property="og:title" content="Bilingual Websites &amp; Social Media for Japan | LUMA" />
+<meta property="og:description" content="Websites, social media and iOS apps in English and Japanese, written by one bilingual writer in Yokohama. Landing pages from ¥242,000. Free first consult." />
+<meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Your English and Japanese pages, written by the same person." />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="LUMA" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Bilingual Websites &amp; Social Media for Japan | LUMA" />
+<meta name="twitter:description" content="Websites, social media and iOS apps in English and Japanese, written by one bilingual writer in Yokohama. Landing pages from ¥242,000." />
+<meta name="twitter:image" content="https://studio-lumadesign.com/og-image.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<!-- IBM Plex Sans / IBM Plex Mono / Noto Sans JP はいずれも SIL Open Font License 1.1 -->
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
+<script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-62F20N179N');</script>
+
+<style>
+  /* LUMA Craft LP(2026-09-26 案1「制作ノート × 朱と白」)。LP 専用の配色で、shared.css は読み込まない */
+  :root {
+    --bg: #FFFFFF;
+    --bg-2: #F4F5F7;
+    --ink: #1C2230;       /* 見出し・反転セクションの地 */
+    --text: #2A303C;      /* 本文 */
+    --muted: #5C6370;     /* 補足 */
+    --line: #DDE0E6;
+    --shu: #C8361B;       /* CTA・リンク・注釈番号 */
+    --shu-hover: #A52A12;
+    --cobalt: #2F5BEA;    /* フォーカスリング */
+    --inv-text: #F4F5F7;
+    --font: 'IBM Plex Sans', 'Noto Sans JP', system-ui, sans-serif;
+    --mono: 'IBM Plex Mono', 'Noto Sans JP', ui-monospace, monospace;
+    --wrap: 1160px;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+  img { max-width: 100%; height: auto; display: block; }
+  h1, h2, h3 { color: var(--ink); margin: 0; line-height: 1.4; font-weight: 700; }
+  p { margin: 0; }
+  a { color: var(--shu); text-decoration: underline; text-underline-offset: 3px; }
+  a:hover { color: var(--shu-hover); }
+  :focus-visible { outline: 2px solid var(--cobalt); outline-offset: 2px; }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+  .mono { font-family: var(--mono); }
+  .skip { position: absolute; left: -9999px; }
+  .skip:focus { left: 16px; top: 16px; background: var(--bg); padding: 8px 12px; z-index: 100; }
+
+  /* ボタン */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 12px 22px; border-radius: 8px; font-weight: 600; font-size: 15px; text-decoration: none; line-height: 1.4; border: 2px solid transparent; transition: background-color .2s ease; }
+  .btn-primary { background: var(--shu); color: #FFFFFF; }
+  .btn-primary:hover { background: var(--shu-hover); color: #FFFFFF; text-decoration: underline; }
+  .btn-ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
+  .btn-ghost:hover { background: var(--bg-2); color: var(--ink); }
+  .inv .btn-primary { border-color: #FFFFFF; } /* 墨の地では朱が 3.03:1 のため白い枠を付ける */
+  .inv .btn-ghost { color: var(--inv-text); border-color: var(--inv-text); }
+  .inv .btn-ghost:hover { background: #2A303C; color: #FFFFFF; }
+
+  /* ヘッダー */
+  .head { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+  .head .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 10px; padding-bottom: 10px; }
+  .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 700; letter-spacing: 0.02em; }
+  .brand-mark { width: 30px; height: 30px; border-radius: 6px; background: var(--ink); color: #FFFFFF; display: grid; place-items: center; font-size: 15px; }
+  .brand small { font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--shu); }
+  .head .btn { min-height: 40px; padding: 8px 16px; font-size: 14px; }
+
+  /* 見出しまわり */
+  section { padding: clamp(64px, 9vw, 112px) 0; }
+  .alt { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .eyebrow { font-family: var(--mono); font-size: 13px; font-weight: 600; color: var(--shu); letter-spacing: 0.04em; }
+  .h2 { font-size: clamp(26px, 3.6vw, 40px); margin-top: 10px; }
+  .lead { font-size: clamp(16px, 1.5vw, 18px); color: var(--muted); margin-top: 16px; max-width: 42em; }
+  .sec-head { margin-bottom: 44px; }
+
+  /* 1 HERO */
+  .hero { padding: clamp(40px, 6vw, 80px) 0 clamp(56px, 8vw, 96px); }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(28px, 4vw, 56px); align-items: center; }
+  .shots { display: block; }
+  .shot { border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: var(--bg-2); box-shadow: 0 18px 40px -24px rgba(28, 34, 48, 0.45); }
+  .shot-bar { display: flex; align-items: center; gap: 6px; padding: 7px 10px; background: var(--bg-2); border-bottom: 1px solid var(--line); }
+  .shot-bar i { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+  .shot-bar span { margin-left: 6px; font-family: var(--mono); font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .shot-ja { width: 80%; }
+  /* 英語版は日本語版の右下へずらして重ねる。画面同士は重なるが、DOM の文字は重ならない位置 */
+  .shot-en { width: 80%; margin: -24% 0 0 20% !important; position: relative; }
+  .nb { display: inline-block; }
+  .shots-cap { font-size: 13px; color: var(--muted); margin-top: 14px; }
+  .hero h1 { font-size: clamp(30px, 4.2vw, 50px); line-height: 1.3; margin-top: 12px; }
+  .hero h1 em { font-style: normal; color: var(--shu); }
+  .hero .lead { margin-top: 18px; }
+  .price-hint { margin-top: 18px; font-size: 15px; color: var(--text); }
+  .price-hint b { font-family: var(--mono); font-weight: 600; color: var(--ink); }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+
+  /* 2 事例 00 */
+  .case-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(28px, 4vw, 56px); align-items: start; }
+  .notes { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+  .notes li { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 14px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+  .notes li:last-child { border-bottom: 0; padding-bottom: 0; }
+  .num { font-family: var(--mono); font-size: 15px; font-weight: 600; color: var(--shu); border: 1.5px solid var(--shu); border-radius: 6px; height: 32px; display: grid; place-items: center; }
+  .notes h3 { font-size: 17px; }
+  .notes p { font-size: 15px; color: var(--muted); margin-top: 4px; line-height: 1.8; }
+  .pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); margin-top: 40px; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--bg); }
+  .pair > div { padding: 22px 24px; }
+  .pair > div + div { border-left: 1px solid var(--line); }
+  .pair .tag { font-family: var(--mono); font-size: 12px; font-weight: 600; color: var(--muted); }
+  .pair blockquote { margin: 10px 0 0; font-size: clamp(18px, 2vw, 22px); font-weight: 700; color: var(--ink); line-height: 1.5; }
+  .pair-note { font-size: 14px; color: var(--muted); margin-top: 12px; }
+  details.memo { margin-top: 28px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); }
+  details.memo summary { cursor: pointer; padding: 16px 20px; font-weight: 600; color: var(--ink); list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+  details.memo summary::-webkit-details-marker { display: none; }
+  details.memo summary::after { content: '+'; font-family: var(--mono); color: var(--shu); }
+  details.memo[open] summary::after { content: '-'; }
+  .memo-body { padding: 0 20px 20px; }
+  .flow { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr); gap: 10px; align-items: center; margin-top: 4px; }
+  .flow div { border: 1px solid var(--line); border-radius: 8px; padding: 12px; background: var(--bg-2); }
+  .flow b { display: block; font-family: var(--mono); font-size: 14px; color: var(--ink); }
+  .flow span { font-size: 13px; color: var(--muted); line-height: 1.6; display: block; margin-top: 2px; }
+  .flow .arrow { border: 0; background: none; padding: 0; font-family: var(--mono); color: var(--shu); font-weight: 600; }
+  .memo-body p { font-size: 15px; color: var(--muted); margin-top: 14px; }
+
+  /* 3 ほかに作ったページ */
+  .gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+  .gallery figure { margin: 0; }
+  .gallery figcaption { font-size: 14px; color: var(--text); margin-top: 10px; line-height: 1.6; }
+  .gallery figcaption small { display: block; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+
+  /* 4 頼めることと料金 */
+  .plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  .plan { border: 1px solid var(--line); border-radius: 12px; background: var(--bg); padding: 26px 24px; display: flex; flex-direction: column; }
+  .plan-tag { font-family: var(--mono); font-size: 12px; font-weight: 600; color: var(--shu); }
+  .plan h3 { font-size: 22px; margin-top: 6px; }
+  .plan > p { font-size: 15px; color: var(--muted); margin-top: 8px; line-height: 1.75; }
+  .rows { list-style: none; margin: 18px 0 0; padding: 0; border-top: 1px solid var(--line); }
+  .rows li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .rows b { font-size: 15px; color: var(--ink); font-weight: 600; }
+  .rows small { grid-column: 1 / 2; font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .amt { grid-column: 2 / 3; grid-row: 1 / 3; align-self: center; text-align: right; font-family: var(--mono); font-weight: 600; font-size: 16px; color: var(--ink); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .plan-inc { margin-top: 16px; font-size: 14px; color: var(--muted); line-height: 1.75; }
+  .plans-note { margin-top: 24px; font-size: 14px; color: var(--muted); }
+  .amt-wrap { white-space: normal; max-width: 8.5em; line-height: 1.4; } /* 英語の長い金額表記は折り返す */
+
+  /* 5 進め方と支払い */
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--bg); }
+  .steps li { padding: 24px 22px; }
+  .steps li + li { border-left: 1px solid var(--line); }
+  .steps .mono { font-size: 13px; font-weight: 600; color: var(--shu); }
+  .steps h3 { font-size: 18px; margin-top: 6px; }
+  .steps p { font-size: 14.5px; color: var(--muted); margin-top: 8px; line-height: 1.75; }
+  .terms { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
+  .term { border-top: 2px solid var(--ink); padding-top: 12px; }
+  .term b { display: block; color: var(--ink); font-size: 15px; }
+  .term p { font-size: 14.5px; color: var(--muted); margin-top: 4px; line-height: 1.75; }
+
+
+  /* 7 制作者 */
+  .maker > div { max-width: 820px; }
+  .maker p + p { margin-top: 14px; }
+  .facts { list-style: none; margin: 22px 0 0; padding: 0; border-top: 1px solid var(--line); }
+  .facts li { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+  .facts span { font-family: var(--mono); font-size: 13px; color: var(--muted); padding-top: 2px; }
+
+  /* 8 FAQ */
+  .faq { max-width: 820px; }
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq summary { cursor: pointer; list-style: none; display: grid; grid-template-columns: 40px minmax(0, 1fr) 20px; gap: 12px; padding: 18px 0; font-weight: 600; color: var(--ink); line-height: 1.6; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary .q { font-family: var(--mono); color: var(--shu); }
+  .faq summary::after { content: '+'; font-family: var(--mono); color: var(--muted); text-align: right; }
+  .faq details[open] summary::after { content: '-'; }
+  .faq .a { padding: 0 32px 20px 52px; color: var(--muted); font-size: 15.5px; }
+
+  /* 9 締め */
+  .inv { background: var(--ink); color: var(--inv-text); }
+  .inv h2 { color: #FFFFFF; }
+  .inv .eyebrow { color: #F4F5F7; }
+  .inv .lead { color: #D5D8DE; }
+  .final { text-align: center; }
+  .final .lead { margin-left: auto; margin-right: auto; }
+  .final .cta-row { justify-content: center; }
+
+  footer { background: var(--ink); color: #C9CDD4; border-top: 1px solid #343B4A; padding: 32px 0 40px; font-size: 14px; }
+  footer ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 24px; }
+  footer a { color: #E6E8EC; }
+  footer a:hover { color: #FFFFFF; }
+  .foot-bottom { margin-top: 20px; padding-top: 16px; border-top: 1px solid #343B4A; }
+
+  /* スマホの固定 CTA バー */
+  .bar { display: none; }
+
+  @media (max-width: 960px) {
+    .hero-grid, .case-grid { grid-template-columns: minmax(0, 1fr); }
+    .hero-copy { order: -1; }
+    .plans { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    .plans .plan:last-child { grid-column: 1 / -1; }
+    .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .steps li:nth-child(3) { border-left: 0; }
+    .steps li:nth-child(n+3) { border-top: 1px solid var(--line); }
+  }
+  @media (max-width: 767.98px) {
+    body { padding-bottom: 0; }
+    footer { padding-bottom: calc(40px + 76px + env(safe-area-inset-bottom, 0px)); }
+    .bar { display: flex; gap: 10px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); background: #FFFFFF; border-top: 1px solid var(--line); box-shadow: 0 -10px 28px -18px rgba(28, 34, 48, 0.5); transition: transform .25s ease; }
+    .bar.is-off { transform: translateY(110%); }
+    .bar .btn { min-height: 48px; padding: 10px 14px; }
+    .bar .btn-primary { flex: 1 1 auto; }
+    /* HERO の2画面は重ねずに横スワイプ */
+    .shots { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
+    .shots .shot { flex: 0 0 86%; width: auto; scroll-snap-align: start; }
+    .shot-en { margin: 0 !important; }
+    .plans { grid-template-columns: minmax(0, 1fr); }
+    .terms { grid-template-columns: minmax(0, 1fr); }
+    .pair { grid-template-columns: minmax(0, 1fr); }
+    .pair > div + div { border-left: 0; border-top: 1px solid var(--line); }
+    .flow { grid-template-columns: minmax(0, 1fr); }
+    .flow .arrow { text-align: center; transform: rotate(90deg); }
+  }
+  @media (max-width: 560px) {
+    .wrap { padding: 0 16px; }
+    .cta-row .btn { width: 100%; }
+    .gallery { grid-template-columns: minmax(0, 1fr); }
+    .steps { grid-template-columns: minmax(0, 1fr); }
+    .steps li + li { border-left: 0; border-top: 1px solid var(--line); }
+    .facts li { grid-template-columns: minmax(0, 1fr); gap: 0; }
+    .faq summary { grid-template-columns: 32px minmax(0, 1fr) 16px; gap: 8px; }
+    .faq .a { padding: 0 0 20px 40px; }
+    .head .brand small { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .bar, .btn { transition: none; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="head">
+  <div class="wrap">
+    <a href="../" class="brand" aria-label="LUMA home"><span class="brand-mark">L</span><span>LUMA</span><small>Craft</small></a>
+    <a href="../contact" class="btn btn-primary">Free consult</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- 1 HERO: 自作サイトの実画面が主役 -->
+<section class="hero" aria-labelledby="h-hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="shots" aria-label="The Japanese and English versions of studio-lumadesign.com">
+        <figure class="shot shot-ja" style="margin:0">
+          <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>studio-lumadesign.com</span></div>
+          <img src="../../images/craft/lp/home-ja.jpg" width="1440" height="900" alt="The Japanese top page of studio-lumadesign.com" />
+        </figure>
+        <figure class="shot shot-en" style="margin:0">
+          <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>studio-lumadesign.com/en</span></div>
+          <img src="../../images/craft/lp/home-en.jpg" width="1440" height="900" alt="The English top page of studio-lumadesign.com" />
+        </figure>
+      </div>
+      <p class="shots-cap">studio-lumadesign.com in Japanese and English (captured 26 September 2026)</p>
+    </div>
+    <div class="hero-copy">
+      <p class="eyebrow">LUMA Craft / Web, social, iOS</p>
+      <h1 id="h-hero">I built my own site, <em>in English and Japanese.</em></h1>
+      <p class="lead">studio-lumadesign.com was designed, written in both languages and set up for publishing by one person, and I still run it. I'll build your bilingual website, social media and iOS app the same way.</p>
+      <p class="price-hint">Bilingual landing pages start at <b>¥242,000</b> (incl. tax). The first consultation is free.</p>
+      <div class="cta-row" id="cta-top">
+        <a href="../contact" class="btn btn-primary">Request a free quote →</a>
+        <a href="https://lin.ee/YetEeTz" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Chat on LINE</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 Case 00: このサイトの作り方 -->
+<section class="alt" aria-labelledby="h-case">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Case 00</p>
+      <h2 class="h2" id="h-case">Case 00: how this site was made</h2>
+      <p class="lead">LUMA Craft started in September 2026, so there are no client projects to show yet. Instead, here is the site you're reading, taken apart as the first case study.</p>
+    </div>
+    <div class="case-grid">
+      <figure class="shot" style="margin:0">
+        <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>studio-lumadesign.com/en/service-web</span></div>
+        <img src="../../images/craft/lp/en-service-web.jpg" width="1440" height="900" alt="The LUMA Craft service page in English" loading="lazy" />
+      </figure>
+      <ol class="notes">
+        <li><span class="num" aria-hidden="true">01</span><div><h3>Japanese and English</h3><p>The main pages come in both Japanese and English, and you switch between them with JP and EN in the header. The English pages live under /en/.</p></div></li>
+        <li><span class="num" aria-hidden="true">02</span><div><h3>Headlines written for each language</h3><p>The English headlines aren't word-for-word translations of the Japanese. The comparison below is from the top page.</p></div></li>
+        <li><span class="num" aria-hidden="true">03</span><div><h3>The same information on a phone</h3><p>Layouts are built so that text never overlaps, on a 375px phone or a 768px tablet.</p></div></li>
+        <li><span class="num" aria-hidden="true">04</span><div><h3>Publishing, too</h3><p>The copy and code are kept on GitHub, and the site is published with Cloudflare Pages.</p></div></li>
+        <li><span class="num" aria-hidden="true">05</span><div><h3>Still updated after launch</h3><p>Tournament pages, news and service pages keep being added after launch.</p></div></li>
+      </ol>
+    </div>
+
+    <div class="pair" aria-label="The top page headline in Japanese and English">
+      <div lang="ja">
+        <p class="tag">JA / Top page headline</p>
+        <blockquote>ノーレートでも勝ち負けのある、本気の麻雀。</blockquote>
+      </div>
+      <div>
+        <p class="tag">EN / Top page headline</p>
+        <blockquote>Serious mahjong, with nothing at stake but the result.</blockquote>
+      </div>
+    </div>
+    <p class="pair-note">Both headlines introduce S.League, a health mahjong tournament in Shimbashi, Tokyo. The Japanese uses 「ノーレート」, a mahjong term that makes no sense in a literal English version, so the English headline says in one line that the only thing at stake is the result.</p>
+
+    <details class="memo">
+      <summary>Production notes: how the site gets published</summary>
+      <div class="memo-body">
+        <div class="flow">
+          <div><b>GitHub</b><span>Stores the copy and code, with a history of every change</span></div>
+          <div class="arrow" aria-hidden="true">→</div>
+          <div><b>Cloudflare Pages</b><span>Builds the site from what's stored and serves it</span></div>
+          <div class="arrow" aria-hidden="true">→</div>
+          <div><b>studio-lumadesign.com</b><span>The Japanese and English versions go live</span></div>
+        </div>
+        <p>For client sites, it depends on whether you want to make updates yourself. If you do, I set up an editor (microCMS) for your text and photos, and corporate sites come with an update manual.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- 3 ほかに作ったページ -->
+<section aria-labelledby="h-works">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Other pages</p>
+      <h2 class="h2" id="h-works">Other pages I built on this site</h2>
+      <p class="lead">Tournament sign-up pages, service pages with pricing and their English versions, all built on the same setup.</p>
+    </div>
+    <div class="gallery">
+      <figure><div class="shot"><img src="../../images/craft/lp/sleague.jpg" width="1440" height="900" alt="The S.League page" loading="lazy" /></div><figcaption>S.League overview<small>/s-league</small></figcaption></figure>
+      <figure><div class="shot"><img src="../../images/craft/lp/sl26.jpg" width="1440" height="900" alt="The S.League 26 tournament page" loading="lazy" /></div><figcaption>Tournament page with sign-up details<small>/s-league-26</small></figcaption></figure>
+      <figure><div class="shot"><img src="../../images/craft/lp/service-web.jpg" width="1440" height="900" alt="The LUMA Craft service page in Japanese" loading="lazy" /></div><figcaption>Service page with pricing tabs, in Japanese<small>/service-web</small></figcaption></figure>
+      <figure><div class="shot"><img src="../../images/craft/lp/en-service-web.jpg" width="1440" height="900" alt="The LUMA Craft service page in English" loading="lazy" /></div><figcaption>The same page in English<small>/en/service-web</small></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 4 頼めることと料金 -->
+<section class="alt" aria-labelledby="h-plans">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Services and pricing</p>
+      <h2 class="h2" id="h-plans">What I make, and what it costs (incl. tax)</h2>
+      <p class="lead">I take on websites, social media and iOS apps. For all three, I write the English and the Japanese copy myself.</p>
+    </div>
+    <div class="plans">
+      <article class="plan">
+        <p class="plan-tag">01 / Website</p>
+        <h3>Websites</h3>
+        <p>From a single landing page to a bilingual corporate site of 10 to 15 pages.</p>
+        <ul class="rows">
+          <li><b>Landing page, Japanese</b><small>1 page</small><span class="amt">¥132,000</span></li>
+          <li><b>Landing page, bilingual</b><small>1 page, English and Japanese</small><span class="amt">¥242,000</span></li>
+          <li><b>Small business site</b><small>5 pages in both languages, contact form, Google Maps</small><span class="amt">¥550,000</span></li>
+          <li><b>Corporate site</b><small>10 to 15 pages in both languages, update manual</small><span class="amt">From ¥1,100,000</span></li>
+        </ul>
+        <p class="plan-inc">Care plans: Lite (2 updates a month, uptime monitoring) is ¥11,000 a month, and Standard (8 updates a month, monthly report) is ¥33,000 a month.</p>
+      </article>
+      <article class="plan">
+        <p class="plan-tag">02 / Social media</p>
+        <h3>Social media</h3>
+        <p>I set up your account and can handle your monthly posting.</p>
+        <ul class="rows">
+          <li><b>Setup</b><small>1 platform, bilingual profile, posting guidelines, 9 launch posts</small><span class="amt">¥154,000</span></li>
+          <li><b>Lite</b><small>8 posts a month, English and Japanese</small><span class="amt">¥66,000/month</span></li>
+          <li><b>Standard</b><small>12 posts a month, English and Japanese, Stories, monthly report</small><span class="amt">¥121,000/month</span></li>
+        </ul>
+        <p class="plan-inc">No passwords shared. You add me to your business account as a team member, and I work through that access.</p>
+      </article>
+      <article class="plan">
+        <p class="plan-tag">03 / iOS apps</p>
+        <h3>iOS apps</h3>
+        <p>Test the idea with a three-screen prototype, then move on to the full build.</p>
+        <ul class="rows">
+          <li><b>Prototype</b><small>3 core screens, distributed via TestFlight</small><span class="amt">¥550,000</span></li>
+          <li><b>Small app</b><small>Content pages, enquiries, simple login</small><span class="amt">From ¥2,440,000</span></li>
+          <li><b>Mid-size app</b><small>Member accounts, payments, push notifications</small><span class="amt">From ¥5,500,000</span></li>
+          <li><b>Maintenance</b><small>iOS updates, minor fixes</small><span class="amt amt-wrap">15% of build cost a year</span></li>
+        </ul>
+        <p class="plan-inc">The app is published from your own Apple Developer account.</p>
+      </article>
+    </div>
+    <p class="plans-note">For plans marked "From", I'll quote after our first call. Japanese-only or English-only sites with more than one page are quoted individually.</p>
+  </div>
+</section>
+
+<!-- 5 進め方と支払い -->
+<section aria-labelledby="h-flow">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">How it works</p>
+      <h2 class="h2" id="h-flow">How it works, and when you pay</h2>
+    </div>
+    <ol class="steps">
+      <li><span class="mono">STEP 01</span><h3>Free consultation</h3><p>Tell me what you want to build, who it's for and when you'd like it live.</p></li>
+      <li><span class="mono">STEP 02</span><h3>Quote and contract</h3><p>Once you're happy with the quote, we sign and you pay a 50% deposit.</p></li>
+      <li><span class="mono">STEP 03</span><h3>Build</h3><p>Design and build, with two rounds of revisions included.</p></li>
+      <li><span class="mono">STEP 04</span><h3>Sign-off and launch</h3><p>After sign-off it goes live and the remaining 50% is due. A care plan keeps it updated.</p></li>
+    </ol>
+    <div class="terms">
+      <div class="term"><b>Revisions</b><p>Two rounds are included. From the third round on, I'll quote separately.</p></div>
+      <div class="term"><b>App Store resubmission</b><p>If Apple asks for changes, fixes and resubmission are included up to two times.</p></div>
+      <div class="term"><b>Ongoing plans</b><p>Website care and social media management are billed monthly. iOS maintenance is billed yearly.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 お客様の声: 1件目の納品後、ご本人の了承を得てからここに section を追加する(2026-09-26 回答: それまでは表示しない) -->
+
+<!-- 7 制作者 -->
+<section class="alt" aria-labelledby="h-maker">
+  <div class="wrap maker">
+    <div>
+      <p class="eyebrow">Who makes it</p>
+      <h2 class="h2" id="h-maker">Who makes it</h2>
+      <p class="lead">I lived in Brisbane, Australia, from January 2011 to March 2020. I'm now based in Yokohama, and I write both the Japanese and the English copy myself.</p>
+      <p class="lead">At LUMA, I also run English coaching and English-language tours of Tokyo.</p>
+      <ul class="facts">
+        <li><span>Based in</span>Yokohama</li>
+        <li><span>Languages</span>Japanese, English</li>
+        <li><span>Overseas</span>Brisbane, Australia (January 2011 to March 2020)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 8 FAQ -->
+<section aria-labelledby="h-faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">FAQ</p>
+      <h2 class="h2" id="h-faq">Frequently asked questions</h2>
+    </div>
+    <div class="faq">
+      <details open><summary><span class="q">Q1</span><span>Can I update the site myself after launch?</span></summary><p class="a">Yes. If you want to edit it yourself, I set up an editor (microCMS) for your text and photos, and corporate sites come with an update manual. If you'd rather hand updates over, care plans start at ¥11,000 a month.</p></details>
+      <details><summary><span class="q">Q2</span><span>Can you build a Japanese-only or English-only site?</span></summary><p class="a">Yes. A Japanese landing page is ¥132,000 for one page. For larger sites, and for English-only sites, I'll quote once I know the page count and content.</p></details>
+      <details><summary><span class="q">Q3</span><span>Do I have to share my social media password?</span></summary><p class="a">No. You add me to your business account as a team member, and I work through that access.</p></details>
+      <details><summary><span class="q">Q4</span><span>How many rounds of revisions are included?</span></summary><p class="a">Build plans include two rounds of revisions. From the third round on, I'll quote separately.</p></details>
+      <details><summary><span class="q">Q5</span><span>What happens if Apple rejects the app?</span></summary><p class="a">I go through the App Store review requirements with you at the requirements stage and build to them. If Apple asks for changes, fixes and resubmission are included up to two times.</p></details>
+      <details><summary><span class="q">Q6</span><span>Who builds the iOS apps?</span></summary><p class="a">I build them myself, using AI-assisted development tools.</p></details>
+      <details><summary><span class="q">Q7</span><span>How and when do I pay?</span></summary><p class="a">50% is due when we sign and the remaining 50% after sign-off. Care plans and social media management are billed monthly.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 9 締めの相談 -->
+<section class="inv final" aria-labelledby="h-final">
+  <div class="wrap">
+    <p class="eyebrow">Free consultation</p>
+    <h2 class="h2" id="h-final">Tell me what you want to build.</h2>
+    <p class="lead">The first consultation is free. Send me what you want to make, who it's for and when you'd like it live, through the contact form or LINE.</p>
+    <div class="cta-row" id="cta-bottom">
+      <a href="../contact" class="btn btn-primary">Request a free quote →</a>
+      <a href="https://lin.ee/YetEeTz" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Chat on LINE</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul>
+      <li><a href="../service-web">LUMA Craft service page</a></li>
+      <li><a href="../legal#privacy">Privacy Policy</a></li>
+      <li><a href="../legal">Legal &amp; Policies</a></li>
+      <li><a href="../../lp/craft" lang="ja">日本語</a></li>
+    </ul>
+    <div class="foot-bottom">© 2026 LUMA. All rights reserved.</div>
+  </div>
+</footer>
+
+<div class="bar is-off" id="bar" inert>
+  <a href="https://lin.ee/YetEeTz" class="btn btn-ghost" target="_blank" rel="noopener noreferrer" aria-label="Chat on LINE (opens in a new tab)">LINE</a>
+  <a href="../contact" class="btn btn-primary">Book a free consult →</a>
+</div>
+
+<script>
+  // 固定 CTA バー: 最初と最後の CTA が画面にある間は隠し、inert でフォーカスも外す
+  (function () {
+    var bar = document.getElementById('bar');
+    var targets = [document.getElementById('cta-top'), document.getElementById('cta-bottom')];
+    function update() {
+      var vh = window.innerHeight;
+      var on = targets.some(function (t) { var r = t.getBoundingClientRect(); return r.bottom > 0 && r.top < vh; });
+      bar.classList.toggle('is-off', on);
+      if (on) bar.setAttribute('inert', ''); else bar.removeAttribute('inert');
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+</script>
+</body>
+</html>

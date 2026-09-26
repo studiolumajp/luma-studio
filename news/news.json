@@ -1,5 +1,75 @@
 [
   {
+    "slug": "home-renewal",
+    "date": "2026-09-26",
+    "cat": "update",
+    "title": {
+      "ja": "トップページを新しくしました",
+      "en": "The Home Page Has Been Redesigned"
+    },
+    "lead": {
+      "ja": "S.League の対局動画と次回大会を最初に置き、目的から入口を選べるようにしました。",
+      "en": "S.League match footage and the next tournament now come first, and you can choose where to go by what you want to do."
+    },
+    "body": {
+      "ja": [
+        "トップページの最初の画面に、2026年7月25日の S.League 24 で撮った対局の動画を置きました。その下には、2022年から24回、延べ367名という記録と、次回大会の日程、参加費、締切を並べています。",
+        "記録と次回大会の下には、目的から選べる入口を4つ置きました。麻雀の大会、英会話と英語コーチング、英語で巡る東京ツアー、イベントの運営のどれかを選ぶと、要点と申し込み先が出ます。",
+        "S.League の紹介文も、実際の参加者に合わせて書き直しました。プロ雀士も、プロを目指す方も参加する大会で、初中級以上の方が自分の実力を試しに来ています。",
+        "9月3日に始めた写真15枚の入れ替え表示は、今回で終えました。写真の作品は、撮影地ごとのページで公開を続けています。"
+      ],
+      "en": [
+        "The top of the home page now plays footage from S.League 24, filmed on 25 July 2026. Below it sit the record so far, 24 events and 367 entries since 2022, and the date, fee and entry deadline of the next tournament.",
+        "Under that are four entry points, chosen by what you want to do: play in a mahjong tournament, learn to speak English, tour Tokyo in English, or have an event run for you. Pick one to see the key facts and how to book.",
+        "The S.League description now matches who actually plays. Professional players and aspiring pros take part, and players at intermediate level and above come to test their game.",
+        "The rotating set of fifteen photographs, added on 3 September, has been retired. The photography stays online on the location pages."
+      ]
+    },
+    "image": "images/sleague/SL24/sl24-hero-poster.jpg",
+    "link": {
+      "ja": "index.html",
+      "en": "index.html"
+    },
+    "linkLabel": {
+      "ja": "トップページを見る",
+      "en": "Open the home page"
+    }
+  },
+  {
+    "slug": "frame-bookings-closing",
+    "date": "2026-09-21",
+    "cat": "svc",
+    "title": {
+      "ja": "LUMA Frame の撮影は9月30日で新規受付を終了します",
+      "en": "LUMA Frame Stops Taking New Photo Bookings on 30 September"
+    },
+    "lead": {
+      "ja": "作品と撮影ノートは公開を続けます。LUMA Voice には3か月の英語コーチングを加えました。",
+      "en": "The photographs and shooting notes stay online. LUMA Voice now has a three-month English coaching course."
+    },
+    "body": {
+      "ja": [
+        "LUMA Frame の撮影は、2026年9月30日で新規の受付を終了します。すでにお申し込みいただいている撮影は、お約束した内容と納期のとおりに行います。",
+        "2026年10月以降に撮影をご希望の場合は、提携の写真家が担当します。作品と撮影ノートは、このまま公開を続けます。",
+        "LUMA Voice には、仕事で英語を使う方に向けた3か月の英語コーチング (¥165,000・税込) を加えました。トップページの最初には、2022年から続けている健康麻雀の大会 S.League を置いています。"
+      ],
+      "en": [
+        "LUMA Frame stops taking new photo bookings on 30 September 2026. Shoots that are already booked will go ahead exactly as agreed, including delivery times.",
+        "From October 2026, photography requests are handled by a partner photographer. The photographs and the shooting notes stay online.",
+        "LUMA Voice now has a three-month English coaching course (¥165,000, tax incl.) for people who use English at work. The home page now opens with S.League, the health-mahjong tournament I have hosted since 2022."
+      ]
+    },
+    "image": "images/photography/shonan-magenta-dusk-coast.jpg",
+    "link": {
+      "ja": "services.html",
+      "en": "en/services.html"
+    },
+    "linkLabel": {
+      "ja": "サービス一覧を見る",
+      "en": "See all services"
+    }
+  },
+  {
     "slug": "hero-slideshow",
     "date": "2026-09-03",
     "cat": "update",

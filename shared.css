@@ -847,7 +847,7 @@ footer .brand-mark::after { box-shadow: 0 0 0 2px #134E6F; }
 /* 読みたい語を追えるよう、ホバー中とフォーカス中は止める。
    ホバーはマウスのある環境だけに限る。iOS Safari はタップした要素に :hover を当てて
    別の場所をタップするまで外さないため、タッチだと指が触れた時点で永久に止まる。
-   停止ボタンは Sho の指示で置かない (2026-09-03)。 */
+   停止ボタンは運営者の指示で置かない (2026-09-03)。 */
 @media (hover: hover) and (pointer: fine) {
   .marquee:hover .marquee-track { animation-play-state: paused; }
 }
@@ -1442,7 +1442,7 @@ body:has(.alb.open) .line-float { display: none; }
 .lk-foot a { color: var(--text-muted); }
 
 /* ── 日本語の折り返し (2026-09-05 追加) ─────────────────
-   Sho 指摘「PC でも変な場所で改行が入る」への対策。
+   運営者の指摘「PC でも変な場所で改行が入る」への対策。
    word-break: auto-phrase は文節単位で折り返す (Chrome 119+ / 未対応ブラウザは無視)。
    未対応ブラウザ向けには HTML 側の <wbr> と <span class="nb"> で補う。
    overflow-wrap: anywhere は使わない (語中で切れるため)。 */
@@ -1518,6 +1518,12 @@ br.sp { display: none; }
     image-set(url('IMG_0078.webp') type("image/webp"), url('IMG_0078.jpg') type("image/jpeg"));
 }
 
+/* コミュニティのカード (2026-09-21 追加)。写真は S.League 24 */
+.cmp-card.theme-community { --cmp-bg: linear-gradient(135deg, var(--bg) 0%, var(--bg-muted) 100%); --cmp-tag: var(--sky); }
+.cmp-card.has-photo.theme-community .cmp-visual::before {
+  background-image: url('images/compare/compare-community.jpg');
+  background-image: image-set(url('images/compare/compare-community.webp') type("image/webp"), url('images/compare/compare-community.jpg') type("image/jpeg"));
+}
 /* ギャラリーの <img> を <picture> で包んだため (2026-09-05 / 工程C)。
    picture は既定でインライン要素なので、行送り分の隙間が出ないよう block にする */
 .photo-item picture { display: block; }

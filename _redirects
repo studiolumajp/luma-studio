@@ -114,3 +114,6 @@
 /images/photography/aviation-44.jpg          /images/photography/itami-terminal-lights.jpg                    301
 /images/photography/aviation-45.jpg          /images/photography/itami-sunflowers-by-the-runway.jpg           301
 /lp/frame.html        /service-photo         301
+
+# 2026-09-20 口コミ依頼用の短縮 URL。GBP の口コミ依頼リンク (https://g.page/r/...) を差し込み、行頭の # を外すと有効になる
+# /review               https://g.page/r/XXXXXXXX/review   302

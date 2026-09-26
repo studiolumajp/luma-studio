@@ -55,7 +55,7 @@
   gtag('config', 'G-62F20N179N');
 </script>
 
-<link rel="stylesheet" href="./shared.css?v=aqua30" />
+<link rel="stylesheet" href="./shared.css?v=aqua32" />
 <style id="page-overrides">
   .legal-hero { padding: 64px 0 32px; }
   .legal-hero h1 .accent {
@@ -160,9 +160,9 @@
         <ul class="dropdown-menu">
           <li><a href="./services">サービス一覧</a></li>
           <li><a href="./service-english">英会話レッスン</a></li>
-          <li><a href="./service-photo">記念撮影・ポートレート</a></li>
           <li><a href="./service-tour">英語で巡る東京ツアー</a></li>
           <li><a href="./service-community">コミュニティイベント</a></li>
+          <li><a href="./service-web">Web・SNS・アプリ制作</a></li>
           <li><a href="./s-league">S.League 麻雀大会</a></li>
         </ul>
       </li>
@@ -224,9 +224,9 @@
         <tr><th>メールアドレス</th><td><a href="mailto:studio.luma.jp@gmail.com">studio.luma.jp@gmail.com</a></td></tr>
         <tr><th>サービス名</th><td>S.League (麻雀トーナメント大会) ほか LUMA 各種サービス</td></tr>
         <tr><th>販売価格</th><td>各サービス・大会ページに記載の参加費・料金 (消費税込)</td></tr>
-        <tr><th>料金以外に必要な費用</th><td>撮影サービス (LUMA Frame): 屋内で撮影する場合のスタジオ・レンタルスペース等の<strong>施設利用料</strong>はお客様のご負担となります。また、<strong>東京都23区内・横浜市・川崎市以外</strong>へ出張する場合の交通費を実費でいただきます。いずれもお見積もりの際に金額をお知らせします。</td></tr>
+        <tr><th>料金以外に必要な費用</th><td>英語コーチング (LUMA Voice): 料金はオンラインでの提供を前提としています。対面をご希望の場合は、<strong>料金の20%の対面オプション料金</strong>と、<strong>交通費と会場費の実費</strong>をいただきます。金額はお申し込みの前にお知らせします。<br>撮影サービス (LUMA Frame): 屋内で撮影する場合のスタジオ・レンタルスペース等の<strong>施設利用料</strong>はお客様のご負担となります。また、<strong>東京都23区内・横浜市・川崎市以外</strong>へ出張する場合の交通費を実費でいただきます。いずれもお見積もりの際に金額をお知らせします。</td></tr>
         <tr><th>代金のお支払い方法</th><td>クレジットカード決済 (Square Invoice / Square お支払いリンク)<br>銀行振込</td></tr>
-        <tr><th>支払い期限</th><td>S.League: お申込みから5日以内<br>撮影サービス (LUMA Frame): <strong>全額前払い制</strong>。お見積もりにご同意後、お送りするお支払いリンクよりご入金ください。</td></tr>
+        <tr><th>支払い期限</th><td>S.League: お申込みから5日以内<br>英語コーチング: <strong>前払い制</strong>。開始日の確定後にお送りする請求書でお支払いください。<br>撮影サービス (LUMA Frame): <strong>全額前払い制</strong>。お見積もりにご同意後、お送りするお支払いリンクよりご入金ください。<br>LUMA Craft: 契約時に着手金50%、検収後に残金</td></tr>
         <tr><th>サービスの提供時期</th><td>各大会・サービスページに記載の開催日当日、または合意した日時</td></tr>
         <tr><th>申込の有効期限</th><td>入金確認をもって参加確定 (撮影サービスは撮影日の確定)。期限内にお支払いがない場合はキャンセルとみなします。</td></tr>
         <tr><th>返品・キャンセル</th><td>下記「キャンセルポリシー」をご参照ください。サービスの性質上、デジタルコンテンツ・クーリングオフ制度の適用はありません。</td></tr>
@@ -343,6 +343,7 @@
 
     <div class="legal-body">
       <h3>2. 撮影サービス (LUMA Frame)</h3>
+      <p><strong>撮影サービスの新規受付は、2026年9月30日で終了します。</strong>以下の規定は、同日までにお申し込みいただいた撮影に適用します。2026年10月以降の撮影のご希望は提携の写真家が担当し、条件はお見積もりの際に個別にご案内します。</p>
       <p>撮影サービスは全額前払い制です。お見積もりにご同意いただいたあと、Square のお支払いリンクをメールでお送りします。<strong>ご入金の確認をもって撮影日が確定し、以降は以下のポリシーが適用されます。</strong>ご入金前のキャンセルは無料で、費用は一切かかりません。</p>
       <p>日程はお客様のために確保しており、直前のキャンセルは他のご依頼をお受けできなくなるため、期間に応じてご返金額が変わります。</p>
     </div>
@@ -419,7 +420,33 @@
     </div>
 
     <div class="legal-body">
-      <h3>3. 全サービス共通</h3>
+      <h3>3. 英語コーチング (LUMA Voice)</h3>
+    </div>
+
+    <table class="legal-table cancel-table">
+      <thead>
+        <tr><th style="width:50%">キャンセル申請のタイミング</th><th>ご返金額</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>初回の実施日の7日前まで</td><td class="fee-zero">全額返金<br><span style="font-size:12px;color:var(--text-soft);">(キャンセル料 無料)</span></td></tr>
+        <tr><td>初回の実施日の6日前〜前日</td><td class="fee-half">50%を返金<br><span style="font-size:12px;color:var(--text-soft);">(キャンセル料 料金の50%)</span></td></tr>
+        <tr><td>初回の実施日以降 (開始後)</td><td class="fee-full">返金なし</td></tr>
+      </tbody>
+    </table>
+
+    <div class="legal-body">
+      <h3>無連絡での欠席について</h3>
+      <p>開始時刻を<strong>10分</strong>過ぎてもご連絡がない場合は、欠席として扱います。その回の振替はありません。</p>
+
+      <h3>提供者都合による中止・変更</h3>
+      <p>当事業者の都合で実施できなくなった場合は、全額返金または別日程への振替のうち、お客様のご希望の方法で対応します。</p>
+
+      <h3>対面オプションの実費について</h3>
+      <p>対面での実施のために手配した会場の利用料や交通機関など、キャンセルの時点ですでに発生している実費がある場合は、上記とは別にご負担いただきます。該当する場合は事前にお知らせします。</p>
+    </div>
+
+    <div class="legal-body">
+      <h3>4. 全サービス共通</h3>
 
       <h3>返金方法</h3>
       <p>クレジットカードでお支払いの場合は、Square経由でカードへご返金します (返金まで3〜10営業日程度かかる場合があります)。銀行振込の場合は、ご指定の口座へ振込返金いたします。<strong>決済手数料は当事業者が負担しますので、お客様のご負担はありません。</strong>「全額返金」と記載している場合は、お支払いいただいた金額の全額をお返しします。</p>
@@ -543,9 +570,10 @@
         <h4>サービス</h4>
         <ul>
           <li><a href="./service-english">英会話レッスン</a></li>
-          <li><a href="./service-photo">記念撮影・ポートレート</a></li>
+          <li><a href="./photography">写真の作品</a></li>
           <li><a href="./s-league">S.League 麻雀</a></li>
           <li><a href="./service-tour">英語で巡る東京ツアー</a></li>
+          <li><a href="./service-web">Web・SNS・アプリ制作</a></li>
         </ul>
       </div>
       <div class="footer-col">

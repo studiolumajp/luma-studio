@@ -108,7 +108,7 @@
   gtag('config', 'G-62F20N179N');
 </script>
 
-<link rel="stylesheet" href="./shared.css?v=aqua30" />
+<link rel="stylesheet" href="./shared.css?v=aqua32" />
 <style id="page-overrides">
   /* ── HERO: 背景写真 + ダークオーバーレイ + 白文字 ── */
   .sl-hero {
@@ -240,7 +240,7 @@
     border-radius: var(--radius); padding: 24px 28px; text-align: left;
   }
 
-  /* ── キャンセル料の注意喚起 (Sho 決定 2026-08-13 案A: 開催1ヶ月前を切っているため先出しする) ── */
+  /* ── キャンセル料の注意喚起 (2026-08-13 決定 案A: 開催1ヶ月前を切っているため先出しする) ── */
   .cancel-alert {
     max-width: 640px; margin: 28px auto 0; padding: 20px 24px; text-align: left;
     border-radius: var(--radius); background: #FFF8EC;
@@ -262,7 +262,7 @@
   @media (max-width:880px){ .payment-grid{grid-template-columns:1fr} }
 </style>
 <style id="soft-aqua-palette">
-  /* S.League を CLAUDE.md 4-1 の Soft Aqua パレットへ統一 (Sho 決定 2026-07-11)。
+  /* S.League を CLAUDE.md 4-1 の Soft Aqua パレットへ統一 (2026-07-11 決定)。
      shared.css の既定トークンをこのページ内で上書きする。 */
   :root{
     --bg:#FFFFFF; --bg-soft:#F8FBFC; --bg-muted:#EBF5FA; --surface:#FFFFFF;
@@ -287,6 +287,7 @@
       <li><a href="./s-league-24">S.League 24</a></li>
       <li><a href="./s-league-archive">アーカイブ</a></li>
       <li><a href="./service-community">LUMA Circle</a></li>
+      <li><a href="./service-web">LUMA Craft</a></li>
       <li><a href="./">LUMA トップ</a></li>
     </ul>
     <div style="display:flex;gap:10px;align-items:center;">
@@ -441,7 +442,7 @@
     </div>
     <ul class="schedule-list reveal">
       <li class="schedule-item"><span class="schedule-time">11:50</span><div class="schedule-text"><span class="schedule-bold">受付開始</span>開会10分前から受付を行います。時間に余裕を持ってお越しください。</div></li>
-      <li class="schedule-item"><span class="schedule-time">12:00</span><div class="schedule-text"><span class="schedule-bold">開会式</span>当日の進め方をひととおりご説明します。はじめての方も、ここを聞いておけば大丈夫です。</div></li>
+      <li class="schedule-item"><span class="schedule-time">12:00</span><div class="schedule-text"><span class="schedule-bold">開会式</span>当日の進め方と独自ルールをひととおりご説明します。</div></li>
       <li class="schedule-item"><span class="schedule-time">12:10頃</span><div class="schedule-text"><span class="schedule-bold">予選 (1〜6回戦)</span>各回戦は50分打ち切り、それぞれの半荘の間に10分程度の小休憩を挟みます。</div></li>
       <li class="schedule-item"><span class="schedule-time">18:00頃</span><div class="schedule-text"><span class="schedule-bold">夕食休憩 (45分程度)</span>予選6回戦を終えて、夕食をとりながら一息。最終戦に備えます。</div></li>
       <li class="schedule-item highlight"><span class="schedule-time">18:45頃</span><div class="schedule-text"><span class="schedule-bold">順位決定戦 (7回戦目)</span>予選順位に応じて卓組を決定。全員参加の最終戦で、優勝が決まります。</div></li>
@@ -487,7 +488,7 @@
       <div class="apply-deadline"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 2v3" /> <path d="M16 2v3" /> <rect x="3" y="3" width="18" height="18" rx="2" /> <path d="M3 9h18" /></svg> 申込締切: 2026年10月12日 (月) 22:00</div>
       <p style="font-size: 13px; color: var(--text-soft); margin-top: 16px; line-height: 1.7;">
         開催日: <strong style="color:var(--text);">2026年10月18日 (日) 12:00〜20:00</strong> · 個人戦 · 定員24名 (6卓)<br>
-        おひとりでのお申込みを歓迎します。初参加の方も、当日は運営がフォローします。
+        おひとりでのお申込みを歓迎します。対象は初中級以上の方で、プロ雀士も参加します。
       </p>
 
       <div class="payment-grid">
@@ -543,28 +544,6 @@
 </section>
 
 
-<!-- ── LUMA Frame への橋 (2026-09-05 追加) ── -->
-<section id="frame-bridge" aria-labelledby="frame-bridge-heading">
-  <div class="container">
-    <div class="proof-grid reveal">
-      <div>
-        <span class="eyebrow">LUMA Frame</span>
-        <h2 id="frame-bridge-heading" style="margin:16px 0 14px;">大会の記念写真も<wbr /> <span class="nb">LUMA Frame</span> が<wbr />撮っています</h2>
-        <p style="color:var(--text-muted);margin-bottom:12px;">
-          S.League を主催している本人が、LUMA Frame の名前で写真を撮っています。大会当日の記念撮影も承ります。
-        </p>
-        <p style="color:var(--text-muted);margin-bottom:24px;">
-          チームでの一枚も<wbr />ご家族やご友人との撮影も<wbr />お受けします。<wbr /><span class="nb">東京・横浜</span>へ出張し、<wbr />データは撮影日から<span class="nb">7日以内に</span><wbr />お渡しします。
-        </p>
-        <a href="./service-photo" class="btn btn-secondary"><span class="nb">詳細を見る →</span></a>
-      </div>
-      <div class="proof-media" style="grid-template-columns:1fr;">
-        <img src="./images/sleague/SL24/sl24-03.jpg" alt="青い牌が並ぶ対局中の全自動卓 (S.League 24)" loading="lazy" width="1600" height="899" />
-      </div>
-    </div>
-  </div>
-</section>
-
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -581,6 +560,7 @@
           <li><a href="./s-league-archive">成績アーカイブ</a></li>
           <li><a href="./s-league-sponsor">スポンサー募集</a></li>
           <li><a href="./service-community">LUMA Circle</a></li>
+          <li><a href="./service-web">LUMA Craft</a></li>
         </ul>
       </div>
       <div class="footer-col">

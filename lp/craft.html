@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ja" id="html-root">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#FFFFFF" />
+<meta name="color-scheme" content="light only" />
+
+<title>日英のサイトと SNS を、同じ人が作る | LUMA</title>
+<meta name="description" content="日本語と英語の Web サイト、SNS、iOS アプリを制作します。日英の LP は242,000円から、SNS の初期構築は154,000円から。文章はどちらの言語も運営者が自分で書きます。初回の相談は無料です。" />
+<meta name="author" content="LUMA" />
+<meta name="robots" content="noindex, follow" />
+<link rel="canonical" href="https://studio-lumadesign.com/lp/craft" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://studio-lumadesign.com/lp/craft" />
+<meta property="og:title" content="日英のサイトと SNS を、同じ人が作る | LUMA" />
+<meta property="og:description" content="日本語と英語の Web サイト、SNS、iOS アプリを制作します。日英の LP は242,000円から、SNS の初期構築は154,000円から。初回の相談は無料です。" />
+<meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="英語版のサイトと SNS を、日本語版と同じ人が作る。" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:site_name" content="LUMA" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@s_league_Japan" />
+<meta name="twitter:title" content="日英のサイトと SNS を、同じ人が作る | LUMA" />
+<meta name="twitter:description" content="日本語と英語の Web サイト、SNS、iOS アプリを制作します。日英の LP は242,000円から。初回の相談は無料です。" />
+<meta name="twitter:image" content="https://studio-lumadesign.com/og-image.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<!-- IBM Plex Sans / IBM Plex Mono / Noto Sans JP はいずれも SIL Open Font License 1.1 -->
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-62F20N179N');
+</script>
+
+<style>
+  /* LUMA Craft LP(2026-09-26 案1「制作ノート × 朱と白」)。LP 専用の配色で、shared.css は読み込まない */
+  :root {
+    --bg: #FFFFFF;
+    --bg-2: #F4F5F7;
+    --ink: #1C2230;       /* 見出し・反転セクションの地 */
+    --text: #2A303C;      /* 本文 */
+    --muted: #5C6370;     /* 補足 */
+    --line: #DDE0E6;
+    --shu: #C8361B;       /* CTA・リンク・注釈番号 */
+    --shu-hover: #A52A12;
+    --cobalt: #2F5BEA;    /* フォーカスリング */
+    --inv-text: #F4F5F7;
+    --font: 'IBM Plex Sans', 'Noto Sans JP', system-ui, sans-serif;
+    --mono: 'IBM Plex Mono', 'Noto Sans JP', ui-monospace, monospace;
+    --wrap: 1160px;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+  img { max-width: 100%; height: auto; display: block; }
+  h1, h2, h3 { color: var(--ink); margin: 0; line-height: 1.4; font-weight: 700; }
+  p { margin: 0; }
+  a { color: var(--shu); text-decoration: underline; text-underline-offset: 3px; }
+  a:hover { color: var(--shu-hover); }
+  :focus-visible { outline: 2px solid var(--cobalt); outline-offset: 2px; }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+  .mono { font-family: var(--mono); }
+  .skip { position: absolute; left: -9999px; }
+  .skip:focus { left: 16px; top: 16px; background: var(--bg); padding: 8px 12px; z-index: 100; }
+
+  /* ボタン */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 12px 22px; border-radius: 8px; font-weight: 600; font-size: 15px; text-decoration: none; line-height: 1.4; border: 2px solid transparent; transition: background-color .2s ease; }
+  .btn-primary { background: var(--shu); color: #FFFFFF; }
+  .btn-primary:hover { background: var(--shu-hover); color: #FFFFFF; text-decoration: underline; }
+  .btn-ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
+  .btn-ghost:hover { background: var(--bg-2); color: var(--ink); }
+  .inv .btn-primary { border-color: #FFFFFF; } /* 墨の地では朱が 3.03:1 のため白い枠を付ける */
+  .inv .btn-ghost { color: var(--inv-text); border-color: var(--inv-text); }
+  .inv .btn-ghost:hover { background: #2A303C; color: #FFFFFF; }
+
+  /* ヘッダー */
+  .head { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+  .head .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 10px; padding-bottom: 10px; }
+  .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 700; letter-spacing: 0.02em; }
+  .brand-mark { width: 30px; height: 30px; border-radius: 6px; background: var(--ink); color: #FFFFFF; display: grid; place-items: center; font-size: 15px; }
+  .brand small { font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--shu); }
+  .head .btn { min-height: 40px; padding: 8px 16px; font-size: 14px; }
+
+  /* 見出しまわり */
+  section { padding: clamp(64px, 9vw, 112px) 0; }
+  .alt { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .eyebrow { font-family: var(--mono); font-size: 13px; font-weight: 600; color: var(--shu); letter-spacing: 0.04em; }
+  .h2 { font-size: clamp(26px, 3.6vw, 40px); margin-top: 10px; }
+  .lead { font-size: clamp(16px, 1.5vw, 18px); color: var(--muted); margin-top: 16px; max-width: 42em; }
+  .sec-head { margin-bottom: 44px; }
+
+  /* 1 HERO */
+  .hero { padding: clamp(40px, 6vw, 80px) 0 clamp(56px, 8vw, 96px); }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(28px, 4vw, 56px); align-items: center; }
+  .shots { display: block; }
+  .shot { border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: var(--bg-2); box-shadow: 0 18px 40px -24px rgba(28, 34, 48, 0.45); }
+  .shot-bar { display: flex; align-items: center; gap: 6px; padding: 7px 10px; background: var(--bg-2); border-bottom: 1px solid var(--line); }
+  .shot-bar i { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+  .shot-bar span { margin-left: 6px; font-family: var(--mono); font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .shot-ja { width: 80%; }
+  /* 英語版は日本語版の右下へずらして重ねる。画面同士は重なるが、DOM の文字は重ならない位置 */
+  .shot-en { width: 80%; margin: -24% 0 0 20% !important; position: relative; }
+  .nb { display: inline-block; }
+  .shots-cap { font-size: 13px; color: var(--muted); margin-top: 14px; }
+  .hero h1 { font-size: clamp(30px, 4.2vw, 50px); line-height: 1.3; margin-top: 12px; }
+  .hero h1 em { font-style: normal; color: var(--shu); }
+  .hero .lead { margin-top: 18px; }
+  .price-hint { margin-top: 18px; font-size: 15px; color: var(--text); }
+  .price-hint b { font-family: var(--mono); font-weight: 600; color: var(--ink); }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+
+  /* 2 事例 00 */
+  .case-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(28px, 4vw, 56px); align-items: start; }
+  .notes { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+  .notes li { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 14px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+  .notes li:last-child { border-bottom: 0; padding-bottom: 0; }
+  .num { font-family: var(--mono); font-size: 15px; font-weight: 600; color: var(--shu); border: 1.5px solid var(--shu); border-radius: 6px; height: 32px; display: grid; place-items: center; }
+  .notes h3 { font-size: 17px; }
+  .notes p { font-size: 15px; color: var(--muted); margin-top: 4px; line-height: 1.8; }
+  .pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); margin-top: 40px; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--bg); }
+  .pair > div { padding: 22px 24px; }
+  .pair > div + div { border-left: 1px solid var(--line); }
+  .pair .tag { font-family: var(--mono); font-size: 12px; font-weight: 600; color: var(--muted); }
+  .pair blockquote { margin: 10px 0 0; font-size: clamp(18px, 2vw, 22px); font-weight: 700; color: var(--ink); line-height: 1.5; }
+  .pair-note { font-size: 14px; color: var(--muted); margin-top: 12px; }
+  details.memo { margin-top: 28px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); }
+  details.memo summary { cursor: pointer; padding: 16px 20px; font-weight: 600; color: var(--ink); list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+  details.memo summary::-webkit-details-marker { display: none; }
+  details.memo summary::after { content: '+'; font-family: var(--mono); color: var(--shu); }
+  details.memo[open] summary::after { content: '-'; }
+  .memo-body { padding: 0 20px 20px; }
+  .flow { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr); gap: 10px; align-items: center; margin-top: 4px; }
+  .flow div { border: 1px solid var(--line); border-radius: 8px; padding: 12px; background: var(--bg-2); }
+  .flow b { display: block; font-family: var(--mono); font-size: 14px; color: var(--ink); }
+  .flow span { font-size: 13px; color: var(--muted); line-height: 1.6; display: block; margin-top: 2px; }
+  .flow .arrow { border: 0; background: none; padding: 0; font-family: var(--mono); color: var(--shu); font-weight: 600; }
+  .memo-body p { font-size: 15px; color: var(--muted); margin-top: 14px; }
+
+  /* 3 ほかに作ったページ */
+  .gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+  .gallery figure { margin: 0; }
+  .gallery figcaption { font-size: 14px; color: var(--text); margin-top: 10px; line-height: 1.6; }
+  .gallery figcaption small { display: block; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+
+  /* 4 頼めることと料金 */
+  .plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  .plan { border: 1px solid var(--line); border-radius: 12px; background: var(--bg); padding: 26px 24px; display: flex; flex-direction: column; }
+  .plan-tag { font-family: var(--mono); font-size: 12px; font-weight: 600; color: var(--shu); }
+  .plan h3 { font-size: 22px; margin-top: 6px; }
+  .plan > p { font-size: 15px; color: var(--muted); margin-top: 8px; line-height: 1.75; }
+  .rows { list-style: none; margin: 18px 0 0; padding: 0; border-top: 1px solid var(--line); }
+  .rows li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .rows b { font-size: 15px; color: var(--ink); font-weight: 600; }
+  .rows small { grid-column: 1 / 2; font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .amt { grid-column: 2 / 3; grid-row: 1 / 3; align-self: center; text-align: right; font-family: var(--mono); font-weight: 600; font-size: 16px; color: var(--ink); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .plan-inc { margin-top: 16px; font-size: 14px; color: var(--muted); line-height: 1.75; }
+  .plans-note { margin-top: 24px; font-size: 14px; color: var(--muted); }
+
+  /* 5 進め方と支払い */
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--bg); }
+  .steps li { padding: 24px 22px; }
+  .steps li + li { border-left: 1px solid var(--line); }
+  .steps .mono { font-size: 13px; font-weight: 600; color: var(--shu); }
+  .steps h3 { font-size: 18px; margin-top: 6px; }
+  .steps p { font-size: 14.5px; color: var(--muted); margin-top: 8px; line-height: 1.75; }
+  .terms { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
+  .term { border-top: 2px solid var(--ink); padding-top: 12px; }
+  .term b { display: block; color: var(--ink); font-size: 15px; }
+  .term p { font-size: 14.5px; color: var(--muted); margin-top: 4px; line-height: 1.75; }
+
+
+  /* 7 制作者 */
+  .maker > div { max-width: 820px; }
+  .maker p + p { margin-top: 14px; }
+  .facts { list-style: none; margin: 22px 0 0; padding: 0; border-top: 1px solid var(--line); }
+  .facts li { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+  .facts span { font-family: var(--mono); font-size: 13px; color: var(--muted); padding-top: 2px; }
+
+  /* 8 FAQ */
+  .faq { max-width: 820px; }
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq summary { cursor: pointer; list-style: none; display: grid; grid-template-columns: 40px minmax(0, 1fr) 20px; gap: 12px; padding: 18px 0; font-weight: 600; color: var(--ink); line-height: 1.6; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary .q { font-family: var(--mono); color: var(--shu); }
+  .faq summary::after { content: '+'; font-family: var(--mono); color: var(--muted); text-align: right; }
+  .faq details[open] summary::after { content: '-'; }
+  .faq .a { padding: 0 32px 20px 52px; color: var(--muted); font-size: 15.5px; }
+
+  /* 9 締め */
+  .inv { background: var(--ink); color: var(--inv-text); }
+  .inv h2 { color: #FFFFFF; }
+  .inv .eyebrow { color: #F4F5F7; }
+  .inv .lead { color: #D5D8DE; }
+  .final { text-align: center; }
+  .final .lead { margin-left: auto; margin-right: auto; }
+  .final .cta-row { justify-content: center; }
+
+  footer { background: var(--ink); color: #C9CDD4; border-top: 1px solid #343B4A; padding: 32px 0 40px; font-size: 14px; }
+  footer ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 24px; }
+  footer a { color: #E6E8EC; }
+  footer a:hover { color: #FFFFFF; }
+  .foot-bottom { margin-top: 20px; padding-top: 16px; border-top: 1px solid #343B4A; }
+
+  /* スマホの固定 CTA バー */
+  .bar { display: none; }
+
+  @media (max-width: 960px) {
+    .hero-grid, .case-grid { grid-template-columns: minmax(0, 1fr); }
+    .hero-copy { order: -1; }
+    .plans { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    .plans .plan:last-child { grid-column: 1 / -1; }
+    .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .steps li:nth-child(3) { border-left: 0; }
+    .steps li:nth-child(n+3) { border-top: 1px solid var(--line); }
+  }
+  @media (max-width: 767.98px) {
+    body { padding-bottom: 0; }
+    footer { padding-bottom: calc(40px + 76px + env(safe-area-inset-bottom, 0px)); }
+    .bar { display: flex; gap: 10px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); background: #FFFFFF; border-top: 1px solid var(--line); box-shadow: 0 -10px 28px -18px rgba(28, 34, 48, 0.5); transition: transform .25s ease; }
+    .bar.is-off { transform: translateY(110%); }
+    .bar .btn { min-height: 48px; padding: 10px 14px; }
+    .bar .btn-primary { flex: 1 1 auto; }
+    /* HERO の2画面は重ねずに横スワイプ */
+    .shots { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
+    .shots .shot { flex: 0 0 86%; width: auto; scroll-snap-align: start; }
+    .shot-en { margin: 0 !important; }
+    .plans { grid-template-columns: minmax(0, 1fr); }
+    .terms { grid-template-columns: minmax(0, 1fr); }
+    .pair { grid-template-columns: minmax(0, 1fr); }
+    .pair > div + div { border-left: 0; border-top: 1px solid var(--line); }
+    .flow { grid-template-columns: minmax(0, 1fr); }
+    .flow .arrow { text-align: center; transform: rotate(90deg); }
+  }
+  @media (max-width: 560px) {
+    .wrap { padding: 0 16px; }
+    .cta-row .btn { width: 100%; }
+    .gallery { grid-template-columns: minmax(0, 1fr); }
+    .steps { grid-template-columns: minmax(0, 1fr); }
+    .steps li + li { border-left: 0; border-top: 1px solid var(--line); }
+    .facts li { grid-template-columns: minmax(0, 1fr); gap: 0; }
+    .faq summary { grid-template-columns: 32px minmax(0, 1fr) 16px; gap: 8px; }
+    .faq .a { padding: 0 0 20px 40px; }
+    .head .brand small { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .bar, .btn { transition: none; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+
+<header class="head">
+  <div class="wrap">
+    <a href="../" class="brand" aria-label="LUMA ホーム"><span class="brand-mark">L</span><span>LUMA</span><small>Craft</small></a>
+    <a href="../contact" class="btn btn-primary">無料相談</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- 1 HERO: 自作サイトの実画面が主役 -->
+<section class="hero" aria-labelledby="h-hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="shots" aria-label="studio-lumadesign.com の日本語版と英語版の画面">
+        <figure class="shot shot-ja" style="margin:0">
+          <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>studio-lumadesign.com</span></div>
+          <img src="../images/craft/lp/home-ja.jpg" width="1440" height="900" alt="studio-lumadesign.com 日本語版のトップページ" />
+        </figure>
+        <figure class="shot shot-en" style="margin:0">
+          <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>studio-lumadesign.com/en</span></div>
+          <img src="../images/craft/lp/home-en.jpg" width="1440" height="900" alt="studio-lumadesign.com 英語版のトップページ" />
+        </figure>
+      </div>
+      <p class="shots-cap">studio-lumadesign.com の日本語版と英語版(2026-09-26 撮影)</p>
+    </div>
+    <div class="hero-copy">
+      <p class="eyebrow">LUMA Craft / Web, SNS, iOS</p>
+      <h1 id="h-hero"><span class="nb">自分のサイトを、</span><span class="nb"><em>日英とも自分で</em></span><span class="nb">作りました。</span></h1>
+      <p class="lead">studio-lumadesign.com は、デザインから日本語と英語の文章、公開の仕組みまで運営者がひとりで作り、運用しています。同じ進め方で、日英の Web サイトと SNS、iOS アプリを作ります。</p>
+      <p class="price-hint">日英の LP は <b>242,000円</b> から(税込)。初回の相談は無料です。</p>
+      <div class="cta-row" id="cta-top">
+        <a href="../contact" class="btn btn-primary">見積もりを相談する →</a>
+        <a href="https://lin.ee/YetEeTz" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">LINE で相談する</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 事例 00: このサイトの作り方 -->
+<section class="alt" aria-labelledby="h-case">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Case 00</p>
+      <h2 class="h2" id="h-case">事例 00 このサイトの作り方</h2>
+      <p class="lead">LUMA Craft は2026年9月に始めたサービスで、受託の事例はまだありません。代わりに、いま読んでいるこのサイトを最初の事例として、作り方をそのまま載せます。</p>
+    </div>
+    <div class="case-grid">
+      <figure class="shot" style="margin:0">
+        <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>studio-lumadesign.com/service-web</span></div>
+        <img src="../images/craft/lp/service-web.jpg" width="1440" height="900" alt="LUMA Craft のサービスページ(日本語版)" loading="lazy" />
+      </figure>
+      <ol class="notes">
+        <li><span class="num" aria-hidden="true">01</span><div><h3>日本語版と英語版</h3><p>主なページには日本語版と英語版があり、ヘッダーの EN と JP で切り替えます。英語版は /en/ の下にまとめています。</p></div></li>
+        <li><span class="num" aria-hidden="true">02</span><div><h3>見出しは言語ごとに書く</h3><p>英語の見出しは日本語の直訳にしていません。下の比較がトップページの実例です。</p></div></li>
+        <li><span class="num" aria-hidden="true">03</span><div><h3>スマホでも同じ情報</h3><p>幅375pxのスマホと768pxのタブレットでも、文字が重ならないように組んでいます。</p></div></li>
+        <li><span class="num" aria-hidden="true">04</span><div><h3>公開の仕組みも自分で</h3><p>原稿とコードは GitHub で管理し、Cloudflare Pages で公開しています。</p></div></li>
+        <li><span class="num" aria-hidden="true">05</span><div><h3>公開したあとも更新する</h3><p>大会の案内、ニュース、サービスのページを、公開後も追加し続けています。</p></div></li>
+      </ol>
+    </div>
+
+    <div class="pair" aria-label="トップページの見出しの日英比較">
+      <div>
+        <p class="tag">JA / トップページの見出し</p>
+        <blockquote>ノーレートでも勝ち負けのある、本気の麻雀。</blockquote>
+      </div>
+      <div lang="en">
+        <p class="tag">EN / Top page headline</p>
+        <blockquote>Serious mahjong, with nothing at stake but the result.</blockquote>
+      </div>
+    </div>
+    <p class="pair-note">どちらも S.League(東京・新橋の健康麻雀の大会)を案内する見出しです。英語では「賭けない」の説明を、読む人が想像しやすい言い方に置き換えています。</p>
+    <p class="pair-note">日本語の「ノーレート」は麻雀の用語で、英語にそのまま置き換えても意味が伝わりません。英語版では、賭けるものはなく結果だけがある大会だと、1文で言い切る見出しにしました。</p>
+
+    <details class="memo">
+      <summary>制作メモ: 公開までの流れ</summary>
+      <div class="memo-body">
+        <div class="flow">
+          <div><b>GitHub</b><span>原稿とコードを保存し、変更の履歴を残す</span></div>
+          <div class="arrow" aria-hidden="true">→</div>
+          <div><b>Cloudflare Pages</b><span>保存した内容からサイトを組み立てて配信する</span></div>
+          <div class="arrow" aria-hidden="true">→</div>
+          <div><b>studio-lumadesign.com</b><span>日本語版と英語版を公開</span></div>
+        </div>
+        <p>お客様のサイトは、自分で更新したいかどうかで作り方を分けます。自分で更新したい方には文章と写真を直せる更新画面(microCMS)を用意し、コーポレートサイトには更新の手順書を付けます。</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- 3 ほかに作ったページ -->
+<section aria-labelledby="h-works">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Other pages</p>
+      <h2 class="h2" id="h-works">このサイトの中で作ったページ</h2>
+      <p class="lead">大会の申込ページ、サービスの料金ページ、英語版のページを、同じ仕組みの上で作っています。</p>
+    </div>
+    <div class="gallery">
+      <figure><div class="shot"><img src="../images/craft/lp/sleague.jpg" width="1440" height="900" alt="S.League のページ" loading="lazy" /></div><figcaption>S.League の案内<small>/s-league</small></figcaption></figure>
+      <figure><div class="shot"><img src="../images/craft/lp/sl26.jpg" width="1440" height="900" alt="S.League 26 の大会ページ" loading="lazy" /></div><figcaption>大会ページと申込の案内<small>/s-league-26</small></figcaption></figure>
+      <figure><div class="shot"><img src="../images/craft/lp/service-web.jpg" width="1440" height="900" alt="LUMA Craft のサービスページ" loading="lazy" /></div><figcaption>料金をタブで切り替えるサービスページ<small>/service-web</small></figcaption></figure>
+      <figure><div class="shot"><img src="../images/craft/lp/en-service-web.jpg" width="1440" height="900" alt="LUMA Craft のサービスページ英語版" loading="lazy" /></div><figcaption>同じページの英語版<small>/en/service-web</small></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 4 頼めることと料金 -->
+<section class="alt" aria-labelledby="h-plans">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Services and pricing</p>
+      <h2 class="h2" id="h-plans">頼めることと料金(税込)</h2>
+      <p class="lead">Web サイト、SNS、iOS アプリの3つを引き受けています。どれも日本語と英語の文章は運営者が書きます。</p>
+    </div>
+    <div class="plans">
+      <article class="plan">
+        <p class="plan-tag">01 / Website</p>
+        <h3>Web サイト</h3>
+        <p>1ページの LP から、日英10〜15ページのコーポレートサイトまで作ります。</p>
+        <ul class="rows">
+          <li><b>LP 日本語</b><small>1ページ</small><span class="amt">132,000円</span></li>
+          <li><b>LP 日英</b><small>1ページ、日本語と英語</small><span class="amt">242,000円</span></li>
+          <li><b>小規模サイト</b><small>日英5ページ、問い合わせフォーム、Google マップ</small><span class="amt">550,000円</span></li>
+          <li><b>コーポレートサイト</b><small>日英10〜15ページ、更新の手順書</small><span class="amt">1,100,000円〜</span></li>
+        </ul>
+        <p class="plan-inc">保守はライト(更新 月2回、表示の監視)が月11,000円、スタンダード(更新 月8回、月次レポート)が月33,000円です。</p>
+      </article>
+      <article class="plan">
+        <p class="plan-tag">02 / Social media</p>
+        <h3>SNS</h3>
+        <p>アカウントの初期構築と、毎月の投稿の運用を引き受けます。</p>
+        <ul class="rows">
+          <li><b>初期構築</b><small>1媒体、日英のプロフィール、投稿ガイドライン、初期9投稿</small><span class="amt">154,000円</span></li>
+          <li><b>運用ライト</b><small>月8投稿(日英)</small><span class="amt">月66,000円</span></li>
+          <li><b>運用スタンダード</b><small>月12投稿(日英)、ストーリーズ、月次レポート</small><span class="amt">月121,000円</span></li>
+        </ul>
+        <p class="plan-inc">パスワードはお預かりしません。ビジネスアカウントに担当者として追加していただき、その権限で作業します。</p>
+      </article>
+      <article class="plan">
+        <p class="plan-tag">03 / iOS apps</p>
+        <h3>iOS アプリ</h3>
+        <p>主要3画面の検証版で確かめてから、本開発に進めます。</p>
+        <ul class="rows">
+          <li><b>検証版</b><small>主要3画面、TestFlight での配布まで</small><span class="amt">550,000円</span></li>
+          <li><b>小規模</b><small>情報表示、問い合わせ、簡易ログイン</small><span class="amt">2,440,000円〜</span></li>
+          <li><b>中規模</b><small>会員管理、決済、プッシュ通知</small><span class="amt">5,500,000円〜</span></li>
+          <li><b>保守</b><small>iOS の更新への対応、軽微な修正</small><span class="amt">年額 開発費の15%</span></li>
+        </ul>
+        <p class="plan-inc">アプリはお客様の Apple Developer アカウントから公開します。</p>
+      </article>
+    </div>
+    <p class="plans-note">「〜」の付いたプランは、ヒアリングで伺った内容をもとに見積もりをお出しします。日本語だけ、英語だけの複数ページのサイトも個別にお見積もりします。</p>
+  </div>
+</section>
+
+<!-- 5 進め方と支払い -->
+<section aria-labelledby="h-flow">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">How it works</p>
+      <h2 class="h2" id="h-flow">進め方と支払いの時期</h2>
+    </div>
+    <ol class="steps">
+      <li><span class="mono">STEP 01</span><h3>無料相談</h3><p>作りたいもの、読んでほしい相手、公開したい時期を伺います。</p></li>
+      <li><span class="mono">STEP 02</span><h3>見積もりと契約</h3><p>見積もりに合意したら契約し、着手金として料金の50%をお支払いいただきます。</p></li>
+      <li><span class="mono">STEP 03</span><h3>制作</h3><p>デザインと実装を進めます。修正は2回まで料金に含みます。</p></li>
+      <li><span class="mono">STEP 04</span><h3>検収と公開</h3><p>検収が済んだら公開し、残りの50%をお支払いいただきます。更新は保守プランで続けます。</p></li>
+    </ol>
+    <div class="terms">
+      <div class="term"><b>修正の回数</b><p>2回まで料金に含みます。3回目からは内容を伺い、別にお見積もりします。</p></div>
+      <div class="term"><b>App Store の再申請</b><p>審査で指摘を受けたときの修正と再申請は、2回まで料金に含みます。</p></div>
+      <div class="term"><b>月額のプラン</b><p>Web の保守と SNS の運用は月額、iOS の保守は年額でお支払いいただきます。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 お客様の声: 1件目の納品後、ご本人の了承を得てからここに section を追加する(2026-09-26 回答: それまでは表示しない) -->
+
+<!-- 7 制作者 -->
+<section class="alt" aria-labelledby="h-maker">
+  <div class="wrap maker">
+    <div>
+      <p class="eyebrow">Who makes it</p>
+      <h2 class="h2" id="h-maker">作っている人</h2>
+      <p class="lead">2011年1月から2020年3月まで、オーストラリアのブリスベンで暮らしました。いまは横浜を拠点に、日本語と英語の文章をどちらも自分で書いています。</p>
+      <p class="lead">LUMA では、英語のコーチングや英語で巡る東京ツアーも運営しています。</p>
+      <ul class="facts">
+        <li><span>拠点</span>横浜</li>
+        <li><span>言語</span>日本語、英語</li>
+        <li><span>海外経験</span>オーストラリア・ブリスベン(2011年1月〜2020年3月)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 8 FAQ: 3問から7問に -->
+<section aria-labelledby="h-faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">FAQ</p>
+      <h2 class="h2" id="h-faq">よくある質問</h2>
+    </div>
+    <div class="faq">
+      <details open><summary><span class="q">Q1</span><span>公開したあと、自分で更新できますか。</span></summary><p class="a">できます。自分で更新したい方には、文章と写真を直せる更新画面(microCMS)を用意し、コーポレートサイトには更新の手順書をお付けします。更新を任せたい場合は、月11,000円からの保守プランを選べます。</p></details>
+      <details><summary><span class="q">Q2</span><span>日本語だけ、英語だけのサイトも頼めますか。</span></summary><p class="a">頼めます。日本語だけの LP は1ページ132,000円です。2ページ以上のサイトと英語だけのサイトは、ページ数と内容を伺ってから見積もりをお出しします。</p></details>
+      <details><summary><span class="q">Q3</span><span>SNS のパスワードを渡す必要はありますか。</span></summary><p class="a">渡す必要はありません。お客様のビジネスアカウントに担当者として追加していただき、その権限で作業します。</p></details>
+      <details><summary><span class="q">Q4</span><span>修正は何回までお願いできますか。</span></summary><p class="a">制作のプランは、修正2回分を料金に含みます。3回目からは内容を伺い、別にお見積もりします。</p></details>
+      <details><summary><span class="q">Q5</span><span>App Store の審査に通らなかったら、どうなりますか。</span></summary><p class="a">審査の条件は要件定義の段階で先に説明し、その条件に沿って作ります。審査で指摘を受けたときの修正と再申請は、2回まで料金に含みます。</p></details>
+      <details><summary><span class="q">Q6</span><span>iOS アプリは誰が作りますか。</span></summary><p class="a">運営者が、AI の開発支援ツールを使って作ります。</p></details>
+      <details><summary><span class="q">Q7</span><span>支払いの方法とタイミングを教えてください。</span></summary><p class="a">契約時に着手金として50%、検収のあとに残りの50%をお支払いいただきます。保守と SNS の運用は月額の料金です。</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 9 締めの相談 -->
+<section class="inv final" aria-labelledby="h-final">
+  <div class="wrap">
+    <p class="eyebrow">Free consultation</p>
+    <h2 class="h2" id="h-final">作りたいものを聞かせてください。</h2>
+    <p class="lead">初回の相談は無料です。問い合わせフォームか LINE で、作りたいもの、読んでほしい相手、公開したい時期を送ってください。</p>
+    <div class="cta-row" id="cta-bottom">
+      <a href="../contact" class="btn btn-primary">見積もりを相談する →</a>
+      <a href="https://lin.ee/YetEeTz" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">LINE で相談する</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul>
+      <li><a href="../service-web">LUMA Craft のサービスページ</a></li>
+      <li><a href="../legal#privacy">プライバシーポリシー</a></li>
+      <li><a href="../legal">特定商取引法に基づく表記</a></li>
+      <li><a href="../en/lp/craft" lang="en">English</a></li>
+    </ul>
+    <div class="foot-bottom">© 2026 LUMA. All rights reserved.</div>
+  </div>
+</footer>
+
+<div class="bar is-off" id="bar" inert>
+  <a href="https://lin.ee/YetEeTz" class="btn btn-ghost" target="_blank" rel="noopener noreferrer" aria-label="LINE で相談する(新しいタブで開きます)">LINE</a>
+  <a href="../contact" class="btn btn-primary">無料相談を申し込む →</a>
+</div>
+
+<script>
+  // 固定 CTA バー: 最初と最後の CTA が画面にある間は隠し、inert でフォーカスも外す
+  (function () {
+    var bar = document.getElementById('bar');
+    var targets = [document.getElementById('cta-top'), document.getElementById('cta-bottom')];
+    function update() {
+      var vh = window.innerHeight;
+      var on = targets.some(function (t) { var r = t.getBoundingClientRect(); return r.bottom > 0 && r.top < vh; });
+      bar.classList.toggle('is-off', on);
+      if (on) bar.setAttribute('inert', ''); else bar.removeAttribute('inert');
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+</script>
+</body>
+</html>
