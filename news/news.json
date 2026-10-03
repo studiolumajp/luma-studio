@@ -36,40 +36,6 @@
     }
   },
   {
-    "slug": "frame-bookings-closing",
-    "date": "2026-09-21",
-    "cat": "svc",
-    "title": {
-      "ja": "LUMA Frame の撮影は9月30日で新規受付を終了します",
-      "en": "LUMA Frame Stops Taking New Photo Bookings on 30 September"
-    },
-    "lead": {
-      "ja": "作品と撮影ノートは公開を続けます。LUMA Voice には3か月の英語コーチングを加えました。",
-      "en": "The photographs and shooting notes stay online. LUMA Voice now has a three-month English coaching course."
-    },
-    "body": {
-      "ja": [
-        "LUMA Frame の撮影は、2026年9月30日で新規の受付を終了します。すでにお申し込みいただいている撮影は、お約束した内容と納期のとおりに行います。",
-        "2026年10月以降に撮影をご希望の場合は、提携の写真家が担当します。作品と撮影ノートは、このまま公開を続けます。",
-        "LUMA Voice には、仕事で英語を使う方に向けた3か月の英語コーチング (¥165,000・税込) を加えました。トップページの最初には、2022年から続けている健康麻雀の大会 S.League を置いています。"
-      ],
-      "en": [
-        "LUMA Frame stops taking new photo bookings on 30 September 2026. Shoots that are already booked will go ahead exactly as agreed, including delivery times.",
-        "From October 2026, photography requests are handled by a partner photographer. The photographs and the shooting notes stay online.",
-        "LUMA Voice now has a three-month English coaching course (¥165,000, tax incl.) for people who use English at work. The home page now opens with S.League, the health-mahjong tournament I have hosted since 2022."
-      ]
-    },
-    "image": "images/photography/shonan-magenta-dusk-coast.jpg",
-    "link": {
-      "ja": "services.html",
-      "en": "en/services.html"
-    },
-    "linkLabel": {
-      "ja": "サービス一覧を見る",
-      "en": "See all services"
-    }
-  },
-  {
     "slug": "hero-slideshow",
     "date": "2026-09-03",
     "cat": "update",
@@ -118,12 +84,12 @@
     "body": {
       "ja": [
         "作例ページとは別に、撮っているあいだ何を考えていたかを書く場所を作りました。",
-        "記事は7本、写真は合計180点です。羽田空港の昼と夜、伊丹スカイパーク、京浜島つばさ公園、湘南・江ノ島、熱海、横浜みなとみらい。",
+        "記事は7本、写真は合計178点です。羽田空港の昼と夜、伊丹スカイパーク、京浜島つばさ公園、湘南・江ノ島、熱海、横浜みなとみらい。",
         "シャッタースピードや ISO を変えた時刻をそのまま書いています。同じ場所で設定を変えると絵がどう変わるか、追いかけられる形にしました。"
       ],
       "en": [
         "The gallery shows the results. These notes are for what was going through my head while shooting.",
-        "Seven articles, 180 photographs in total. Haneda by day and by night, Itami Skypark, Keihinjima Tsubasa Park, Shonan and Enoshima, Atami, and Yokohama Minatomirai.",
+        "Seven articles, 178 photographs in total. Haneda by day and by night, Itami Skypark, Keihinjima Tsubasa Park, Shonan and Enoshima, Atami, and Yokohama Minatomirai.",
         "The times at which I changed shutter speed or ISO are written down as they happened. Shoot the same place with different settings and the picture changes, and the notes let you follow that."
       ]
     },
@@ -146,7 +112,7 @@
       "en": "Twenty-Eight Frames at Itami Skypark"
     },
     "lead": {
-      "ja": "17時03分から19時44分まで。ISO100 から 800 まで上げた2時間41分の記録です。",
+      "ja": "17時03分から19時44分まで。1/1250秒・ISO400 で始まり、3秒の露光で終わった2時間41分の記録です。",
       "en": "From 17:03 to 19:44. Two hours and forty-one minutes, with ISO climbing from 100 to 800."
     },
     "body": {
@@ -180,18 +146,18 @@
       "en": "Five Location Galleries Added"
     },
     "lead": {
-      "ja": "羽田空港・伊丹スカイパーク・湘南・熱海・横浜。撮影地ごとに分けて、全284点を並べています。",
-      "en": "Haneda, Itami Skypark, Shonan, Atami and Yokohama. All 284 photographs, now split by where they were taken."
+      "ja": "羽田空港・伊丹スカイパーク・湘南・熱海・横浜。撮影地ごとに分けて、全237点を並べています。",
+      "en": "Haneda, Itami Skypark, Shonan, Atami and Yokohama. All 237 photographs, now split by where they were taken."
     },
     "body": {
       "ja": [
         "これまでは作例を1ページにまとめていました。撮影地で分けたのは、行きたい場所が決まっている人に、そこで撮った写真だけを見てもらえるようにするためです。",
-        "羽田空港は121点あり、昼と夜で切り替えられます。伊丹スカイパークは33点、湘南・江ノ島は38点、熱海は25点、横浜は23点です。",
+        "羽田空港は118点あり、昼・夕方・夜で切り替えられます。伊丹スカイパークは33点、湘南・江ノ島は38点、熱海は25点、横浜は23点です。",
         "写真をクリックすると大きく表示され、矢印キーで次の写真に移れます。"
       ],
       "en": [
         "The gallery used to be one long page. Splitting it by location means someone with a place in mind sees only the photographs taken there.",
-        "Haneda holds 121 frames and can be filtered between day and night. Itami has 33, Shonan and Enoshima 38, Atami 25, Yokohama 23.",
+        "Haneda holds 118 frames and can be filtered between day, evening and night. Itami has 33, Shonan and Enoshima 38, Atami 25, Yokohama 23.",
         "Click any photograph to see it large, then move through the set with the arrow keys."
       ]
     },
@@ -214,8 +180,8 @@
       "en": "LUMA Space and LUMA Stage Have Closed"
     },
     "lead": {
-      "ja": "現在のサービスは LUMA Voice / Frame / Path / Circle の4本です。",
-      "en": "Four services remain: LUMA Voice, Frame, Path and Circle."
+      "ja": "2026年5月25日の時点で、サービスを LUMA Voice / Frame / Path / Circle の4本に整理しました。9月26日に LUMA Craft を加え、現在は5本です。",
+      "en": "As of May 25, 2026, four services remained: LUMA Voice, Frame, Path and Circle. LUMA Craft was added on September 26, so there are now five."
     },
     "body": {
       "ja": [

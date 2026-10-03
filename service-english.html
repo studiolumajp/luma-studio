@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#134E6F" />
+<meta name="theme-color" content="#1F2A33" />
 <meta name="color-scheme" content="light only" />
 
 <!-- ── PRIMARY SEO META ── -->
 <title>英会話レッスン 横浜・東京・オンライン | LUMA Voice</title>
-<meta name="description" content="オーストラリア9年の経験を持つバイリンガル講師による英会話レッスン。日常英会話・ビジネス英語・IELTS/TOEIC対策まで、横浜・東京・オンラインで対応。無料相談30分受付中。" />
+<meta name="description" content="オーストラリア9年の経験を持つバイリンガル講師による英会話レッスンです。日常英会話からビジネス英語、IELTS/TOEIC対策まで、横浜・東京・オンラインで対応しております。30分の無料相談を受付中です。" />
 <meta name="keywords" content="英会話 横浜,英語レッスン 東京,オンライン英会話,IELTS 対策,TOEIC 対策,ビジネス英語,LUMA Voice" />
 <meta name="author" content="LUMA" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -23,7 +23,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://studio-lumadesign.com/service-english" />
 <meta property="og:title" content="英会話レッスン 横浜・東京・オンライン | LUMA Voice" />
-<meta property="og:description" content="オーストラリア9年のバイリンガル講師による英会話レッスン。初心者からビジネス英語・IELTSまで。無料相談30分受付中。" />
+<meta property="og:description" content="オーストラリア9年のバイリンガル講師による英会話レッスンです。初心者の方からビジネス英語、IELTSまで対応しております。30分の無料相談を受付中です。" />
 <meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -39,9 +39,8 @@
 <meta name="twitter:image" content="https://studio-lumadesign.com/og-image.jpg" />
 
 <!-- ── Performance ── -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="preload" href="/fonts/urbanist-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="./fonts/noto-sans-jp.css?v=gdpr1" />
 
 <!-- ── JSON-LD: Service + BreadcrumbList ── -->
 <script type="application/ld+json">
@@ -106,17 +105,11 @@
 </script>
 
 <!-- GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-62F20N179N');
-</script>
+<script src="./consent.js?v=gdpr1"></script>
 
 <!-- LCP: HERO の背景写真。CSS 背景 / video の poster はプリロードスキャナが見つけられない -->
 <link rel="preload" as="image" fetchpriority="high" type="image/webp" href="./images/compare/compare-eng.webp" />
-<link rel="stylesheet" href="./shared.css?v=aqua32" />
+<link rel="stylesheet" href="./shared.css?v=l8f" />
 <style id="page-overrides">
   /* ── HERO: 暗幕・文字色・ボタンは shared.css の .hero--photo で共通化。
      ここではサイズと固有レイアウトのみ指定する (2026-08-06) ── */
@@ -162,10 +155,10 @@
   }
   .price-value {
     font-size: 18px; font-weight: 700; color: var(--text);
-    font-family:'Poppins', system-ui, sans-serif;
+    font-family:'Urbanist LUMA', 'Noto Sans JP', system-ui, sans-serif;
   }
   .flow-num {
-    font-family:'Poppins', system-ui, sans-serif;
+    font-family:'Urbanist LUMA', 'Noto Sans JP', system-ui, sans-serif;
     font-size: 56px; font-weight: 800; line-height: 1;
     background: linear-gradient(120deg, var(--accent), var(--accent-2));
     -webkit-background-clip: text; background-clip: text; color: transparent;
@@ -195,7 +188,8 @@
         <ul class="dropdown-menu">
           <li><a href="./services">サービス一覧</a></li>
           <li><a href="./service-english">英会話レッスン</a></li>
-          <li><a href="./service-tour">英語で巡る東京ツアー</a></li>
+          <li><a href="./service-photo">記念撮影・ポートレート</a></li>
+          <li><a href="./service-tour">海外ゲストの観光案内</a></li>
           <li><a href="./service-community">コミュニティイベント</a></li>
           <li><a href="./service-web">Web・SNS・アプリ制作</a></li>
           <li><a href="./s-league">S.League 麻雀大会</a></li>
@@ -233,12 +227,12 @@
       口が動くまで<br />
       <span class="accent">練習する</span>英会話。
     </h1>
-    <p class="hero-kicker" style="margin-top:12px;font-weight:600;color:var(--text);">横浜・東京・オンラインの英会話レッスン (LUMA Voice)</p>
+    <p class="hero-kicker" style="margin-top:12px;font-weight:600;color:var(--accent-2-light);">横浜・東京・オンラインの英会話レッスン (LUMA Voice)</p>
     <p class="sub">
-      文法は分かるのに、いざとなると声が出ない。その状態を抜けるためのレッスンです。オーストラリアで過ごした9年をもとに教えます。初心者の方からビジネス英語、IELTS/TOEIC対策まで。中身は毎回つくり直します。<strong style="color:var(--text);">横浜・東京・オンライン</strong>対応。まずは30分の無料相談から。
+      文法は分かるのに、いざとなると声が出ない。その状態から抜け出すためのレッスンです。オーストラリアで過ごした9年をもとにお教えします。初心者の方からビジネス英語、IELTS/TOEIC対策まで対応しており、レッスンの内容は毎回つくり直します。<strong style="color:var(--text);">横浜・東京・オンライン</strong>でご受講いただけますので、まずは30分の無料相談をご利用ください。
     </p>
     <div class="hero-cta-row">
-      <a href="./contact" class="btn btn-primary"><span class="nb">無料で見積もり・相談を依頼する →</span></a>
+      <a href="./contact" class="btn btn-primary"><span class="nb">無料でお見積り・相談を依頼する →</span></a>
       <a href="#offers" class="btn btn-secondary">レッスンの種類を見る</a>
     </div>
   </div>
@@ -249,14 +243,14 @@
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Overview</span>
-      <h2 id="overview-heading">話せるようになるまで付き合います。</h2>
+      <h2 id="overview-heading">話せるようになるまでお付き合いします。</h2>
     </div>
 
     <div class="svc-overview-grid reveal">
       <div>
         <p class="svc-overview-lead">正しい英語より、<br />伝わって、続く英語を。</p>
         <p class="svc-overview-body">
-          15歳から24歳までの9年間を、オーストラリアで過ごしました。大学では日本人会の副会長として500名以上の留学生を支え、その傍らで英語を教えていました。LUMA Voice で鍛えるのは、文法の正確さではありません。<strong style="color:var(--text);">自分の言葉で話せる力</strong>のほうです。
+          15歳から24歳までの9年間を、オーストラリアで過ごしました。大学では日本人会の副会長として500名以上の留学生を支え、その傍らで英語を教えていました。LUMA Voice では、文法の正確さよりも<strong style="color:var(--text);">自分の言葉で話せる力</strong>を鍛えます。
         </p>
       </div>
       <aside class="svc-overview-aside">
@@ -284,19 +278,19 @@
         <span class="offer-card-num">01</span>
         <h3>日常英会話レッスン</h3>
         <span class="en">Conversational English</span>
-        <p>旅行、暮らし、趣味の話。身近な話題から口を慣らしていきます。初めての方でも始められます。</p>
+        <p>旅行や暮らし、趣味の話といった身近な話題から、口を慣らしていきます。初めての方でもご受講いただけます。</p>
       </article>
       <article class="offer-card">
         <span class="offer-card-num">02</span>
         <h3>IELTS / TOEIC 対策</h3>
         <span class="en">Test Preparation</span>
-        <p>出題傾向の分析から模擬練習まで。目標スコアまでの道順を引きます。</p>
+        <p>出題傾向の分析から模擬練習まで行い、目標スコアまでの道順をご提案します。</p>
       </article>
       <article class="offer-card">
         <span class="offer-card-num">03</span>
         <h3>ビジネス英語</h3>
         <span class="en">Business English</span>
-        <p>メール、会議、プレゼン。仕事でそのまま使う場面から練習します。外資系や海外転職を考えている方へ。</p>
+        <p>メールや会議、プレゼンといった、仕事でそのまま使う場面から練習します。外資系や海外転職をお考えの方に向けたレッスンです。</p>
       </article>
       <article class="offer-card">
         <span class="offer-card-num">04</span>
@@ -308,13 +302,13 @@
         <span class="offer-card-num">05</span>
         <h3>留学・移住サポート</h3>
         <span class="en">Study Abroad Advice</span>
-        <p>学校選び、生活の準備、行く前の心構え。自分がオーストラリアで通った道を、そのままお話しします。</p>
+        <p>学校選びや生活の準備、行く前の心構えまで、私がオーストラリアで通ってきた道をそのままお話しします。</p>
       </article>
       <article class="offer-card feature">
         <span class="offer-card-num">06</span>
         <h3>英語コーチング (3か月)</h3>
         <span class="en">English Coaching</span>
-        <p>仕事で英語を使う方に向けた、3か月の個別プログラムです。週1回の面談、毎日の学習報告へのコメント、実務の英文の添削を組み合わせます。<a href="#coaching" style="color:var(--accent);">内容と料金を見る</a>。</p>
+        <p>仕事で英語を使う方に向けた、3か月の個別プログラムです。週1回の面談と毎日の学習報告へのコメント、実務の英文の添削を組み合わせて進めます。<a href="#coaching" style="color:var(--accent);">内容と料金を見る</a>。</p>
       </article>
     </div>
   </div>
@@ -326,7 +320,7 @@
     <div class="section-head reveal">
       <span class="eyebrow">Coaching</span>
       <h2 id="coaching-heading">3か月の英語コーチング</h2>
-      <p>仕事で英語を使う社会人と経営者の方に向けた、3か月の個別プログラムです。ご自身の仕事で実際に使う英文を題材にします。</p>
+      <p>仕事で英語を使う社会人と経営者の方に向けた、3か月の個別プログラムです。ご自身のお仕事で実際に使う英文を題材にいたします。</p>
     </div>
 
     <div class="offers-grid reveal">
@@ -334,7 +328,7 @@
         <span class="offer-card-num">01</span>
         <h3>初回の診断と目標設定 (90分)</h3>
         <span class="en">Kick-off</span>
-        <p>いまの英語で何ができて、何に困っているかを確認します。3か月後にできるようになりたい場面を1つ決めます。</p>
+        <p>いまの英語で何ができて、何にお困りかを確認します。そのうえで、3か月後にできるようになりたい場面を1つ決めます。</p>
       </article>
       <article class="offer-card">
         <span class="offer-card-num">02</span>
@@ -346,7 +340,7 @@
         <span class="offer-card-num">03</span>
         <h3>毎日の学習報告へのコメント</h3>
         <span class="en">Daily log</span>
-        <p>その日にやったことを短く送ってください。平日はコメントを返します。</p>
+        <p>その日に取り組んだ内容を、短くお送りください。平日はコメントをお返しします。</p>
       </article>
       <article class="offer-card">
         <span class="offer-card-num">04</span>
@@ -358,7 +352,7 @@
         <span class="offer-card-num">05</span>
         <h3>実務の英文の添削 (月4件まで)</h3>
         <span class="en">Work documents</span>
-        <p>メール、資料、スピーチ原稿など、ご自身の仕事で使う英文を添削します。</p>
+        <p>メールや資料、スピーチ原稿など、ご自身のお仕事で使う英文を添削いたします。</p>
       </article>
       <article class="offer-card">
         <span class="offer-card-num">06</span>
@@ -370,14 +364,14 @@
         <span class="offer-card-num">07</span>
         <h3>チャットでの質問対応</h3>
         <span class="en">Chat support</span>
-        <p>面談のあいだの質問をチャットで受け、24時間以内に返信します。</p>
+        <p>面談のあいだのご質問はチャットで受け付け、24時間以内にご返信いたします。</p>
       </article>
     </div>
 
     <div class="price-box reveal" style="margin-top:40px;">
       <div class="price-row"><span class="price-label">英語コーチング (3か月・オンライン)</span><span class="price-value">¥165,000</span></div>
       <div class="price-row"><span class="price-label">対面オプション (料金の20%)</span><span class="price-value">+¥33,000</span></div>
-      <p class="price-note">料金は税込で、3か月分を開始前にお支払いいただきます。キャンセルの規定は<a href="./legal#cancel" style="color:var(--accent);">キャンセルポリシー</a>に載せています。対面は東京・横浜を中心にうかがい、オプション料金のほかに交通費と会場費の実費をいただきます。</p>
+      <p class="price-note">料金は税込で、3か月分を開始前にお支払いいただきます。キャンセルの規定は<a href="./legal#cancel" style="color:var(--accent);">キャンセルポリシー</a>に掲載しております。対面の場合は東京・横浜を中心にお伺いし、オプション料金のほかに交通費と会場費の実費を頂戴します。</p>
     </div>
   </div>
 </section>
@@ -388,7 +382,7 @@
     <div class="section-head reveal" style="margin: 0 auto 48px; text-align:center;">
       <span class="eyebrow">Pricing</span>
       <h2 id="pricing-heading">料金の考え方</h2>
-      <p style="margin: 0 auto;">目標、いまのレベル、通うペース。この3つを聞いてから決めます。</p>
+      <p style="margin: 0 auto;">目標、いまのレベル、通うペース。この3つをお伺いした後に決めます。</p>
     </div>
 
     <div class="price-box reveal">
@@ -409,7 +403,7 @@
         <span class="price-value">オンライン / 対面</span>
       </div>
       <p class="price-note">
-        必要なレッスンの中身は人によって違うので、一律の料金表は出していません。30分の無料相談でいまの状況をうかがってから、金額と回数をはっきり書いたプランをお渡しします。相談だけなら、お金はかかりません。
+        必要なレッスンの内容は人によって異なるため、一律の料金表は掲載しておりません。30分の無料相談で現在の状況をお伺いした後に、金額と回数を明記したプランをお渡しします。ご相談のみであれば、料金はかかりません。
       </p>
     </div>
   </div>
@@ -421,7 +415,7 @@
     <div class="section-head reveal" style="margin: 0 auto 56px; text-align:center;">
       <span class="eyebrow">How it works</span>
       <h2 id="flow-heading">ご利用の流れ</h2>
-      <p style="margin: 0 auto;">無料相談から定期レビューまで、4ステップ。早ければ相談の翌週にはレッスンを始められます。</p>
+      <p style="margin: 0 auto;">無料相談から定期レビューまでは、4つのステップで進みます。早ければ、ご相談の翌週にはレッスンを始めることも可能です。</p>
     </div>
 
     <div class="flow-steps reveal">
@@ -430,7 +424,7 @@
         <div>
           <span class="tag">Step 01</span>
           <h3>無料相談 (30分)</h3>
-          <p>いまのレベル、めざす場所、通えそうな時間帯。この3つを聞かせてください。Zoom でも対面でも構いません。その場で大きな道筋を描きます。</p>
+          <p>現在のレベル、目指す場所、通えそうな時間帯。この3つをお聞かせください。Zoom と対面のどちらでも構いません。その場で、大まかな道筋をご提案します。</p>
         </div>
       </div>
       <div class="flow-step">
@@ -438,7 +432,7 @@
         <div>
           <span class="tag">Step 02</span>
           <h3>レッスンプランづくり</h3>
-          <p>目標に合わせて、進め方と教材を用意します。試験対策なのか、仕事で使う英語なのか。中身はそこで変わります。</p>
+          <p>目標に合わせて、進め方と教材をご用意します。試験対策か仕事で使う英語かによって、内容は変わります。</p>
         </div>
       </div>
       <div class="flow-step">
@@ -446,7 +440,7 @@
         <div>
           <span class="tag">Step 03</span>
           <h3>レッスン開始</h3>
-          <p>オンライン (Zoom等) か対面でスタート。よかった点と直したい点を、毎回その場でお伝えします。</p>
+          <p>オンライン (Zoom等) か対面でレッスンを始めます。よかった点と直したい点は、毎回その場でお伝えします。</p>
         </div>
       </div>
       <div class="flow-step">
@@ -454,7 +448,7 @@
         <div>
           <span class="tag">Step 04</span>
           <h3>定期レビュー</h3>
-          <p>月に1回、どこまで進んだかを振り返ります。ずれていたら、その場でプランを組み直します。</p>
+          <p>月に1回、どこまで進んだかを振り返ります。目標とずれている場合は、その場でプランを組み直します。</p>
         </div>
       </div>
     </div>
@@ -466,11 +460,11 @@
   <div class="container">
     <div class="cta-big reveal">
       <span class="eyebrow" style="color: color-mix(in srgb, var(--bg) 70%, transparent);">無料相談</span>
-      <h2 style="margin-top:16px;">目標がまだ言葉になっていなくてかまいません。</h2>
+      <h2 style="margin-top:16px;">目標がまだ言葉になっていなくても構いません。</h2>
       <p style="font-size:17px;max-width:560px;margin:12px auto 28px;">
-        30分の無料相談でいまの状況をうかがい、これから3か月でやることを一緒に決めます。売り込みはしません。
+        30分の無料相談で現在の状況をお伺いし、これから3か月で取り組むことを一緒に決めます。売り込みはいたしませんので、お気軽にご相談ください。
       </p>
-      <a href="./contact" class="btn btn-primary"><span class="nb">無料で見積もり・相談を依頼する →</span></a>
+      <a href="./contact" class="btn btn-primary"><span class="nb">無料でお見積り・相談を依頼する →</span></a>
     </div>
   </div>
 </section>
@@ -487,9 +481,9 @@
         <h4>サービス</h4>
         <ul>
           <li><a href="./service-english">英会話レッスン</a></li>
-          <li><a href="./photography">写真の作品</a></li>
+          <li><a href="./service-photo">記念撮影・ポートレート</a></li>
           <li><a href="./s-league">S.League 麻雀</a></li>
-          <li><a href="./service-tour">英語で巡る東京ツアー</a></li>
+          <li><a href="./service-tour">海外ゲストの観光案内</a></li>
           <li><a href="./service-web">Web・SNS・アプリ制作</a></li>
         </ul>
       </div>

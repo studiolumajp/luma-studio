@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#134E6F" />
+<meta name="theme-color" content="#1F2A33" />
 <meta name="color-scheme" content="light only" />
 
 <!-- ── PRIMARY SEO META ── -->
 <title>S.League 成績アーカイブ・累計ランキング | LUMA</title>
-<meta name="description" content="S.League 全24大会の公式記録。累計ランキング・大会別結果・S.League 22 団体戦結果を選手別に閲覧可能。延べ参加367名・選手126名分のデータを公開中。" />
+<meta name="description" content="S.League 全24大会の公式記録です。累計ランキングや大会別結果、S.League 22 団体戦結果を選手別にご覧いただけます。延べ参加367名・選手126名分のデータを公開しております。" />
 <meta name="keywords" content="S.League 成績,健康麻雀 ランキング,麻雀大会 結果,S.League アーカイブ,LUMA" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://studio-lumadesign.com/s-league-archive" />
@@ -19,7 +19,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://studio-lumadesign.com/s-league-archive" />
 <meta property="og:title" content="S.League 成績アーカイブ | LUMA" />
-<meta property="og:description" content="全24大会の公式記録。累計ランキング・大会別結果・団体戦結果を公開。" />
+<meta property="og:description" content="全24大会の公式記録です。累計ランキング・大会別結果・団体戦結果を公開しております。" />
 <meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -30,9 +30,8 @@
 <meta property="og:locale" content="ja_JP" />
 <meta property="og:site_name" content="LUMA" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="preload" href="/fonts/urbanist-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="./fonts/noto-sans-jp.css?v=gdpr1" />
 
 <script type="application/ld+json">
 {
@@ -46,15 +45,9 @@
 }
 </script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-62F20N179N');
-</script>
+<script src="./consent.js?v=gdpr1"></script>
 
-<link rel="stylesheet" href="./shared.css?v=aqua32" />
+<link rel="stylesheet" href="./shared.css?v=l8f" />
 <style id="page-overrides">
   .arch-hero { padding: 64px 0 48px; }
   .arch-hero h1 .accent {
@@ -67,12 +60,13 @@
   }
   .astat-v {
     font-size: clamp(28px, 3vw, 40px); font-weight: 800;
-    background: linear-gradient(120deg, var(--accent), var(--accent-2));
-    -webkit-background-clip: text; background-clip: text; color: transparent;
+    color: var(--accent-2-light);
+    text-shadow: 0 1px 2px rgba(31, 42, 51, 0.55), 0 0 18px rgba(31, 42, 51, 0.35);
     line-height: 1;
   }
   .astat-l {
-    font-family: var(--font-mono); font-size: 11px; color: var(--text-soft);
+    font-family: var(--font-mono); font-size: 12px; color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 2px rgba(31, 42, 51, 0.55), 0 0 18px rgba(31, 42, 51, 0.35);
     text-transform: uppercase; letter-spacing: 0.08em; margin-top: 6px;
   }
   @media (max-width: 640px) { .arch-stats { gap: 20px; } }
@@ -191,7 +185,7 @@
     border-radius: 999px; font-family: var(--font-mono); font-size: 12px;
     text-align: center; font-weight: 600;
   }
-  .rn.c1 { background: color-mix(in srgb, var(--accent-2) 18%, transparent); color: #B8780A; }
+  .rn.c1 { background: color-mix(in srgb, #C9A227 18%, transparent); color: #B8780A; }
   .rn.c2 { background: color-mix(in srgb, var(--text-soft) 18%, transparent); color: var(--text-soft); }
   .rn.c3 { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent); }
   .rn.cx { background: var(--bg-muted); color: var(--text-muted); }
@@ -259,7 +253,7 @@
     display: inline-block; padding: 2px 8px; min-width: 28px; text-align: center;
     border-radius: 999px; font-family: var(--font-mono); font-size: 11px; font-weight: 700;
   }
-  .errank.c1 { background: color-mix(in srgb, var(--accent-2) 18%, transparent); color: #B8780A; }
+  .errank.c1 { background: color-mix(in srgb, #C9A227 18%, transparent); color: #B8780A; }
   .errank.c2 { background: color-mix(in srgb, var(--text-soft) 18%, transparent); color: var(--text-soft); }
   .errank.c3 { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent); }
   .errank.cx { background: var(--bg-muted); color: var(--text-muted); }
@@ -279,7 +273,7 @@
     width: 36px; height: 36px; border-radius: 50%;
     display: grid; place-items: center; font-weight: 700; font-size: 14px;
   }
-  .tdet-rank.c1 { background: color-mix(in srgb, var(--accent-2) 18%, transparent); color: #B8780A; }
+  .tdet-rank.c1 { background: color-mix(in srgb, #C9A227 18%, transparent); color: #B8780A; }
   .tdet-rank.c2 { background: color-mix(in srgb, var(--text-soft) 18%, transparent); color: var(--text-soft); }
   .tdet-rank.c3 { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent); }
   .tdet-rank.cx { background: var(--bg-muted); color: var(--text-muted); }
@@ -365,13 +359,18 @@
   /* S.League を CLAUDE.md 4-1 の Soft Aqua パレットへ統一 (2026-07-11 決定)。
      shared.css の既定トークンをこのページ内で上書きする。 */
   :root{
-    --bg:#FFFFFF; --bg-soft:#F8FBFC; --bg-muted:#EBF5FA; --surface:#FFFFFF;
-    --border:#D7E5ED; --border-strong:#B8CED9;
-    --text:#134E6F; --text-muted:#51697B; --text-soft:#7A8998;
-    --accent:#1E88E5; --accent-soft:#D6EBF7; --accent-2:#F59E0B;
-    --gold:#F59E0B; --gold-2:#FBBF24;
+    --bg:#FFFFFF; --bg-soft:#F6F8FA; --bg-muted:#FFFFFF; --surface:#FFFFFF;
+    --border:#C9D3DC; --border-strong:#7A8894;
+    --text:#1F2A33; --text-muted:#56626D; --text-soft:#56626D;
+    --accent:#1565C0; --accent-soft:#EEF2F5; --accent-2:#1565C0;
+    --gold:#1565C0; --gold-2:#8EC5FF;
   }
-  body{ background:#EBF5FA; }
+  body{ background:#FFFFFF; }
+</style>
+<style id="hero-height">
+  /* HERO の高さを撮影地ページ(.photo-hero)と contact に合わせ、文字を上下の真ん中に (2026-10-03) */
+  header.arch-hero.l8-hero { align-items: center; padding: 48px 0; }
+  @media (min-width: 761px) { header.arch-hero.l8-hero { min-height: clamp(420px, 39vw, 600px); } }
 </style>
 </head>
 <body id="body-root">
@@ -404,14 +403,14 @@
   </ol>
 </nav>
 
-<header class="hero arch-hero" id="home">
+<header class="hero l8-hero arch-hero" id="home" style="--l8-photo:image-set(url('./images/hero/IMG_3177-1920.webp') type('image/webp'), url('./images/hero/IMG_3177-1920.jpg') type('image/jpeg'));--l8-photo-sm:image-set(url('./images/hero/IMG_3177-960.webp') type('image/webp'), url('./images/hero/IMG_3177-960.jpg') type('image/jpeg'))">
   <div class="container">
     <span class="eyebrow">Official Records / 麻雀大会</span>
     <h1 class="hero-title" style="margin-top:18px;">
       S.League<br />
       <span class="accent">成績アーカイブ</span>
     </h1>
-    <p style="font-size:clamp(15px,1.4vw,18px);color:var(--text-muted);margin-top:14px;">全24大会の公式記録です。累計ランキング・大会別結果・団体戦結果をまとめました。</p>
+    <p style="font-size:clamp(15px,1.4vw,18px);color:var(--text-muted);margin-top:14px;">全24大会の公式記録です。累計ランキングや大会別結果、団体戦結果をまとめております。</p>
     <div class="arch-stats">
       <div><div class="astat-v">24</div><div class="astat-l">大会数</div></div>
       <div><div class="astat-v">367</div><div class="astat-l">延べ参加人数</div></div>
@@ -460,7 +459,7 @@
     <div class="container">
       <span class="sec-label">Champions</span>
       <h2 class="sec-title">優勝者一覧</h2>
-      <p class="sec-sub">全24大会の優勝者です。複数回優勝した選手と、大会ごとの優勝者をまとめました。</p>
+      <p class="sec-sub">全24大会の優勝者です。複数回優勝した選手と、大会ごとの優勝者をまとめております。</p>
       <div class="sec-mini">複数回優勝者</div>
       <div class="cmgrid" id="champ-multi"></div>
       <div class="sec-mini">大会別 優勝者</div>
@@ -516,6 +515,7 @@
           <li><a href="./s-league-25">S.League 25 情報</a></li>
           <li><a href="./s-league-archive">成績アーカイブ</a></li>
           <li><a href="./s-league-sponsor">スポンサー募集</a></li>
+          <li><a href="./service-photo">LUMA Frame</a></li>
           <li><a href="./service-community">LUMA Circle</a></li>
           <li><a href="./service-web">LUMA Craft</a></li>
         </ul>

@@ -31,43 +31,51 @@
 .community-card-icon .i, .value-icon .i, .quick-info-card .ico .i,
 .feature-card .ico .i, .pmed .i, .tmed .i { vertical-align: middle; }
 
+/* Urbanist (OFL 1.1)。CSS の太さ 400/500/600/700/800 に、Noto Sans JP の付属欧文と縦線がそろう Urbanist 550/650/750/850/900 を割り当てる。
+   大きさは大文字の高さから 104%。測定 2026-10-02 (LUMA/marketing/site-redesign-2026-10-01/tools/balance.py) */
+@font-face { font-family: 'Urbanist LUMA'; src: url('fonts/urbanist-400.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; size-adjust: 104%; }
+@font-face { font-family: 'Urbanist LUMA'; src: url('fonts/urbanist-500.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; size-adjust: 104%; }
+@font-face { font-family: 'Urbanist LUMA'; src: url('fonts/urbanist-600.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; size-adjust: 104%; }
+@font-face { font-family: 'Urbanist LUMA'; src: url('fonts/urbanist-700.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; size-adjust: 104%; }
+@font-face { font-family: 'Urbanist LUMA'; src: url('fonts/urbanist-800.woff2') format('woff2'); font-weight: 800; font-style: normal; font-display: swap; size-adjust: 104%; }
+
 :root {
-  /* Light tokens (LUMA Soft Aqua — CLAUDE.md 4-1) */
-  --bg: #EBF5FA;           /* Base 背景 */
-  --bg-soft: #F8FBFC;      /* Ice White */
-  --bg-muted: #D6EBF7;     /* Primary Light */
+  /* Light tokens (LUMA 案9 Gallery White — CLAUDE.md 3章、2026-10-02) */
+  --bg: #FFFFFF;           /* bg 白地 */
+  --bg-soft: #F6F8FA;      /* surface 面 */
+  --bg-muted: #EEF2F5;     /* alt 淡い面 */
   --surface: #FFFFFF;      /* カード背景 */
-  --border: #D7E5ED;       /* Border Light */
-  --border-strong: #B8CED9;/* Border */
-  --text: #2C3E50;         /* 本文テキスト */
-  --text-muted: #566575;   /* 補足(AA確保) */
-  --text-soft: #5C6B7A;    /* テキストライト(AA) */
-  --accent: #1E88E5;       /* Primary Blue */
-  --accent-soft: #D6EBF7;  /* Primary Light */
-  --accent-2: #F59E0B;     /* CTA Orange */
-  --navy: #134E6F;         /* H1 / Navy */
-  --sky: #5BA9D7;          /* H3 / Sky Blue */
-  --cta-hover: #D97706;    /* CTA Hover */
-  /* Navy 面で AA(4.5:1)を満たす CTA Orange の明色版。濃色セクション専用 */
-  --accent-2-light: #FBBF24;
+  --border: #C9D3DC;       /* deco 区切り線 */
+  --border-strong: #7A8894;/* line 入力欄の枠 (白地 3.64:1) */
+  --text: #1F2A33;         /* ink 本文 */
+  --text-muted: #56626D;   /* 補足(AA確保) */
+  --text-soft: #56626D;    /* テキストライト(AA) */
+  --accent: #1565C0;       /* link リンク */
+  --accent-soft: #EEF2F5;  /* alt 淡い面 */
+  --accent-2: #1565C0;     /* cta (白文字 5.75:1) */
+  --navy: #1F2A33;         /* heading / dark 見出しと濃い面 */
+  --sky: #C9D3DC;          /* deco 装飾 */
+  --cta-hover: #2342B5;    /* ctaHover */
+  /* accentOnDark: 濃い面 #1F2A33 の上の強調 (8.06:1)。濃色セクション専用 */
+  --accent-2-light: #8EC5FF;
   --success: #047857;
   --radius: 12px;
   --radius-lg: 18px;         /* カード角丸: 全ページ 18px に統一 (2026-08-06) */
   /* 影は Navy 系に統一 (黒の影はブランド外) */
-  --shadow-sm: 0 1px 2px rgba(19,78,111,0.05), 0 1px 3px rgba(19,78,111,0.06);
-  --shadow-md: 0 4px 12px rgba(19,78,111,0.07), 0 2px 4px rgba(19,78,111,0.05);
-  --shadow-lg: 0 24px 48px -12px rgba(19,78,111,0.22);
-  --font-sans: 'Poppins', 'Noto Sans JP', -apple-system, system-ui, sans-serif;
-  /* ラベル用書体は Poppins に一本化 (2026-08-06)。日本語は Noto Sans JP のまま。
+  --shadow-sm: 0 1px 2px rgba(31, 42, 51,0.05), 0 1px 3px rgba(31, 42, 51,0.06);
+  --shadow-md: 0 4px 12px rgba(31, 42, 51,0.07), 0 2px 4px rgba(31, 42, 51,0.05);
+  --shadow-lg: 0 24px 48px -12px rgba(31, 42, 51,0.22);
+  --font-sans: 'Urbanist LUMA', 'Noto Sans JP', -apple-system, system-ui, sans-serif;
+  /* 英字は Urbanist、和文は Noto Sans JP (2026-10-02)。Urbanist は和文の太さに合わせて +150 した静的版を使う。
      変数名は既存の参照互換のため --font-mono を維持している。 */
-  --font-mono: 'Poppins', 'Noto Sans JP', -apple-system, system-ui, sans-serif;
-  --font-label: 'Poppins', 'Noto Sans JP', -apple-system, system-ui, sans-serif;
+  --font-mono: 'Urbanist LUMA', 'Noto Sans JP', -apple-system, system-ui, sans-serif;
+  --font-label: 'Urbanist LUMA', 'Noto Sans JP', -apple-system, system-ui, sans-serif;
   /* HERO 暗幕 (Navy)。全ページ共通の被覆値 (案4 の配分に統一) */
-  --scrim-1: rgba(10, 42, 62, 0.90);
-  --scrim-2: rgba(10, 42, 62, 0.72);
-  --scrim-3: rgba(10, 42, 62, 0.34);
-  --scrim-4: rgba(10, 42, 62, 0.06);
-  --scrim-text-shadow: 0 2px 20px rgba(10, 42, 62, 0.55), 0 1px 3px rgba(10, 42, 62, 0.45);
+  --scrim-1: rgba(31, 42, 51, 0.90);
+  --scrim-2: rgba(31, 42, 51, 0.72);
+  --scrim-3: rgba(31, 42, 51, 0.34);
+  --scrim-4: rgba(31, 42, 51, 0.06);
+  --scrim-text-shadow: 0 2px 20px rgba(31, 42, 51, 0.55), 0 1px 3px rgba(31, 42, 51, 0.45);
   --container: 1200px;
 }
 
@@ -129,7 +137,7 @@ nav.site-nav {
   border-bottom: 1px solid var(--border);
   transition: box-shadow .25s ease;
 }
-nav.site-nav.is-scrolled { box-shadow: 0 10px 28px -22px rgba(19, 78, 111, 0.65); }
+nav.site-nav.is-scrolled { box-shadow: 0 10px 28px -22px rgba(31, 42, 51, 0.65); }
 .nav-inner {
   max-width: var(--container); margin: 0 auto; padding: 14px 24px;
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
@@ -148,7 +156,7 @@ nav.site-nav.is-scrolled { box-shadow: 0 10px 28px -22px rgba(19, 78, 111, 0.65)
   background: linear-gradient(135deg, var(--accent) 0%, var(--navy) 100%);
   display: grid; place-items: center; color: #fff; font-weight: 800; font-size: 13px;
   line-height: 1;
-  box-shadow: 0 2px 6px -2px rgba(19, 78, 111, 0.45);
+  box-shadow: 0 2px 6px -2px rgba(31, 42, 51, 0.45);
 }
 .brand-mark::after {
   content: ''; position: absolute; right: -2px; bottom: -2px;
@@ -314,11 +322,11 @@ h1.hero-title .accent {
   font-size: 15px; transition: transform .15s, box-shadow .2s, background .2s;
   border: 1px solid transparent;
 }
-/* CTA は Orange に統一 (2026-08-06)。文字色 #3A2708 で AA 以上を確保 */
-.btn-primary { background: var(--accent-2); color: #3A2708; border-color: var(--accent-2); }
+/* CTA は青 #1565C0 + 白文字 (2026-10-02 案9)。白 / #1565C0 = 5.75:1 */
+.btn-primary { background: var(--accent-2); color: #FFFFFF; border-color: var(--accent-2); }
 .btn-primary:hover {
   background: var(--cta-hover); color: #fff; border-color: var(--cta-hover);
-  transform: translateY(-1px); box-shadow: 0 10px 24px -10px rgba(217,119,6,0.55);
+  transform: translateY(-1px); box-shadow: 0 10px 24px -10px rgba(35, 66, 181,0.55);
 }
 .btn-secondary { background: var(--surface); color: var(--text); border-color: var(--border-strong); }
 .btn-secondary:hover { border-color: var(--text); }
@@ -334,7 +342,7 @@ h1.hero-title .accent {
 .trust-item .label {
   font-size: 16px; color: var(--text-soft); margin-top: 2px;
   text-transform: uppercase; letter-spacing: 0.06em;
-  font-family: 'Poppins', -apple-system, system-ui, sans-serif;
+  font-family: 'Urbanist LUMA', 'Noto Sans JP', -apple-system, system-ui, sans-serif;
 }
 
 /* Hero visual — abstract grid card stack */
@@ -347,7 +355,7 @@ h1.hero-title .accent {
   display: flex; flex-direction: column; gap: 6px;
 }
 .hv-card .ico { font-size: 22px; line-height: 1; }
-.hv-card .label { font-size: 16px; font-family: 'Poppins', -apple-system, system-ui, sans-serif; color: var(--text-soft); text-transform: uppercase; letter-spacing: 0.08em; }
+.hv-card .label { font-size: 16px; font-family: 'Urbanist LUMA', 'Noto Sans JP', -apple-system, system-ui, sans-serif; color: var(--text-soft); text-transform: uppercase; letter-spacing: 0.08em; }
 .hv-card .title { font-size: 15px; font-weight: 600; color: var(--text); }
 .hv-1 { top: 6%; left: 8%; width: 56%; }
 .hv-2 { top: 28%; right: 4%; width: 50%; }
@@ -400,7 +408,7 @@ section { padding: 104px 0; }   /* 案4 の余白 */
   background: var(--surface); padding: 30px;
   border: 1px solid var(--border); border-radius: var(--radius-lg);
   display: flex; flex-direction: column; gap: 10px;
-  box-shadow: 0 1px 2px rgba(19,78,111,0.05), 0 8px 24px -12px rgba(19,78,111,0.18);
+  box-shadow: 0 1px 2px rgba(31, 42, 51,0.05), 0 8px 24px -12px rgba(31, 42, 51,0.18);
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
   position: relative;
 }
@@ -501,7 +509,7 @@ section { padding: 104px 0; }   /* 案4 の余白 */
 .cmp-card.has-photo .cmp-emoji { display: none; }
 .cmp-card.has-photo .cmp-visual::after {
   content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background: linear-gradient(180deg, rgba(10,42,62,0) 50%, rgba(10,42,62,0.45) 100%);
+  background: linear-gradient(180deg, rgba(31, 42, 51,0) 50%, rgba(31, 42, 51,0.45) 100%);
 }
 .cmp-card .cmp-tag {
   position: relative; z-index: 2;
@@ -630,10 +638,10 @@ section { padding: 104px 0; }   /* 案4 の余白 */
 
 /* ── FOOTER ───────────────────────────
    案4 のリズム(濃色で締める)に合わせ Navy 反転 (2026-08-06)。
-   before = --bg-soft の淡い面 / after = Navy #134E6F。
+   before = --bg-soft の淡い面 / after = Navy #1F2A33。
    Navy(相対輝度 0.0674)上の文字は全て AA(4.5:1)以上を実測で確認済み。 */
 footer {
-  background: #134E6F; color: #fff;
+  background: #1F2A33; color: #fff;
   border-top: none;
   padding: 72px 0 32px;
   position: relative; overflow: hidden;
@@ -641,32 +649,32 @@ footer {
 footer::before {
   content: ''; position: absolute; inset: 0; pointer-events: none;
   background:
-    radial-gradient(720px 380px at 86% -20%, rgba(30, 136, 229, 0.32), transparent 62%),
-    radial-gradient(560px 300px at 2% 118%, rgba(245, 158, 11, 0.14), transparent 70%);
+    radial-gradient(720px 380px at 86% -20%, rgba(21, 101, 192, 0.32), transparent 62%),
+    radial-gradient(560px 300px at 2% 118%, rgba(142, 197, 255, 0.14), transparent 70%);
 }
 footer > * { position: relative; z-index: 1; }
 footer .brand { color: #fff; }
 /* Navy 面ではロゴマークを白地 + Navy 文字に反転する */
 footer .brand-mark {
-  background: #fff; color: #134E6F;
+  background: #fff; color: #1F2A33;
   box-shadow: 0 2px 8px -2px rgba(6, 26, 40, 0.6);
 }
-footer .brand-mark::after { box-shadow: 0 0 0 2px #134E6F; }
+footer .brand-mark::after { box-shadow: 0 0 0 2px #1F2A33; }
 .footer-grid {
   display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px;
   padding-bottom: 48px; border-bottom: 1px solid rgba(255, 255, 255, 0.22);
 }
-/* #8ECDF7 on #134E6F = 5.21:1 (AA) */
-.footer-col h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; color: #8ECDF7; font-family: var(--font-mono); font-weight: 500; }
+/* #8EC5FF on #1F2A33 = 8.06:1 (AA) */
+.footer-col h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; color: #8EC5FF; font-family: var(--font-mono); font-weight: 500; }
 .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-/* rgba(255,255,255,.86) on #134E6F = 7.07:1 (AA) */
+/* rgba(255,255,255,.86) on #1F2A33 = 11.16:1 (AA) */
 .footer-col a { color: rgba(255, 255, 255, 0.86); font-size: 14px; transition: color .18s; }
 .footer-col a:hover { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
 .footer-brand p { font-size: 14px; color: rgba(255, 255, 255, 0.86); margin-top: 12px; max-width: 320px; }
 .footer-bottom {
   padding-top: 24px; display: flex; justify-content: space-between;
   align-items: center; flex-wrap: wrap; gap: 16px;
-  /* rgba(255,255,255,.74) on #134E6F = 5.71:1 (AA) */
+  /* rgba(255,255,255,.74) on #1F2A33 = 8.69:1 (AA) */
   font-size: 12px; color: rgba(255, 255, 255, 0.74);
 }
 .footer-bottom a { color: rgba(255, 255, 255, 0.86); }
@@ -773,15 +781,15 @@ footer .brand-mark::after { box-shadow: 0 0 0 2px #134E6F; }
 .hero--photo h1, .hero--photo h2, .hero--photo h3 { color: #fff; text-shadow: var(--scrim-text-shadow); }
 .hero--photo h1 .accent, .hero--photo .accent {
   background: none; -webkit-background-clip: initial; background-clip: initial;
-  color: var(--accent-2);
+  color: var(--accent-2-light);
 }
 .hero--photo .sub, .hero--photo .hero-sub, .hero--photo p {
   color: #fff; font-weight: 500;
-  text-shadow: 0 1px 12px rgba(10, 42, 62, 0.65), 0 1px 2px rgba(10, 42, 62, 0.5);
+  text-shadow: 0 1px 12px rgba(31, 42, 51, 0.65), 0 1px 2px rgba(31, 42, 51, 0.5);
 }
-.hero--photo .sub strong, .hero--photo .hero-sub strong { color: var(--accent-2) !important; }
+.hero--photo .sub strong, .hero--photo .hero-sub strong { color: var(--accent-2-light) !important; }
 .hero--photo .eyebrow { color: #fff; }
-.hero--photo .eyebrow::before { background: var(--accent-2); }
+.hero--photo .eyebrow::before { background: var(--accent-2-light); }
 .hero--photo .hero-meta { color: rgba(255, 255, 255, 0.75); }
 .hero--photo .hero-pill {
   background: rgba(255, 255, 255, 0.14); border-color: rgba(255, 255, 255, 0.38); color: #fff;
@@ -796,7 +804,7 @@ footer .brand-mark::after { box-shadow: 0 0 0 2px #134E6F; }
 /* 実績数値は案4に合わせ白抜き 30px/800。Orange は h1 と CTA に限定する */
 .hero--photo .trust-item .num {
   background: none; -webkit-background-clip: initial; background-clip: initial;
-  color: var(--accent-2); font-size: 30px; line-height: 1.1;
+  color: var(--accent-2-light); font-size: 30px; line-height: 1.1;
   text-shadow: var(--scrim-text-shadow);
 }
 .hero--photo .trust-item .label {
@@ -812,7 +820,7 @@ footer .brand-mark::after { box-shadow: 0 0 0 2px #134E6F; }
 @media (max-width: 640px) {
   .hero--photo {
     background:
-      linear-gradient(180deg, rgba(10, 42, 62, 0.70) 0%, rgba(10, 42, 62, 0.52) 50%, rgba(10, 42, 62, 0.72) 100%),
+      linear-gradient(180deg, rgba(31, 42, 51, 0.70) 0%, rgba(31, 42, 51, 0.52) 50%, rgba(31, 42, 51, 0.72) 100%),
       var(--hero-photo, linear-gradient(135deg, var(--navy), var(--accent))) center / cover no-repeat;
   }
 }
@@ -866,7 +874,7 @@ footer .brand-mark::after { box-shadow: 0 0 0 2px #134E6F; }
 
 /* ══════════════════════════════════════════════════════════════
    NEWS — ニュースページ (2026-09-03 / 案5: ハイライト + 一覧)
-   分類チップの配色は白または #3A2708 とのコントラストを実測して選んだ。
+   分類チップの配色は白または #FFFFFF とのコントラストを実測して選んだ。
    最も低い「新ページ」でも 6.64:1 で WCAG AA (4.5:1) に適合する。
    ══════════════════════════════════════════════════════════════ */
 .nw-hero { padding: clamp(56px, 8vw, 88px) 0 clamp(40px, 6vw, 64px); min-height: 0; }
@@ -986,7 +994,7 @@ footer .brand-mark::after { box-shadow: 0 0 0 2px #134E6F; }
    HERO SLIDESHOW — 背景写真を一定間隔で入れ替える (2026-09-03)
    .hero--photo は背景を1枚の写真で塗るため、クロスフェードできない。
    写真を子レイヤー2枚に逃がし、暗幕を ::after に移して重ね順を作る。
-   暗幕は .hero--photo と同じ横グラデに、均一な rgba(10,42,62,.25) を重ねたもの。
+   暗幕は .hero--photo と同じ横グラデに、均一な rgba(31, 42, 51,.25) を重ねたもの。
    写真ごとに明るさが違うため、15枚それぞれのテキスト領域を実測して .25 を決めた。
    白文字のコントラスト比は最も不利な1枚 (横浜みなとみらいの夕景) でも 4.77:1 で
    WCAG AA (4.5:1) に適合する。
@@ -1007,23 +1015,23 @@ footer .brand-mark::after { box-shadow: 0 0 0 2px #134E6F; }
 .hero--slideshow::after {
   content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
   background:
-    linear-gradient(0deg, rgba(10, 42, 62, 0.25), rgba(10, 42, 62, 0.25)),
+    linear-gradient(0deg, rgba(31, 42, 51, 0.25), rgba(31, 42, 51, 0.25)),
     linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 34%, var(--scrim-3) 58%, var(--scrim-4) 76%);
 }
 .hero--slideshow > .container { position: relative; z-index: 2; }
 
-/* 停止・再生ボタン。白文字 on rgba(10,42,62,.72) 相当で 8:1 以上を確保する。
+/* 停止・再生ボタン。白文字 on rgba(31, 42, 51,.72) 相当で 8:1 以上を確保する。
    右下は .line-float (position:fixed / z-index:900) の定位置で必ず重なるため、左下に置く。 */
 .hero-slide-toggle {
   position: absolute; left: 20px; bottom: 20px; z-index: 3;
   display: inline-flex; align-items: center; gap: 7px;
   padding: 8px 14px; border-radius: 999px;
-  background: rgba(10, 42, 62, 0.72); border: 1px solid rgba(255, 255, 255, 0.42);
+  background: rgba(31, 42, 51, 0.72); border: 1px solid rgba(255, 255, 255, 0.42);
   color: #fff; font-family: var(--font-sans); font-size: 12.5px; font-weight: 600;
   cursor: pointer; transition: background 0.2s ease, border-color 0.2s ease;
 }
 .hero-slide-toggle:hover,
-.hero-slide-toggle:focus-visible { background: rgba(10, 42, 62, 0.9); border-color: #fff; }
+.hero-slide-toggle:focus-visible { background: rgba(31, 42, 51, 0.9); border-color: #fff; }
 .hero-slide-toggle svg { flex: none; }
 .hero-slide-toggle[hidden] { display: none; }
 
@@ -1031,8 +1039,8 @@ footer .brand-mark::after { box-shadow: 0 0 0 2px #134E6F; }
   /* .hero--photo と同じ考え方で、モバイルは全体を均一に暗くする縦グラデにする */
   .hero--slideshow::after {
     background:
-      linear-gradient(0deg, rgba(10, 42, 62, 0.25), rgba(10, 42, 62, 0.25)),
-      linear-gradient(180deg, rgba(10, 42, 62, 0.70) 0%, rgba(10, 42, 62, 0.52) 50%, rgba(10, 42, 62, 0.72) 100%);
+      linear-gradient(0deg, rgba(31, 42, 51, 0.25), rgba(31, 42, 51, 0.25)),
+      linear-gradient(180deg, rgba(31, 42, 51, 0.70) 0%, rgba(31, 42, 51, 0.52) 50%, rgba(31, 42, 51, 0.72) 100%);
   }
   .hero-slide-toggle { left: 14px; bottom: 14px; padding: 7px 12px; font-size: 12px; }
 }
@@ -1057,17 +1065,17 @@ footer .brand-mark::after { box-shadow: 0 0 0 2px #134E6F; }
   --navy: #FFFFFF;                      /* h1・h2 の色として参照される */
   --sky: rgba(255, 255, 255, 0.78);
   --surface: rgba(255, 255, 255, 0.08);
-  --bg: #134E6F;
+  --bg: #1F2A33;
   --bg-soft: rgba(255, 255, 255, 0.06);
   --bg-muted: rgba(255, 255, 255, 0.12);
   --border: rgba(255, 255, 255, 0.22);
   --border-strong: rgba(255, 255, 255, 0.38);
-  --accent: #8ECDF7;                    /* Navy 上で AA を満たす明るいブルー */
+  --accent: #8EC5FF;                    /* Navy 上で AA を満たす明るいブルー */
   --accent-soft: rgba(255, 255, 255, 0.12);
   --shadow-sm: none;
   --shadow-md: 0 8px 24px rgba(6, 26, 40, 0.35);
   --shadow-lg: 0 24px 48px -12px rgba(6, 26, 40, 0.55);
-  background: #134E6F;
+  background: #1F2A33;
   color: #fff;
   border-top: none; border-bottom: none;
   position: relative; overflow: hidden;
@@ -1077,14 +1085,14 @@ footer .brand-mark::after { box-shadow: 0 0 0 2px #134E6F; }
 #compare.section-invert, #flow.section-invert, #gallery.section-invert,
 #schedule.section-invert, #faq.section-invert, #services.section-invert,
 #spotlight.section-invert, #prizes.section-invert {
-  background: #134E6F;
+  background: #1F2A33;
   border-top: none; border-bottom: none;
 }
 .section-invert::before {
   content: ''; position: absolute; inset: 0; pointer-events: none;
   background:
-    radial-gradient(720px 380px at 84% -10%, rgba(30, 136, 229, 0.38), transparent 62%),
-    radial-gradient(560px 300px at 4% 108%, rgba(245, 158, 11, 0.16), transparent 70%);
+    radial-gradient(720px 380px at 84% -10%, rgba(21, 101, 192, 0.38), transparent 62%),
+    radial-gradient(560px 300px at 4% 108%, rgba(142, 197, 255, 0.16), transparent 70%);
 }
 .section-invert > * { position: relative; z-index: 1; }
 .section-invert .eyebrow { color: var(--accent-2-light); }
@@ -1098,13 +1106,13 @@ footer .brand-mark::after { box-shadow: 0 0 0 2px #134E6F; }
 .section-invert .timeline-year { color: var(--accent-2-light); }
 /* 反転セクション内で「白面の上に置かれる要素」は固定色に戻す
    (トークン反転が二重に効いて白地に白文字になるのを防ぐ) */
-.section-invert .cmp-tag { color: #134E6F; background: rgba(255, 255, 255, 0.92); }
-.section-invert .cmp-btn-primary { background: #1E88E5; color: #fff; }
-.section-invert .cmp-btn-primary:hover { background: #0B6BC4; }
-.section-invert .cmp-btn-link { color: #1E88E5; }
+.section-invert .cmp-tag { color: #1F2A33; background: rgba(255, 255, 255, 0.92); }
+.section-invert .cmp-btn-primary { background: #1565C0; color: #fff; }
+.section-invert .cmp-btn-primary:hover { background: #2342B5; }
+.section-invert .cmp-btn-link { color: #1565C0; }
 .section-invert .cmp-card { background: #fff; }
-.section-invert .cmp-card h3 { color: #134E6F; }
-.section-invert .cmp-card .cmp-pitch, .section-invert .cmp-card .cmp-meta { color: #566575; }
+.section-invert .cmp-card h3 { color: #1F2A33; }
+.section-invert .cmp-card .cmp-pitch, .section-invert .cmp-card .cmp-meta { color: #56626D; }
 /* 円形ステップ番号は Navy 上で AA を満たすよう白文字に */
 .section-invert .sp-flow-num { background: rgba(255, 255, 255, 0.18); color: #fff; }
 /* 反転セクション内の強調時刻(S.League 24 のタイムライン)は
@@ -1122,7 +1130,7 @@ body .sp-plan,
 body .prize-card,
 body .type-card,
 body .event-card {
-  box-shadow: 0 1px 2px rgba(19, 78, 111, 0.05), 0 8px 24px -12px rgba(19, 78, 111, 0.18);
+  box-shadow: 0 1px 2px rgba(31, 42, 51, 0.05), 0 8px 24px -12px rgba(31, 42, 51, 0.18);
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
 body .info-card:hover,
@@ -1162,9 +1170,9 @@ body:has(.alb.open) .line-float { display: none; }
   gap: 8px;
   padding: 13px 20px;
   border-radius: 999px;
-  background: var(--accent-2, #F59E0B);
-  color: #3A2A02;
-  font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+  background: var(--accent-2, #1565C0);
+  color: #FFFFFF;
+  font-family: 'Urbanist LUMA', 'Noto Sans JP', sans-serif;
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
@@ -1174,12 +1182,12 @@ body:has(.alb.open) .line-float { display: none; }
 }
 .line-float:hover,
 .line-float:focus-visible{
-  background: var(--cta-hover, #D97706);
+  background: var(--cta-hover, #2342B5);
   color: #fff;
   transform: translateY(-2px);
   box-shadow: 0 14px 34px -10px rgba(6, 26, 40, .55);
 }
-.line-float:focus-visible{ outline: 3px solid #134E6F; outline-offset: 3px; }
+.line-float:focus-visible{ outline: 3px solid #1F2A33; outline-offset: 3px; }
 .line-float .lf-icon{ width: 18px; height: 18px; flex: none; }
 @media (max-width: 640px){
   .line-float{ right: 14px; bottom: 14px; padding: 12px 17px; font-size: 13.5px; }
@@ -1193,14 +1201,14 @@ body:has(.alb.open) .line-float { display: none; }
    主CTA(btn-primary / Orange)より一段弱く、btn-secondary より明確に見える中間トーン */
 .btn-line {
   background: var(--accent-soft);
-  color: #134E6F;
+  color: #1F2A33;
   border-color: var(--accent-soft);
   font-weight: 600;
 }
 .btn-line:hover {
-  background: var(--accent, #1E88E5);
+  background: var(--accent, #1565C0);
   color: #fff;
-  border-color: var(--accent, #1E88E5);
+  border-color: var(--accent, #1565C0);
   transform: translateY(-1px);
 }
 /* 反転(Navy)セクション上に置かれた場合の可読性確保 */
@@ -1210,8 +1218,8 @@ body:has(.alb.open) .line-float { display: none; }
   border-color: rgba(255, 255, 255, 0.38);
 }
 .section-invert .btn-line:hover {
-  background: #8ECDF7;
-  color: #0B3450;
+  background: #8EC5FF;
+  color: #1F2A33;
 }
 /* 写真ヒーロー上: 主CTA(Orange ベタ)と競合しないよう半透明の白面にする。
    優先度は 予約する(ベタOrange) > LINE で相談(白半透明) > サービスを見る(枠線のみ) */
@@ -1368,24 +1376,24 @@ body:has(.alb.open) .line-float { display: none; }
 }
 
 /* ── フッターの SNS 行 (工程D) ──
-   footer-grid と footer-bottom の間に置く1行。Navy #134E6F 面での
+   footer-grid と footer-bottom の間に置く1行。Navy #1F2A33 面での
    コントラストは footer-col と同じ値を使う。 */
 .footer-sns {
   padding-top: 22px;
   display: flex; align-items: center; flex-wrap: wrap; gap: 8px 18px;
   font-size: 14px;
 }
-/* #8ECDF7 on #134E6F = 5.21:1 (AA) */
+/* #8EC5FF on #1F2A33 = 8.06:1 (AA) */
 .footer-sns-h {
   font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
-  color: #8ECDF7; font-family: var(--font-mono); font-weight: 500;
+  color: #8EC5FF; font-family: var(--font-mono); font-weight: 500;
 }
-/* rgba(255,255,255,.86) on #134E6F = 7.07:1 (AA) */
+/* rgba(255,255,255,.86) on #1F2A33 = 11.16:1 (AA) */
 .footer-sns a { color: rgba(255, 255, 255, 0.86); transition: color .18s; }
 .footer-sns a:hover, .footer-sns a:focus-visible { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
 
 /* ── Instagram への導線 (写真系ページ・フッター直上) ── */
-.ig-note { padding: 0 0 96px; }
+.ig-note { padding: 64px 0 96px; }
 .ig-note-in {
   max-width: 760px; margin: 0 auto;
   background: var(--bg-soft);
@@ -1406,7 +1414,7 @@ body:has(.alb.open) .line-float { display: none; }
 }
 .ig-note-cta a:hover, .ig-note-cta a:focus-visible { border-color: var(--accent); color: var(--accent); }
 @media (max-width: 600px) {
-  .ig-note { padding-bottom: 64px; }
+  .ig-note { padding: 40px 0 64px; }
   .ig-note-in { padding: 26px 20px; }
 }
 
@@ -1533,6 +1541,10 @@ br.sp { display: none; }
 .contact-hero h1 .accent{background:linear-gradient(120deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
 .nw-art h2{font-size:21px;color:var(--navy);margin:40px 0 0;line-height:1.55}
 .photo-hero{padding:64px 0 32px}
+/* 撮影地ページの HERO は縦を約1.4倍に (2026-10-02)。14インチ MacBook (幅1512px) で 420px → 約590px。スマホは据え置き */
+@media (min-width:761px){header.photo-hero.l8-hero{min-height:clamp(420px,39vw,600px)}}
+/* 文字を上下の真ん中に (上下の余白も同じ値にそろえる) */
+header.photo-hero.l8-hero{align-items:center;padding:48px 0}
 .photo-hero h1 .accent{background:linear-gradient(120deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
 .photo-hero .sub{font-size:clamp(15px,1.4vw,18px);color:var(--text-muted);margin-top:12px}
 .filter-bar{position:sticky;top:56px;z-index:40;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:saturate(180%) blur(12px);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
@@ -1549,7 +1561,7 @@ br.sp { display: none; }
 .photo-item:focus-visible,.filter-btn:focus-visible,.lb-btn:focus-visible,.lb-close:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .photo-item img{width:100%;height:auto;display:block;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
 .photo-item:hover img{transform:scale(1.03)}
-.photo-overlay{position:absolute;inset:0;padding:14px 16px;background:linear-gradient(0deg,rgba(10,42,62,0.65) 0%,rgba(10,42,62,0) 50%);color:#fff;opacity:0;transition:opacity .25s;display:flex;flex-direction:column;justify-content:flex-end}
+.photo-overlay{position:absolute;inset:0;padding:14px 16px;background:linear-gradient(0deg,rgba(31, 42, 51,0.65) 0%,rgba(31, 42, 51,0) 50%);color:#fff;opacity:0;transition:opacity .25s;display:flex;flex-direction:column;justify-content:flex-end}
 .photo-item:hover .photo-overlay{opacity:1}
 .photo-title{font-size:14px;font-weight:700}
 .photo-en{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:rgba(255,255,255,0.85);margin-top:2px}
@@ -1574,7 +1586,7 @@ br.sp { display: none; }
 .svc-overview-lead em{font-style:normal;color:var(--accent)}
 .svc-overview-body{font-size:16px;color:var(--text-muted);line-height:1.75}
 .offers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.offer-card{background:var(--surface);padding:28px;border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:0 1px 2px rgba(19,78,111,0.05),0 8px 24px -12px rgba(19,78,111,0.18);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;display:flex;flex-direction:column;gap:8px}
+.offer-card{background:var(--surface);padding:28px;border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:0 1px 2px rgba(31, 42, 51,0.05),0 8px 24px -12px rgba(31, 42, 51,0.18);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;display:flex;flex-direction:column;gap:8px}
 .offer-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--border-strong)}
 .offer-card.feature{background:color-mix(in srgb,var(--surface) 88%,var(--accent) 6%);border-left:3px solid var(--accent)}
 .offer-card p{font-size:14px;color:var(--text-muted);line-height:1.65;margin-top:6px}
@@ -1649,3 +1661,110 @@ br.sp { display: none; }
 
 /* 画像の保存操作の制限 (2026-09-06): ドラッグと iOS 長押しメニューを抑える。クリックは通す */
 img, picture img { -webkit-user-drag: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+
+/* ============================================================
+   案8「場所で選ぶ型」の見た目を、今の shared.css の上に重ねる層 (2026-10-02 本番に統合)。配色は案9、書体は Urbanist + Noto Sans JP のまま。
+   方針: 飾りは線と余白だけ。影、ぼかした光、グラデーションを消す。角丸は 6〜8px。
+         リンクは下線で塗りの CTA と区別する (WCAG 1.4.1)。
+   ============================================================ */
+
+:root {
+  --radius: 6px;
+  --radius-lg: 8px;
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  /* ヒーローの暗幕を薄くする (旧 .90 → .06)。文字の下だけ暗くして写真の明るさを残す。
+     左端 .74 は、見本の写真38枚で白い本文が 4.5:1 以上になる最小の値 (写真の明るい上位5%で測定、2026-10-02) */
+  --scrim-1: rgba(31, 42, 51, 0.74);
+  --scrim-2: rgba(31, 42, 51, 0.60);
+  --scrim-3: rgba(31, 42, 51, 0.16);
+  --scrim-4: rgba(31, 42, 51, 0.04);
+  --scrim-text-shadow: 0 1px 2px rgba(31, 42, 51, 0.55), 0 0 18px rgba(31, 42, 51, 0.35);
+  --l8-rule: var(--border);
+}
+
+/* ── ヘッダー: 白地に下線1本。影なし ── */
+nav.site-nav, nav.site-nav.is-scrolled {
+  background: var(--bg) !important; box-shadow: none !important;
+  border-bottom: 1px solid var(--l8-rule); backdrop-filter: none !important;
+}
+.brand-mark { background: var(--text) !important; box-shadow: none !important; border-radius: 6px; }
+footer .brand-mark { background: #FFFFFF !important; color: #1F2A33 !important; } /* 2026-10-02 Sho 指示: 濃い面のフッターでは白地 + インク文字 (案1) */
+.brand-mark::after { display: none; }
+.nav-cta, a.nav-cta { border-radius: 6px !important; background: var(--accent-2) !important; color: #FFFFFF !important; box-shadow: none !important; }
+
+/* ── 区画: 上に線1本、白地と面の色を交互に ── */
+body > section, body > main > section, .section-l8 { border-top: 1px solid var(--l8-rule); }
+body > section:nth-of-type(even):not(.section-invert):not(.hero):not(.l8-hero),
+body > main > section:nth-of-type(even):not(.section-invert) { background: var(--bg-soft); }
+section { padding-block: clamp(44px, 7vw, 88px); }
+
+/* ── 見出しの上の小さなラベル: 点を消し、補足の色に ── */
+.eyebrow { color: var(--text-muted); letter-spacing: 0.12em; }
+.eyebrow::before { display: none; }
+.hero--photo .eyebrow, .l8-hero .eyebrow { color: #FFFFFF; }
+
+/* ── 光とグラデーションを消す ── */
+.hero::before, .section-invert::before, .section-invert::after, .cta-big::before, .cta-big::after,
+footer::before, footer::after { display: none !important; background: none !important; }
+.section-invert, .cta-big, footer { background-image: none !important; }
+h1 .accent, .hero-title .accent, .trust-item .num, .contact-hero h1 .accent, .photo-hero h1 .accent {
+  background: none !important; -webkit-background-clip: initial !important; background-clip: initial !important;
+  color: var(--accent) !important;
+}
+.hero--photo h1 .accent, .l8-hero h1 .accent { color: var(--accent-2-light) !important; }
+/* HERO は写真や濃い面の上なので、見出しの強調はすべて accentOnDark (#8EC5FF)。トップの .top-hero は .hero ではないため対象外。スポンサー募集の .sp-hero も含める (Sho指示 2026-10-03) */
+.hero h1 .accent, .sp-hero h1 .accent { color: var(--accent-2-light) !important; }
+.price-box::before { background: var(--accent) !important; }
+
+/* ── カードと部品: 枠線1本、影なし、角丸 8px ── */
+.card, .cmp-card, .svc, .offer-card, .price-box, .info-card, .faq-item, .nw-hl, .feature-card, .value-card,
+.quick-info-card, .hv-card, .cr-pdetail, .rule-card, .cr-step, .plan, .community-card {
+  box-shadow: none !important; border-radius: var(--radius-lg) !important;
+}
+.cmp-card:hover, .offer-card:hover, .nw-hl:hover, .hv-card:hover, .feature-card:hover { transform: none !important; box-shadow: none !important; }
+.btn { border-radius: 6px; box-shadow: none !important; }
+.btn-primary:hover { transform: none; box-shadow: none; }
+.hero-pill, .cmp-tag, .nw-chip { border-radius: 999px; }
+
+/* ── フッター: 濃い面に線だけ ── */
+footer { background: var(--navy) !important; }
+footer a { color: var(--accent-2-light); }
+
+/* ── 写真のヒーロー (写真のなかったページに足すもの) ──
+   使い方: 最初の header / section に class="l8-hero" と
+   style="--l8-photo: image-set(url('….webp') type('image/webp'), url('….jpg') type('image/jpeg'))" を付ける */
+header.l8-hero, .l8-hero {
+  position: relative; color: #FFFFFF; min-height: clamp(260px, 38vw, 420px);
+  display: flex; align-items: flex-end;
+  background:
+    linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 38%, var(--scrim-3) 66%, var(--scrim-4) 88%),
+    linear-gradient(0deg, rgba(31, 42, 51, 0.45) 0%, rgba(31, 42, 51, 0) 55%),
+    var(--l8-photo, linear-gradient(135deg, var(--navy), var(--accent))) center / cover no-repeat !important;
+}
+.l8-hero h1, .l8-hero h2, .l8-hero h3, .l8-hero p, .l8-hero li, .l8-hero span, .l8-hero dt, .l8-hero dd, .l8-hero time, .l8-hero small {
+  color: #FFFFFF !important; text-shadow: var(--scrim-text-shadow);
+}
+.l8-hero a:not(.btn) { color: #FFFFFF !important; }
+/* 写真の上の強調は .hero--photo と同じ水色にそろえる (2026-10-03。インクの文字が暗幕に沈んでいたため) */
+.l8-hero strong { color: var(--accent-2-light) !important; }
+.l8-hero .btn-secondary { background: transparent; color: #FFFFFF; border-color: rgba(255, 255, 255, 0.6); }
+.l8-hero > * { position: relative; width: 100%; }
+/* 撮影地の注記 (代用の写真で、行き先と違う場所を写しているとき) */
+.l8-credit {
+  position: absolute; right: 12px; top: 10px; z-index: 1; width: auto !important;
+  font-size: 11px; line-height: 1.4; color: rgba(255, 255, 255, 0.92) !important;
+  background: rgba(31, 42, 51, 0.55); padding: 2px 8px; border-radius: 4px; text-shadow: none !important;
+}
+@media (max-width: 640px) { .l8-hero { min-height: 240px; } .l8-credit { right: 8px; top: 6px; } }
+
+/* スマホでは 960px の写真を使う */
+@media (max-width: 760px) {
+  header.l8-hero, .l8-hero {
+    background:
+      linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 38%, var(--scrim-3) 66%, var(--scrim-4) 88%),
+      linear-gradient(0deg, rgba(31, 42, 51, 0.45) 0%, rgba(31, 42, 51, 0) 55%),
+      var(--l8-photo-sm, var(--l8-photo, linear-gradient(135deg, var(--navy), var(--accent)))) center / cover no-repeat !important;
+  }
+}

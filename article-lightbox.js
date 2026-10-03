@@ -17,7 +17,7 @@
   var css = [
     '.art figure img{cursor:zoom-in;transition:opacity .2s ease;}',
     '.art figure img:hover{opacity:.88;}',
-    '.art figure img:focus-visible{outline:2px solid var(--accent,#1E88E5);outline-offset:3px;}',
+    '.art figure img:focus-visible{outline:2px solid var(--accent,#1565C0);outline-offset:3px;}',
     '.alb{display:none;position:fixed;inset:0;background:rgba(10,10,10,.94);z-index:1000;align-items:center;justify-content:center;padding:24px;}',
     '.alb.open{display:flex;}',
     '.alb-inner{position:relative;max-width:1200px;max-height:100%;width:100%;display:flex;flex-direction:column;align-items:center;gap:16px;}',

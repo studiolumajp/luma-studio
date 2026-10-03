@@ -12,7 +12,7 @@
 .mx-board-head b { font-size: 13px; letter-spacing: .08em; }
 .mx-score { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 16px 0; }
 .mx-score div { text-align: center; }
-.mx-score strong { display: block; font-size: clamp(30px, 4vw, 40px); font-weight: 800; line-height: 1.1; font-family: Poppins, sans-serif; }
+.mx-score strong { display: block; font-size: clamp(30px, 4vw, 40px); font-weight: 800; line-height: 1.1; font-family: 'Urbanist LUMA', 'Noto Sans JP', sans-serif; }
 .mx-score small { font-size: 12px; }
 .mx-next { margin-top: 12px; padding: 16px; border-radius: 14px; }
 .mx-next .k { font-size: 12px; font-weight: 700; letter-spacing: .1em; }
@@ -41,7 +41,7 @@ section.mx-doors { padding: 80px 0 96px; }
 .mx-panel dt { font-weight: 700; }
 .mx-panel dd { margin: 0; }
 .mx-panel .mx-actions { margin-top: 6px; }
-.mx .mx-panel .mx-ghost { color: #134E6F; }
+.mx .mx-panel .mx-ghost { color: #1F2A33; }
 .mx-ghost { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 24px; border-radius: 999px; border: 1.5px solid currentColor; font-weight: 700; font-size: 15px; }
 @media (max-width: 900px) {
   .mx-hero .container { grid-template-columns: 1fr; }
@@ -55,68 +55,68 @@ section.mx-doors { padding: 80px 0 96px; }
   .mx-panel .body { padding: 22px; }
 }
 /* 10. 目的から探す宿の入口(星野リゾート: 予約の帯を HERO に、円形の写真で目的を選ぶ / Airbnb: 検索の帯) */
-.mx-resort .mx-hero { background: #FFFFFF; color: #2C3E50; padding: 72px 0 64px; }
+.mx-resort .mx-hero { background: #FFFFFF; color: #1F2A33; padding: 72px 0 64px; }
 .mx-resort .mx-hero .container { grid-template-columns: minmax(0, 1fr) minmax(0, 520px); gap: 40px 48px; align-items: center; }
 .mx-resort .mx-board { grid-column: 1 / -1; }
-.mx-resort .t10-video { position: relative; border-radius: 28px; overflow: hidden; aspect-ratio: 16 / 9; background: #134E6F; box-shadow: 0 18px 44px rgba(19,78,111,.18); }
+.mx-resort .t10-video { position: relative; border-radius: 28px; overflow: hidden; aspect-ratio: 16 / 9; background: #1F2A33; box-shadow: 0 18px 44px rgba(31, 42, 51,.18); }
 .mx-resort .t10-video video { display: block; width: 100%; height: 100%; object-fit: cover; }
-.mx-resort .mx-eb { color: #1E88E5; }
-.mx-resort h1 { color: #134E6F; }
+.mx-resort .mx-eb { color: #1565C0; }
+.mx-resort h1 { color: #1F2A33; }
 .mx-resort h1 { font-size: clamp(32px, 4.2vw, 54px); }
-.mx-resort h1 em { font-style: normal; color: #1E88E5; }
+.mx-resort h1 em { font-style: normal; color: #1565C0; }
 .mx-resort .mx-lead { max-width: 40em; }
-.mx-resort .mx-ghost { color: #134E6F; }
+.mx-resort .mx-ghost { color: #1F2A33; }
 .mx-resort .mx-board { padding: 0; background: transparent; display: grid; gap: 14px; }
 .mx-resort .mx-board-head { display: none; }
 .mx-resort .mx-score { order: 2; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; padding: 0; }
-.mx-resort .mx-score div { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 18px 12px 16px; border-radius: 22px; background: #EBF5FA; text-align: center; }
-.mx-resort .mx-score strong { font-size: clamp(34px, 4.4vw, 48px); line-height: 1.3; color: #134E6F; }
-.mx-resort .mx-score small { color: #2C3E50; font-size: 15px; font-weight: 600; }
-.mx-resort .mx-next { order: 1; margin: 0; display: grid; grid-template-columns: auto auto minmax(0, 1fr) auto; align-items: center; gap: 8px 24px; padding: 14px 14px 14px 28px; border-radius: 999px; background: #FFFFFF; border: 1px solid #B8CED9; box-shadow: 0 10px 30px rgba(19,78,111,.12); }
-.mx-resort .mx-next .k { color: #D97706; }
-.mx-resort .mx-next h2 { margin: 0; font-size: 18px; color: #134E6F; white-space: nowrap; }
+.mx-resort .mx-score div { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 18px 12px 16px; border-radius: 22px; background: #FFFFFF; text-align: center; }
+.mx-resort .mx-score strong { font-size: clamp(34px, 4.4vw, 48px); line-height: 1.3; color: #1F2A33; }
+.mx-resort .mx-score small { color: #1F2A33; font-size: 15px; font-weight: 600; }
+.mx-resort .mx-next { order: 1; margin: 0; display: grid; grid-template-columns: auto auto minmax(0, 1fr) auto; align-items: center; gap: 8px 24px; padding: 14px 14px 14px 28px; border-radius: 999px; background: #FFFFFF; border: 1px solid #7A8894; box-shadow: 0 10px 30px rgba(31, 42, 51,.12); }
+.mx-resort .mx-next .k { color: #2342B5; }
+.mx-resort .mx-next h2 { margin: 0; font-size: 18px; color: #1F2A33; white-space: nowrap; }
 .mx-resort .mx-next ul { margin: 0; display: flex; flex-wrap: wrap; gap: 4px 20px; }
-.mx-resort .mx-next li + li { padding-left: 20px; border-left: 1px solid #D7E5ED; }
+.mx-resort .mx-next li + li { padding-left: 20px; border-left: 1px solid #C9D3DC; }
 .mx-resort .mx-next .btn { width: auto; margin: 0; }
-.mx-resort .mx-rules { background: #F8FBFC; border-block: 1px solid #D7E5ED; }
-.mx-resort .mx-rules b { color: #134E6F; }
+.mx-resort .mx-rules { background: #F6F8FA; border-block: 1px solid #C9D3DC; }
+.mx-resort .mx-rules b { color: #1F2A33; }
 .mx-resort .mx-rules span { color: #5E6E7D; }
 .mx-resort .mx-doors { background: #FFFFFF; }
-.mx-resort .mx-doors-head h2 { color: #134E6F; }
-.mx-resort .mx-doors .mx-eb { color: #1E88E5; }
-.mx-resort .mx-tab { align-items: center; text-align: center; background: transparent; border: 0; color: #2C3E50; padding: 8px; }
-.mx-resort .t10-img { width: 132px; height: 132px; border-radius: 50%; object-fit: cover; margin-bottom: 10px; border: 4px solid #FFFFFF; box-shadow: 0 0 0 1px #D7E5ED; transition: box-shadow .2s; }
-.mx-resort .mx-tab .n { color: #1E88E5; }
-.mx-resort .mx-tab b { color: #134E6F; }
-.mx-resort .mx-tab[aria-selected="true"] .t10-img { box-shadow: 0 0 0 4px #F59E0B; }
-.mx-resort .mx-panel { margin-top: 28px; background: #F8FBFC; border-radius: 24px; }
-.mx-resort .mx-panel h3 { color: #134E6F; }
-.mx-resort .mx-panel .mx-eb { color: #1E88E5; }
-.mx-resort .mx-panel dl div { border-bottom: 1px solid #D7E5ED; }
-.mx-resort .mx-panel dt { color: #134E6F; }
+.mx-resort .mx-doors-head h2 { color: #1F2A33; }
+.mx-resort .mx-doors .mx-eb { color: #1565C0; }
+.mx-resort .mx-tab { align-items: center; text-align: center; background: transparent; border: 0; color: #1F2A33; padding: 8px; }
+.mx-resort .t10-img { width: 132px; height: 132px; border-radius: 50%; object-fit: cover; margin-bottom: 10px; border: 4px solid #FFFFFF; box-shadow: 0 0 0 1px #C9D3DC; transition: box-shadow .2s; }
+.mx-resort .mx-tab .n { color: #1565C0; }
+.mx-resort .mx-tab b { color: #1F2A33; }
+.mx-resort .mx-tab[aria-selected="true"] .t10-img { box-shadow: 0 0 0 4px #1565C0; }
+.mx-resort .mx-panel { margin-top: 28px; background: #F6F8FA; border-radius: 24px; }
+.mx-resort .mx-panel h3 { color: #1F2A33; }
+.mx-resort .mx-panel .mx-eb { color: #1565C0; }
+.mx-resort .mx-panel dl div { border-bottom: 1px solid #C9D3DC; }
+.mx-resort .mx-panel dt { color: #1F2A33; }
 @media (max-width: 900px) { .mx-resort .mx-hero .container { grid-template-columns: 1fr; } }
 @media (max-width: 1000px) { .mx-resort .mx-next { grid-template-columns: 1fr; border-radius: 24px; padding: 20px; } .mx-resort .mx-next h2 { white-space: normal; } .mx-resort .mx-next .btn { width: 100%; } }
 @media (max-width: 600px) { .mx-resort .mx-score { gap: 8px; } .mx-resort .mx-score div { padding: 14px 6px 12px; border-radius: 16px; } .mx-resort .mx-score strong { font-size: 30px; } .mx-resort .mx-score small { font-size: 12px; } .mx-resort .t10-img { width: 96px; height: 96px; } .mx-resort .mx-next li + li { padding-left: 0; border-left: 0; } }
 
 /* タブのキーボード操作時の枠 */
-.mx-tab:focus-visible { outline: 3px solid #1E88E5; outline-offset: 4px; border-radius: 12px; }
+.mx-tab:focus-visible { outline: 3px solid #1565C0; outline-offset: 4px; border-radius: 12px; }
 /* 動きを減らす設定では動画を止めたままにする(poster を表示) */
 @media (prefers-reduced-motion: reduce) { .mx-resort .mx-tab .t10-img { transition: none; } }
 
 /* HERO 案A: HERO 全体に動画、左に文字、右へ抜ける暗幕。次回大会と記録は HERO の下 (2026-09-26) */
-.mx-resort .mx-hero { position: relative; overflow: hidden; background: #134E6F; padding: 120px 0 128px; min-height: 560px; display: flex; align-items: center; }
+.mx-resort .mx-hero { position: relative; overflow: hidden; background: #1F2A33; padding: 120px 0 128px; min-height: 560px; display: flex; align-items: center; }
 .mx-resort .mx-hero .container { position: relative; z-index: 1; display: block; width: 100%; }
 .mx-resort .mx-hero .container > div { max-width: 600px; }
-.mx-resort .hv-bg { position: absolute; inset: 0; z-index: 0; aspect-ratio: auto; border-radius: 0; box-shadow: none; background: #134E6F; }
+.mx-resort .hv-bg { position: absolute; inset: 0; z-index: 0; aspect-ratio: auto; border-radius: 0; box-shadow: none; background: #1F2A33; }
 .mx-resort .hv-bg video { width: 100%; height: 100%; object-fit: cover; }
-.mx-resort .hv-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(19,78,111,.92) 0%, rgba(19,78,111,.84) 50%, rgba(19,78,111,.25) 100%); }
-.mx-resort .mx-hero .mx-eb { color: #D6EBF7; }
+.mx-resort .hv-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(31, 42, 51,.92) 0%, rgba(31, 42, 51,.84) 50%, rgba(31, 42, 51,.25) 100%); }
+.mx-resort .mx-hero .mx-eb { color: #EEF2F5; }
 .mx-resort .mx-hero h1 { color: #FFFFFF; }
-.mx-resort .mx-hero h1 em { color: #F59E0B; }
+.mx-resort .mx-hero h1 em { color: #8EC5FF; }
 .mx-resort .mx-hero .mx-lead { color: rgba(255,255,255,.92); }
 .mx-resort .mx-hero .mx-ghost { color: #FFFFFF; }
-.mx-resort .hv-below { background: #FFFFFF; padding: 28px 0 32px; border-bottom: 1px solid #D7E5ED; }
-@media (max-width: 760px) { .mx-resort .mx-hero { padding: 72px 0 80px; min-height: 0; } .mx-resort .hv-bg::after { background: rgba(19,78,111,.80); } }
+.mx-resort .hv-below { background: #FFFFFF; padding: 28px 0 32px; border-bottom: 1px solid #C9D3DC; }
+@media (max-width: 760px) { .mx-resort .mx-hero { padding: 72px 0 80px; min-height: 0; } .mx-resort .hv-bg::after { background: rgba(31, 42, 51,.80); } }
 
 /* 目的から選べます: 5つ目 (LUMA Craft) の追加 (2026-09-26)
    grid の4列をやめ、折り返しの行を中央に寄せる flex に切り替える。
@@ -131,13 +131,13 @@ section.mx-doors { padding: 80px 0 96px; }
 /* 次回大会の枠 案1: SL25 と SL26 を横並びの2枚で (2026-09-26) */
 .mx-resort .nx { order: 1; }
 .mx-resort .nx ul { list-style: none; margin: 4px 0 0; padding: 0; font-size: 14px; line-height: 1.8; }
-.mx-resort .nx h2 { margin: 0; font-size: 20px; line-height: 1.4; color: #134E6F; }
-.mx-resort .nx-k { font-size: 12px; font-weight: 700; color: #D97706; letter-spacing: .1em; }
-.mx-resort .nx-badge { display: inline-block; padding: 2px 10px; border-radius: 999px; background: #D6EBF7; color: #134E6F; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.mx-resort .nx h2 { margin: 0; font-size: 20px; line-height: 1.4; color: #1F2A33; }
+.mx-resort .nx-k { font-size: 12px; font-weight: 700; color: #2342B5; letter-spacing: .1em; }
+.mx-resort .nx-badge { display: inline-block; padding: 2px 10px; border-radius: 999px; background: #EEF2F5; color: #1F2A33; font-size: 12px; font-weight: 700; white-space: nowrap; }
 .mx-resort .nx-top { display: flex; align-items: center; gap: 10px; }
 .nx-1 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; scroll-margin-top: 90px; }
-.nx-1 .nx-card { display: flex; flex-direction: column; gap: 8px; padding: 22px 24px; border-radius: 24px; background: #FFFFFF; border: 1px solid #B8CED9; box-shadow: 0 10px 30px rgba(19,78,111,.10); }
-.nx-1 .nx-card:first-child { border: 2px solid #F59E0B; }
+.nx-1 .nx-card { display: flex; flex-direction: column; gap: 8px; padding: 22px 24px; border-radius: 24px; background: #FFFFFF; border: 1px solid #7A8894; box-shadow: 0 10px 30px rgba(31, 42, 51,.10); }
+.nx-1 .nx-card:first-child { border: 2px solid #1565C0; }
 .nx-1 .nx-card ul { flex: 1; }
 .nx-1 .btn { align-self: flex-start; }
 @media (max-width: 760px) { .nx-1 { grid-template-columns: 1fr; } .nx-1 .btn { align-self: stretch; justify-content: center; } }

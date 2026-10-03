@@ -1,0 +1,213 @@
+/* トップ(日本語)の案8「場所で選ぶ型」専用。2026-10-02 生成(LUMA/marketing/site-redesign-2026-10-01/tools/apply_l8_top.py)。
+   色は shared.css の変数に合わせる。見本の CSS を .l8top の中だけに効かせている */
+.l8top{--bg:#FFFFFF;--surface:#F6F8FA;--alt:#EEF2F5;--ink:#1F2A33;--muted:#56626D;--blue:#1565C0;--blue-hover:#2342B5;--line:#7A8894;--rule:#C9D3DC;--dark:#1F2A33;--on-dark:#FFFFFF;--blue-on-dark:#8EC5FF;--fh:'Urbanist LUMA','Noto Sans JP',system-ui,sans-serif;--fb:'Urbanist LUMA','Noto Sans JP',system-ui,sans-serif;--hw:700;--gutter:clamp(16px,4vw,48px);--max:1200px;display:block;color:var(--ink);background:var(--bg);font-family:var(--fb);line-height:1.8}
+.l8top section{border-top:1px solid var(--rule)}
+.l8top{
+  
+  --bg:#FFFFFF; --surface:#F6F8FA; --alt:#EEF2F5; --ink:#1F2A33; --muted:#56626D;
+  --blue:#1565C0; --blue-hover:#2342B5; --line:#7A8894; --rule:#C9D3DC; --dark:#1F2A33; --on-dark:#FFFFFF; --blue-on-dark:#8EC5FF;
+  --fh:'LINE Seed JP',system-ui,sans-serif; --fb:'LINE Seed JP',system-ui,sans-serif; --hw:700;
+  --gutter:clamp(16px,4vw,48px); --max:1200px;
+}
+.l8top *{box-sizing:border-box;margin:0;padding:0}
+.l8top{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+.l8top{font-family:var(--fb);background:var(--bg);color:var(--ink);font-size:16px;line-height:1.8}
+.l8top{font-variation-settings:var(--fvs,normal)}
+.l8top h1,.l8top h2,.l8top h3,.l8top .h1,.l8top .h2,.l8top .h3,.l8top .hf,.l8top b,.l8top strong,.l8top .btn,.l8top .label,.l8top .logo,.l8top .tlink,.l8top .rec dd,.l8top summary{font-variation-settings:normal}
+.l8top img{max-width:100%;height:auto;display:block}
+.l8top a{color:var(--blue);text-underline-offset:3px}
+.l8top a:hover{color:var(--blue-hover)}
+.l8top :focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.l8top .wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--gutter)}
+.l8top .ribbon{background:var(--alt);color:var(--muted);font-size:12px;padding:6px var(--gutter);display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:space-between;align-items:center}
+.l8top .ribbon a{color:var(--ink)}
+.l8top .ribbon>span{min-width:0}
+.l8top .ribbon select{font:inherit;font-size:12px;padding:3px 6px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink);max-width:min(100%,260px);width:260px}
+.l8top .hd{border-bottom:1px solid var(--rule);background:var(--bg);position:relative;z-index:10}
+.l8top .hd .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.l8top .logo{font-family:var(--fh);font-weight:800;letter-spacing:.14em;font-size:20px;color:var(--ink);text-decoration:none}
+.l8top .nav{display:flex;gap:20px;font-size:14px;align-items:center}
+.l8top .nav a{color:var(--ink);text-decoration:none}
+.l8top .nav a:hover{color:var(--blue)}
+.l8top .nav .menu{display:none;font-weight:700}
+.l8top .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--blue);color:#FFFFFF;font-weight:700;font-size:15px;padding:12px 22px;border-radius:6px;text-decoration:none;min-height:44px;font-family:var(--fb)}
+.l8top .btn:hover{background:var(--blue-hover);color:#FFFFFF}
+.l8top .btn.sm{font-size:14px;padding:8px 16px;min-height:40px}
+.l8top .tlink{font-weight:700;text-decoration:none}
+.l8top h1,.l8top h2,.l8top h3,.l8top .h1,.l8top .h2,.l8top .h3,.l8top .hf{font-family:var(--fh);font-weight:var(--hw)}
+.l8top .label{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--muted)}
+.l8top .h1{font-size:clamp(32px,5vw,58px);line-height:1.25;letter-spacing:-.01em}
+.l8top .h2{font-size:clamp(23px,2.8vw,34px);line-height:1.35}
+.l8top .h3{font-size:18px;line-height:1.5}
+.l8top .muted{color:var(--muted)}
+.l8top .small{font-size:13.5px}
+.l8top .num{font-variant-numeric:tabular-nums}
+.l8top .rows{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:14.5px}
+.l8top .rows dt{color:var(--muted);white-space:nowrap}
+.l8top .rows dd{min-width:0}
+.l8top section.s{padding-block:clamp(44px,7vw,88px);border-top:1px solid var(--rule)}
+.l8top section.s.tint{background:var(--surface)}
+.l8top .sec-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:10px 16px;margin-bottom:26px}
+.l8top .sec-h>div{display:grid;gap:6px;max-width:44em}
+.l8top .act{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
+.l8top .grid{display:grid;gap:20px}
+.l8top .grid>*,.l8top .chap>*,.l8top .je>*{min-width:0}
+.l8top .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.l8top .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.l8top .g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.l8top .g5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.l8top .card{background:var(--bg);border:1px solid var(--rule);border-radius:8px;padding:18px;display:grid;gap:8px;align-content:start;min-width:0}
+.l8top .tint .card{background:var(--bg)}
+.l8top .ph{aspect-ratio:3/2;object-fit:cover;width:100%;height:auto}
+.l8top .ph43{aspect-ratio:4/3;object-fit:cover;width:100%;height:auto}
+.l8top .rec{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:2px solid var(--ink)}
+.l8top .rec div{padding:12px 12px 0 0}
+.l8top .rec dd{font-family:var(--fh);font-size:clamp(28px,3.6vw,44px);font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums}
+.l8top .rec dt{font-size:12px;color:var(--muted)}
+.l8top .evs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:2px solid var(--ink)}
+.l8top .ev{padding:18px 20px 18px 0;display:grid;gap:6px;align-content:start}
+.l8top .ev+.ev{border-left:1px solid var(--rule);padding-left:20px}
+.l8top .rules{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+.l8top .rules li{display:grid;padding:12px 16px;border-left:1px solid var(--rule)}
+.l8top .rules li:first-child{border-left:0;padding-left:0}
+.l8top .list{list-style:none;display:grid;border-top:1px solid var(--rule)}
+.l8top .list li{padding:12px 0;border-bottom:1px solid var(--rule);display:grid;gap:2px}
+.l8top .olist{list-style:none;counter-reset:n;display:grid;gap:0}
+.l8top .olist li{counter-increment:n;display:grid;grid-template-columns:40px minmax(0,1fr);gap:10px;padding:12px 0;border-bottom:1px solid var(--rule)}
+.l8top .olist li::before{content:counter(n,decimal-leading-zero);font-family:var(--fh);font-weight:800;color:var(--blue);font-variant-numeric:tabular-nums}
+.l8top .tw{overflow-x:auto;-webkit-overflow-scrolling:touch;position:relative}
+.l8top table.t{width:100%;border-collapse:collapse;font-size:14.5px;min-width:560px}
+.l8top table.t th,.l8top table.t td{text-align:left;vertical-align:top;padding:12px 14px 12px 0;border-bottom:1px solid var(--rule)}
+.l8top table.t thead th{font-size:12px;color:var(--muted);border-bottom:2px solid var(--ink)}
+.l8top table.t td.pr{white-space:nowrap;font-variant-numeric:tabular-nums;text-align:right;font-weight:700}
+.l8top .news{list-style:none;display:grid}
+.l8top .news li{display:grid;grid-template-columns:110px 90px minmax(0,1fr);gap:12px;padding:13px 0;border-top:1px solid var(--rule)}
+.l8top .news li:last-child{border-bottom:1px solid var(--rule)}
+.l8top details.faq{border-bottom:1px solid var(--rule)}
+.l8top details.faq:first-of-type{border-top:1px solid var(--rule)}
+.l8top details.faq summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;padding:16px 0;font-weight:700}
+.l8top details.faq summary::-webkit-details-marker{display:none}
+.l8top details.faq summary::after{content:'+';color:var(--blue);font-size:20px;line-height:1}
+.l8top details.faq[open] summary::after{content:'−'}
+.l8top details.faq p{padding:0 0 18px;color:var(--ink)}
+.l8top .quote{font-family:var(--fh);font-size:clamp(20px,2.4vw,28px);font-weight:var(--hw);line-height:1.5}
+.l8top .tags{display:flex;flex-wrap:wrap;gap:8px}
+.l8top .tags span{border:1px solid var(--rule);border-radius:999px;padding:3px 12px;font-size:13px}
+.l8top .tl{list-style:none;display:grid;border-left:2px solid var(--rule);margin-left:6px}
+.l8top .tl li{position:relative;padding:0 0 16px 20px;display:grid;gap:2px}
+.l8top .tl li::before{content:'';position:absolute;left:-7px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--blue)}
+.l8top .pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;border-radius:999px;padding:3px 10px;border:1.5px solid currentColor;white-space:nowrap}
+.l8top .pill.on{color:var(--blue)}
+.l8top .pill.off{color:var(--muted)}
+.l8top .cta-band .wrap{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center}
+.l8top .ft{background:var(--dark);color:var(--on-dark);padding-block:40px;font-size:14px}
+.l8top .ft a{color:var(--blue-on-dark)}
+.l8top .ft .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.l8top .ft ul{list-style:none;display:grid;gap:4px}
+@media (max-width:980px){.l8top .g4,.l8top .g5{grid-template-columns:repeat(2,minmax(0,1fr))}
+.l8top .g3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){.l8top .nav a:not(.btn):not(.menu){display:none}
+.l8top .nav .menu{display:inline-flex}
+.l8top .g2,.l8top .g3,.l8top .g4,.l8top .g5{grid-template-columns:1fr}
+.l8top .evs{grid-template-columns:1fr}
+.l8top .ev+.ev{border-left:0;border-top:1px solid var(--rule);padding-left:0}
+.l8top .rules{grid-template-columns:1fr 1fr}
+.l8top .rules li:nth-child(3){border-left:0;padding-left:0}
+.l8top .news li{grid-template-columns:auto 1fr}
+.l8top .news li a{grid-column:1/-1}
+.l8top .cta-band .wrap,.l8top .ft .wrap{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.l8top{scroll-behavior:auto}
+.l8top *{transition:none!important}}
+@media (max-width:760px){.l8top [data-stack]{grid-template-columns:1fr!important}
+.l8top [data-cols]{grid-template-columns:1fr!important}}
+.l8top .place{gap:6px}
+.l8top .place .h2{font-size:clamp(22px,2.4vw,30px)}
+
+.l8top .top-hero{position:relative;background:var(--bg)}
+.l8top .top-copy{background:var(--bg);color:var(--ink);padding-block:clamp(32px,5vw,56px)}
+.l8top .top-copy>*{max-width:40em}
+.l8top .top-copy .label{color:var(--muted)}
+.l8top .top-copy .h1{font-size:clamp(30px,3.6vw,46px);line-height:1.3;word-break:auto-phrase;text-wrap:balance}
+.l8top .top-copy p:last-child{font-size:15.5px}
+.l8top .doors{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));min-height:clamp(380px,42vw,520px)}
+.l8top .door{position:relative;display:grid;align-content:end;gap:6px;padding:24px 22px;color:#FFFFFF;text-decoration:none;min-width:0;
+ background:linear-gradient(0deg,rgba(31,42,51,.78) 0%,rgba(31,42,51,.30) 40%,rgba(31,42,51,.04) 70%),var(--l8-photo) center/cover no-repeat;border-left:1px solid rgba(255,255,255,.35)}
+.l8top .door:first-child{border-left:0}
+.l8top .door .label{color:#FFFFFF}
+.l8top .door .h2{color:#FFFFFF}
+.l8top .door .small{color:#FFFFFF}
+.l8top .door>*{text-shadow:0 1px 2px rgba(31,42,51,.6)}
+.l8top .door:hover .h2,.l8top .door:focus-visible .h2{text-decoration:underline;text-underline-offset:4px}
+.l8top .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.l8top .place{gap:6px}
+@media (max-width:980px){.l8top .doors{grid-template-columns:repeat(2,minmax(0,1fr));min-height:0}
+.l8top .door{min-height:240px}
+.l8top .door:nth-child(3){border-left:0}
+.l8top .door:nth-child(n+3){border-top:1px solid rgba(255,255,255,.35)}}
+@media (max-width:560px){.l8top .doors{grid-template-columns:1fr}
+.l8top .door{min-height:200px;border-left:0;border-top:1px solid rgba(255,255,255,.35)}}
+.l8top .faq-list{display:grid;gap:10px}
+
+/* 2026-10-02 Sho 指示: 入口の写真のホバー(選んだ1枚が浮き、ほかの3枚は少し暗くなる) */
+.l8top .door{transition:transform .3s ease,filter .3s ease,box-shadow .3s ease;z-index:0}
+@media (hover:hover){
+.l8top .doors:hover .door,.l8top .doors:focus-within .door{filter:brightness(.68) saturate(.9)}
+.l8top .doors .door:hover,.l8top .doors .door:focus-visible{filter:none;transform:translateY(-8px);box-shadow:0 16px 32px rgba(31,42,51,.30);z-index:1}}
+
+/* LUMA Path のエリア: 写真付きカード 3x3 */
+.l8top .card.area{padding:0;overflow:hidden;gap:0}
+.l8top .card.area .area-t{padding:14px 16px 16px;display:grid;gap:4px}
+.l8top .ph-none{display:grid;place-items:center;background:var(--alt);color:var(--muted);font-size:13px;font-weight:700;letter-spacing:.08em}
+
+/* 料金の目安: サービスごとのタブ */
+.l8top .pt-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.l8top .mx-tab{font:inherit;font-size:14px;font-weight:700;padding:8px 18px;min-height:40px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.l8top .mx-tab:hover{border-color:var(--blue);color:var(--blue)}
+.l8top .mx-tab[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:#FFFFFF}
+.l8top .pt-panel+.pt-panel{margin-top:20px}
+.l8top .js-tabs .pt-panel+.pt-panel{margin-top:0}
+.l8top .pt-grid{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.l8top .pt{background:var(--bg);border:1px solid var(--rule);border-top:3px solid var(--blue);border-radius:8px;padding:18px;display:grid;gap:6px;align-content:start;min-width:0}
+.l8top .pt-k{font-size:14px;color:var(--muted)}
+.l8top .pt-v{font-family:var(--fh);font-size:clamp(24px,2.6vw,32px);font-weight:800;line-height:1.2;color:var(--ink)}
+
+/* よくある質問: 項目の間隔を広げる */
+.l8top .faq-list{gap:0}
+.l8top .faq-q{padding:22px 0}
+.l8top .faq-a-inner{padding:0 0 24px}
+
+/* 2026-10-02 Sho 指示: 「こんなときに」を Path に移したあと、区画の背景を白と面の色で交互に戻す。shared.css の #faq の面の色を打ち消す */
+.l8top section.s:not(.tint){background:var(--bg)}
+.l8top section#faq:not(.tint){background:var(--bg)}
+
+/* 2026-10-02 Sho 指示: カードのホバーを共通化(選んだ1枚が浮き、ほかは少し暗くなる)。
+   対象: Path のエリア、「オンライン」と「首都圏で実施中のイベント」、撮影地ごとの作品、S.League の大会。
+   shared.css の .card{box-shadow:none!important} を打ち消すため、影に !important を付ける */
+.l8top .areas .card.area,.l8top #p-voice .g2>.card,.l8top #p-circle .g2>.card,.l8top #works .g5>.card,.l8top .sl-evs>.card{transition:transform .3s ease,filter .3s ease,box-shadow .3s ease}
+@media (hover:hover){
+.l8top .areas:hover .card.area,.l8top #p-voice .g2:hover>.card,.l8top #p-circle .g2:hover>.card,.l8top #works .g5:hover>.card,.l8top .sl-evs:hover>.card{filter:brightness(.82) saturate(.9)}
+.l8top .areas .card.area:hover,.l8top #p-voice .g2>.card:hover,.l8top #p-circle .g2>.card:hover,.l8top #works .g5>.card:hover,.l8top #works .g5>.card:focus-visible,.l8top .sl-evs>.card:hover{filter:none;transform:translateY(-6px);box-shadow:0 14px 28px rgba(31,42,51,.18)!important}}
+
+/* 2026-10-02 Sho 指示: S.League の大会を写真付きのカードにする(案3)。大会が1つだけのときは2枚分の横幅を使う */
+.l8top .sl-top{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,.9fr);gap:20px;align-items:start}
+.l8top .sl-evs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.l8top .sl-ev{padding:0;overflow:hidden;gap:0}
+.l8top .sl-ev img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.l8top .sl-ev-b{padding:18px;display:grid;gap:6px;align-content:start}
+.l8top .sl-ev-b .btn{justify-self:start;margin-top:6px}
+.l8top .sl-ev:only-child{grid-column:1/-1;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.l8top .sl-ev:only-child img{height:100%}
+.l8top .sl-rec{grid-template-columns:1fr}
+.l8top .sl-rec div{padding:12px 0;border-bottom:1px solid var(--rule)}
+.l8top #p-sl .rules{margin-top:20px}
+@media (max-width:760px){
+.l8top .sl-top,.l8top .sl-evs{grid-template-columns:1fr}
+.l8top .sl-ev:only-child{grid-template-columns:1fr}
+.l8top .sl-ev:only-child img{height:auto}
+.l8top .sl-rec{grid-template-columns:repeat(3,minmax(0,1fr))}
+.l8top .sl-rec div{padding:12px 12px 0 0;border-bottom:0}}
+
+/* 2026-10-02 Sho 指示: 「LUMA Path を頼む場面」を場面ごとの小見出しと段落に(案B)。h3 より一段小さい見出しにし、区切り線は .list とそろえる */
+.l8top .who-s{display:grid;border-top:1px solid var(--rule)}
+.l8top .who-s>div{padding:16px 0;border-bottom:1px solid var(--rule);display:grid;gap:6px}
+.l8top .who-s h4{font-family:var(--fh);font-weight:700;font-size:16px;line-height:1.5;color:var(--ink)}

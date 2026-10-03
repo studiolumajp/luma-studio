@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#134E6F" />
+<meta name="theme-color" content="#1F2A33" />
 <meta name="color-scheme" content="light only" />
 <title>The Home Page Has Been Redesigned | LUMA</title>
 <meta name="description" content="The LUMA home page has been redesigned. It opens with footage from S.League 24, followed by the record so far, the next tournament and four entry points chosen by what you want to do." />
@@ -28,21 +28,20 @@
 <meta name="twitter:title" content="The Home Page Has Been Redesigned | LUMA" />
 <meta name="twitter:description" content="S.League match footage and the next tournament now come first, and you can choose where to go by what you want to do." />
 <meta name="twitter:image" content="https://studio-lumadesign.com/images/og/sl24-hero-og.jpg" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="preload" href="/fonts/urbanist-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../fonts/noto-sans-jp.css?v=gdpr1" />
 <!-- GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-62F20N179N');
-</script>
+<script src="../../consent.js?v=gdpr1"></script>
 
-<link rel="stylesheet" href="../../shared.css?v=aqua32" />
+<link rel="stylesheet" href="../../shared.css?v=l8f" />
 
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"NewsArticle","headline":"The Home Page Has Been Redesigned","description":"S.League match footage and the next tournament now come first, and you can choose where to go by what you want to do.","datePublished":"2026-09-26","dateModified":"2026-09-26","author":{"@id":"https://studio-lumadesign.com/#representative"},"publisher":{"@id":"https://studio-lumadesign.com/#business"},"mainEntityOfPage":"https://studio-lumadesign.com/en/news/home-renewal","inLanguage":"en","image":["https://studio-lumadesign.com/images/sleague/SL24/sl24-hero-poster.jpg"],"articleSection":"Services"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://studio-lumadesign.com/en/"},{"@type":"ListItem","position":2,"name":"News","item":"https://studio-lumadesign.com/en/news/"},{"@type":"ListItem","position":3,"name":"The Home Page Has Been Redesigned","item":"https://studio-lumadesign.com/en/news/home-renewal"}]}]}</script>
+<style id="l8-photo-fix">
+  /* HERO の写真はここで直接指定する。CSS 変数の url() は Chrome が shared.css の位置から解決し、
+     file:// で開くと ../ の写真が見つからないため (2026-10-03) */
+  html body .l8-hero { background: linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 38%, var(--scrim-3) 66%, var(--scrim-4) 88%), linear-gradient(0deg, rgba(31, 42, 51, 0.45) 0%, rgba(31, 42, 51, 0) 55%), image-set(url('../../images/hero/sl24-hero-poster-1920.webp') type('image/webp'), url('../../images/hero/sl24-hero-poster-1920.jpg') type('image/jpeg')) center / cover no-repeat !important; }
+  @media (max-width: 760px) { html body .l8-hero { background: linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 38%, var(--scrim-3) 66%, var(--scrim-4) 88%), linear-gradient(0deg, rgba(31, 42, 51, 0.45) 0%, rgba(31, 42, 51, 0) 55%), image-set(url('../../images/hero/sl24-hero-poster-960.webp') type('image/webp'), url('../../images/hero/sl24-hero-poster-960.jpg') type('image/jpeg')) center / cover no-repeat !important; } }
+</style>
 </head>
 <body>
 <nav class="site-nav" aria-label="Main navigation">
@@ -55,7 +54,8 @@
         <ul class="dropdown-menu">
           <li><a href="../services">All Services</a></li>
           <li><a href="../service-english">English Lessons</a></li>
-          <li><a href="../service-tour">Tokyo Tours</a></li>
+          <li><a href="../service-photo">Photography</a></li>
+          <li><a href="../service-tour">Private Tours</a></li>
           <li><a href="../service-community">Community Events</a></li>
           <li><a href="../service-web">Web, Social &amp; Apps</a></li>
         </ul>
@@ -76,13 +76,12 @@
     <li aria-current="page">The Home Page Has Been Redesigned</li>
   </ol>
 </nav>
-<article class="nw-art">
-  <div class="nw-art-h">
+<header class="l8-hero" id="home" tabindex="-1" style="--l8-photo:image-set(url('../../images/hero/sl24-hero-poster-1920.webp') type('image/webp'), url('../../images/hero/sl24-hero-poster-1920.jpg') type('image/jpeg'));--l8-photo-sm:image-set(url('../../images/hero/sl24-hero-poster-960.webp') type('image/webp'), url('../../images/hero/sl24-hero-poster-960.jpg') type('image/jpeg'))"><div class="nw" style="padding-block:40px"><div class="nw-art-h">
     <div class="nw-meta"><time datetime="2026-09-26">2026.09.26</time><span class="nw-chip" style="background:#1565C0;color:#fff;">Site update</span></div>
     <h1>The Home Page Has Been Redesigned</h1>
     <p class="nw-art-lead">S.League match footage and the next tournament now come first, and you can choose where to go by what you want to do.</p>
-  </div>
-  <figure class="nw-fig"><img src="../../images/sleague/SL24/sl24-hero-poster.jpg" alt="The Home Page Has Been Redesigned" loading="lazy" decoding="async" width="1280" height="720" /></figure>
+  </div></div></header>
+<article class="nw-art">
   <h2>What you see first</h2>
   <p>The top of the home page now plays footage from S.League 24, filmed on 25 July 2026. Below it sit the record so far, 24 events and 367 entries since 2022, and the date, fee and entry deadline of the next tournament.</p>
   <h2>Four ways in</h2>
@@ -95,14 +94,14 @@
   <a class="nw-share-b" href="https://twitter.com/intent/tweet?text=The%20Home%20Page%20Has%20Been%20Redesigned%20https%3A%2F%2Fstudio-lumadesign.com%2Fen%2Fnews%2Fhome-renewal" target="_blank" rel="noopener noreferrer">Share on X</a>
   <a class="nw-share-b" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fstudio-lumadesign.com%2Fen%2Fnews%2Fhome-renewal" target="_blank" rel="noopener noreferrer">Send on LINE</a>
 </div>
-  <nav class="nw-nbs" aria-label="News"><a class="nw-nb prev" href="./frame-bookings-closing"><span>← Previous</span><b>LUMA Frame Stops Taking New Photo Bookings on 30 September</b></a></nav>
+  <nav class="nw-nbs" aria-label="News"><a class="nw-nb prev" href="./hero-slideshow"><span>← Previous</span><b>The Home Page Now Cycles Through Fifteen Photographs</b></a></nav>
   <p class="nw-back"><a href="./">← All news</a></p>
 </article>
 <footer>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand"><a href="../" class="brand"><span class="brand-mark">L</span><span>LUMA</span></a><p>Designing your confidence in Tokyo & Yokohama. Clarity by Design / Illuminate Your Confidence.</p></div>
-      <div class="footer-col"><h4>Services</h4><ul><li><a href="../service-english">English Lessons</a></li><li><a href="../service-tour">Tokyo Tours</a></li><li><a href="../service-web">Web, Social &amp; Apps</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="../service-english">English Lessons</a></li><li><a href="../service-photo">Photography</a></li><li><a href="../service-tour">Private Tours</a></li><li><a href="../service-web">Web, Social &amp; Apps</a></li></ul></div>
       <div class="footer-col"><h4>About</h4><ul><li><a href="../about">About me</a></li>
 <li><a href="./">News</a></li><li><a href="../#faq">FAQ</a></li><li><a href="../photography">Photo Portfolio</a></li></ul></div>
       <div class="footer-col"><h4>Support</h4><ul>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#134E6F" />
+<meta name="theme-color" content="#1F2A33" />
 <meta name="color-scheme" content="light only" />
 <title>トップページを新しくしました | LUMA</title>
 <meta name="description" content="LUMA のトップページを新しくしました。最初の画面に S.League 24 の対局動画を置き、その下に記録と次回大会、目的から選べる4つの入口を並べています。" />
@@ -29,19 +29,12 @@
 <meta name="twitter:title" content="トップページを新しくしました | LUMA" />
 <meta name="twitter:description" content="S.League の対局動画と次回大会を最初に置き、目的から入口を選べるようにしました。" />
 <meta name="twitter:image" content="https://studio-lumadesign.com/images/og/sl24-hero-og.jpg" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="preload" href="/fonts/urbanist-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../fonts/noto-sans-jp.css?v=gdpr1" />
 <!-- GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-62F20N179N');
-</script>
+<script src="../consent.js?v=gdpr1"></script>
 
-<link rel="stylesheet" href="../shared.css?v=aqua32" />
+<link rel="stylesheet" href="../shared.css?v=l8f" />
 
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"NewsArticle","headline":"トップページを新しくしました","description":"S.League の対局動画と次回大会を最初に置き、目的から入口を選べるようにしました。","datePublished":"2026-09-26","dateModified":"2026-09-26","author":{"@id":"https://studio-lumadesign.com/#representative"},"publisher":{"@id":"https://studio-lumadesign.com/#business"},"mainEntityOfPage":"https://studio-lumadesign.com/news/home-renewal","inLanguage":"ja","image":["https://studio-lumadesign.com/images/sleague/SL24/sl24-hero-poster.jpg"],"articleSection":"サイト更新"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://studio-lumadesign.com/"},{"@type":"ListItem","position":2,"name":"ニュース","item":"https://studio-lumadesign.com/news/"},{"@type":"ListItem","position":3,"name":"トップページを新しくしました","item":"https://studio-lumadesign.com/news/home-renewal"}]}]}</script>
 </head>
@@ -58,7 +51,8 @@
         <ul class="dropdown-menu">
           <li><a href="../services">サービス一覧</a></li>
           <li><a href="../service-english">英会話レッスン</a></li>
-          <li><a href="../service-tour">英語で巡る東京ツアー</a></li>
+          <li><a href="../service-photo">記念撮影・ポートレート</a></li>
+          <li><a href="../service-tour">海外ゲストの観光案内</a></li>
           <li><a href="../service-community">コミュニティイベント</a></li>
           <li><a href="../service-web">Web・SNS・アプリ制作</a></li>
           <li><a href="../s-league">S.League 麻雀大会</a></li>
@@ -84,26 +78,25 @@
     <li aria-current="page">トップページを新しくしました</li>
   </ol>
 </nav>
-<article class="nw-art">
-  <div class="nw-art-h">
+<header class="l8-hero" id="home" tabindex="-1" style="--l8-photo:image-set(url('../images/hero/sl24-hero-poster-1920.webp') type('image/webp'), url('../images/hero/sl24-hero-poster-1920.jpg') type('image/jpeg'));--l8-photo-sm:image-set(url('../images/hero/sl24-hero-poster-960.webp') type('image/webp'), url('../images/hero/sl24-hero-poster-960.jpg') type('image/jpeg'))"><div class="nw" style="padding-block:40px"><div class="nw-art-h">
     <div class="nw-meta"><time datetime="2026-09-26">2026.09.26</time><span class="nw-chip" style="background:#1565C0;color:#fff;">サイト更新</span></div>
     <h1>トップページを新しくしました</h1>
     <p class="nw-art-lead">S.League の対局動画と次回大会を最初に置き、目的から入口を選べるようにしました。</p>
-  </div>
-  <figure class="nw-fig"><img src="../images/sleague/SL24/sl24-hero-poster.jpg" alt="トップページを新しくしました" loading="lazy" decoding="async" width="1280" height="720" /></figure>
+  </div></div></header>
+<article class="nw-art">
   <h2>最初に見えるもの</h2>
   <p>トップページの最初の画面に、2026年7月25日の S.League 24 で撮った対局の動画を置きました。その下には、2022年から24回、延べ367名という記録と、次回大会の日程、参加費、締切を並べています。</p>
   <h2>目的から選べる4つの入口</h2>
-  <p>記録と次回大会の下には、目的から選べる入口を4つ置きました。麻雀の大会、英会話と英語コーチング、英語で巡る東京ツアー、イベントの運営のどれかを選ぶと、要点と申し込み先が出ます。</p>
-  <p>S.League の紹介文も、実際の参加者に合わせて書き直しました。プロ雀士も、プロを目指す方も参加する大会で、初中級以上の方が自分の実力を試しに来ています。</p>
-  <p>9月3日に始めた写真15枚の入れ替え表示は、今回で終えました。写真の作品は、撮影地ごとのページで公開を続けています。</p>
+  <p>記録と次回大会の下には、目的から選べる入口を4つ置きました。麻雀の大会、英会話と英語コーチング、英語で巡る東京ツアー、イベントの運営のどれかを選ぶと、要点と申し込み先が表示されます。</p>
+  <p>S.League の紹介文も、実際の参加者に合わせて書き直しました。プロ雀士やプロを目指す方も参加する大会で、初中級以上の方がご自身の実力を試しにいらしています。</p>
+  <p>9月3日に始めた写真15枚の入れ替え表示は、今回で終えました。写真の作品は、撮影地ごとのページで公開を続けております。</p>
   <p class="nw-cta"><a href="../">トップページを見る →</a></p>
   <div class="nw-share">
   <span class="nw-share-h">この記事を共有する</span>
   <a class="nw-share-b" href="https://twitter.com/intent/tweet?text=%E3%83%88%E3%83%83%E3%83%97%E3%83%9A%E3%83%BC%E3%82%B8%E3%82%92%E6%96%B0%E3%81%97%E3%81%8F%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%20https%3A%2F%2Fstudio-lumadesign.com%2Fnews%2Fhome-renewal" target="_blank" rel="noopener noreferrer">X で共有</a>
   <a class="nw-share-b" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fstudio-lumadesign.com%2Fnews%2Fhome-renewal" target="_blank" rel="noopener noreferrer">LINE で送る</a>
 </div>
-  <nav class="nw-nbs" aria-label="ニュース"><a class="nw-nb prev" href="./frame-bookings-closing"><span>← 前のニュース</span><b>LUMA Frame の撮影は9月30日で新規受付を終了します</b></a></nav>
+  <nav class="nw-nbs" aria-label="ニュース"><a class="nw-nb prev" href="./hero-slideshow"><span>← 前のニュース</span><b>トップページの写真を15枚の入れ替え表示にしました</b></a></nav>
   <p class="nw-back"><a href="./">← ニュースの一覧へ</a></p>
 </article>
 <footer>
@@ -117,9 +110,9 @@
         <h4>サービス</h4>
         <ul>
           <li><a href="../service-english">英会話レッスン</a></li>
-          <li><a href="../photography">写真の作品</a></li>
+          <li><a href="../service-photo">記念撮影・ポートレート</a></li>
           <li><a href="../s-league">S.League 麻雀</a></li>
-          <li><a href="../service-tour">英語で巡る東京ツアー</a></li>
+          <li><a href="../service-tour">海外ゲストの観光案内</a></li>
           <li><a href="../service-web">Web・SNS・アプリ制作</a></li>
         </ul>
       </div>

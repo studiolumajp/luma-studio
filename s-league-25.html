@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#134E6F" />
+<meta name="theme-color" content="#1F2A33" />
 <meta name="color-scheme" content="light only" />
 
 <!-- ── PRIMARY SEO META ── -->
 <title>S.League 25 個人戦 10月18日 | LUMA</title>
-<meta name="description" content="S.League 25 は2026年10月18日 (日) 12:00〜20:00、東京・新橋のベルバードgrow店で開催。個人戦・全7戦 (予選6回戦+順位決定戦1回戦)・定員24名 (6卓)。参加費7,300円 (銀行振込7,000円)。" />
+<meta name="description" content="S.League 25 は、2026年10月18日 (日) 12:00〜20:00 に東京・新橋のベルバードgrow店で開催いたします。個人戦・全7戦 (予選6回戦+順位決定戦1回戦)・定員24名 (6卓) で、参加費は7,300円 (銀行振込7,000円) です。" />
 <meta name="keywords" content="S.League 25,健康麻雀 大会,麻雀 大会 東京,新橋 麻雀 大会,LUMA" />
 <meta name="author" content="LUMA" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -20,7 +20,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://studio-lumadesign.com/s-league-25" />
 <meta property="og:title" content="S.League 25 個人戦 10月18日 | LUMA" />
-<meta property="og:description" content="2026年10月18日 (日) 12:00〜20:00、東京・新橋で開催。個人戦・全7戦 (予選6回戦+順位決定戦1回戦)・定員24名 (6卓)。参加費7,300円 (銀行振込7,000円)。" />
+<meta property="og:description" content="2026年10月18日 (日) 12:00〜20:00、東京・新橋で開催いたします。個人戦・全7戦 (予選6回戦+順位決定戦1回戦)・定員24名 (6卓)。参加費は7,300円 (銀行振込7,000円) です。" />
 <meta property="og:image" content="https://studio-lumadesign.com/images/sleague/SL24/sl24-hero-poster.jpg" />
 <meta property="og:image:alt" content="S.League 25" />
 <meta property="og:image:width" content="1280" />
@@ -34,9 +34,8 @@
 <meta name="twitter:description" content="10月18日 (日) 12:00〜20:00、東京・新橋で開催。個人戦・全7戦・定員24名 (6卓)。参加費7,300円 (銀行振込7,000円)。" />
 <meta name="twitter:image" content="https://studio-lumadesign.com/images/sleague/SL24/sl24-hero-poster.jpg" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="preload" href="/fonts/urbanist-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="./fonts/noto-sans-jp.css?v=gdpr1" />
 
 <script type="application/ld+json">
 {
@@ -100,21 +99,15 @@
 }
 </script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-62F20N179N');
-</script>
+<script src="./consent.js?v=gdpr1"></script>
 
-<link rel="stylesheet" href="./shared.css?v=aqua32" />
+<link rel="stylesheet" href="./shared.css?v=l8f" />
 <style id="page-overrides">
   /* ── HERO: 背景写真 + ダークオーバーレイ + 白文字 ── */
   .sl-hero {
     position: relative; overflow: hidden; color: #fff;
     padding: clamp(56px, 10vw, 96px) 0 clamp(64px, 11vw, 104px);
-    min-height: clamp(380px, 56vh, 500px);
+    min-height: clamp(420px, 64vh, 560px);
     display: flex; align-items: center;
     /* 画像は動画非対応環境・reduced-motion時のフォールバック。暗幕は ::after が担当 */
     background: url('./images/sleague/SL24/sl24-hero-poster.jpg') center/cover no-repeat;
@@ -123,41 +116,41 @@
     content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
     background:
       linear-gradient(to top,
-        rgba(10, 42, 62, 0.70) 0%,
-        rgba(10, 42, 62, 0.48) 45%,
-        rgba(10, 42, 62, 0.36) 100%
+        rgba(31, 42, 51, 0.70) 0%,
+        rgba(31, 42, 51, 0.48) 45%,
+        rgba(31, 42, 51, 0.36) 100%
       ),
-      linear-gradient(rgba(10, 42, 62, 0.20), rgba(10, 42, 62, 0.20));
+      linear-gradient(rgba(31, 42, 51, 0.20), rgba(31, 42, 51, 0.20));
   }
   .sl-hero .container { position: relative; z-index: 2; }
   .sl-hero h1 {
-    font-size: clamp(44px, 6.4vw, 72px);
+    font-size: clamp(52px, 7.4vw, 84px);
     line-height: 1.14; letter-spacing: -0.01em; font-weight: 800;
     padding-bottom: 0.12em; color: #fff;
-    text-shadow: 0 3px 14px rgba(10, 42, 62, 0.55), 0 1px 3px rgba(10, 42, 62, 0.45);
+    text-shadow: 0 3px 14px rgba(31, 42, 51, 0.55), 0 1px 3px rgba(31, 42, 51, 0.45);
   }
   .sl-hero h1 .accent {
     color: var(--accent-2);
-    text-shadow: 0 2px 16px rgba(10, 42, 62, 0.6), 0 1px 3px rgba(10, 42, 62, 0.5);
+    text-shadow: 0 2px 16px rgba(31, 42, 51, 0.6), 0 1px 3px rgba(31, 42, 51, 0.5);
   }
   .sl-hero .eyebrow { color: #fff; }
   .sl-hero .eyebrow::before { background: #fff; }
   .sl-hero .date {
-    font-size: clamp(18px, 1.6vw, 22px); color: #fff; font-weight: 700;
-    margin-top: 12px;
-    text-shadow: 0 1px 12px rgba(10, 42, 62, 0.65), 0 1px 2px rgba(10, 42, 62, 0.5);
+    font-size: clamp(20px, 1.8vw, 24px); color: #fff; font-weight: 700;
+    margin-top: 14px;
+    text-shadow: 0 1px 12px rgba(31, 42, 51, 0.65), 0 1px 2px rgba(31, 42, 51, 0.5);
   }
   .sl-hero .hero-lead {
     color: rgba(255, 255, 255, 0.92) !important;
-    text-shadow: 0 1px 12px rgba(10, 42, 62, 0.6);
+    text-shadow: 0 1px 12px rgba(31, 42, 51, 0.6);
   }
   /* 副導線も塗りつぶしボタン (Sho指示 2026-08-03: 透明地は背景動画と被ると読みにくい)。
-     白文字 on #134E6F はコントラスト比 約8.9:1 (WCAG AA/AAA 適合)。 */
+     白文字 on #1F2A33 はコントラスト比 約8.9:1 (WCAG AA/AAA 適合)。 */
   .sl-hero .btn-secondary {
-    background: #134E6F; color: #fff; border: 1px solid rgba(255, 255, 255, 0.45);
+    background: #1F2A33; color: #fff; border: 1px solid rgba(255, 255, 255, 0.45);
   }
   .sl-hero .btn-secondary:hover {
-    background: #175E86; color: #fff; border-color: rgba(255, 255, 255, 0.7);
+    background: #1565C0; color: #fff; border-color: rgba(255, 255, 255, 0.7);
   }
   .sl-gallery-grid img {
     width: 100%; height: 100%; aspect-ratio: 16/9; object-fit: cover;
@@ -209,6 +202,17 @@
     background: var(--accent-2); color: #1F2937;
     border-color: rgba(255, 255, 255, 0.55);
   }
+
+  /* 締切間近の「Final Call」表示 (2026-10-03 Sho 指示。s-league.html と同じ黄色と2秒周期の点滅)。
+     動きを減らす設定では止めて黄色のまま見せる */
+  .status-badge.is-final-call { background: #FFD60A; color: var(--text); border-color: #FFD60A; animation: sl-final-call 2s steps(1, end) infinite; }
+  @keyframes sl-final-call { 0% { background: #FFD60A; } 50% { background: color-mix(in srgb, #FFD60A 30%, var(--bg)); } }
+  .final-call-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #FFD60A; margin-right: 8px; vertical-align: 0.05em; animation: sl-final-call-dot 2s steps(1, end) infinite; }
+  .final-call-dot--ink { background: var(--text); animation: none; }
+  @keyframes sl-final-call-dot { 0% { opacity: 1; } 50% { opacity: 0.25; } }
+  /* スマホではメニューボタンが押しつぶされるため曜日を省く */
+  @media (max-width: 600px) { a.nav-cta { white-space: nowrap; } .nav-cta-sub { display: none; } }
+  @media (prefers-reduced-motion: reduce) { .status-badge.is-final-call, .final-call-dot { animation: none; } }
 
   .hero-meta-row {
     display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 22px;
@@ -265,13 +269,19 @@
   /* S.League を CLAUDE.md 4-1 の Soft Aqua パレットへ統一 (2026-07-11 決定)。
      shared.css の既定トークンをこのページ内で上書きする。 */
   :root{
-    --bg:#FFFFFF; --bg-soft:#F8FBFC; --bg-muted:#EBF5FA; --surface:#FFFFFF;
-    --border:#D7E5ED; --border-strong:#B8CED9;
-    --text:#134E6F; --text-muted:#51697B; --text-soft:#7A8998;
-    --accent:#1E88E5; --accent-soft:#D6EBF7; --accent-2:#F59E0B;
-    --gold:#F59E0B; --gold-2:#FBBF24;
+    --bg:#FFFFFF; --bg-soft:#F6F8FA; --bg-muted:#FFFFFF; --surface:#FFFFFF;
+    --border:#C9D3DC; --border-strong:#7A8894;
+    --text:#1F2A33; --text-muted:#56626D; --text-soft:#56626D;
+    --accent:#1565C0; --accent-soft:#EEF2F5; --accent-2:#1565C0;
+    --gold:#1565C0; --gold-2:#8EC5FF;
   }
-  body{ background:#EBF5FA; }
+  body{ background:#FFFFFF; }
+</style>
+<style id="hero-height">
+  /* S.League の大会ページの HERO は 650px にそろえ、文字を上下の真ん中に (2026-10-03 Sho 指示) */
+  header.hero.sl-hero { align-items: center; padding: 48px 0; }
+  @media (min-width: 761px) { header.hero.sl-hero { min-height: 650px; } }
+  @media (max-width: 760px) { header.hero.sl-hero { min-height: 0; } }
 </style>
 </head>
 <body id="body-root">
@@ -291,7 +301,7 @@
       <li><a href="./">LUMA トップ</a></li>
     </ul>
     <div style="display:flex;gap:10px;align-items:center;">
-      <a href="#apply" class="nav-cta">10/18 (日) 受付中 →</a>
+      <a href="#apply" class="nav-cta"><span class="final-call-dot" aria-hidden="true"></span>10/18<span class="nav-cta-sub"> (日)</span> まもなく受付終了 →</a>
     </div>
     <button class="nav-toggle" type="button" aria-label="メニューを開閉" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -316,10 +326,10 @@
     </h1>
     <p class="date">2026年10月18日 (日) 12:00〜20:00</p>
     <p class="hero-lead" style="font-size:16px;line-height:1.85;margin-top:16px;max-width:600px;">
-      1日8時間、全7戦。予選6回戦を戦い、夕食をはさんで全員参加の順位決定戦へ。ノーレートの健康麻雀で、最後の1戦まで本気で打ち切る個人戦です。
+      1日8時間で全7戦を行います。予選6回戦を戦い、夕食をはさんで全員参加の順位決定戦へと進みます。ノーレートの健康麻雀で、最後の1戦まで本気で打ち切る個人戦です。
     </p>
     <div class="hero-meta-row">
-      <span class="status-badge is-open"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" /> <circle cx="12" cy="12" r="6" /> <circle cx="12" cy="12" r="2" /></svg> 参加受付中</span>
+      <span class="status-badge is-open is-final-call"><span class="final-call-dot final-call-dot--ink" aria-hidden="true"></span>まもなく参加受付終了</span>
       <span class="status-badge"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /> <circle cx="12" cy="7" r="4" /></svg> 個人戦</span>
       <span class="status-badge"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v18" /> <path d="M3 12h18" /> <rect x="3" y="3" width="18" height="18" rx="2" /></svg> 全7戦 · 50分打ち切り</span>
       <span class="status-badge"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /> <circle cx="12" cy="10" r="3" /></svg> 定員24名 (6卓)</span>
@@ -329,8 +339,8 @@
       <a href="https://forms.gle/fgoPvP8wDAE1MdHt9" target="_blank" rel="noopener" class="btn btn-primary"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 18v-7" /> <path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z" /> <path d="M14 18v-7" /> <path d="M18 18v-7" /> <path d="M3 22h18" /> <path d="M6 18v-7" /></svg> 銀行振込で申し込む</a>
       <a href="#info" class="btn btn-secondary">大会概要を見る</a>
     </div>
-    <p style="margin-top:18px;font-size:13px;line-height:1.8;color:rgba(255,255,255,0.85);max-width:600px;text-shadow:0 1px 10px rgba(10,42,62,0.6);">
-      S.League は2022年から24回・延べ367名が参加してきた健康麻雀のコミュニティです。主催の LUMA は、RMU 河野高志プロ率いる RTB2026「チーム 大奥」のチームスポンサーを務めています。
+    <p style="margin-top:18px;font-size:13px;line-height:1.8;color:rgba(255,255,255,0.85);max-width:600px;text-shadow:0 1px 10px rgba(31, 42, 51,0.6);">
+      S.League は、2022年から24回・延べ367名が参加してきた健康麻雀のコミュニティです。主催の LUMA は、RMU 河野高志プロ率いる RTB2026「チーム 大奥」のチームスポンサーを務めております。
     </p>
   </div>
 </header>
@@ -352,12 +362,12 @@
       <div class="info-card">
         <span class="info-label">参加費</span>
         <div class="info-val">7,300円</div>
-        <div class="info-sub">銀行振込の場合は7,000円。クレジットカード (Square) と銀行振込からお選びいただけます。</div>
+        <div class="info-sub">銀行振込の場合は7,000円となります。クレジットカード (Square) と銀行振込からお選びいただけます。</div>
       </div>
       <div class="info-card">
         <span class="info-label">定員</span>
         <div class="info-val">24名 (6卓)</div>
-        <div class="info-sub">個人戦です。おひとりでのお申込みを歓迎します。定員に達し次第、締切を待たずに受付を終了します。</div>
+        <div class="info-sub">個人戦ですので、おひとりでのお申込みを歓迎いたします。定員に達し次第、締切を待たずに受付を終了します。</div>
       </div>
       <div class="info-card">
         <span class="info-label">場所</span>
@@ -378,12 +388,12 @@
   </div>
 </section>
 
-<section id="rules" aria-labelledby="rules-heading" style="background:var(--bg-soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+<section id="rules" aria-labelledby="rules-heading" style="background:var(--bg-soft);border-top:1px solid var(--border);">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">大会ルール</span>
       <h2 id="rules-heading">S.League 25 の競技ルール</h2>
-      <p style="margin: 0 auto;">基本的に Mリーグルールに準拠します。1日開催の個人戦にともない、以下の点を S.League 25 独自ルールとして適用します。</p>
+      <p style="margin: 0 auto;">基本的には Mリーグルールに準拠します。1日開催の個人戦にともない、以下の点を S.League 25 独自ルールとして適用いたします。</p>
     </div>
     <ul class="rules-list reveal">
       <li class="rule-item">
@@ -397,14 +407,14 @@
         <span class="rule-icon"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /> <circle cx="12" cy="7" r="4" /></svg></span>
         <div>
           <span class="rule-title">個人戦</span>
-          <p class="rule-desc">S.League 25 は<strong>個人戦</strong>です。おひとりでのお申込みを歓迎します。最終順位は全7戦の<strong>合計ポイント</strong>で決定し、成績は S.League 通算成績データベースへ反映します。</p>
+          <p class="rule-desc">S.League 25 は<strong>個人戦</strong>ですので、おひとりでのお申込みを歓迎いたします。最終順位は全7戦の<strong>合計ポイント</strong>で決定し、成績は S.League 通算成績データベースへ反映いたします。</p>
         </div>
       </li>
       <li class="rule-item">
         <span class="rule-icon"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="10" x2="14" y1="2" y2="2" /> <line x1="12" x2="15" y1="14" y2="11" /> <circle cx="12" cy="14" r="8" /></svg></span>
         <div>
           <span class="rule-title">全7戦 (予選6回戦+順位決定戦1回戦)</span>
-          <p class="rule-desc">1日8時間の大会のため、<strong>予選6回戦+順位決定戦1回戦</strong>の全7戦を行います。予選6回戦を終えた時点で夕食休憩をとり、そのあとに<strong>全員が参加する順位決定戦</strong>で最終順位を確定します。順位決定戦の卓組は予選順位に応じて決定します。</p>
+          <p class="rule-desc">1日8時間の大会のため、<strong>予選6回戦+順位決定戦1回戦</strong>の全7戦を行います。予選6回戦を終えた時点で夕食休憩をとり、その後に<strong>全員が参加する順位決定戦</strong>で最終順位を確定します。順位決定戦の卓組は、予選順位に応じて決定いたします。</p>
         </div>
       </li>
       <li class="rule-item">
@@ -418,7 +428,7 @@
         <span class="rule-icon"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" /> <path d="M7 2v20" /> <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" /></svg></span>
         <div>
           <span class="rule-title">休憩について</span>
-          <p class="rule-desc"><strong>予選6回戦終了後に夕食休憩 (45分程度)</strong> をとります。夕食後、最終戦となる順位決定戦へと進みます。</p>
+          <p class="rule-desc"><strong>予選6回戦終了後に夕食休憩 (45分程度)</strong> をとります。夕食の後に、最終戦となる順位決定戦へ進みます。</p>
         </div>
       </li>
       <li class="rule-item">
@@ -433,32 +443,32 @@
   </div>
 </section>
 
-<section id="schedule" aria-labelledby="schedule-heading">
+<section id="schedule" aria-labelledby="schedule-heading" class="section-invert">
   <div class="container">
     <div class="section-head reveal" style="margin: 0 auto 48px; text-align:center;">
       <span class="eyebrow">当日のスケジュール</span>
       <h2 id="schedule-heading">当日の流れ (概要)</h2>
-      <p style="margin: 0 auto;">11:50の受付から20:00頃の閉会まで、打つのは全7戦 (予選6回戦+順位決定戦)。1日 (8時間) の大会です。卓組など詳しい進行は、開催前にご参加の皆様へ個別にご案内します。</p>
+      <p style="margin: 0 auto;">11:50の受付から20:00頃の閉会まで、全7戦 (予選6回戦+順位決定戦) を打つ1日 (8時間) の大会です。卓組など詳しい進行につきましては、開催前にご参加の皆様へ個別にご案内いたします。</p>
     </div>
     <ul class="schedule-list reveal">
       <li class="schedule-item"><span class="schedule-time">11:50</span><div class="schedule-text"><span class="schedule-bold">受付開始</span>開会10分前から受付を行います。時間に余裕を持ってお越しください。</div></li>
       <li class="schedule-item"><span class="schedule-time">12:00</span><div class="schedule-text"><span class="schedule-bold">開会式</span>当日の進め方と独自ルールをひととおりご説明します。</div></li>
-      <li class="schedule-item"><span class="schedule-time">12:10頃</span><div class="schedule-text"><span class="schedule-bold">予選 (1〜6回戦)</span>各回戦は50分打ち切り、それぞれの半荘の間に10分程度の小休憩を挟みます。</div></li>
-      <li class="schedule-item"><span class="schedule-time">18:00頃</span><div class="schedule-text"><span class="schedule-bold">夕食休憩 (45分程度)</span>予選6回戦を終えて、夕食をとりながら一息。最終戦に備えます。</div></li>
-      <li class="schedule-item highlight"><span class="schedule-time">18:45頃</span><div class="schedule-text"><span class="schedule-bold">順位決定戦 (7回戦目)</span>予選順位に応じて卓組を決定。全員参加の最終戦で、優勝が決まります。</div></li>
-      <li class="schedule-item highlight"><span class="schedule-time">19:40頃</span><div class="schedule-text"><span class="schedule-bold">表彰式・閉会</span>最終順位を発表します。参加賞はその場で全員にお渡しします。進行が早まり時間に余裕がある場合は、閉会前にエキシビションを行います。20:00頃終了予定です。</div></li>
+      <li class="schedule-item"><span class="schedule-time">12:10頃</span><div class="schedule-text"><span class="schedule-bold">予選 (1〜6回戦)</span>各回戦は50分打ち切りで、それぞれの半荘の間に10分程度の小休憩を挟みます。</div></li>
+      <li class="schedule-item"><span class="schedule-time">18:00頃</span><div class="schedule-text"><span class="schedule-bold">夕食休憩 (45分程度)</span>予選6回戦を終えた後に、夕食をとりながら一息ついて最終戦に備えます。</div></li>
+      <li class="schedule-item highlight"><span class="schedule-time">18:45頃</span><div class="schedule-text"><span class="schedule-bold">順位決定戦 (7回戦目)</span>予選順位に応じて卓組を決定します。全員参加の最終戦で、優勝が決まります。</div></li>
+      <li class="schedule-item highlight"><span class="schedule-time">19:40頃</span><div class="schedule-text"><span class="schedule-bold">表彰式・閉会</span>最終順位を発表し、参加賞はその場で全員にお渡しします。進行が早まって時間に余裕がある場合は、閉会前にエキシビションを行います。終了は20:00頃の予定です。</div></li>
     </ul>
     <p style="text-align:center;font-size:12px;color:var(--text-soft);margin-top:20px;">※ 時間は目安です。進行状況により前後する場合があります。</p>
   </div>
 </section>
 
 <!-- ── フォトギャラリー: 前回大会 SL24 の様子 ── -->
-<section id="gallery" aria-labelledby="gallery-heading" class="section-invert">
+<section id="gallery" aria-labelledby="gallery-heading" style="background:var(--bg-soft);">
   <div class="container">
     <div class="section-head reveal" style="margin: 0 auto 48px; text-align:center;">
       <span class="eyebrow">Gallery</span>
       <h2 id="gallery-heading">前回大会の様子</h2>
-      <p style="margin: 0 auto;">写真は2026年7月25日開催の S.League 24 から。<br>当日の空気感を、先取りしてお届けします。</p>
+      <p style="margin: 0 auto;">写真は2026年7月25日開催の S.League 24 のものです。<br>当日の空気感を、先取りしてお届けします。</p>
     </div>
     <div class="sl-gallery-grid reveal">
       <img src="./images/sleague/SL24/sl24-03.jpg" alt="青い牌が並ぶ対局中の全自動卓 (前回大会 S.League 24)" loading="lazy" width="1600" height="899" role="button" tabindex="0" onclick="openSlLightbox(this.src,this.alt)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openSlLightbox(this.src,this.alt);}">
@@ -476,21 +486,15 @@
   <img id="sl-lightbox-img" src="" alt="">
 </div>
 
-<section id="apply" aria-labelledby="apply-heading" style="background:var(--bg-soft);border-top:1px solid var(--border);">
+<section id="payment" aria-labelledby="payment-heading" style="background:var(--text);color:var(--bg);border-top:1px solid var(--border);">
   <div class="container">
-    <div class="section-head reveal" style="text-align:center; margin: 0 auto 24px;">
-      <span class="eyebrow">参加登録</span>
-      <h2 id="apply-heading">定員24名、<br>あなたの1席を確保しませんか</h2>
-      <p style="margin: 0 auto 16px;">お申込みはフォームから3分ほどで完了します。<br>定員24名 (6卓) に達し次第、締切を待たずに受付を終了します。</p>
+    <div class="section-head reveal" style="text-align:center; margin: 0 auto 32px;">
+      <span class="eyebrow" style="color: color-mix(in srgb, var(--bg) 70%, transparent);">お支払い方法</span>
+      <h2 id="payment-heading" style="color: var(--bg);">2つの方法から選べます</h2>
+      <p style="color: color-mix(in srgb, var(--bg) 70%, transparent); margin: 0 auto;">クレジットカード (Square) と銀行振込からお選びいただけます。</p>
     </div>
 
-    <div class="reveal" style="text-align:center; max-width: 760px; margin: 0 auto;">
-      <div class="apply-deadline"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 2v3" /> <path d="M16 2v3" /> <rect x="3" y="3" width="18" height="18" rx="2" /> <path d="M3 9h18" /></svg> 申込締切: 2026年10月12日 (月) 22:00</div>
-      <p style="font-size: 13px; color: var(--text-soft); margin-top: 16px; line-height: 1.7;">
-        開催日: <strong style="color:var(--text);">2026年10月18日 (日) 12:00〜20:00</strong> · 個人戦 · 定員24名 (6卓)<br>
-        おひとりでのお申込みを歓迎します。対象は初中級以上の方で、プロ雀士も参加します。
-      </p>
-
+    <div class="reveal" style="max-width: 760px; margin: 0 auto;">
       <div class="payment-grid">
         <a class="payment-card square" href="https://square.link/u/CN2nMCCZ" target="_blank" rel="noopener">
           <span class="payment-icon"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="14" x="2" y="5" rx="2" /> <line x1="2" x2="22" y1="10" y2="10" /></svg></span>
@@ -519,6 +523,25 @@
           例: 9月28日にお申込み → 10月2日まで / 10月10日にお申込み → 10月13日まで
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="apply" aria-labelledby="apply-heading" style="background:var(--bg);border-top:1px solid var(--border);">
+  <div class="container">
+    <div class="section-head reveal" style="text-align:center; margin: 0 auto 24px;">
+      <span class="eyebrow">参加登録</span>
+      <h2 id="apply-heading">定員24名、<br>お席のご予約はこちらから</h2>
+      <p style="margin: 0 auto 16px;">お申込みはフォームから3分ほどで完了します。<br>定員24名 (6卓) に達し次第、締切を待たずに受付を終了いたします。</p>
+    </div>
+
+    <div class="reveal" style="text-align:center; max-width: 760px; margin: 0 auto;">
+      <div class="apply-deadline"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 2v3" /> <path d="M16 2v3" /> <rect x="3" y="3" width="18" height="18" rx="2" /> <path d="M3 9h18" /></svg> 申込締切: 2026年10月12日 (月) 22:00</div>
+      <p style="font-size: 13px; color: var(--text-soft); margin-top: 16px; line-height: 1.7;">
+        開催日: <strong style="color:var(--text);">2026年10月18日 (日) 12:00〜20:00</strong> · 個人戦 · 定員24名 (6卓)<br>
+        おひとりでのお申込みを歓迎いたします。対象は初中級以上の方で、プロ雀士も参加します。
+      </p>
+
 
       <div class="cancel-alert">
         <div class="cancel-alert-title"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" /> <path d="M12 9v4" /> <path d="M12 17h.01" /></svg> お申込み前にご確認ください (キャンセル料について)</div>
@@ -528,12 +551,12 @@
           ・9月20日 (日) 〜9月26日 (土): <strong>参加費の50% (3,650円)</strong><br>
           ・9月27日 (日) 〜10月3日 (土): <strong>参加費の75% (5,475円)</strong><br>
           ・10月4日 (日) 〜当日: <strong>返金不可 (100%)</strong><br><br>
-          なお、代わりにご参加いただける方をご自身で手配いただける場合は、キャンセル料を免除します。詳しくは <a href="./legal#cancel" style="color:var(--accent);text-decoration:underline;">キャンセルポリシー</a> をご覧ください。
+          なお、代わりにご参加いただける方をご自身でご手配いただける場合は、キャンセル料を免除します。詳しくは <a href="./legal#cancel" style="color:var(--accent);text-decoration:underline;">キャンセルポリシー</a> をご覧ください。
         </div>
       </div>
 
       <p class="terms-note">
-        お申込みの完了をもって、以下のポリシーに同意いただいたものとみなします。<br>
+        お申込みの完了をもって、以下のポリシーにご同意いただいたものとみなします。<br>
         <a href="./legal#cancel">キャンセルポリシー</a> /
         <a href="./legal#tokusho">特定商取引法に基づく表記</a> /
         <a href="./legal#privacy">プライバシーポリシー</a><br>
@@ -543,6 +566,28 @@
   </div>
 </section>
 
+
+<!-- ── LUMA Frame への橋 (2026-09-05 追加) ── -->
+<section id="frame-bridge" aria-labelledby="frame-bridge-heading" style="background:var(--bg-soft);border-top:1px solid var(--border);">
+  <div class="container">
+    <div class="proof-grid reveal">
+      <div>
+        <span class="eyebrow">LUMA Frame</span>
+        <h2 id="frame-bridge-heading" style="margin:16px 0 14px;">大会の記念写真も<wbr /> <span class="nb">LUMA Frame</span> が<wbr />撮っています</h2>
+        <p style="color:var(--text-muted);margin-bottom:12px;">
+          S.League を主催している本人が、LUMA Frame の名前で写真を撮っています。大会当日の記念撮影も承ります。
+        </p>
+        <p style="color:var(--text-muted);margin-bottom:24px;">
+          チームでの一枚も<wbr />ご家族やご友人との撮影も<wbr />お受けします。<wbr /><span class="nb">東京・横浜</span>へ出張し、<wbr />データは撮影日から<span class="nb">7日以内に</span><wbr />お渡しします。
+        </p>
+        <a href="./service-photo" class="btn btn-secondary"><span class="nb">詳細を見る →</span></a>
+      </div>
+      <div class="proof-media" style="grid-template-columns:1fr;">
+        <img src="./images/sleague/SL24/sl24-03.jpg" alt="青い牌が並ぶ対局中の全自動卓 (S.League 24)" loading="lazy" width="1600" height="899" />
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="container">
@@ -559,6 +604,7 @@
           <li><a href="./s-league-25">S.League 25 情報</a></li>
           <li><a href="./s-league-archive">成績アーカイブ</a></li>
           <li><a href="./s-league-sponsor">スポンサー募集</a></li>
+          <li><a href="./service-photo">LUMA Frame</a></li>
           <li><a href="./service-community">LUMA Circle</a></li>
           <li><a href="./service-web">LUMA Craft</a></li>
         </ul>

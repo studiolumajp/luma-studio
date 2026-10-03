@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#134E6F" />
+<meta name="theme-color" content="#1F2A33" />
 <meta name="color-scheme" content="light only" />
 
 <title>Community Events · Mahjong Tournaments | LUMA Circle</title>
@@ -31,9 +31,8 @@
 <meta name="twitter:title" content="LUMA Circle / Community Events" />
 <meta name="twitter:image" content="https://studio-lumadesign.com/og-image.jpg" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="preload" href="/fonts/urbanist-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../fonts/noto-sans-jp.css?v=gdpr1" />
 
 <script type="application/ld+json">
 {
@@ -98,10 +97,9 @@
 }
 </script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
-<script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-62F20N179N');</script>
+<script src="../consent.js?v=gdpr1"></script>
 
-<link rel="stylesheet" href="../shared.css?v=aqua32" />
+<link rel="stylesheet" href="../shared.css?v=l8f" />
 <style id="page-overrides">
   .svc-hero { padding: 64px 0 72px; }
   .svc-hero h1 .accent { background: linear-gradient(120deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
@@ -129,6 +127,12 @@
 
   @media (max-width:640px){ .flow-num{font-size:38px} }
 </style>
+<style id="l8-photo-fix">
+  /* HERO の写真はここで直接指定する。CSS 変数の url() は Chrome が shared.css の位置から解決し、
+     file:// で開くと ../ の写真が見つからないため (2026-10-03) */
+  html body .l8-hero { background: linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 38%, var(--scrim-3) 66%, var(--scrim-4) 88%), linear-gradient(0deg, rgba(31, 42, 51, 0.45) 0%, rgba(31, 42, 51, 0) 55%), image-set(url('../images/hero/compare-community-1920.webp') type('image/webp'), url('../images/hero/compare-community-1920.jpg') type('image/jpeg')) center / cover no-repeat !important; }
+  @media (max-width: 760px) { html body .l8-hero { background: linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 38%, var(--scrim-3) 66%, var(--scrim-4) 88%), linear-gradient(0deg, rgba(31, 42, 51, 0.45) 0%, rgba(31, 42, 51, 0) 55%), image-set(url('../images/hero/compare-community-960.webp') type('image/webp'), url('../images/hero/compare-community-960.jpg') type('image/jpeg')) center / cover no-repeat !important; } }
+</style>
 </head>
 <body id="body-root">
 <a class="skip-link" href="#home">Skip to main content</a>
@@ -142,7 +146,8 @@
         <ul class="dropdown-menu">
           <li><a href="./services">All Services</a></li>
           <li><a href="./service-english">English Lessons</a></li>
-          <li><a href="./service-tour">Tokyo Tours</a></li>
+          <li><a href="./service-photo">Photography</a></li>
+          <li><a href="./service-tour">Private Tours</a></li>
           <li><a href="./service-community">Community Events</a></li>
           <li><a href="./service-web">Web, Social &amp; Apps</a></li>
         </ul>
@@ -161,7 +166,7 @@
   <ol><li><a href="./">Home</a></li><li><a href="./services">Services</a></li><li aria-current="page">Community Events (LUMA Circle)</li></ol>
 </nav>
 
-<header class="hero svc-hero" id="home" tabindex="-1">
+<header class="hero l8-hero svc-hero" id="home" tabindex="-1" style="--l8-photo:image-set(url('../images/hero/compare-community-1920.webp') type('image/webp'), url('../images/hero/compare-community-1920.jpg') type('image/jpeg'));--l8-photo-sm:image-set(url('../images/hero/compare-community-960.webp') type('image/webp'), url('../images/hero/compare-community-960.jpg') type('image/jpeg'))">
   <div class="container">
     <span class="eyebrow">LUMA Circle / Service 04</span>
     <h1 class="hero-title" style="margin-top:18px;">A "place to belong" <span class="accent">changes</span> a life.</h1>
@@ -220,14 +225,14 @@
       <div>
         <span class="tag">Since 2022</span>
         <h3>Real mahjong, in a healthy way.</h3>
-        <p>I started S.League in July 2022. Each session brings 16〜20 players together for genuinely competitive games, without alcohol, smoking or betting. Pros and people who only picked up the game last month sit at the same tables. Everyone takes home a parting gift.</p>
+        <p>I started S.League in July 2022. The 2026 events brought 12 to 18 players together for genuinely competitive games, without alcohol, smoking or betting. Pros and people who only picked up the game last month sit at the same tables. Everyone takes home a parting gift.</p>
         <a href="../s-league" class="btn btn-primary" style="margin-top:24px;">See details →</a>
       </div>
       <div class="spotlight-facts">
         <div class="spotlight-fact"><span class="fact-label">Started</span><span class="fact-val">July 2022 (ongoing)</span></div>
         <div class="spotlight-fact"><span class="fact-label">Total events</span><span class="fact-val">24 (next: S.League 25 on 18 October 2026)</span></div>
         <div class="spotlight-fact"><span class="fact-label">Cumulative players</span><span class="fact-val">367</span></div>
-        <div class="spotlight-fact"><span class="fact-label">Format</span><span class="fact-val">East-South games · 6〜8 rounds per event · 16〜20 players</span></div>
+        <div class="spotlight-fact"><span class="fact-label">Format</span><span class="fact-val">East-South games · 5 to 9 games per event · 12 to 18 players (2026 events)</span></div>
         <div class="spotlight-fact"><span class="fact-label">Venue</span><span class="fact-val">Bellbird grow (Shimbashi, Tokyo)</span></div>
       </div>
     </div>
@@ -238,7 +243,7 @@
   <div class="container">
     <div class="section-head reveal" style="margin: 0 auto 48px; text-align:center;"><span class="eyebrow">Pricing</span><h2 id="pricing-heading">Pricing</h2><p style="margin: 0 auto;">S.League has a set entry fee. Custom events depend on what you need.</p></div>
     <div class="price-box reveal">
-      <div class="price-row"><span class="price-label">S.League entry fee (varies by event)</span><span class="price-value">¥6,200〜¥12,000</span></div>
+      <div class="price-row"><span class="price-label">S.League entry fee (varies by event)</span><span class="price-value">¥5,200〜¥12,000</span></div>
       <div class="price-row"><span class="price-label">Custom event planning & ops</span><span class="price-value">On request</span></div>
       <div class="price-row"><span class="price-label">Event-planning consultation</span><span class="price-value">On request</span></div>
       <div class="price-row"><span class="price-label">Initial consultation</span><span class="price-value">¥0</span></div>
@@ -274,7 +279,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand"><a href="./" class="brand"><span class="brand-mark">L</span><span>LUMA</span></a><p>Designing your confidence in Tokyo & Yokohama. Clarity by Design / Illuminate Your Confidence.</p></div>
-      <div class="footer-col"><h4>Services</h4><ul><li><a href="./service-english">English Lessons</a></li><li><a href="./service-tour">Tokyo Tours</a></li><li><a href="./service-web">Web, Social &amp; Apps</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="./service-english">English Lessons</a></li><li><a href="./service-photo">Photography</a></li><li><a href="./service-tour">Private Tours</a></li><li><a href="./service-web">Web, Social &amp; Apps</a></li></ul></div>
       <div class="footer-col"><h4>About</h4><ul><li><a href="./about">About me</a></li>
 <li><a href="./news/">News</a></li><li><a href="./#faq">FAQ</a></li><li><a href="./photography">Photo Portfolio</a></li></ul></div>
       <div class="footer-col"><h4>Support</h4><ul>

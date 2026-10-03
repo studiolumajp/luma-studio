@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#134E6F" />
+<meta name="theme-color" content="#1F2A33" />
 <meta name="color-scheme" content="light only" />
 
 <!-- ── PRIMARY SEO META ── -->
 <title>お問い合わせ・無料相談 | LUMA</title>
-<meta name="description" content="LUMA への無料相談・お見積もり・お問い合わせはこちらから。相談は30分・無料で、Zoom でも対面でも対応します。英会話・英語ツアー・コミュニティイベント・S.League 麻雀のすべてに対応し、2営業日以内にご返信します。" />
+<meta name="description" content="LUMA への無料相談・お見積り・お問い合わせはこちらから。相談は30分・無料で、Zoom でも対面でも承ります。英会話・英語ツアー・コミュニティイベント・S.League 麻雀のすべてに対応しており、3営業日以内に返信いたします。" />
 <meta name="keywords" content="LUMA 問い合わせ,無料相談,英会話 相談,英語コーチング 相談,英語ツアー 相談" />
 <meta name="author" content="LUMA" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -21,7 +21,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://studio-lumadesign.com/contact" />
 <meta property="og:title" content="お問い合わせ・無料相談 | LUMA" />
-<meta property="og:description" content="LUMAへの無料相談・お見積もり・お問い合わせはこちらから。2営業日以内にご返信。" />
+<meta property="og:description" content="LUMA への無料相談・お見積り・お問い合わせはこちらから。3営業日以内に返信いたします。" />
 <meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -32,13 +32,12 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@s_league_Japan" />
 <meta name="twitter:title" content="お問い合わせ | LUMA" />
-<meta name="twitter:description" content="無料相談・お見積もり受付中。2営業日以内にご返信。" />
+<meta name="twitter:description" content="無料相談・お見積り受付中。3営業日以内に返信いたします。" />
 <meta name="twitter:image" content="https://studio-lumadesign.com/og-image.jpg" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="preconnect" href="https://formspree.io" />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="preload" href="/fonts/urbanist-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="./fonts/noto-sans-jp.css?v=gdpr1" />
 
 <script type="application/ld+json">
 {
@@ -62,19 +61,24 @@
 }
 </script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-62F20N179N"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-62F20N179N');
-</script>
+<script src="./consent.js?v=gdpr1"></script>
 
-<link rel="stylesheet" href="./shared.css?v=aqua32" />
+<link rel="stylesheet" href="./shared.css?v=l8f" />
 <style id="page-overrides">
-  .contact-hero { padding: 64px 0 32px; }
+  /* フォーム上の LINE ボタンは右下固定の .line-float と同じ青の CTA にそろえる */
+  .form-line-note .btn-line { background: var(--accent-2, #1565C0); color: #FFFFFF; border-color: var(--accent-2, #1565C0); }
+  .form-line-note .btn-line:hover,
+  .form-line-note .btn-line:focus-visible { background: var(--cta-hover, #2342B5); color: #FFFFFF; border-color: var(--cta-hover, #2342B5); }
+  /* HERO の高さを撮影地ページ(.photo-hero)と同じにし、文字を上下の真ん中に (2026-10-03) */
+  header.contact-hero.l8-hero { align-items: center; padding: 48px 0; }
+  @media (min-width: 761px) { header.contact-hero.l8-hero { min-height: clamp(420px, 39vw, 600px); } }
+  /* HERO の文字が読みやすいよう、写真を全体に暗くする (2026-10-03 Sho 指示) */
+  header.contact-hero.l8-hero {
+    --scrim-1: rgba(31, 42, 51, 0.88); --scrim-2: rgba(31, 42, 51, 0.80);
+    --scrim-3: rgba(31, 42, 51, 0.66); --scrim-4: rgba(31, 42, 51, 0.56);
+  }
   .contact-hero .sub {
-    font-size: clamp(16px, 1.4vw, 18px); color: var(--text-muted); margin-bottom: 16px;
+    font-size: clamp(16px, 1.4vw, 18px); color: var(--text-muted); margin-bottom: 0;
   }
 
   /* ── FORM ── */
@@ -87,7 +91,7 @@
   .form-group { margin-bottom: 16px; display: flex; flex-direction: column; gap: 6px; }
   .form-group label {
     font-size: 13px; font-weight: 600; color: var(--text);
-    font-family:'Poppins', system-ui, sans-serif;
+    font-family:'Urbanist LUMA', 'Noto Sans JP', system-ui, sans-serif;
   }
   .form-group input,
   .form-group select,
@@ -147,6 +151,29 @@
     font-family: var(--font-mono);
   }
 
+  /* ── ご相談セッションの希望 (2026-10-03) ── */
+  .form-fieldset { border: 0; padding: 0; margin: 0 0 16px; min-width: 0; }
+  .form-fieldset legend {
+    padding: 0; margin-bottom: 8px; font-size: 13px; font-weight: 600; color: var(--text);
+    font-family:'Urbanist LUMA', 'Noto Sans JP', system-ui, sans-serif;
+  }
+  .choice-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .choice {
+    display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 10px 16px;
+    border: 1px solid var(--border-strong); border-radius: var(--radius);
+    background: var(--bg); font-size: 14px; color: var(--text); cursor: pointer;
+  }
+  .choice:has(input:checked) { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+  .choice input { width: 18px; height: 18px; margin: 0; accent-color: var(--accent); flex: none; }
+  .area-consent {
+    margin-top: 12px; padding: 14px 16px; border: 1px solid var(--border);
+    border-left: 3px solid var(--accent); border-radius: var(--radius); background: var(--bg-soft);
+  }
+  .area-consent[hidden] { display: none; }
+  .area-consent p { margin: 0 0 10px; font-size: 14px; line-height: 1.7; color: var(--text); }
+  .area-consent label { display: flex; align-items: flex-start; gap: 8px; font-size: 14px; font-weight: 600; color: var(--text); cursor: pointer; }
+  .area-consent input { width: 18px; height: 18px; margin: 3px 0 0; accent-color: var(--accent); flex: none; }
+
   .form-submit { display: flex; justify-content: center; margin-top: 24px; }
   .contact-note {
     margin-top: 18px; font-size: 12px; color: var(--text-soft); text-align: center; line-height: 1.6;
@@ -188,7 +215,8 @@
         <ul class="dropdown-menu">
           <li><a href="./services">サービス一覧</a></li>
           <li><a href="./service-english">英会話レッスン</a></li>
-          <li><a href="./service-tour">英語で巡る東京ツアー</a></li>
+          <li><a href="./service-photo">記念撮影・ポートレート</a></li>
+          <li><a href="./service-tour">海外ゲストの観光案内</a></li>
           <li><a href="./service-community">コミュニティイベント</a></li>
           <li><a href="./service-web">Web・SNS・アプリ制作</a></li>
           <li><a href="./s-league">S.League 麻雀大会</a></li>
@@ -216,20 +244,20 @@
   </ol>
 </nav>
 
-<header class="hero contact-hero" id="home" tabindex="-1">
+<header class="hero l8-hero contact-hero" id="home" tabindex="-1" style="--l8-photo:image-set(url('./images/hero/yokohama-osanbashi-night-1920.webp') type('image/webp'), url('./images/hero/yokohama-osanbashi-night-1920.jpg') type('image/jpeg'));--l8-photo-sm:image-set(url('./images/hero/yokohama-osanbashi-night-960.webp') type('image/webp'), url('./images/hero/yokohama-osanbashi-night-960.jpg') type('image/jpeg'))">
   <div class="container">
     <span class="eyebrow">Contact</span>
     <h1 class="hero-title" style="margin-top:18px;">
       まずは<br class="sp" /><span class="accent">無料相談</span>から。
     </h1>
-    <p class="sub"><span class="nb">相談は30分。</span>無料です。<wbr />しつこい営業はしません。<wbr /><span class="nb">2営業日以内</span>にご返信して、<wbr />日程を調整します。<wbr />Zoom でも対面でも承ります。<wbr />どのサービスにするか、<wbr />まだ決まっていなくて<wbr />かまいません。</p>
+    <p class="sub">ご相談は30分間で無料となります。<wbr />フォームからのお問い合わせには、<wbr /><span class="nb">3営業日以内</span>に返信いたします。<br />オンラインでのご相談のみならず、<wbr />対面でのご相談も承ります。<wbr />なお、対面での対応につきましては、<wbr /><span class="nb">東京都23区内</span>・<span class="nb">横浜市内</span>・<span class="nb">川崎市内</span>のみとなりますので、<wbr />予めご了承ください。</p>
   </div>
 </header>
 
 <section style="padding: 24px 0 80px;">
   <div class="container">
     <div class="form-line-note reveal">
-      <p>入力が面倒なときは<wbr /> <span class="nb">LINE でも</span><wbr />受け付けています。<wbr /><span class="nb">日程だけでも</span>かまいません。</p>
+      <p>フォームへの入力が煩雑な方向けに、<wbr /><span class="nb">LINEでも</span><wbr />お問い合わせを<wbr />受け付けております。</p>
       <a href="https://lin.ee/YetEeTz" class="btn btn-line" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span class="nb">LINEで相談する →</span></a>
     </div>
     <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/mdawgrql" method="POST">
@@ -269,15 +297,15 @@
         </div>
       </div>
       <div class="form-group">
-        <label for="service">ご希望のサービス *(迷っている場合は「その他」を選んでください)</label>
+        <label for="service">ご希望のサービス *(お迷いの場合は「その他」をお選びください)</label>
         <select id="service" name="service" required>
           <option value="" disabled selected>サービスを選択</option>
-          <option value="英会話レッスン (LUMA Voice)">英会話レッスン (LUMA Voice)</option>
-          <option value="英語コーチング 3か月 (LUMA Voice)">英語コーチング 3か月 (LUMA Voice)</option>
-          <option value="撮影について (提携の写真家が担当)">撮影について (提携の写真家が担当)</option>
-          <option value="英語ツアー (LUMA Path)">英語ツアー (LUMA Path)</option>
-          <option value="コミュニティイベント (LUMA Circle)">コミュニティイベント (LUMA Circle)</option>
-          <option value="Web・SNS・アプリ制作 (LUMA Craft)">Web・SNS・アプリ制作 (LUMA Craft)</option>
+          <option value="LUMA Voice: 英会話レッスン">LUMA Voice: 英会話レッスン</option>
+          <option value="LUMA Voice: 英語コーチング 3か月">LUMA Voice: 英語コーチング 3か月</option>
+          <option value="LUMA Frame: 記念撮影・ポートレート">LUMA Frame: 記念撮影・ポートレート</option>
+          <option value="LUMA Path: 海外ゲストの観光案内">LUMA Path: 海外ゲストの観光案内</option>
+          <option value="LUMA Circle: コミュニティイベント">LUMA Circle: コミュニティイベント</option>
+          <option value="LUMA Craft: Web・SNS・アプリ制作">LUMA Craft: Web・SNS・アプリ制作</option>
           <option value="S.League 麻雀大会">S.League 麻雀大会</option>
           <option value="その他">その他</option>
         </select>
@@ -286,12 +314,24 @@
         <label for="msg-textarea">メッセージ *</label>
         <textarea id="msg-textarea" name="message" required placeholder="例: 8月に家族写真をお願いしたいです。3歳の子どもがいます。/ 英語を仕事で使いたいのですが、何から始めればいいか分かりません。"></textarea>
       </div>
+      <fieldset class="form-fieldset">
+        <legend>ご相談を希望されますか? *</legend>
+        <div class="choice-row">
+          <label class="choice"><input type="radio" name="session" value="はい (対面)" required />はい (対面)</label>
+          <label class="choice"><input type="radio" name="session" value="はい (オンライン)" />はい (オンライン)</label>
+          <label class="choice"><input type="radio" name="session" value="いいえ" />いいえ</label>
+        </div>
+        <div class="area-consent" id="area-consent" hidden>
+          <p>対面でのご相談は、東京都23区内・横浜市内・川崎市内のみの対応となります<br />(ご相談は無料です)。</p>
+          <label><input type="checkbox" id="area-consent-check" name="area_consent" value="同意する" />対応エリアについて同意します *</label>
+        </div>
+      </fieldset>
       <div class="form-submit">
       <!-- スパム対策 (Formspree honeypot)。人間には見えない。入力があれば送信は破棄される -->
       <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
         <button type="submit" class="btn btn-primary"><span class="nb">無料で相談を申し込む →</span></button>
       </div>
-      <p class="contact-note">※ 送信いただいた情報は、お問い合わせへのご返答にのみ使用します。営業メールの配信や第三者への提供は行いません。</p>
+      <p class="contact-note">※ ご送信いただいた情報は、お問い合わせへのご返答にのみ使用いたします。営業メールの配信や第三者への提供は行いません。</p>
     </form>
   </div>
 </section>
@@ -300,20 +340,20 @@
   <div class="container">
     <div class="cta-big reveal">
       <span class="eyebrow" style="color: color-mix(in srgb, var(--bg) 70%, transparent);">直接連絡</span>
-      <h2 style="margin-top:16px;">フォームが面倒なら、<wbr /><span class="nb">メールで一行だけでも。</span></h2>
+      <h2 style="margin-top:16px;">フォームへの入力が負担でしたら、<wbr /><span class="nb">メール一行でも承ります。</span></h2>
       <p style="font-size:17px;max-width:560px;margin:12px auto 28px;">
-        フォームは必須ではありません。このアドレスに直接送っていただいてもかまいません。
-        <br><strong style="color:var(--bg);font-family:var(--font-mono);">studio.luma.jp@gmail.com</strong>
+        フォームのご利用は必須ではございません。こちらのアドレスへ直接お送りいただいても構いません。
+        <br><strong style="color:var(--bg);font-family:var(--font-mono);">info@studio-lumadesign.com</strong>
       </p>
-      <a href="mailto:studio.luma.jp@gmail.com" class="btn btn-primary">メールを開く →</a>
+      <a href="mailto:info@studio-lumadesign.com" class="btn btn-primary">メールを開く →</a>
     </div>
   </div>
 </section>
 
 <div class="success-overlay" id="success-overlay" onclick="closeSuccess(event)">
   <div class="success-popup">
-    <h3>送信しました!</h3>
-    <p>お問い合わせありがとうございます。<br><span class="nb">2営業日以内</span>にご返信いたします。</p>
+    <h3>送信しました。</h3>
+    <p>お問い合わせありがとうございます。<br><span class="nb">3営業日以内</span>に返信いたします。</p>
     <div class="cta-row-center">
       <button onclick="closeSuccessBtn()" class="btn btn-secondary">閉じる</button>
       <a href="./services" class="btn btn-primary"><span class="nb">サービス一覧を見る →</span></a>
@@ -333,9 +373,9 @@
         <h4>サービス</h4>
         <ul>
           <li><a href="./service-english">英会話レッスン</a></li>
-          <li><a href="./photography">写真の作品</a></li>
+          <li><a href="./service-photo">記念撮影・ポートレート</a></li>
           <li><a href="./s-league">S.League 麻雀</a></li>
-          <li><a href="./service-tour">英語で巡る東京ツアー</a></li>
+          <li><a href="./service-tour">海外ゲストの観光案内</a></li>
           <li><a href="./service-web">Web・SNS・アプリ制作</a></li>
         </ul>
       </div>
@@ -491,6 +531,17 @@
     }
   });
 
+  // ── ご相談セッション: 対面を選んだときだけエリアの同意を表示・必須にする ──
+  const areaConsent = document.getElementById('area-consent');
+  const areaConsentCheck = document.getElementById('area-consent-check');
+  function syncAreaConsent() {
+    const inPerson = document.querySelector('input[name="session"][value="はい (対面)"]').checked;
+    areaConsent.hidden = !inPerson;
+    areaConsentCheck.required = inPerson;
+    if (!inPerson) areaConsentCheck.checked = false;
+  }
+  document.querySelectorAll('input[name="session"]').forEach(r => r.addEventListener('change', syncAreaConsent));
+
   // ── FORM SUBMIT ──
   document.getElementById('contact-form').addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -511,6 +562,7 @@
         // GA4: 問い合わせ送信 (推奨イベント generate_lead)。gtag が無い環境でも落ちないようにする
         if (typeof gtag === 'function') gtag('event', 'generate_lead', { form_name: 'contact_ja', method: 'formspree' });
         this.reset();
+        syncAreaConsent();
         document.getElementById('success-overlay').classList.add('open');
         document.body.style.overflow = 'hidden';
       } else {

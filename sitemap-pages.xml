@@ -26,7 +26,7 @@
   <!-- ============================================================ -->
   <url>
     <loc>https://studio-lumadesign.com/services</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/services"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/services"/>
     <changefreq>monthly</changefreq>
@@ -34,7 +34,7 @@
   </url>
   <url>
     <loc>https://studio-lumadesign.com/en/services</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/services"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/services"/>
     <changefreq>monthly</changefreq>
@@ -66,7 +66,7 @@
   <!-- LUMA Frame (Photography) -->
   <url>
     <loc>https://studio-lumadesign.com/service-photo</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-photo"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-photo"/>
     <changefreq>monthly</changefreq>
@@ -74,7 +74,7 @@
   </url>
   <url>
     <loc>https://studio-lumadesign.com/en/service-photo</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/service-photo"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/service-photo"/>
     <changefreq>monthly</changefreq>
@@ -334,12 +334,6 @@
   <!-- ============================================================ -->
   <!-- LINKS — Instagram プロフィール用の分岐ページ (JA only)          -->
   <!-- ============================================================ -->
-  <url>
-    <loc>https://studio-lumadesign.com/lp/links</loc>
-    <lastmod>2026-09-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
 
   <!-- ============================================================ -->
   <!-- LEGAL — bilingual pair (noindex in HTML, listed for reference) -->
@@ -532,24 +526,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/"/>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://studio-lumadesign.com/news/frame-bookings-closing</loc>
-    <lastmod>2026-09-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/frame-bookings-closing"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/frame-bookings-closing"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/frame-bookings-closing"/>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://studio-lumadesign.com/en/news/frame-bookings-closing</loc>
-    <lastmod>2026-09-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/frame-bookings-closing"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/frame-bookings-closing"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/frame-bookings-closing"/>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://studio-lumadesign.com/news/home-renewal</loc>

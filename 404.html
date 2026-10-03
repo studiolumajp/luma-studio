@@ -3,19 +3,22 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#134E6F" />
+<meta name="theme-color" content="#1F2A33" />
 <meta name="color-scheme" content="light only" />
 <title>ページが見つかりません | LUMA</title>
 <meta name="description" content="お探しのページは見つかりませんでした。LUMA のトップページ、サービス一覧、お問い合わせページからお探しください。" />
 <meta name="robots" content="noindex, nofollow" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/shared.css?v=aqua32" />
+<link rel="preload" href="/fonts/urbanist-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/noto-sans-jp.css?v=gdpr1" />
+<link rel="stylesheet" href="/shared.css?v=l8f" />
 <style id="page-overrides">
   .nf-wrap { max-width: 680px; margin: 0 auto; padding: 120px 24px 100px; text-align: center; }
-  .nf-code { font-family: 'Poppins', sans-serif; font-size: clamp(56px, 12vw, 96px); font-weight: 800; line-height: 1; color: var(--navy); margin: 0; }
+  .nf-code { font-family: 'Urbanist LUMA', 'Noto Sans JP', sans-serif; font-size: clamp(56px, 12vw, 96px); font-weight: 800; line-height: 1; color: var(--navy); margin: 0; }
+  .l8-hero .nf-code { margin-bottom: 20px; }
+  .l8-hero h1 { margin: 0 0 28px; line-height: 1.4; }
+  .l8-hero p:not(.nf-code) { line-height: 1.9; margin: 0 0 14px; }
+  .l8-hero .nf-en { margin-bottom: 0; }
   .nf-wrap h1 { font-size: clamp(26px, 4.6vw, 38px); margin: 18px 0 14px; }
   .nf-wrap p { color: var(--text-muted); margin: 0 0 10px; }
   .nf-en { font-size: 14px; }
@@ -26,24 +29,106 @@
 </style>
 </head>
 <body id="body-root">
+<a class="skip-link" href="#main-content">メインコンテンツへスキップ</a>
+
+<nav class="site-nav" aria-label="メインナビゲーション">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="LUMA ホーム">
+      <span class="brand-mark">L</span><span>LUMA</span>
+    </a>
+    <ul class="nav-links">
+      <li class="has-dropdown">
+        <a href="/services" class="dropdown-toggle">サービス</a>
+        <ul class="dropdown-menu">
+          <li><a href="/services">サービス一覧</a></li>
+          <li><a href="/service-english">英会話レッスン</a></li>
+          <li><a href="/service-photo">記念撮影・ポートレート</a></li>
+          <li><a href="/service-tour">海外ゲストの観光案内</a></li>
+          <li><a href="/service-community">コミュニティイベント</a></li>
+          <li><a href="/service-web">Web・SNS・アプリ制作</a></li>
+          <li><a href="/s-league">S.League 麻雀大会</a></li>
+        </ul>
+      </li>
+      <li><a href="/blog/">撮影ノート</a></li>
+        <li><a href="/news/">ニュース</a></li>
+      <li><a href="/about">About me</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+    </ul>
+    <div style="display:flex;gap:10px;align-items:center;">
+      <a href="/en/" class="lang-switch" aria-label="Switch to English">EN</a>
+      <a href="/contact" class="nav-cta">無料相談 →</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="メニューを開閉" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
 <main id="main-content" tabindex="-1">
-  <div class="nf-wrap">
-    <p class="nf-code">404</p>
+<header class="l8-hero" id="home" style="--l8-photo:image-set(url('/images/hero/shonan-road-down-to-the-sea-1920.webp') type('image/webp'), url('/images/hero/shonan-road-down-to-the-sea-1920.jpg') type('image/jpeg'));--l8-photo-sm:image-set(url('/images/hero/shonan-road-down-to-the-sea-960.webp') type('image/webp'), url('/images/hero/shonan-road-down-to-the-sea-960.jpg') type('image/jpeg'))"><div class="container" style="padding-block:40px"><p class="nf-code">404</p>
     <h1>ページが見つかりません</h1>
-    <p>お探しのページは移動または削除されました。下のリンクからお進みください。</p>
-    <p class="nf-en">This page could not be found. Please use the links below.</p>
+    <p>お探しのページは移動または削除されています。お手数ですが、下のリンクからお進みください。</p>
+    <p class="nf-en">This page could not be found. Please use the links below.</p></div></header>
+  <div class="nf-wrap">
     <div class="nf-links">
       <a href="/" class="btn btn-primary">トップページへ →</a>
       <a href="/services" class="btn btn-secondary">サービス一覧を見る →</a>
       <a href="/contact" class="btn btn-secondary">お問い合わせへ →</a>
     </div>
-    <div class="footer-sns nf-sns">
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand"><span class="brand-mark">L</span><span>LUMA</span></a>
+        <p>東京・横浜で、あなたの自信をデザインする。Clarity by Design / Illuminate Your Confidence.</p>
+      </div>
+      <div class="footer-col">
+        <h4>サービス</h4>
+        <ul>
+          <li><a href="/service-english">英会話レッスン</a></li>
+          <li><a href="/service-photo">記念撮影・ポートレート</a></li>
+          <li><a href="/s-league">S.League 麻雀</a></li>
+          <li><a href="/service-tour">海外ゲストの観光案内</a></li>
+          <li><a href="/service-web">Web・SNS・アプリ制作</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>LUMAについて</h4>
+        <ul>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/news/">ニュース</a></li>
+          <li><a href="/#story">My Story</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>サポート</h4>
+        <ul>
+          <li><a href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer">LINE で相談</a></li>
+          <li><a href="/contact">お問い合わせ</a></li>
+          <li><a href="/legal">特定商取引法</a></li>
+          <li><a href="/legal#privacy">プライバシー</a></li>
+          <li><a href="/en/">English</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-sns">
       <span class="footer-sns-h">SNS</span>
       <a href="https://www.instagram.com/luma_frame.jp/" target="_blank" rel="noopener noreferrer">Instagram</a>
       <a href="https://x.com/s_league_Japan" target="_blank" rel="noopener noreferrer">X</a>
+    
       <a href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer">LINE</a>
+</div>
+    <div class="footer-bottom">
+      <span>© 2026 LUMA. All rights reserved.</span>
+      <span>横浜市 · 神奈川県 · 日英バイリンガル</span>
     </div>
   </div>
-</main>
+</footer>
+
+<script src="/nav.js?v=aqua30" defer></script>
 </body>
 </html>
