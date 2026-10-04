@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://studio-lumadesign.com/en/tours/kyoto" />
 <meta property="og:title" content="Kyoto private tour in English | LUMA Path" />
 <meta property="og:description" content="A private English-speaking tour of Kyoto: Fushimi Inari, Kiyomizu-dera, Nijo Castle and Nishiki Market, timed around the crowds. Up to six people." />
-<meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
+<meta property="og:image" content="https://studio-lumadesign.com/images/og/uji-byodoin-phoenix-hall-pond-og.jpg" />
 <meta property="og:locale" content="en_AU" />
 <meta property="og:site_name" content="LUMA" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -114,12 +114,17 @@
     .guide { grid-template-columns: 1fr; }
     .guide img { width: 120px; height: 120px; }
   }
+  .tour-photos video { display: block; width: 100%; aspect-ratio: 16 / 9; height: auto; border-radius: 12px; background: var(--bg-soft); object-fit: cover; }
+  .tour-photos .frame { position: relative; }
+  .tour-photos-toggle { position: absolute; right: 12px; bottom: 12px; min-width: 72px; min-height: 36px; padding: 6px 14px; border: 1px solid rgba(255, 255, 255, 0.6); border-radius: 6px; background: rgba(31, 42, 51, 0.82); color: #FFFFFF; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; }
+  .tour-photos-toggle:hover { background: #1F2A33; }
+  .tour-photos-toggle:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 2px; box-shadow: 0 0 0 4px #1565C0; }
 </style>
 <style id="l8-photo-fix">
   /* HERO の写真はここで直接指定する。CSS 変数の url() は Chrome が shared.css の位置から解決し、
      file:// で開くと ../ の写真が見つからないため (2026-10-03) */
-  html body .l8-hero { background: linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 38%, var(--scrim-3) 66%, var(--scrim-4) 88%), linear-gradient(0deg, rgba(31, 42, 51, 0.45) 0%, rgba(31, 42, 51, 0) 55%), image-set(url('../../images/hero/atami-kiunkaku-corridor-1920.webp') type('image/webp'), url('../../images/hero/atami-kiunkaku-corridor-1920.jpg') type('image/jpeg')) center / cover no-repeat !important; }
-  @media (max-width: 760px) { html body .l8-hero { background: linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 38%, var(--scrim-3) 66%, var(--scrim-4) 88%), linear-gradient(0deg, rgba(31, 42, 51, 0.45) 0%, rgba(31, 42, 51, 0) 55%), image-set(url('../../images/hero/atami-kiunkaku-corridor-960.webp') type('image/webp'), url('../../images/hero/atami-kiunkaku-corridor-960.jpg') type('image/jpeg')) center / cover no-repeat !important; } }
+  html body .l8-hero { background: linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 38%, var(--scrim-3) 66%, var(--scrim-4) 88%), linear-gradient(0deg, rgba(31, 42, 51, 0.45) 0%, rgba(31, 42, 51, 0) 55%), image-set(url('../../images/hero/uji-byodoin-phoenix-hall-pond-1920.webp') type('image/webp'), url('../../images/hero/uji-byodoin-phoenix-hall-pond-1920.jpg') type('image/jpeg')) center / cover no-repeat !important; }
+  @media (max-width: 760px) { html body .l8-hero { background: linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 38%, var(--scrim-3) 66%, var(--scrim-4) 88%), linear-gradient(0deg, rgba(31, 42, 51, 0.45) 0%, rgba(31, 42, 51, 0) 55%), image-set(url('../../images/hero/uji-byodoin-phoenix-hall-pond-960.webp') type('image/webp'), url('../../images/hero/uji-byodoin-phoenix-hall-pond-960.jpg') type('image/jpeg')) center / cover no-repeat !important; } }
 </style>
 </head>
 <body id="body-root">
@@ -154,7 +159,7 @@
   <ol><li><a href="../">Home</a></li><li><a href="../service-tour">Private Tours</a></li><li aria-current="page">Kyoto</li></ol>
 </nav>
 
-<header class="hero l8-hero svc-hero tour-hero-plain" id="home" tabindex="-1" style="--l8-photo:image-set(url('../../images/hero/atami-kiunkaku-corridor-1920.webp') type('image/webp'), url('../../images/hero/atami-kiunkaku-corridor-1920.jpg') type('image/jpeg'));--l8-photo-sm:image-set(url('../../images/hero/atami-kiunkaku-corridor-960.webp') type('image/webp'), url('../../images/hero/atami-kiunkaku-corridor-960.jpg') type('image/jpeg'))"><span class="l8-credit">Photo by Sho: Kiunkaku, Atami</span>
+<header class="hero l8-hero svc-hero tour-hero-plain" id="home" tabindex="-1" style="--l8-photo:image-set(url('../../images/hero/uji-byodoin-phoenix-hall-pond-1920.webp') type('image/webp'), url('../../images/hero/uji-byodoin-phoenix-hall-pond-1920.jpg') type('image/jpeg'));--l8-photo-sm:image-set(url('../../images/hero/uji-byodoin-phoenix-hall-pond-960.webp') type('image/webp'), url('../../images/hero/uji-byodoin-phoenix-hall-pond-960.jpg') type('image/jpeg'))"><span class="l8-credit">Photo by Sho: Byodo-in, Uji</span>
   <div class="container">
     <span class="eyebrow">Kyoto · Private tour</span>
     <h1 class="hero-title" style="margin-top:18px;">Kyoto, starting early at Fushimi Inari</h1>
@@ -184,6 +189,13 @@
     <div class="routes reveal"><article class="route"><h3>2 hours</h3><p>Fushimi Inari, part of the way up the mountain.</p><ol><li><b>Fushimi Inari main shrine</b><span>rebuilt in 1499 and now an Important Cultural Property.</span></li><li><b>The torii gate tunnels</b><span>we walk up part of the mountain, then turn back.</span></li></ol><p class="note">The full mountain loop takes about two hours on its own, so it doesn&#x27;t fit this length. We finish at JR Inari Station.</p></article><article class="route"><h3>Half day (3 to 4 hours)</h3><p>Higashiyama: Kiyomizu-dera, the walk towards Gion, then Nishiki Market.</p><ol><li><b>City bus to Gojozaka</b><span>route 206 or 100 from Kyoto Station, then 10 minutes on foot.</span></li><li><b>Kiyomizu-dera</b><span>founded in 778, open from 6 am.</span></li><li><b>Towards Gion</b><span>on foot through the old streets.</span></li><li><b>Nishiki Market</b><span>390 metres of food shops.</span></li></ol><p class="note">We finish around Shijo.</p></article><article class="route"><h3>Full day (7 to 8 hours)</h3><p>Fushimi Inari early, then Kiyomizu-dera, Nijo Castle and the market.</p><ol><li><b>Fushimi Inari</b><span>first thing, before the crowds build.</span></li><li><b>Kiyomizu-dera, then yudofu for lunch</b><span>simmered tofu, a dish said to have started at the tea houses by Nanzen-ji.</span></li><li><b>Nijo Castle</b><span>by subway, with the Ninomaru Palace indoors.</span></li><li><b>Nishiki Market</b><span>to finish near Shijo.</span></li></ol></article><article class="route"><h3>Two days</h3><p>Day one is the full-day route. Day two goes west and north.</p><ol><li><b>Day 1</b><span>Fushimi Inari, Kiyomizu-dera, Nijo Castle and Nishiki Market.</span></li><li><b>Day 2</b><span>the Arashiyama bamboo grove around 8 am, the garden at Tenryu-ji, then across town to Kinkaku-ji, which burned down in 1950 and was rebuilt in 1955.</span></li></ol><p class="note">Or pair one day in Kyoto with one day in Osaka.</p></article></div>
   </div>
 </section>
+
+<div class="section-l8 tour-photos" id="photos" role="region" aria-labelledby="photos-heading" style="padding-block:clamp(44px, 7vw, 88px);">
+  <div class="container">
+    <div class="section-head reveal"><span class="eyebrow">Photos</span><h2 id="photos-heading">Kyoto through my lens</h2></div>
+    <div class="reveal frame"><video muted loop playsinline preload="none" poster="../../images/slideshow/kyoto-slideshow-poster.jpg" data-src-webm="../../images/slideshow/kyoto-slideshow.webm" data-src-mp4="../../images/slideshow/kyoto-slideshow.mp4" aria-label="Slideshow: Kyoto through my lens"></video><button type="button" class="tour-photos-toggle">Pause</button></div>
+  </div>
+</div>
 
 <section id="details" aria-labelledby="details-heading">
   <div class="container">
@@ -215,7 +227,7 @@
   </div>
 </section>
 
-<section id="faq" aria-labelledby="faq-heading" style="padding-top:0;">
+<section id="faq" aria-labelledby="faq-heading">
   <div class="container" style="max-width:760px;">
     <div class="section-head reveal"><span class="eyebrow">FAQ</span><h2 id="faq-heading">Questions people ask</h2></div>
     <div class="faq-list reveal"><details><summary>How early can we start at Fushimi Inari?</summary><p>The shrine never closes, so as early as you like. I&#x27;ll suggest a time when we plan the day.</p></details><details><summary>Is Kinkaku-ji on the one-day route?</summary><p>No, the full day is already busy. It&#x27;s on day two, after Arashiyama.</p></details></div>
@@ -232,7 +244,7 @@
     </div>
     <div style="margin-top:56px;text-align:center;" class="reveal">
       <h3 style="font-size:18px;margin-bottom:16px;">More places I can take you</h3>
-      <div class="area-links"><a href="./asakusa">Asakusa</a><a href="./shibuya">Shibuya</a><a href="./shinjuku">Shinjuku</a><a href="./yokohama">Yokohama</a><a href="./kamakura">Kamakura</a><a href="./shonan-enoshima">Shonan &amp; Enoshima</a><a href="./hakone">Hakone</a><a href="./mt-fuji">Mt Fuji area</a><a href="./atami">Atami</a><a href="./ito">Ito</a><a href="./shimoda">Shimoda</a><a href="./osaka">Osaka</a><a href="./kanazawa">Kanazawa</a><a href="./fukuoka-dazaifu">Fukuoka &amp; Dazaifu</a><a href="./haneda">Haneda Airport</a><a href="./sapporo">Sapporo</a></div>
+      <div class="area-links"><a href="./asakusa">Asakusa</a><a href="./shibuya">Shibuya</a><a href="./shinjuku">Shinjuku</a><a href="./yokohama">Yokohama</a><a href="./kamakura">Kamakura</a><a href="./shonan-enoshima">Shonan &amp; Enoshima</a><a href="./hakone">Hakone</a><a href="./mt-fuji">Mt Fuji area</a><a href="./atami">Atami</a><a href="./ito">Ito</a><a href="./shimoda">Shimoda</a><a href="./osaka">Osaka</a><a href="./kanazawa">Kanazawa</a><a href="./kyushu">Fukuoka, Dazaifu &amp; Yufuin</a><a href="./haneda">Haneda Airport</a><a href="./sapporo">Sapporo</a></div>
       <p style="margin-top:14px;color:var(--text-soft);font-size:14px;">Ask me about other areas.</p>
     </div>
   </div>
@@ -263,5 +275,44 @@
 </script>
 <script src="../../nav.js?v=aqua30" defer></script>
 <a class="line-float" href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer" aria-label="Chat with LUMA on LINE (opens in a new tab)"><svg class="lf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>Chat on LINE</span></a>
+<script>
+(function () {
+  var v = document.querySelector('.tour-photos video');
+  var btn = document.querySelector('.tour-photos-toggle');
+  if (!v) return;
+  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var held = still;
+  function load() {
+    if (v.dataset.loaded) return;
+    v.dataset.loaded = '1';
+    [['webm', 'video/webm'], ['mp4', 'video/mp4']].forEach(function (t) {
+      var s = document.createElement('source');
+      s.src = v.dataset['src' + t[0].charAt(0).toUpperCase() + t[0].slice(1)];
+      s.type = t[1];
+      v.appendChild(s);
+    });
+    v.load();
+  }
+  function play() { load(); var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+  function label() {
+    if (!btn) return;
+    btn.textContent = held ? 'Play' : 'Pause';
+    btn.setAttribute('aria-label', held ? 'Play the slideshow' : 'Pause the slideshow');
+  }
+  if (btn) btn.addEventListener('click', function () {
+    held = !held;
+    if (held) v.pause(); else play();
+    label();
+  });
+  label();
+  if (!('IntersectionObserver' in window)) { if (!held) play(); return; }
+  new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (e.isIntersecting) { if (!held) play(); }
+      else if (v.dataset.loaded) { v.pause(); }
+    });
+  }, { rootMargin: '200px 0px' }).observe(v);
+})();
+</script>
 </body>
 </html>

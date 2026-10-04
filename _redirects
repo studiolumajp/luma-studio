@@ -120,5 +120,9 @@
 /news/frame-bookings-closing      /service-photo      301
 /en/news/frame-bookings-closing   /en/service-photo   301
 
+# 2026-10-04 九州エリアに湯布院を追加し、URL を kyushu に変更 (Sho 指示)
+/en/areas/fukuoka-dazaifu   /en/areas/kyushu   301
+/en/tours/fukuoka-dazaifu   /en/tours/kyushu   301
+
 # 2026-09-20 口コミ依頼用の短縮 URL。GBP の口コミ依頼リンク (https://g.page/r/...) を差し込み、行頭の # を外すと有効になる
 # /review               https://g.page/r/XXXXXXXX/review   302
