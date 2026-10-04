@@ -7,8 +7,8 @@
 <meta name="color-scheme" content="light only" />
 
 <!-- ── PRIMARY SEO META ── -->
-<title>S.League 26 | 2026年11月8日(日) 東京開催・参加受付中 / LUMA</title>
-<meta name="description" content="S.League 26 は、2026年11月8日(日)12:00〜18:00 に開催する6時間の大会です。個人戦・全5戦(予選4回戦+順位決定戦)・50分打ち切りで、定員は20名(5卓)となります。参加費は5,200円(銀行振込の場合5,000円)、会場は新橋ベルバードgrow店です。参加を受け付けております。" />
+<title>S.League 26 | 2026年11月8日 (日) 東京開催・参加受付中 / LUMA</title>
+<meta name="description" content="S.League 26 は、2026年11月8日 (日) 12:00〜18:00 に開催する6時間の大会です。個人戦・全5戦 (予選4回戦+順位決定戦)・50分打ち切りで、定員は20名 (5卓) となります。参加費は5,200円 (銀行振込の場合5,000円)、会場は新橋ベルバードgrow店です。参加を受け付けております。" />
 <meta name="keywords" content="S.League 26,健康麻雀 大会 11月,麻雀 個人戦,新橋 麻雀 大会,2026 麻雀大会 東京,LUMA" />
 <meta name="author" content="LUMA" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -19,8 +19,8 @@
 
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://studio-lumadesign.com/s-league-26" />
-<meta property="og:title" content="S.League 26 | 2026年11月8日(日) 参加受付中 / LUMA" />
-<meta property="og:description" content="個人戦・6時間の大会です。2026年11月8日(日)12:00〜18:00・全5戦(予選4回戦+順位決定戦)・定員20名。参加費は5,200円(銀行振込5,000円)、会場は新橋ベルバードgrow店です。参加を受け付けております。" />
+<meta property="og:title" content="S.League 26 | 2026年11月8日 (日) 参加受付中 / LUMA" />
+<meta property="og:description" content="個人戦・6時間の大会です。2026年11月8日 (日) 12:00〜18:00・全5戦 (予選4回戦+順位決定戦)・定員20名。参加費は5,200円 (銀行振込5,000円)、会場は新橋ベルバードgrow店です。参加を受け付けております。" />
 <meta property="og:image" content="https://studio-lumadesign.com/images/sleague/SL24/sl24-hero-poster.jpg" />
 <meta property="og:image:alt" content="S.League 26" />
 <meta property="og:image:width" content="1280" />
@@ -31,7 +31,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@s_league_Japan" />
 <meta name="twitter:title" content="S.League 26" />
-<meta name="twitter:description" content="2026年11月8日(日)12:00〜18:00・6時間の大会。個人戦・全5戦(予選4回戦+順位決定戦)・定員20名。参加費5,200円(銀行振込5,000円)。会場は新橋ベルバードgrow店。参加受付中です。" />
+<meta name="twitter:description" content="2026年11月8日 (日) 12:00〜18:00・6時間の大会。個人戦・全5戦 (予選4回戦+順位決定戦)・定員20名。参加費5,200円 (銀行振込5,000円)。会場は新橋ベルバードgrow店。参加受付中です。" />
 <meta name="twitter:image" content="https://studio-lumadesign.com/images/sleague/SL24/sl24-hero-poster.jpg" />
 
 <link rel="preload" href="/fonts/urbanist-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -43,7 +43,7 @@
     {
       "@type": "Event",
       "name": "S.League 26",
-      "description": "S.League 第26回大会。個人戦・6時間の大会。全5戦(予選4回戦+順位決定戦1回戦)・50分打ち切り。定員20名(5卓)。参加費5,200円(銀行振込の場合5,000円)。",
+      "description": "S.League 第26回大会。個人戦・6時間の大会。全5戦 (予選4回戦+順位決定戦1回戦)・50分打ち切り。定員20名 (5卓)。参加費5,200円 (銀行振込の場合5,000円)。",
       "offers": [
         {
           "@type": "Offer",
@@ -237,6 +237,12 @@
   .cancel-alert-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
   .cancel-alert-body { font-size: 13.5px; color: var(--text-muted); line-height: 1.85; }
   .cancel-alert-body strong { color: #B45309; font-weight: 700; }
+  /* 本日 (日本時間) があたる区分に色を付ける (2026-10-05 Sho 指示 案A)。JS が動かない環境ではただの一覧 */
+  .cancel-tiers { list-style: none; margin: 0; padding: 0; }
+  .cancel-tiers li { padding: 2px 8px; margin: 0 -8px; border-radius: 6px; }
+  .cancel-tiers li.is-today { background: color-mix(in srgb, var(--accent) 10%, #FFFFFF); color: var(--text); }
+  .cancel-today-pill { display: inline-block; margin-right: 6px; padding: 0 8px; border-radius: 999px; background: var(--accent); color: #FFFFFF; font-size: 11px; font-weight: 700; line-height: 1.8; vertical-align: 1px; }
+  .cancel-today-note { margin: 6px 0; font-size: 12.5px; font-weight: 700; color: var(--accent); }
 
   /* ── Apply ── */
   .apply-deadline {
@@ -245,6 +251,12 @@
     color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent);
     border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
   }
+
+  .apply-buttons {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+    max-width: 640px; margin: 28px auto 0;
+  }
+  .apply-buttons .btn { flex: 1 1 260px; justify-content: center; text-align: center; white-space: normal; }
 
   @media (max-width:880px){ .payment-grid{grid-template-columns:1fr} }
 </style>
@@ -378,7 +390,7 @@
         <span class="rule-icon"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 2v8l3-3 3 3V2" /> <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" /></svg></span>
         <div>
           <span class="rule-title">基本ルール</span>
-          <p class="rule-desc">基本的に <strong>Mリーグルール</strong> に準拠します。喰いタンあり・後付けあり・一発・裏ドラあり等、Mリーグ採用ルールに沿って進行します。</p>
+          <p class="rule-desc">基本的に<strong>Mリーグルール</strong>に準拠します。喰いタンあり・後付けあり・一発あり・裏ドラありで進行します。</p>
         </div>
       </li>
       <li class="rule-item">
@@ -466,22 +478,22 @@
 
     <div class="reveal" style="max-width: 760px; margin: 0 auto;">
       <div class="payment-grid">
-        <a class="payment-card square" href="https://forms.gle/6oakfyve9ZrxeH4J6" target="_blank" rel="noopener">
+        <div class="payment-card square">
           <span class="payment-icon"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="14" x="2" y="5" rx="2" /> <line x1="2" x2="22" y1="10" y2="10" /></svg></span>
-          <div class="payment-name">クレジットカードで登録・決済</div>
+          <div class="payment-name">クレジットカードで申し込む</div>
           <div class="payment-desc">5,200円<br>VISA / Master / JCB / AMEX</div>
-        </a>
-        <a class="payment-card bank" href="https://forms.gle/kPf458WyJisZwMVe6" target="_blank" rel="noopener">
+        </div>
+        <div class="payment-card bank">
           <span class="payment-icon"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 18v-7" /> <path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z" /> <path d="M14 18v-7" /> <path d="M18 18v-7" /> <path d="M3 22h18" /> <path d="M6 18v-7" /></svg></span>
           <div class="payment-name">銀行振込で申し込む</div>
           <div class="payment-desc"><strong style="color:var(--accent);">5,000円 (200円おトク)</strong><br>フォームから3分で完了</div>
-        </a>
+        </div>
       </div>
 
       <div class="payment-detail">
         <div class="payment-detail-title">クレジットカードでのお支払い / 5,200円</div>
         <div class="payment-detail-body">
-          上のリンクのフォームで参加登録をした後に、<a href="https://square.link/u/lGti90x9" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">Square の決済ページ</a>でのお支払いをお願いいたします。
+          下の「参加登録」にある「クレジットカードで申し込む」ボタンからフォームでお申込みいただいた後、<a href="https://square.link/u/lGti90x9" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;">Square の決済ページ</a>にてお支払いをお願いいたします。
         </div>
       </div>
       <div class="payment-detail">
@@ -516,17 +528,26 @@
       <div class="cancel-alert">
         <div class="cancel-alert-title"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" /> <path d="M12 9v4" /> <path d="M12 17h.01" /></svg> お申込み前にご確認ください (キャンセル料について)</div>
         <div class="cancel-alert-body">
-          キャンセル料は開催日を基準に決まります。<br><br>
-          ・〜10月10日 (土): 無料 (全額返金)<br>
-          ・10月11日 (日) 〜10月17日 (土): <strong>参加費の50% (2,600円)</strong><br>
-          ・10月18日 (日) 〜10月24日 (土): <strong>参加費の75% (3,900円)</strong><br>
-          ・10月25日 (日) 〜当日: <strong>返金不可 (100%)</strong><br><br>
+          キャンセル料は開催日を基準に決まります。<br>
+          <ul class="cancel-tiers">
+            <li data-end="2026-10-10">・〜10月10日 (土): 無料 (全額返金)</li>
+            <li data-start="2026-10-11" data-end="2026-10-17">・10月11日 (日) 〜10月17日 (土): <strong>参加費の50% (2,600円)</strong></li>
+            <li data-start="2026-10-18" data-end="2026-10-24">・10月18日 (日) 〜10月24日 (土): <strong>参加費の75% (3,900円)</strong></li>
+            <li data-start="2026-10-25" data-end="2026-11-08">・10月25日 (日) 〜当日: <strong>返金不可 (100%)</strong></li>
+          </ul>
+          <br>
           なお、代わりにご参加いただける方をご自身でご手配いただける場合は、キャンセル料を免除します。詳しくは <a href="./legal#cancel" style="color:var(--accent);text-decoration:underline;">キャンセルポリシー</a> をご覧ください。
         </div>
       </div>
 
+      <div class="apply-buttons">
+        <a class="btn btn-primary" href="https://forms.gle/6oakfyve9ZrxeH4J6" target="_blank" rel="noopener">クレジットカードで申し込む (5,200円)</a>
+        <a class="btn btn-primary" href="https://forms.gle/kPf458WyJisZwMVe6" target="_blank" rel="noopener">銀行振込で申し込む (5,000円)</a>
+      </div>
+
       <p class="terms-note">
-        お申込みの完了をもって、以下のポリシーにご同意いただいたものとみなします。<br>
+        銀行振込でお申込みの方には、送信後に振込先をメールでご案内します。<br>
+        お申込みフォームの送信をもって、以下のポリシーにご同意いただいたものとみなします。<br>
         <a href="./legal#cancel">キャンセルポリシー</a> /
         <a href="./legal#tokusho">特定商取引法に基づく表記</a> /
         <a href="./legal#privacy">プライバシーポリシー</a><br>
@@ -568,7 +589,7 @@
       <div class="footer-col">
         <h4>S.League</h4>
         <ul>
-          <li><a href="https://x.com/s_league_Japan" target="_blank" rel="noopener noreferrer">公式X (@s_league_Japan)</a></li>
+          <li><a href="https://x.com/s_league_Japan" target="_blank" rel="noopener noreferrer">公式 X (@s_league_Japan)</a></li>
           <li><a href="./s-league">大会概要</a></li>
           <li><a href="./s-league-25">S.League 25 情報</a></li>
           <li><a href="./s-league-26">S.League 26 情報</a></li>
@@ -580,7 +601,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>LUMAについて</h4>
+        <h4>LUMA について</h4>
         <ul>
           <li><a href="./blog/">撮影ノート</a></li>
         <li><a href="./news/">ニュース</a></li>
@@ -638,6 +659,29 @@
   });
 </script>
 
+<script>
+/* キャンセル料: 日本時間の今日があたる区分に色を付ける。開催日の翌日以降は何もしない */
+(function(){
+  var list = document.querySelector('.cancel-tiers');
+  if (!list || !window.Intl) return;
+  var now = new Date();
+  var ymd = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Tokyo', year: 'numeric', month: '2-digit', day: '2-digit' }).format(now);
+  var hit = null;
+  list.querySelectorAll('li').forEach(function(li){
+    var s = li.getAttribute('data-start'), e = li.getAttribute('data-end');
+    if ((!s || ymd >= s) && ymd <= e) hit = li;
+  });
+  if (!hit) return;
+  hit.classList.add('is-today');
+  hit.insertAdjacentHTML('afterbegin', '<span class="cancel-today-pill">本日</span>');
+  var md = new Intl.DateTimeFormat('ja-JP', { timeZone: 'Asia/Tokyo', month: 'long', day: 'numeric' }).format(now);
+  var wd = new Intl.DateTimeFormat('ja-JP', { timeZone: 'Asia/Tokyo', weekday: 'short' }).format(now);
+  var note = document.createElement('p');
+  note.className = 'cancel-today-note';
+  note.textContent = '本日 (日本時間) は' + md + ' (' + wd + ') です。色の付いた行のキャンセル料が適用されます。';
+  list.parentNode.insertBefore(note, list);
+})();
+</script>
 <script src="./nav.js?v=aqua30" defer></script>
 <a class="line-float" href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer" aria-label="LINE で LUMA に相談する (新しいタブで開きます)"><svg class="lf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>LINE で相談</span></a>
 </body>
