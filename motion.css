@@ -1,0 +1,188 @@
+/* ══════════════════════════════════════════════════════════════
+   motion.css — 案1・5・7 (2026-10-05 Sho 決定)
+   日本語ページだけが読み込む。英語版 (en/) は読み込まない。
+   shared.css と top.css の既存ルールは書き換えず、このファイルで上書きする。
+   ・案7 ページがつながる遷移 (@view-transition)
+   ・案5 大きな英字 (.giant、写真のヒーローでは header.h5p)
+   ・案1 固定ステージ (.stage-sec / stage.js)
+   ・トップの6枚のドア (.doors6)
+   動きを減らす設定 (prefers-reduced-motion) では、遷移とステージを止める (Sho 決定)。
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── 案7 ページがつながる遷移 ───────────────────────────────── */
+@view-transition { navigation: auto; }
+nav.site-nav { view-transition-name: site-header; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .3s; }
+::view-transition-group(*) { animation-duration: .5s; animation-timing-function: cubic-bezier(.2, .7, .2, 1); }
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+}
+
+/* ── 案5 大きな英字 ───────────────────────────────────────
+   ヒーローは今までどおり写真や動画の上に文字を載せる (2026-10-05 Sho 指示)。
+   英字は日本語の見出しの上に、写真の上なら白で置く。読み上げは日本語の h1 に任せる (aria-hidden)。
+   トップ (index.html) は白地のまま。 */
+.giant {
+  display: block;
+  font-family: 'Urbanist LUMA', 'Urbanist', 'Noto Sans JP', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(56px, 13vw, 168px);
+  line-height: .9;
+  letter-spacing: -.035em;
+  color: var(--text);
+  margin: 10px 0 18px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--text);
+  overflow-wrap: anywhere;
+}
+.giant em { font-style: normal; color: var(--accent); }
+.giant.is-long { font-size: clamp(48px, 10vw, 140px); }
+.giant.is-xlong { font-size: clamp(40px, 8vw, 112px); }
+/* 写真のヒーローの上 */
+header.h5p .giant {
+  color: #FFFFFF !important;
+  font-size: clamp(48px, 9vw, 128px);
+  margin: 12px 0 14px !important;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(255, 255, 255, .75);
+  text-shadow: var(--scrim-text-shadow, 0 1px 12px rgba(31, 42, 51, .65)) !important;
+}
+header.h5p .giant em { color: var(--accent-2-light, #8EC5FF) !important; }
+header.h5p .giant.is-long { font-size: clamp(44px, 7.6vw, 112px); }
+header.h5p .giant.is-xlong { font-size: clamp(38px, 6.4vw, 92px); }
+header.h5p .giant + h1, header.h5p .giant + .hero-title { margin-top: 0 !important; }
+
+/* ── トップの6枚のドア (今のトップの4枚のドアを6枚に。2026-10-05 Sho 指示) ──
+   見た目とホバーの動きは top.css の .doors / .door をそのまま使い、列の数と区切り線だけ変える。
+   横1列 → 980px 以下は3列×2段 → 560px 以下は2列×3段 */
+.l8top .top-copy > .giant { max-width: none; }
+.l8top .doors.doors6 { grid-template-columns: repeat(6, minmax(0, 1fr)); min-height: clamp(380px, 40vw, 520px); }
+.l8top .doors6 .door { padding: 20px 16px; border-left: 1px solid rgba(255, 255, 255, .35); border-top: 0; }
+.l8top .doors6 .door:first-child { border-left: 0; }
+.l8top .doors6 .door .h2 { font-size: clamp(18px, 1.8vw, 24px); }
+.l8top .doors6 .door .small { font-size: 13px; line-height: 1.6; }
+@media (max-width: 980px) {
+  .l8top .doors.doors6 { grid-template-columns: repeat(3, minmax(0, 1fr)); min-height: 0; }
+  .l8top .doors6 .door { min-height: 260px; }
+  .l8top .doors6 .door:nth-child(3n+1) { border-left: 0; }
+  .l8top .doors6 .door:nth-child(n+4) { border-top: 1px solid rgba(255, 255, 255, .35); }
+}
+@media (max-width: 560px) {
+  .l8top .doors.doors6 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .l8top .doors6 .door { min-height: 220px; padding: 16px 12px; border-left: 1px solid rgba(255, 255, 255, .35); border-top: 0; }
+  .l8top .doors6 .door:nth-child(2n+1) { border-left: 0; }
+  .l8top .doors6 .door:nth-child(n+3) { border-top: 1px solid rgba(255, 255, 255, .35); }
+}
+
+/* ── 案1 固定ステージ ─────────────────────────────────────────
+   既存の区画の一覧はそのまま残す。stage.js が html に .stage-on を付けたときだけ、
+   ステージを見せて一覧を視覚的に隠す (読み上げは一覧を読む)。
+   ステージの写真と説明は aria-hidden。動画の一時停止ボタンだけは操作できる。 */
+.stage-wrap { display: none; }
+html.stage-on .stage-wrap { display: block; position: relative; height: calc(var(--n, 5) * 70vh); margin-top: 24px; }
+html.stage-on .stage-list {
+  position: absolute !important; width: 1px !important; height: 1px !important;
+  overflow: hidden !important; clip: rect(0 0 0 0) !important; white-space: nowrap;
+  padding: 0 !important; border: 0 !important; margin: 0 !important;
+}
+/* キーボードで一覧の中へ移ったときは、一覧をそのまま表示する */
+html.stage-on .stage-list:focus-within {
+  position: static !important; width: auto !important; height: auto !important;
+  overflow: visible !important; clip: auto !important; white-space: normal;
+}
+.stage {
+  position: sticky; top: calc(var(--nav-h, 64px) + 12px);
+  height: calc(100vh - var(--nav-h, 64px) - 32px); min-height: 380px; max-height: 820px;
+  overflow: hidden; border-radius: 10px; background: var(--text);
+}
+.stage .layer { position: absolute; inset: 0; opacity: 0; transition: opacity .6s ease; }
+.stage .layer.on { opacity: 1; }
+.stage .layer img, .stage .layer video {
+  display: block; width: 100%; height: 100%; object-fit: cover;
+  transform: scale(calc(1.02 + var(--p, 0) * .08)); will-change: transform;
+}
+.stage .layer.top img { object-position: top; }
+.stage .bar {
+  position: absolute; top: 16px; left: 20px; right: 20px; z-index: 2;
+  display: flex; gap: 6px;
+}
+.stage .bar i { flex: 1; height: 3px; border-radius: 2px; background: rgba(255, 255, 255, .35); overflow: hidden; position: relative; }
+.stage .bar i b { position: absolute; inset: 0; background: #FFFFFF; transform-origin: left; transform: scaleX(0); }
+.stage .cap {
+  position: absolute; left: 20px; bottom: 20px; z-index: 2;
+  max-width: min(480px, calc(100% - 40px));
+  background: var(--bg); border-radius: 8px; padding: 14px 18px; display: grid; gap: 2px;
+}
+.stage .cnt { font-family: 'Urbanist LUMA', 'Urbanist', sans-serif; font-weight: 800; font-size: 12px; letter-spacing: .1em; color: var(--accent); font-variant-numeric: tabular-nums; }
+.stage .cap .t { font-size: 21px; font-weight: 700; line-height: 1.4; color: var(--text); }
+.stage .cap .en { font-family: 'Urbanist LUMA', 'Urbanist', sans-serif; font-size: 12.5px; font-weight: 600; color: var(--text-muted); }
+.stage .cap .x { font-size: 13.5px; line-height: 1.7; color: var(--text-muted); }
+.stage .cap a { color: var(--accent); font-size: 13.5px; font-weight: 700; }
+.stage .toggle {
+  position: absolute; right: 16px; bottom: 16px; z-index: 2;
+  font: inherit; font-size: 13px; font-weight: 700; color: #FFFFFF;
+  background: rgba(31, 42, 51, .82); border: 1px solid rgba(255, 255, 255, .6); border-radius: 6px; padding: 6px 12px; cursor: pointer;
+}
+.stage .toggle:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 2px; }
+@media (max-width: 560px) {
+  .stage .cap { left: 12px; right: 12px; bottom: 56px; max-width: none; padding: 12px 14px; }
+  .stage .cap .t { font-size: 18px; }
+  .stage .toggle { right: 12px; bottom: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stage-wrap { display: none !important; }
+}
+
+/* Path: ステージが今のスライドショー (タブと動画) を置き換えるので、元の一覧は表示しない */
+html.stage-on .stage-list.is-media { display: none !important; }
+/* S.League: 「歩みと実績」が2列の右側にあるため、ステージが動くときは1列にする */
+html.stage-on #about .about-grid { display: block !important; }
+html.stage-on #about .about-grid > * + * { margin-top: clamp(40px, 6vw, 64px); }
+
+/* トップ: 大きな英字の下の日本語の見出しは、サービスのページとそろえて小さくする */
+.l8top .top-copy .giant + .h1 { font-size: clamp(22px, 2.8vw, 32px); }
+
+/* S.League 23〜26 (2026-10-05 Sho 指示)
+   ・英字と h1 が二重に出るため、h1 は画面からだけ隠す (検索と読み上げのために残す)
+   ・SL25 と SL26 は .l8-hero が付いていないため .l8-hero > * { width: 100% } が効かず、
+     中身が文字の幅まで縮んで中央に寄っていた。SL24 と同じ全幅にそろえる */
+header.h5p-solo h1 {
+  position: absolute !important; width: 1px !important; height: 1px !important;
+  overflow: hidden !important; clip: rect(0 0 0 0) !important; white-space: nowrap !important;
+  margin: 0 !important; padding: 0 !important;
+}
+header.h5p-solo > .container { width: 100%; }
+
+/* S.League 23 の「終了 · 満員御礼」の札 (2026-10-05 Sho 指示)
+   淡い地に濃い文字の札だが、shared.css の .l8-hero span { color: #FFFFFF !important } に上書きされ、
+   白地に白文字で読めなかった (本番にも元からある)。札の文字色を元の指定に戻す */
+header.l8-hero .status-badge.is-ended { color: var(--text-soft) !important; text-shadow: none !important; }
+
+/* ── スマホの LINE ボタン (2026-10-05 Sho 指示) ─────────────────
+   幅640px以下は文字を外して丸いアイコンだけにし、押すと上に小窓を出す (line-pop.js)。
+   本文の文字に重なる面積を小さくするため */
+@media (max-width: 640px) {
+  .line-float { width: 52px; height: 52px; padding: 0 !important; justify-content: center; gap: 0; }
+  .line-float > span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .line-float .lf-icon { width: 22px; height: 22px; }
+}
+.line-pop {
+  position: fixed; right: 14px; bottom: 78px; z-index: 901;
+  width: min(260px, calc(100vw - 28px));
+  background: var(--bg, #FFFFFF); color: var(--text, #1F2A33);
+  border: 1px solid var(--border, #C9D3DC); border-radius: 12px;
+  box-shadow: 0 14px 34px -10px rgba(31, 42, 51, .45);
+  padding: 16px; display: grid; gap: 10px;
+}
+.line-pop[hidden] { display: none; }
+.line-pop-t { margin: 0; font-weight: 700; font-size: 15px; }
+.line-pop-go {
+  display: block; text-align: center; text-decoration: none; font-weight: 700; font-size: 14px;
+  background: var(--accent-2, #1565C0); color: #FFFFFF !important; border-radius: 8px; padding: 11px 14px;
+}
+.line-pop-go:hover, .line-pop-go:focus-visible { background: var(--cta-hover, #2342B5); }
+.line-pop-x {
+  font: inherit; font-size: 13px; background: none; border: 0; color: var(--text-muted, #56626D);
+  padding: 4px; cursor: pointer; justify-self: center;
+}
+.line-pop-go:focus-visible, .line-pop-x:focus-visible { outline: 2px solid var(--text, #1F2A33); outline-offset: 2px; }

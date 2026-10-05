@@ -4,7 +4,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <url>
-    <loc>https://studio-lumadesign.com/photography</loc>
+    <loc>https://studio-lumadesign.com/photography/</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/prewedding-kimono-wagasa-shrine.jpg</image:loc>
       <image:title>和傘の下で</image:title>
@@ -1413,7 +1413,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/en/photography</loc>
+    <loc>https://studio-lumadesign.com/en/photography/</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/prewedding-kimono-wagasa-shrine.jpg</image:loc>
       <image:title>Under the Wagasa</image:title>
@@ -2822,7 +2822,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/photo-itami</loc>
+    <loc>https://studio-lumadesign.com/photography/itami</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/itami-ana-787-head-on-dusk.jpg</image:loc>
       <image:title>正面から迫る</image:title>
@@ -2991,7 +2991,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/en/photo-itami</loc>
+    <loc>https://studio-lumadesign.com/en/photography/itami</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/itami-ana-787-head-on-dusk.jpg</image:loc>
       <image:title>Head-On</image:title>
@@ -3160,7 +3160,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/photo-haneda</loc>
+    <loc>https://studio-lumadesign.com/photography/haneda</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/haneda-mount-fuji-aircraft-sunset.jpg</image:loc>
       <image:title>富士と飛行機</image:title>
@@ -3754,7 +3754,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/en/photo-haneda</loc>
+    <loc>https://studio-lumadesign.com/en/photography/haneda</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/haneda-mount-fuji-aircraft-sunset.jpg</image:loc>
       <image:title>Fuji &amp; Flight</image:title>
@@ -4348,7 +4348,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/photo-shonan</loc>
+    <loc>https://studio-lumadesign.com/photography/shonan</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/enoshima-island-dusk.jpg</image:loc>
       <image:title>黄昏の江ノ島</image:title>
@@ -4542,7 +4542,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/en/photo-shonan</loc>
+    <loc>https://studio-lumadesign.com/en/photography/shonan</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/enoshima-island-dusk.jpg</image:loc>
       <image:title>Enoshima at Dusk</image:title>
@@ -4736,7 +4736,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/photo-atami</loc>
+    <loc>https://studio-lumadesign.com/photography/atami</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/atami-akao-forest-hibiscus.jpg</image:loc>
       <image:title>夏の花</image:title>
@@ -4865,7 +4865,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/en/photo-atami</loc>
+    <loc>https://studio-lumadesign.com/en/photography/atami</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/atami-akao-forest-hibiscus.jpg</image:loc>
       <image:title>Summer Blooms</image:title>
@@ -4994,7 +4994,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/photo-yokohama</loc>
+    <loc>https://studio-lumadesign.com/photography/yokohama</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/yokohama-minatomirai-dusk.jpg</image:loc>
       <image:title>横浜の夕暮れ</image:title>
@@ -5113,7 +5113,7 @@
   </url>
 
   <url>
-    <loc>https://studio-lumadesign.com/en/photo-yokohama</loc>
+    <loc>https://studio-lumadesign.com/en/photography/yokohama</loc>
     <image:image>
       <image:loc>https://studio-lumadesign.com/images/photography/yokohama-minatomirai-dusk.jpg</image:loc>
       <image:title>Yokohama at Dusk</image:title>

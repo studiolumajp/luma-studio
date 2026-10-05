@@ -8,7 +8,7 @@
 
 <!-- ── PRIMARY SEO META ── -->
 <title>About me | LUMA 代表</title>
-<meta name="description" content="LUMA 代表のプロフィールです。15歳で渡豪し、ブリスベンで9年を過ごした日英バイリンガルです。英会話や S.League 健康麻雀、訪日客向けの英語ガイドツアー、コミュニティイベントを一人で担当しております。" />
+<meta name="description" content="LUMA 代表のプロフィールです。15歳で渡豪し、ブリスベンで9年を過ごした日英バイリンガルです。英会話レッスン、記念撮影、S.League 健康麻雀、ガイドツアー、コミュニティイベント、Web・SNS・アプリ制作を一人で担当しております。" />
 <meta name="keywords" content="LUMA 代表,バイリンガル,ブリスベン 留学,横浜,日英 バイリンガル" />
 <meta name="author" content="LUMA" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -23,7 +23,7 @@
 <meta property="og:type" content="profile" />
 <meta property="og:url" content="https://studio-lumadesign.com/about" />
 <meta property="og:title" content="About me | LUMA 代表" />
-<meta property="og:description" content="オーストラリア9年の経験を持つ日英バイリンガルです。英会話や S.League 麻雀、訪日客向け英語ツアー、コミュニティイベントを担当しております。" />
+<meta property="og:description" content="オーストラリアで9年を過ごした日英バイリンガルです。英会話レッスン、記念撮影、S.League 健康麻雀、ガイドツアー、コミュニティイベント、Web・SNS・アプリ制作を担当しております。" />
 <meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -201,6 +201,7 @@
   header.about-hero.l8-hero { align-items: center; padding: 48px 0; }
   @media (min-width: 761px) { header.about-hero.l8-hero { min-height: clamp(420px, 39vw, 600px); } }
 </style>
+<link rel="stylesheet" href="./motion.css?v=157a" />
 </head>
 <body id="body-root">
 <a class="skip-link" href="#home">メインコンテンツへスキップ</a>
@@ -213,15 +214,15 @@
     </a>
     <ul class="nav-links">
       <li class="has-dropdown">
-        <a href="./services" class="dropdown-toggle">サービス</a>
+        <a href="./services/" class="dropdown-toggle">サービス</a>
         <ul class="dropdown-menu">
-          <li><a href="./services">サービス一覧</a></li>
-          <li><a href="./service-english">英会話レッスン</a></li>
-          <li><a href="./service-photo">記念撮影・ポートレート</a></li>
-          <li><a href="./service-tour">海外ゲストの観光案内</a></li>
-          <li><a href="./service-community">コミュニティイベント</a></li>
-          <li><a href="./service-web">Web・SNS・アプリ制作</a></li>
-          <li><a href="./s-league">S.League 麻雀大会</a></li>
+          <li><a href="./services/">サービス一覧</a></li>
+          <li><a href="./services/english">英会話レッスン</a></li>
+          <li><a href="./services/photo">記念撮影・ポートレート</a></li>
+          <li><a href="./services/tour">海外ゲスト向けのパーソナライズドガイドツアー</a></li>
+          <li><a href="./services/community">コミュニティイベント</a></li>
+          <li><a href="./services/web">Web・SNS・アプリ制作</a></li>
+          <li><a href="./s-league/">S.League 麻雀大会</a></li>
         </ul>
       </li>
       <li><a href="./news/">ニュース</a></li>
@@ -247,15 +248,16 @@
 </nav>
 
 <!-- ════ HERO ════ -->
-<header class="hero l8-hero about-hero" id="home" tabindex="-1" style="--l8-photo:image-set(url('./images/hero/yokohama-minatomirai-sunset-panorama-1920.webp') type('image/webp'), url('./images/hero/yokohama-minatomirai-sunset-panorama-1920.jpg') type('image/jpeg'));--l8-photo-sm:image-set(url('./images/hero/yokohama-minatomirai-sunset-panorama-960.webp') type('image/webp'), url('./images/hero/yokohama-minatomirai-sunset-panorama-960.jpg') type('image/jpeg'))">
+<header class="hero l8-hero about-hero h5p" id="home" tabindex="-1" style="--l8-photo:image-set(url('./images/hero/yokohama-minatomirai-sunset-panorama-1920.webp') type('image/webp'), url('./images/hero/yokohama-minatomirai-sunset-panorama-1920.jpg') type('image/jpeg'));--l8-photo-sm:image-set(url('./images/hero/yokohama-minatomirai-sunset-panorama-960.webp') type('image/webp'), url('./images/hero/yokohama-minatomirai-sunset-panorama-960.jpg') type('image/jpeg'))">
   <div class="container">
     <span class="eyebrow">About me / LUMA 代表</span>
+    <p class="giant" aria-hidden="true">About<em>.</em></p>
     <h1 class="hero-title" style="margin-top:18px;">
       環境が変われば、<br />
       <span class="accent">人生は変わる</span>。
     </h1>
     <p class="sub">
-      15歳でオーストラリアへ渡りました。ブリスベンで過ごした9年が、いまの仕事のほとんどをつくっています。英会話や健康麻雀のコミュニティ、海外からお越しになる方の観光案内、コミュニティイベント、Web・SNS・アプリの制作といった5つの仕事を、東京・横浜から私ひとりで行っております。
+      15歳でオーストラリアへ渡りました。ブリスベンで過ごした9年が、いまの仕事のほとんどをつくっています。英会話、記念撮影、健康麻雀のコミュニティ、海外からお越しになる方の観光案内、コミュニティイベント、Web・SNS・アプリの制作といった6つの仕事を、東京・横浜から私ひとりで行っております。
     </p>
   </div>
 </header>
@@ -422,8 +424,8 @@
           <span class="ch-caret" aria-hidden="true">▾</span>
         </summary>
         <div class="ch-body">
-          <p>いる場所を変えて、少し勇気を出して、自分を信じる。それだけで人生は変わります。信頼できる友達がいて、話を聞いてくれる人がそばにいれば、たいていのことは何とかなる。</p>
-          <p>そう思えるようになったのは、自分がそうだったからです。その実感を形にしたのが LUMA です。<strong>英会話レッスン、S.League 健康麻雀、海外ゲストの観光案内、コミュニティイベント、Web・SNS・アプリ制作</strong>。この5つが中身です。いまあるあなたの強みはそのままに、変えられるところだけを一緒に変えていきます。</p>
+          <p>いる場所を変えて、少し勇気を出して、自分を信じる。それだけで人生は変わります。信頼できる友達がいて、話を聞いてくれる人がそばにいれば、たいていのことは何とかなります。</p>
+          <p>これは私自身が経験してきたことです。その実感を形にしたのが LUMA です。<strong>英会話レッスン、記念撮影・ポートレート、S.League 健康麻雀、海外ゲスト向けガイドツアー、コミュニティイベント、Web・SNS・アプリ制作</strong>を手がけています。お客様がもともと持っている強みはそのままに、変えたいところだけを一緒に見直していきます。</p>
           <p><em>Clarity by Design / Illuminate Your Confidence.</em> ここが、LUMA の出発点です。</p>
         </div>
       </details>
@@ -454,11 +456,11 @@
       <div class="footer-col">
         <h4>サービス</h4>
         <ul>
-          <li><a href="./service-english">英会話レッスン</a></li>
-          <li><a href="./service-photo">記念撮影・ポートレート</a></li>
-          <li><a href="./s-league">S.League 麻雀</a></li>
-          <li><a href="./service-tour">海外ゲストの観光案内</a></li>
-          <li><a href="./service-web">Web・SNS・アプリ制作</a></li>
+          <li><a href="./services/english">英会話レッスン</a></li>
+          <li><a href="./services/photo">記念撮影・ポートレート</a></li>
+          <li><a href="./s-league/">S.League 麻雀</a></li>
+          <li><a href="./services/tour">海外ゲスト向けのパーソナライズドガイドツアー</a></li>
+          <li><a href="./services/web">Web・SNS・アプリ制作</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -510,5 +512,6 @@
 
 <script src="./nav.js?v=aqua30" defer></script>
 <a class="line-float" href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer" aria-label="LINE で LUMA に相談する (新しいタブで開きます)"><svg class="lf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>LINE で相談</span></a>
+<script src="./line-pop.js?v=157a" defer></script>
 </body>
 </html>

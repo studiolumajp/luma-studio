@@ -6,11 +6,11 @@
 # Legacy *-en.html → new /en/ paths
 /index-en.html        /en/                        301
 /contact-en.html      /en/contact            301
-/photography-en.html  /en/photography        301
-/tour-en.html         /en/service-tour       301
+/photography-en.html  /en/photography/        301
+/tour-en.html         /en/services/tour       301
 
 # 2026-09-05 終了サービス (カウンセリング) → 英会話ページへ
-/service-counselling.html  /service-english       301
+/service-counselling.html  /services/english       301
 
 # ══════════════════════════════════════════════════════════════
 #  2026-08-30 画像ファイル名を内容の分かる名前へ変更 (98件・301)
@@ -116,9 +116,9 @@
 /images/photography/aviation-43.jpg          /images/photography/itami-terminal-at-night.jpg                  301
 /images/photography/aviation-44.jpg          /images/photography/itami-terminal-lights.jpg                    301
 /images/photography/aviation-45.jpg          /images/photography/itami-sunflowers-by-the-runway.jpg           301
-/lp/frame.html        /service-photo         301
-/news/frame-bookings-closing      /service-photo      301
-/en/news/frame-bookings-closing   /en/service-photo   301
+/lp/frame.html        /services/photo         301
+/news/frame-bookings-closing      /services/photo      301
+/en/news/frame-bookings-closing   /en/services/photo   301
 
 # 2026-10-04 九州エリアに湯布院を追加し、URL を kyushu に変更 (Sho 指示)
 /en/areas/fukuoka-dazaifu   /en/areas/kyushu   301
@@ -126,3 +126,79 @@
 
 # 2026-09-20 口コミ依頼用の短縮 URL。GBP の口コミ依頼リンク (https://g.page/r/...) を差し込み、行頭の # を外すと有効になる
 # /review               https://g.page/r/XXXXXXXX/review   302
+
+# ══════════════════════════════════════════════════════════════
+#  2026-10-05 フォルダー構成の変更 (s-league/、services/、photography/)
+# ══════════════════════════════════════════════════════════════
+/s-league  /s-league/  301
+/s-league.html  /s-league/  301
+/s-league-23  /s-league/23  301
+/s-league-23.html  /s-league/23  301
+/s-league-24  /s-league/24  301
+/s-league-24.html  /s-league/24  301
+/s-league-25  /s-league/25  301
+/s-league-25.html  /s-league/25  301
+/s-league-26  /s-league/26  301
+/s-league-26.html  /s-league/26  301
+/s-league-archive  /s-league/archive  301
+/s-league-archive.html  /s-league/archive  301
+/s-league-sponsor  /s-league/sponsor  301
+/s-league-sponsor.html  /s-league/sponsor  301
+/services  /services/  301
+/services.html  /services/  301
+/service-english  /services/english  301
+/service-english.html  /services/english  301
+/service-photo  /services/photo  301
+/service-photo.html  /services/photo  301
+/service-tour  /services/tour  301
+/service-tour.html  /services/tour  301
+/service-community  /services/community  301
+/service-community.html  /services/community  301
+/service-web  /services/web  301
+/service-web.html  /services/web  301
+/photography  /photography/  301
+/photography.html  /photography/  301
+/photo-atami  /photography/atami  301
+/photo-atami.html  /photography/atami  301
+/photo-haneda  /photography/haneda  301
+/photo-haneda.html  /photography/haneda  301
+/photo-itami  /photography/itami  301
+/photo-itami.html  /photography/itami  301
+/photo-shonan  /photography/shonan  301
+/photo-shonan.html  /photography/shonan  301
+/photo-yokohama  /photography/yokohama  301
+/photo-yokohama.html  /photography/yokohama  301
+
+# ══════════════════════════════════════════════════════════════
+#  2026-10-05 英語版のフォルダー構成の変更 (en/services/、en/photography/)
+# ══════════════════════════════════════════════════════════════
+/en/services  /en/services/  301
+/en/services.html  /en/services/  301
+/en/service-english  /en/services/english  301
+/en/service-english.html  /en/services/english  301
+/en/service-photo  /en/services/photo  301
+/en/service-photo.html  /en/services/photo  301
+/en/service-tour  /en/services/tour  301
+/en/service-tour.html  /en/services/tour  301
+/en/service-community  /en/services/community  301
+/en/service-community.html  /en/services/community  301
+/en/service-web  /en/services/web  301
+/en/service-web.html  /en/services/web  301
+/en/photography  /en/photography/  301
+/en/photography.html  /en/photography/  301
+/en/photo-atami  /en/photography/atami  301
+/en/photo-atami.html  /en/photography/atami  301
+/en/photo-haneda  /en/photography/haneda  301
+/en/photo-haneda.html  /en/photography/haneda  301
+/en/photo-itami  /en/photography/itami  301
+/en/photo-itami.html  /en/photography/itami  301
+/en/photo-shonan  /en/photography/shonan  301
+/en/photo-shonan.html  /en/photography/shonan  301
+/en/photo-yokohama  /en/photography/yokohama  301
+/en/photo-yokohama.html  /en/photography/yokohama  301
+
+# ══════════════════════════════════════════════════════════════
+#  2026-10-05 英語版の協賛ページを s-league フォルダーへ (en/s-league/)
+# ══════════════════════════════════════════════════════════════
+/en/s-league-sponsor  /en/s-league/sponsor  301
+/en/s-league-sponsor.html  /en/s-league/sponsor  301
