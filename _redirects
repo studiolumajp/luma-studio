@@ -9,8 +9,8 @@
 /photography-en.html  /en/photography/        301
 /tour-en.html         /en/services/tour       301
 
-# 2026-09-05 終了サービス (カウンセリング) → 英会話ページへ
-/service-counselling.html  /services/english       301
+# 2026-09-05 終了サービス (カウンセリング) → サービス一覧へ (2026-10-07 に英会話ページも廃止)
+/service-counselling.html  /services/              301
 
 # ══════════════════════════════════════════════════════════════
 #  2026-08-30 画像ファイル名を内容の分かる名前へ変更 (98件・301)
@@ -146,14 +146,14 @@
 /s-league-sponsor.html  /s-league/sponsor  301
 /services  /services/  301
 /services.html  /services/  301
-/service-english  /services/english  301
-/service-english.html  /services/english  301
+/service-english  /services/  301
+/service-english.html  /services/  301
 /service-photo  /services/photo  301
 /service-photo.html  /services/photo  301
 /service-tour  /services/tour  301
 /service-tour.html  /services/tour  301
-/service-community  /services/community  301
-/service-community.html  /services/community  301
+/service-community  /services/  301
+/service-community.html  /services/  301
 /service-web  /services/web  301
 /service-web.html  /services/web  301
 /photography  /photography/  301
@@ -174,14 +174,14 @@
 # ══════════════════════════════════════════════════════════════
 /en/services  /en/services/  301
 /en/services.html  /en/services/  301
-/en/service-english  /en/services/english  301
-/en/service-english.html  /en/services/english  301
+/en/service-english  /en/services/  301
+/en/service-english.html  /en/services/  301
 /en/service-photo  /en/services/photo  301
 /en/service-photo.html  /en/services/photo  301
 /en/service-tour  /en/services/tour  301
 /en/service-tour.html  /en/services/tour  301
-/en/service-community  /en/services/community  301
-/en/service-community.html  /en/services/community  301
+/en/service-community  /en/services/  301
+/en/service-community.html  /en/services/  301
 /en/service-web  /en/services/web  301
 /en/service-web.html  /en/services/web  301
 /en/photography  /en/photography/  301
@@ -202,3 +202,15 @@
 # ══════════════════════════════════════════════════════════════
 /en/s-league-sponsor  /en/s-league/sponsor  301
 /en/s-league-sponsor.html  /en/s-league/sponsor  301
+
+# ══════════════════════════════════════════════════════════════
+#  2026-10-07 LUMA Voice と LUMA Circle の廃止 (サービス一覧へ)
+# ══════════════════════════════════════════════════════════════
+/services/english  /services/  301
+/services/english.html  /services/  301
+/services/community  /services/  301
+/services/community.html  /services/  301
+/en/services/english  /en/services/  301
+/en/services/english.html  /en/services/  301
+/en/services/community  /en/services/  301
+/en/services/community.html  /en/services/  301

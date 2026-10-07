@@ -211,3 +211,6 @@
 .l8top .who-s{display:grid;border-top:1px solid var(--rule)}
 .l8top .who-s>div{padding:16px 0;border-bottom:1px solid var(--rule);display:grid;gap:6px}
 .l8top .who-s h4{font-family:var(--fh);font-weight:700;font-size:16px;line-height:1.5;color:var(--ink)}
+
+/* 2026-10-07 Sho 指示: Voice と Circle の廃止で Craft と S.League の区画はカード1枚ずつになったため、2列分の幅で表示する */
+.l8top #p-voice .g2>.card:only-child,.l8top #p-circle .g2>.card:only-child{grid-column:1/-1}

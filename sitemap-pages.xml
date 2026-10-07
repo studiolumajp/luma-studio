@@ -45,24 +45,6 @@
   <!-- SERVICE DETAIL PAGES — bilingual pairs                         -->
   <!-- ============================================================ -->
 
-  <!-- LUMA Voice -->
-  <url>
-    <loc>https://studio-lumadesign.com/services/english</loc>
-    <lastmod>2026-09-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/services/english"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/services/english"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://studio-lumadesign.com/en/services/english</loc>
-    <lastmod>2026-09-21</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/services/english"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/services/english"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
   <!-- LUMA Frame (Photography) -->
   <url>
     <loc>https://studio-lumadesign.com/services/photo</loc>
@@ -79,24 +61,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/services/photo"/>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-
-  <!-- LUMA Circle (Community) -->
-  <url>
-    <loc>https://studio-lumadesign.com/services/community</loc>
-    <lastmod>2026-09-05</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/services/community"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/services/community"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://studio-lumadesign.com/en/services/community</loc>
-    <lastmod>2026-09-05</lastmod>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/services/community"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/services/community"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
 
   <!-- LUMA Craft (Web, SNS, Apps) -->
