@@ -54,7 +54,7 @@
       "offers": {
         "@type": "Offer",
         "priceCurrency": "JPY",
-        "description": "LP 日本語 165,000円、LP 日英 308,000円、小規模サイト 715,000円、コーポレートサイト 1,430,000円〜ほか (税込)。全プランの料金はページに掲載"
+        "description": "LP 日本語 165,000円、LP 日英 308,000円、小規模サイト 715,000円、コーポレートサイト 1,650,000円〜ほか (税込)。日英のプランには、165,000円〜で3言語目を追加できます。全プランの料金はページに掲載"
       }
     },
     {
@@ -119,6 +119,9 @@
     background: var(--surface); font-size: 13px; color: var(--text);
   }
   .cr-chips .i { color: var(--accent); }
+  /* 写真の HERO の上では、白地に白文字で消えていたため半透明の暗い地に (2026-10-11) */
+  .l8-hero .cr-chips li { background: rgba(31, 42, 51, 0.5); border-color: rgba(255, 255, 255, 0.6); }
+  .l8-hero .cr-chips .i { color: var(--accent-2-light); }
 
   /* S2 3つの領域 */
   .cr-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -434,7 +437,7 @@
         <span class="offer-card-num">01</span>
         <h3>Web サイト制作</h3>
         <span class="en">Website</span>
-        <p>1ページの LP から、10〜15ページのコーポレートサイトまで対応しております。日本語だけの LP も、2言語のサイトも制作が可能です。どのサイトも Cloudflare Pages で公開し、ご自身で更新したい方には文章と写真を直せる更新画面 (microCMS) をお付けします。</p>
+        <p>1ページの LP から、日英それぞれ最大15ページのコーポレートサイトまで対応しております。日本語だけの LP も、2言語のサイトも制作が可能です。どのサイトも Cloudflare Pages で公開し、ご自身で更新したい方には文章と写真を直せる更新画面 (microCMS) をお付けします。</p>
         <a class="cr-more" href="#S5-web">料金を見る →</a>
       </article>
       <article class="offer-card" id="S2-sns">
@@ -465,7 +468,7 @@
       <h2 id="S3-heading">LUMA Craft に頼む理由</h2>
     </div>
 
-    <div class="stage-wrap" data-stage style="--n:4"><div class="stage"><div class="layer on top" data-cnt="01" data-t="日本語と英語を同じ人が書く" data-x="日本語のページも英語のページも、私自身が書いております。2つの言語の内容は、1人で見比べながら仕上げます。" aria-hidden="true"><img src="../images/craft/lp/home-en.jpg" alt="" loading="lazy" decoding="async"></div><div class="layer top" data-cnt="02" data-t="このサイトも自分で作っている" data-x="いまご覧になっている studio-lumadesign.com は、日本語版と英語版のどちらも私自身が制作しました。GitHub と Cloudflare Pages を使い、更新も自分で続けております。" aria-hidden="true"><img src="../images/craft/lp/home-ja.jpg" alt="" loading="lazy" decoding="async"></div><div class="layer top" data-cnt="03" data-t="公開したあとも担当する" data-x="Web サイトの保守は月22,000円 (税込。税抜20,000円) から承ります。iOS アプリの保守は開発費の15%を年額とし、iOS の更新への対応と軽微な修正を継続して行います。" aria-hidden="true"><img src="../images/craft/lp/service-web.jpg" alt="" loading="lazy" decoding="async"></div><div class="layer" data-cnt="04" data-t="アカウントはお客様の名義のまま" data-x="SNS の作業は、お客様のビジネスアカウントに担当者として追加していただいたうえで行います。パスワードはお預かりしません。iOS アプリの公開も、お客様の Apple Developer アカウントから行います。" aria-hidden="true"><img src="../images/hero/takanawa-gateway-tracks-from-above-1920.jpg" alt="" loading="lazy" decoding="async"></div><div class="bar" aria-hidden="true"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div><div class="cap" aria-hidden="true"><span class="cnt"></span><span class="t"></span><span class="en"></span><span class="x"></span><a tabindex="-1"></a></div></div></div>
+    <div class="stage-wrap" data-stage style="--n:4"><div class="stage"><div class="layer on top" data-cnt="01" data-t="日本語と英語を同じ人が書く" data-x="日本語のページも英語のページも、私自身が書いております。2つの言語の内容は、1人で見比べながら仕上げます。" aria-hidden="true"><img src="../images/craft/lp/home-en.jpg" alt="" loading="lazy" decoding="async"></div><div class="layer top" data-cnt="02" data-t="このサイトも自分で作っている" data-x="いまご覧になっている studio-lumadesign.com は、日本語版と英語版のどちらも私自身が制作しました。GitHub と Cloudflare Pages を使い、更新も自分で続けております。" aria-hidden="true"><img src="../images/craft/lp/home-ja.jpg" alt="" loading="lazy" decoding="async"></div><div class="layer top" data-cnt="03" data-t="公開したあとも担当する" data-x="Web サイトの保守は月22,000円 (税込。税抜20,000円) から承ります。iOS アプリの保守は開発費の15%を年額とし、iOS の更新への対応と軽微な修正を継続して行います。" aria-hidden="true"><img src="../images/craft/lp/service-web.jpg" alt="" loading="lazy" decoding="async"></div><div class="layer" data-cnt="04" data-t="アカウントはお客様の名義のまま" data-x="SNS の作業は、お客様のビジネスアカウントに担当者として追加していただいたうえで行います。パスワードはお預かりしません。iOS アプリの公開も、お客様の Apple Developer アカウントから行います。" aria-hidden="true"><img src="../images/craft/lp/lp-craft.jpg" alt="" loading="lazy" decoding="async"></div><div class="bar" aria-hidden="true"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div><div class="cap" aria-hidden="true"><span class="cnt"></span><span class="t"></span><span class="en"></span><span class="x"></span><a tabindex="-1"></a></div></div></div>
 <ul class="stage-list cr-reasons reveal">
       <li class="rule-item">
         <span class="rule-icon"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 8l6 6"/><path d="M4 14l6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="M22 22l-5-10-5 10"/><path d="M14 18h6"/></svg></span>
@@ -585,12 +588,13 @@
           <ul class="cr-plist">
             <li class="cr-prow"><b class="cr-pn">LP 日本語</b><span class="cr-pd">1ページ、修正2回まで</span><div class="cr-pval"><span class="cr-amt">165,000円</span><span class="cr-ex">税抜150,000円</span></div></li>
             <li class="cr-prow"><b class="cr-pn">LP 日英</b><span class="cr-pd">1ページ、日本語と英語</span><div class="cr-pval"><span class="cr-amt">308,000円</span><span class="cr-ex">税抜280,000円</span></div></li>
-            <li class="cr-prow"><b class="cr-pn">小規模サイト</b><span class="cr-pd">日英5ページ、問い合わせフォーム、Google マップ</span><div class="cr-pval"><span class="cr-amt">715,000円</span><span class="cr-ex">税抜650,000円</span></div></li>
-            <li class="cr-prow"><b class="cr-pn">コーポレートサイト</b><span class="cr-pd">日英10〜15ページ、更新の手順書</span><div class="cr-pval"><span class="cr-amt">1,430,000円〜</span><span class="cr-ex">税抜1,300,000円〜</span></div></li>
+            <li class="cr-prow"><b class="cr-pn">小規模サイト</b><span class="cr-pd">日英 各5ページまで、問い合わせフォーム、Google マップ</span><div class="cr-pval"><span class="cr-amt">715,000円</span><span class="cr-ex">税抜650,000円</span></div></li>
+            <li class="cr-prow"><b class="cr-pn">コーポレートサイト</b><span class="cr-pd">日英 各15ページまで、更新の手順書</span><div class="cr-pval"><span class="cr-amt">1,650,000円〜</span><span class="cr-ex">税抜1,500,000円〜</span></div></li>
+            <li class="cr-prow"><b class="cr-pn">3言語目の追加</b><span class="cr-pd">日英のプランに追加。スペイン語、中国語 (簡体字か繁体字)、韓国語、フランス語</span><div class="cr-pval"><span class="cr-amt">+165,000円〜</span><span class="cr-ex">税抜+150,000円〜</span></div></li>
           </ul>
         </article>
           <aside class="cr-pdetail" aria-label="Web サイト制作の詳細">
-            <h4>含まれるもの</h4><ul><li>修正は2回まで料金に含みます</li><li>日本語と英語の文章は、どちらも私自身が書きます</li><li>ご自身で更新したい方には更新画面 (microCMS) をご用意し、コーポレートサイトには更新の手順書をお付けします</li><li>日本語だけ、英語だけの複数ページのサイトは、個別にお見積りいたします</li></ul>
+            <h4>含まれるもの</h4><ul><li>修正は2回まで料金に含みます</li><li>日本語と英語の文章は、どちらも私自身が書きます</li><li>ご自身で更新したい方には更新画面 (microCMS) をご用意し、コーポレートサイトには更新の手順書をお付けします</li><li>日本語だけ、英語だけの複数ページのサイトは、個別にお見積りいたします</li><li>3言語目の翻訳は、外部の翻訳者に依頼いたします</li><li>ネイティブスピーカーによる確認は、その都度お見積りいたします</li><li>中国語の簡体字と繁体字は別の言語として数え、両方をご希望の場合は4言語目として、お見積りいたします</li></ul>
             <h4>進め方</h4><ol class="cr-psteps"><li>ヒアリング</li><li>NDA・見積・契約</li><li>前払い</li><li>デザイン</li><li>実装</li><li>検収・公開</li><li>保守</li></ol>
             <h4>お支払い</h4><p>請求書の発行日から7日以内に、料金の全額をお支払いいただきます。制作の着手は、ご入金を確認した時点となります。</p>
           </aside>
@@ -606,7 +610,7 @@
           </ul>
         </article>
           <aside class="cr-pdetail" aria-label="Web サイトの保守の詳細">
-            <h4>含まれるもの</h4><ul><li>月ごとの更新回数の範囲で、文章や画像を差し替えます</li><li>サイトが正しく表示されているかを監視します</li><li>Standard には月次レポートが付きます</li></ul>
+            <h4>含まれるもの</h4><ul><li>月ごとの更新回数の範囲で、文章や画像を差し替えます</li><li>サイトが正しく表示されているかを監視します</li><li>Standard には月次レポートが付きます</li><li>3言語目の更新に伴う翻訳は、保守の料金とは別に、その都度お見積りいたします</li></ul>
             <h4>進め方</h4><ol class="cr-psteps"><li>公開</li><li>保守の開始</li><li>毎月の更新</li><li>月次レポート (Standard)</li></ol>
             <h4>お支払い</h4><p>月額と年額からお選びいただけます。月額は前月末までに翌月分を、年額は契約開始日の前日までにお支払いいただきます。</p>
           </aside>
@@ -635,8 +639,8 @@
           <div class="cr-pgroup-h"><h3 id="S5-ios-h">iOS アプリ</h3><span class="en">iOS Apps</span></div>
           <ul class="cr-plist">
             <li class="cr-prow"><b class="cr-pn">検証版</b><span class="cr-pd">主要3画面、TestFlight での配布まで (App Store には公開しません)</span><div class="cr-pval"><span class="cr-amt">550,000円</span><span class="cr-ex">税抜500,000円</span></div></li>
-            <li class="cr-prow"><b class="cr-pn">小規模</b><span class="cr-pd">情報表示、問い合わせ、簡易ログイン</span><div class="cr-pval"><span class="cr-amt">2,440,000円〜</span></div></li>
-            <li class="cr-prow"><b class="cr-pn">中規模</b><span class="cr-pd">会員管理、決済、プッシュ通知</span><div class="cr-pval"><span class="cr-amt">5,500,000円〜</span></div></li>
+            <li class="cr-prow"><b class="cr-pn">小規模</b><span class="cr-pd">情報表示、問い合わせ、簡易ログイン</span><div class="cr-pval"><span class="cr-amt">2,750,000円〜</span><span class="cr-ex">税抜2,500,000円〜</span></div></li>
+            <li class="cr-prow"><b class="cr-pn">中規模</b><span class="cr-pd">会員管理、決済、プッシュ通知</span><div class="cr-pval"><span class="cr-amt">5,500,000円〜</span><span class="cr-ex">税抜5,000,000円〜</span></div></li>
             <li class="cr-prow"><b class="cr-pn">保守</b><span class="cr-pd">iOS の更新への対応、軽微な修正</span><div class="cr-pval cr-wrap"><span class="cr-amt">年額 開発費の15%</span></div></li>
           </ul>
         </article>
@@ -692,6 +696,13 @@
           <span class="faq-icon" aria-hidden="true">+</span>
         </button>
         <div class="faq-a"><div class="faq-a-inner">制作が可能です。料金表の LP 日英と小規模サイトは2言語を前提にした金額ですので、英語だけの場合はヒアリングの後にお見積りを提示いたします。</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" onclick="toggleFaq(this)" aria-expanded="false">
+          <span>日本語と英語のほかに、<wbr />3言語目も加えられますか。</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">可能です。日英のプラン (LP、小規模サイト、コーポレートサイト) に、スペイン語、中国語、韓国語、フランス語のいずれかを3言語目として追加できます (中国語の簡体字と繁体字は別の言語として数えます。両方をご希望の場合、4言語目はお見積りとなります)。日本語と英語の文章は私自身が書き、3言語目の翻訳は外部の翻訳者に依頼いたします。追加料金の目安は、165,000円 (税込。税抜150,000円) からです。ページ数と内容をお伺いした後に、お見積りを提示いたします。ネイティブスピーカーによる確認は、その都度お見積りいたします。</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" type="button" onclick="toggleFaq(this)" aria-expanded="false">
