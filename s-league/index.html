@@ -189,6 +189,17 @@
   }
   @media (max-width: 640px) { .stats-inner { grid-template-columns: repeat(2, 1fr); } }
 
+  /* ── スポンサー募集の帯 (統計数字の直下。詳細は ./sponsor へ) (2026-10-17 案3) ── */
+  .sp-band { background: var(--bg-soft); border-bottom: 1px solid var(--border); padding: 36px 0; }
+  .sp-band-inner {
+    display: flex; align-items: center; justify-content: space-between; gap: 20px 32px; flex-wrap: wrap;
+  }
+  .sp-band-text { flex: 1 1 420px; min-width: 0; }
+  .sp-band .eyebrow { margin-bottom: 10px; }
+  .sp-band-title { font-size: clamp(20px, 2.4vw, 26px); font-weight: 800; color: var(--text); line-height: 1.45; margin: 0; }
+  .sp-band-lead { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin: 6px 0 0; }
+  .sp-band .btn { flex: 0 0 auto; }
+
   #about .eyebrow { margin-bottom: 14px; }
   #format .eyebrow { margin-bottom: 14px; }
 
@@ -624,6 +635,17 @@
   </div>
 </div>
 
+<section class="sp-band" aria-labelledby="sp-band-heading">
+  <div class="container sp-band-inner">
+    <div class="sp-band-text">
+      <span class="eyebrow">協賛募集</span>
+      <h2 id="sp-band-heading" class="sp-band-title">S.League の大会を支えていただける方を募集しております。</h2>
+      <p class="sp-band-lead">4つのプランをご用意しており、物品協賛は<span class="nb">5,000円相当の品</span>から承ります。</p>
+    </div>
+    <a href="./sponsor" class="btn btn-secondary"><span class="nb">協賛のご案内はこちら →</span></a>
+  </div>
+</section>
+
 <section id="about" aria-labelledby="about-heading">
   <div class="container">
     <div class="about-grid">
@@ -663,8 +685,7 @@
       <div class="reveal">
         <span class="eyebrow">歩みと実績</span>
         <h2>積み重ねてきた4年間</h2>
-        <div class="stage-wrap" data-stage style="--n:5"><div class="stage"><div class="layer on" data-cnt="2022年7月" data-t="S.League 創設" data-x="第1回を東京で開催しました。集まったのは16名です。" aria-hidden="true"><img src="../images/sleague/SL24/sl24-01.jpg" alt="" loading="lazy" decoding="async"></div><div class="layer" data-cnt="2023年" data-t="麻雀プロが参加" data-x="創設当初から、各麻雀団体所属のプロが参加しております。回を重ねるごとに、参加者の層が厚くなりました。" aria-hidden="true"><img src="../images/sleague/SL24/sl24-02.jpg" alt="" loading="lazy" decoding="async"></div><div class="layer" data-cnt="2025年9月" data-t="累計参加者300名突破" data-x="S.League 19 (2025.9.20開催) で達成しました。" aria-hidden="true"><img src="../images/sleague/SL24/sl24-03.jpg" alt="" loading="lazy" decoding="async"></div><div class="layer" data-cnt="2026年3月" data-t="初の団体戦開催" data-x="S.League 22 (2026.3.7開催) で、初めての団体戦を開催しました。" aria-hidden="true"><img src="../images/sleague/SL24/sl24-04.jpg" alt="" loading="lazy" decoding="async"></div><div class="layer" data-cnt="2026年7月" data-t="S.League 24 · 4周年記念大会" data-x="2026年7月25日 (土) に、創設から5年目に入る記念大会を開催しました。" aria-hidden="true"><img src="../images/sleague/SL24/sl24-05.jpg" alt="" loading="lazy" decoding="async"></div><div class="bar" aria-hidden="true"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div><div class="cap" aria-hidden="true"><span class="cnt"></span><span class="t"></span><span class="en"></span><span class="x"></span><a tabindex="-1"></a></div></div></div>
-<div class="stage-list timeline" style="margin-top:24px;">
+        <div class="timeline" style="margin-top:24px;">
           <div class="tl-item">
             <div class="tl-year">2022年7月</div>
             <div class="tl-title">S.League 創設</div>
