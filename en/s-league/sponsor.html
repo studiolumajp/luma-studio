@@ -188,6 +188,13 @@
   body{ background:#FFFFFF; }
 </style>
 <link rel="stylesheet" href="../../motion.css?v=157a" />
+<style id="reveal-stagger">
+  /* 案C (2026-10-17): 並んだ要素を1つずつ 0.1 秒ずらしてフェードイン。表示後はアニメーションが外れ、hover などの元の動きはそのまま */
+  .reveal-stagger:not(.visible) > * { opacity: 0; }
+  .reveal-stagger.visible > * { animation: rs-in .7s ease backwards; animation-delay: calc(var(--i, 0) * 100ms); }
+  @keyframes rs-in { from { opacity: 0; transform: translateY(20px); } }
+  @media (scripting: none) { .reveal-stagger:not(.visible) > * { opacity: 1; } }
+</style>
 </head>
 <body id="body-root">
 <a class="skip-link" href="#home">Skip to main content</a>
@@ -241,7 +248,7 @@
 </header>
 
 <div class="sp-stats" role="group" aria-label="S.League track record">
-  <div class="sp-stats-inner">
+  <div class="sp-stats-inner reveal-stagger">
     <div><span class="sp-stat-num">24</span><span class="sp-stat-label">Events held</span></div>
     <div><span class="sp-stat-num">367</span><span class="sp-stat-label">Cumulative participants</span></div>
     <div><span class="sp-stat-num">126</span><span class="sp-stat-label">Registered players</span></div>
@@ -296,7 +303,7 @@
       <button type="button" id="sp-mode-year" aria-pressed="false">Annual (6 events)</button>
     </div>
 
-    <div class="sp-plan-grid">
+    <div class="sp-plan-grid reveal-stagger">
       <div class="sp-plan">
         <h3>In-kind sponsor</h3>
         <p class="sp-price"><span class="sp-amt" data-single="¥5,000" data-year="¥5,000">¥5,000</span><small class="sp-unit" data-single="+ worth of goods" data-year="+ worth of goods, per event">+ worth of goods</small></p>
@@ -368,7 +375,7 @@
   <div class="container">
     <span class="eyebrow">How it works</span>
     <h2 id="flow-heading" style="margin-top:16px;">From enquiry to your first event.</h2>
-    <div class="sp-flow">
+    <div class="sp-flow reveal-stagger">
       <div class="sp-flow-step"><span class="sp-flow-num">1</span><h3>Enquiry</h3><p>Send us a message with 'sponsorship' in it. That's all we need to send our media kit back.</p></div>
       <div class="sp-flow-step"><span class="sp-flow-num">2</span><h3>Consultation</h3><p>We can meet online or near Shimbashi, and settle on the plan and where your name goes.</p></div>
       <div class="sp-flow-step"><span class="sp-flow-num">3</span><h3>Application</h3><p>We sign a short agreement, then send the invoice. Once payment lands, we start getting things ready.</p></div>
@@ -441,5 +448,19 @@
 <script src="../../nav.js?v=aqua30" defer></script>
 <a class="line-float" href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer" aria-label="Chat with LUMA on LINE (opens in a new tab)"><svg class="lf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>Chat on LINE</span></a>
 <script src="../../line-pop.js?v=157a" defer></script>
+<script>
+  /* 案C: .reveal-stagger の子要素に順番を振り、画面に入ったら visible を付ける */
+  (function () {
+    var els = document.querySelectorAll('.reveal-stagger');
+    if (!els.length) return;
+    var o = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); o.unobserve(e.target); } });
+    }, { threshold: 0.1 }) : null;
+    els.forEach(function (el) {
+      [].forEach.call(el.children, function (c, i) { c.style.setProperty('--i', i); });
+      if (o) o.observe(el); else el.classList.add('visible');
+    });
+  })();
+</script>
 </body>
 </html>

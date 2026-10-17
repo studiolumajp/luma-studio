@@ -176,6 +176,13 @@
   @media (min-width: 761px) { header.hero.sl-hero { min-height: clamp(420px, 39vw, 600px); } }
 </style>
 <link rel="stylesheet" href="../motion.css?v=157a" />
+<style id="reveal-stagger">
+  /* 案C (2026-10-17): 並んだ要素を1つずつ 0.1 秒ずらしてフェードイン。表示後はアニメーションが外れ、hover などの元の動きはそのまま */
+  .reveal-stagger:not(.visible) > * { opacity: 0; }
+  .reveal-stagger.visible > * { animation: rs-in .7s ease backwards; animation-delay: calc(var(--i, 0) * 100ms); }
+  @keyframes rs-in { from { opacity: 0; transform: translateY(20px); } }
+  @media (scripting: none) { .reveal-stagger:not(.visible) > * { opacity: 1; } }
+</style>
 </head>
 <body id="body-root">
 <a class="skip-link" href="#home">メインコンテンツへスキップ</a>
@@ -230,7 +237,7 @@
       <span class="eyebrow">大会概要</span>
       <h2 id="info-heading">S.League 23 の概要</h2>
     </div>
-    <div class="info-grid reveal">
+    <div class="info-grid reveal-stagger">
       <div class="info-card">
         <span class="info-label">開催日</span>
         <div class="info-val">2026年5月16日 (土)</div>
@@ -272,7 +279,7 @@
       <h2 id="schedule-heading">1日の流れ</h2>
       <p style="margin: 0 auto;">9:50受付 → 10:00開会 → 19:30エキシビションまで、約10時間。</p>
     </div>
-    <ul class="schedule-list reveal">
+    <ul class="schedule-list reveal-stagger">
       <li class="schedule-item"><span class="schedule-time">9:50</span><div class="schedule-text"><span class="schedule-bold">受付開始</span>時間に余裕を持ってお越しください。</div></li>
       <li class="schedule-item"><span class="schedule-time">10:00</span><div class="schedule-text"><span class="schedule-bold">開会式・ルール説明</span>当日の進め方とルールをひととおりご説明します。</div></li>
       <li class="schedule-item"><span class="schedule-time">10:10</span><div class="schedule-text"><span class="schedule-bold">予選 1〜3回戦 (50分打ち切り)</span>ここから本戦です。まず3半荘を打ちます。</div></li>
@@ -369,5 +376,19 @@
 <script src="../nav.js?v=aqua30" defer></script>
 <a class="line-float" href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer" aria-label="LINE で LUMA に相談する (新しいタブで開きます)"><svg class="lf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>LINE で相談</span></a>
 <script src="../line-pop.js?v=157a" defer></script>
+<script>
+  /* 案C: .reveal-stagger の子要素に順番を振り、画面に入ったら visible を付ける */
+  (function () {
+    var els = document.querySelectorAll('.reveal-stagger');
+    if (!els.length) return;
+    var o = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); o.unobserve(e.target); } });
+    }, { threshold: 0.1 }) : null;
+    els.forEach(function (el) {
+      [].forEach.call(el.children, function (c, i) { c.style.setProperty('--i', i); });
+      if (o) o.observe(el); else el.classList.add('visible');
+    });
+  })();
+</script>
 </body>
 </html>

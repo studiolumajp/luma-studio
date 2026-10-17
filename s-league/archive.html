@@ -373,6 +373,13 @@
   @media (min-width: 761px) { header.arch-hero.l8-hero { min-height: clamp(420px, 39vw, 600px); } }
 </style>
 <link rel="stylesheet" href="../motion.css?v=157a" />
+<style id="reveal-stagger">
+  /* 案C (2026-10-17): 並んだ要素を1つずつ 0.1 秒ずらしてフェードイン。表示後はアニメーションが外れ、hover などの元の動きはそのまま */
+  .reveal-stagger:not(.visible) > * { opacity: 0; }
+  .reveal-stagger.visible > * { animation: rs-in .7s ease backwards; animation-delay: calc(var(--i, 0) * 100ms); }
+  @keyframes rs-in { from { opacity: 0; transform: translateY(20px); } }
+  @media (scripting: none) { .reveal-stagger:not(.visible) > * { opacity: 1; } }
+</style>
 </head>
 <body id="body-root">
 <a class="skip-link" href="#main-content">メインコンテンツへスキップ</a>
@@ -390,8 +397,8 @@
     </ul>
     <button class="nav-toggle" type="button" aria-label="メニューを開閉" aria-expanded="false"><span></span><span></span><span></span></button>
     <div style="display:flex;gap:10px;align-items:center;">
-      <!-- 2026-10-17 SL25 満卓のため、元の「S.League 25 (10/18) 受付中 →」から SL26 の案内に変更 -->
-      <a href="./26" class="nav-cta">S.League 26 (12/12) 開催予定 →</a>
+      <!-- 2026-10-17 SL25 満卓のため、SL26 の案内に変更 -->
+      <a href="./26" class="nav-cta">S.League 26 (12/12) 受付中 →</a>
     </div>
   </div>
 </nav>
@@ -413,7 +420,7 @@
       <span class="accent">成績アーカイブ</span>
     </h1>
     <p style="font-size:clamp(15px,1.4vw,18px);color:var(--text-muted);margin-top:14px;">全24大会の公式記録です。累計ランキングや大会別結果、団体戦結果をまとめております。</p>
-    <div class="arch-stats">
+    <div class="arch-stats reveal-stagger">
       <div><div class="astat-v">24</div><div class="astat-l">大会数</div></div>
       <div><div class="astat-v">367</div><div class="astat-l">延べ参加人数</div></div>
       <div><div class="astat-v">126</div><div class="astat-l">参加選手数</div></div>
@@ -900,5 +907,19 @@ function togTeam(id) {
 <script src="../nav.js?v=aqua30" defer></script>
 <a class="line-float" href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer" aria-label="LINE で LUMA に相談する (新しいタブで開きます)"><svg class="lf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>LINE で相談</span></a>
 <script src="../line-pop.js?v=157a" defer></script>
+<script>
+  /* 案C: .reveal-stagger の子要素に順番を振り、画面に入ったら visible を付ける */
+  (function () {
+    var els = document.querySelectorAll('.reveal-stagger');
+    if (!els.length) return;
+    var o = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); o.unobserve(e.target); } });
+    }, { threshold: 0.1 }) : null;
+    els.forEach(function (el) {
+      [].forEach.call(el.children, function (c, i) { c.style.setProperty('--i', i); });
+      if (o) o.observe(el); else el.classList.add('visible');
+    });
+  })();
+</script>
 </body>
 </html>

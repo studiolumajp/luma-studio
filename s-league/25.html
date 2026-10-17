@@ -305,6 +305,13 @@
   @media (max-width: 760px) { header.hero.sl-hero { min-height: 0; } }
 </style>
 <link rel="stylesheet" href="../motion.css?v=157a" />
+<style id="reveal-stagger">
+  /* 案C (2026-10-17): 並んだ要素を1つずつ 0.1 秒ずらしてフェードイン。表示後はアニメーションが外れ、hover などの元の動きはそのまま */
+  .reveal-stagger:not(.visible) > * { opacity: 0; }
+  .reveal-stagger.visible > * { animation: rs-in .7s ease backwards; animation-delay: calc(var(--i, 0) * 100ms); }
+  @keyframes rs-in { from { opacity: 0; transform: translateY(20px); } }
+  @media (scripting: none) { .reveal-stagger:not(.visible) > * { opacity: 1; } }
+</style>
 </head>
 <body id="body-root">
 <a class="skip-link" href="#home">メインコンテンツへスキップ</a>
@@ -375,7 +382,7 @@
       <span class="eyebrow">大会概要</span>
       <h2 id="info-heading">S.League 25 の概要</h2>
     </div>
-    <div class="info-grid reveal">
+    <div class="info-grid reveal-stagger">
       <div class="info-card">
         <span class="info-label">開催日</span>
         <div class="info-val">2026年10月18日 (日)</div>
@@ -417,7 +424,7 @@
       <h2 id="rules-heading">S.League 25 の競技ルール</h2>
       <p style="margin: 0 auto;">基本的には Mリーグルールに準拠します。1日開催の個人戦にともない、以下の点を S.League 25 独自ルールとして適用いたします。</p>
     </div>
-    <ul class="rules-list reveal">
+    <ul class="rules-list reveal-stagger">
       <li class="rule-item">
         <span class="rule-icon"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 2v8l3-3 3 3V2" /> <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" /></svg></span>
         <div>
@@ -472,7 +479,7 @@
       <h2 id="schedule-heading">当日の流れ (概要)</h2>
       <p style="margin: 0 auto;">11:50の受付から20:00頃の閉会まで、全7戦 (予選6回戦+順位決定戦) を打つ1日 (8時間) の大会です。卓組など詳しい進行につきましては、開催前にご参加の皆様へ個別にご案内いたします。</p>
     </div>
-    <ul class="schedule-list reveal">
+    <ul class="schedule-list reveal-stagger">
       <li class="schedule-item"><span class="schedule-time">11:50</span><div class="schedule-text"><span class="schedule-bold">受付開始</span>開会10分前から受付を行います。時間に余裕を持ってお越しください。</div></li>
       <li class="schedule-item"><span class="schedule-time">12:00</span><div class="schedule-text"><span class="schedule-bold">開会式</span>当日の進め方と独自ルールをひととおりご説明します。</div></li>
       <li class="schedule-item"><span class="schedule-time">12:10頃</span><div class="schedule-text"><span class="schedule-bold">予選 (1〜6回戦)</span>各回戦は50分打ち切りで、それぞれの半荘の間に10分程度の小休憩を挟みます。</div></li>
@@ -492,7 +499,7 @@
       <h2 id="gallery-heading">前回大会の様子</h2>
       <p style="margin: 0 auto;">写真は2026年7月25日開催の S.League 24 のものです。<br>当日の空気感を、先取りしてお届けします。</p>
     </div>
-    <div class="sl-gallery-grid reveal">
+    <div class="sl-gallery-grid reveal-stagger">
       <img src="../images/sleague/SL24/sl24-03.jpg" alt="青い牌が並ぶ対局中の全自動卓 (前回大会 S.League 24)" loading="lazy" width="1600" height="899" role="button" tabindex="0" onclick="openSlLightbox(this.src,this.alt)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openSlLightbox(this.src,this.alt);}">
       <img src="../images/sleague/SL24/sl24-01.jpg" alt="麻雀卓の中央に伸びる参加者の手元 (前回大会 S.League 24)" loading="lazy" width="1600" height="899" role="button" tabindex="0" onclick="openSlLightbox(this.src,this.alt)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openSlLightbox(this.src,this.alt);}">
       <img src="../images/sleague/SL24/sl24-04.jpg" alt="ローアングルから見た捨て牌と点数表示 (前回大会 S.League 24)" loading="lazy" width="1600" height="899" role="button" tabindex="0" onclick="openSlLightbox(this.src,this.alt)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openSlLightbox(this.src,this.alt);}">
@@ -554,7 +561,7 @@
     <div class="section-head reveal" style="text-align:center; margin: 0 auto 24px;">
       <span class="eyebrow">受付終了</span>
       <h2 id="apply-heading">満卓のため、<br>参加受付を終了いたしました</h2>
-      <p style="margin: 0 auto 16px;">定員12名 (3卓) のお席は、すべて埋まりました。<br>その次の <a href="./26">S.League 26</a> は、12月12日 (土) に開催を予定しております。</p>
+      <p style="margin: 0 auto 16px;">定員12名 (3卓) のお席は、すべて埋まりました。<br>その次の <a href="./26">S.League 26</a> は12月12日 (土) の開催で、参加を受け付けております。</p>
     </div>
 
     <div class="reveal" style="text-align:center; max-width: 760px; margin: 0 auto;">
@@ -721,5 +728,19 @@
 <script src="../nav.js?v=aqua30" defer></script>
 <a class="line-float" href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer" aria-label="LINE で LUMA に相談する (新しいタブで開きます)"><svg class="lf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>LINE で相談</span></a>
 <script src="../line-pop.js?v=157a" defer></script>
+<script>
+  /* 案C: .reveal-stagger の子要素に順番を振り、画面に入ったら visible を付ける */
+  (function () {
+    var els = document.querySelectorAll('.reveal-stagger');
+    if (!els.length) return;
+    var o = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); o.unobserve(e.target); } });
+    }, { threshold: 0.1 }) : null;
+    els.forEach(function (el) {
+      [].forEach.call(el.children, function (c, i) { c.style.setProperty('--i', i); });
+      if (o) o.observe(el); else el.classList.add('visible');
+    });
+  })();
+</script>
 </body>
 </html>
