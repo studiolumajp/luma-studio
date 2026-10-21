@@ -1480,45 +1480,36 @@ br.sp { display: none; }
    解釈できないブラウザは 2行目をパースエラーとして捨て、1行目が残る。
    URL は shared.css からの相対パスなので en/ 配下のページでも同じ値で解決する。
    ══════════════════════════════════════════════════════════════ */
-.cmp-card.has-photo.theme-eng .cmp-visual::before {
-  background-image: url('images/compare/compare-eng.jpg');
-  background-image: image-set(url('images/compare/compare-eng.webp') type("image/webp"), url('images/compare/compare-eng.jpg') type("image/jpeg"));
-}
 .cmp-card.has-photo.theme-photo .cmp-visual::before {
-  background-image: url('images/compare/compare-photo.jpg');
-  background-image: image-set(url('images/compare/compare-photo.webp') type("image/webp"), url('images/compare/compare-photo.jpg') type("image/jpeg"));
+  background-image: url('images/hero/compare-photo-960.jpg');
+  background-image: image-set(url('images/hero/compare-photo-960.webp') type("image/webp"), url('images/hero/compare-photo-960.jpg') type("image/jpeg"));
 }
 .cmp-card.has-photo.theme-mahjong .cmp-visual::before {
-  background-image: url('images/compare/compare-mahjong.jpg');
-  background-image: image-set(url('images/compare/compare-mahjong.webp') type("image/webp"), url('images/compare/compare-mahjong.jpg') type("image/jpeg"));
+  background-image: url('images/hero/sl24-hero-poster-960.jpg');
+  background-image: image-set(url('images/hero/sl24-hero-poster-960.webp') type("image/webp"), url('images/hero/sl24-hero-poster-960.jpg') type("image/jpeg"));
 }
 .cmp-card.has-photo.theme-tour .cmp-visual::before {
-  background-image: url('images/compare/compare-tour.jpg');
-  background-image: image-set(url('images/compare/compare-tour.webp') type("image/webp"), url('images/compare/compare-tour.jpg') type("image/jpeg"));
+  background-image: url('images/hero/compare-tour-960.jpg');
+  background-image: image-set(url('images/hero/compare-tour-960.webp') type("image/webp"), url('images/hero/compare-tour-960.jpg') type("image/jpeg"));
 }
 
 /* HERO 写真 (--hero-photo) の WebP 差し替え。--hero-photo は暗幕グラデーションと
    2枚重ねなので、image-set 側でも 1枚目のグラデーションを書き直す */
-.hero--photo.hero-webp-eng, .hero--photo.hero-webp-photo,
+.hero--photo.hero-webp-photo,
 .hero--photo.hero-webp-tour, .hero--photo.hero-webp-services {
   background-image:
     linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 34%, var(--scrim-3) 58%, var(--scrim-4) 76%),
     var(--hero-photo, linear-gradient(135deg, var(--navy), var(--accent)));
 }
-.hero--photo.hero-webp-eng {
-  background-image:
-    linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 34%, var(--scrim-3) 58%, var(--scrim-4) 76%),
-    image-set(url('images/compare/compare-eng.webp') type("image/webp"), url('images/compare/compare-eng.jpg') type("image/jpeg"));
-}
 .hero--photo.hero-webp-photo {
   background-image:
     linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 34%, var(--scrim-3) 58%, var(--scrim-4) 76%),
-    image-set(url('images/compare/compare-photo.webp') type("image/webp"), url('images/compare/compare-photo.jpg') type("image/jpeg"));
+    image-set(url('images/hero/compare-photo-960.webp') type("image/webp"), url('images/hero/compare-photo-960.jpg') type("image/jpeg"));
 }
 .hero--photo.hero-webp-tour {
   background-image:
     linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 34%, var(--scrim-3) 58%, var(--scrim-4) 76%),
-    image-set(url('images/compare/compare-tour.webp') type("image/webp"), url('images/compare/compare-tour.jpg') type("image/jpeg"));
+    image-set(url('images/hero/compare-tour-1920.webp') type("image/webp"), url('images/hero/compare-tour-1920.jpg') type("image/jpeg"));
 }
 .hero--photo.hero-webp-services {
   background-image:
@@ -1528,10 +1519,6 @@ br.sp { display: none; }
 
 /* コミュニティのカード (2026-09-21 追加)。写真は S.League 24 */
 .cmp-card.theme-community { --cmp-bg: linear-gradient(135deg, var(--bg) 0%, var(--bg-muted) 100%); --cmp-tag: var(--sky); }
-.cmp-card.has-photo.theme-community .cmp-visual::before {
-  background-image: url('images/compare/compare-community.jpg');
-  background-image: image-set(url('images/compare/compare-community.webp') type("image/webp"), url('images/compare/compare-community.jpg') type("image/jpeg"));
-}
 /* ギャラリーの <img> を <picture> で包んだため (2026-09-05 / 工程C)。
    picture は既定でインライン要素なので、行送り分の隙間が出ないよう block にする */
 .photo-item picture { display: block; }
