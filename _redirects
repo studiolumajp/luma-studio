@@ -214,3 +214,16 @@
 /en/services/english.html  /en/services/  301
 /en/services/community  /en/services/  301
 /en/services/community.html  /en/services/  301
+# 2026-10-23 LUMA Path: 伊東は熱海へ、鎌倉と湘南・江ノ島は統合ページへ
+/en/areas/ito  /en/areas/atami  301
+/en/areas/ito.html  /en/areas/atami  301
+/en/tours/ito  /en/tours/atami  301
+/en/tours/ito.html  /en/tours/atami  301
+/en/areas/kamakura  /en/areas/kamakura-shonan-enoshima  301
+/en/areas/kamakura.html  /en/areas/kamakura-shonan-enoshima  301
+/en/tours/kamakura  /en/tours/kamakura-shonan-enoshima  301
+/en/tours/kamakura.html  /en/tours/kamakura-shonan-enoshima  301
+/en/areas/shonan-enoshima  /en/areas/kamakura-shonan-enoshima  301
+/en/areas/shonan-enoshima.html  /en/areas/kamakura-shonan-enoshima  301
+/en/tours/shonan-enoshima  /en/tours/kamakura-shonan-enoshima  301
+/en/tours/shonan-enoshima.html  /en/tours/kamakura-shonan-enoshima  301

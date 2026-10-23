@@ -7,8 +7,8 @@
 <meta name="color-scheme" content="light only" />
 <title>Osaka area guide and private tours | LUMA Path</title>
 <meta name="description" content="Osaka Castle, Dotonbori, Kuromon Market and Shitenno-ji, with notes from Sho. Private tours in English for up to six people." />
-<!-- 料金が TBD のあいだは noindex。料金確定後に index, follow へ戻し、sitemap に追加する -->
-<meta name="robots" content="noindex, follow" />
+<!-- 2026-10-23 Sho 指示: 料金を見積り制にしたため noindex を外した -->
+<meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://studio-lumadesign.com/en/areas/osaka" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://studio-lumadesign.com/en/areas/osaka" />
@@ -66,7 +66,7 @@
   .area-plain .eyebrow, .area-plain h1, .area-plain .sub { color: #fff; }
   .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: -40px; position: relative; z-index: 2; }
   .chips span { background: #fff; border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px; font-size: 14px; color: var(--text); }
-  .len-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+  .len-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
   .len { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; }
   .len b { display: block; font-family: var(--font-label); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
   .len p { font-size: 14.5px; color: var(--text-muted); line-height: 1.65; margin: 0; }
@@ -90,7 +90,7 @@
   .faq-list details { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px; margin-bottom: 10px; }
   .faq-list summary { font-weight: 600; cursor: pointer; color: var(--text); }
   .faq-list p { margin-top: 10px; color: var(--text-muted); line-height: 1.75; }
-  @media (max-width: 900px) { .len-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .notes, .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 900px) { .notes, .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 640px) {
     .area-hero { padding: 84px 0 104px; min-height: 460px; }
     .len-grid, .notes, .gallery { grid-template-columns: 1fr; }
@@ -149,8 +149,8 @@
 
 <section aria-labelledby="len-h">
   <div class="container">
-    <div class="section-head reveal"><span class="eyebrow">Tour lengths</span><h2 id="len-h">Four ways to spend the day</h2><p>Planned lengths. One price per private group of up to six.</p></div>
-    <div class="len-grid reveal"><div class="len"><b>2 hours</b><p>Dotonbori, Kuromon Market and takoyaki, on foot.</p><span class="tbd">Price TBD</span></div><div class="len"><b>Half day</b><p>Osaka Castle, then Dotonbori and Kuromon Market.</p><span class="tbd">Price TBD</span></div><div class="len"><b>Full day</b><p>Castle, Shitenno-ji, Tsutenkaku and Dotonbori, with okonomiyaki for dinner.</p><span class="tbd">Price TBD</span></div><div class="len"><b>Two days</b><p>Osaka one day, Kyoto the next.</p><span class="tbd">Price TBD</span></div></div>
+    <div class="section-head reveal"><span class="eyebrow">Tour lengths</span><h2 id="len-h">Choose how long you&#x27;d like</h2><p>One price per private group of up to six, quoted in USD.</p></div>
+    <div class="len-grid reveal"><div class="len"><b>Half day</b><p>Osaka Castle, then Dotonbori and Kuromon Market.</p><span class="tbd">Free quote</span></div><div class="len"><b>Full day</b><p>Castle, Shitenno-ji, Tsutenkaku and Dotonbori, with okonomiyaki for dinner.</p><span class="tbd">Free quote</span></div><div class="len"><b>Two days</b><p>Osaka one day, Kyoto the next.</p><span class="tbd">Free quote</span></div></div>
   </div>
 </section>
 

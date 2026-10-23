@@ -6,17 +6,17 @@
 <meta name="theme-color" content="#1F2A33" />
 <meta name="color-scheme" content="light only" />
 
-<title>Kamakura private tour in English | LUMA Path</title>
-<meta name="description" content="A private English-speaking tour of Kamakura: the Great Buddha, Hase-dera, Tsurugaoka Hachimangu and the Hokoku-ji bamboo garden. Up to six." />
-<!-- 料金が TBD のあいだは noindex。料金確定後に index, follow へ戻し、sitemap に追加する -->
-<meta name="robots" content="noindex, follow" />
-<link rel="canonical" href="https://studio-lumadesign.com/en/tours/kamakura" />
+<title>Kansai airports aviation tour in English | LUMA Path</title>
+<meta name="description" content="A private English-speaking aviation tour of Kansai&#x27;s three airports: Itami Skypark and the Senri River bank, Kansai Airport and Kobe Airport. For up to six people." />
+<!-- 2026-10-23 Sho 指示: 料金を見積り制にしたため noindex を外した -->
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://studio-lumadesign.com/en/tours/kansai-airports" />
 
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://studio-lumadesign.com/en/tours/kamakura" />
-<meta property="og:title" content="Kamakura private tour in English | LUMA Path" />
-<meta property="og:description" content="A private English-speaking tour of Kamakura: the Great Buddha, Hase-dera, Tsurugaoka Hachimangu and the Hokoku-ji bamboo garden. Up to six." />
-<meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
+<meta property="og:url" content="https://studio-lumadesign.com/en/tours/kansai-airports" />
+<meta property="og:title" content="Kansai airports aviation tour in English | LUMA Path" />
+<meta property="og:description" content="A private English-speaking aviation tour of Kansai&#x27;s three airports: Itami Skypark and the Senri River bank, Kansai Airport and Kobe Airport. For up to six people." />
+<meta property="og:image" content="https://studio-lumadesign.com/images/hero/itami-airport-terminal-night-1920.jpg" />
 <meta property="og:locale" content="en_AU" />
 <meta property="og:site_name" content="LUMA" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -30,9 +30,9 @@
   "@graph": [
     {
       "@type": "TouristTrip",
-      "name": "Kamakura, from the Great Buddha to the bamboo garden",
-      "description": "A private English-speaking tour of Kamakura: the Great Buddha, Hase-dera, Tsurugaoka Hachimangu and the Hokoku-ji bamboo garden. Up to six.",
-      "url": "https://studio-lumadesign.com/en/tours/kamakura",
+      "name": "Itami, Kansai and Kobe, airport by airport",
+      "description": "A private English-speaking aviation tour of Kansai's three airports: Itami Skypark and the Senri River bank, Kansai Airport and Kobe Airport. For up to six people.",
+      "url": "https://studio-lumadesign.com/en/tours/kansai-airports",
       "touristType": "International visitors",
       "provider": {
         "@id": "https://studio-lumadesign.com/#business"
@@ -40,7 +40,7 @@
       "offers": {
         "@type": "Offer",
         "priceCurrency": "USD",
-        "description": "Price per private group of up to 6. Pricing to be announced."
+        "description": "Price per private group of up to 6, quoted in USD, CAD, AUD, NZD, GBP or EUR (other currencies in USD). Quotes are free."
       }
     },
     {
@@ -61,8 +61,8 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Kamakura",
-          "item": "https://studio-lumadesign.com/en/tours/kamakura"
+          "name": "Kansai's three airports",
+          "item": "https://studio-lumadesign.com/en/tours/kansai-airports"
         }
       ]
     }
@@ -72,6 +72,7 @@
 
 <script src="../../consent.js?v=gdpr1"></script>
 
+<link rel="preload" as="image" fetchpriority="high" type="image/webp" href="../../images/hero/itami-airport-terminal-night-1920.webp" />
 <link rel="stylesheet" href="../../shared.css?v=l8g" />
 <style id="page-overrides">
   .svc-hero { position: relative; padding: 112px 0 128px; min-height: 520px; }
@@ -114,12 +115,11 @@
     .guide { grid-template-columns: 1fr; }
     .guide img { width: 120px; height: 120px; }
   }
-</style>
-<style id="l8-photo-fix">
-  /* HERO の写真はここで直接指定する。CSS 変数の url() は Chrome が shared.css の位置から解決し、
-     file:// で開くと ../ の写真が見つからないため (2026-10-03) */
-  html body .l8-hero { background: linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 38%, var(--scrim-3) 66%, var(--scrim-4) 88%), linear-gradient(0deg, rgba(31, 42, 51, 0.45) 0%, rgba(31, 42, 51, 0) 55%), image-set(url('../../images/hero/enoshima-ryugu-gate-1920.webp') type('image/webp'), url('../../images/hero/enoshima-ryugu-gate-1920.jpg') type('image/jpeg')) center / cover no-repeat !important; }
-  @media (max-width: 760px) { html body .l8-hero { background: linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 38%, var(--scrim-3) 66%, var(--scrim-4) 88%), linear-gradient(0deg, rgba(31, 42, 51, 0.45) 0%, rgba(31, 42, 51, 0) 55%), image-set(url('../../images/hero/enoshima-ryugu-gate-960.webp') type('image/webp'), url('../../images/hero/enoshima-ryugu-gate-960.jpg') type('image/jpeg')) center / cover no-repeat !important; } }
+  .tour-photos video { display: block; width: 100%; aspect-ratio: 16 / 9; height: auto; border-radius: 12px; background: var(--bg-soft); object-fit: cover; }
+  .tour-photos .frame { position: relative; }
+  .tour-photos-toggle { position: absolute; right: 12px; bottom: 12px; min-width: 72px; min-height: 36px; padding: 6px 14px; border: 1px solid rgba(255, 255, 255, 0.6); border-radius: 6px; background: rgba(31, 42, 51, 0.82); color: #FFFFFF; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; }
+  .tour-photos-toggle:hover { background: #1F2A33; }
+  .tour-photos-toggle:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 2px; box-shadow: 0 0 0 4px #1565C0; }
 </style>
 <link rel="stylesheet" href="../../motion.css?v=157a" />
 </head>
@@ -150,29 +150,29 @@
 </nav>
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
-  <ol><li><a href="../">Home</a></li><li><a href="../services/tour">Private Tours</a></li><li aria-current="page">Kamakura</li></ol>
+  <ol><li><a href="../">Home</a></li><li><a href="../services/tour">Private Tours</a></li><li aria-current="page">Kansai&#x27;s three airports</li></ol>
 </nav>
 
-<header class="hero l8-hero svc-hero tour-hero-plain h5p" id="home" tabindex="-1" style="--l8-photo:image-set(url('../../images/hero/enoshima-ryugu-gate-1920.webp') type('image/webp'), url('../../images/hero/enoshima-ryugu-gate-1920.jpg') type('image/jpeg'));--l8-photo-sm:image-set(url('../../images/hero/enoshima-ryugu-gate-960.webp') type('image/webp'), url('../../images/hero/enoshima-ryugu-gate-960.jpg') type('image/jpeg'))"><span class="l8-credit">Photo by Sho: Enoshima</span>
+<header class="hero hero--photo svc-hero h5p" id="home" tabindex="-1" style="--hero-photo:image-set(url('../../images/hero/itami-airport-terminal-night-1920.webp') type('image/webp'), url('../../images/hero/itami-airport-terminal-night-1920.jpg') type('image/jpeg'));" role="img" aria-label="The Osaka Itami Airport terminal at night, with an ANA plane at the gate">
   <div class="container">
-    <span class="eyebrow">Kanagawa · Private tour</span>
-    <p class="giant is-long" aria-hidden="true">Kamakura<em>.</em></p>
-    <h1 class="hero-title" style="margin-top:18px;">Kamakura, from the Great Buddha to the bamboo garden</h1>
-    <p class="sub">A bronze Buddha begun in 1252, one of Japan&#x27;s largest wooden statues, and green tea in a bamboo grove. Up to six people, by Enoden train, bus and on foot.</p>
+    <span class="eyebrow">Osaka and Hyogo · Private aviation tour</span>
+    <p class="giant" aria-hidden="true">Kansai<em>.</em></p>
+    <h1 class="hero-title" style="margin-top:18px;">Itami, Kansai and Kobe, airport by airport</h1>
+    <p class="sub">Planes low over the riverbank at Itami, an airport island in the bay at Kansai, and a rooftop deck by the sea at Kobe. Up to six people, by train, bus, ferry and on foot.</p>
     <div class="hero-cta-row"><a href="../contact" class="btn btn-primary">Ask for a free quote →</a><a href="#routes" class="btn btn-secondary">See the routes</a></div>
   </div>
 </header>
 
-<div class="container"><div class="facts"><div class="fact"><span>Lengths</span><b>2 hours · Half day · Full day · Two days</b></div><div class="fact"><span>Group</span><b>Private, up to 6 guests</b></div><div class="fact"><span>Language</span><b>English (Japanese on request)</b></div><div class="fact"><span>Meeting point</span><b>Hase Station (Enoden) for the 2-hour tour. JR Kamakura Station, East Exit, for the half and full day.</b></div></div></div>
+<div class="container"><div class="facts"><div class="fact"><span>Lengths</span><b>Half day · Full day</b></div><div class="fact"><span>Group</span><b>Private, up to 6 guests</b></div><div class="fact"><span>Language</span><b>English (Japanese on request)</b></div><div class="fact"><span>Meeting point</span><b>It depends on the airports you choose. I&#x27;ll send you the exact spot with your route.</b></div></div></div>
 
 <section id="overview" aria-labelledby="overview-heading">
   <div class="container">
-    <div class="section-head reveal"><span class="eyebrow">Overview</span><h2 id="overview-heading">Shrines, temples and a bronze Buddha</h2></div>
+    <div class="section-head reveal"><span class="eyebrow">Overview</span><h2 id="overview-heading">Three airports in Kansai</h2></div>
     <div class="svc-overview-grid reveal">
-      <div><p class="svc-overview-body" style="margin-bottom:14px;">Tsurugaoka Hachimangu began when Minamoto no Yoriyoshi brought the god of Iwashimizu Hachimangu from Kyoto to the shore at Yuigahama. His descendant Yoritomo moved it to its present site in 1180. The approach, Wakamiya-oji, runs about 2 km in a straight line from the beach.</p><p class="svc-overview-body" style="margin-bottom:14px;">The Great Buddha at Kotoku-in is a National Treasure, a bronze Amida Buddha. Work on it began in 1252. For 50 yen extra you can step inside it.</p><p class="svc-overview-body" style="margin-bottom:14px;">Hase-dera&#x27;s Kannon stands 9.18 metres tall, one of the largest wooden statues in Japan. The temple dates its founding to 736.</p></div>
+      <div><p class="svc-overview-body" style="margin-bottom:14px;">Osaka International Airport, known as Itami, has a park built for watching planes. Itami Skypark runs about 1.2 km along the west side of the runway and is free to enter. At the south end of the runway, landing planes pass low over the Senri River bank, about 2 km on foot from Hankyu Sone Station.</p><p class="svc-overview-body" style="margin-bottom:14px;">Kansai International Airport sits on an island in the bay. Sky View, a viewing building with the Sky Museum inside, is a free shuttle bus ride from Terminal 1. Across the water, Rinku Park looks back at the airport island and the bridge that joins it to the shore.</p><p class="svc-overview-body" style="margin-bottom:14px;">Kobe Airport has a rooftop observation deck, with the runway and the sea to the south and Port Island and the Rokko mountains to the north. I&#x27;ve been to all three airports myself, and I&#x27;ve photographed planes since 2009.</p></div>
       <div>
         <p style="font-family:var(--font-label);font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px;">Highlights</p>
-        <ul class="tour-list"><li>Stand before the Great Buddha, a National Treasure begun in 1252, and step inside it</li><li>See Hase-dera&#x27;s 9.18-metre wooden Kannon</li><li>Climb the great stone steps of Tsurugaoka Hachimangu</li><li>Drink matcha in the bamboo garden at Hokoku-ji (full day)</li><li>Ride the Enoden line between Kamakura and Enoshima</li></ul>
+        <ul class="tour-list"><li>Watch take-offs from Big Sky Hill at Itami Skypark</li><li>Stand under landing planes on the Senri River bank</li><li>Visit Sky View at Kansai Airport</li><li>Cross from Kansai Airport to Kobe on the Bay Shuttle ferry (full day)</li><li>Stay for the sunset and the runway lights on Kobe Airport&#x27;s rooftop deck</li></ul>
       </div>
     </div>
   </div>
@@ -181,7 +181,7 @@
 <section id="routes" aria-labelledby="routes-heading" style="background:var(--bg-soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
   <div class="container">
     <div class="section-head reveal"><span class="eyebrow">Routes</span><h2 id="routes-heading">Pick the length that suits your day</h2></div>
-    <div class="routes reveal"><article class="route"><h3>2 hours</h3><p>Hase: the Great Buddha and Hase-dera, on foot.</p><ol><li><b>Kotoku-in</b><span>about seven minutes&#x27; walk from Hase Station.</span></li><li><b>Hase-dera</b><span>five minutes from the station, about 50 minutes inside.</span></li></ol><p class="note">We finish at Hase Station, where you can ride on to Kamakura or Enoshima.</p></article><article class="route"><h3>Half day (3 to 4 hours)</h3><p>The shrine in the morning, the Great Buddha after.</p><ol><li><b>Komachi-dori</b><span>the busy street from the station towards the shrine.</span></li><li><b>Tsurugaoka Hachimangu</b><span>10 minutes from the station, with a view over town from the top of the great steps.</span></li><li><b>Enoden from Kamakura to Hase.</b></li><li><b>Kotoku-in and Hase-dera</b><span>about 90 minutes.</span></li></ol><p class="note">We finish at Hase Station.</p></article><article class="route"><h3>Full day (7 to 8 hours)</h3><p>Bamboo and tea first, then the shrine, then the Great Buddha.</p><ol><li><b>Hokoku-ji</b><span>about 12 minutes by Keikyu bus to Jomyoji, then three minutes on foot. Bamboo garden and matcha.</span></li><li><b>Tsurugaoka Hachimangu.</b></li><li><b>Lunch on Komachi-dori, inside a restaurant.</b></li><li><b>Enoden to Hase</b><span>Kotoku-in and Hase-dera, about two hours.</span></li></ol><p class="note">From Hase we can end the day, or ride on towards Enoshima.</p></article><article class="route"><h3>Two days</h3><p>Pair Kamakura with Enoshima, one Enoden ride away.</p><ol><li><b>Day 1</b><span>the Kamakura full day.</span></li><li><b>Day 2</b><span>the Enoshima full day.</span></li></ol><p class="note">The Enoden one-day pass, Noriorikun, costs 800 yen.</p></article></div>
+    <div class="routes reveal"><article class="route"><h3>Half day (3 to 4 hours): Itami</h3><p>The Skypark beside the runway, and the riverbank at its south end.</p><ol><li><b>Itami Skypark</b><span>by bus from Hankyu Itami or JR Itami Station.</span></li><li><b>Big Sky Hill and Wing Hill</b><span>the north entrance is the best-known spot for take-offs, and the Wing Hill deck is as wide as a 777&#x27;s wing.</span></li><li><b>Sky Terrace</b><span>the building at the central entrance, with an observation deck, a goods shop and a take-out cafe.</span></li><li><b>Senri River bank</b><span>about 2 km on foot from Hankyu Sone Station, for landings close overhead.</span></li></ol><p class="note">The riverbank has no toilets and no shade, so we take a break before we walk there. On a later start, we can finish on the terminal&#x27;s rooftop deck for the runway lights.</p></article><article class="route"><h3>Half day (3 to 4 hours): Kansai Airport</h3><p>The viewing building on the island, then the shore across the water.</p><ol><li><b>Sky View</b><span>by free shuttle bus from Terminal 1, with the Sky Museum inside.</span></li><li><b>Rinku Park and Marble Beach</b><span>a short walk from Nankai Rinku-Town Station, facing the airport island, for take-offs and the bridge.</span></li></ol><p class="note">Sky View&#x27;s hours change with the season, so I check them before the day. The sea wind at Rinku Park is strong, so bring a layer.</p></article><article class="route"><h3>Half day (3 to 4 hours): Kobe Airport</h3><p>The rooftop deck and the indoor Sky Court, into the evening.</p><ol><li><b>Port Liner from Sannomiya</b><span>the line out to the airport.</span></li><li><b>Rooftop deck</b><span>the runway and the sea to the south, Port Island and the Rokko mountains to the north.</span></li><li><b>Sky Court on the 3rd floor</b><span>viewing behind glass, for a wet or windy day.</span></li><li><b>Sunset and runway lights</b><span>the sun goes down to the west of the runway.</span></li></ol></article><article class="route"><h3>Full day (7 to 8 hours)</h3><p>Two airports, or all three if time allows.</p><ol><li><b>Kansai Airport</b><span>Sky View in the morning.</span></li><li><b>Bay Shuttle ferry to Kobe Airport</b><span>1,880 yen one way for an adult.</span></li><li><b>Kobe Airport</b><span>lunch and the rooftop deck.</span></li><li><b>Itami, if time allows</b><span>for the Skypark or the terminal deck at dusk. I&#x27;ll work out the connection with you before the day.</span></li></ol><p class="note">Kansai Airport and Itami are also linked by limousine bus, about 1 hour 10 minutes (2,200 yen). If the sea is rough, we can take the limousine bus from Kansai Airport to Kobe Sannomiya instead (about 1 hour 5 minutes, 2,200 yen), then the Port Liner.</p></article></div>
   </div>
 </section>
 
@@ -190,8 +190,8 @@
     <div class="section-head reveal"><span class="eyebrow">Details</span><h2 id="details-heading">Before you book</h2></div>
     <div class="two-col reveal">
       <div><h3>Included</h3><ul class="tour-list"><li>Sho as your private guide for the length you book, in English (or Japanese, if you prefer)</li><li>A route planned for your group before the day</li><li>Food stops checked ahead for any allergies you tell me about</li></ul></div>
-      <div><h3>Not included</h3><ul class="tour-list"><li>Train and bus fares (Enoden one-day pass 800 yen)</li><li>Kotoku-in (300 yen, plus 50 yen to go inside the Buddha) and Hase-dera (400 yen)</li><li>Hokoku-ji (400 yen) and its matcha (600 yen)</li><li>Food and drinks</li></ul></div>
-      <div><h3>Good to know</h3><ul class="tour-list"><li>Kamakura asks visitors not to eat while walking in crowded places. We eat in shops or where we can stop, and around the station, black kites sometimes snatch food from people&#x27;s hands.</li><li>Inside the Great Buddha it gets hot and humid, and entry can stop on very hot days.</li><li>Most of this route is outdoors. In heavy rain I&#x27;ll suggest switching to Yokohama&#x27;s indoor stops.</li><li>I look after the day itself. Train tickets, hotels and any entry tickets you want to book ahead are yours to arrange. I&#x27;ll tell you exactly where and when to meet me.</li><li>We get around by train, bus and on foot, the same way people here do. I don&#x27;t drive guests, and I&#x27;ll show you how the ticket machines work as we go.</li></ul></div>
+      <div><h3>Not included</h3><ul class="tour-list"><li>Train, bus and ferry fares</li><li>Food and drinks</li></ul></div>
+      <div><h3>Good to know</h3><ul class="tour-list"><li>Itami Skypark is free and has no regular closing days. Weekends get crowded.</li><li>Which end of Itami&#x27;s runway the planes land at depends on the wind, so I confirm the plan on the morning.</li><li>At Kobe, keep tripods clear of aisles, benches, stairs and spots along the fence.</li><li>Photos aren&#x27;t allowed at security, immigration or customs at Kobe Airport.</li><li>The ferry can rock in strong wind. If the sea is rough, we take the limousine bus instead.</li><li>Rain plan: the Sky Museum at Kansai Airport and the Sky Court at Kobe Airport are indoors.</li><li>I look after the day itself. Train tickets, hotels and any entry tickets you want to book ahead are yours to arrange. I&#x27;ll tell you exactly where and when to meet me.</li><li>We get around by train, bus, ferry and on foot, the same way people here do. I don&#x27;t drive guests, and I&#x27;ll show you how the ticket machines work as we go.</li></ul></div>
     </div>
   </div>
 </section>
@@ -209,16 +209,16 @@
 <section id="pricing" aria-labelledby="pricing-heading">
   <div class="container price-tbd reveal">
     <span class="eyebrow">Pricing</span>
-    <h2 id="pricing-heading" style="margin-top:12px;">Prices are still being set</h2>
-    <div class="tbd">Price TBD</div>
-    <p style="max-width:560px;margin:0 auto;color:var(--text-muted);">I haven&#x27;t fixed my prices yet. You&#x27;ll pay one price for your whole group of up to six people, quoted in USD, and the quote is free.</p>
+    <h2 id="pricing-heading" style="margin-top:12px;">Quotes in six currencies</h2>
+    <div class="tbd">Free quote</div>
+    <p style="max-width:560px;margin:0 auto;color:var(--text-muted);">Quotes are provided in USD, CAD, AUD, NZD, GBP or EUR, so you can skip the hassle of currency conversion. Other currencies are quoted in USD. Each quote covers your whole group of up to six people. When you send an enquiry, please include your preferred dates and the kinds of experiences you&#x27;d like.</p>
   </div>
 </section>
 
 <section id="faq" aria-labelledby="faq-heading">
   <div class="container" style="max-width:760px;">
     <div class="section-head reveal"><span class="eyebrow">FAQ</span><h2 id="faq-heading">Questions people ask</h2></div>
-    <div class="faq-list reveal"><details><summary>Why is Kamakura&#x27;s famous biscuit shaped like a dove?</summary><p>The character for eight on the plaque of Tsurugaoka Hachimangu&#x27;s main hall is drawn as two doves. Toshimaya&#x27;s Hato Sable takes its shape from that.</p></details><details><summary>Is there a lot of climbing?</summary><p>The main shrine at Tsurugaoka Hachimangu sits at the top of a big stone staircase. The Great Buddha is on flat ground.</p></details></div>
+    <div class="faq-list reveal"><details><summary>Which airport should we pick for a half day?</summary><p>Itami, if you&#x27;d like planes close overhead. Kansai or Kobe, if you&#x27;d like the sea in your photos. Tell me what you want to see and I&#x27;ll suggest one.</p></details><details><summary>Can we see all three in one day?</summary><p>Sometimes. On a full day we can usually do two, and all three if time allows. Kansai to Kobe is a ferry ride, and Kansai to Itami is a limousine bus.</p></details><details><summary>Which runway will we see at Itami?</summary><p>That depends on the wind on the day, so I&#x27;ll explain it on the spot rather than promise it in advance.</p></details></div>
   </div>
 </section>
 
@@ -226,13 +226,13 @@
   <div class="container">
     <div class="cta-big reveal">
       <span class="eyebrow" style="color: color-mix(in srgb, var(--bg) 70%, transparent);">Free quote</span>
-      <h2 style="margin-top:16px;">Planning a day in Kamakura</h2>
-      <p style="font-size:17px;max-width:560px;margin:12px auto 28px;">Send me your date, group size and anything you can&#x27;t eat, and I&#x27;ll put together a route and a free quote.</p>
+      <h2 style="margin-top:16px;">Planning a day at the Kansai airports</h2>
+      <p style="font-size:17px;max-width:560px;margin:12px auto 28px;">Tell me your date, how many of you there are and anything you can&#x27;t eat. I&#x27;ll send back a route and a free quote.</p>
       <a href="../contact" class="btn btn-primary">Ask for a free quote →</a>
     </div>
     <div style="margin-top:56px;text-align:center;" class="reveal">
       <h3 style="font-size:18px;margin-bottom:16px;">More places I can take you</h3>
-      <div class="area-links"><a href="./asakusa">Asakusa</a><a href="./shibuya">Shibuya</a><a href="./shinjuku">Shinjuku</a><a href="./yokohama">Yokohama</a><a href="./shonan-enoshima">Shonan &amp; Enoshima</a><a href="./hakone">Hakone</a><a href="./mt-fuji">Mt Fuji area</a><a href="./atami">Atami</a><a href="./ito">Ito</a><a href="./shimoda">Shimoda</a><a href="./osaka">Osaka</a><a href="./kyoto">Kyoto</a><a href="./kanazawa">Kanazawa</a><a href="./kyushu">Fukuoka, Dazaifu &amp; Yufuin</a><a href="./haneda">Haneda Airport</a><a href="./sapporo">Sapporo</a></div>
+      <div class="area-links"><a href="./asakusa">Asakusa</a><a href="./shibuya">Shibuya</a><a href="./shinjuku">Shinjuku</a><a href="./yokohama">Yokohama</a><a href="./kamakura-shonan-enoshima">Kamakura, Shonan &amp; Enoshima</a><a href="./hakone">Hakone</a><a href="./mt-fuji">Mt Fuji area</a><a href="./atami">Atami</a><a href="./shimoda">Shimoda</a><a href="./osaka">Osaka</a><a href="./kyoto">Kyoto</a><a href="./kanazawa">Kanazawa</a><a href="./kyushu">Fukuoka, Dazaifu &amp; Yufuin</a><a href="./haneda">Haneda Airport</a><a href="./sapporo">Sapporo</a></div>
       <p style="margin-top:14px;color:var(--text-soft);font-size:14px;">Ask me about other areas.</p>
     </div>
   </div>

@@ -8,7 +8,7 @@
 
 <!-- ── PRIMARY SEO META ── -->
 <title>海外から来るご友人を英語で案内します | LUMA Path</title>
-<meta name="description" content="海外からお越しになるご友人やご家族、同僚の観光を、日英バイリンガルのガイドが英語でご案内します。浅草や鎌倉、箱根、京都など、17のエリアから選べる1組6名までのプライベートツアーです。料金は検討中で、お見積りは無料です。" />
+<meta name="description" content="海外からお越しになるご友人やご家族、同僚の観光を、日英バイリンガルのガイドが英語でご案内します。浅草や鎌倉、箱根、京都など、16のエリアから選べる1組6名までのプライベートツアーです。料金は1組ごとに無料でお見積りいたします。" />
 <meta name="keywords" content="訪日 観光案内,英語 ガイド,プライベートツアー,海外 友人 観光,英語 観光ガイド 東京,LUMA Path" />
 <meta name="author" content="LUMA" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -21,7 +21,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://studio-lumadesign.com/services/tour" />
 <meta property="og:title" content="海外から来るご友人を英語で案内します | LUMA Path" />
-<meta property="og:description" content="海外からお越しになるご友人やご家族を、私が英語でご案内します。17のエリアから選べるプライベートツアーです。料金は検討中で、お見積りは無料です。" />
+<meta property="og:description" content="海外からお越しになるご友人やご家族を、私が英語でご案内します。16のエリアから選べるプライベートツアーです。料金は1組ごとに無料でお見積りいたします。" />
 <meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -32,7 +32,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@s_league_Japan" />
 <meta name="twitter:title" content="海外から来るご友人を英語で案内します | LUMA Path" />
-<meta name="twitter:description" content="海外から来るご友人やご家族を、私が英語で案内します。17のエリアから選べるプライベートツアーです。料金は検討中、見積りは無料です。" />
+<meta name="twitter:description" content="海外から来るご友人やご家族を、私が英語で案内します。16のエリアから選べるプライベートツアーです。料金は1組ごとで、お見積りは無料です。" />
 <meta name="twitter:image" content="https://studio-lumadesign.com/og-image.jpg" />
 
 <link rel="preload" href="/fonts/urbanist-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -61,11 +61,11 @@
       ],
       "serviceType": "海外ゲスト向けのパーソナライズドガイドツアー",
       "url": "https://studio-lumadesign.com/services/tour",
-      "description": "海外から来る方を、日英バイリンガルのガイドが英語で案内するプライベートツアー。浅草、鎌倉、箱根、京都など17のエリアから選べます。1組6名まで。料金は検討中。",
+      "description": "海外から来る方を、日英バイリンガルのガイドが英語で案内するプライベートツアー。浅草、鎌倉、箱根、京都など16のエリアから選べます。1組6名まで。料金は1組ごとにお見積りします。",
       "offers": {
         "@type": "Offer",
         "priceCurrency": "USD",
-        "description": "1組 (6名まで) ごとの料金。料金は検討中"
+        "description": "1組 (6名まで) ごとの料金。お見積りは無料"
       }
     },
     {
@@ -117,6 +117,14 @@
 <style id="page-overrides">
   /* ── HERO: 暗幕・文字色・ボタンは shared.css の .hero--photo で共通化。
      ここではサイズと固有レイアウトのみ指定する (2026-08-06) ── */
+  /* 2026-10-23 Sho 指示: HERO を静止画から webm に。動画は nav.js が 768px 以上でだけ読み込む (768px 未満と reduced-motion では背景の静止画のまま)。
+     暗幕は header の背景にあるため、動画の上に同じグラデーションを重ねる */
+  .svc-hero { overflow: hidden; }
+  .svc-hero .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+  .svc-hero .hero-scrim { position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background: linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 34%, var(--scrim-3) 58%, var(--scrim-4) 76%); }
+  .svc-hero > .container { position: relative; z-index: 2; }
+  @media (max-width: 767px), (prefers-reduced-motion: reduce) { .svc-hero .hero-video, .svc-hero .hero-scrim { display: none; } }
   .svc-hero {
     position: relative;
     /* デスクトップ最大値は据え置き、狭幅のみ縮小して崩れ防止 */
@@ -166,6 +174,23 @@
   @media (max-width:640px){ .flow-num{font-size:38px} }
 
   /* 2026-09-29 LUMA Path リニューアル */
+  /* 2026-10-23 Sho 指示: For you を案A (2段) に。上は短い文の一覧を大きく、下はガイドの写真・紹介2文・事実3つで、経歴の全文は折りたたむ */
+  .fy-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 32px; margin-top: 16px; }
+  .fy-list li { position: relative; padding-left: 22px; font-size: 18px; line-height: 1.55; font-weight: 500; color: var(--text); }
+  .fy-list li::before { content: ""; position: absolute; left: 0; top: .62em; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  .fy-guide { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 24px; align-items: start; margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--border); }
+  .fy-guide > img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; }
+  .fy-intro { font-size: 17px; line-height: 1.8; color: var(--text); margin: 0; }
+  .fy-chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 16px 0 18px; }
+  .fy-chips li { border: 1px solid var(--border); background: var(--bg-soft); border-radius: 999px; padding: 6px 14px; font-size: 14px; line-height: 1.4; color: var(--text); }
+  .fy-more summary { cursor: pointer; color: var(--accent); font-weight: 600; font-size: 15px; }
+  .fy-more[open] summary { margin-bottom: 12px; }
+  @media (max-width: 640px) {
+    .fy-list { grid-template-columns: 1fr; }
+    .fy-list li { font-size: 17px; }
+    .fy-guide { grid-template-columns: 1fr; gap: 16px; }
+    .fy-guide > img { width: 72px; height: 72px; }
+  }
   .path-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; color: var(--text-muted); font-size: 15px; line-height: 1.8; margin-top: 12px; }
   .path-list li { padding-left: 18px; position: relative; }
   .path-list li::before { content: ""; position: absolute; left: 0; top: .78em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
@@ -247,6 +272,8 @@
 </nav>
 
 <header class="hero hero--photo svc-hero hero-webp-tour h5p" id="home" tabindex="-1" style="view-transition-name:vt-path;--hero-photo:url('../images/hero/compare-tour-1920.jpg');">
+  <video class="hero-video" data-src-webm="../images/hero/path-hero.webm" data-src-mp4="../images/hero/path-hero.mp4" muted loop playsinline preload="none" poster="../images/hero/path-hero-poster.jpg" aria-hidden="true" tabindex="-1"></video>
+  <div class="hero-scrim" aria-hidden="true"></div>
   <div class="container">
     <span class="eyebrow">LUMA Path / Service 03</span>
     <p class="giant" aria-hidden="true">Path<em>.</em></p>
@@ -254,7 +281,7 @@
       <span class="t-line">海外から来るご友人を、</span>
       <span class="t-line">私が<span class="accent">英語で</span>案内します。</span>
     </h1>
-    <p class="sub">来日するご友人やご家族、職場の同僚の観光を、日本在住のお客様に代わってご案内します。行き先は浅草や鎌倉、箱根、京都など、17のエリアからお選びいただけます。1組6名までのプライベートツアーで、ご依頼主の方の同行も可能です。</p>
+    <p class="sub">来日するご友人やご家族、職場の同僚の観光を、日本在住のお客様に代わってご案内します。行き先は浅草や鎌倉、箱根、京都など、16のエリアからお選びいただけます。1組6名までのプライベートツアーで、ご依頼主の方の同行も可能です。</p>
     <div class="hero-cta-row">
       <a href="../contact" class="btn btn-primary"><span class="nb">無料でお見積りを依頼する →</span></a>
       <a href="#areas" class="btn btn-secondary">案内できるエリアを見る</a>
@@ -265,20 +292,23 @@
 <section id="overview" aria-labelledby="overview-heading">
   <div class="container">
     <div class="section-head reveal"><span class="eyebrow">For you</span><h2 id="overview-heading">海外からお越しになる方の観光を、代わりにお引き受けします</h2></div>
-    <div class="svc-overview-grid reveal">
-      <div>
-        <p class="svc-overview-body">次のようなときにご依頼ください。</p>
-        <ul class="path-list">
-          <li>来日するご友人やご家族に日本を見せたいけれど、滞在中ずっとは付き添えない。</li>
-          <li>海外の同僚や取引先が来日し、仕事の合間に観光の時間がある。</li>
-          <li>英語で名所の説明をするのは荷が重い。</li>
-          <li>自分も一緒に歩きたいが、行き先と段取りは任せたい。</li>
-        </ul>
-      </div>
+    <div class="reveal">
+      <p class="svc-overview-body">次のようなときにご依頼ください。</p>
+      <ul class="fy-list">
+        <li>来日するご友人やご家族に、ずっとは付き添えないとき</li>
+        <li>来日した同僚や取引先に観光の時間があるが、ご自身で案内する余裕がないとき</li>
+        <li>英語で観光地を説明するのは荷が重いとき</li>
+        <li>同行はしたいが、段取りは任せたいとき</li>
+      </ul>
+    </div>
+    <div class="fy-guide reveal">
+      <img src="../profile.webp" alt="ガイドの浅野 彰" width="96" height="96" loading="lazy" decoding="async" />
       <div>
         <p class="path-label">Your guide</p>
-        <h3 class="path-guide-h">中学3年生でブリスベンへ渡り、9年間暮らしました</h3>
-        <p class="svc-overview-body">2011年1月、中学3年生のときにオーストラリアのブリスベンへ留学しました。帰国したのは大学を卒業した2020年3月です。9年間、現地の学校に通いながらアルバイトも経験しました。<br><br>言葉も習慣も違う人たちの中へ入っていくことに、物怖じはしません。ご案内のあいだ私が気にかけているのは、お客様が日本での時間を楽しめているかどうかです。<br><br>航空機の撮影は2009年から続けております。帰国後は撮影のたびに国内各地の空港と街を訪れてきました。このページに掲載した17のエリアは、いずれも私が実際に足を運んだ場所です。<br><br>私自身、キウイに重いアレルギー (アナフィラキシー) があり、バラ科の果物の一部も食べられません。そのため、立ち寄る飲食店には前もって確認を入れております。お客様に食べられないものがあれば、最初のご相談時にお知らせください。</p>
+        <h3 class="path-guide-h">ご案内は私が担当いたします</h3>
+        <p class="fy-intro">ご案内は1組ずつ、英語と日本語で行います。私自身に食物アレルギーがあるため、立ち寄る飲食店には前もって確認しております。</p>
+        <ul class="fy-chips"><li>ブリスベンで9年間 (2011年1月から2020年3月)</li><li>横浜を拠点に活動</li><li>2009年から航空機を撮影</li></ul>
+        <details class="fy-more"><summary>経歴を読む</summary><p class="svc-overview-body">2011年1月、中学3年生のときにオーストラリアのブリスベンへ留学しました。帰国したのは大学を卒業した2020年3月です。9年間、現地の学校に通いながらアルバイトも経験しました。<br><br>言葉も習慣も違う人たちの中へ入っていくことに、物怖じはしません。ご案内のあいだ私が気にかけているのは、お客様が日本での時間を楽しめているかどうかです。<br><br>帰国後は、航空機の撮影のために国内各地の空港と街を訪れてきました。このページに掲載した16のエリアは、いずれも私が実際に足を運んだ場所です。<br><br>私自身、キウイに重いアレルギー (アナフィラキシー) があり、バラ科の果物の一部も食べられません。お客様に食べられないものがあれば、最初のご相談時にお知らせください。</p></details>
       </div>
     </div>
   </div>
@@ -286,7 +316,7 @@
 
 <section id="areas" aria-labelledby="areas-heading" style="background:var(--bg-soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
   <div class="container">
-    <div class="section-head reveal"><span class="eyebrow">Areas</span><h2 id="areas-heading">案内できる17のエリア</h2><p>エリアごとの詳しい内容は、英語のページに掲載しております。URL をそのままゲストの方へお送りいただけます。</p></div>
+    <div class="section-head reveal"><span class="eyebrow">Areas</span><h2 id="areas-heading">案内できる16のエリア</h2><p>エリアごとの詳しい内容は、英語のページに掲載しております。URL をそのままゲストの方へお送りいただけます。</p></div>
     <div class="area-sec reveal">
       <div class="area-region"><h3>東京</h3><ul class="area-cards">
         <li><a class="area-card" href="../en/tours/asakusa" lang="ja"><picture><source type="image/webp" srcset="../images/hero/haneda-edo-koji-nihonbashi-960.webp"><img src="../images/hero/haneda-edo-koji-nihonbashi-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>浅草</b><span class="area-d">東京の下町をめぐります。</span><span class="area-more">英語のページはこちら <span aria-hidden="true">→</span></span></span></a></li>
@@ -295,18 +325,16 @@
       </ul></div>
       <div class="area-region"><h3>神奈川</h3><ul class="area-cards">
         <li><a class="area-card" href="../en/tours/yokohama" lang="ja"><picture><source type="image/webp" srcset="../images/hero/yokohama-cosmo-clock-night-960.webp"><img src="../images/hero/yokohama-cosmo-clock-night-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>横浜</b><span class="area-d">私が拠点にしている街です。</span><span class="area-more">英語のページはこちら <span aria-hidden="true">→</span></span></span></a></li>
-        <li><a class="area-card" href="../en/tours/kamakura" lang="ja"><picture><source type="image/webp" srcset="../images/hero/enoshima-ryugu-gate-960.webp"><img src="../images/hero/enoshima-ryugu-gate-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>鎌倉</b><span class="area-d">寺と神社を訪ねます。</span><span class="area-more">英語のページはこちら <span aria-hidden="true">→</span></span></span></a></li>
-        <li><a class="area-card" href="../en/tours/shonan-enoshima" lang="ja"><picture><source type="image/webp" srcset="../images/hero/enoshima-island-dusk-960.webp"><img src="../images/hero/enoshima-island-dusk-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>湘南・江ノ島</b><span class="area-d">海沿いを歩き、島へ渡ります。</span><span class="area-more">英語のページはこちら <span aria-hidden="true">→</span></span></span></a></li>
-        <li><a class="area-card" href="../en/tours/hakone" lang="ja"><picture><source type="image/webp" srcset="../images/hero/atami-akao-forest-pine-white-sand-960.webp"><img src="../images/hero/atami-akao-forest-pine-white-sand-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>箱根</b><span class="area-d">山あいの温泉地を回ります。</span><span class="area-more">英語のページはこちら <span aria-hidden="true">→</span></span></span></a></li>
+        <li><a class="area-card" href="../en/tours/kamakura-shonan-enoshima" lang="ja"><picture><source type="image/webp" srcset="../images/hero/enoshima-island-dusk-960.webp"><img src="../images/hero/enoshima-island-dusk-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>鎌倉・湘南・江ノ島</b><span class="area-d">鎌倉の寺社を訪ね、海沿いを江ノ島へ渡ります。</span><span class="area-more">英語のページはこちら <span aria-hidden="true">→</span></span></span></a></li>
+        <li><a class="area-card" href="../en/tours/hakone" lang="ja"><picture><source type="image/webp" srcset="../images/hero/hakone-yumoto-river-960.webp"><img src="../images/hero/hakone-yumoto-river-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>箱根</b><span class="area-d">山あいの温泉地を回ります。</span><span class="area-more">英語のページはこちら <span aria-hidden="true">→</span></span></span></a></li>
       </ul></div>
       <div class="area-region"><h3>富士山と伊豆</h3><ul class="area-cards">
         <li><a class="area-card" href="../en/tours/mt-fuji" lang="ja"><picture><source type="image/webp" srcset="../images/hero/haneda-mount-fuji-blue-hour-960.webp"><img src="../images/hero/haneda-mount-fuji-blue-hour-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>富士山周辺</b><span class="area-d">富士山の見える場所へ向かいます。</span><span class="area-more">英語のページはこちら <span aria-hidden="true">→</span></span></span></a></li>
         <li><a class="area-card" href="../en/tours/atami" lang="ja"><picture><source type="image/webp" srcset="../images/hero/atami-akao-forest-sea-terrace-960.webp"><img src="../images/hero/atami-akao-forest-sea-terrace-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>熱海</b><span class="area-d">海に面した温泉町です。</span><span class="area-more">英語のページはこちら <span aria-hidden="true">→</span></span></span></a></li>
-        <li><a class="area-card" href="../en/tours/ito" lang="ja"><picture><source type="image/webp" srcset="../images/hero/atami-kiunkaku-from-the-garden-960.webp"><img src="../images/hero/atami-kiunkaku-from-the-garden-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>伊東</b><span class="area-d">伊豆半島の東側、海沿いの町を回ります。</span><span class="area-more">英語のページはこちら <span aria-hidden="true">→</span></span></span></a></li>
         <li><a class="area-card" href="../en/tours/shimoda" lang="ja"><picture><source type="image/webp" srcset="../images/hero/enoshima-view-from-the-island-960.webp"><img src="../images/hero/enoshima-view-from-the-island-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>下田</b><span class="area-d">伊豆半島の南にある港町です。</span><span class="area-more">英語のページはこちら <span aria-hidden="true">→</span></span></span></a></li>
       </ul></div>
       <div class="area-region"><h3>関西</h3><ul class="area-cards">
-        <li><a class="area-card" href="../en/tours/osaka" lang="ja"><picture><source type="image/webp" srcset="../images/hero/itami-ana-over-the-city-960.webp"><img src="../images/hero/itami-ana-over-the-city-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>大阪市内</b><span class="area-d">街を食べ歩きながら回ります。</span><span class="area-more">英語のページはこちら <span aria-hidden="true">→</span></span></span></a></li>
+        <li><a class="area-card" href="../en/tours/osaka" lang="ja"><picture><source type="image/webp" srcset="../images/hero/osaka-city-skyline-960.webp"><img src="../images/hero/osaka-city-skyline-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>大阪市内</b><span class="area-d">街を食べ歩きながら回ります。</span><span class="area-more">英語のページはこちら <span aria-hidden="true">→</span></span></span></a></li>
         <li><a class="area-card" href="../en/tours/kyoto" lang="ja"><picture><source type="image/webp" srcset="../images/hero/uji-byodoin-phoenix-hall-pond-960.webp"><img src="../images/hero/uji-byodoin-phoenix-hall-pond-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>京都市内</b><span class="area-d">寺社と古い町並みを訪ねます。</span><span class="area-more">英語のページはこちら <span aria-hidden="true">→</span></span></span></a></li>
       </ul></div>
       <div class="area-region"><h3>北陸と九州</h3><ul class="area-cards">
@@ -318,6 +346,7 @@
       </ul></div>
       <div class="area-region"><h3>空港</h3><ul class="area-cards">
         <li><a class="area-card" href="../en/tours/haneda" lang="ja"><picture><source type="image/webp" srcset="../images/hero/haneda-control-tower-at-night-960.webp"><img src="../images/hero/haneda-control-tower-at-night-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>羽田空港</b><span class="area-d">航空機を見て過ごすツアーです。2009年から航空機を撮影してきた経験を活かしてご案内します。</span><span class="area-more">英語のページはこちら <span aria-hidden="true">→</span></span></span></a></li>
+        <li><a class="area-card" href="../en/tours/kansai-airports" lang="ja"><picture><source type="image/webp" srcset="../images/hero/itami-airport-terminal-night-960.webp"><img src="../images/hero/itami-airport-terminal-night-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>関西3空港</b><span class="area-d">伊丹、関西、神戸の空港をめぐり、航空機を眺めて過ごします。</span><span class="area-more">英語のページはこちら <span aria-hidden="true">→</span></span></span></a></li>
       </ul></div>
     </div>
     <p class="reveal" style="margin-top:20px;color:var(--text-muted);">ほかの地域に関しても、お気軽にご相談ください。<a href="../en/services/tour">ツアー全体の英語のページはこちら →</a></p>
@@ -327,12 +356,11 @@
 
 <section id="offers" aria-labelledby="offers-heading">
   <div class="container">
-    <div class="section-head reveal"><span class="eyebrow">Length</span><h2 id="offers-heading">ツアーの長さは4種類を予定しております</h2><p>内容は現在検討中です。いずれの長さも、1組6名までとなる予定です。</p></div>
+    <div class="section-head reveal"><span class="eyebrow">Length</span><h2 id="offers-heading">ご希望の長さをお選びください</h2><p>いずれの長さも、1組6名までのプライベートツアーとなります。</p></div>
     <div class="offers-grid reveal">
-      <article class="offer-card"><span class="offer-card-num">01</span><h3>2時間ほど</h3><p>1つの街に絞ってご案内します。到着した日や、帰国前の空き時間におすすめです。</p></article>
-      <article class="offer-card"><span class="offer-card-num">02</span><h3>半日 (3〜4時間)</h3><p>1つの街をゆっくり回るか、近くの2つの街を続けて訪ねます。</p></article>
-      <article class="offer-card"><span class="offer-card-num">03</span><h3>1日 (7〜8時間)</h3><p>鎌倉や箱根のように、東京から離れた場所へ出かけるときの形です。</p></article>
-      <article class="offer-card"><span class="offer-card-num">04</span><h3>2日間</h3><p>京都や金沢など、泊まりがけで回る行き先に向けた形です。</p></article>
+      <article class="offer-card"><span class="offer-card-num">01</span><h3>半日 (3〜4時間)</h3><p>1つの街をゆっくり回るか、近くの2つの街を続けて訪ねます。</p></article>
+      <article class="offer-card"><span class="offer-card-num">02</span><h3>1日 (7〜8時間)</h3><p>鎌倉や箱根のように、東京から離れた場所へ出かけるときの形です。</p></article>
+      <article class="offer-card"><span class="offer-card-num">03</span><h3>2日間</h3><p>京都や金沢など、泊まりがけで回る行き先に向けた形です。</p></article>
     </div>
   </div>
 </section>
@@ -347,8 +375,8 @@
       </div>
       <div>
         <span class="eyebrow">Pricing</span>
-        <h2 id="pricing-heading" style="margin-top:12px;">料金は検討中です</h2>
-        <p style="color:var(--text-muted);line-height:1.9;">料金は1組ごとに決める形で、現在検討しております。行き先と時間、人数をお伺いした後に、無料でお見積りを提示いたします。</p>
+        <h2 id="pricing-heading" style="margin-top:12px;">料金は1組ごとのお見積りとなります</h2>
+        <p style="color:var(--text-muted);line-height:1.9;">料金は、6名までの1組につき1つの金額です。行き先と時間、人数をお伺いした後に、お見積りを提示いたします。無料ですので、お気軽にご相談ください。</p>
       </div>
     </div>
   </div>

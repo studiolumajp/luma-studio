@@ -7,7 +7,7 @@
 <meta name="color-scheme" content="light only" />
 
 <title>Private tours of Japan in English with Sho | LUMA Path</title>
-<meta name="description" content="Private tours in English for up to six people, in 17 areas from Asakusa and Hakone to Kyoto, Dazaifu and Sapporo. Your guide, Sho, spent nine years in Brisbane." />
+<meta name="description" content="Private tours in English for up to six people, in 16 areas from Asakusa and Hakone to Kyoto, Dazaifu and Sapporo. Your guide, Sho, spent nine years in Brisbane." />
 <meta name="keywords" content="private tour Japan,English-speaking guide Japan,private guide Tokyo,Kyoto private tour,Mt Fuji private tour,LUMA Path" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://studio-lumadesign.com/en/services/tour" />
@@ -19,7 +19,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://studio-lumadesign.com/en/services/tour" />
 <meta property="og:title" content="Private tours of Japan in English with Sho | LUMA Path" />
-<meta property="og:description" content="Private tours in English for your group of up to six, in 17 areas across Japan. Prices are still being set, and quotes are free." />
+<meta property="og:description" content="Private tours in English for your group of up to six, in 16 areas across Japan. One price per group, quoted in USD, CAD, AUD, NZD, GBP or EUR. Quotes are free." />
 <meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -57,11 +57,11 @@
       ],
       "serviceType": "Private tour guide",
       "url": "https://studio-lumadesign.com/en/services/tour",
-      "description": "Private tours in English for up to six people, in 17 areas including Asakusa, Kamakura, Hakone, Kyoto, Dazaifu and Sapporo. Prices are still being set.",
+      "description": "Private tours in English for up to six people, in 16 areas including Asakusa, Kamakura, Hakone, Kyoto, Dazaifu and Sapporo. One price per group, with a free quote.",
       "offers": {
         "@type": "Offer",
         "priceCurrency": "USD",
-        "description": "One price per group of up to six people. Prices are still being set, and quotes are free."
+        "description": "One price per group of up to six people, quoted in USD, CAD, AUD, NZD, GBP or EUR (other currencies in USD). Quotes are free."
       }
     },
     {
@@ -113,6 +113,14 @@
 <style id="page-overrides">
   /* ── HERO: 暗幕・文字色・ボタンは shared.css の .hero--photo で共通化。
      ここではサイズと固有レイアウトのみ指定する (2026-08-06) ── */
+  /* 2026-10-23 Sho 指示: HERO を静止画から webm に。動画は nav.js が 768px 以上でだけ読み込む (768px 未満と reduced-motion では背景の静止画のまま)。
+     暗幕は header の背景にあるため、動画の上に同じグラデーションを重ねる */
+  .svc-hero { overflow: hidden; }
+  .svc-hero .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+  .svc-hero .hero-scrim { position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background: linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 34%, var(--scrim-3) 58%, var(--scrim-4) 76%); }
+  .svc-hero > .container { position: relative; z-index: 2; }
+  @media (max-width: 767px), (prefers-reduced-motion: reduce) { .svc-hero .hero-video, .svc-hero .hero-scrim { display: none; } }
   .svc-hero {
     position: relative;
     padding: 112px 0 128px;
@@ -143,6 +151,23 @@
   @media (max-width:640px){ .flow-num{font-size:38px} }
 
   /* 2026-09-29 LUMA Path renewal */
+  /* 2026-10-23 Sho 指示: For you を案A (2段) に。上は短い文の一覧を大きく、下はガイドの写真・紹介2文・事実3つで、経歴の全文は折りたたむ */
+  .fy-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 32px; margin-top: 16px; }
+  .fy-list li { position: relative; padding-left: 22px; font-size: 18px; line-height: 1.55; font-weight: 500; color: var(--text); }
+  .fy-list li::before { content: ""; position: absolute; left: 0; top: .62em; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  .fy-guide { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 24px; align-items: start; margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--border); }
+  .fy-guide > img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; }
+  .fy-intro { font-size: 17px; line-height: 1.8; color: var(--text); margin: 0; }
+  .fy-chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 16px 0 18px; }
+  .fy-chips li { border: 1px solid var(--border); background: var(--bg-soft); border-radius: 999px; padding: 6px 14px; font-size: 14px; line-height: 1.4; color: var(--text); }
+  .fy-more summary { cursor: pointer; color: var(--accent); font-weight: 600; font-size: 15px; }
+  .fy-more[open] summary { margin-bottom: 12px; }
+  @media (max-width: 640px) {
+    .fy-list { grid-template-columns: 1fr; }
+    .fy-list li { font-size: 17px; }
+    .fy-guide { grid-template-columns: 1fr; gap: 16px; }
+    .fy-guide > img { width: 72px; height: 72px; }
+  }
   .path-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; color: var(--text-muted); font-size: 15px; line-height: 1.8; margin-top: 12px; }
   .path-list li { padding-left: 18px; position: relative; }
   .path-list li::before { content: ""; position: absolute; left: 0; top: .78em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
@@ -201,33 +226,38 @@
 </nav>
 
 <header class="hero hero--photo svc-hero hero-webp-tour h5p" id="home" tabindex="-1" style="view-transition-name:vt-path;--hero-photo:url('../../images/hero/compare-tour-1920.jpg');">
+  <video class="hero-video" data-src-webm="../../images/hero/path-hero.webm" data-src-mp4="../../images/hero/path-hero.mp4" muted loop playsinline preload="none" poster="../../images/hero/path-hero-poster.jpg" aria-hidden="true" tabindex="-1"></video>
+  <div class="hero-scrim" aria-hidden="true"></div>
   <div class="container">
     <span class="eyebrow">LUMA Path / Service 03</span>
     <p class="giant" aria-hidden="true">Path<em>.</em></p>
     <h1 class="hero-title" style="margin-top:18px;">Japan with a local who spent nine years in Australia</h1>
-    <p class="sub">Private tours in English for your group of up to six, in 17 areas from Asakusa to Dazaifu and Sapporo. We travel by train, bus and on foot, at a pace that suits you.</p>
-    <div class="hero-cta-row"><a href="../contact" class="btn btn-primary">Ask for a free quote →</a><a href="#areas" class="btn btn-secondary">See the 17 areas</a></div>
+    <p class="sub">Private tours in English for your group of up to six, in 16 areas from Asakusa to Dazaifu and Sapporo. We travel by train, bus and on foot, at a pace that suits you.</p>
+    <div class="hero-cta-row"><a href="../contact" class="btn btn-primary">Ask for a free quote →</a><a href="#areas" class="btn btn-secondary">See the 16 areas</a></div>
   </div>
 </header>
 
 <section id="overview" aria-labelledby="overview-heading">
   <div class="container">
     <div class="section-head reveal"><span class="eyebrow">For you</span><h2 id="overview-heading">A private guide for your days in Japan</h2></div>
-    <div class="svc-overview-grid reveal">
-      <div>
-        <p class="svc-overview-body">I guide one group at a time. These tours suit you if:</p>
-        <ul class="path-list">
-          <li>It's your first time in Japan, and you'd like someone to ask about everything from ticket machines to menus.</li>
-          <li>You're travelling with children or parents, and want a day planned around them.</li>
-          <li>You've just landed, or fly home tomorrow, and have a few hours free.</li>
-          <li>A friend or colleague in Japan is booking a day for you. They're welcome to come along.</li>
-          <li>You want to get beyond Tokyo, to Kyoto, Mt Fuji, Kanazawa or the Izu coast.</li>
-        </ul>
-      </div>
+    <div class="reveal">
+      <p class="svc-overview-body">These tours suit you if:</p>
+      <ul class="fy-list">
+        <li>It's your first trip to Japan.</li>
+        <li>You're travelling with children or parents.</li>
+        <li>You have a few hours before or after a flight.</li>
+        <li>Someone in Japan is booking the tour for you.</li>
+        <li>You'd like to see more than Tokyo.</li>
+      </ul>
+    </div>
+    <div class="fy-guide reveal">
+      <img src="../../profile.webp" alt="Sho, your guide" width="96" height="96" loading="lazy" decoding="async" />
       <div>
         <p class="path-label">Your guide</p>
         <h3 class="path-guide-h">I'm Sho, and I'll be your guide</h3>
-        <p class="svc-overview-body">In January 2011, in my last year of junior high, I left Japan for Brisbane. I stayed until I'd finished university in March 2020. That's nine years of Australian school, uni and part-time jobs.<br><br>I speak English and Japanese without any trouble, and I don't get shy around people from other cultures. What I care about most on the day is simple: that you're having a good time.<br><br>I'm based in Yokohama. I've been photographing planes since 2009. Since moving back to Japan in 2020, photography has taken me to airports and towns all over the country. Every area on this page is somewhere I've been myself.<br><br>I have a serious kiwi fruit allergy (anaphylaxis) and react to some fruit in the rose family. So I check our food stops with the restaurants before the day. If there's anything you can't eat, tell me when you first get in touch.<br><br>Tours run in English. If someone in your group is more comfortable in Japanese, I can switch.</p>
+        <p class="fy-intro">I guide one group at a time, in English or Japanese. I've been to every area on this page. I have food allergies myself, so I check our food stops with the restaurants before the day.</p>
+        <ul class="fy-chips"><li>Nine years in Brisbane (Jan 2011 to Mar 2020)</li><li>Based in Yokohama</li><li>Photographing planes since 2009</li></ul>
+        <details class="fy-more"><summary>Read my story</summary><p class="svc-overview-body">In January 2011, in my last year of junior high, I left Japan for Brisbane. I stayed until I'd finished university in March 2020. That's nine years of Australian school, uni and part-time jobs.<br><br>I speak English and Japanese without any trouble, and I don't get shy around people from other cultures. What I care about most on the day is simple: that you're having a good time.<br><br>Since moving back to Japan in 2020, photography has taken me to airports and towns all over the country.<br><br>I have a serious kiwi fruit allergy (anaphylaxis) and react to some fruit in the rose family. If there's anything you can't eat, tell me when you first get in touch.</p></details>
       </div>
     </div>
   </div>
@@ -244,18 +274,16 @@
   </ul></div>
   <div class="area-region"><h3>Kanagawa</h3><ul class="area-cards">
     <li><a class="area-card" href="../areas/yokohama"><picture><source type="image/webp" srcset="../../images/hero/yokohama-cosmo-clock-night-960.webp"><img src="../../images/hero/yokohama-cosmo-clock-night-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>Yokohama</b><span class="area-d">The city I'm based in.</span><span class="area-more">See sample routes <span aria-hidden="true">→</span></span></span></a></li>
-    <li><a class="area-card" href="../areas/kamakura"><picture><source type="image/webp" srcset="../../images/hero/enoshima-ryugu-gate-960.webp"><img src="../../images/hero/enoshima-ryugu-gate-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>Kamakura</b><span class="area-d">A day of temples and shrines.</span><span class="area-more">See sample routes <span aria-hidden="true">→</span></span></span></a></li>
-    <li><a class="area-card" href="../areas/shonan-enoshima"><picture><source type="image/webp" srcset="../../images/hero/enoshima-island-dusk-960.webp"><img src="../../images/hero/enoshima-island-dusk-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>Shonan & Enoshima</b><span class="area-d">Along the coast and across to the island.</span><span class="area-more">See sample routes <span aria-hidden="true">→</span></span></span></a></li>
-    <li><a class="area-card" href="../areas/hakone"><picture><source type="image/webp" srcset="../../images/hero/atami-akao-forest-pine-white-sand-960.webp"><img src="../../images/hero/atami-akao-forest-pine-white-sand-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>Hakone</b><span class="area-d">Hot-spring towns up in the mountains.</span><span class="area-more">See sample routes <span aria-hidden="true">→</span></span></span></a></li>
+    <li><a class="area-card" href="../areas/kamakura-shonan-enoshima"><picture><source type="image/webp" srcset="../../images/hero/enoshima-island-dusk-960.webp"><img src="../../images/hero/enoshima-island-dusk-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>Kamakura, Shonan &amp; Enoshima</b><span class="area-d">The Great Buddha, Hase-dera and the Enoden out to Enoshima.</span><span class="area-more">See sample routes <span aria-hidden="true">→</span></span></span></a></li>
+    <li><a class="area-card" href="../areas/hakone"><picture><source type="image/webp" srcset="../../images/hero/hakone-yumoto-river-960.webp"><img src="../../images/hero/hakone-yumoto-river-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>Hakone</b><span class="area-d">Hot-spring towns up in the mountains.</span><span class="area-more">See sample routes <span aria-hidden="true">→</span></span></span></a></li>
   </ul></div>
   <div class="area-region"><h3>Mt Fuji and Izu</h3><ul class="area-cards">
     <li><a class="area-card" href="../areas/mt-fuji"><picture><source type="image/webp" srcset="../../images/hero/haneda-mount-fuji-blue-hour-960.webp"><img src="../../images/hero/haneda-mount-fuji-blue-hour-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>Mt Fuji area</b><span class="area-d">Chureito Pagoda, Honcho-dori and Yoshida udon, by train and on foot.</span><span class="area-more">See sample routes <span aria-hidden="true">→</span></span></span></a></li>
     <li><a class="area-card" href="../areas/atami"><picture><source type="image/webp" srcset="../../images/hero/atami-akao-forest-sea-terrace-960.webp"><img src="../../images/hero/atami-akao-forest-sea-terrace-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>Atami</b><span class="area-d">Kinomiya Shrine's camphor tree, Kiunkaku villa and dried fish by the station.</span><span class="area-more">See sample routes <span aria-hidden="true">→</span></span></span></a></li>
-    <li><a class="area-card" href="../areas/ito"><picture><source type="image/webp" srcset="../../images/hero/atami-kiunkaku-from-the-garden-960.webp"><img src="../../images/hero/atami-kiunkaku-from-the-garden-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>Ito</b><span class="area-d">Tokaikan, the William Adams story and the crater rim on Mt Omuro.</span><span class="area-more">See sample routes <span aria-hidden="true">→</span></span></span></a></li>
     <li><a class="area-card" href="../areas/shimoda"><picture><source type="image/webp" srcset="../../images/hero/enoshima-view-from-the-island-960.webp"><img src="../../images/hero/enoshima-view-from-the-island-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>Shimoda</b><span class="area-d">Perry Road, Ryosen-ji, Hofuku-ji and kinmedai for lunch.</span><span class="area-more">See sample routes <span aria-hidden="true">→</span></span></span></a></li>
   </ul></div>
   <div class="area-region"><h3>Kansai</h3><ul class="area-cards">
-    <li><a class="area-card" href="../areas/osaka"><picture><source type="image/webp" srcset="../../images/hero/itami-ana-over-the-city-960.webp"><img src="../../images/hero/itami-ana-over-the-city-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>Osaka</b><span class="area-d">Osaka Castle, Dotonbori, Kuromon Market and takoyaki.</span><span class="area-more">See sample routes <span aria-hidden="true">→</span></span></span></a></li>
+    <li><a class="area-card" href="../areas/osaka"><picture><source type="image/webp" srcset="../../images/hero/osaka-city-skyline-960.webp"><img src="../../images/hero/osaka-city-skyline-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>Osaka</b><span class="area-d">Osaka Castle, Dotonbori, Kuromon Market and takoyaki.</span><span class="area-more">See sample routes <span aria-hidden="true">→</span></span></span></a></li>
     <li><a class="area-card" href="../areas/kyoto"><picture><source type="image/webp" srcset="../../images/hero/uji-byodoin-phoenix-hall-pond-960.webp"><img src="../../images/hero/uji-byodoin-phoenix-hall-pond-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>Kyoto</b><span class="area-d">Fushimi Inari, Kiyomizu-dera, Nijo Castle and Nishiki Market.</span><span class="area-more">See sample routes <span aria-hidden="true">→</span></span></span></a></li>
   </ul></div>
   <div class="area-region"><h3>Hokuriku and Kyushu</h3><ul class="area-cards">
@@ -267,6 +295,7 @@
   </ul></div>
   <div class="area-region"><h3>Airport</h3><ul class="area-cards">
     <li><a class="area-card" href="../areas/haneda"><picture><source type="image/webp" srcset="../../images/hero/haneda-control-tower-at-night-960.webp"><img src="../../images/hero/haneda-control-tower-at-night-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>Haneda Airport</b><span class="area-d">A day of watching planes, with someone who has photographed them since 2009.</span><span class="area-more">See sample routes <span aria-hidden="true">→</span></span></span></a></li>
+    <li><a class="area-card" href="../areas/kansai-airports"><picture><source type="image/webp" srcset="../../images/hero/itami-airport-terminal-night-960.webp"><img src="../../images/hero/itami-airport-terminal-night-960.jpg" alt="" width="960" height="540" loading="lazy" decoding="async"></picture><span class="area-b"><b>Kansai&#x27;s three airports</b><span class="area-d">Planes at Itami, Kansai and Kobe, one airport or more in a day.</span><span class="area-more">See sample routes <span aria-hidden="true">→</span></span></span></a></li>
   </ul></div>
 </div>
     <p class="reveal" style="margin-top:20px;color:var(--text-muted);">Ask me about other areas.</p>
@@ -275,12 +304,11 @@
 
 <section id="offers" aria-labelledby="offers-heading">
   <div class="container">
-    <div class="section-head reveal"><span class="eyebrow">Length</span><h2 id="offers-heading">Four tour lengths, still being finalised</h2><p>These are the lengths I'm planning. Every tour is private, for one group of up to six people.</p></div>
+    <div class="section-head reveal"><span class="eyebrow">Length</span><h2 id="offers-heading">Choose how long you&#x27;d like</h2><p>Every tour is private, for one group of up to six people.</p></div>
     <div class="offers-grid reveal">
-      <article class="offer-card"><span class="offer-card-num">01</span><h3>2 hours</h3><p>One neighbourhood. Good for the day you land, or a gap before your flight home.</p></article>
-      <article class="offer-card"><span class="offer-card-num">02</span><h3>Half day (3 to 4 hours)</h3><p>One town at an easy pace, or two places close together.</p></article>
-      <article class="offer-card"><span class="offer-card-num">03</span><h3>Full day (7 to 8 hours)</h3><p>A day trip out of the city, to places like Kamakura or Hakone.</p></article>
-      <article class="offer-card"><span class="offer-card-num">04</span><h3>Two days</h3><p>Somewhere worth staying over, like Kyoto, or a pair such as Atami and Ito.</p></article>
+      <article class="offer-card"><span class="offer-card-num">01</span><h3>Half day (3 to 4 hours)</h3><p>One town at an easy pace, or two places close together.</p></article>
+      <article class="offer-card"><span class="offer-card-num">02</span><h3>Full day (7 to 8 hours)</h3><p>A day trip out of the city, to places like Kamakura or Hakone.</p></article>
+      <article class="offer-card"><span class="offer-card-num">03</span><h3>Two days</h3><p>Somewhere worth staying over, like Kyoto, or a pair such as Atami and Hakone.</p></article>
     </div>
   </div>
 </section>
@@ -296,8 +324,8 @@
       </div>
       <div>
         <span class="eyebrow">Pricing</span>
-        <h2 id="pricing-heading" style="margin-top:12px;">Prices are still being set</h2>
-        <p style="color:var(--text-muted);line-height:1.9;">I haven't fixed my prices yet. You'll pay one price for your whole group of up to six people, quoted in USD, and the quote is free.</p>
+        <h2 id="pricing-heading" style="margin-top:12px;">Quotes in six currencies</h2>
+        <p style="color:var(--text-muted);line-height:1.9;">Quotes are provided in USD, CAD, AUD, NZD, GBP or EUR, so you can skip the hassle of currency conversion. Other currencies are quoted in USD. Each quote covers your whole group of up to six people. When you send an enquiry, please include your preferred dates and the kinds of experiences you'd like.</p>
       </div>
     </div>
   </div>
