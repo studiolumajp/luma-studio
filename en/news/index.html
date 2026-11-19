@@ -34,6 +34,11 @@
 
 <link rel="stylesheet" href="../../shared.css?v=l8g" />
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":"News","url":"https://studio-lumadesign.com/en/news/","description":"Site updates, new pages and changes to the services.","inLanguage":"en"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://studio-lumadesign.com/en/"},{"@type":"ListItem","position":2,"name":"News","item":"https://studio-lumadesign.com/en/news/"}]}]}</script>
+<style id="hero-photo-fix">
+  /* HERO の写真はここで直接指定する (2026-11-19)。CSS 変数で渡した写真は、ブラウザーや開き方によって読み込めないため */
+  html body .nw-hero.hero--photo { background: linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 34%, var(--scrim-3) 58%, var(--scrim-4) 76%), url('../../images/photography/yokohama-minatomirai-dusk.jpg') center / cover no-repeat; }
+  @media (max-width: 640px) { html body .nw-hero.hero--photo { background: linear-gradient(180deg, rgba(31, 42, 51, 0.70) 0%, rgba(31, 42, 51, 0.52) 50%, rgba(31, 42, 51, 0.72) 100%), url('../../images/photography/yokohama-minatomirai-dusk.jpg') center / cover no-repeat; } }
+</style>
 <link rel="stylesheet" href="../../motion.css?v=157a" />
 <link rel="icon" href="../../favicon.ico" sizes="48x48" />
 <link rel="icon" href="../../icon.svg" type="image/svg+xml" />
@@ -79,17 +84,25 @@
   </div>
 </header>
 <main class="nw">
-<a class="nw-hl" href="./home-renewal">
-  <img src="../../images/sleague/SL24/sl24-hero-poster.jpg" alt="" loading="eager" decoding="async" width="1280" height="720" />
+<a class="nw-hl" href="./tour-offerings">
+  <img src="../../images/hero/compare-tour-960.jpg" alt="" loading="eager" decoding="async" width="960" height="540" />
   <div class="nw-hl-b">
-    <div class="nw-meta"><time datetime="2026-09-26">2026.09.26</time><span class="nw-chip" style="background:#1565C0;color:#fff;">Site update</span></div>
-    <h2>The Home Page Has Been Redesigned</h2>
-    <p>S.League match footage and the next tournament now come first, and you can choose where to go by what you want to do.</p>
+    <div class="nw-meta"><time datetime="2026-11-19">2026.11.19</time><span class="nw-chip" style="background:#56626D;color:#fff;">Services</span></div>
+    <h2>Tailored LUMA Path tours now have their own page</h2>
+    <p>A new page shows how I plan a day around dietary needs, young children, older guests or short walking distances.</p>
     <span class="nw-more">Read more →</span>
   </div>
 </a>
 <h2 class="nw-clh">Earlier news</h2>
 <ul class="nw-cl">
+  <li><a href="./affiliate-start">
+    <time datetime="2026-11-19">2026.11.19</time><span class="nw-chip" style="background:#EEF2F5;color:#1F2A33;">Notice</span>
+    <span class="nw-lt">Affiliate links for Saily and NordVPN</span>
+  </a></li>
+  <li><a href="./home-renewal">
+    <time datetime="2026-09-26">2026.09.26</time><span class="nw-chip" style="background:#1565C0;color:#fff;">Site update</span>
+    <span class="nw-lt">The Home Page Has Been Redesigned</span>
+  </a></li>
   <li><a href="./hero-slideshow">
     <time datetime="2026-09-03">2026.09.03</time><span class="nw-chip" style="background:#1565C0;color:#fff;">Site update</span>
     <span class="nw-lt">The Home Page Now Cycles Through Fifteen Photographs</span>

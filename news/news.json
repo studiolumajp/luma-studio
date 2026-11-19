@@ -1,5 +1,81 @@
 [
   {
+    "slug": "tour-offerings",
+    "date": "2026-11-19",
+    "cat": "svc",
+    "title": {
+      "ja": "オーダーメイドツアーのページを新設しました",
+      "en": "Tailored LUMA Path tours now have their own page"
+    },
+    "lead": {
+      "ja": "LUMA Path に、食事の制限やご高齢のご家族の同行といったご事情に合わせて行程を組むツアーを加えました。",
+      "en": "A new page shows how I plan a day around dietary needs, young children, older guests or short walking distances."
+    },
+    "body": {
+      "ja": [
+        "来日されるご友人やご家族に食事の制限がある場合や、小さな子どもを連れて来日される場合に向けたご案内です。ご高齢のご家族の同行や、長い距離を歩くことが難しい方がいらっしゃるときも、ご事情に合わせて行程を組みます。",
+        "2026年11月8日に東京で行った、グルテンフリーの食べ歩きツアー (ゲスト2名) での5つの手順も載せております。食事の制限とお好みを伺うところから、次の行き先のガイドを用意するところまでを順にご覧いただけます。飲食店に関しましては、事前に公式の情報を確認し、当日もお店の方に調理の方法をお尋ねします。ただし、コンタミネーション (交差接触) が起きないことは保証いたしかねます。何を召し上がるかは、ゲストの方ご自身でお決めください。",
+        "ご案内できる16のエリアには、それぞれエリアのページとツアーのページがございます。いずれも英語のみで日本語版はございませんが、URL をそのままゲストの方へお送りいただけます。エリアのページでは、主な見どころと私どもの解説、よくあるご質問、ツアーの長さごとのルートの例をご覧いただけます。ツアーのページには待ち合わせ場所や料金に含まれるもの、含まれないもの、ご予約の前に知っておいていただきたいことを載せております。",
+        "14か所では、半日、1日、2日間の3つの長さをご用意しております。関西3空港は半日と1日となります。富士山周辺は、7〜8時間の1日コースを3つからお選びいただけます。河口湖と富士吉田、三島と御殿場、そして御殿場プレミアム・アウトレットで過ごす1日です。アウトレットの日はバスタ新宿で待ち合わせ、ご一緒に高速バスで向かいます。",
+        "お見積りの金額は USD、CAD、AUD、NZD、GBP、EUR のいずれかでお出しします (そのほかの通貨は USD となります)。料金は6名までの1組につき1つの金額です。お見積りは無料です。"
+      ],
+      "en": [
+        "The tailored tours page is for groups that need a little more planning. That could be coeliac disease, a food allergy or another dietary need. It could also be young children who'll need breaks, an older parent who'd like a gentler pace, or someone who finds long walks and stairs hard.",
+        "The page sets out the five steps I took for a gluten-free food walk in Tokyo on 8 November 2026. They run from asking about dietary needs before the tour to writing a guide for the guests' next stops. I check each restaurant's official information before the day and ask the staff how a dish is prepared when we get there, but I can't guarantee there's no cross-contamination in any kitchen. What you eat is always your decision.",
+        "Each of the 16 areas I guide has two pages. The area page covers the main sights, my notes on a few of them and common questions, with sample routes for each tour length. The tour page gives the meeting point, what's included and what isn't, and what to know before you book.",
+        "Fourteen areas offer a half day, a full day or two days, and Kansai's three airports offer a half day or a full day. Mt Fuji is set up as three routes instead. Each is a full day of 7 to 8 hours: Lake Kawaguchi and Fujiyoshida, Mishima and Gotemba, or a shopping day at Gotemba Premium Outlets. For the outlets day, we meet at Busta Shinjuku and ride the bus down together.",
+        "Quotes come in USD, CAD, AUD, NZD, GBP or EUR, so you don't have to convert anything yourself. Any other currency is quoted in USD. One quote covers your whole group of up to six, and it's free."
+      ]
+    },
+    "image": "images/hero/compare-tour-960.jpg",
+    "link": {
+      "ja": "services/tailored-tour.html",
+      "en": "services/tailored-tour.html"
+    },
+    "linkLabel": {
+      "ja": "オーダーメイドツアーを見る",
+      "en": "See tailored tours"
+    }
+  },
+  {
+    "slug": "affiliate-start",
+    "date": "2026-11-19",
+    "cat": "info",
+    "title": {
+      "ja": "Saily と NordVPN のアフィリエイトリンクを掲載しました",
+      "en": "Affiliate links for Saily and NordVPN"
+    },
+    "lead": {
+      "ja": "通信の準備をご紹介するページを新設し、Saily (eSIM) と NordVPN (VPN) のアフィリエイトリンク (広告リンク) の掲載を始めました。",
+      "en": "I've added a guide to staying connected in Japan, with affiliate links to Saily and NordVPN."
+    },
+    "body": {
+      "ja": [
+        "ご友人や取引先の方が来日される前にお送りいただけるよう、「海外でもつながる通信の準備」というページを用意しました。海外旅行で使える eSIM の Saily と、公衆 Wi-Fi で通信を守る VPN の NordVPN をご紹介しております。",
+        "Saily は NordVPN を作った会社の eSIM サービスです。出発前にアプリで設定しておくと、日本に着いた時点でプランが自動で始まります。データ通信はこの eSIM を使い、通話と SMS はふだんの番号のままご利用いただけます。お支払い画面でプロモコード LUMADESIGN をご入力いただくと、10% オフとなります。",
+        "NordVPN は通信を暗号化して IP アドレスを隠す VPN サービスで、ホテルや駅、カフェの公衆 Wi-Fi で役立ちます。ブラックフライデーのセール期間となる2026年12月9日までは、NordVPN の契約に3か月の延長特典が付きます。",
+        "LUMA Path のページには、来日するゲストの方へのご案内として、Saily と NordVPN を並べて掲載しております。LUMA Frame のページにも、ご案内のページへ進むための短い文を加えました。",
+        "これらはアフィリエイトリンク (広告リンク) です。リンクからご購入いただくと私どもが紹介料を頂戴しますが、その分お客様のお支払い額が増えることはありません。該当する箇所には「PR」の表示を付けております。詳しくは、特定商取引法・プライバシーポリシー・利用規約のページにある免責事項の8番をご覧ください。"
+      ],
+      "en": [
+        "The new guide to staying connected in Japan introduces two products. Saily is an eSIM you use for mobile data, and NordVPN is a VPN for public Wi-Fi.",
+        "Saily comes from the company that made NordVPN. You set up the eSIM in the Saily app before you leave, and your plan starts automatically when you arrive. Calls and texts (SMS) stay on your usual number. Use code LUMADESIGN at checkout for 10% off.",
+        "NordVPN encrypts your internet traffic and hides your IP address. It's useful whenever you join public Wi-Fi at a hotel, a station or a café, in Japan or back home. NordVPN's Black Friday sale runs until 9 December 2026 and adds 3 extra months to a plan.",
+        "The LUMA Path page has a short section on both. The LUMA Frame page has a brief note that links to the guide.",
+        "These are affiliate links. If you buy through them, LUMA earns a commission, at no extra cost to you. Every page or section with these links is labelled as affiliate links. Section 8 of the Disclaimer on the Legal & Policies page sets this out."
+      ]
+    },
+    "image": "images/partners/saily-life-friends-960.webp",
+    "link": {
+      "ja": "staying-connected.html",
+      "en": "staying-connected.html"
+    },
+    "linkLabel": {
+      "ja": "通信の準備のご案内を見る",
+      "en": "Read the guide"
+    }
+  },
+  {
     "slug": "home-renewal",
     "date": "2026-09-26",
     "cat": "update",
@@ -50,13 +126,11 @@
     "body": {
       "ja": [
         "これまでは横浜で撮った1枚を固定で敷いていました。1枚だと、LUMA Frame でどんな写真を撮っているのかが伝わりません。",
-        "15枚は読み込むたびに順番が変わります。停止ボタンを左下に置いたので、動きが気になるときは止められます。",
-        "表示用に軽い版を作りました。15枚ぶんを全部読むことはせず、表示中の1枚と次の1枚だけを読みます。実測で158KB です。"
+        "15枚は読み込むたびに順番が変わります。停止ボタンを左下に置いたので、動きが気になるときは止められます。"
       ],
       "en": [
         "Until now a single photograph from Yokohama sat behind the headline. One frame cannot show the range of what LUMA Frame shoots.",
-        "The order changes on every page load. A pause button sits in the lower left for anyone who would rather it held still.",
-        "Each photograph has a lighter version made for this. The page loads the one on screen and the one coming next, not all fifteen. Measured, that is 158KB."
+        "The order changes on every page load. A pause button sits in the lower left for anyone who would rather it held still."
       ]
     },
     "image": "images/photography/yokohama-minatomirai-dusk.jpg",

@@ -37,10 +37,13 @@
 
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"NewsArticle","headline":"The Home Page Has Been Redesigned","description":"S.League match footage and the next tournament now come first, and you can choose where to go by what you want to do.","datePublished":"2026-09-26","dateModified":"2026-09-26","author":{"@id":"https://studio-lumadesign.com/#representative"},"publisher":{"@id":"https://studio-lumadesign.com/#business"},"mainEntityOfPage":"https://studio-lumadesign.com/en/news/home-renewal","inLanguage":"en","image":["https://studio-lumadesign.com/images/sleague/SL24/sl24-hero-poster.jpg"],"articleSection":"Services"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://studio-lumadesign.com/en/"},{"@type":"ListItem","position":2,"name":"News","item":"https://studio-lumadesign.com/en/news/"},{"@type":"ListItem","position":3,"name":"The Home Page Has Been Redesigned","item":"https://studio-lumadesign.com/en/news/home-renewal"}]}]}</script>
 <style id="l8-photo-fix">
-  /* HERO の写真はここで直接指定する。CSS 変数の url() は Chrome が shared.css の位置から解決し、
-     file:// で開くと ../ の写真が見つからないため (2026-10-03) */
-  html body .l8-hero { background: linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 38%, var(--scrim-3) 66%, var(--scrim-4) 88%), linear-gradient(0deg, rgba(31, 42, 51, 0.45) 0%, rgba(31, 42, 51, 0) 55%), image-set(url('../../images/hero/sl24-hero-poster-1920.webp') type('image/webp'), url('../../images/hero/sl24-hero-poster-1920.jpg') type('image/jpeg')) center / cover no-repeat !important; }
-  @media (max-width: 760px) { html body .l8-hero { background: linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 38%, var(--scrim-3) 66%, var(--scrim-4) 88%), linear-gradient(0deg, rgba(31, 42, 51, 0.45) 0%, rgba(31, 42, 51, 0) 55%), image-set(url('../../images/hero/sl24-hero-poster-960.webp') type('image/webp'), url('../../images/hero/sl24-hero-poster-960.jpg') type('image/jpeg')) center / cover no-repeat !important; } }
+  /* HERO の写真はここで直接指定する (2026-11-19 作り直し)。
+     CSS 変数で渡した写真は、ブラウザーや開き方によって読み込めず、暗幕だけが表示されていた。
+     1行目の url() は image-set() を読めないブラウザー向けの予備 */
+  html body .l8-hero { background: linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 38%, var(--scrim-3) 66%, var(--scrim-4) 88%), linear-gradient(0deg, rgba(31, 42, 51, 0.45) 0%, rgba(31, 42, 51, 0) 55%), url('../../images/hero/sl24-hero-poster-1920.jpg') center / cover no-repeat !important; background: linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 38%, var(--scrim-3) 66%, var(--scrim-4) 88%), linear-gradient(0deg, rgba(31, 42, 51, 0.45) 0%, rgba(31, 42, 51, 0) 55%), image-set(url('../../images/hero/sl24-hero-poster-1920.webp') type('image/webp'), url('../../images/hero/sl24-hero-poster-1920.jpg') type('image/jpeg')) center / cover no-repeat !important; }
+  @media (max-width: 760px) { html body .l8-hero { background: linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 38%, var(--scrim-3) 66%, var(--scrim-4) 88%), linear-gradient(0deg, rgba(31, 42, 51, 0.45) 0%, rgba(31, 42, 51, 0) 55%), url('../../images/hero/sl24-hero-poster-960.jpg') center / cover no-repeat !important; background: linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 38%, var(--scrim-3) 66%, var(--scrim-4) 88%), linear-gradient(0deg, rgba(31, 42, 51, 0.45) 0%, rgba(31, 42, 51, 0) 55%), image-set(url('../../images/hero/sl24-hero-poster-960.webp') type('image/webp'), url('../../images/hero/sl24-hero-poster-960.jpg') type('image/jpeg')) center / cover no-repeat !important; } }
+  /* 淡い地の分類の札は、HERO の白文字の指定に負けないようインクの文字にする (2026-11-19) */
+  html body .l8-hero .nw-chip[style*="#EEF2F5"] { color: #1F2A33 !important; text-shadow: none !important; }
 </style>
 <link rel="stylesheet" href="../../motion.css?v=157a" />
 <link rel="icon" href="../../favicon.ico" sizes="48x48" />
@@ -96,7 +99,7 @@
   <a class="nw-share-b" href="https://twitter.com/intent/tweet?text=The%20Home%20Page%20Has%20Been%20Redesigned%20https%3A%2F%2Fstudio-lumadesign.com%2Fen%2Fnews%2Fhome-renewal" target="_blank" rel="noopener noreferrer">Share on X</a>
   <a class="nw-share-b" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fstudio-lumadesign.com%2Fen%2Fnews%2Fhome-renewal" target="_blank" rel="noopener noreferrer">Send on LINE</a>
 </div>
-  <nav class="nw-nbs" aria-label="News"><a class="nw-nb prev" href="./hero-slideshow"><span>← Previous</span><b>The Home Page Now Cycles Through Fifteen Photographs</b></a></nav>
+  <nav class="nw-nbs" aria-label="News"><a class="nw-nb prev" href="./hero-slideshow"><span>← Previous</span><b>The Home Page Now Cycles Through Fifteen Photographs</b></a><a class="nw-nb next" href="./affiliate-start"><span>Next →</span><b>Affiliate links for Saily and NordVPN</b></a></nav>
   <p class="nw-back"><a href="./">← All news</a></p>
 </article>
 <footer>

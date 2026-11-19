@@ -702,6 +702,42 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://studio-lumadesign.com/news/tour-offerings</loc>
+    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/tour-offerings"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/tour-offerings"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/tour-offerings"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://studio-lumadesign.com/en/news/tour-offerings</loc>
+    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/tour-offerings"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/tour-offerings"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/tour-offerings"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://studio-lumadesign.com/news/affiliate-start</loc>
+    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/affiliate-start"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/affiliate-start"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/affiliate-start"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://studio-lumadesign.com/en/news/affiliate-start</loc>
+    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/affiliate-start"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/news/affiliate-start"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/news/affiliate-start"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://studio-lumadesign.com/news/home-renewal</loc>
     <lastmod>2026-09-26</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/news/home-renewal"/>

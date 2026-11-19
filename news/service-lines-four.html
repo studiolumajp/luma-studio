@@ -37,6 +37,15 @@
 <link rel="stylesheet" href="../shared.css?v=l8g" />
 
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"NewsArticle","headline":"LUMA Space と LUMA Stage の提供を終了しました","description":"2026年5月25日の時点で、サービスを LUMA Voice / Frame / Path / Circle の4本に整理しました。9月26日に LUMA Craft を加え、現在は5本です。","datePublished":"2026-05-25","dateModified":"2026-05-25","author":{"@id":"https://studio-lumadesign.com/#representative"},"publisher":{"@id":"https://studio-lumadesign.com/#business"},"mainEntityOfPage":"https://studio-lumadesign.com/news/service-lines-four","inLanguage":"ja","image":["https://studio-lumadesign.com/images/photography/atami-akao-forest-sea-terrace.jpg"],"articleSection":"サービス"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://studio-lumadesign.com/"},{"@type":"ListItem","position":2,"name":"ニュース","item":"https://studio-lumadesign.com/news/"},{"@type":"ListItem","position":3,"name":"LUMA Space と LUMA Stage の提供を終了しました","item":"https://studio-lumadesign.com/news/service-lines-four"}]}]}</script>
+<style id="l8-photo-fix">
+  /* HERO の写真はここで直接指定する (2026-11-19 作り直し)。
+     CSS 変数で渡した写真は、ブラウザーや開き方によって読み込めず、暗幕だけが表示されていた。
+     1行目の url() は image-set() を読めないブラウザー向けの予備 */
+  html body .l8-hero { background: linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 38%, var(--scrim-3) 66%, var(--scrim-4) 88%), linear-gradient(0deg, rgba(31, 42, 51, 0.45) 0%, rgba(31, 42, 51, 0) 55%), url('../images/hero/atami-akao-forest-sea-terrace-1920.jpg') center / cover no-repeat !important; background: linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 38%, var(--scrim-3) 66%, var(--scrim-4) 88%), linear-gradient(0deg, rgba(31, 42, 51, 0.45) 0%, rgba(31, 42, 51, 0) 55%), image-set(url('../images/hero/atami-akao-forest-sea-terrace-1920.webp') type('image/webp'), url('../images/hero/atami-akao-forest-sea-terrace-1920.jpg') type('image/jpeg')) center / cover no-repeat !important; }
+  @media (max-width: 760px) { html body .l8-hero { background: linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 38%, var(--scrim-3) 66%, var(--scrim-4) 88%), linear-gradient(0deg, rgba(31, 42, 51, 0.45) 0%, rgba(31, 42, 51, 0) 55%), url('../images/hero/atami-akao-forest-sea-terrace-960.jpg') center / cover no-repeat !important; background: linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 38%, var(--scrim-3) 66%, var(--scrim-4) 88%), linear-gradient(0deg, rgba(31, 42, 51, 0.45) 0%, rgba(31, 42, 51, 0) 55%), image-set(url('../images/hero/atami-akao-forest-sea-terrace-960.webp') type('image/webp'), url('../images/hero/atami-akao-forest-sea-terrace-960.jpg') type('image/jpeg')) center / cover no-repeat !important; } }
+  /* 淡い地の分類の札は、HERO の白文字の指定に負けないようインクの文字にする (2026-11-19) */
+  html body .l8-hero .nw-chip[style*="#EEF2F5"] { color: #1F2A33 !important; text-shadow: none !important; }
+</style>
 <link rel="stylesheet" href="../motion.css?v=157a" />
 <link rel="icon" href="../favicon.ico" sizes="48x48" />
 <link rel="icon" href="../icon.svg" type="image/svg+xml" />
