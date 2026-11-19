@@ -192,6 +192,41 @@
   .path-two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; }
   @media (max-width: 900px) { .area-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 640px) { .area-cards, .path-two { grid-template-columns: 1fr; gap: 16px; } }
+  /* 2026-11-11 Saily・NordVPN のスポンサー枠 (アフィリエイト)。開示ラベルと開示文を必ず添える */
+  .sp-tag { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .04em; line-height: 1; padding: 6px 10px; border-radius: 999px; border: 1px solid var(--border-strong); color: var(--text-muted); background: #fff; }
+  .sp-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-bottom: 8px; }
+  .sp-head h2 { margin: 0; font-size: clamp(22px, 2.4vw, 28px); }
+  .sp-note { font-size: 14px; line-height: 1.7; color: var(--text-muted); margin: 0 0 24px; max-width: 760px; }
+  .sp-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .sp-card { display: flex; flex-direction: column; gap: 10px; padding: 24px; border: 1px solid var(--border); border-radius: 16px; background: #fff; }
+  .sp-card h3 { font-size: 18px; margin: 0; }
+  .sp-card p { font-size: 15px; line-height: 1.8; color: var(--text-muted); margin: 0; }
+  .sp-code { padding: 12px 14px; border: 1px dashed var(--accent); border-radius: 10px; background: var(--bg-soft); font-size: 14px; line-height: 1.6; color: var(--text); }
+  .sp-code b { display: block; font-size: 20px; font-weight: 800; color: var(--accent); }
+  .sp-code code { font-family: var(--font-label); font-weight: 800; letter-spacing: .05em; color: var(--navy); }
+  .sp-link { margin-top: auto; font-weight: 700; color: var(--accent); text-decoration: none; }
+  .sp-link:hover { text-decoration: underline; }
+  .sp-more { margin: 20px 0 0; font-size: 15px; }
+  .sp-more a { font-weight: 700; color: var(--accent); }
+  .sp-strip { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; padding: 16px 20px; border: 1px solid var(--border); border-radius: 12px; background: var(--bg-soft); }
+  .sp-strip p { flex: 1 1 320px; margin: 0; font-size: 15px; line-height: 1.7; color: var(--text); }
+  .sp-strip small { display: block; font-size: 13px; color: var(--text-muted); }
+  .sp-strip a { font-weight: 700; color: var(--accent); white-space: nowrap; }
+  @media (max-width: 640px) { .sp-cards { grid-template-columns: minmax(0, 1fr); } .sp-card { padding: 20px; } }
+  .sp-img { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--border); }
+  /* 2026-11-12 Google の口コミ (Sho 指示)。本文は Google の投稿を改変せずに引用する */
+  .rv-card { max-width: 820px; margin: 0 auto; padding: 32px; border: 1px solid var(--border); border-radius: 16px; background: #fff; }
+  .rv-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-bottom: 16px; }
+  .rv-stars { color: var(--accent); font-size: 20px; letter-spacing: 2px; line-height: 1; }
+  .rv-src { font-size: 14px; color: var(--text-muted); }
+  .rv-quote { margin: 0; font-size: 17px; line-height: 1.85; color: var(--text); }
+  .rv-quote p { margin: 0; }
+  .rv-tr { margin: 16px 0 0; padding-top: 16px; border-top: 1px solid var(--border); font-size: 15px; line-height: 1.9; color: var(--text-muted); }
+  .rv-tr span { display: block; font-size: 13px; margin-top: 6px; }
+  .rv-by { margin: 16px 0 0; font-size: 15px; font-weight: 700; color: var(--navy); }
+  .rv-more { margin: 20px 0 0; text-align: center; font-size: 15px; }
+  .rv-more a { font-weight: 700; color: var(--accent); }
+  @media (max-width: 640px) { .rv-card { padding: 24px 20px; } .rv-quote { font-size: 16px; } }
 </style>
 <link rel="stylesheet" href="../../motion.css?v=157a" />
 <link rel="icon" href="../../favicon.ico" sizes="48x48" />
@@ -252,6 +287,7 @@
         <li>Someone in Japan is booking the tour for you.</li>
         <li>You'd like to see more than Tokyo.</li>
       </ul>
+      <p class="svc-overview-body" style="margin-top:20px;">If your group has dietary needs, young children or someone who can't walk far, I can plan the day around those needs. <a href="./tailored-tour" style="font-weight:700;color:var(--accent);">How I plan tailored tours →</a></p>
     </div>
     <div class="fy-guide reveal">
       <img src="../../profile.webp" alt="Sho, your guide" width="96" height="96" loading="lazy" decoding="async" />
@@ -346,6 +382,43 @@
   </div>
 </section>
 
+<section id="before-you-fly" aria-labelledby="sp-heading">
+  <div class="container reveal">
+    <span class="eyebrow">Before you fly</span>
+    <div class="sp-head" style="margin-top:12px;"><h2 id="sp-heading">Getting online in Japan</h2><span class="sp-tag">Affiliate links</span></div>
+    <p class="sp-note">These are affiliate links, so LUMA earns a commission if you buy through them, at no extra cost to you.</p>
+    <div class="sp-cards">
+      <div class="sp-card">
+        <a href="https://go.saily.site/aff_c?offer_id=101&amp;aff_id=17602" target="_blank" rel="sponsored noopener"><img src="../../images/partners/saily-en-800.webp" width="800" height="419" alt="Saily: affordable eSIM data plans" loading="lazy" decoding="async" class="sp-img"></a>
+        <h3>Saily</h3>
+        <p>An eSIM from the company that made NordVPN. Set it up in the app before you leave home, and your plan starts automatically when you land.</p>
+        <div class="sp-code"><b>10% off</b>Use code <code>LUMADESIGN</code> at checkout.</div>
+        <a class="sp-link" href="https://go.saily.site/aff_c?offer_id=101&amp;aff_id=17602" target="_blank" rel="sponsored noopener">Get Saily →</a>
+      </div>
+      <div class="sp-card">
+        <a href="https://go.nordvpn.net/aff_c?offer_id=15&amp;aff_id=159659" target="_blank" rel="sponsored noopener"><img src="../../images/partners/nordvpn-bf79-800.webp" width="800" height="419" alt="NordVPN Black Friday VPN deal: up to 79% off plus 3 months extra" loading="lazy" decoding="async" class="sp-img"></a>
+        <h3>NordVPN</h3>
+        <p>A VPN that encrypts your connection and hides your IP address. It's useful whenever you join public Wi-Fi at a hotel, a station or a café.</p>
+        <div class="sp-code"><b>Black Friday</b>Until 9 December 2026, NordVPN adds 3 extra months to a plan.</div>
+        <a class="sp-link" href="https://go.nordvpn.net/aff_c?offer_id=15&amp;aff_id=159659" target="_blank" rel="sponsored noopener">Get NordVPN →</a>
+      </div>
+    </div>
+    <p class="sp-more"><a href="../staying-connected">More on staying connected in Japan →</a></p>
+  </div>
+</section>
+
+<section id="reviews" aria-labelledby="reviews-heading" style="background:var(--bg-soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container reveal">
+    <div class="section-head" style="margin: 0 auto 40px; text-align:center;"><span class="eyebrow">Review</span><h2 id="reviews-heading">A guest review on Google</h2></div>
+    <figure class="rv-card">
+      <div class="rv-meta"><span class="rv-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="rv-src">Google review, November 2026</span></div>
+      <blockquote class="rv-quote" cite="https://www.google.com/search?q=LUMA+-+Clarity+by+Design#lrd=0xaff5777220282075:0x27bfd70047067659,1,,,,"><p>We had such a wonderful day exploring Tokyo with Sho! He was friendly, engaging, informative, and always polite and thoughtful. He shared insights and pointed out things we would have easily missed on our own, making the day so much more meaningful. Best of all, we felt as though we&#x27;d made a new friend. We&#x27;re so glad we had the chance to spend the day with him and would highly recommend Sho to anyone looking for a memorable, personal experience in Tokyo!</p></blockquote>
+      <figcaption class="rv-by">Kathi E</figcaption>
+    </figure>
+    <p class="rv-more"><a href="https://www.google.com/search?q=LUMA+-+Clarity+by+Design#lrd=0xaff5777220282075:0x27bfd70047067659,1,,,," target="_blank" rel="noopener">Read the review on Google →</a></p>
+  </div>
+</section>
+
 <section style="padding-bottom: 120px;">
   <div class="container">
     <div class="cta-big reveal">
@@ -361,11 +434,11 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand"><a href="../" class="brand"><span class="brand-mark">L</span><span>LUMA</span></a><p>Designing your confidence in Tokyo & Yokohama. Clarity by Design / Illuminate Your Confidence.</p></div>
-      <div class="footer-col"><h4>Services</h4><ul><li><a href="./photo">Photography</a></li><li><a href="./tour">Private Tours</a></li><li><a href="./web">Web, Social &amp; Apps</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="./photo">Photography</a></li><li><a href="./tour">Private Tours</a></li><li><a href="./tailored-tour">Tailored tours</a></li><li><a href="./web">Web, Social &amp; Apps</a></li></ul></div>
       <div class="footer-col"><h4>About</h4><ul><li><a href="../about">About me</a></li>
 <li><a href="../news/">News</a></li><li><a href="../#faq">FAQ</a></li><li><a href="../photography/">Photo Portfolio</a></li></ul></div>
       <div class="footer-col"><h4>Support</h4><ul>
-          <li><a href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer">Chat on LINE</a></li><li><a href="../contact">Contact</a></li><li><a href="../legal">Legal & Policies</a></li><li><a href="../../services/tour">日本語</a></li></ul></div>
+          <li><a href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer">Chat on LINE</a></li><li><a href="../contact">Contact</a></li><li><a href="../legal">Legal & Policies</a></li><li><a href="../staying-connected">Staying connected in Japan</a></li><li><a href="../../services/tour">日本語</a></li></ul></div>
     </div>
     <div class="footer-sns">
       <span class="footer-sns-h">SNS</span>

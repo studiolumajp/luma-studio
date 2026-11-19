@@ -226,6 +226,41 @@
   .tour-photos-toggle:hover { background: #1F2A33; }
   .tour-photos-toggle:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 2px; box-shadow: 0 0 0 4px #1565C0; }
   .tour-photos-note { margin-top: 12px; color: var(--text-muted); font-size: 14px; }
+  /* 2026-11-11 Saily・NordVPN のスポンサー枠 (アフィリエイト)。開示ラベルと開示文を必ず添える */
+  .sp-tag { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .04em; line-height: 1; padding: 6px 10px; border-radius: 999px; border: 1px solid var(--border-strong); color: var(--text-muted); background: #fff; }
+  .sp-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-bottom: 8px; }
+  .sp-head h2 { margin: 0; font-size: clamp(22px, 2.4vw, 28px); }
+  .sp-note { font-size: 14px; line-height: 1.7; color: var(--text-muted); margin: 0 0 24px; max-width: 760px; }
+  .sp-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .sp-card { display: flex; flex-direction: column; gap: 10px; padding: 24px; border: 1px solid var(--border); border-radius: 16px; background: #fff; }
+  .sp-card h3 { font-size: 18px; margin: 0; }
+  .sp-card p { font-size: 15px; line-height: 1.8; color: var(--text-muted); margin: 0; }
+  .sp-code { padding: 12px 14px; border: 1px dashed var(--accent); border-radius: 10px; background: var(--bg-soft); font-size: 14px; line-height: 1.6; color: var(--text); }
+  .sp-code b { display: block; font-size: 20px; font-weight: 800; color: var(--accent); }
+  .sp-code code { font-family: var(--font-label); font-weight: 800; letter-spacing: .05em; color: var(--navy); }
+  .sp-link { margin-top: auto; font-weight: 700; color: var(--accent); text-decoration: none; }
+  .sp-link:hover { text-decoration: underline; }
+  .sp-more { margin: 20px 0 0; font-size: 15px; }
+  .sp-more a { font-weight: 700; color: var(--accent); }
+  .sp-strip { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; padding: 16px 20px; border: 1px solid var(--border); border-radius: 12px; background: var(--bg-soft); }
+  .sp-strip p { flex: 1 1 320px; margin: 0; font-size: 15px; line-height: 1.7; color: var(--text); }
+  .sp-strip small { display: block; font-size: 13px; color: var(--text-muted); }
+  .sp-strip a { font-weight: 700; color: var(--accent); white-space: nowrap; }
+  @media (max-width: 640px) { .sp-cards { grid-template-columns: minmax(0, 1fr); } .sp-card { padding: 20px; } }
+  .sp-img { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--border); }
+  /* 2026-11-12 Google の口コミ (Sho 指示)。本文は Google の投稿を改変せずに引用する */
+  .rv-card { max-width: 820px; margin: 0 auto; padding: 32px; border: 1px solid var(--border); border-radius: 16px; background: #fff; }
+  .rv-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-bottom: 16px; }
+  .rv-stars { color: var(--accent); font-size: 20px; letter-spacing: 2px; line-height: 1; }
+  .rv-src { font-size: 14px; color: var(--text-muted); }
+  .rv-quote { margin: 0; font-size: 17px; line-height: 1.85; color: var(--text); }
+  .rv-quote p { margin: 0; }
+  .rv-tr { margin: 16px 0 0; padding-top: 16px; border-top: 1px solid var(--border); font-size: 15px; line-height: 1.9; color: var(--text-muted); }
+  .rv-tr span { display: block; font-size: 13px; margin-top: 6px; }
+  .rv-by { margin: 16px 0 0; font-size: 15px; font-weight: 700; color: var(--navy); }
+  .rv-more { margin: 20px 0 0; text-align: center; font-size: 15px; }
+  .rv-more a { font-weight: 700; color: var(--accent); }
+  @media (max-width: 640px) { .rv-card { padding: 24px 20px; } .rv-quote { font-size: 16px; } }
 </style>
 <link rel="stylesheet" href="../motion.css?v=157a" />
 <link rel="icon" href="../favicon.ico" sizes="48x48" />
@@ -303,6 +338,7 @@
         <li>英語で観光地を説明するのは荷が重いとき</li>
         <li>同行はしたいが、段取りは任せたいとき</li>
       </ul>
+      <p class="svc-overview-body" style="margin-top:20px;">ゲストの方に食事の制限がある場合、小さな子どもを連れて来日される場合、またはご高齢の方が同行される場合は、ご事情に合わせて行程を組むことも可能です。<a href="./tailored-tour" style="font-weight:700;color:var(--accent);">オーダーメイドツアーの詳細はこちら →</a></p>
     </div>
     <div class="fy-guide reveal">
       <img src="../profile.webp" alt="ガイドの浅野 彰" width="96" height="96" loading="lazy" decoding="async" />
@@ -397,6 +433,44 @@
   </div>
 </section>
 
+<section id="for-your-guests" aria-labelledby="sp-heading">
+  <div class="container reveal">
+    <span class="eyebrow">For your guests</span>
+    <div class="sp-head" style="margin-top:12px;"><h2 id="sp-heading">来日するゲストの方に、通信の準備をお伝えいただけます</h2><span class="sp-tag">PR</span></div>
+    <p class="sp-note">この枠の Saily と NordVPN へのリンクは、アフィリエイトリンク (広告リンク) です。リンクからご購入いただくと私どもが紹介料を頂戴しますが、その分お客様のお支払い額が増えることはありません。</p>
+    <div class="sp-cards">
+      <div class="sp-card">
+        <a href="https://go.saily.site/aff_c?offer_id=101&amp;aff_id=17602" target="_blank" rel="sponsored noopener"><img src="../images/partners/saily-ja-800.webp" width="800" height="419" alt="Saily: 手頃な eSIM データプラン" loading="lazy" decoding="async" class="sp-img"></a>
+        <h3>Saily (eSIM)</h3>
+        <p>NordVPN を作った会社の eSIM サービスです。出発前にアプリで設定しておくと、日本に着いた時点でプランが自動で始まります。ゲストの方は、空港で SIM カードを買う列に並ばずに済みます。</p>
+        <div class="sp-code"><b>10% オフ</b>お支払い画面でプロモコード <code>LUMADESIGN</code> をご入力ください。</div>
+        <a class="sp-link" href="https://go.saily.site/aff_c?offer_id=101&amp;aff_id=17602" target="_blank" rel="sponsored noopener">Saily のサイトへ →</a>
+      </div>
+      <div class="sp-card">
+        <a href="https://go.nordvpn.net/aff_c?offer_id=15&amp;aff_id=159659" target="_blank" rel="sponsored noopener"><img src="../images/partners/nordvpn-bf79-800.webp" width="800" height="419" alt="NordVPN ブラックフライデー: 最大79%オフ +3か月延長" loading="lazy" decoding="async" class="sp-img"></a>
+        <h3>NordVPN (VPN)</h3>
+        <p>通信を暗号化し、IP アドレスを隠す VPN サービスです。ホテルや駅、カフェで公衆 Wi-Fi をお使いになるときに役立ち、日本国内でも海外でもご利用いただけます。</p>
+        <div class="sp-code"><b>ブラックフライデー</b>2026年12月9日までは、NordVPN の契約に3か月の延長特典が付きます。</div>
+        <a class="sp-link" href="https://go.nordvpn.net/aff_c?offer_id=15&amp;aff_id=159659" target="_blank" rel="sponsored noopener">NordVPN のサイトへ →</a>
+      </div>
+    </div>
+    <p class="sp-more"><a href="../staying-connected">通信の準備に関する詳しいご案内はこちら →</a></p>
+  </div>
+</section>
+
+<section id="reviews" aria-labelledby="reviews-heading" style="background:var(--bg-soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container reveal">
+    <div class="section-head" style="margin: 0 auto 40px; text-align:center;"><span class="eyebrow">Reviews</span><h2 id="reviews-heading">Google に寄せられたお客様の口コミ</h2></div>
+    <figure class="rv-card">
+      <div class="rv-meta"><span class="rv-stars" role="img" aria-label="5点満点中5点">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="rv-src">Google の口コミ (2026年11月)</span></div>
+      <blockquote class="rv-quote" cite="https://www.google.com/search?q=LUMA+-+Clarity+by+Design#lrd=0xaff5777220282075:0x27bfd70047067659,1,,,," lang="en"><p>We had such a wonderful day exploring Tokyo with Sho! He was friendly, engaging, informative, and always polite and thoughtful. He shared insights and pointed out things we would have easily missed on our own, making the day so much more meaningful. Best of all, we felt as though we&#x27;d made a new friend. We&#x27;re so glad we had the chance to spend the day with him and would highly recommend Sho to anyone looking for a memorable, personal experience in Tokyo!</p></blockquote>
+      <p class="rv-tr">Sho さんと東京を巡り、本当にすばらしい1日を過ごしました。親しみやすく、話も楽しく、知識が豊富で、いつも礼儀正しく気配りのある方でした。私たちだけでは見逃していたようなことを教えてくださったおかげで、1日がずっと意味のあるものになりました。何よりも、新しい友人ができたように感じています。Sho さんと1日を過ごせて本当によかったです。東京で心に残る、パーソナルな体験を求めている方に、Sho さんを心からおすすめします。<span>(私どもによる和訳です)</span></p>
+      <figcaption class="rv-by">Kathi E さん</figcaption>
+    </figure>
+    <p class="rv-more"><a href="https://www.google.com/search?q=LUMA+-+Clarity+by+Design#lrd=0xaff5777220282075:0x27bfd70047067659,1,,,," target="_blank" rel="noopener">Google の口コミはこちら →</a></p>
+  </div>
+</section>
+
 <section style="padding-bottom: 120px;">
   <div class="container">
     <div class="cta-big reveal">
@@ -421,6 +495,7 @@
           <li><a href="./photo">記念撮影・ポートレート</a></li>
           <li><a href="../s-league/">S.League 麻雀</a></li>
           <li><a href="./tour">海外ゲスト向けのパーソナライズドガイドツアー</a></li>
+          <li><a href="./tailored-tour">オーダーメイドツアー</a></li>
           <li><a href="./web">Web・SNS・アプリ制作</a></li>
         </ul>
       </div>
@@ -440,6 +515,7 @@
           <li><a href="../contact">お問い合わせ</a></li>
           <li><a href="../legal">特定商取引法</a></li>
           <li><a href="../legal#privacy">プライバシー</a></li>
+          <li><a href="../staying-connected">通信の準備</a></li>
           <li><a href="../en/services/tour">English</a></li>
         </ul>
       </div>

@@ -403,6 +403,28 @@
   @media (max-width: 640px) { .price-detail { font-size: 14.5px; } }
   /* 開いた回答が 400px (shared.css) を超えると幅320px のスマホで末尾が切れるため広げる (2026-10-03) */
   .faq-item[data-open="true"] .faq-a { max-height: 800px; }
+  /* 2026-11-11 Saily・NordVPN のスポンサー枠 (アフィリエイト)。開示ラベルと開示文を必ず添える */
+  .sp-tag { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .04em; line-height: 1; padding: 6px 10px; border-radius: 999px; border: 1px solid var(--border-strong); color: var(--text-muted); background: #fff; }
+  .sp-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-bottom: 8px; }
+  .sp-head h2 { margin: 0; font-size: clamp(22px, 2.4vw, 28px); }
+  .sp-note { font-size: 14px; line-height: 1.7; color: var(--text-muted); margin: 0 0 24px; max-width: 760px; }
+  .sp-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .sp-card { display: flex; flex-direction: column; gap: 10px; padding: 24px; border: 1px solid var(--border); border-radius: 16px; background: #fff; }
+  .sp-card h3 { font-size: 18px; margin: 0; }
+  .sp-card p { font-size: 15px; line-height: 1.8; color: var(--text-muted); margin: 0; }
+  .sp-code { padding: 12px 14px; border: 1px dashed var(--accent); border-radius: 10px; background: var(--bg-soft); font-size: 14px; line-height: 1.6; color: var(--text); }
+  .sp-code b { display: block; font-size: 20px; font-weight: 800; color: var(--accent); }
+  .sp-code code { font-family: var(--font-label); font-weight: 800; letter-spacing: .05em; color: var(--navy); }
+  .sp-link { margin-top: auto; font-weight: 700; color: var(--accent); text-decoration: none; }
+  .sp-link:hover { text-decoration: underline; }
+  .sp-more { margin: 20px 0 0; font-size: 15px; }
+  .sp-more a { font-weight: 700; color: var(--accent); }
+  .sp-strip { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; padding: 16px 20px; border: 1px solid var(--border); border-radius: 12px; background: var(--bg-soft); }
+  .sp-strip p { flex: 1 1 320px; margin: 0; font-size: 15px; line-height: 1.7; color: var(--text); }
+  .sp-strip small { display: block; font-size: 13px; color: var(--text-muted); }
+  .sp-strip a { font-weight: 700; color: var(--accent); white-space: nowrap; }
+  @media (max-width: 640px) { .sp-cards { grid-template-columns: minmax(0, 1fr); } .sp-card { padding: 20px; } }
+  .sp-img { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--border); }
 </style>
 <link rel="stylesheet" href="../motion.css?v=157a" />
 <link rel="icon" href="../favicon.ico" sizes="48x48" />
@@ -1011,6 +1033,12 @@
   </div>
 </section>
 
+<section aria-label="通信の準備のご案内" style="padding-top:0;">
+  <div class="container reveal">
+    <div class="sp-strip"><span class="sp-tag">PR</span><p><small>アフィリエイトリンク (広告リンク) を含むご案内です。リンクからご購入いただくと私どもが紹介料を頂戴しますが、その分お支払い額が増えることはありません。</small>海外旅行で使える eSIM の Saily をご紹介しております。ホテルやカフェなどの公衆 Wi-Fi で役立つ VPN の NordVPN も、あわせてご覧ください。</p><a href="../staying-connected">通信の準備に関するご案内はこちら →</a></div>
+  </div>
+</section>
+
 <section style="padding-bottom: 120px;">
   <div class="container">
     <div class="cta-big reveal">
@@ -1040,6 +1068,7 @@
           <li><a href="./photo">記念撮影・ポートレート</a></li>
           <li><a href="../s-league/">S.League 麻雀</a></li>
           <li><a href="./tour">海外ゲスト向けのパーソナライズドガイドツアー</a></li>
+          <li><a href="./tailored-tour">オーダーメイドツアー</a></li>
           <li><a href="./web">Web・SNS・アプリ制作</a></li>
         </ul>
       </div>
@@ -1059,6 +1088,7 @@
           <li><a href="../contact">お問い合わせ</a></li>
           <li><a href="../legal">特定商取引法</a></li>
           <li><a href="../legal#privacy">プライバシー</a></li>
+          <li><a href="../staying-connected">通信の準備</a></li>
           <li><a href="../en/services/photo">English</a></li>
         </ul>
       </div>
