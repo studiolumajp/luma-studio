@@ -23,7 +23,7 @@
 <meta property="og:image" content="https://studio-lumadesign.com/og-image.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="LUMA Frame, on-location photography in Yokohama and Tokyo" />
+<meta property="og:image:alt" content="LUMA Frame, photo shoots in Yokohama and Tokyo" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:site_name" content="LUMA" />
 
@@ -45,7 +45,7 @@
         "@id": "https://studio-lumadesign.com/#business"
       },
       "areaServed": "Tokyo · Yokohama",
-      "serviceType": "On-location photography",
+      "serviceType": "Photography",
       "url": "https://studio-lumadesign.com/en/services/photo",
       "offers": {
         "@type": "AggregateOffer",
@@ -240,8 +240,9 @@
 <script src="../../consent.js?v=gdpr1"></script>
 
 <!-- LCP: HERO の背景写真。CSS 背景 / video の poster はプリロードスキャナが見つけられない -->
-<link rel="preload" as="image" fetchpriority="high" type="image/webp" href="../../images/hero/compare-photo-960.webp" />
-<link rel="stylesheet" href="../../shared.css?v=l8g" />
+<link rel="preload" as="image" fetchpriority="high" type="image/webp" media="(max-width: 760px)" href="../../images/hero/compare-photo-960.webp" />
+<link rel="preload" as="image" fetchpriority="high" type="image/webp" media="(min-width: 761px)" href="../../images/hero/compare-photo-2560.webp" />
+<link rel="stylesheet" href="../../shared.css?v=l8h" />
 <style id="page-overrides">
   /* ── HERO: 暗幕・文字色・ボタンは shared.css の .hero--photo で共通化。
      ここではサイズと固有レイアウトのみ指定する (2026-08-06) ── */
@@ -415,6 +416,14 @@
   .sp-strip p { flex: 1 1 320px; margin: 0; font-size: 15px; line-height: 1.7; color: var(--text); }
   .sp-strip small { display: block; font-size: 13px; color: var(--text-muted); }
   .sp-strip a { font-weight: 700; color: var(--accent); white-space: nowrap; }
+  .sp-sec { background: var(--bg-soft); }
+  .sp-media { max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); align-items: center; gap: 24px 36px; padding: 28px; background: #fff; }
+  .sp-imgs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .sp-imgs img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 10px; }
+  .sp-body { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+  .sp-body p { flex: none; }
+  .sp-body .sp-disc { margin-top: 8px; }
+  @media (max-width: 760px) { .sp-media { grid-template-columns: minmax(0, 1fr); padding: 20px; } .sp-imgs img { aspect-ratio: 16 / 9; } }
   @media (max-width: 640px) { .sp-cards { grid-template-columns: minmax(0, 1fr); } .sp-card { padding: 20px; } }
   .sp-img { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--border); }
 </style>
@@ -434,8 +443,8 @@
         <a href="./" class="dropdown-toggle">Services</a>
         <ul class="dropdown-menu">
           <li><a href="./">All Services</a></li>
-          <li><a href="./photo">Photography</a></li>
           <li><a href="./tour">Private Tours</a></li>
+          <li><a href="./photo">Photography</a></li>
           <li><a href="./web">Web, Social &amp; Apps</a></li>
         </ul>
       </li>
@@ -897,9 +906,9 @@
   </div>
 </section>
 
-<section aria-label="Travel guide" style="padding-top:0;">
+<section class="sp-sec" aria-labelledby="sp-heading">
   <div class="container reveal">
-    <div class="sp-strip"><span class="sp-tag">Affiliate links</span><p><small>This guide contains affiliate links. LUMA earns a commission if you buy through them, at no extra cost to you.</small>If you're flying in for your photo shoot, I've put together a short guide to getting online in Japan.</p><a href="../staying-connected">Read the guide →</a></div>
+    <div class="sp-strip sp-media"><div class="sp-imgs"><img src="../../images/partners/saily-life-friends-960.webp" width="960" height="540" alt="Three people laughing at a phone outdoors" loading="lazy" decoding="async"><img src="../../images/partners/nordvpn-life-cafe-960.webp" width="960" height="540" alt="Someone using NordVPN on a phone and a laptop at a café table" loading="lazy" decoding="async"></div><div class="sp-body"><div class="sp-head"><h2 id="sp-heading">eSIM and VPN for Japan</h2><span class="sp-tag">Affiliate links</span></div><p>If you're flying in for your shoot, I've put together a short guide to staying connected during your trip.<small class="sp-disc">This guide contains affiliate links. LUMA earns a commission if you buy through them, at no extra cost to you.</small></p><a href="../staying-connected">Read the guide →</a></div></div>
   </div>
 </section>
 
@@ -921,7 +930,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand"><a href="../" class="brand"><span class="brand-mark">L</span><span>LUMA</span></a><p>Designing your confidence in Tokyo & Yokohama. Clarity by Design / Illuminate Your Confidence.</p></div>
-      <div class="footer-col"><h4>Services</h4><ul><li><a href="./photo">Photography</a></li><li><a href="./tour">Private Tours</a></li><li><a href="./tailored-tour">Tailored tours</a></li><li><a href="./web">Web, Social &amp; Apps</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="./tour">Private Tours</a></li><li><a href="./tailored-tour">Tailored tours</a></li><li><a href="./photo">Photography</a></li><li><a href="./web">Web, Social &amp; Apps</a></li></ul></div>
       <div class="footer-col"><h4>About</h4><ul><li><a href="../about">About me</a></li>
 <li><a href="../news/">News</a></li><li><a href="../#faq">FAQ</a></li><li><a href="../photography/">Photo Portfolio</a></li></ul></div>
       <div class="footer-col"><h4>Support</h4><ul>

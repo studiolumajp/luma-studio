@@ -4,7 +4,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://studio-lumadesign.com/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/"/>
@@ -13,7 +13,7 @@
   </url>
   <url>
     <loc>https://studio-lumadesign.com/en/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://studio-lumadesign.com/"/>
@@ -34,7 +34,7 @@
   </url>
   <url>
     <loc>https://studio-lumadesign.com/en/services/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/services/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/services/"/>
     <changefreq>monthly</changefreq>
@@ -48,7 +48,7 @@
   <!-- LUMA Frame (Photography) -->
   <url>
     <loc>https://studio-lumadesign.com/services/photo</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/services/photo"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/services/photo"/>
     <changefreq>monthly</changefreq>
@@ -56,7 +56,7 @@
   </url>
   <url>
     <loc>https://studio-lumadesign.com/en/services/photo</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/services/photo"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/services/photo"/>
     <changefreq>monthly</changefreq>
@@ -322,7 +322,7 @@
   </url>
   <url>
     <loc>https://studio-lumadesign.com/en/about</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/about"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/about"/>
     <changefreq>monthly</changefreq>
@@ -470,7 +470,7 @@
   </url>
   <url>
     <loc>https://studio-lumadesign.com/en/s-league/sponsor</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -522,7 +522,7 @@
   </url>
   <url>
     <loc>https://studio-lumadesign.com/en/legal</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <xhtml:link rel="alternate" hreflang="ja" href="https://studio-lumadesign.com/legal"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://studio-lumadesign.com/en/legal"/>
     <changefreq>yearly</changefreq>

@@ -209,8 +209,9 @@
 <script src="../consent.js?v=gdpr1"></script>
 
 <!-- LCP: HERO の背景写真。CSS 背景 / video の poster はプリロードスキャナが見つけられない -->
-<link rel="preload" as="image" fetchpriority="high" type="image/webp" href="../images/hero/compare-photo-960.webp" />
-<link rel="stylesheet" href="../shared.css?v=l8g" />
+<link rel="preload" as="image" fetchpriority="high" type="image/webp" media="(max-width: 760px)" href="../images/hero/compare-photo-960.webp" />
+<link rel="preload" as="image" fetchpriority="high" type="image/webp" media="(min-width: 761px)" href="../images/hero/compare-photo-2560.webp" />
+<link rel="stylesheet" href="../shared.css?v=l8h" />
 <style id="page-overrides">
   /* ── HERO: 暗幕・文字色・ボタンは shared.css の .hero--photo で共通化。
      ここではサイズと固有レイアウトのみ指定する (2026-08-06) ── */
@@ -423,6 +424,13 @@
   .sp-strip p { flex: 1 1 320px; margin: 0; font-size: 15px; line-height: 1.7; color: var(--text); }
   .sp-strip small { display: block; font-size: 13px; color: var(--text-muted); }
   .sp-strip a { font-weight: 700; color: var(--accent); white-space: nowrap; }
+  .sp-sec { background: var(--bg-soft); }
+  .sp-media { max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); align-items: center; gap: 24px 36px; padding: 28px; background: #fff; }
+  .sp-imgs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .sp-imgs img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 10px; }
+  .sp-body { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+  .sp-body p { flex: none; }
+  @media (max-width: 760px) { .sp-media { grid-template-columns: minmax(0, 1fr); padding: 20px; } .sp-imgs img { aspect-ratio: 16 / 9; } }
   @media (max-width: 640px) { .sp-cards { grid-template-columns: minmax(0, 1fr); } .sp-card { padding: 20px; } }
   .sp-img { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--border); }
 </style>
@@ -444,10 +452,10 @@
         <a href="./" class="dropdown-toggle">サービス</a>
         <ul class="dropdown-menu">
           <li><a href="./">サービス一覧</a></li>
-          <li><a href="./photo">記念撮影・ポートレート</a></li>
           <li><a href="./tour">海外ゲスト向けのパーソナライズドガイドツアー</a></li>
-          <li><a href="./web">Web・SNS・アプリ制作</a></li>
+          <li><a href="./photo">記念撮影・ポートレート</a></li>
           <li><a href="../s-league/">S.League 麻雀大会</a></li>
+          <li><a href="./web">Web・SNS・アプリ制作</a></li>
         </ul>
       </li>
       <li><a href="../blog/">撮影ノート</a></li>
@@ -1033,9 +1041,9 @@
   </div>
 </section>
 
-<section aria-label="通信の準備のご案内" style="padding-top:0;">
+<section class="sp-sec" aria-labelledby="sp-heading">
   <div class="container reveal">
-    <div class="sp-strip"><span class="sp-tag">PR</span><p><small>アフィリエイトリンク (広告リンク) を含むご案内です。リンクからご購入いただくと私どもが紹介料を頂戴しますが、その分お支払い額が増えることはありません。</small>海外旅行で使える eSIM の Saily をご紹介しております。ホテルやカフェなどの公衆 Wi-Fi で役立つ VPN の NordVPN も、あわせてご覧ください。</p><a href="../staying-connected">通信の準備に関するご案内はこちら →</a></div>
+    <div class="sp-strip sp-media"><div class="sp-imgs"><img src="../images/partners/saily-life-friends-960.webp" width="960" height="540" alt="屋外でスマートフォンを見て笑う3人" loading="lazy" decoding="async"><img src="../images/partners/nordvpn-life-cafe-960.webp" width="960" height="540" alt="カフェでスマートフォンとノートパソコンを使う人" loading="lazy" decoding="async"></div><div class="sp-body"><div class="sp-head"><h2 id="sp-heading">海外旅行で使う eSIM と VPN</h2><span class="sp-tag">PR</span></div><p><small>アフィリエイトリンク (広告リンク) を含むご案内です。リンクからご購入いただくと私どもが紹介料を頂戴しますが、その分お支払い額が増えることはありません。</small>海外旅行で使える eSIM の Saily と、ホテルやカフェなどの公衆 Wi-Fi で役立つ VPN の NordVPN をご紹介しております。</p><a href="../staying-connected">eSIM と VPN のご案内はこちら →</a></div></div>
   </div>
 </section>
 
@@ -1065,10 +1073,10 @@
       <div class="footer-col">
         <h4>サービス</h4>
         <ul>
-          <li><a href="./photo">記念撮影・ポートレート</a></li>
-          <li><a href="../s-league/">S.League 麻雀</a></li>
           <li><a href="./tour">海外ゲスト向けのパーソナライズドガイドツアー</a></li>
           <li><a href="./tailored-tour">オーダーメイドツアー</a></li>
+          <li><a href="./photo">記念撮影・ポートレート</a></li>
+          <li><a href="../s-league/">S.League 麻雀</a></li>
           <li><a href="./web">Web・SNS・アプリ制作</a></li>
         </ul>
       </div>
