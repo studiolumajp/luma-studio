@@ -951,6 +951,52 @@
   </div>
 </section>
 
+<section id="faq" aria-labelledby="faq-heading">
+  <div class="container">
+    <div class="section-head reveal" style="margin: 0 auto 40px; text-align: center;">
+      <span class="eyebrow">FAQ</span>
+      <h2 id="faq-heading">よくある質問</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q" type="button" onclick="toggleFaq(this)" aria-expanded="false">
+          <span>麻雀を始めたばかりでも参加できますか。</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">対象は初中級以上の方となります。点数の計算は卓内でサポートいたしますので、ある程度できれば問題ございません。初めての方に向けては、初心者講習会などの Spinoff を開催する回もございます。</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" onclick="toggleFaq(this)" aria-expanded="false">
+          <span>お金は賭けますか。</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">賭けません。S.League は「賭けない・飲まない・吸わない」を徹底した、ノーレートの健康麻雀です。参加された全員に参加賞をお渡しし、入賞景品は基本的に6位までの方にご用意しております (開催回によって増減がございます)。</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" onclick="toggleFaq(this)" aria-expanded="false">
+          <span>ひとりでも参加できますか。</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">可能です。個人戦はおひとりで参加する、S.League の基本の形式です。団体戦は1チーム2〜3名で、年1回程度の開催を予定しております。お知り合いやご友人とのご参加も、おひとりでのご参加も歓迎しております。チームを組むご希望がない場合は、私どもがチームをランダムに組み、当日にお知らせします。</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" onclick="toggleFaq(this)" aria-expanded="false">
+          <span>参加費はいくらですか。</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">参加費は開催回によって異なります。各回の大会ページに掲載しております。次回の S.League 26 (2026年12月12日) は6,300円 (銀行振込は6,000円) です。</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" onclick="toggleFaq(this)" aria-expanded="false">
+          <span>当日は何時間くらいかかりますか。</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">所要時間は約6〜10時間で、開催回ごとに変わります。S.League 26 は10:00〜18:00で、個人戦を全7戦 (予選6回戦+順位決定戦1回戦) 行います。途中参加と途中退出は、場合によっては可能です。その場合も参加費は変わりません。ご希望の方は大会のお申込みの際に、メールでお問い合わせください。抜けた分は、スタッフが代わりにプレーを行います。</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section style="padding-bottom: 120px;">
   <div class="container">
     <div class="cta-big cta-video-wrap reveal">
@@ -1047,6 +1093,14 @@
   })();
 </script>
 
+<script>
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const open = item.getAttribute('data-open') === 'true';
+    item.setAttribute('data-open', String(!open));
+    btn.setAttribute('aria-expanded', String(!open));
+  }
+</script>
 <script src="../nav.js?v=aqua30" defer></script>
 <a class="line-float" href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer" aria-label="LINE で LUMA に相談する (新しいタブで開きます)"><svg class="lf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>LINE で相談</span></a>
 <script src="../stage.js?v=157a" defer></script>

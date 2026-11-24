@@ -242,6 +242,52 @@
   </div>
 </section>
 
+<section id="faq" aria-labelledby="faq-heading">
+  <div class="container">
+    <div class="section-head reveal" style="margin: 0 auto 40px; text-align: center;">
+      <span class="eyebrow">FAQ</span>
+      <h2 id="faq-heading">よくある質問</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q" type="button" onclick="toggleFaq(this)" aria-expanded="false">
+          <span>グルテンフリーや食物アレルギーに対応できますか。</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">飲食店の公式サイトや予約ページで事前に情報を確認し、当日もお店の方に調理の方法をお尋ねします。ただし、コンタミネーション (交差接触) が起きないことは保証いたしかねます。何を召し上がるかはゲストご自身でお決めください。</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" onclick="toggleFaq(this)" aria-expanded="false">
+          <span>長く歩くのが難しい家族がいても頼めますか。</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">可能です。徒歩の区間を短くし、休憩の場所を決めたうえで、階段がなるべく少ない道を選びます。車での送迎は行っておりません。車椅子をお使いの方やお身体の不自由な方がいらっしゃる場合は、最初のご相談の際に必ずお知らせください。</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" onclick="toggleFaq(this)" aria-expanded="false">
+          <span>小さな子ども連れでも頼めますか。</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">3歳以上のお子さまであれば、ご参加いただけます。ベビーカーもご利用いただけます。人数はお子さまを含めて、1組6名までとなります。ルートと歩く速さはお子さまに合わせて決めます。</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" onclick="toggleFaq(this)" aria-expanded="false">
+          <span>料金は通常のツアーと違いますか。</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">料金の決め方は通常のツアーと同じです。6名までの1組につき1つの金額で、お見積りは無料です。金額は USD、CAD、AUD、NZD、GBP、EUR のいずれかでお出しします。</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button" onclick="toggleFaq(this)" aria-expanded="false">
+          <span>いつまでに予約すればよいですか。</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">ご予約は、ツアーの2週間前までにお済ませください。飲食店の下調べと旅程表の作成は来日前に行いますので、日程が決まった時点でご相談ください。</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section style="padding-bottom: 120px;">
   <div class="container">
     <div class="cta-big reveal">
@@ -310,6 +356,14 @@
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
+<script>
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const open = item.getAttribute('data-open') === 'true';
+    item.setAttribute('data-open', String(!open));
+    btn.setAttribute('aria-expanded', String(!open));
+  }
+</script>
 <script src="../nav.js?v=aqua30" defer></script>
 <a class="line-float" href="https://lin.ee/YetEeTz" target="_blank" rel="noopener noreferrer" aria-label="LINE で LUMA に相談する (新しいタブで開きます)"><svg class="lf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>LINE で相談</span></a>
 <script src="../stage.js?v=157a" defer></script>
