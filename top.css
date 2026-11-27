@@ -292,4 +292,5 @@
 .l8top .rv-by{font-size:15px;font-weight:700;color:var(--ink)}
 .l8top .rv-more{margin-top:20px;text-align:center;font-size:15px}
 .l8top .rv-more a{font-weight:700}
+.l8top .rv-card + .rv-card{margin-top:16px}
 @media (max-width:760px){.l8top .rv-card{padding:22px 18px}.l8top .rv-quote{font-size:16px}}

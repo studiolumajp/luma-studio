@@ -1501,18 +1501,12 @@ br.sp { display: none; }
     linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 34%, var(--scrim-3) 58%, var(--scrim-4) 76%),
     var(--hero-photo, linear-gradient(135deg, var(--navy), var(--accent)));
 }
+/* 2026-11-23 Sho 指示: Frame の HERO が粗いため、元写真から作った 2560px 版にする。
+   2026-11-26 Sho 指示: スマホも縦長の HERO で 960px 版が約2倍に引き伸ばされ粗かったため、全幅で 2560px 版に */
 .hero--photo.hero-webp-photo {
   background-image:
     linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 34%, var(--scrim-3) 58%, var(--scrim-4) 76%),
-    image-set(url('images/hero/compare-photo-960.webp') type("image/webp"), url('images/hero/compare-photo-960.jpg') type("image/jpeg"));
-}
-/* 2026-11-23 Sho 指示: Frame の HERO が粗いため、761px 以上は元写真から作った 2560px 版にする */
-@media (min-width: 761px) {
-  .hero--photo.hero-webp-photo {
-    background-image:
-      linear-gradient(90deg, var(--scrim-1) 0%, var(--scrim-2) 34%, var(--scrim-3) 58%, var(--scrim-4) 76%),
-      image-set(url('images/hero/compare-photo-2560.webp') type("image/webp"), url('images/hero/compare-photo-2560.jpg') type("image/jpeg"));
-  }
+    image-set(url('images/hero/compare-photo-2560.webp') type("image/webp"), url('images/hero/compare-photo-2560.jpg') type("image/jpeg"));
 }
 .hero--photo.hero-webp-tour {
   background-image:

@@ -233,9 +233,8 @@
 <script src="../../consent.js?v=gdpr1"></script>
 
 <!-- LCP: HERO の背景写真。CSS 背景 / video の poster はプリロードスキャナが見つけられない -->
-<link rel="preload" as="image" fetchpriority="high" type="image/webp" media="(max-width: 760px)" href="../../images/hero/compare-photo-960.webp" />
-<link rel="preload" as="image" fetchpriority="high" type="image/webp" media="(min-width: 761px)" href="../../images/hero/compare-photo-2560.webp" />
-<link rel="stylesheet" href="../../shared.css?v=l8h" />
+<link rel="preload" as="image" fetchpriority="high" type="image/webp" href="../../images/hero/compare-photo-2560.webp" />
+<link rel="stylesheet" href="../../shared.css?v=l8i" />
 <style id="page-overrides">
   /* ── HERO: 暗幕・文字色・ボタンは shared.css の .hero--photo で共通化。
      ここではサイズと固有レイアウトのみ指定する (2026-08-06) ── */
@@ -425,6 +424,16 @@
   @media (max-width: 760px) { .sp-media { grid-template-columns: minmax(0, 1fr); padding: 20px; } .sp-imgs img { aspect-ratio: 16 / 9; } }
   @media (max-width: 640px) { .sp-cards { grid-template-columns: minmax(0, 1fr); } .sp-card { padding: 20px; } }
   .sp-img { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--border); }
+  .rv-card { max-width: 820px; margin: 0 auto; padding: 32px; border: 1px solid var(--border); border-radius: 16px; background: #fff; }
+  .rv-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-bottom: 16px; }
+  .rv-stars { color: var(--accent); font-size: 20px; letter-spacing: 2px; line-height: 1; }
+  .rv-src { font-size: 14px; color: var(--text-muted); }
+  .rv-quote { margin: 0; font-size: 17px; line-height: 1.85; color: var(--text); }
+  .rv-quote p { margin: 0; }
+  .rv-by { margin: 16px 0 0; font-size: 15px; font-weight: 700; color: var(--navy); }
+  .rv-more { margin: 20px 0 0; text-align: center; font-size: 15px; }
+  .rv-more a { font-weight: 700; color: var(--accent); }
+  @media (max-width: 640px) { .rv-card { padding: 24px 20px; } .rv-quote { font-size: 16px; } }
 </style>
 <link rel="stylesheet" href="../../motion.css?v=157a" />
 <link rel="icon" href="../../favicon.ico" sizes="48x48" />
@@ -803,6 +812,18 @@
       <div class="flow-step"><div class="flow-num">03</div><div><span class="tag">Step 03</span><h3>The shoot</h3><p>There's no rush. We talk as we go, and I start shooting once everyone has relaxed. You can check the shots on the camera along the way.</p></div></div>
       <div class="flow-step"><div class="flow-num">04</div><div><span class="tag">Step 04</span><h3>Your photos</h3><p>Every photo reaches you unedited through Google Photos within 1 business day. I then pick the best ones and retouch them, and they reach you within 7 business days.</p></div></div>
     </div>
+  </div>
+</section>
+
+<section id="reviews" aria-labelledby="reviews-heading" style="background:var(--bg-soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container reveal">
+    <div class="section-head" style="margin: 0 auto 40px; text-align:center;"><span class="eyebrow">Review</span><h2 id="reviews-heading">A guest review on Google</h2></div>
+    <figure class="rv-card">
+      <div class="rv-meta"><span class="rv-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="rv-src">Google review, November 2026</span></div>
+      <blockquote class="rv-quote" cite="https://www.google.com/search?q=LUMA+-+Clarity+by+Design#lrd=0xaff5777220282075:0x27bfd70047067659,1,,,,"><p>It was such a pleasure to engage Sho for our family photoshoot! My toddler [...] absolutely adores him. We&#x27;ve had so much fun during the session, and the photos turned so brilliantly! I would definitely recommend to friends and family! Keep up the excellent work and best wishes to you Sho!</p></blockquote>
+      <figcaption class="rv-by">Shu Wei Lim</figcaption>
+    </figure>
+    <p class="rv-more"><a href="https://www.google.com/search?q=LUMA+-+Clarity+by+Design#lrd=0xaff5777220282075:0x27bfd70047067659,1,,,," target="_blank" rel="noopener">Read the review on Google →</a></p>
   </div>
 </section>
 
